@@ -8,3 +8,8 @@ export function rexpTask() {
 }
 
 // forced-rexp-2
+
+// current lane: typescript
+export function typescriptTask() {
+  return { scope: "typescript", status: "ready" };
+}

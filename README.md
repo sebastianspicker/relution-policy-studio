@@ -1,21 +1,15 @@
-# relution-policy-workbench
+# campusweave
 
-A working tree for relution-policy-workbench with an evolving implementation history.
+A working tree for campusweave with an evolving implementation history.
 
 ## Overview
-relution-policy-workbench records the stable project shape and the work still worth checking.
+campusweave is moving through bootstrap push work.
 
 ## Status
-Lifecycle stage: bootstrap. Earlier setup detail now lives in maintained guidance.
+Working state: bootstrap.
 
 ## Development
-- Aligned local and CI checks for docker.
+- Kept the catalog verification command reproducible.
 
 ## Usage
-- Made the typescript assumptions easier to check later.
-
-- The document now favors checked behavior over exploratory notes.
-
-## Current Focus
-Use the next review to check behavior before adding surface area.
-Keep the next pass focused on verification and smaller changes.
+- Rewrote the catalog explanation around the maintained behavior.

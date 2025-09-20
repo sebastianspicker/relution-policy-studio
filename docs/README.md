@@ -5,7 +5,7 @@
 This page tracks bootstrap decisions for readme during bootstrap push work.
 
 ## Development
-- Aligned local and CI checks for docker.
+- Kept the catalog verification command reproducible.
 
 ## Scratch Notes
 Early notes are still uneven and may be folded into clearer sections later.

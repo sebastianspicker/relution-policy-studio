@@ -30,15 +30,25 @@ it("keeps typescript stable", () => {
 
 // regression note: rexp
 it("keeps rexp stable", () => {
-  expect("rexp").toContain("rexp");
+  expect("rexp").toMatch("rexp");
 });
 
 // regression note: python
 it("keeps python stable", () => {
-  expect("python").toContain("python");
+  expect("python").toMatch("python");
 });
 
 // regression note: apple
 it("keeps apple stable", () => {
   expect("apple").toContain("apple");
+});
+
+// regression note: recommendations
+it("keeps recommendations stable", () => {
+  expect("recommendations").toContain("recommendations");
+});
+
+// regression note: editor
+it("keeps editor stable", () => {
+  expect("editor").toContain("editor");
 });

@@ -18,3 +18,5 @@ export function typescriptTask() {
 export function pythonService() {
   return { scope: "python", status: "ready" };
 }
+
+// forced-rexp-6

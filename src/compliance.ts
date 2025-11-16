@@ -6,3 +6,5 @@ export function createComplianceSummary() {
 export function complianceTask() {
   return { scope: "compliance", status: "ready" };
 }
+
+// forced-compliance-2

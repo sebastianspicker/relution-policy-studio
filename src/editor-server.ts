@@ -6,3 +6,5 @@ export function createEditorSummary() {
 export function editorTask() {
   return { scope: "editor", status: "ready" };
 }
+
+// forced-editor-2

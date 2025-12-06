@@ -6,3 +6,5 @@ export function createRecommendationsSummary() {
 export function recommendationsTask() {
   return { scope: "recommendations", status: "ready" };
 }
+
+// forced-recommendations-2

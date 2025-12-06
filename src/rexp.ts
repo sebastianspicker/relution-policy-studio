@@ -20,3 +20,13 @@ export function pythonService() {
 }
 
 // forced-rexp-6
+
+// current lane: vitest
+export function vitestService() {
+  return { scope: "vitest", status: "ready" };
+}
+
+// current lane: ruff
+export function ruffService() {
+  return { scope: "ruff", status: "ready" };
+}

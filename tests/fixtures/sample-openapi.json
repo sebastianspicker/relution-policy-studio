@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "name": "sample-openapi",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run",
+    "verify": "pnpm typecheck && pnpm test",
+    "dev": "pnpm --silent test"
+  },
+  "keywords": [
+    "profile",
+    "compiler"
+  ]
+}

@@ -1,27 +1,18 @@
-# relution-policy-workbench
+# campusweave
 
-A working tree for relution-policy-workbench with an evolving implementation history.
+A working tree for campusweave with an evolving implementation history.
 
 ## Overview
-relution-policy-workbench keeps setup, verification, and known limitations in one place.
+campusweave is moving through bootstrap push work.
 
 ## Status
-Lifecycle stage: core-build-out. Earlier setup detail now lives in maintained guidance.
+Lifecycle stage: exploration. Activity resumed after a longer gap.
 
 ## Development
-- Aligned local and CI checks for docker.
+- Kept the catalog verification command reproducible.
 
 ## Usage
-- Merged scattered recommendation guidance into the docs.
+- Rewrote the catalog explanation around the maintained behavior.
 
-- The document now favors checked behavior over exploratory notes.
-
-## Current Focus
-Use the next review to check behavior before adding surface area.
-Keep the next pass focused on verification and smaller changes.
-
+## Roadmap
 Prefer narrow maintenance work over broad rewrites.
-## Features
-- Shaped recommendations into a usable first pass during core-build-out work.
-
-- The older setup fragments have been reduced to the useful parts.

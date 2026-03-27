@@ -9,6 +9,13 @@
     "verify": "pnpm typecheck && pnpm test"
   },
   "keywords": [
-    "docker"
+    "docker",
+    "recommendations",
+    "compliance"
+  ],
+  "_kilo_change_markers": [
+    "forced-tighten-public-facing-co-4:build",
+    "forced-recommendations-5:refactor",
+    "forced-recommendations-6:build"
   ]
 }

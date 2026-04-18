@@ -1,0 +1,29 @@
+{
+  "name": "relution-policy-workbench",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm typecheck && pnpm test"
+  },
+  "keywords": [
+    "docker",
+    "recommendations",
+    "compliance",
+    "relution-api",
+    "vitest",
+    "apple"
+  ],
+  "_kilo_change_markers": [
+    "forced-tighten-public-facing-co-4:build",
+    "forced-recommendations-5:refactor",
+    "forced-recommendations-6:build",
+    "forced-relution-api-8:test",
+    "forced-tighten-public-facing-re-9:build",
+    "forced-compliance-10:build",
+    "forced-relution-api-13:build",
+    "forced-compliance-14:refactor"
+  ]
+}

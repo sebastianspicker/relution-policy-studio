@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "name": "macOS Tier 3 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "MACOS",
+    "tier": 3,
+    "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+    "securityLevel": "basis",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "MACOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 7,
+      "cis": 0,
+      "vendor": 0
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": []
+  },
+  "policies": [
+    {
+      "platform": "MACOS",
+      "name": "macOS Tier 3 Baseline",
+      "description": "Tier 3 - minimum secure BSI Basis baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-mobiledevice-passwordpolicy",
+          "title": "Consolidated Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+              "title": "Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "allowSimple": false,
+                "forcePIN": true,
+                "maxFailedAttempts": 10,
+                "maxGracePeriod": 0,
+                "maxInactivity": 5,
+                "minLength": 8,
+                "pinHistory": 5,
+                "requireAlphanumeric": true
+              },
+              "schemaId": "profile:com.apple.mobiledevice.passwordpolicy"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-security-firewall",
+          "title": "Consolidated Relution aggregate: profile:com.apple.security.firewall",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-4-macos",
+            "it-grundschutz-checklists-2023",
+            "umsetzungshinweis-sys-2-4-macos"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "title": "Relution aggregate: profile:com.apple.security.firewall"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "EnableFirewall": true
+              },
+              "schemaId": "profile:com.apple.security.firewall"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-softwareupdate",
+          "title": "Consolidated Relution aggregate: profile:com.apple.SoftwareUpdate",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "AutomaticCheckEnabled": true,
+                "AutomaticDownload": true,
+                "AutomaticallyInstallAppUpdates": true,
+                "AutomaticallyInstallMacOSUpdates": true,
+                "ConfigDataInstall": true,
+                "CriticalUpdateInstall": true
+              },
+              "schemaId": "profile:com.apple.SoftwareUpdate"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-file-vault",
+          "title": "Consolidated Relution aggregate: MACOS_FILE_VAULT",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enableRecoveryKeyEscrow": true,
+                "enabled": true,
+                "fdeFileVault": {
+                  "defer": true,
+                  "enable": "ON",
+                  "showRecoveryKey": true,
+                  "useRecoveryKey": true
+                },
+                "fdeFileVaultOptions": {
+                  "dontAllowFDEDisable": true
+                }
+              },
+              "type": "MACOS_FILE_VAULT"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-restriction",
+          "title": "Consolidated Relution aggregate: MACOS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-restriction-aggregate",
+              "title": "Relution aggregate: MACOS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowActivityContinuation": false,
+                "allowAirDrop": false,
+                "allowCloudDesktopAndDocuments": false,
+                "allowCloudDocumentSync": false,
+                "allowCloudKeychainSync": false,
+                "allowCloudPhotoLibrary": false,
+                "allowDiagnosticSubmission": false,
+                "enabled": true
+              },
+              "type": "MACOS_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-screensaver",
+          "title": "Consolidated Relution aggregate: MACOS_SCREENSAVER",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-screensaver-aggregate",
+              "title": "Relution aggregate: MACOS_SCREENSAVER"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "askForPassword": true,
+                "askForPasswordDelay": 0,
+                "enabled": true,
+                "loginWindowIdleTime": 900
+              },
+              "type": "MACOS_SCREENSAVER"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-system-policy-control",
+          "title": "Consolidated Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-system-policy-control-aggregate",
+              "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowIdentifiedDevelopers": true,
+                "enableAssessment": true,
+                "enabled": true
+              },
+              "type": "MACOS_SYSTEM_POLICY_CONTROL"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

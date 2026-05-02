@@ -1,10 +1,29 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ESNext",
-    "strict": true
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "types": ["node"]
   },
-  "_kilo_change_markers": [
-    "forced-docker-1:build"
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "e2e/**/*.ts",
+    "e2e-readme/**/*.ts",
+    "web/src/**/*.ts",
+    "web/src/**/*.tsx",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "playwright.config.ts",
+    "playwright.readme.config.ts"
   ]
 }

@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "name": "Android Enterprise Tier 1 Baseline - Android Enterprise Work Profile Passcode Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "ANDROID_ENTERPRISE",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+      "slug": "relution-native-android-enterprise-work-profile-passcode",
+      "label": "Android Enterprise Work Profile Passcode"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "ANDROID_ENTERPRISE",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "name": "Android Enterprise Tier 1 Baseline - Android Enterprise Work Profile Passcode",
+      "description": "Modular Android Enterprise baseline block for ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE. Tier 1 - most restrictive Grundschutz baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-work-profile-passcode",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from vendor.",
+          "sourceIds": [
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK"
+              },
+              "type": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

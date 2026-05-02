@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "name": "Android Enterprise Tier 1 Baseline - Android Enterprise Advanced Security Overrides Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "ANDROID_ENTERPRISE",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+      "slug": "relution-native-android-enterprise-advanced-security-overrides",
+      "label": "Android Enterprise Advanced Security Overrides"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "ANDROID_ENTERPRISE",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "name": "Android Enterprise Tier 1 Baseline - Android Enterprise Advanced Security Overrides",
+      "description": "Modular Android Enterprise baseline block for ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES. Tier 1 - most restrictive Grundschutz baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-advanced-security-overrides",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "sys-3-2-4-android",
+            "cis-google-android-1-6-0",
+            "cis-google-android-family",
+            "google-play-protect-managed-devices",
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "developerSettings": "DEVELOPER_SETTINGS_DISABLED",
+                "enabled": true,
+                "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED",
+                "untrustedAppsPolicy": "DISALLOW_INSTALL"
+              },
+              "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

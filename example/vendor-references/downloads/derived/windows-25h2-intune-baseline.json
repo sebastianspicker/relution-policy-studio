@@ -1,0 +1,2886 @@
+[
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Prevent enabling lock screen camera",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Prevent enabling lock screen slide show",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Apply UAC restrictions to local accounts on network logons",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Configure SMB v1 client driver",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Configure MrxSmb10 driver",
+    "recommendedValue": "Disable driver (recommended)",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Configure SMB v1 server",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "Enable Structured Exception Handling Overwrite Protection (SEHOP)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "MSS: (DisableIPSourceRouting IPv6) IP source routing protection level (protects against packet spoofing)",
+    "recommendedValue": "Enabled",
+    "parentTitle": "Enable Structured Exception Handling Overwrite Protection (SEHOP)"
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "DisableIPSourceRouting IPv6 (Device)",
+    "recommendedValue": "Highest protection, source routing is completely disabled",
+    "parentTitle": "Enable Structured Exception Handling Overwrite Protection (SEHOP)"
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "MSS: (DisableIPSourceRouting) IP source routing protection level (protects against packet spoofing)",
+    "recommendedValue": "Enabled",
+    "parentTitle": "Enable Structured Exception Handling Overwrite Protection (SEHOP)"
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "DisableIPSourceRouting (Device)",
+    "recommendedValue": "Highest protection, source routing is completely disabled",
+    "parentTitle": "Enable Structured Exception Handling Overwrite Protection (SEHOP)"
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes",
+    "recommendedValue": "Disabled",
+    "parentTitle": "Enable Structured Exception Handling Overwrite Protection (SEHOP)"
+  },
+  {
+    "section": "Control Panel > Personalization",
+    "title": "MSS: (NoNameReleaseOnDemand) Allow the computer to ignore NetBIOS name release requests except from WINS servers",
+    "recommendedValue": "Enabled",
+    "parentTitle": "Enable Structured Exception Handling Overwrite Protection (SEHOP)"
+  },
+  {
+    "section": "Network > DNS Client",
+    "title": "Turn off multicast name resolution",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Network Connections",
+    "title": "Prohibit use of Internet Connection Sharing on your DNS domain network",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Network Provider",
+    "title": "Hardened UNC Paths",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Network Provider",
+    "title": "Hardened UNC Paths: (Device)",
+    "recommendedValue": [
+      "Name Value",
+      "\\\\*\\SYSVOL RequireMutualAuthentication=1,RequireIntegrity=1",
+      "\\\\*\\NETLOGON RequireMutualAuthentication=1,RequireIntegrity=1"
+    ],
+    "parentTitle": "Hardened UNC Paths"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Prohibit connection to non-domain networks when connected to domain authenticated network",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Configure Redirection Guard",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Redirection Guard Options (Device)",
+    "recommendedValue": "Redirection Guard Enabled",
+    "parentTitle": "Configure Redirection Guard"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Configure RPC connection settings",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Use authentication for outgoing RPC connections: (Device)",
+    "recommendedValue": "Default",
+    "parentTitle": "Configure RPC connection settings"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Protocol to use for outgoing RPC connections: (Device)",
+    "recommendedValue": "RPC over TCP",
+    "parentTitle": "Configure RPC connection settings"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Configure RPC listener settings",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Protocols to allow for incoming RPC connections: (Device)",
+    "recommendedValue": "RPC over TCP",
+    "parentTitle": "Configure RPC listener settings"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Authentication protocol to use for incoming RPC connections: (Device)",
+    "recommendedValue": "Negotiate",
+    "parentTitle": "Configure RPC listener settings"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Configure RPC over TCP port",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "RPC over TCP port (Device)",
+    "recommendedValue": "0",
+    "parentTitle": "Configure RPC over TCP port"
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Limits print driver installation to Administrators",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Manage processing of Queue-specific files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Network > Windows Connection Manager",
+    "title": "Manage processing of Queue-Specific files: (Device)",
+    "recommendedValue": "Limit Queue-specific files to Color profiles",
+    "parentTitle": "Manage processing of Queue-specific files"
+  },
+  {
+    "section": "Start Menu and Taskbar > Notifications",
+    "title": "Turn off toast notifications on the lock screen (User)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Audit Process Creation",
+    "title": "Include command line in process creation events",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Credentials Delegation",
+    "title": "Encryption Oracle Remediation",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Credentials Delegation",
+    "title": "Protection Level: (Device)",
+    "recommendedValue": "Force Updated Clients",
+    "parentTitle": "Encryption Oracle Remediation"
+  },
+  {
+    "section": "System > Credentials Delegation",
+    "title": "Remote host allows delegation of non-exportable credentials",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Device Installation > Device Installation Restrictions",
+    "title": "Prevent installation of devices using drivers that match these device setup classes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Device Installation > Device Installation Restrictions",
+    "title": "Also apply to matching devices that are already installed",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Device Installation > Device Installation Restrictions",
+    "title": "Prevented Classes",
+    "recommendedValue": "{d48179be-ec20-11d1-b6b8-00c04fa372a7}",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Early Launch Antimalware",
+    "title": "Boot-Start Driver Initialization Policy",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Early Launch Antimalware",
+    "title": "Choose the boot-start drivers that can be initialized:",
+    "recommendedValue": "Good, unknown and bad but critical",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Group Policy",
+    "title": "Configure registry policy processing",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Group Policy",
+    "title": "Do not apply during periodic background processing (Device)",
+    "recommendedValue": "False",
+    "parentTitle": "Configure registry policy processing"
+  },
+  {
+    "section": "System > Group Policy",
+    "title": "Process even if the Group Policy objects have not changed (Device)",
+    "recommendedValue": "True",
+    "parentTitle": "Configure registry policy processing"
+  },
+  {
+    "section": "System > Internet Communication Management > Internet Communication settings",
+    "title": "Turn off downloading of print drivers over HTTP",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Internet Communication Management > Internet Communication settings",
+    "title": "Turn off Internet download for Web publishing and online ordering wizards",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Local Security Authority",
+    "title": "Allow Custom SSPs and APs to be loaded into LSASS",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Power Management > Sleep Settings",
+    "title": "Allow standby states (S1-S3) when sleeping (on battery)",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Power Management > Sleep Settings",
+    "title": "Allow standby states (S1-S3) when sleeping (plugged in)",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Power Management > Sleep Settings",
+    "title": "Require a password when a computer wakes (on battery)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Power Management > Sleep Settings",
+    "title": "Require a password when a computer wakes (plugged in)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Remote Assistance",
+    "title": "Configure Solicited Remote Assistance",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Remote Procedure Call",
+    "title": "Restrict Unauthenticated RPC clients",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "System > Remote Procedure Call",
+    "title": "RPC Runtime Unauthenticated Client Restriction to Apply:",
+    "recommendedValue": "Authenticated",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > App runtime",
+    "title": "Allow Microsoft accounts to be optional",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > AutoPlay Policies",
+    "title": "Disallow Autoplay for non-volume devices",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > AutoPlay Policies",
+    "title": "Set the default behavior for AutoRun",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > AutoPlay Policies",
+    "title": "Default AutoRun Behavior",
+    "recommendedValue": "Do not execute any autorun commands",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > AutoPlay Policies",
+    "title": "Turn off Autoplay",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > AutoPlay Policies",
+    "title": "Turn off Autoplay on:",
+    "recommendedValue": "All drives",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > BitLocker Drive Encryption > Fixed Data Drives",
+    "title": "Deny write access to fixed drives not protected by BitLocker",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > BitLocker Drive Encryption > Removable Data Drives",
+    "title": "Deny write access to removable drives not protected by BitLocker",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > BitLocker Drive Encryption > Removable Data Drives",
+    "title": "Do not allow write access to devices configured in another organization",
+    "recommendedValue": "False",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Credential User Interface",
+    "title": "Enumerate administrator accounts on elevation",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Event Log Service > Application",
+    "title": "Specify the maximum log file size (KB)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Event Log Service > Application",
+    "title": "Maximum Log Size (KB)",
+    "recommendedValue": "32768",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Event Log Service > Security",
+    "title": "Specify the maximum log file size (KB)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Event Log Service > Security",
+    "title": "Maximum Log Size (KB)",
+    "recommendedValue": "196608",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Event Log Service > System",
+    "title": "Specify the maximum log file size (KB)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Event Log Service > System",
+    "title": "Maximum Log Size (KB)",
+    "recommendedValue": "32768",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > File Explorer",
+    "title": "Configure Windows Defender SmartScreen",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > File Explorer",
+    "title": "Pick one of the following settings: (Device)",
+    "recommendedValue": "Warn and prevent bypass",
+    "parentTitle": "Configure Windows Defender SmartScreen"
+  },
+  {
+    "section": "Windows Components > File Explorer",
+    "title": "Turn off Data Execution Prevention for Explorer",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > File Explorer",
+    "title": "Turn off heap termination on corruption",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Prevent bypassing SmartScreen Filter warnings",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Prevent bypassing SmartScreen Filter warnings about files that are not commonly downloaded from the Internet",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Prevent managing SmartScreen Filter",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Select SmartScreen Filter mode",
+    "recommendedValue": "On",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Prevent per-user installation of ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Security Zones: Do not allow users to add/delete sites",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Security Zones: Do not allow users to change policies",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Security Zones: Use only machine settings",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Specify use of ActiveX Installer Service for installation of ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Turn off Crash Detection",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Turn off the Security Settings Check feature",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer",
+    "title": "Turn on the auto-complete feature for user names and passwords on forms (User)",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel",
+    "title": "Prevent ignoring certificate errors",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Allow software to run or install even if the signature is invalid",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Check for server certificate revocation",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Check for signatures on downloaded programs",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Do not allow ActiveX controls to run in Protected Mode when Enhanced Protected Mode is enabled",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Turn off encryption support",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Secure Protocol combinations",
+    "recommendedValue": "Use TLS 1.1 and TLS 1.2",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Turn on 64-bit tab processes when running in Enhanced Protected Mode on 64-bit versions of Windows",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Advanced Page",
+    "title": "Turn on Enhanced Protected Mode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page",
+    "title": "Intranet Sites: Include all network paths (UNCs)",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page",
+    "title": "Turn on certificate address mismatch warning",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Access data sources across domains",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Access data sources across domains",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow cut, copy or paste operations from the clipboard via script",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow paste operations via script",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow drag and drop or copy and paste files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow drag and drop or copy and paste files",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow loading of XAML files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "XAML Files",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow only approved domains to use ActiveX controls without prompt",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Only allow approved domains to use ActiveX controls without prompt",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow only approved domains to use the TDC ActiveX control",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Only allow approved domains to use the TDC ActiveX control",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow script-initiated windows without size or position constraints",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow script-initiated windows without size or position constraints",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow scripting of Internet Explorer WebBrowser controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Internet Explorer web browser control",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow scriptlets",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Scriptlets",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow updates to status bar via script",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Status bar updates via script",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow VBScript to run in Internet Explorer",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Allow VBScript to run in Internet Explorer",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Automatic prompting for file downloads",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Automatic prompting for file downloads",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Download signed ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Download signed ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Download unsigned ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Download unsigned ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Enable dragging of content from different domains across windows",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Enable dragging of content from different domains across windows",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Enable dragging of content from different domains within a window",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Enable dragging of content from different domains within a window",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Include local path when user is uploading files to a server",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Include local directory path when uploading files to a server",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Launching applications and files in an IFRAME",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Launching applications and files in an IFRAME",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Logon options",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Logon options",
+    "recommendedValue": "Prompt for user name and password",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Navigate windows and frames across different domains",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Navigate windows and frames across different domains",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Run .NET Framework-reliant components not signed with Authenticode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Run .NET Framework-reliant components not signed with Authenticode",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Run .NET Framework-reliant components signed with Authenticode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Run .NET Framework-reliant components signed with Authenticode",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Show security warning for potentially unsafe files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Launching programs and unsafe files",
+    "recommendedValue": "Prompt",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Turn on Cross-Site Scripting Filter",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Turn on Cross-Site Scripting (XSS) Filter",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Turn on Protected Mode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Protected Mode",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Turn on SmartScreen Filter scan",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Use SmartScreen Filter",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Use Pop-up Blocker",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Use Pop-up Blocker",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Userdata persistence",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Userdata persistence",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Web sites in less privileged Web content zones can navigate into this zone",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+    "title": "Web sites in less privileged Web content zones can navigate into this zone",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+    "title": "Java permissions",
+    "recommendedValue": "High safety",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Internet Zone",
+    "title": "Turn on SmartScreen Filter scan",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Internet Zone",
+    "title": "Use SmartScreen Filter",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone",
+    "title": "Turn on SmartScreen Filter scan",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone",
+    "title": "Use SmartScreen Filter",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Access data sources across domains",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Access data sources across domains",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow active scripting",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow active scripting",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow binary and script behaviors",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow binary and script Behaviors",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow cut, copy or paste operations from the clipboard via script",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow paste operations via script",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow drag and drop or copy and paste files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow drag and drop or copy and paste files",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow file downloads",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow file downloads",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow loading of XAML files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "XAML Files",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow META REFRESH",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow META REFRESH",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow only approved domains to use ActiveX controls without prompt",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Only allow approved domains to use ActiveX controls without prompt",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow only approved domains to use the TDC ActiveX control",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Only allow approved domains to use the TDC ActiveX control",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow script-initiated windows without size or position constraints",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow script-initiated windows without size or position constraints",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow scripting of Internet Explorer WebBrowser controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Internet Explorer web browser control",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow scriptlets",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Scriptlets",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow updates to status bar via script",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Status bar updates via script",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow VBScript to run in Internet Explorer",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Allow VBScript to run in Internet Explorer",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Automatic prompting for file downloads",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Automatic prompting for file downloads",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Download signed ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Download signed ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Download unsigned ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Download unsigned ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Enable dragging of content from different domains across windows",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Enable dragging of content from different domains across windows",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Enable dragging of content from different domains within a window",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Enable dragging of content from different domains within a window",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Include local path when user is uploading files to a server",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Include local directory path when uploading files to a server",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Disable Java",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Launching applications and files in an IFRAME",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Launching applications and files in an IFRAME",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Logon options",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Logon options",
+    "recommendedValue": "Anonymous logon",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Navigate windows and frames across different domains",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Navigate windows and frames across different domains",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Run .NET Framework-reliant components not signed with Authenticode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Run .NET Framework-reliant components not signed with Authenticode",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Run .NET Framework-reliant components signed with Authenticode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Run .NET Framework-reliant components signed with Authenticode",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Run ActiveX controls and plugins",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Run ActiveX controls and plugins",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Script ActiveX controls marked safe for scripting",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Script ActiveX controls marked safe for scripting",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Scripting of Java applets",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Scripting of Java applets",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Show security warning for potentially unsafe files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Launching programs and unsafe files",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Turn on Cross-Site Scripting Filter",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Turn on Cross-Site Scripting (XSS) Filter",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Turn on Protected Mode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Protected Mode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Turn on SmartScreen Filter scan",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Use SmartScreen Filter",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Use Pop-up Blocker",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Use Pop-up Blocker",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Userdata persistence",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Userdata persistence",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Web sites in less privileged Web content zones can navigate into this zone",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+    "title": "Web sites in less privileged Web content zones can navigate into this zone",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+    "title": "Don't run antimalware programs against ActiveX controls",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+    "title": "Initialize and script ActiveX controls not marked as safe",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+    "title": "Java permissions",
+    "recommendedValue": "High safety",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features",
+    "title": "Allow fallback to SSL 3.0 (Internet Explorer)",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features",
+    "title": "Allow insecure fallback for:",
+    "recommendedValue": "No Sites",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Add-on Management",
+    "title": "Remove \"Run this time\" button for outdated ActiveX controls in Internet Explorer",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Add-on Management",
+    "title": "Turn off blocking of outdated ActiveX controls for Internet Explorer",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Consistent Mime Handling",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Mime Sniffing Safety Feature",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > MK Protocol Security Restriction",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Notification bar",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Protection From Zone Elevation",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Restrict ActiveX Install",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Restrict File Download",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Internet Explorer > Security Features > Scripted Window Security Restrictions",
+    "title": "Internet Explorer Processes",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Microsoft Defender Antivirus",
+    "title": "Turn off routine remediation",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Microsoft Defender Antivirus > MAPS",
+    "title": "Configure the 'Block at First Sight' feature",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Microsoft Defender Antivirus > Real-time Protection",
+    "title": "Turn on process scanning whenever real-time protection is enabled",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Remote Desktop Services > Remote Desktop Connection Client",
+    "title": "Do not allow passwords to be saved",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Remote Desktop Services > Remote Desktop Session Host > Device and Resource Redirection",
+    "title": "Do not allow drive redirection",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Remote Desktop Services > Remote Desktop Session Host > Security",
+    "title": "Always prompt for password upon connection",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Remote Desktop Services > Remote Desktop Session Host > Security",
+    "title": "Require secure RPC communication",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Remote Desktop Services > Remote Desktop Session Host > Security",
+    "title": "Set client connection encryption level",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Remote Desktop Services > Remote Desktop Session Host > Security",
+    "title": "Encryption Level",
+    "recommendedValue": "High Level",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > RSS Feeds",
+    "title": "Prevent downloading of enclosures",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Logon Options",
+    "title": "Configure the transmission of the user's password in the content of MPR notifications sent by winlogon",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Logon Options",
+    "title": "Sign-in and lock last interactive user automatically after a restart",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows PowerShell",
+    "title": "Turn on PowerShell Script Block Logging",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows PowerShell",
+    "title": "Log script block invocation start / stop events:",
+    "recommendedValue": "False",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Client",
+    "title": "Allow Basic authentication",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Client",
+    "title": "Allow unencrypted traffic",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Client",
+    "title": "Disallow Digest authentication",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Allow Basic authentication",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Allow unencrypted traffic",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Disallow WinRM from storing RunAs credentials",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Account Logon Audit Credential Validation",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Account Logon Logoff Audit Account Lockout",
+    "recommendedValue": "Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Account Logon Logoff Audit Group Membership",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Account Logon Logoff Audit Logon",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit Authentication Policy Change",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit Changes to Audit Policy",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit File Share Access",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit Other Logon Logoff Events",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit Security Group Management",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit Security System Extension",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit Special Logon",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Audit User Account Management",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Detailed Tracking Audit PNP Activity",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Detailed Tracking Audit Process Creation",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Object Access Audit Detailed File Share",
+    "recommendedValue": "Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Object Access Audit Other Object Access Events",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Object Access Audit Removable Storage",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Policy Change Audit MPSSVC Rule Level Policy Change",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Policy Change Audit Other Policy Change Events",
+    "recommendedValue": "Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "Privilege Use Audit Sensitive Privilege Use",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "System Audit Other System Events",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "System Audit Security State Change",
+    "recommendedValue": "Success",
+    "parentTitle": null
+  },
+  {
+    "section": "Windows Components > Windows Remote Management (WinRM) > WinRM Service",
+    "title": "System Audit System Integrity",
+    "recommendedValue": "Success+ Failure",
+    "parentTitle": null
+  },
+  {
+    "section": "Browser",
+    "title": "Allow Password Manager",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Browser",
+    "title": "Allow Smart Screen",
+    "recommendedValue": "Allow",
+    "parentTitle": null
+  },
+  {
+    "section": "Browser",
+    "title": "Prevent Cert Error Overrides",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Browser",
+    "title": "Prevent Smart Screen Prompt Override",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Browser",
+    "title": "Prevent Smart Screen Prompt Override For Files",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Data Protection",
+    "title": "Allow Direct Memory Access",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow Archive Scanning",
+    "recommendedValue": "Allowed. Scans the archive files.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow Behavior Monitoring",
+    "recommendedValue": "Allowed. Turns on real-time behavior monitoring.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow Cloud Protection",
+    "recommendedValue": "Allowed. Turns on Cloud Protection.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow Full Scan Removable Drive Scanning",
+    "recommendedValue": "Allowed. Scans removable drives.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow On Access Protection",
+    "recommendedValue": "Allowed.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow Realtime Monitoring",
+    "recommendedValue": "Allowed. Turns on and runs the real-time monitoring service.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow scanning of all downloaded files and attachments",
+    "recommendedValue": "Allowed.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Allow Script Scanning",
+    "recommendedValue": "Allowed.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block execution of potentially obfuscated scripts",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block Win32 API calls from Office macros",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block Office communication application from creating child processes",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block all Office applications from creating child processes",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block JavaScript or VBScript from launching downloaded executable content",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block untrusted and unsigned processes that run from USB",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block Adobe Reader from creating child processes",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block credential stealing from the Windows local security authority subsystem",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block Office applications from creating executable content",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block Office applications from injecting code into other processes",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Block executable content from email client and webmail",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Cloud Block Level",
+    "recommendedValue": "High",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Cloud Extended Timeout",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Disable Local Admin Merge",
+    "recommendedValue": "Disable Local Admin Merge",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Enable Convert Warn To Block",
+    "recommendedValue": "Warn verdicts are converted to block",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Enable File Hash Computation",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Enable Network Protection",
+    "recommendedValue": "Enabled (block mode)",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Hide Exclusions From Local Admins",
+    "recommendedValue": "If you enable this setting, local admins will no longer be able to see the exclusion list in Windows Security App or via PowerShell.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Oobe Enable Rtp And Sig Update",
+    "recommendedValue": "If you enable this setting, real-time protection and Security Intelligence Updates are enabled during OOBE.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Passive Remediation",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "PUA Protection",
+    "recommendedValue": "PUA Protection on. Detected items are blocked. They will show in history along with other threats.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Quick Scan Include Exclusions",
+    "recommendedValue": "If you set this setting to 1, all files and directories that are excluded from real-time protection using contextual exclusions are scanned during a quick scan.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Real Time Scan Direction",
+    "recommendedValue": "Monitor all files (bi-directional).",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Submit Samples Consent",
+    "recommendedValue": "Send all samples automatically.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Configure System Guard Launch",
+    "recommendedValue": "Unmanaged Enables Secure Launch if supported by hardware",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Credential Guard",
+    "recommendedValue": "(Enabled with UEFI lock) Turns on Credential Guard with UEFI lock.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Enable Virtualization Based Security",
+    "recommendedValue": "Enable virtualization based security.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Machine Identity Isolation",
+    "recommendedValue": "(Disabled) Machine password is only LSASS-bound and stored in $MACHINE.ACC registry key.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Require Platform Security Features",
+    "recommendedValue": "Turns on VBS with Secure Boot.",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Device Password Enabled",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Device Password History",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Min Device Password Length",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Defender",
+    "title": "Device Enumeration Policy",
+    "recommendedValue": "Block all (Most restrictive)",
+    "parentTitle": null
+  },
+  {
+    "section": "Experience",
+    "title": "Allow Windows Spotlight (User)",
+    "recommendedValue": "Allow",
+    "parentTitle": null
+  },
+  {
+    "section": "Experience",
+    "title": "Allow Windows Consumer Features",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Experience",
+    "title": "Allow Third Party Suggestions In Windows Spotlight (User)",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Domain Network Firewall",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Log Success Connections",
+    "recommendedValue": "Enable Logging Of Successful Connections",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Default Outbound Action",
+    "recommendedValue": "Allow",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Log Dropped Packets",
+    "recommendedValue": "Enable Logging Of Dropped Packets",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Disable Inbound Notifications",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Log Max File Size",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Default Inbound Action for Domain Profile",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Private Network Firewall",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Log Max File Size",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Default Inbound Action for Private Profile",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Log Success Connections",
+    "recommendedValue": "Enable Logging Of Successful Connections",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Log Dropped Packets",
+    "recommendedValue": "Enable Logging Of Dropped Packets",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Default Outbound Action",
+    "recommendedValue": "Allow",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Disable Inbound Notifications",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Public Network Firewall",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Log Dropped Packets",
+    "recommendedValue": "Enable Logging Of Dropped Packets",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Log Max File Size",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Default Outbound Action",
+    "recommendedValue": "Allow",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Disable Inbound Notifications",
+    "recommendedValue": "True",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Default Inbound Action for Public Profile",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Allow Local Policy Merge",
+    "recommendedValue": "False",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Log Success Connections",
+    "recommendedValue": "Enable Logging Of Successful Connections",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Allow Local Ipsec Policy Merge",
+    "recommendedValue": "False",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "PK Init Hash Algorithm Configuration",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "PK Init Hash Algorithm SHA256",
+    "recommendedValue": "Supported",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "PK Init Hash Algorithm SHA384",
+    "recommendedValue": "Supported",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "PK Init Hash Algorithm SHA512",
+    "recommendedValue": "Supported",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "PK Init Hash Algorithm SHA1 PK Init Hash Algorithm SHA1",
+    "recommendedValue": "Not Supported",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Audit Client Does Not Support Encryption",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Audit Client Does Not Support Signing",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Audit Insecure Guest Logon",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Auth Rate Limiter Delay In Ms",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Auth Rate Limiter",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Mailslots",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Max Smb2 Dialect",
+    "recommendedValue": "SMB 3.1.1",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Min Smb2 Dialect",
+    "recommendedValue": "SMB 3.0.0",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Audit Insecure Guest Logon",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Audit Server Does Not Support Encryption",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Audit Server Does Not Support Signing",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Insecure Guest Logons",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Enable Mailslots",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Max SMB 2 Dialect",
+    "recommendedValue": "SMB 3.1.1",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Min SMB 2 Dialect",
+    "recommendedValue": "SMB 3.0.0",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Require Encryption",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Firewall",
+    "title": "Backup Directory",
+    "recommendedValue": "Backup the password to Microsoft Entra ID only",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Accounts Limit Local Account Use Of Blank Passwords To Console Logon Only",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Interactive Logon Machine Inactivity Limit",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Interactive Logon Smart Card Removal Behavior",
+    "recommendedValue": "Lock Workstation",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Microsoft Network Client Digitally Sign Communications Always",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Microsoft Network Client Send Unencrypted Password To Third Party SMB Servers",
+    "recommendedValue": "Disable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Microsoft Network Server Digitally Sign Communications Always",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Access Do Not Allow Anonymous Enumeration Of SAM Accounts",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Access Do Not Allow Anonymous Enumeration Of Sam Accounts And Shares",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Access Restrict Anonymous Access To Named Pipes And Shares",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Access Restrict Clients Allowed To Make Remote Calls To SAM",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Security Do Not Store LAN Manager Hash Value On Next Password Change",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Security LAN Manager Authentication Level",
+    "recommendedValue": "Send NTLMv2 responses only. Refuse LM and NTLM",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Security Minimum Session Security For NTLMSSP Based Clients",
+    "recommendedValue": "Require NTLM and 128-bit encryption",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "Network Security Minimum Session Security For NTLMSSP Based Servers",
+    "recommendedValue": "Require NTLM and 128-bit encryption",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Behavior Of The Elevation Prompt For Administrators",
+    "recommendedValue": "Prompt for consent on the secure desktop",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Behavior Of The Elevation Prompt For Standard Users",
+    "recommendedValue": "Automatically deny elevation requests",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Detect Application Installations And Prompt For Elevation",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Only Elevate UI Access Applications That Are Installed In Secure Locations",
+    "recommendedValue": "Enabled: Application runs with UIAccess integrity only if it resides in secure location.",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Run All Administrators In Admin Approval Mode",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Use Admin Approval Mode",
+    "recommendedValue": "Enable",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Policies Security Options",
+    "title": "User Account Control Virtualize File And Registry Write Failures To Per User Locations",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Local Security Authority",
+    "title": "Configure Lsa Protected Process",
+    "recommendedValue": "Enabled with UEFI lock. LSA will run as protected process and this configuration is UEFI locked.",
+    "parentTitle": null
+  },
+  {
+    "section": "Microsoft App Store",
+    "title": "Allow Game DVR",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Microsoft App Store",
+    "title": "MSI Allow User Control Over Install",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Microsoft App Store",
+    "title": "MSI Always Install With Elevated Privileges",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Microsoft Edge",
+    "title": "Configure Microsoft Defender SmartScreen",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Microsoft Edge",
+    "title": "Prevent bypassing Microsoft Defender SmartScreen prompts for sites",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Privacy",
+    "title": "Let Apps Activate With Voice Above Lock",
+    "recommendedValue": "Force deny. Windows apps cannot be activated by voice while the screen is locked, and users cannot change it.",
+    "parentTitle": null
+  },
+  {
+    "section": "Search",
+    "title": "Allow Indexing Encrypted Stores Or Items",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Enable Smart Screen In Shell",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Prevent Override For Files In Shell",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Notify Malicious",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Notify Password Reuse",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Notify Unsafe App",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Service Enabled",
+    "recommendedValue": "Enabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Enable Sudo",
+    "recommendedValue": "Sudo is disabled.",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Configure Xbox Accessory Management Service Startup Mode",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Configure Xbox Live Auth Manager Service Startup Mode",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Configure Xbox Live Game Save Service Startup Mode",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Configure Xbox Live Networking Service Startup Mode",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Enable Xbox Game Save Task",
+    "recommendedValue": "Disabled",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Access From Network",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Allow Local Log On",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Backup Files And Directories",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Create Global Objects",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Create Page File",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Debug Programs",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Deny Access From Network",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Deny Remote Desktop Services Log On",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Impersonate Client",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Load Unload Device Drivers",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Manage Auditing And Security Log",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Manage Volume",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Modify Firmware Environment",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Profile Single Process",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Remote Shutdown",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Restore Files And Directories",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Take Ownership",
+    "recommendedValue": "Configured",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Hypervisor Enforced Code Integrity",
+    "recommendedValue": "(Enabled with UEFI lock) Turns on Hypervisor-Protected Code Integrity with UEFI lock.",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Allow Auto Connect To Wi Fi Sense Hotspots",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Allow Internet Sharing",
+    "recommendedValue": "Block",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Facial Features Use Enhanced Anti Spoofing",
+    "recommendedValue": "true",
+    "parentTitle": null
+  },
+  {
+    "section": "Smart Screen",
+    "title": "Allow Windows Ink Workspace",
+    "recommendedValue": "Ink workspace is enabled (feature is turned on), but the user cannot access it above the lock screen.",
+    "parentTitle": null
+  }
+]

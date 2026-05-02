@@ -1,0 +1,44 @@
+:root[data-theme="organization"],
+[data-theme="organization"] {
+  --ci-font-body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --ci-font-display: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --ci-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ci-color-page: #000000;
+  --ci-color-surface: #ffffff;
+  --ci-color-surface-muted: #f1f1ee;
+  --ci-color-panel: #f6f6f6;
+  --ci-color-text: #171717;
+  --ci-color-heading: #000000;
+  --ci-color-muted: #5f5f5f;
+  --ci-color-border: #d5d5cf;
+  --ci-color-border-strong: #000000;
+  --ci-color-toolbar-bg: #000000;
+  --ci-color-toolbar-text: #ffffff;
+  --ci-color-toolbar-muted: #deded8;
+  --ci-color-toolbar-border: #ff0094;
+
+  --ci-color-primary: #ff0094;
+  --ci-color-primary-hover: #d6007e;
+  --ci-color-primary-active: #a80063;
+  --ci-color-primary-contrast: #ffffff;
+  --ci-color-accent: #ff0094;
+  --ci-color-accent-2: #00c4ff;
+  --ci-color-accent-3: #ffe200;
+
+  --ci-color-field-bg: #ffffff;
+  --ci-color-focus: #00c4ff;
+  --ci-color-active-bg: #fff0fa;
+  --ci-color-success-bg: #e8f8ef;
+  --ci-color-success-text: #165f36;
+  --ci-color-info-bg: #e6f8ff;
+  --ci-color-info-text: #005d78;
+  --ci-color-warning-bg: #fff8bf;
+  --ci-color-warning-text: #665400;
+  --ci-color-danger-bg: #ffe8f5;
+  --ci-color-danger-text: #8d004f;
+
+  --ci-radius-control: 2px;
+  --ci-radius-card: 2px;
+  --ci-shadow-card: none;
+}

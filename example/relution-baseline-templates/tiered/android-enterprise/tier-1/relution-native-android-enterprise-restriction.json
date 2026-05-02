@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "name": "Android Enterprise Tier 1 Baseline - Android Enterprise Restriction Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "ANDROID_ENTERPRISE",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "ANDROID_ENTERPRISE_RESTRICTION",
+      "slug": "relution-native-android-enterprise-restriction",
+      "label": "Android Enterprise Restriction"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "ANDROID_ENTERPRISE",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "name": "Android Enterprise Tier 1 Baseline - Android Enterprise Restriction",
+      "description": "Modular Android Enterprise baseline block for ANDROID_ENTERPRISE_RESTRICTION. Tier 1 - most restrictive Grundschutz baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-restriction",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, vendor.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "androidAutoDateAndTimeZoneSetting": "AUTO_DATE_AND_TIME_ZONE_ENFORCED",
+                "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+                "enabled": true,
+                "microphoneAccessPermission": "MICROPHONE_ACCESS_USER_CHOICE",
+                "safeBootDisabled": true,
+                "screenCaptureDisabled": true,
+                "shareLocationDisabled": true
+              },
+              "type": "ANDROID_ENTERPRISE_RESTRICTION"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

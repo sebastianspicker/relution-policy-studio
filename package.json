@@ -1,29 +1,46 @@
 {
   "name": "relution-policy-workbench",
-  "private": true,
   "version": "0.1.0",
-  "scripts": {
-    "build": "tsc --noEmit",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit",
-    "verify": "pnpm typecheck && pnpm test"
+  "description": "Local Relution .rexp policy workbench for editing exports, Apple payloads, BSI/CIS baselines, and read-only device audits.",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "rexp": "./dist/src/cli.js"
   },
-  "keywords": [
-    "docker",
-    "recommendations",
-    "compliance",
-    "relution-api",
-    "vitest",
-    "apple"
-  ],
-  "_kilo_change_markers": [
-    "forced-tighten-public-facing-co-4:build",
-    "forced-recommendations-5:refactor",
-    "forced-recommendations-6:build",
-    "forced-relution-api-8:test",
-    "forced-tighten-public-facing-re-9:build",
-    "forced-compliance-10:build",
-    "forced-relution-api-13:build",
-    "forced-compliance-14:refactor"
-  ]
+  "scripts": {
+    "build": "rm -rf dist dist-web && tsc -p tsconfig.json && vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:node": "pnpm build && node --test dist/test/*.test.js",
+    "test:web": "vitest run",
+    "test": "pnpm test:node && pnpm test:web",
+    "test:e2e:web": "env -u FORCE_COLOR PLAYWRIGHT_BROWSERS_PATH=/tmp/ms-playwright playwright test",
+    "screenshots:readme": "env -u FORCE_COLOR PLAYWRIGHT_BROWSERS_PATH=/tmp/ms-playwright playwright test -c playwright.readme.config.ts",
+    "test:e2e:relution": "pnpm build && node --test dist/test/relution-docker.e2e.js",
+    "test:e2e:relution-dashboard": "pnpm build && node --test dist/test/relution-dashboard-docker.e2e.js",
+    "rexp:evidence": "pnpm build && node tools/build_windows_rexp_evidence.mjs",
+    "rexp:built": "node dist/src/cli.js",
+    "rexp": "pnpm build && node dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "jsdom": "^29.0.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "ajv": "^8.18.0",
+    "js-yaml": "^4.1.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
 }

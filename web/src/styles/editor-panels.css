@@ -1,0 +1,388 @@
+.json-panel {
+  background: var(--ci-color-surface, #ffffff);
+  border-left: 1px solid var(--ci-color-border, #cad2dc);
+  overflow: hidden;
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+}
+
+.inspector-pinned .json-panel {
+  visibility: visible;
+}
+
+.editor-panel {
+  background: var(--ci-color-panel, var(--ci-color-page, #f4f6f8));
+  padding: 0;
+  position: relative;
+}
+
+.panel-header {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding: 16px 20px 18px;
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  background: var(--ci-color-panel, var(--ci-color-page, #f4f6f8));
+}
+
+.panel-header h1 {
+  font-family: var(--ci-font-display, var(--ci-font-body, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif));
+  font-size: 22px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.policy-tree p,
+.panel-header p {
+  margin-top: 4px;
+  color: var(--ci-color-muted, #66717f);
+  font-size: 13px;
+}
+
+.policy-tree h3 {
+  margin-top: 12px;
+}
+
+.policy-tree p {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--ci-color-surface-muted, #eef3f7);
+  border: 1px solid var(--ci-color-border, #d9e0e8);
+  color: var(--ci-color-muted, #64707d);
+}
+
+.panel-header p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+
+.inspector-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  gap: 2px;
+  background: var(--ci-color-surface-muted, #f4f6f8);
+  border-right: 1px solid var(--ci-color-border, #cad2dc);
+  overflow: hidden;
+}
+
+.inspector-sidebar button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 48px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ci-color-muted, #64707d);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.inspector-sidebar button:hover {
+  background: color-mix(in srgb, var(--ci-color-primary, #1d6fb8) 8%, transparent);
+  color: var(--ci-color-text, #20242a);
+}
+
+.inspector-sidebar button.active,
+.inspector-sidebar button.active:hover {
+  border-left-color: var(--ci-color-primary, #1d6fb8);
+  background: color-mix(in srgb, var(--ci-color-primary, #1d6fb8) 12%, var(--ci-color-surface-muted, #f4f6f8));
+  color: var(--ci-color-primary, #1d6fb8);
+}
+
+.inspector-tab-icon {
+  font-size: 15px;
+  line-height: 1;
+  display: block;
+}
+
+.inspector-tab-short {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: block;
+  text-transform: uppercase;
+}
+
+.inspector-body {
+  overflow: auto;
+  padding: 16px;
+  min-width: 0;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ci-color-border-strong, #9aa6b2) transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.inspector-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.inspector-body::-webkit-scrollbar-thumb {
+  background: var(--ci-color-border-strong, #9aa6b2);
+  border-radius: 3px;
+}
+
+.inspector-content {
+  display: grid;
+  gap: 10px;
+}
+
+.policy-version-context {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+  padding: 20px 20px 20px;
+  background: var(--ci-color-surface, #ffffff);
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  margin-bottom: 0;
+}
+
+.pvc-identity {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.pvc-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.pvc-platform {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--ci-color-surface-muted, #eef3f7);
+  border: 1px solid var(--ci-color-border, #d9e0e8);
+  color: var(--ci-color-muted, #64707d);
+}
+
+.pvc-name {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--ci-radius-control, 5px);
+  padding: 2px 6px;
+  min-height: auto;
+  background: color-mix(in srgb, var(--ci-color-surface-muted, #f0f4f8) 60%, transparent);
+  color: var(--ci-color-heading, #1f2933);
+  width: 100%;
+  box-shadow: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pvc-name:hover,
+.pvc-name:focus {
+  border-bottom-color: var(--ci-color-primary, #1d6fb8);
+  background: var(--ci-color-field-bg, #ffffff);
+  outline: none;
+  box-shadow: none;
+}
+
+.pvc-description {
+  font-size: 13px;
+  color: var(--ci-color-text, #20242a);
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 4px 0;
+  background: transparent;
+  width: 100%;
+  min-height: 56px;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.5;
+  box-shadow: none;
+  transition: border-color 0.15s, padding 0.15s, border-radius 0.15s;
+}
+
+.pvc-description:hover,
+.pvc-description:focus {
+  border-color: var(--ci-color-border-strong, #aab5c1);
+  border-radius: var(--ci-radius-control, 5px);
+  padding: 4px 8px;
+  background: var(--ci-color-field-bg, #ffffff);
+  outline: none;
+}
+
+.pvc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.editor-content {
+  padding: 20px;
+}
+
+.editor-welcome {
+  max-width: 880px;
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+}
+
+.editor-welcome h1 {
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.editor-welcome p {
+  max-width: 760px;
+  color: var(--ci-color-text, #20242a);
+  line-height: 1.5;
+}
+
+.welcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.welcome-grid section {
+  border: 1px solid var(--ci-color-border, #cad2dc);
+  border-radius: var(--ci-radius-card, 6px);
+  background: var(--ci-color-surface, #ffffff);
+  padding: 14px;
+  box-shadow: var(--ci-shadow-card, none);
+}
+
+.welcome-grid h2 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  height: 28px;
+  background: var(--ci-color-surface-muted, #f0f4f8);
+  border-top: 1px solid var(--ci-color-border, #cad2dc);
+  font-size: 12px;
+  color: var(--ci-color-muted, #64707d);
+}
+
+.status-bar-message {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status-bar-message--idle {
+  /* empty placeholder */
+}
+
+.editor-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 20px;
+  background: var(--ci-color-surface, #ffffff);
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  font-size: 12px;
+  color: var(--ci-color-muted, #64707d);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  min-height: 32px;
+}
+
+.breadcrumb-segment {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+
+.breadcrumb-segment--config {
+  color: var(--ci-color-heading, #344150);
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: var(--ci-color-border-strong, #9aa6b2);
+  flex-shrink: 0;
+}
+
+/* Inspector toggle button is now part of the WorkspaceToolbar (see .toolbar-icon-btn). */
+
+.editor-panel-wrapper {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+/* ---- Add configuration button ---- */
+
+.btn-add-configuration {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--ci-color-primary, #1d6fb8);
+  border-radius: var(--ci-radius-control, 5px);
+  background: transparent;
+  color: var(--ci-color-primary, #1d6fb8);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-add-configuration:hover {
+  background: var(--ci-color-primary, #1d6fb8);
+  color: #ffffff;
+}
+
+/* ---- Configuration picker modal ---- */
+
+/* ---- Baseline panel ---- */
+
+.baseline-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.baseline-tabs {
+  margin-bottom: 0;
+}

@@ -1,0 +1,177 @@
+{
+  "verifiedAsOf": "2026-04-23",
+  "sourceIndexPath": "example/vendor-references/sources.json",
+  "downloadManifestPath": "example/vendor-references/downloads/manifest.json",
+  "guidanceModel": {
+    "windows": {
+      "model": "named-security-baseline",
+      "currentPrimarySourceId": "microsoft-windows-11-25h2-security-baseline",
+      "currentPrimaryVersion": "Windows 11 version 25H2",
+      "currentPrimaryPublishedDate": "2025-09-30",
+      "toolkitSourceId": "microsoft-security-compliance-toolkit-guide",
+      "baselineLagContext": {
+        "currentWindowsReleaseSourceId": "microsoft-windows-11-release-information",
+        "currentWindowsRelease": "Windows 11 26H1",
+        "currentWindowsReleaseAvailableDate": "2026-02-10",
+        "note": "As verified on 2026-04-23, Microsoft's current Windows release tracking page lists 26H1 as available, but the latest named Windows client security baseline I verified remains the 25H2 baseline package."
+      }
+    },
+    "android": {
+      "model": "equivalent-vendor-guidance-stack",
+      "currentPrimarySourceId": "google-android-enterprise-feature-list",
+      "currentPrimaryVersion": "Android Enterprise feature list",
+      "currentPrimaryPublishedDate": "2026-04-21",
+      "supportingSourceIds": [
+        "google-android-management-security-posture",
+        "google-android-enterprise-system-updates",
+        "google-play-protect-managed-devices",
+        "google-android-enterprise-feature-drop-2025",
+        "google-android-security-best-practices"
+      ],
+      "note": "Google does not publish a single Microsoft-style Android enterprise baseline package. This catalog uses an equivalent stack of official Android Enterprise guidance."
+    },
+    "macos": {
+      "model": "equivalent-vendor-guidance-stack",
+      "currentPrimarySourceId": "apple-platform-deployment",
+      "currentPrimaryVersion": "Apple Platform Deployment February 2026",
+      "currentPrimaryPublishedDate": "2026-02",
+      "supportingSourceIds": [
+        "apple-platform-deployment-whats-new",
+        "apple-platform-security",
+        "apple-startup-security-macos",
+        "apple-managing-filevault-macos",
+        "apple-gatekeeper-runtime-protection-macos"
+      ],
+      "note": "Apple does not publish a single Microsoft-style macOS security baseline package. This catalog uses an equivalent stack of Apple Platform Deployment and Apple Platform Security guidance."
+    }
+  },
+  "platforms": {
+    "windows": {
+      "relutionPlatforms": [
+        "WINDOWS"
+      ],
+      "recommendationCount": 480,
+      "vendorGuidance": [
+        {
+          "sourceId": "microsoft-windows-security-baselines-guide",
+          "role": "framework-guide"
+        },
+        {
+          "sourceId": "microsoft-security-compliance-toolkit-guide",
+          "role": "toolkit-guide"
+        },
+        {
+          "sourceId": "microsoft-security-baselines-support-matrix",
+          "role": "support-matrix"
+        },
+        {
+          "sourceId": "microsoft-windows-11-release-information",
+          "role": "release-tracking"
+        },
+        {
+          "sourceId": "microsoft-windows-11-25h2-security-baseline",
+          "role": "baseline-package-post"
+        },
+        {
+          "sourceId": "microsoft-intune-windows-mdm-baseline-settings",
+          "role": "baseline-settings-reference"
+        },
+        {
+          "sourceId": "microsoft-windows-11-24h2-security-baseline-zip",
+          "role": "baseline-package-archive"
+        }
+      ]
+    },
+    "android": {
+      "relutionPlatforms": [
+        "ANDROID_ENTERPRISE"
+      ],
+      "recommendationCount": 19,
+      "vendorGuidance": [
+        {
+          "sourceId": "google-android-enterprise-feature-list",
+          "role": "feature-contract"
+        },
+        {
+          "sourceId": "google-android-management-security-posture",
+          "role": "security-posture-guide"
+        },
+        {
+          "sourceId": "google-android-enterprise-system-updates",
+          "role": "update-governance-guide"
+        },
+        {
+          "sourceId": "google-play-protect-managed-devices",
+          "role": "malware-protection-guide"
+        },
+        {
+          "sourceId": "google-android-enterprise-feature-drop-2025",
+          "role": "update-post"
+        },
+        {
+          "sourceId": "google-android-security-best-practices",
+          "role": "platform-security-guide"
+        }
+      ]
+    },
+    "macos": {
+      "relutionPlatforms": [
+        "MACOS"
+      ],
+      "recommendationCount": 19,
+      "vendorGuidance": [
+        {
+          "sourceId": "apple-platform-deployment",
+          "role": "deployment-guide"
+        },
+        {
+          "sourceId": "apple-platform-deployment-whats-new",
+          "role": "update-post"
+        },
+        {
+          "sourceId": "apple-install-enforce-software-updates",
+          "role": "macos-deployment-section"
+        },
+        {
+          "sourceId": "apple-device-management-deploy-software-updates",
+          "role": "macos-deployment-section"
+        },
+        {
+          "sourceId": "apple-activation-lock",
+          "role": "macos-deployment-section"
+        },
+        {
+          "sourceId": "apple-enforce-password-policies",
+          "role": "macos-deployment-section"
+        },
+        {
+          "sourceId": "apple-managed-device-attestation",
+          "role": "macos-deployment-section"
+        },
+        {
+          "sourceId": "apple-manage-filevault-device-management",
+          "role": "macos-deployment-section"
+        },
+        {
+          "sourceId": "apple-platform-security",
+          "role": "security-guide"
+        },
+        {
+          "sourceId": "apple-startup-security-macos",
+          "role": "macos-security-section"
+        },
+        {
+          "sourceId": "apple-managing-filevault-macos",
+          "role": "macos-security-section"
+        },
+        {
+          "sourceId": "apple-gatekeeper-runtime-protection-macos",
+          "role": "macos-security-section"
+        }
+      ]
+    }
+  },
+  "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+  "importableRulesetPath": "example/vendor-references/vendor-relution-ruleset.json",
+  "settingBundleCatalogPath": "example/vendor-references/vendor-relution-settings-catalog.json"
+}

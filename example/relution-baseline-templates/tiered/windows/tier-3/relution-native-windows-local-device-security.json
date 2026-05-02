@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "name": "Windows Tier 3 Baseline - Windows Local Device Security Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "WINDOWS",
+    "tier": 3,
+    "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+    "securityLevel": "basis",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "inherited",
+    "module": {
+      "kind": "relution-native",
+      "target": "WINDOWS_LOCAL_DEVICE_SECURITY",
+      "slug": "relution-native-windows-local-device-security",
+      "label": "Windows Local Device Security"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Local Device Security",
+      "description": "Modular Windows baseline block for WINDOWS_LOCAL_DEVICE_SECURITY. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-local-device-security",
+          "title": "Consolidated Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-local-device-security-aggregate",
+              "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "inactivityTimeUntilScreenSaver": 900,
+                "userInformationOnLockScreenConfiguration": "NO_USER_INFORMATION"
+              },
+              "type": "WINDOWS_LOCAL_DEVICE_SECURITY"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

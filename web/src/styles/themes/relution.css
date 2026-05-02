@@ -1,0 +1,44 @@
+:root[data-theme="relution"],
+[data-theme="relution"] {
+  --ci-font-body: "Open Sans", Arial, Helvetica, sans-serif;
+  --ci-font-display: "Open Sans", Arial, Helvetica, sans-serif;
+  --ci-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ci-color-page: #f4f3ee;
+  --ci-color-surface: #fffef9;
+  --ci-color-surface-muted: #efeee7;
+  --ci-color-panel: #f4f3ee;
+  --ci-color-text: #302f2b;
+  --ci-color-heading: #1f1f1c;
+  --ci-color-muted: #6f6c61;
+  --ci-color-border: #d9d6c9;
+  --ci-color-border-strong: #a8a293;
+  --ci-color-toolbar-bg: #3d3c37;
+  --ci-color-toolbar-text: #ffffff;
+  --ci-color-toolbar-muted: #d6d2c7;
+  --ci-color-toolbar-border: #bccf00;
+
+  --ci-color-primary: #bccf00;
+  --ci-color-primary-hover: #a0b100;
+  --ci-color-primary-active: #818f00;
+  --ci-color-primary-contrast: #2b2b27;
+  --ci-color-accent: #bccf00;
+  --ci-color-accent-2: #a0b100;
+  --ci-color-accent-3: #3d3c37;
+
+  --ci-color-field-bg: #fffef9;
+  --ci-color-focus: #a0b100;
+  --ci-color-active-bg: #f4f7cc;
+  --ci-color-success-bg: #edf5c2;
+  --ci-color-success-text: #425200;
+  --ci-color-info-bg: #ecf3f5;
+  --ci-color-info-text: #26515a;
+  --ci-color-warning-bg: #fff4c7;
+  --ci-color-warning-text: #685200;
+  --ci-color-danger-bg: #fde8e8;
+  --ci-color-danger-text: #7c2525;
+
+  --ci-radius-control: 4px;
+  --ci-radius-card: 6px;
+  --ci-shadow-card: 0 10px 24px rgb(61 60 55 / 0.1);
+}

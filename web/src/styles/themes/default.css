@@ -1,0 +1,89 @@
+:root[data-theme="default"],
+[data-theme="default"] {
+  --ci-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ci-font-display: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ci-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ci-color-page: #f4f6f8;
+  --ci-color-surface: #ffffff;
+  --ci-color-surface-muted: #f8fafc;
+  --ci-color-panel: #f4f6f8;
+  --ci-color-text: #20242a;
+  --ci-color-heading: #344150;
+  --ci-color-muted: #64707d;
+  --ci-color-border: #cad2dc;
+  --ci-color-border-strong: #9aa6b2;
+  --ci-color-toolbar-bg: #ffffff;
+  --ci-color-toolbar-text: #20242a;
+  --ci-color-toolbar-muted: #64707d;
+  --ci-color-toolbar-border: #cad2dc;
+
+  --ci-color-primary: #1d6fb8;
+  --ci-color-primary-hover: #1a629f;
+  --ci-color-primary-active: #164f82;
+  --ci-color-primary-contrast: #ffffff;
+  --ci-color-accent: #1d5d92;
+  --ci-color-accent-2: #e6f1fb;
+  --ci-color-accent-3: #fff3d6;
+
+  --ci-color-field-bg: #ffffff;
+  --ci-color-focus: #1d6fb8;
+  --ci-color-active-bg: #e6f1fb;
+  --ci-color-success-bg: #e7f6ec;
+  --ci-color-success-text: #1f6b3a;
+  --ci-color-info-bg: #e8f1fb;
+  --ci-color-info-text: #24537a;
+  --ci-color-warning-bg: #fff3d6;
+  --ci-color-warning-text: #7a5600;
+  --ci-color-danger-bg: #fdeaea;
+  --ci-color-danger-text: #8c2525;
+
+  --ci-radius-control: 5px;
+  --ci-radius-card: 6px;
+  --ci-shadow-card: 0 1px 3px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+:root[data-theme="custom"],
+[data-theme="custom"] {
+  --ci-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ci-font-display: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ci-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ci-color-page: #f4f6f8;
+  --ci-color-surface: #ffffff;
+  --ci-color-surface-muted: #f8fafc;
+  --ci-color-panel: #f4f6f8;
+  --ci-color-text: #20242a;
+  --ci-color-heading: #344150;
+  --ci-color-muted: #64707d;
+  --ci-color-border: #cad2dc;
+  --ci-color-border-strong: #9aa6b2;
+  --ci-color-toolbar-bg: #20242a;
+  --ci-color-toolbar-text: #ffffff;
+  --ci-color-toolbar-muted: #d8dee6;
+  --ci-color-toolbar-border: #1d6fb8;
+
+  --ci-color-primary: #1d6fb8;
+  --ci-color-primary-hover: #1a629f;
+  --ci-color-primary-active: #164f82;
+  --ci-color-primary-contrast: #ffffff;
+  --ci-color-accent: #1d5d92;
+  --ci-color-accent-2: #e6f1fb;
+  --ci-color-accent-3: #fff3d6;
+
+  --ci-color-field-bg: #ffffff;
+  --ci-color-focus: #1d6fb8;
+  --ci-color-active-bg: #e6f1fb;
+  --ci-color-success-bg: #e7f6ec;
+  --ci-color-success-text: #1f6b3a;
+  --ci-color-info-bg: #e8f1fb;
+  --ci-color-info-text: #24537a;
+  --ci-color-warning-bg: #fff3d6;
+  --ci-color-warning-text: #7a5600;
+  --ci-color-danger-bg: #fdeaea;
+  --ci-color-danger-text: #8c2525;
+
+  --ci-radius-control: 5px;
+  --ci-radius-card: 6px;
+  --ci-shadow-card: none;
+}

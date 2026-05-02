@@ -1,0 +1,4391 @@
+{
+  "version": 1,
+  "name": "BSI Grundschutz Relution Setting Bundles",
+  "verifiedAsOf": "2026-04-23",
+  "sourceRecommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+  "importableRulesetPath": "example/bsi-references/bsi-relution-ruleset.json",
+  "bundles": [
+    {
+      "bundleId": "bsi-windows-windows-antivirus",
+      "source": "bsi",
+      "sourcePlatform": "WINDOWS",
+      "policyPlatform": "WINDOWS",
+      "targetType": "WINDOWS_ANTIVIRUS",
+      "importFilePath": "example/bsi-references/relution-settings/WINDOWS/WINDOWS_ANTIVIRUS.json",
+      "details": {
+        "type": "WINDOWS_ANTIVIRUS",
+        "allowArchiveScanning": true,
+        "allowBehaviorMonitoring": true,
+        "allowCloudProtection": true,
+        "allowEmailScanning": true,
+        "allowIOAVProtection": true,
+        "allowRealtimeMonitoring": true,
+        "allowScriptScanning": true,
+        "enabled": true,
+        "puaProtection": "ON",
+        "realTimeScanDirection": "ALL",
+        "signatureUpdateInterval": 4
+      },
+      "derivedFromRecommendationIds": [
+        "windows-sys-2-1-a6",
+        "windows-sys-2-2-3-a5"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023",
+        "sys-2-2-3-windows",
+        "fd-aenderungen-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-windows-windows-bitlocker",
+      "source": "bsi",
+      "sourcePlatform": "WINDOWS",
+      "policyPlatform": "WINDOWS",
+      "targetType": "WINDOWS_BITLOCKER",
+      "importFilePath": "example/bsi-references/relution-settings/WINDOWS/WINDOWS_BITLOCKER.json",
+      "details": {
+        "type": "WINDOWS_BITLOCKER",
+        "enabled": true,
+        "encryptionTypeForFixedDrives": "XTS_AES_256",
+        "encryptionTypeForOsDrives": "XTS_AES_256",
+        "encryptionTypeForRemovableDrives": "XTS_AES_256",
+        "osDrivesConfigureRecovery": true,
+        "osDrivesCreateRecoveryPassword": "REQUIRED",
+        "osDrivesEncryptionType": "USED_SPACE_ONLY",
+        "requireDeviceEncryption": true,
+        "startAuthenticationRequired": true,
+        "tpmOnIncompatibleDevices": false,
+        "tpmStartup": "REQUIRED",
+        "tpmStartupKey": "DISALLOWED",
+        "tpmStartupPin": "DISALLOWED",
+        "tpmStartupPinAndKey": "DISALLOWED"
+      },
+      "derivedFromRecommendationIds": [
+        "windows-sys-2-1-a8"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-windows-windows-local-device-security",
+      "source": "bsi",
+      "sourcePlatform": "WINDOWS",
+      "policyPlatform": "WINDOWS",
+      "targetType": "WINDOWS_LOCAL_DEVICE_SECURITY",
+      "importFilePath": "example/bsi-references/relution-settings/WINDOWS/WINDOWS_LOCAL_DEVICE_SECURITY.json",
+      "details": {
+        "type": "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "enabled": true,
+        "inactivityTimeUntilScreenSaver": 900,
+        "userInformationOnLockScreenConfiguration": "NO_USER_INFORMATION"
+      },
+      "derivedFromRecommendationIds": [
+        "windows-sys-2-1-a1"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-windows-windows-passcode",
+      "source": "bsi",
+      "sourcePlatform": "WINDOWS",
+      "policyPlatform": "WINDOWS",
+      "targetType": "WINDOWS_PASSCODE",
+      "importFilePath": "example/bsi-references/relution-settings/WINDOWS/WINDOWS_PASSCODE.json",
+      "details": {
+        "type": "WINDOWS_PASSCODE",
+        "allowSimplePassword": false,
+        "enabled": true,
+        "history": 5,
+        "maxFailAttempts": 10,
+        "maxInactivityTime": 15,
+        "minLength": 12,
+        "quality": "ALPHANUMERIC"
+      },
+      "derivedFromRecommendationIds": [
+        "windows-sys-2-1-a1"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-windows-windows-restriction",
+      "source": "bsi",
+      "sourcePlatform": "WINDOWS",
+      "policyPlatform": "WINDOWS",
+      "targetType": "WINDOWS_RESTRICTION",
+      "importFilePath": "example/bsi-references/relution-settings/WINDOWS/WINDOWS_RESTRICTION.json",
+      "details": {
+        "type": "WINDOWS_RESTRICTION",
+        "allowAccounts": false,
+        "allowAddingForeignAccountsManually": false,
+        "allowInputPersonalization": false,
+        "allowPrivacyExperience": false,
+        "allowSyncMySettings": false,
+        "allowYourAccount": false,
+        "appGetDiagnosticInfo": "DENY",
+        "enabled": true
+      },
+      "derivedFromRecommendationIds": [
+        "windows-sys-2-1-a42",
+        "windows-sys-2-2-3-a4",
+        "windows-sys-2-2-3-a6"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023",
+        "sys-2-2-3-windows",
+        "fd-aenderungen-2023",
+        "it-grundschutz-errata-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-windows-windows-update",
+      "source": "bsi",
+      "sourcePlatform": "WINDOWS",
+      "policyPlatform": "WINDOWS",
+      "targetType": "WINDOWS_UPDATE",
+      "importFilePath": "example/bsi-references/relution-settings/WINDOWS/WINDOWS_UPDATE.json",
+      "details": {
+        "type": "WINDOWS_UPDATE",
+        "autoUpdateType": "AUTO_INSTALL_AND_RESTART_AT_SPECIFIED_TIME",
+        "deadlineForFeatureUpdates": 30,
+        "deadlineForQualityUpdates": 7,
+        "enablePauseUpdates": false,
+        "enableWindowsUpdateAccess": true,
+        "enabled": true,
+        "installDay": "EVERY_DAY",
+        "installTime": 3
+      },
+      "derivedFromRecommendationIds": [
+        "windows-sys-2-1-a3"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-macos-macos-file-vault",
+      "source": "bsi",
+      "sourcePlatform": "MACOS",
+      "policyPlatform": "MACOS",
+      "targetType": "MACOS_FILE_VAULT",
+      "importFilePath": "example/bsi-references/relution-settings/MACOS/MACOS_FILE_VAULT.json",
+      "details": {
+        "type": "MACOS_FILE_VAULT",
+        "enableRecoveryKeyEscrow": true,
+        "enabled": true,
+        "fdeFileVault": {
+          "defer": true,
+          "enable": "ON",
+          "showRecoveryKey": true,
+          "useRecoveryKey": true
+        },
+        "fdeFileVaultOptions": {
+          "dontAllowFDEDisable": true
+        }
+      },
+      "derivedFromRecommendationIds": [
+        "macos-sys-2-1-a8"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-macos-macos-restriction",
+      "source": "bsi",
+      "sourcePlatform": "MACOS",
+      "policyPlatform": "MACOS",
+      "targetType": "MACOS_RESTRICTION",
+      "importFilePath": "example/bsi-references/relution-settings/MACOS/MACOS_RESTRICTION.json",
+      "details": {
+        "type": "MACOS_RESTRICTION",
+        "allowActivityContinuation": false,
+        "allowAirDrop": false,
+        "allowCloudDesktopAndDocuments": false,
+        "allowCloudDocumentSync": false,
+        "allowCloudKeychainSync": false,
+        "allowCloudPhotoLibrary": false,
+        "allowDiagnosticSubmission": false,
+        "enabled": true
+      },
+      "derivedFromRecommendationIds": [
+        "macos-sys-2-1-a42"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-macos-macos-screensaver",
+      "source": "bsi",
+      "sourcePlatform": "MACOS",
+      "policyPlatform": "MACOS",
+      "targetType": "MACOS_SCREENSAVER",
+      "importFilePath": "example/bsi-references/relution-settings/MACOS/MACOS_SCREENSAVER.json",
+      "details": {
+        "type": "MACOS_SCREENSAVER",
+        "askForPassword": true,
+        "askForPasswordDelay": 0,
+        "enabled": true,
+        "loginWindowIdleTime": 900
+      },
+      "derivedFromRecommendationIds": [
+        "macos-sys-2-1-a1"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-macos-macos-system-policy-control",
+      "source": "bsi",
+      "sourcePlatform": "MACOS",
+      "policyPlatform": "MACOS",
+      "targetType": "MACOS_SYSTEM_POLICY_CONTROL",
+      "importFilePath": "example/bsi-references/relution-settings/MACOS/MACOS_SYSTEM_POLICY_CONTROL.json",
+      "details": {
+        "type": "MACOS_SYSTEM_POLICY_CONTROL",
+        "allowIdentifiedDevelopers": true,
+        "enableAssessment": true,
+        "enabled": true
+      },
+      "derivedFromRecommendationIds": [
+        "macos-sys-2-1-a6"
+      ],
+      "sourceIds": [
+        "sys-2-1-general-client",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-ios-ios-passcode",
+      "source": "bsi",
+      "sourcePlatform": "IOS",
+      "policyPlatform": "IOS",
+      "targetType": "IOS_PASSCODE",
+      "importFilePath": "example/bsi-references/relution-settings/IOS/IOS_PASSCODE.json",
+      "details": {
+        "type": "IOS_PASSCODE",
+        "allowSimple": false,
+        "enabled": true,
+        "forcePIN": true,
+        "maxFailedAttempts": 10,
+        "maxGracePeriodMinutes": 0,
+        "maxInactivityMinutes": 5,
+        "minLength": 8,
+        "pinHistory": 5,
+        "requireAlphanumeric": true
+      },
+      "derivedFromRecommendationIds": [
+        "ios-sys-3-2-1-a4"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-ios-ios-restriction",
+      "source": "bsi",
+      "sourcePlatform": "IOS",
+      "policyPlatform": "IOS",
+      "targetType": "IOS_RESTRICTION",
+      "importFilePath": "example/bsi-references/relution-settings/IOS/IOS_RESTRICTION.json",
+      "details": {
+        "type": "IOS_RESTRICTION",
+        "allowAppInstallation": false,
+        "allowAssistant": false,
+        "allowAssistantWhileLocked": false,
+        "allowCloudBackup": false,
+        "allowCloudDocumentSync": false,
+        "allowCloudKeychainSync": false,
+        "allowCloudPhotoLibrary": false,
+        "allowCloudPrivateRelay": false,
+        "allowDiagnosticSubmission": false,
+        "allowEnterpriseAppTrust": false,
+        "allowLockScreenNotificationsView": false,
+        "allowOpenFromManagedToUnmanaged": false,
+        "allowUIAppInstallation": false,
+        "allowUIConfigurationProfileInstallation": false,
+        "enabled": true
+      },
+      "derivedFromRecommendationIds": [
+        "ios-sys-3-2-1-a19",
+        "ios-sys-3-2-1-a6",
+        "ios-sys-3-2-1-a8",
+        "ios-sys-3-2-3-a2"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023",
+        "sys-3-2-3-ios"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-ios-ios-update",
+      "source": "bsi",
+      "sourcePlatform": "IOS",
+      "policyPlatform": "IOS",
+      "targetType": "IOS_UPDATE",
+      "importFilePath": "example/bsi-references/relution-settings/IOS/IOS_UPDATE.json",
+      "details": {
+        "type": "IOS_UPDATE",
+        "enabled": true,
+        "updateMode": "INSTALL_ASAP"
+      },
+      "derivedFromRecommendationIds": [
+        "ios-sys-3-2-1-a5"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "developerSettings": "DEVELOPER_SETTINGS_DISABLED",
+        "enabled": true,
+        "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED",
+        "untrustedAppsPolicy": "DISALLOW_INSTALL"
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a8",
+        "android-enterprise-sys-3-2-4-a2"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023",
+        "sys-3-2-4-android"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-device-passcode",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_DEVICE_PASSCODE.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "enabled": true,
+        "maxFailedPasswordsForWipe": 10,
+        "minLength": 8,
+        "passcodeHistory": 5,
+        "quality": "ALPHANUMERIC"
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a4"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-display",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_DISPLAY",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_DISPLAY.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_DISPLAY",
+        "enabled": true,
+        "screenTimeout": 300000,
+        "screenTimeoutMode": "SCREEN_TIMEOUT_ENFORCED"
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a4"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-permission-management",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "defaultPermissionPolicy": "DENY",
+        "enabled": true
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a6"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-play-store-management",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "appAutoUpdatePolicy": "ALWAYS",
+        "enabled": true,
+        "restrictedPlayStoreMode": true
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a5",
+        "android-enterprise-sys-3-2-1-a8"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-restriction",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_RESTRICTION",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_RESTRICTION.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_RESTRICTION",
+        "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+        "enabled": true,
+        "microphoneAccessPermission": "MICROPHONE_ACCESS_USER_CHOICE",
+        "screenCaptureDisabled": true,
+        "shareLocationDisabled": true
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a6"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    },
+    {
+      "bundleId": "bsi-android-enterprise-android-enterprise-system-update",
+      "source": "bsi",
+      "sourcePlatform": "ANDROID_ENTERPRISE",
+      "policyPlatform": "ANDROID_ENTERPRISE",
+      "targetType": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+      "importFilePath": "example/bsi-references/relution-settings/ANDROID_ENTERPRISE/ANDROID_ENTERPRISE_SYSTEM_UPDATE.json",
+      "details": {
+        "type": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "enabled": true,
+        "systemUpdateType": "AUTOMATIC"
+      },
+      "derivedFromRecommendationIds": [
+        "android-enterprise-sys-3-2-1-a5"
+      ],
+      "sourceIds": [
+        "sys-3-2-1-smartphones-tablets",
+        "it-grundschutz-checklists-2023"
+      ],
+      "mergeStrategy": "deep-merge"
+    }
+  ],
+  "variantGroups": [],
+  "nonImportableRecommendations": [
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_LOCK_SCREEN_MESSAGES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE"
+      ],
+      "notes": [
+        "The Android Enterprise encryption policy covers storage encryption, but the BSI text is a broader mobile requirement that is not Android-only."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DISABLE_CAMERAS",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_SYSTEM_AUDIO_MANAGEMENT",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_DISPLAY",
+        "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DISABLE_CAMERAS",
+        "ANDROID_ENTERPRISE_SYSTEM_AUDIO_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_DISPLAY",
+        "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a2",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a20",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a24",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a25",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a26",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a27",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a28",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_APP_POLICY"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a29",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_DISPLAY",
+        "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a3",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DISABLE_CAMERAS",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_SYSTEM_AUDIO_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a30",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a31",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a32",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a33",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a34",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a35",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a7",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-1-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a2",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a20",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_APP_POLICY"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_LOCK_SCREEN_MESSAGES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a3",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a4",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a5",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a6",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_SAMSUNG_CLASSROOM_MANAGEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a8",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-2-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-4-a1",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-4-a3",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_HOME_SCREEN_LAYOUT",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-4-a4",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-4-a5",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual Android Enterprise setting matching found related Relution settings, but the BSI requirement is broader or lacks concrete enforceable values."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-4-a6",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "android-enterprise-sys-3-2-4-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SHARED_DEVICE",
+        "IOS_SECURED_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "com.apple.shareddeviceconfiguration",
+        "IOS_SHARED_DEVICE",
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "IOS_WEB_CONTENT_FILTER",
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_WIFI",
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_APP_COMPLIANCE",
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION",
+        "IOS_MANAGED_DOMAINS"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "IOS_WEB_CONTENT_FILTER"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a2",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_CERTIFICATE",
+        "APPLE_TIME_ZONE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a20",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_VPN",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_WIFI",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a24",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a25",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_MANAGED_DOMAINS"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a26",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "IOS_WEB_CONTENT_FILTER",
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a27",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a28",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "profile:com.apple.proxy.http.global",
+        "IOS_WIFI",
+        "profile:com.apple.wifi.managed",
+        "IOS_WEB_CONTENT_FILTER",
+        "IOS_CELLULAR",
+        "APPLE_DNS_SETTINGS"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a29",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a3",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_MANAGED_DOMAINS"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a30",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_LOCK",
+        "IOS_RESTRICTION",
+        "IOS_APP_COMPLIANCE",
+        "IOS_MANAGED_APP",
+        "IOS_WEB_CONTENT_FILTER",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a31",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a32",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a33",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_LOCK",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a34",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a35",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_WEB_CONTENT_FILTER",
+        "IOS_RESTRICTION",
+        "IOS_UPDATE",
+        "IOS_APP_COMPLIANCE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a7",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-1-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_MANAGED_APP"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_CERTIFICATE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_LOCK",
+        "IOS_RESTRICTION",
+        "IOS_WEB_CONTENT_FILTER",
+        "IOS_APP_COMPLIANCE",
+        "IOS_MANAGED_APP",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "IOS_APP_COMPLIANCE",
+        "IOS_SHARED_DEVICE",
+        "IOS_SECURED_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a2",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a20",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_MANAGED_APP",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_CERTIFICATE",
+        "IOS_EDUCATION",
+        "IOS_EMAIL",
+        "IOS_SCEP",
+        "IOS_APP_COMPLIANCE",
+        "IOS_WEB_CONTENT_FILTER",
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_MANAGED_DOMAINS",
+        "IOS_APP_COMPLIANCE",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "com.apple.shareddeviceconfiguration",
+        "IOS_SHARED_DEVICE",
+        "IOS_SECURED_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a3",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a4",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_SECURED_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a5",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a6",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_WEB_CONTENT_FILTER",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "IOS_APP_LOCK",
+        "IOS_APP_COMPLIANCE",
+        "IOS_MANAGED_APP",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a8",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-2-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_APP_LOCK",
+        "profile:com.apple.applicationaccess",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_PASSCODE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_CERTIFICATE",
+        "IOS_PASSCODE",
+        "APPLE_TIME_ZONE",
+        "IOS_APP_COMPLIANCE",
+        "IOS_SCEP"
+      ],
+      "notes": [
+        "The iOS restriction payload can reduce iCloud usage, but the BSI requirement also depends on local policy decisions and two-factor authentication for allowed use."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_RESTRICTION",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "IOS_APP_COMPLIANCE",
+        "APPLE_TIME_ZONE",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_PASSCODE",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_WEB_CONTENT_FILTER",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY"
+      ],
+      "notes": [
+        "BSI requires an appropriate device-code history value, but does not prescribe a concrete history depth."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_WEB_CONTENT_FILTER",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a20",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_APP_LOCK",
+        "IOS_APP_COMPLIANCE",
+        "IOS_MANAGED_APP",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "IOS_APP_COMPLIANCE",
+        "IOS_MANAGED_APP"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a24",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a25",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.airprint",
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a26",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "IOS_APP_COMPLIANCE",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a27",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a3",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a4",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a5",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a6",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a7",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI profile-removal protection depends on supervision/enrollment and Relution management state evidence."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a8",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "ios-sys-3-2-3-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.preference.security",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.SoftwareUpdate",
+        "MACOS_UPDATE",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER",
+        "com.apple.TCC.configuration-profile-policy",
+        "MACOS_RESTRICTION",
+        "profile:com.apple.preference.security",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_PARENTAL_CONTROLS",
+        "MACOS_APP_COMPLIANCE",
+        "profile:com.apple.applicationaccess.new"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY",
+        "MACOS_FINDER",
+        "com.apple.TCC.configuration-profile-policy",
+        "MACOS_RESTRICTION",
+        "profile:com.apple.preference.security"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_EMAIL",
+        "profile:com.apple.MCX.FileVault2",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "MACOS_FILE_VAULT",
+        "com.apple.security.smartcard",
+        "IOS_CERTIFICATE",
+        "MACOS_LOGIN_WINDOW"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a2",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a20",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_ACCOUNT_SETUP",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_RESTRICTION",
+        "com.apple.TCC.configuration-profile-policy",
+        "profile:com.apple.applicationaccess",
+        "profile:com.apple.applicationaccess.new",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_FINDER"
+      ],
+      "notes": [
+        "The BSI requirement covers microphones and cameras, while the Relution template only covers camera disablement."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_WIFI",
+        "MACOS_8021X_GLOBAL_ETHERNET",
+        "MACOS_APP_COMPLIANCE",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a24",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess",
+        "MACOS_FINDER",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY",
+        "com.apple.TCC.configuration-profile-policy",
+        "MACOS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a25",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a26",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a27",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "com.apple.security.smartcard",
+        "IOS_CERTIFICATE",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a28",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_EMAIL",
+        "IOS_PASSCODE",
+        "profile:com.apple.MCX.FileVault2",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "MACOS_FILE_VAULT",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a29",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a3",
+      "mappingStatus": "exact",
+      "candidateTargets": [
+        "profile:com.apple.SoftwareUpdate",
+        "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "MACOS_UPDATE",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "APPLE_DNS_SETTINGS"
+      ],
+      "notes": [
+        "Curated Apple profile analogs cover this enforceable requirement through Relution APPLE_MOBILECONFIG-backed schema profiles."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a30",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.SoftwareUpdate",
+        "MACOS_UPDATE",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a31",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.security.firewall",
+        "MACOS_FIREWALL",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a32",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a33",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.applicationaccess.new",
+        "MACOS_APP_COMPLIANCE",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "profile:com.apple.MCX.FileVault2",
+        "MACOS_FILE_VAULT",
+        "MACOS_PARENTAL_CONTROLS",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "com.apple.security.smartcard",
+        "IOS_CERTIFICATE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a34",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_PARENTAL_CONTROLS",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "profile:com.apple.MCX.FileVault2",
+        "MACOS_FILE_VAULT",
+        "com.apple.TCC.configuration-profile-policy"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a35",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "MACOS_PARENTAL_CONTROLS",
+        "profile:com.apple.preference.security",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.MCX.FileVault2",
+        "MACOS_FILE_VAULT",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "com.apple.security.smartcard",
+        "IOS_CERTIFICATE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a36",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_EXTENSIBLE_SINGLE_SIGN_ON",
+        "profile:com.apple.preference.security",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SECURITY_PREFERENCES",
+        "profile:com.apple.MCX.FileVault2"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a37",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "IOS_WIFI",
+        "MACOS_8021X_GLOBAL_ETHERNET",
+        "com.apple.security.smartcard",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_CERTIFICATE",
+        "MACOS_SCREENSAVER",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a38",
+      "mappingStatus": "none",
+      "candidateTargets": [],
+      "notes": []
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a39",
+      "mappingStatus": "none",
+      "candidateTargets": [],
+      "notes": []
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a4",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a40",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "com.apple.TCC.configuration-profile-policy",
+        "MACOS_RESTRICTION",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SECURITY_PREFERENCES",
+        "profile:com.apple.applicationaccess.new",
+        "MACOS_ACCOUNT_SETUP",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a41",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a43",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_ACCOUNT_SETUP"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a44",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_ACCOUNT_SETUP"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a45",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a5",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-1-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_UPDATE",
+        "MACOS_APPSTORE",
+        "profile:com.apple.SoftwareUpdate",
+        "profile:com.apple.applicationaccess",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI macOS planning requires local deployment and support decisions; Relution can enforce the resulting profile baseline."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a10",
+      "mappingStatus": "exact",
+      "candidateTargets": [
+        "profile:com.apple.security.firewall",
+        "MACOS_CONTENT_CACHING",
+        "MACOS_FIREWALL",
+        "profile:com.apple.SoftwareUpdate",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_UPDATE",
+        "MACOS_APP_COMPLIANCE"
+      ],
+      "notes": [
+        "The Apple firewall profile can enforce the built-in macOS personal firewall directly."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "MACOS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.preference.security",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "MACOS_PARENTAL_CONTROLS",
+        "com.apple.security.smartcard",
+        "IOS_CERTIFICATE",
+        "profile:com.apple.MCX.FileVault2",
+        "MACOS_FILE_VAULT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a2",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY"
+      ],
+      "notes": [
+        "BSI integrated macOS security functions require local enablement decisions plus Relution profile evidence."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a3",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_ACCOUNTS",
+        "com.apple.TCC.configuration-profile-policy",
+        "profile:com.apple.applicationaccess.new",
+        "MACOS_ACCOUNT_SETUP",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI account suitability requires local identity and admin-role decisions; Relution can enforce related account restrictions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a4",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_FILE_VAULT",
+        "MACOS_8021X_GLOBAL_ETHERNET",
+        "profile:com.apple.MCX.FileVault2",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "com.apple.security.smartcard",
+        "IOS_CERTIFICATE",
+        "MACOS_LOGIN_WINDOW"
+      ],
+      "notes": [
+        "Relution can enforce FileVault, but the BSI requirement also covers recovery-key handling and banning Apple-hosted key storage."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a5",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_RESTRICTION",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a6",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "MACOS_RESTRICTION",
+        "MACOS_UPDATE",
+        "profile:com.apple.SoftwareUpdate",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "profile:com.apple.mdm",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a8",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "profile:com.apple.MCX.FileVault2",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "APPLE_TIME_ZONE"
+      ],
+      "notes": [
+        "Relution can disable multiple iCloud synchronization surfaces, but the BSI requirement applies specifically to sensitive data and institution-operated services."
+      ]
+    },
+    {
+      "recommendationId": "macos-sys-2-4-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_SECURITY_PREFERENCES",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "profile:com.apple.MCX.FileVault2",
+        "MACOS_FILE_VAULT"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_UPDATE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_COMPANION",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CUSTOM_CSP"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_HELLO",
+        "WINDOWS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a2",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a20",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP"
+      ],
+      "notes": [
+        "The BSI requirement covers microphones and cameras, while the available Windows template candidate only covers camera disablement."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a24",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_COMPANION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a25",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a26",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_CUSTOM_CSP"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a27",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a28",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a29",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a30",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_UPDATE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a31",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_FIREWALL",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a32",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a33",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_HELLO"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a34",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a35",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_HELLO",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a36",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_HELLO"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a37",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a38",
+      "mappingStatus": "none",
+      "candidateTargets": [],
+      "notes": []
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a39",
+      "mappingStatus": "none",
+      "candidateTargets": [],
+      "notes": []
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a4",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a40",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_WALLPAPER",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a41",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a43",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_COMPANION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a44",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a45",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a5",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-1-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a1",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_CERTIFICATE"
+      ],
+      "notes": [
+        "BSI cloud planning requires local service, identity, and data-location decisions; Relution can enforce resulting policy settings."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a10",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a11",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a12",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL",
+        "WINDOWS_CUSTOM_CSP"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a13",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_BITLOCKER"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a14",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a15",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_COMPANION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a16",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_KIOSK_MODE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_APP_COMPLIANCE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a17",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_RESTRICTION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a18",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_FIREWALL",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_UPDATE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a19",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_FIREWALL",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a2",
+      "mappingStatus": "parameterized",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_HELLO",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI Windows version selection is procurement and lifecycle governance; Relution inventory and policy targeting provide evidence."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a20",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_COMPANION"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a21",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_NETWORK_PROXY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a22",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_COMPANION",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a23",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a24",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a25",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a26",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a3",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a7",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a8",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_VPN",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_WIFI"
+      ],
+      "notes": [
+        "BSI/GS++ concept matching found related Relution targets, but exact remediation requires concrete values and scoped policy decisions."
+      ]
+    },
+    {
+      "recommendationId": "windows-sys-2-2-3-a9",
+      "mappingStatus": "partial",
+      "candidateTargets": [
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_APP_COMPLIANCE"
+      ],
+      "notes": [
+        "Bilingual setting-name matching found related Relution/Apple settings, but the BSI requirement is broader or lacks a concrete enforceable value."
+      ]
+    }
+  ]
+}

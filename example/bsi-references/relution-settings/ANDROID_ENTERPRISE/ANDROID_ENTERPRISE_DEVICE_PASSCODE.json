@@ -1,0 +1,8 @@
+{
+  "type": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+  "enabled": true,
+  "maxFailedPasswordsForWipe": 10,
+  "minLength": 8,
+  "passcodeHistory": 5,
+  "quality": "ALPHANUMERIC"
+}

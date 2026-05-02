@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "name": "macOS Tier 2 Baseline - Apple Security Firewall Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "MACOS",
+    "tier": 2,
+    "tierLabel": "Tier 2 - strengthened BSI baseline",
+    "securityLevel": "standard-hardening",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "apple-schema-profile",
+      "target": "profile:com.apple.security.firewall",
+      "slug": "apple-schema-profile-profile-com-apple-security-firewall",
+      "label": "Apple Security Firewall"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "MACOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "MACOS",
+      "name": "macOS Tier 2 Baseline - Apple Security Firewall",
+      "description": "Modular macOS baseline block for profile:com.apple.security.firewall. Tier 2 - strengthened BSI baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-security-firewall",
+          "title": "Consolidated Relution aggregate: profile:com.apple.security.firewall",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis.",
+          "sourceIds": [
+            "sys-2-4-macos",
+            "it-grundschutz-checklists-2023",
+            "umsetzungshinweis-sys-2-4-macos",
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "title": "Relution aggregate: profile:com.apple.security.firewall"
+            },
+            {
+              "source": "cis",
+              "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "title": "Relution aggregate: profile:com.apple.security.firewall"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "EnableFirewall": true,
+                "EnableStealthMode": true
+              },
+              "schemaId": "profile:com.apple.security.firewall"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

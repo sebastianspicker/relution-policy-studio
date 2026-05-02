@@ -1,0 +1,244 @@
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  background: var(--ci-color-surface, #ffffff);
+  border: 1px solid var(--ci-color-border, #d3dbe4);
+  border-radius: var(--ci-radius-card, 6px);
+  box-shadow: var(--ci-shadow-card, none);
+  padding: 10px;
+}
+
+.nested-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.field-label-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.field-label-row > span {
+  min-width: 0;
+}
+
+.field-label {
+  display: block;
+  color: var(--ci-color-heading, #263442);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.field-path {
+  display: block;
+  margin-top: 3px;
+  color: var(--ci-color-muted, #627080);
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.field input,
+.field select,
+.field textarea,
+.nested-field input,
+.nested-field select,
+.nested-field textarea {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid var(--ci-color-border-strong, #aab5c1);
+  border-radius: var(--ci-radius-control, 5px);
+  padding: 5px 8px;
+  background: var(--ci-color-field-bg, #ffffff);
+  color: var(--ci-color-text, #20242a);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+.field textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.nested-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.compact-code-textarea {
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 12px;
+}
+
+.mobileconfig-textarea {
+  min-height: 320px;
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 12px;
+}
+
+.payload-json-editor {
+  align-content: start;
+}
+
+.payload-json-textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.payload-json-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.policy-details textarea {
+  min-height: 72px;
+  resize: vertical;
+  border: 1px solid var(--ci-color-border-strong, #aab5c1);
+  border-radius: var(--ci-radius-control, 5px);
+  padding: 5px 8px;
+  background: var(--ci-color-field-bg, #ffffff);
+  color: var(--ci-color-text, #20242a);
+}
+
+.checkbox-field {
+  align-content: start;
+}
+
+.checkbox-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.checkbox-control input {
+  width: 18px;
+  min-height: 18px;
+  flex: 0 0 auto;
+}
+
+.object-list-field {
+  align-content: start;
+}
+
+.object-list-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.object-list-row {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--ci-color-border, #d9e0e8);
+  border-radius: var(--ci-radius-card, 6px);
+  padding: 10px;
+  background: var(--ci-color-surface-muted, #f8fafc);
+  box-shadow: var(--ci-shadow-card, none);
+}
+
+.object-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.object-list-header strong {
+  font-size: 13px;
+  color: var(--ci-color-heading, #344150);
+}
+
+.object-list-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.nested-field-wide {
+  grid-column: 1 / -1;
+}
+
+.key-value-list {
+  display: grid;
+  gap: 8px;
+}
+
+.key-value-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
+}
+
+.preview-summary {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.preview-summary div {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.preview-summary dt {
+  color: var(--ci-color-muted, #64707d);
+}
+
+.preview-summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.preview-block,
+.artifact-card,
+.restore-snapshots {
+  border: 1px solid var(--ci-color-border, #d3dbe4);
+  border-radius: var(--ci-radius-card, 6px);
+  background: var(--ci-color-surface-muted, #f8fafc);
+  padding: 8px;
+}
+
+.preview-block pre,
+.artifact-card pre {
+  overflow: auto;
+  max-height: 320px;
+  margin: 8px 0 0;
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 11px;
+}
+
+.artifact-card textarea {
+  min-height: 120px;
+}
+
+.artifact-card summary,
+.restore-snapshots summary {
+  cursor: pointer;
+}
+
+.artifact-card summary span,
+.artifact-card summary code,
+.restore-snapshots p span,
+.restore-snapshots p code {
+  display: block;
+  overflow-wrap: anywhere;
+}

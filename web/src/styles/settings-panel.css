@@ -1,0 +1,102 @@
+.settings-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--ci-color-surface, #ffffff);
+}
+
+.settings-panel-header {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  position: sticky;
+  top: 0;
+  background: var(--ci-color-surface, #ffffff);
+  z-index: 1;
+}
+
+.settings-panel-header h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ci-color-muted, #64707d);
+  margin: 0;
+}
+
+.settings-panel-body {
+  flex: 1;
+  overflow: auto;
+  padding: 8px 0 24px;
+}
+
+.settings-section {
+  padding: 16px 16px 0;
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  margin-bottom: 0;
+  padding-bottom: 16px;
+}
+
+.settings-section h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ci-color-muted, #64707d);
+  margin: 0 0 10px;
+}
+
+.settings-hint {
+  font-size: 12px;
+  color: var(--ci-color-muted, #64707d);
+  margin: 0 0 8px;
+}
+
+.settings-field-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.settings-field-row .key-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.settings-import-group {
+  margin-bottom: 12px;
+}
+
+.settings-shortcuts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.settings-shortcuts > div {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.settings-shortcuts dt {
+  min-width: 40px;
+}
+
+.settings-shortcuts dd {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ci-color-text, #20242a);
+}
+
+kbd {
+  display: inline-block;
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border: 1px solid var(--ci-color-border-strong, #9aa6b2);
+  border-radius: 4px;
+  background: var(--ci-color-surface-muted, #f0f4f8);
+  color: var(--ci-color-heading, #1f2933);
+  box-shadow: 0 1px 0 var(--ci-color-border-strong, #9aa6b2);
+}

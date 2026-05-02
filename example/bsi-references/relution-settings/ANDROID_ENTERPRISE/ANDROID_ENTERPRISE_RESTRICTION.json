@@ -1,0 +1,8 @@
+{
+  "type": "ANDROID_ENTERPRISE_RESTRICTION",
+  "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+  "enabled": true,
+  "microphoneAccessPermission": "MICROPHONE_ACCESS_USER_CHOICE",
+  "screenCaptureDisabled": true,
+  "shareLocationDisabled": true
+}

@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "name": "macOS Baseline - Apple Software Update Settings Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "modular-target",
+    "platform": "MACOS",
+    "module": {
+      "kind": "relution-native",
+      "target": "APPLE_SOFTWARE_UPDATE_SETTINGS",
+      "slug": "relution-native-apple-software-update-settings",
+      "label": "Apple Software Update Settings"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "MACOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "MACOS",
+      "name": "macOS Baseline - Apple Software Update Settings",
+      "description": "Modular macOS baseline block for APPLE_SOFTWARE_UPDATE_SETTINGS. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-macos-relution-native-merged-apple-software-update-settings",
+          "title": "Consolidated Relution aggregate: APPLE_SOFTWARE_UPDATE_SETTINGS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from vendor.",
+          "sourceIds": [
+            "apple-install-enforce-software-updates"
+          ],
+          "sourceRules": [
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-apple-software-update-settings-aggregate",
+              "title": "Relution aggregate: APPLE_SOFTWARE_UPDATE_SETTINGS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "automaticActions": {
+                  "download": "ALWAYS_ON",
+                  "installOSUpdates": "ALWAYS_ON",
+                  "installSecurityUpdate": "ALWAYS_ON"
+                }
+              },
+              "type": "APPLE_SOFTWARE_UPDATE_SETTINGS"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

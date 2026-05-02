@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "name": "Android Enterprise Tier 2 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "ANDROID_ENTERPRISE",
+    "tier": 2,
+    "tierLabel": "Tier 2 - strengthened BSI baseline",
+    "securityLevel": "standard-hardening",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "ANDROID_ENTERPRISE",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 7,
+      "cis": 4,
+      "vendor": 10
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": [
+      {
+        "source": "cis",
+        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+        "target": "ANDROID_ENTERPRISE_RESTRICTION",
+        "conflictingPaths": [
+          "microphoneAccessPermission"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      },
+      {
+        "source": "cis",
+        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+        "target": "ANDROID_ENTERPRISE_RESTRICTION",
+        "conflictingPaths": [
+          "microphoneAccessPermission"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      },
+      {
+        "source": "vendor",
+        "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+        "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "conflictingPaths": [
+          "systemUpdateType"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      },
+      {
+        "source": "vendor",
+        "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+        "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "conflictingPaths": [
+          "systemUpdateType"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      }
+    ]
+  },
+  "policies": [
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "name": "Android Enterprise Tier 2 Baseline",
+      "description": "Tier 2 - strengthened BSI baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-advanced-security-overrides",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "sys-3-2-4-android",
+            "cis-google-android-1-6-0",
+            "cis-google-android-family",
+            "google-play-protect-managed-devices",
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "developerSettings": "DEVELOPER_SETTINGS_DISABLED",
+                "enabled": true,
+                "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED",
+                "untrustedAppsPolicy": "DISALLOW_INSTALL"
+              },
+              "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-device-passcode",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_DEVICE_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "maxFailedPasswordsForWipe": 10,
+                "minLength": 8,
+                "passcodeHistory": 5,
+                "quality": "ALPHANUMERIC"
+              },
+              "type": "ANDROID_ENTERPRISE_DEVICE_PASSCODE"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-display",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_DISPLAY",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-display-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_DISPLAY"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "screenTimeout": 300000,
+                "screenTimeoutMode": "SCREEN_TIMEOUT_ENFORCED"
+              },
+              "type": "ANDROID_ENTERPRISE_DISPLAY"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-permission-management",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "defaultPermissionPolicy": "DENY",
+                "enabled": true
+              },
+              "type": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-play-store-management",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "cis-google-android-1-6-0",
+            "cis-google-android-family",
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "appAutoUpdatePolicy": "ALWAYS",
+                "enabled": true,
+                "restrictedPlayStoreMode": true
+              },
+              "type": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-restriction",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, vendor.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "androidAutoDateAndTimeZoneSetting": "AUTO_DATE_AND_TIME_ZONE_ENFORCED",
+                "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+                "enabled": true,
+                "microphoneAccessPermission": "MICROPHONE_ACCESS_USER_CHOICE",
+                "safeBootDisabled": true,
+                "screenCaptureDisabled": true,
+                "shareLocationDisabled": true
+              },
+              "type": "ANDROID_ENTERPRISE_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-system-update",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, vendor.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "google-android-enterprise-system-updates",
+            "google-android-enterprise-feature-list"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-automatic-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE (systemupdatetype-automatic)"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "systemUpdateType": "AUTOMATIC"
+              },
+              "type": "ANDROID_ENTERPRISE_SYSTEM_UPDATE"
+            }
+          ]
+        },
+        {
+          "id": "suppressed-cis-cis-android-enterprise-android-enterprise-restriction-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-google-android-1-6-0-1-14, cis-google-android-1-6-0-3-1.",
+          "sourceIds": [
+            "cis-google-android-1-6-0",
+            "cis-google-android-family"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+            "target": "ANDROID_ENTERPRISE_RESTRICTION",
+            "conflictingPaths": [
+              "microphoneAccessPermission"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        },
+        {
+          "id": "suppressed-cis-cis-android-enterprise-android-enterprise-restriction-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-google-android-1-6-0-1-14, cis-google-android-1-6-0-3-1.",
+          "sourceIds": [
+            "cis-google-android-1-6-0",
+            "cis-google-android-family"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+            "target": "ANDROID_ENTERPRISE_RESTRICTION",
+            "conflictingPaths": [
+              "microphoneAccessPermission"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        },
+        {
+          "id": "suppressed-vendor-vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE (systemupdatetype-postpone)",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from android-010-postponeotasystemupdatesforupto30days.",
+          "sourceIds": [
+            "google-android-enterprise-system-updates",
+            "google-android-enterprise-feature-list"
+          ],
+          "mappings": [],
+          "variantId": "systemupdatetype-postpone",
+          "source": "vendor",
+          "conflict": {
+            "source": "vendor",
+            "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+            "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+            "conflictingPaths": [
+              "systemUpdateType"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        },
+        {
+          "id": "suppressed-vendor-vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE (systemupdatetype-windowed)",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from android-009-useamaintenancewindowforotasystemupdates.",
+          "sourceIds": [
+            "google-android-enterprise-system-updates",
+            "google-android-enterprise-feature-list"
+          ],
+          "mappings": [],
+          "variantId": "systemupdatetype-windowed",
+          "source": "vendor",
+          "conflict": {
+            "source": "vendor",
+            "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+            "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+            "conflictingPaths": [
+              "systemUpdateType"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        }
+      ]
+    }
+  ]
+}

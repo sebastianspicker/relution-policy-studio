@@ -1,0 +1,84 @@
+@media (max-width: 1180px) {
+  .mobile-section-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+    background: var(--ci-color-surface, #ffffff);
+  }
+
+  .mobile-section-controls button {
+    flex: 1 1 130px;
+  }
+
+  .mobile-section-controls button[aria-current="page"] {
+    background: var(--ci-color-active-bg, #e6f1fb);
+    border-color: var(--ci-color-primary, #1d6fb8);
+    color: var(--ci-color-primary, #1d6fb8);
+  }
+
+  .mobile-pane-controls {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+    background: var(--ci-color-surface, #ffffff);
+  }
+
+  .mobile-pane-controls button[aria-expanded="true"] {
+    background: var(--ci-color-active-bg, #e6f1fb);
+    border-color: var(--ci-color-primary, #1d6fb8);
+    color: var(--ci-color-primary, #1d6fb8);
+  }
+
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-rail {
+    display: none;
+  }
+
+  .editor-panel {
+    order: 1;
+  }
+
+  .sidebar {
+    order: 2;
+    display: none;
+  }
+
+  .json-panel {
+    order: 3;
+    display: none;
+  }
+
+  .workspace-grid.show-navigation .sidebar,
+  .workspace-grid.show-inspector .json-panel {
+    display: block;
+  }
+
+  .sidebar,
+  .json-panel {
+    border: 0;
+    border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  }
+
+  .panel-header,
+  .toolbar-main {
+    padding: 10px 12px;
+  }
+
+  .add-config,
+  .recommendation-controls,
+  .template-import,
+  .artifact-creator,
+  .sidecar-header {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-grid {
+    grid-template-columns: 1fr;
+  }
+}

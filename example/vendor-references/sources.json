@@ -1,0 +1,302 @@
+[
+  {
+    "id": "microsoft-windows-security-baselines-guide",
+    "scope": [
+      "windows"
+    ],
+    "title": "Security baselines",
+    "document_date": "2025-08-18",
+    "verified_as_of": "2026-04-23",
+    "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines",
+    "type": "framework-guide",
+    "note": "Microsoft's current baseline principles and delivery overview for Windows security baselines."
+  },
+  {
+    "id": "microsoft-security-compliance-toolkit-guide",
+    "scope": [
+      "windows"
+    ],
+    "title": "Microsoft Security Compliance Toolkit - How to use",
+    "document_date": "2025-08-18",
+    "verified_as_of": "2026-04-23",
+    "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10",
+    "type": "toolkit-guide",
+    "note": "Microsoft's official toolkit guide for downloading and applying Windows baselines."
+  },
+  {
+    "id": "microsoft-security-baselines-support-matrix",
+    "scope": [
+      "windows"
+    ],
+    "title": "Get support for security baselines",
+    "document_date": "2025-08-18",
+    "verified_as_of": "2026-04-23",
+    "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/get-support-for-security-baselines",
+    "type": "support-matrix",
+    "note": "Includes Microsoft baseline release matrix. Still lists Windows 11 24H2 and Windows 10 22H2 in the Learn matrix."
+  },
+  {
+    "id": "microsoft-windows-11-release-information",
+    "scope": [
+      "windows"
+    ],
+    "title": "Windows 11 - release information",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information",
+    "type": "release-tracking",
+    "note": "Current Windows release tracking page. As verified on 2026-04-23 it lists Windows 11 26H1 as available from 2026-02-10 and Windows 11 25H2 from 2025-09-30."
+  },
+  {
+    "id": "microsoft-windows-11-25h2-security-baseline",
+    "scope": [
+      "windows"
+    ],
+    "title": "Windows 11, version 25H2 security baseline",
+    "document_date": "2025-09-30",
+    "verified_as_of": "2026-04-23",
+    "url": "https://techcommunity.microsoft.com/blog/microsoft-security-baselines/windows-11-version-25h2-security-baseline/4456231",
+    "type": "baseline-package-post",
+    "note": "Latest named Windows client security baseline package I verified. Official Microsoft Security Baselines blog post."
+  },
+  {
+    "id": "microsoft-intune-windows-mdm-baseline-settings",
+    "scope": [
+      "windows"
+    ],
+    "title": "Windows MDM security baseline settings reference for Microsoft Intune",
+    "document_date": "2026-04-16",
+    "verified_as_of": "2026-04-23",
+    "url": "https://learn.microsoft.com/en-us/intune/intune-service/protect/security-baseline-settings-mdm-all",
+    "type": "baseline-settings-reference",
+    "note": "Current Microsoft Learn reference that exposes the default settings for the Intune Windows 11 version 25H2 security baseline, including only MDM-applicable settings."
+  },
+  {
+    "id": "microsoft-windows-11-24h2-security-baseline-zip",
+    "scope": [
+      "windows"
+    ],
+    "title": "Windows 11 v24H2 Security Baseline.zip",
+    "document_date": "2025-02-14",
+    "verified_as_of": "2026-04-23",
+    "url": "https://download.microsoft.com/download/8/5/C/85C25433-A1B0-4FFA-9429-7E023E7DA8D8/Windows%2011%20v24H2%20Security%20Baseline.zip",
+    "type": "baseline-package-archive",
+    "note": "Microsoft baseline package archive containing the security baseline workbook, PolicyRules, Group Policy reports, and release notes for Windows 11 v24H2."
+  },
+  {
+    "id": "google-android-enterprise-feature-list",
+    "scope": [
+      "android"
+    ],
+    "title": "Android Enterprise feature list",
+    "document_date": "2026-04-21",
+    "verified_as_of": "2026-04-23",
+    "url": "https://developers.google.com/android/work/requirements",
+    "type": "feature-contract",
+    "note": "Current Android Enterprise capability contract. Closest Google equivalent to a managed-device baseline feature matrix."
+  },
+  {
+    "id": "google-android-management-security-posture",
+    "scope": [
+      "android"
+    ],
+    "title": "Understanding Security Posture",
+    "document_date": "2025-03-21",
+    "verified_as_of": "2026-04-23",
+    "url": "https://developers.google.com/android/management/understanding-security-posture",
+    "type": "security-posture-guide",
+    "note": "Explains device posture, security risks, and hardware-backed key attestation in Android Management API."
+  },
+  {
+    "id": "google-android-enterprise-system-updates",
+    "scope": [
+      "android"
+    ],
+    "title": "Google System updates on devices enrolled using Android Enterprise",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.google.com/work/android/answer/13791272?hl=en",
+    "type": "update-governance-guide",
+    "note": "Google's official guidance for system update policy and compliance-based update enforcement on managed Android devices."
+  },
+  {
+    "id": "google-play-protect-managed-devices",
+    "scope": [
+      "android"
+    ],
+    "title": "Google Play Protect",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.google.com/work/android/answer/15162069?hl=en",
+    "type": "malware-protection-guide",
+    "note": "Google's managed-device guidance for malware scanning and Play Protect enforcement."
+  },
+  {
+    "id": "google-android-enterprise-feature-drop-2025",
+    "scope": [
+      "android"
+    ],
+    "title": "What's new in Android Enterprise: Feature Drop",
+    "document_date": "2025-06-10",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.google.com/work/android/answer/16319376?hl=en",
+    "type": "update-post",
+    "note": "Current public Android Enterprise update article highlighting advanced protection and integrated defense changes."
+  },
+  {
+    "id": "google-android-security-best-practices",
+    "scope": [
+      "android"
+    ],
+    "title": "Android security best practices",
+    "document_date": "2024-09-24",
+    "verified_as_of": "2026-04-23",
+    "url": "https://source.android.com/docs/security/best-practices",
+    "type": "platform-security-guide",
+    "note": "Google's platform-level Android security best-practices guide. More OEM/platform focused than enterprise management focused."
+  },
+  {
+    "id": "apple-platform-deployment",
+    "scope": [
+      "macos"
+    ],
+    "title": "Apple Platform Deployment",
+    "document_date": "2026-02",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/welcome/web",
+    "type": "deployment-guide",
+    "note": "Current Apple deployment and device-management guide edition. Broad Apple-platform scope, used here as the primary macOS deployment reference."
+  },
+  {
+    "id": "apple-platform-deployment-whats-new",
+    "scope": [
+      "macos"
+    ],
+    "title": "What's new in Apple platform deployment",
+    "document_date": "2026-04-14",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/whats-new-dep950aed53e/web",
+    "type": "update-post",
+    "note": "Current Apple deployment change log page. References current macOS 26.4.1 and iOS 26.4.1 management updates."
+  },
+  {
+    "id": "apple-install-enforce-software-updates",
+    "scope": [
+      "macos"
+    ],
+    "title": "Install and enforce software updates",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/install-and-enforce-software-updates-depd30715cbb/web",
+    "type": "macos-deployment-section",
+    "note": "Apple deployment guidance for software update enforcement behavior and rollout posture."
+  },
+  {
+    "id": "apple-device-management-deploy-software-updates",
+    "scope": [
+      "macos"
+    ],
+    "title": "Use device management to deploy software updates",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/device-management-deploy-software-updates-depafd2fad80/web",
+    "type": "macos-deployment-section",
+    "note": "Apple deployment guidance for using device management to enforce and defer software updates."
+  },
+  {
+    "id": "apple-activation-lock",
+    "scope": [
+      "macos"
+    ],
+    "title": "Activation Lock",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/activation-lock-depf4ab94ef1/web",
+    "type": "macos-deployment-section",
+    "note": "Apple deployment guidance for Activation Lock and organizational recovery handling."
+  },
+  {
+    "id": "apple-enforce-password-policies",
+    "scope": [
+      "macos"
+    ],
+    "title": "Enforce password policies",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/enforce-password-policies-depeadc2af0b/web",
+    "type": "macos-deployment-section",
+    "note": "Apple deployment guidance for passcode and password policy enforcement through device management."
+  },
+  {
+    "id": "apple-managed-device-attestation",
+    "scope": [
+      "macos"
+    ],
+    "title": "Managed Device Attestation",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/managed-device-attestation-dep28afbde6a/web",
+    "type": "macos-deployment-section",
+    "note": "Apple deployment guidance for managed device attestation and hardware-backed management trust."
+  },
+  {
+    "id": "apple-manage-filevault-device-management",
+    "scope": [
+      "macos"
+    ],
+    "title": "Manage FileVault with device management",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/manage-filevault-with-device-management-dep0a2cb7686/web",
+    "type": "macos-deployment-section",
+    "note": "Apple deployment guidance for configuring FileVault through device management payloads."
+  },
+  {
+    "id": "apple-platform-security",
+    "scope": [
+      "macos"
+    ],
+    "title": "Apple Platform Security",
+    "document_date": "2026-03",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/security/welcome/web",
+    "type": "security-guide",
+    "note": "Current Apple platform security guide edition. Broad Apple-platform scope, used here as the primary macOS security reference."
+  },
+  {
+    "id": "apple-startup-security-macos",
+    "scope": [
+      "macos"
+    ],
+    "title": "Startup security in macOS",
+    "document_date": "2021-10-27",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/deployment/dep5810e849c/web",
+    "type": "macos-security-section",
+    "note": "Apple's startup security and recovery-protected policy guidance for macOS."
+  },
+  {
+    "id": "apple-managing-filevault-macos",
+    "scope": [
+      "macos"
+    ],
+    "title": "Managing FileVault in macOS",
+    "document_date": "2026-01-28",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/security/sec8447f5049/web",
+    "type": "macos-security-section",
+    "note": "Apple's current FileVault management guidance referencing SecureToken and Bootstrap Token."
+  },
+  {
+    "id": "apple-gatekeeper-runtime-protection-macos",
+    "scope": [
+      "macos"
+    ],
+    "title": "Gatekeeper and runtime protection in macOS",
+    "document_date": "2024-12-19",
+    "verified_as_of": "2026-04-23",
+    "url": "https://support.apple.com/guide/security/sec5599b66df/web",
+    "type": "macos-security-section",
+    "note": "Apple's current Gatekeeper, notarization, and runtime protection guidance for macOS."
+  }
+]

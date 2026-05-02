@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "name": "iOS Tier 2 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "IOS",
+    "tier": 2,
+    "tierLabel": "Tier 2 - strengthened BSI baseline",
+    "securityLevel": "standard-hardening",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "IOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 3,
+      "cis": 1,
+      "vendor": 0
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": [
+      {
+        "source": "cis",
+        "ruleId": "cis-ios-ios-passcode-aggregate",
+        "target": "IOS_PASSCODE",
+        "conflictingPaths": [
+          "minLength"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      }
+    ]
+  },
+  "policies": [
+    {
+      "platform": "IOS",
+      "name": "iOS Tier 2 Baseline",
+      "description": "Tier 2 - strengthened BSI baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-passcode",
+          "title": "Consolidated Relution aggregate: IOS_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-passcode-aggregate",
+              "title": "Relution aggregate: IOS_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowSimple": false,
+                "enabled": true,
+                "forcePIN": true,
+                "maxFailedAttempts": 10,
+                "maxGracePeriodMinutes": 0,
+                "maxInactivityMinutes": 5,
+                "minLength": 8,
+                "pinHistory": 5,
+                "requireAlphanumeric": true
+              },
+              "type": "IOS_PASSCODE"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-restriction",
+          "title": "Consolidated Relution aggregate: IOS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "sys-3-2-3-ios",
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family",
+            "cis-apple-ios-18-2-0-0",
+            "cis-apple-ios-26-1-0-0",
+            "cis-apple-ipados-18-2-0-0",
+            "cis-apple-ipados-26-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "title": "Relution aggregate: IOS_RESTRICTION"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-ios-ios-restriction-aggregate",
+              "title": "Relution aggregate: IOS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowAppCellularDataModification": false,
+                "allowAppInstallation": false,
+                "allowAssistant": false,
+                "allowAssistantWhileLocked": false,
+                "allowCloudBackup": false,
+                "allowCloudDocumentSync": false,
+                "allowCloudKeychainSync": false,
+                "allowCloudPhotoLibrary": false,
+                "allowCloudPrivateRelay": false,
+                "allowDiagnosticSubmission": false,
+                "allowEnterpriseAppTrust": false,
+                "allowFingerprintForUnlock": false,
+                "allowLockScreenNotificationsView": false,
+                "allowManagedAppsCloudSync": false,
+                "allowOpenFromManagedToUnmanaged": false,
+                "allowUIAppInstallation": false,
+                "allowUIConfigurationProfileInstallation": false,
+                "enabled": true,
+                "forceAutomaticDateAndTime": true,
+                "forceEncryptedBackup": true,
+                "forceWatchWristDetection": true
+              },
+              "type": "IOS_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-update",
+          "title": "Consolidated Relution aggregate: IOS_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-update-aggregate",
+              "title": "Relution aggregate: IOS_UPDATE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "updateMode": "INSTALL_ASAP"
+              },
+              "type": "IOS_UPDATE"
+            }
+          ]
+        },
+        {
+          "id": "suppressed-cis-cis-ios-ios-passcode-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: IOS_PASSCODE",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-4.",
+          "sourceIds": [
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-ios-ios-passcode-aggregate",
+            "target": "IOS_PASSCODE",
+            "conflictingPaths": [
+              "minLength"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        }
+      ]
+    }
+  ]
+}

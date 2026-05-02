@@ -1,0 +1,177 @@
+.config-picker-dialog {
+  border: none;
+  border-radius: var(--ci-radius-card, 8px);
+  padding: 0;
+  max-width: min(680px, 96vw);
+  width: 100%;
+  max-height: 88vh;
+  box-shadow: 0 8px 48px rgb(0 0 0 / 0.22);
+}
+
+.config-picker-dialog::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+.config-picker-card {
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+}
+
+.config-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+}
+
+.config-picker-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.config-picker-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ci-color-muted, #64707d);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0;
+  min-height: unset;
+}
+
+.config-picker-close:hover {
+  background: var(--ci-color-surface-muted, #f0f4f8);
+  color: var(--ci-color-heading, #20242a);
+}
+
+.config-picker-search {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--ci-color-border, #cad2dc);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.config-picker-search input[type="search"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--ci-color-border-strong, #aab5c1);
+  border-radius: var(--ci-radius-control, 5px);
+  font: inherit;
+  font-size: 14px;
+  background: var(--ci-color-field-bg, #ffffff);
+  color: var(--ci-color-text, #20242a);
+}
+
+.config-picker-groups {
+  flex-wrap: wrap;
+}
+
+.config-picker-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scrollbar-width: thin;
+}
+
+.config-picker-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ci-color-muted, #64707d);
+  margin: 0 0 10px;
+}
+
+.config-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.config-picker-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--ci-color-border, #cad2dc);
+  border-radius: var(--ci-radius-card, 6px);
+  background: var(--ci-color-surface, #ffffff);
+  cursor: pointer;
+  text-align: left;
+  min-height: unset;
+  transition: border-color 0.13s, background 0.13s;
+}
+
+.config-picker-card-item:hover {
+  border-color: var(--ci-color-primary, #1d6fb8);
+  background: color-mix(in srgb, var(--ci-color-primary, #1d6fb8) 5%, var(--ci-color-surface, #ffffff));
+}
+
+.config-picker-card-item.selected {
+  border-color: var(--ci-color-primary, #1d6fb8);
+  background: color-mix(in srgb, var(--ci-color-primary, #1d6fb8) 10%, var(--ci-color-surface, #ffffff));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ci-color-primary, #1d6fb8) 30%, transparent);
+}
+
+.config-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ci-color-heading, #1f2933);
+  overflow-wrap: anywhere;
+}
+
+.config-card-meta {
+  font-size: 11px;
+  color: var(--ci-color-muted, #64707d);
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  overflow-wrap: anywhere;
+}
+
+.config-picker-empty {
+  text-align: center;
+  color: var(--ci-color-muted, #64707d);
+  padding: 40px 0;
+}
+
+.config-picker-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--ci-color-border, #cad2dc);
+  background: var(--ci-color-surface-muted, #f4f7fa);
+}
+
+.config-picker-selection {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+
+.config-picker-hint {
+  font-size: 12px;
+  color: var(--ci-color-muted, #64707d);
+  flex: 1;
+}
+
+.config-picker-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}

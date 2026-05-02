@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "name": "Windows Tier 2 Baseline - Windows Antivirus Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "WINDOWS",
+    "tier": 2,
+    "tierLabel": "Tier 2 - strengthened BSI baseline",
+    "securityLevel": "standard-hardening",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "WINDOWS_ANTIVIRUS",
+      "slug": "relution-native-windows-antivirus",
+      "label": "Windows Antivirus"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 2 Baseline - Windows Antivirus",
+      "description": "Modular Windows baseline block for WINDOWS_ANTIVIRUS. Tier 2 - strengthened BSI baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-antivirus",
+          "title": "Consolidated Relution aggregate: WINDOWS_ANTIVIRUS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "sys-2-2-3-windows",
+            "fd-aenderungen-2023",
+            "cis-microsoft-defender-antivirus-1-0-0",
+            "cis-windows-desktop-family",
+            "microsoft-intune-windows-mdm-baseline-settings"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowArchiveScanning": true,
+                "allowBehaviorMonitoring": true,
+                "allowCloudProtection": true,
+                "allowEmailScanning": true,
+                "allowIOAVProtection": true,
+                "allowRealtimeMonitoring": true,
+                "allowScriptScanning": true,
+                "cloudBlockLevel": "HIGH",
+                "enableNetworkProtection": "ON",
+                "enabled": true,
+                "puaProtection": "ON",
+                "realTimeScanDirection": "ALL",
+                "signatureUpdateInterval": 4,
+                "submitSamplesConsent": "ALL"
+              },
+              "type": "WINDOWS_ANTIVIRUS"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

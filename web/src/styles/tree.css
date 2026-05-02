@@ -1,0 +1,76 @@
+.tree-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 2px;
+  overflow-wrap: anywhere;
+  border-color: transparent;
+  border-left-width: 3px;
+  background: transparent;
+}
+
+.tree-item-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px;
+  align-items: stretch;
+  margin-bottom: 6px;
+}
+
+.tree-item-row .tree-item {
+  margin-bottom: 0;
+}
+
+.tree-item-actions {
+  display: flex;
+  gap: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.tree-item-row:hover .tree-item-actions,
+.tree-item-row:focus-within .tree-item-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+  line-height: 1;
+}
+
+.tree-item-label,
+.tree-item-meta {
+  display: block;
+  min-width: 0;
+}
+
+.tree-item-label {
+  font-weight: 600;
+}
+
+.tree-item-meta {
+  margin-top: 2px;
+  color: var(--ci-color-muted, #64707d);
+  font-family: var(--ci-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 11px;
+}
+
+.version-item {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.tree-item.active {
+  border-left-color: var(--ci-color-primary, #1d6fb8);
+  background: var(--ci-color-active-bg, #e6f1fb);
+}
+
+.tree-item:not(.active):hover {
+  background: var(--ci-color-surface-muted, #f8fafc);
+}

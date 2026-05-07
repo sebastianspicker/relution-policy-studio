@@ -1,6 +1,0 @@
-{
-  "type": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
-  "keyguardDisabledFeatures": [
-    "NOTIFICATIONS"
-  ]
-}

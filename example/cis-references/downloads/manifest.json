@@ -1,0 +1,234 @@
+[
+  {
+    "id": "cis-benchmarks-overview",
+    "title": "CIS Benchmarks",
+    "url": "https://www.cisecurity.org/cis-benchmarks",
+    "type": "overview-page",
+    "scope": [
+      "windows",
+      "android",
+      "ios",
+      "macos"
+    ],
+    "documentDate": null,
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-benchmarks-overview.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-benchmarks-overview.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-benchmarks-overview.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 1715843,
+    "sha256": "7fcbabbd62c2019f3fd77e16b5b0800cccd5b2797e70be17c214a3a8e1eb20a7",
+    "downloadedAt": "2026-04-23T20:36:23.748Z",
+    "note": "Top-level CIS Benchmarks overview page for locating current family pages."
+  },
+  {
+    "id": "cis-windows-desktop-family",
+    "title": "CIS Microsoft Windows Desktop Benchmarks",
+    "url": "https://www.cisecurity.org/benchmark/microsoft_windows_desktop",
+    "type": "family-page",
+    "scope": [
+      "windows"
+    ],
+    "documentDate": null,
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-windows-desktop-family.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-windows-desktop-family.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-windows-desktop-family.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 392494,
+    "sha256": "a236ad1d3b8c83bc0c89d580349aeae5d7076609a92c4dc06ede345a1f366db5",
+    "downloadedAt": "2026-04-23T20:36:24.353Z",
+    "note": "Current public Windows desktop family page. Also repeats the active versions in the CIS-CAT Pro and Build Kits sections."
+  },
+  {
+    "id": "cis-windows-june-2025-update",
+    "title": "CIS Benchmarks June 2025 Update",
+    "url": "https://portal.cisecurity.org/insights/articles/cis-benchmarks-june-2025-update",
+    "type": "update-post",
+    "scope": [
+      "windows"
+    ],
+    "documentDate": "2025-06-11",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-windows-june-2025-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-windows-june-2025-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-windows-june-2025-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 487019,
+    "sha256": "5ab841a549382663dc3928d357584bdb83d6a78335b640c9f2eb31cd701ce32f",
+    "downloadedAt": "2026-04-23T20:36:25.939Z",
+    "note": "Public dated release post for the current Windows 10 Enterprise and Windows 11 Stand-alone benchmark generation."
+  },
+  {
+    "id": "cis-windows-march-2026-update",
+    "title": "CIS Benchmarks March 2026 Update",
+    "url": "https://www.cisecurity.org/insights/blog/cis-benchmarks-march-2026-update",
+    "type": "update-post",
+    "scope": [
+      "windows"
+    ],
+    "documentDate": "2026-03-06",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-windows-march-2026-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-windows-march-2026-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-windows-march-2026-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 135125,
+    "sha256": "fa1e93348011463df6a0d24f5a80744ab7b404a44697dc598d96d70aed1c3d32",
+    "downloadedAt": "2026-04-23T20:36:25.983Z",
+    "note": "Public dated release post for Windows 11 Enterprise v5.0.0. The family page now shows 5.0.1 as the active current version."
+  },
+  {
+    "id": "cis-google-android-family",
+    "title": "CIS Google Android Benchmarks",
+    "url": "https://www.cisecurity.org/benchmark/google_android",
+    "type": "family-page",
+    "scope": [
+      "android"
+    ],
+    "documentDate": null,
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-google-android-family.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-google-android-family.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-google-android-family.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 253874,
+    "sha256": "ea696e4f1fb91dd663996fa3d315e349b188b010b517554bf16ecdead1925f93",
+    "downloadedAt": "2026-04-23T20:36:26.025Z",
+    "note": "Current public Android family page."
+  },
+  {
+    "id": "cis-google-android-october-2025-update",
+    "title": "CIS Benchmarks Monthly Update October 2025",
+    "url": "https://portal.cisecurity.org/insights/articles/cis%20benchmarks%20monthly%20update%20october%202025",
+    "type": "update-post",
+    "scope": [
+      "android"
+    ],
+    "documentDate": "2025-11-07",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-google-android-october-2025-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-google-android-october-2025-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-google-android-october-2025-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 441411,
+    "sha256": "03f8a98043c8754336f280d3789c9958a7c5ec8c601e7372a73aa81378c3f75f",
+    "downloadedAt": "2026-04-23T20:36:27.466Z",
+    "note": "Public dated release post for the currently active Android benchmark version."
+  },
+  {
+    "id": "cis-apple-ios-family",
+    "title": "CIS Apple iOS Benchmarks",
+    "url": "https://www.cisecurity.org/benchmark/apple_ios",
+    "type": "family-page",
+    "scope": [
+      "ios"
+    ],
+    "documentDate": null,
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-apple-ios-family.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-apple-ios-family.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-apple-ios-family.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 282191,
+    "sha256": "2b7436936f0a53db03cf22cd3afe1ce5192a3e838415d4630eaf6ffc3839cafc",
+    "downloadedAt": "2026-04-23T20:36:28.112Z",
+    "note": "Current public iOS family page. Also useful for observing current benchmark-versus-Build-Kit version differences."
+  },
+  {
+    "id": "cis-apple-ios-july-2025-update",
+    "title": "CIS Benchmarks July 2025 Update",
+    "url": "https://portal.cisecurity.org/insights/articles/cis-benchmarks-july-2025-update",
+    "type": "update-post",
+    "scope": [
+      "ios"
+    ],
+    "documentDate": "2025-07-08",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-apple-ios-july-2025-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-apple-ios-july-2025-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-apple-ios-july-2025-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 490945,
+    "sha256": "46ad9ec490e465e243dc5f1bc77b0e37166c5bf79c84ce602fa2f8c6ad29f6ac",
+    "downloadedAt": "2026-04-23T20:36:29.108Z",
+    "note": "Public dated release post for iOS 18 v1.1.0."
+  },
+  {
+    "id": "cis-apple-ios-january-2026-update",
+    "title": "CIS Benchmarks January 2026 Update",
+    "url": "https://www.cisecurity.org/insights/blog/cis-benchmarks-january-2026-update",
+    "type": "update-post",
+    "scope": [
+      "ios"
+    ],
+    "documentDate": "2026-01-12",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-apple-ios-january-2026-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-apple-ios-january-2026-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-apple-ios-january-2026-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 144648,
+    "sha256": "efbfcf2c877f8dce525236c39699cdda0f565b70560311b6802c5ca56ced08f5",
+    "downloadedAt": "2026-04-23T20:36:29.145Z",
+    "note": "Public dated release post for the final iOS/iPadOS 18 2.0.0 update."
+  },
+  {
+    "id": "cis-apple-macos-family",
+    "title": "CIS Apple macOS Benchmarks",
+    "url": "https://www.cisecurity.org/benchmark/apple_os",
+    "type": "family-page",
+    "scope": [
+      "macos"
+    ],
+    "documentDate": null,
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-apple-macos-family.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-apple-macos-family.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-apple-macos-family.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 316161,
+    "sha256": "bd0803dae7d7df3bbc98cf03d99adb02a9fb5b07b7c4da759bf29362712e1c2a",
+    "downloadedAt": "2026-04-23T20:36:29.769Z",
+    "note": "Current public macOS family page."
+  },
+  {
+    "id": "cis-apple-macos-july-2025-update",
+    "title": "CIS Benchmarks July 2025 Update",
+    "url": "https://portal.cisecurity.org/insights/articles/cis-benchmarks-july-2025-update",
+    "type": "update-post",
+    "scope": [
+      "macos"
+    ],
+    "documentDate": "2025-07-08",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-apple-macos-july-2025-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-apple-macos-july-2025-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-apple-macos-july-2025-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 490945,
+    "sha256": "a22b0fb8217fe3ad14461679ec5fbe71b6b6e6ef559317b3a01befa014103804",
+    "downloadedAt": "2026-04-23T20:36:30.891Z",
+    "note": "Public dated release post for macOS 15.0 Sequoia v1.1.0."
+  },
+  {
+    "id": "cis-apple-platform-march-2026-update",
+    "title": "CIS Benchmarks March 2026 Update",
+    "url": "https://www.cisecurity.org/insights/blog/cis-benchmarks-march-2026-update",
+    "type": "update-post",
+    "scope": [
+      "ios",
+      "macos"
+    ],
+    "documentDate": "2026-03-06",
+    "verifiedAsOf": "2026-04-23",
+    "localPath": "example/cis-references/downloads/raw/cis-apple-platform-march-2026-update.html",
+    "headersPath": "example/cis-references/downloads/headers/cis-apple-platform-march-2026-update.headers.txt",
+    "textPath": "example/cis-references/downloads/text/cis-apple-platform-march-2026-update.txt",
+    "contentType": "text/html; charset=utf-8",
+    "sizeBytes": 135125,
+    "sha256": "55b25c6c5b64fefcbda5e51c3d00262302a9b277e4133c58ef4fd9e3997688b7",
+    "downloadedAt": "2026-04-23T20:36:30.921Z",
+    "note": "Public March 2026 CIS update surface for current Apple Build Kits. The Apple family pages remain the clearest public benchmark source for what is current now."
+  }
+]

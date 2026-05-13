@@ -1,0 +1,1312 @@
+{
+  "version": 1,
+  "generatedFrom": "Relution Apple compatibility settings that export as APPLE_MOBILECONFIG payloads.",
+  "settings": [
+    {
+      "id": "autonomous-single-app-mode",
+      "label": "Autonomous Single App Mode",
+      "payloadType": "com.apple.asam",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "allowedApplications",
+          "path": "allowedApplications",
+          "payloadKey": "AllowedApplications",
+          "label": "Allowed applications",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "bundleIdentifier",
+          "path": "allowedApplications.bundleIdentifier",
+          "payloadKey": "BundleIdentifier",
+          "label": "Bundle identifier",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "teamIdentifier",
+          "path": "allowedApplications.teamIdentifier",
+          "payloadKey": "TeamIdentifier",
+          "label": "Team identifier",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"AllowedApplications\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "associated-domains",
+      "label": "Associated Domains",
+      "payloadType": "com.apple.associated-domains",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "associated-domains",
+      "fields": [
+        {
+          "id": "applicationIdentifier",
+          "path": "applicationIdentifier",
+          "label": "Application identifier",
+          "kind": "string",
+          "defaultValue": "ABCDE12345.com.example.app"
+        },
+        {
+          "id": "associatedDomains",
+          "path": "associatedDomains",
+          "label": "Associated domains",
+          "kind": "list",
+          "defaultValue": [
+            "webcredentials:example.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cellular-private-network",
+      "label": "Cellular Private Network",
+      "payloadType": "com.apple.cellularprivatenetwork.managed",
+      "platforms": [
+        "IOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "dataSetName",
+          "path": "dataSetName",
+          "payloadKey": "DataSetName",
+          "label": "Dataset name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "versionNumber",
+          "path": "versionNumber",
+          "payloadKey": "VersionNumber",
+          "label": "Version number",
+          "kind": "string",
+          "defaultValue": "1"
+        },
+        {
+          "id": "networkIdentifier",
+          "path": "networkIdentifier",
+          "payloadKey": "NetworkIdentifier",
+          "label": "Network identifier",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "csgNetworkIdentifier",
+          "path": "csgNetworkIdentifier",
+          "payloadKey": "CsgNetworkIdentifier",
+          "label": "CSG network identifier",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "cellularDataPreferred",
+          "path": "cellularDataPreferred",
+          "payloadKey": "CellularDataPreferred",
+          "label": "Prefer cellular data",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "enableNrStandalone",
+          "path": "enableNrStandalone",
+          "payloadKey": "EnableNRStandalone",
+          "label": "Enable NR standalone",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "geofences",
+          "path": "geofences",
+          "payloadKey": "Geofences",
+          "label": "Geofences",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "geofenceId",
+          "path": "geofences.geofenceId",
+          "payloadKey": "GeofenceId",
+          "label": "Geofence ID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "latitude",
+          "path": "geofences.latitude",
+          "payloadKey": "Latitude",
+          "label": "Latitude",
+          "kind": "number",
+          "defaultValue": 0
+        },
+        {
+          "id": "longitude",
+          "path": "geofences.longitude",
+          "payloadKey": "Longitude",
+          "label": "Longitude",
+          "kind": "number",
+          "defaultValue": 0
+        },
+        {
+          "id": "radius",
+          "path": "geofences.radius",
+          "payloadKey": "Radius",
+          "label": "Radius",
+          "kind": "number",
+          "defaultValue": 0
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"DataSetName\": \"\",\n  \"VersionNumber\": \"1\"\n}"
+        }
+      ]
+    },
+    {
+      "id": "exchange-web-services",
+      "label": "Exchange Web Services",
+      "payloadType": "com.apple.ews.account",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "emailAddress",
+          "path": "emailAddress",
+          "payloadKey": "EmailAddress",
+          "label": "Email address",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "userName",
+          "path": "userName",
+          "payloadKey": "UserName",
+          "label": "User name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "host",
+          "path": "host",
+          "payloadKey": "Host",
+          "label": "Host",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "ssl",
+          "path": "ssl",
+          "payloadKey": "SSL",
+          "label": "SSL",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "port",
+          "path": "port",
+          "payloadKey": "Port",
+          "label": "Port",
+          "kind": "integer",
+          "defaultValue": 443
+        },
+        {
+          "id": "path",
+          "path": "path",
+          "payloadKey": "Path",
+          "label": "Path",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "oauth",
+          "path": "oauth",
+          "payloadKey": "OAuth",
+          "label": "OAuth",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "oauthSignInUrl",
+          "path": "oauthSignInUrl",
+          "payloadKey": "OAuthSignInURL",
+          "label": "OAuth sign-in URL",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "password",
+          "path": "password",
+          "payloadKey": "Password",
+          "label": "Password",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadCertificateUuid",
+          "path": "payloadCertificateUuid",
+          "payloadKey": "PayloadCertificateUUID",
+          "label": "Certificate payload UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "authenticationCertificateUuid",
+          "path": "authenticationCertificateUuid",
+          "payloadKey": "AuthenticationCertificateUUID",
+          "label": "Authentication certificate UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "allowMailDrop",
+          "path": "allowMailDrop",
+          "payloadKey": "allowMailDrop",
+          "label": "Allow Mail Drop",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "externalHost",
+          "path": "externalHost",
+          "payloadKey": "ExternalHost",
+          "label": "External host",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "externalSsl",
+          "path": "externalSsl",
+          "payloadKey": "ExternalSSL",
+          "label": "External SSL",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "externalPort",
+          "path": "externalPort",
+          "payloadKey": "ExternalPort",
+          "label": "External port",
+          "kind": "integer",
+          "defaultValue": 443
+        },
+        {
+          "id": "externalPath",
+          "path": "externalPath",
+          "payloadKey": "ExternalPath",
+          "label": "External path",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"SSL\": true,\n  \"ExternalSSL\": true\n}"
+        }
+      ]
+    },
+    {
+      "id": "lights-out-management",
+      "label": "Lights Out Management",
+      "payloadType": "com.apple.lom",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "controllerCaCertificateUuids",
+          "path": "controllerCaCertificateUuids",
+          "payloadKey": "ControllerCACertificateUUIDs",
+          "label": "Controller CA certificate UUIDs",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "controllerCertificateUuid",
+          "path": "controllerCertificateUuid",
+          "payloadKey": "ControllerCertificateUUID",
+          "label": "Controller certificate UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "deviceCaCertificateUuids",
+          "path": "deviceCaCertificateUuids",
+          "payloadKey": "DeviceCACertificateUUIDs",
+          "label": "Device CA certificate UUIDs",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "deviceCertificateUuid",
+          "path": "deviceCertificateUuid",
+          "payloadKey": "DeviceCertificateUUID",
+          "label": "Device certificate UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    {
+      "id": "managed-preferences",
+      "label": "Managed Preferences",
+      "payloadType": "com.apple.ManagedClient.preferences",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "managed-preferences",
+      "fields": [
+        {
+          "id": "domain",
+          "path": "domain",
+          "label": "Preference domain",
+          "kind": "string",
+          "defaultValue": "com.example.app"
+        },
+        {
+          "id": "key",
+          "path": "key",
+          "label": "Preference key",
+          "kind": "string",
+          "defaultValue": "ExampleKey"
+        },
+        {
+          "id": "value",
+          "path": "value",
+          "label": "Preference value",
+          "kind": "textarea",
+          "defaultValue": "ExampleValue"
+        }
+      ]
+    },
+    {
+      "id": "printing",
+      "label": "Printing",
+      "payloadType": "com.apple.mcxprinting",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "userPrinterList",
+          "path": "userPrinterList",
+          "payloadKey": "UserPrinterList",
+          "label": "Printers",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "displayName",
+          "path": "userPrinterList.displayName",
+          "payloadKey": "DisplayName",
+          "label": "Display name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "deviceUri",
+          "path": "userPrinterList.deviceUri",
+          "payloadKey": "DeviceURI",
+          "label": "Device URI",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "location",
+          "path": "userPrinterList.location",
+          "payloadKey": "Location",
+          "label": "Location",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "model",
+          "path": "userPrinterList.model",
+          "payloadKey": "Model",
+          "label": "Model",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "ppdUrl",
+          "path": "userPrinterList.ppdUrl",
+          "payloadKey": "PPDURL",
+          "label": "PPD URL",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "printerLocked",
+          "path": "userPrinterList.printerLocked",
+          "payloadKey": "PrinterLocked",
+          "label": "Lock printer",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"UserPrinterList\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "network-usage-rules",
+      "label": "Network Usage Rules",
+      "payloadType": "com.apple.networkusagerules",
+      "platforms": [
+        "IOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "applicationRules",
+          "path": "applicationRules",
+          "payloadKey": "ApplicationRules",
+          "label": "Application rules",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "appIdentifierMatches",
+          "path": "applicationRules.appIdentifierMatches",
+          "payloadKey": "AppIdentifierMatches",
+          "label": "App identifier matches",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "allowCellularData",
+          "path": "applicationRules.allowCellularData",
+          "payloadKey": "AllowCellularData",
+          "label": "Allow cellular data",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "allowRoamingCellularData",
+          "path": "applicationRules.allowRoamingCellularData",
+          "payloadKey": "AllowRoamingCellularData",
+          "label": "Allow roaming cellular data",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"ApplicationRules\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "network-relay",
+      "label": "Network Relay",
+      "payloadType": "com.apple.relay.managed",
+      "platforms": [
+        "IOS",
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "relays",
+          "path": "relays",
+          "payloadKey": "Relays",
+          "label": "Relays",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "http2RelayUrl",
+          "path": "relays.http2RelayUrl",
+          "payloadKey": "HTTP2RelayURL",
+          "label": "HTTP/2 relay URL",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "http3RelayUrl",
+          "path": "relays.http3RelayUrl",
+          "payloadKey": "HTTP3RelayURL",
+          "label": "HTTP/3 relay URL",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadCertificateUuid",
+          "path": "relays.payloadCertificateUuid",
+          "payloadKey": "PayloadCertificateUUID",
+          "label": "Certificate payload UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "rawPublicKeys",
+          "path": "relays.rawPublicKeys",
+          "payloadKey": "RawPublicKeys",
+          "label": "Raw public keys",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "additionalHttpHeaderFields",
+          "path": "relays.additionalHttpHeaderFields",
+          "payloadKey": "AdditionalHTTPHeaderFields",
+          "label": "Additional HTTP headers",
+          "kind": "key-value-list",
+          "defaultValue": {}
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"Relays\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "acme-certificate",
+      "label": "ACME Certificate",
+      "payloadType": "com.apple.security.acme",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "WATCHOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "clientIdentifier",
+          "path": "clientIdentifier",
+          "payloadKey": "ClientIdentifier",
+          "label": "Client identifier",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "directoryUrl",
+          "path": "directoryUrl",
+          "payloadKey": "DirectoryURL",
+          "label": "Directory URL",
+          "kind": "string",
+          "defaultValue": "https://acme.example.test/directory"
+        },
+        {
+          "id": "hardwareBound",
+          "path": "hardwareBound",
+          "payloadKey": "HardwareBound",
+          "label": "Hardware bound key",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "keyType",
+          "path": "keyType",
+          "payloadKey": "KeyType",
+          "label": "Key type",
+          "kind": "string",
+          "defaultValue": "RSA",
+          "options": [
+            "RSA",
+            "ECSECPrimeRandom"
+          ]
+        },
+        {
+          "id": "keySize",
+          "path": "keySize",
+          "payloadKey": "KeySize",
+          "label": "Key size",
+          "kind": "integer",
+          "defaultValue": 2048
+        },
+        {
+          "id": "subjectJson",
+          "path": "subjectJson",
+          "payloadKey": "Subject",
+          "label": "Subject JSON",
+          "kind": "json",
+          "defaultValue": "[\n  [[\"CN\", \"example\"]]\n]"
+        },
+        {
+          "id": "subjectAltNameJson",
+          "path": "subjectAltNameJson",
+          "payloadKey": "SubjectAltName",
+          "label": "Subject alternative name JSON",
+          "kind": "json",
+          "defaultValue": "{}"
+        },
+        {
+          "id": "extendedKeyUsage",
+          "path": "extendedKeyUsage",
+          "payloadKey": "ExtendedKeyUsage",
+          "label": "Extended key usage OIDs",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "usageFlags",
+          "path": "usageFlags",
+          "payloadKey": "UsageFlags",
+          "label": "Usage flags",
+          "kind": "integer",
+          "defaultValue": 5
+        },
+        {
+          "id": "attest",
+          "path": "attest",
+          "payloadKey": "Attest",
+          "label": "Attest",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "allowAllAppsAccess",
+          "path": "allowAllAppsAccess",
+          "payloadKey": "AllowAllAppsAccess",
+          "label": "Allow all apps access",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "keyIsExtractable",
+          "path": "keyIsExtractable",
+          "payloadKey": "KeyIsExtractable",
+          "label": "Key is extractable",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"ClientIdentifier\": \"\",\n  \"DirectoryURL\": \"https://acme.example.test/directory\",\n  \"HardwareBound\": false,\n  \"KeyType\": \"RSA\",\n  \"KeySize\": 2048,\n  \"Subject\": [[[\"CN\", \"example\"]]]\n}"
+        }
+      ]
+    },
+    {
+      "id": "certificate-preference",
+      "label": "Certificate Preference",
+      "payloadType": "com.apple.security.certificatepreference",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "name",
+          "path": "name",
+          "payloadKey": "Name",
+          "label": "Name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadCertificateUuid",
+          "path": "payloadCertificateUuid",
+          "payloadKey": "PayloadCertificateUUID",
+          "label": "Certificate payload UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"Name\": \"\",\n  \"PayloadCertificateUUID\": \"\"\n}"
+        }
+      ]
+    },
+    {
+      "id": "certificate-revocation",
+      "label": "Certificate Revocation",
+      "payloadType": "com.apple.security.certificaterevocation",
+      "platforms": [
+        "IOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "enabledForCertsJson",
+          "path": "enabledForCertsJson",
+          "payloadKey": "EnabledForCerts",
+          "label": "Enabled certificate hashes JSON",
+          "kind": "json",
+          "defaultValue": "[]"
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"EnabledForCerts\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "certificate-transparency",
+      "label": "Certificate Transparency",
+      "payloadType": "com.apple.security.certificatetransparency",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "WATCHOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "disabledForDomains",
+          "path": "disabledForDomains",
+          "payloadKey": "DisabledForDomains",
+          "label": "Disabled domains",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "disabledForCertsJson",
+          "path": "disabledForCertsJson",
+          "payloadKey": "DisabledForCerts",
+          "label": "Disabled certificate hashes JSON",
+          "kind": "json",
+          "defaultValue": "[]"
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"DisabledForDomains\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "identity-preference",
+      "label": "Identity Preference",
+      "payloadType": "com.apple.security.identitypreference",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "name",
+          "path": "name",
+          "payloadKey": "Name",
+          "label": "Name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadCertificateUuid",
+          "path": "payloadCertificateUuid",
+          "payloadKey": "PayloadCertificateUUID",
+          "label": "Certificate payload UUID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"Name\": \"\",\n  \"PayloadCertificateUUID\": \"\"\n}"
+        }
+      ]
+    },
+    {
+      "id": "smart-card",
+      "label": "Smart Card",
+      "payloadType": "com.apple.security.smartcard",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "allowSmartCard",
+          "path": "allowSmartCard",
+          "payloadKey": "allowSmartCard",
+          "label": "Allow smart card",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "userPairing",
+          "path": "userPairing",
+          "payloadKey": "UserPairing",
+          "label": "User pairing",
+          "kind": "boolean",
+          "defaultValue": true
+        },
+        {
+          "id": "oneCardPerUser",
+          "path": "oneCardPerUser",
+          "payloadKey": "oneCardPerUser",
+          "label": "One card per user",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "enforceSmartCard",
+          "path": "enforceSmartCard",
+          "payloadKey": "enforceSmartCard",
+          "label": "Enforce smart card",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"allowSmartCard\": true\n}"
+        }
+      ]
+    },
+    {
+      "id": "managed-login-items",
+      "label": "Managed Login Items",
+      "payloadType": "com.apple.servicemanagement",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "managed-login-items",
+      "fields": [
+        {
+          "id": "teamIdentifier",
+          "path": "teamIdentifier",
+          "label": "Team identifier",
+          "kind": "string",
+          "defaultValue": "ABCDE12345"
+        },
+        {
+          "id": "bundleIdentifier",
+          "path": "bundleIdentifier",
+          "label": "Bundle identifier",
+          "kind": "string",
+          "defaultValue": "com.example.agent"
+        },
+        {
+          "id": "comment",
+          "path": "comment",
+          "label": "Comment",
+          "kind": "string",
+          "defaultValue": "Managed by Relution policy"
+        }
+      ]
+    },
+    {
+      "id": "lock-screen-message",
+      "label": "Lock Screen Message",
+      "payloadType": "com.apple.shareddeviceconfiguration",
+      "platforms": [
+        "IOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "assetTagInformation",
+          "path": "assetTagInformation",
+          "payloadKey": "AssetTagInformation",
+          "label": "Asset tag information",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "ifLostReturnToMessage",
+          "path": "ifLostReturnToMessage",
+          "payloadKey": "IfLostReturnToMessage",
+          "label": "If-lost return message",
+          "kind": "textarea",
+          "defaultValue": ""
+        },
+        {
+          "id": "lockScreenFootnote",
+          "path": "lockScreenFootnote",
+          "payloadKey": "LockScreenFootnote",
+          "label": "Lock screen footnote",
+          "kind": "textarea",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    {
+      "id": "system-migration",
+      "label": "System Migration",
+      "payloadType": "com.apple.systemmigration",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "migrationContext",
+          "path": "migrationContext",
+          "label": "Migration context",
+          "kind": "string",
+          "defaultValue": "Windows"
+        },
+        {
+          "id": "sourcePath",
+          "path": "sourcePath",
+          "label": "Source path",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "sourcePathInUserHome",
+          "path": "sourcePathInUserHome",
+          "label": "Source in user home",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "targetPath",
+          "path": "targetPath",
+          "label": "Target path",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "targetPathInUserHome",
+          "path": "targetPathInUserHome",
+          "label": "Target in user home",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"CustomBehavior\": [\n    {\n      \"Context\": \"Windows\",\n      \"Paths\": []\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "id": "pppc",
+      "label": "Privacy Preferences Policy Control",
+      "payloadType": "com.apple.TCC.configuration-profile-policy",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "pppc",
+      "fields": [
+        {
+          "id": "identifier",
+          "path": "identifier",
+          "label": "App identifier",
+          "kind": "string",
+          "defaultValue": "com.example.app"
+        },
+        {
+          "id": "identifierType",
+          "path": "identifierType",
+          "label": "Identifier type",
+          "kind": "string",
+          "defaultValue": "bundleID",
+          "options": [
+            "bundleID",
+            "path"
+          ]
+        },
+        {
+          "id": "codeRequirement",
+          "path": "codeRequirement",
+          "label": "Code requirement",
+          "kind": "textarea",
+          "defaultValue": ""
+        },
+        {
+          "id": "service",
+          "path": "service",
+          "label": "Privacy service",
+          "kind": "string",
+          "defaultValue": "Accessibility"
+        },
+        {
+          "id": "authorization",
+          "path": "authorization",
+          "label": "Authorization",
+          "kind": "string",
+          "defaultValue": "Allow",
+          "options": [
+            "Allow",
+            "Deny",
+            "AllowStandardUserToSetSystemService"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tv-remote",
+      "label": "TV Remote",
+      "payloadType": "com.apple.tvremote",
+      "platforms": [
+        "IOS",
+        "TVOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "allowedRemotes",
+          "path": "allowedRemotes",
+          "payloadKey": "AllowedRemotes",
+          "label": "Allowed remotes",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "remoteDeviceId",
+          "path": "allowedRemotes.remoteDeviceId",
+          "payloadKey": "RemoteDeviceID",
+          "label": "Remote device ID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "allowedTvs",
+          "path": "allowedTvs",
+          "payloadKey": "AllowedTVs",
+          "label": "Allowed TVs",
+          "kind": "object-list",
+          "defaultValue": []
+        },
+        {
+          "id": "tvDeviceId",
+          "path": "allowedTvs.tvDeviceId",
+          "payloadKey": "TVDeviceID",
+          "label": "TV device ID",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "tvDeviceName",
+          "path": "allowedTvs.tvDeviceName",
+          "payloadKey": "TVDeviceName",
+          "label": "TV device name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"AllowedRemotes\": [],\n  \"AllowedTVs\": []\n}"
+        }
+      ]
+    },
+    {
+      "id": "xsan",
+      "label": "Xsan",
+      "payloadType": "com.apple.xsan",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "sanName",
+          "path": "sanName",
+          "payloadKey": "sanName",
+          "label": "SAN name",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "sharedSecret",
+          "path": "sharedSecret",
+          "payloadKey": "sharedSecret",
+          "label": "Shared secret",
+          "kind": "string",
+          "defaultValue": ""
+        },
+        {
+          "id": "sanAuthMethod",
+          "path": "sanAuthMethod",
+          "payloadKey": "sanAuthMethod",
+          "label": "SAN authentication method",
+          "kind": "string",
+          "defaultValue": "auth_secret",
+          "options": [
+            "auth_secret"
+          ]
+        },
+        {
+          "id": "sanConfigUrls",
+          "path": "sanConfigUrls",
+          "payloadKey": "sanConfigURLs",
+          "label": "SAN config URLs",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "fsNameServers",
+          "path": "fsNameServers",
+          "payloadKey": "fsnameservers",
+          "label": "File system name servers",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{\n  \"sanName\": \"\",\n  \"sharedSecret\": \"\",\n  \"sanAuthMethod\": \"auth_secret\"\n}"
+        }
+      ]
+    },
+    {
+      "id": "xsan-preferences",
+      "label": "Xsan Preferences",
+      "payloadType": "com.apple.xsan.preferences",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionTransportType": "APPLE_MOBILECONFIG",
+      "builder": "generic-json",
+      "fields": [
+        {
+          "id": "onlyMount",
+          "path": "onlyMount",
+          "payloadKey": "onlyMount",
+          "label": "Only mount",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "denyMount",
+          "path": "denyMount",
+          "payloadKey": "denyMount",
+          "label": "Deny mount",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "useDlc",
+          "path": "useDlc",
+          "payloadKey": "useDLC",
+          "label": "Use DLC",
+          "kind": "boolean",
+          "defaultValue": false
+        },
+        {
+          "id": "preferDlc",
+          "path": "preferDlc",
+          "payloadKey": "preferDLC",
+          "label": "Prefer DLC",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "denyDlc",
+          "path": "denyDlc",
+          "payloadKey": "denyDLC",
+          "label": "Deny DLC",
+          "kind": "list",
+          "defaultValue": []
+        },
+        {
+          "id": "payloadKeysJson",
+          "path": "payloadKeysJson",
+          "label": "Payload keys JSON",
+          "kind": "json",
+          "defaultValue": "{}"
+        }
+      ]
+    }
+  ]
+}

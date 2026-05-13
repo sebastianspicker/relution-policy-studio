@@ -1,0 +1,18 @@
+{
+  "type": "IOS_RESTRICTION",
+  "allowAppInstallation": false,
+  "allowAssistant": false,
+  "allowAssistantWhileLocked": false,
+  "allowCloudBackup": false,
+  "allowCloudDocumentSync": false,
+  "allowCloudKeychainSync": false,
+  "allowCloudPhotoLibrary": false,
+  "allowCloudPrivateRelay": false,
+  "allowDiagnosticSubmission": false,
+  "allowEnterpriseAppTrust": false,
+  "allowLockScreenNotificationsView": false,
+  "allowOpenFromManagedToUnmanaged": false,
+  "allowUIAppInstallation": false,
+  "allowUIConfigurationProfileInstallation": false,
+  "enabled": true
+}

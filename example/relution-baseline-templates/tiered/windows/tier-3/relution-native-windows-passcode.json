@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "name": "Windows Tier 3 Baseline - Windows Passcode Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "WINDOWS",
+    "tier": 3,
+    "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+    "securityLevel": "basis",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "inherited",
+    "module": {
+      "kind": "relution-native",
+      "target": "WINDOWS_PASSCODE",
+      "slug": "relution-native-windows-passcode",
+      "label": "Windows Passcode"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Passcode",
+      "description": "Modular Windows baseline block for WINDOWS_PASSCODE. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-passcode",
+          "title": "Consolidated Relution aggregate: WINDOWS_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-passcode-aggregate",
+              "title": "Relution aggregate: WINDOWS_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowSimplePassword": false,
+                "enabled": true,
+                "history": 5,
+                "maxFailAttempts": 10,
+                "maxInactivityTime": 15,
+                "minLength": 12,
+                "quality": "ALPHANUMERIC"
+              },
+              "type": "WINDOWS_PASSCODE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

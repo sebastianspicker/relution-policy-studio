@@ -1,0 +1,17 @@
+@import "./styles/themes/default.css";
+@import "./styles/themes/organization.css";
+@import "./styles/themes/relution.css";
+@import "./styles/themes/dark.css";
+@import "./styles/base.css";
+@import "./styles/layout.css";
+@import "./styles/settings-panel.css";
+@import "./styles/editor-panels.css";
+@import "./styles/configuration-picker.css";
+@import "./styles/controls.css";
+@import "./styles/tree.css";
+@import "./styles/fields.css";
+@import "./styles/feedback.css";
+@import "./styles/recommendation-feedback.css";
+@import "./styles/policy-wizard.css";
+@import "./styles/toast.css";
+@import "./styles/responsive.css";

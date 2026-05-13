@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "name": "iOS Tier 1 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "IOS",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "IOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 3,
+      "cis": 2,
+      "vendor": 0
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": [
+      {
+        "source": "cis",
+        "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+        "target": "profile:com.apple.applicationaccess",
+        "preferredTarget": "IOS_RESTRICTION",
+        "reason": "Relution treats the iOS application access payload and native restrictions as conflicting server singletons; the BSI native restriction mapping has precedence."
+      },
+      {
+        "source": "cis",
+        "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+        "target": "profile:com.apple.mobiledevice.passwordpolicy",
+        "preferredTarget": "IOS_PASSCODE",
+        "reason": "Relution treats the iOS password policy profile and native passcode setting as conflicting server singletons; the BSI native passcode mapping has precedence."
+      },
+      {
+        "source": "cis",
+        "ruleId": "cis-ios-ios-passcode-aggregate",
+        "target": "IOS_PASSCODE",
+        "conflictingPaths": [
+          "minLength"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      },
+      {
+        "source": "cis",
+        "ruleId": "cis-ios-ios-wifi-aggregate",
+        "target": "IOS_WIFI",
+        "reason": "IOS_WIFI requires organization-specific ssid, encryptionType, and proxyType values; disableAssociationMACRandomization is retained as informational guidance instead of an importable singleton."
+      }
+    ]
+  },
+  "policies": [
+    {
+      "platform": "IOS",
+      "name": "iOS Tier 1 Baseline",
+      "description": "Tier 1 - most restrictive Grundschutz baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-ios-relution-native-merged-apple-device-settings",
+          "title": "Consolidated Relution aggregate: APPLE_DEVICE_SETTINGS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from cis.",
+          "sourceIds": [
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family"
+          ],
+          "sourceRules": [
+            {
+              "source": "cis",
+              "ruleId": "cis-ios-apple-device-settings-aggregate",
+              "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowActivationLock": true
+              },
+              "type": "APPLE_DEVICE_SETTINGS"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-passcode",
+          "title": "Consolidated Relution aggregate: IOS_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-passcode-aggregate",
+              "title": "Relution aggregate: IOS_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowSimple": false,
+                "enabled": true,
+                "forcePIN": true,
+                "maxFailedAttempts": 10,
+                "maxGracePeriodMinutes": 0,
+                "maxInactivityMinutes": 5,
+                "minLength": 8,
+                "pinHistory": 5,
+                "requireAlphanumeric": true
+              },
+              "type": "IOS_PASSCODE"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-restriction",
+          "title": "Consolidated Relution aggregate: IOS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "sys-3-2-3-ios",
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family",
+            "cis-apple-ios-18-2-0-0",
+            "cis-apple-ios-26-1-0-0",
+            "cis-apple-ipados-18-2-0-0",
+            "cis-apple-ipados-26-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "title": "Relution aggregate: IOS_RESTRICTION"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-ios-ios-restriction-aggregate",
+              "title": "Relution aggregate: IOS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowAppCellularDataModification": false,
+                "allowAppInstallation": false,
+                "allowAssistant": false,
+                "allowAssistantWhileLocked": false,
+                "allowCloudBackup": false,
+                "allowCloudDocumentSync": false,
+                "allowCloudKeychainSync": false,
+                "allowCloudPhotoLibrary": false,
+                "allowCloudPrivateRelay": false,
+                "allowDiagnosticSubmission": false,
+                "allowEnterpriseAppTrust": false,
+                "allowFingerprintForUnlock": false,
+                "allowLockScreenNotificationsView": false,
+                "allowManagedAppsCloudSync": false,
+                "allowOpenFromManagedToUnmanaged": false,
+                "allowUIAppInstallation": false,
+                "allowUIConfigurationProfileInstallation": false,
+                "enabled": true,
+                "forceAutomaticDateAndTime": true,
+                "forceEncryptedBackup": true,
+                "forceWatchWristDetection": true
+              },
+              "type": "IOS_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-update",
+          "title": "Consolidated Relution aggregate: IOS_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-update-aggregate",
+              "title": "Relution aggregate: IOS_UPDATE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "updateMode": "INSTALL_ASAP"
+              },
+              "type": "IOS_UPDATE"
+            }
+          ]
+        },
+        {
+          "id": "suppressed-cis-cis-ios-ios-passcode-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: IOS_PASSCODE",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-4.",
+          "sourceIds": [
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-ios-ios-passcode-aggregate",
+            "target": "IOS_PASSCODE",
+            "conflictingPaths": [
+              "minLength"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        },
+        {
+          "id": "suppressed-import-conflict-cis-apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+          "title": "Suppressed import conflict: Relution aggregate: profile:com.apple.applicationaccess",
+          "informational": true,
+          "reason": "Aggregates exact apple-schema-profile mappings from cis-apple-ios-17-ipados-17-intune-1-0-0-2-1-1, cis-apple-ios-17-ipados-17-intune-1-0-0-2-1-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-1-3, cis-apple-ios-17-ipados-17-intune-1-0-0-2-2-1, cis-apple-ios-17-ipados-17-intune-1-0-0-2-2-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-3-3, cis-apple-ios-17-ipados-17-intune-1-0-0-2-3-4, cis-apple-ios-17-ipados-17-intune-1-0-0-2-3-5, cis-apple-ios-17-ipados-17-intune-1-0-0-2-3-6, cis-apple-ios-17-ipados-17-intune-1-0-0-2-3-7, cis-apple-ios-17-ipados-17-intune-1-0-0-2-3-8, cis-apple-ios-17-ipados-17-intune-1-0-0-2-4-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-4-3, cis-apple-ios-17-ipados-17-intune-1-0-0-2-5-1, cis-apple-ios-17-ipados-17-intune-1-0-0-2-5-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-5-3, cis-apple-ios-17-ipados-17-intune-1-0-0-2-5-4, cis-apple-ios-17-ipados-17-intune-1-0-0-2-5-5, cis-apple-ios-17-ipados-17-intune-1-0-0-2-6-1, cis-apple-ios-17-ipados-17-intune-1-0-0-2-6-2, cis-apple-ios-17-ipados-17-intune-1-0-0-2-6-3, cis-apple-ios-17-ipados-17-intune-1-0-0-2-6-4, cis-apple-ios-17-ipados-17-intune-1-0-0-2-8-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-1-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-1-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-1-3, cis-apple-ios-17-ipados-17-intune-1-0-0-3-1-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-1-5, cis-apple-ios-17-ipados-17-intune-1-0-0-3-2-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-2-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-3, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-5, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-6, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-7, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-8, cis-apple-ios-17-ipados-17-intune-1-0-0-3-3-11, cis-apple-ios-17-ipados-17-intune-1-0-0-3-4-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-4-3, cis-apple-ios-17-ipados-17-intune-1-0-0-3-4-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-4-5, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-3, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-5, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-8, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-9, cis-apple-ios-17-ipados-17-intune-1-0-0-3-5-12, cis-apple-ios-17-ipados-17-intune-1-0-0-3-6-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-6-2, cis-apple-ios-17-ipados-17-intune-1-0-0-3-6-3, cis-apple-ios-17-ipados-17-intune-1-0-0-3-6-4, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-8, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-9, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-10, cis-apple-ios-17-ipados-17-intune-1-0-0-3-8-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-10-2, cis-apple-ios-18-2-0-0-2-2-1-1, cis-apple-ios-18-2-0-0-2-2-1-4, cis-apple-ios-18-2-0-0-2-2-1-5, cis-apple-ios-18-2-0-0-2-2-1-7, cis-apple-ios-18-2-0-0-2-2-1-8, cis-apple-ios-18-2-0-0-2-2-1-9, cis-apple-ios-18-2-0-0-2-2-1-10, cis-apple-ios-18-2-0-0-2-2-1-11, cis-apple-ios-18-2-0-0-2-2-1-13, cis-apple-ios-18-2-0-0-2-2-1-14, cis-apple-ios-18-2-0-0-2-2-2-1, cis-apple-ios-18-2-0-0-2-9-2, cis-apple-ios-18-2-0-0-2-9-3, cis-apple-ios-18-2-0-0-2-9-4, cis-apple-ios-18-2-0-0-3-2-1-1, cis-apple-ios-18-2-0-0-3-2-1-2, cis-apple-ios-18-2-0-0-3-2-1-7, cis-apple-ios-18-2-0-0-3-2-1-8, cis-apple-ios-18-2-0-0-3-2-1-10, cis-apple-ios-18-2-0-0-3-2-1-11, cis-apple-ios-18-2-0-0-3-2-1-12, cis-apple-ios-18-2-0-0-3-2-1-13, cis-apple-ios-18-2-0-0-3-2-1-14, cis-apple-ios-18-2-0-0-3-2-1-15, cis-apple-ios-18-2-0-0-3-2-1-19, cis-apple-ios-18-2-0-0-3-2-1-20, cis-apple-ios-18-2-0-0-3-2-1-21, cis-apple-ios-18-2-0-0-3-2-1-22, cis-apple-ios-18-2-0-0-3-2-1-23, cis-apple-ios-18-2-0-0-3-2-1-24, cis-apple-ios-18-2-0-0-3-2-1-25, cis-apple-ios-18-2-0-0-3-2-1-27, cis-apple-ios-18-2-0-0-3-2-1-28, cis-apple-ios-18-2-0-0-3-2-1-29, cis-apple-ios-18-2-0-0-3-2-1-30, cis-apple-ios-18-2-0-0-3-2-1-31, cis-apple-ios-18-2-0-0-3-2-2-1, cis-apple-ios-18-2-0-0-3-10-2, cis-apple-ios-18-2-0-0-3-10-3, cis-apple-ios-18-2-0-0-3-10-4, cis-apple-ios-26-1-0-0-2-2-1-1, cis-apple-ios-26-1-0-0-2-2-1-4, cis-apple-ios-26-1-0-0-2-2-1-5, cis-apple-ios-26-1-0-0-2-2-1-7, cis-apple-ios-26-1-0-0-2-2-1-8, cis-apple-ios-26-1-0-0-2-2-1-9, cis-apple-ios-26-1-0-0-2-2-1-10, cis-apple-ios-26-1-0-0-2-2-1-11, cis-apple-ios-26-1-0-0-2-2-1-13, cis-apple-ios-26-1-0-0-2-2-1-14, cis-apple-ios-26-1-0-0-2-2-2-1, cis-apple-ios-26-1-0-0-2-9-2, cis-apple-ios-26-1-0-0-2-9-3, cis-apple-ios-26-1-0-0-2-9-4, cis-apple-ios-26-1-0-0-3-2-1-1, cis-apple-ios-26-1-0-0-3-2-1-2, cis-apple-ios-26-1-0-0-3-2-1-7, cis-apple-ios-26-1-0-0-3-2-1-8, cis-apple-ios-26-1-0-0-3-2-1-10, cis-apple-ios-26-1-0-0-3-2-1-11, cis-apple-ios-26-1-0-0-3-2-1-12, cis-apple-ios-26-1-0-0-3-2-1-13, cis-apple-ios-26-1-0-0-3-2-1-14, cis-apple-ios-26-1-0-0-3-2-1-15, cis-apple-ios-26-1-0-0-3-2-1-19, cis-apple-ios-26-1-0-0-3-2-1-20, cis-apple-ios-26-1-0-0-3-2-1-21, cis-apple-ios-26-1-0-0-3-2-1-22, cis-apple-ios-26-1-0-0-3-2-1-23, cis-apple-ios-26-1-0-0-3-2-1-24, cis-apple-ios-26-1-0-0-3-2-1-25, cis-apple-ios-26-1-0-0-3-2-1-27, cis-apple-ios-26-1-0-0-3-2-1-28, cis-apple-ios-26-1-0-0-3-2-1-29, cis-apple-ios-26-1-0-0-3-2-1-30, cis-apple-ios-26-1-0-0-3-2-1-31, cis-apple-ios-26-1-0-0-3-2-2-1, cis-apple-ios-26-1-0-0-3-10-2, cis-apple-ios-26-1-0-0-3-10-3, cis-apple-ios-26-1-0-0-3-10-4, cis-apple-ipados-18-2-0-0-2-2-1-1, cis-apple-ipados-18-2-0-0-2-2-1-2, cis-apple-ipados-18-2-0-0-2-2-1-5, cis-apple-ipados-18-2-0-0-2-2-1-6, cis-apple-ipados-18-2-0-0-2-2-1-8, cis-apple-ipados-18-2-0-0-2-2-1-9, cis-apple-ipados-18-2-0-0-2-2-1-10, cis-apple-ipados-18-2-0-0-2-2-1-11, cis-apple-ipados-18-2-0-0-2-2-1-12, cis-apple-ipados-18-2-0-0-2-2-1-14, cis-apple-ipados-18-2-0-0-2-2-1-15, cis-apple-ipados-18-2-0-0-2-2-2-1, cis-apple-ipados-18-2-0-0-2-9-2, cis-apple-ipados-18-2-0-0-2-9-3, cis-apple-ipados-18-2-0-0-2-9-4, cis-apple-ipados-18-2-0-0-3-2-1-1, cis-apple-ipados-18-2-0-0-3-2-1-2, cis-apple-ipados-18-2-0-0-3-2-1-3, cis-apple-ipados-18-2-0-0-3-2-1-8, cis-apple-ipados-18-2-0-0-3-2-1-9, cis-apple-ipados-18-2-0-0-3-2-1-11, cis-apple-ipados-18-2-0-0-3-2-1-12, cis-apple-ipados-18-2-0-0-3-2-1-13, cis-apple-ipados-18-2-0-0-3-2-1-14, cis-apple-ipados-18-2-0-0-3-2-1-15, cis-apple-ipados-18-2-0-0-3-2-1-16, cis-apple-ipados-18-2-0-0-3-2-1-20, cis-apple-ipados-18-2-0-0-3-2-1-21, cis-apple-ipados-18-2-0-0-3-2-1-22, cis-apple-ipados-18-2-0-0-3-2-1-23, cis-apple-ipados-18-2-0-0-3-2-1-24, cis-apple-ipados-18-2-0-0-3-2-1-25, cis-apple-ipados-18-2-0-0-3-2-1-26, cis-apple-ipados-18-2-0-0-3-2-1-28, cis-apple-ipados-18-2-0-0-3-2-1-29, cis-apple-ipados-18-2-0-0-3-2-1-30, cis-apple-ipados-18-2-0-0-3-2-1-31, cis-apple-ipados-18-2-0-0-3-2-1-32, cis-apple-ipados-18-2-0-0-3-2-2-1, cis-apple-ipados-18-2-0-0-3-10-2, cis-apple-ipados-18-2-0-0-3-10-3, cis-apple-ipados-18-2-0-0-3-10-4, cis-apple-ipados-26-1-0-0-2-2-1-1, cis-apple-ipados-26-1-0-0-2-2-1-2, cis-apple-ipados-26-1-0-0-2-2-1-5, cis-apple-ipados-26-1-0-0-2-2-1-6, cis-apple-ipados-26-1-0-0-2-2-1-8, cis-apple-ipados-26-1-0-0-2-2-1-9, cis-apple-ipados-26-1-0-0-2-2-1-10, cis-apple-ipados-26-1-0-0-2-2-1-11, cis-apple-ipados-26-1-0-0-2-2-1-12, cis-apple-ipados-26-1-0-0-2-2-1-14, cis-apple-ipados-26-1-0-0-2-2-1-15, cis-apple-ipados-26-1-0-0-2-2-2-1, cis-apple-ipados-26-1-0-0-2-9-2, cis-apple-ipados-26-1-0-0-2-9-3, cis-apple-ipados-26-1-0-0-2-9-4, cis-apple-ipados-26-1-0-0-3-2-1-1, cis-apple-ipados-26-1-0-0-3-2-1-2, cis-apple-ipados-26-1-0-0-3-2-1-3, cis-apple-ipados-26-1-0-0-3-2-1-8, cis-apple-ipados-26-1-0-0-3-2-1-9, cis-apple-ipados-26-1-0-0-3-2-1-11, cis-apple-ipados-26-1-0-0-3-2-1-12, cis-apple-ipados-26-1-0-0-3-2-1-13, cis-apple-ipados-26-1-0-0-3-2-1-14, cis-apple-ipados-26-1-0-0-3-2-1-15, cis-apple-ipados-26-1-0-0-3-2-1-16, cis-apple-ipados-26-1-0-0-3-2-1-20, cis-apple-ipados-26-1-0-0-3-2-1-21, cis-apple-ipados-26-1-0-0-3-2-1-22, cis-apple-ipados-26-1-0-0-3-2-1-23, cis-apple-ipados-26-1-0-0-3-2-1-24, cis-apple-ipados-26-1-0-0-3-2-1-25, cis-apple-ipados-26-1-0-0-3-2-1-26, cis-apple-ipados-26-1-0-0-3-2-1-28, cis-apple-ipados-26-1-0-0-3-2-1-29, cis-apple-ipados-26-1-0-0-3-2-1-30, cis-apple-ipados-26-1-0-0-3-2-1-31, cis-apple-ipados-26-1-0-0-3-2-1-32, cis-apple-ipados-26-1-0-0-3-2-2-1, cis-apple-ipados-26-1-0-0-3-10-2, cis-apple-ipados-26-1-0-0-3-10-3, cis-apple-ipados-26-1-0-0-3-10-4.",
+          "sourceIds": [
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family",
+            "cis-apple-ios-18-2-0-0",
+            "cis-apple-ios-26-1-0-0",
+            "cis-apple-ipados-18-2-0-0",
+            "cis-apple-ipados-26-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+            "target": "profile:com.apple.applicationaccess",
+            "preferredTarget": "IOS_RESTRICTION",
+            "reason": "Relution treats the iOS application access payload and native restrictions as conflicting server singletons; the BSI native restriction mapping has precedence."
+          }
+        },
+        {
+          "id": "suppressed-import-conflict-cis-apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+          "title": "Suppressed import conflict: Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy",
+          "informational": true,
+          "reason": "Aggregates exact apple-schema-profile mappings from cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-1, cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-3, cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-5, cis-apple-ios-17-ipados-17-intune-1-0-0-2-7-6, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-1, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-3, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-5, cis-apple-ios-17-ipados-17-intune-1-0-0-3-7-6, cis-apple-ios-18-2-0-0-2-4-1, cis-apple-ios-18-2-0-0-2-4-2, cis-apple-ios-18-2-0-0-2-4-3, cis-apple-ios-18-2-0-0-2-4-4, cis-apple-ios-18-2-0-0-2-4-5, cis-apple-ios-18-2-0-0-2-4-6, cis-apple-ios-18-2-0-0-3-4-1, cis-apple-ios-18-2-0-0-3-4-2, cis-apple-ios-18-2-0-0-3-4-3, cis-apple-ios-18-2-0-0-3-4-4, cis-apple-ios-18-2-0-0-3-4-5, cis-apple-ios-18-2-0-0-3-4-6, cis-apple-ios-26-1-0-0-2-4-1, cis-apple-ios-26-1-0-0-2-4-2, cis-apple-ios-26-1-0-0-2-4-3, cis-apple-ios-26-1-0-0-2-4-4, cis-apple-ios-26-1-0-0-2-4-5, cis-apple-ios-26-1-0-0-2-4-6, cis-apple-ios-26-1-0-0-3-4-1, cis-apple-ios-26-1-0-0-3-4-2, cis-apple-ios-26-1-0-0-3-4-3, cis-apple-ios-26-1-0-0-3-4-4, cis-apple-ios-26-1-0-0-3-4-5, cis-apple-ios-26-1-0-0-3-4-6, cis-apple-ipados-18-2-0-0-2-4-1, cis-apple-ipados-18-2-0-0-2-4-2, cis-apple-ipados-18-2-0-0-2-4-3, cis-apple-ipados-18-2-0-0-2-4-4, cis-apple-ipados-18-2-0-0-2-4-5, cis-apple-ipados-18-2-0-0-2-4-6, cis-apple-ipados-18-2-0-0-3-4-1, cis-apple-ipados-18-2-0-0-3-4-2, cis-apple-ipados-18-2-0-0-3-4-3, cis-apple-ipados-18-2-0-0-3-4-4, cis-apple-ipados-18-2-0-0-3-4-5, cis-apple-ipados-18-2-0-0-3-4-6, cis-apple-ipados-26-1-0-0-2-4-1, cis-apple-ipados-26-1-0-0-2-4-2, cis-apple-ipados-26-1-0-0-2-4-3, cis-apple-ipados-26-1-0-0-2-4-4, cis-apple-ipados-26-1-0-0-2-4-5, cis-apple-ipados-26-1-0-0-2-4-6, cis-apple-ipados-26-1-0-0-3-4-1, cis-apple-ipados-26-1-0-0-3-4-2, cis-apple-ipados-26-1-0-0-3-4-3, cis-apple-ipados-26-1-0-0-3-4-4, cis-apple-ipados-26-1-0-0-3-4-5, cis-apple-ipados-26-1-0-0-3-4-6.",
+          "sourceIds": [
+            "cis-apple-ios-17-ipados-17-intune-1-0-0",
+            "cis-apple-ios-family",
+            "cis-apple-ios-18-2-0-0",
+            "cis-apple-ios-26-1-0-0",
+            "cis-apple-ipados-18-2-0-0",
+            "cis-apple-ipados-26-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+            "target": "profile:com.apple.mobiledevice.passwordpolicy",
+            "preferredTarget": "IOS_PASSCODE",
+            "reason": "Relution treats the iOS password policy profile and native passcode setting as conflicting server singletons; the BSI native passcode mapping has precedence."
+          }
+        },
+        {
+          "id": "suppressed-non-importable-cis-cis-ios-ios-wifi-aggregate",
+          "title": "Suppressed non-importable mapping: Relution aggregate: IOS_WIFI",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-apple-ios-18-2-0-0-2-5-1, cis-apple-ios-18-2-0-0-3-5-1, cis-apple-ios-26-1-0-0-2-5-1, cis-apple-ios-26-1-0-0-3-5-1, cis-apple-ipados-18-2-0-0-2-5-1, cis-apple-ipados-18-2-0-0-3-5-1, cis-apple-ipados-26-1-0-0-2-5-1, cis-apple-ipados-26-1-0-0-3-5-1.",
+          "sourceIds": [
+            "cis-apple-ios-18-2-0-0",
+            "cis-apple-ios-family",
+            "cis-apple-ios-26-1-0-0",
+            "cis-apple-ipados-18-2-0-0",
+            "cis-apple-ipados-26-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-ios-ios-wifi-aggregate",
+            "target": "IOS_WIFI",
+            "reason": "IOS_WIFI requires organization-specific ssid, encryptionType, and proxyType values; disableAssociationMACRandomization is retained as informational guidance instead of an importable singleton."
+          }
+        }
+      ]
+    }
+  ]
+}

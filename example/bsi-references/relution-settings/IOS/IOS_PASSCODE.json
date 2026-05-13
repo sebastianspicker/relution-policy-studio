@@ -1,0 +1,12 @@
+{
+  "type": "IOS_PASSCODE",
+  "allowSimple": false,
+  "enabled": true,
+  "forcePIN": true,
+  "maxFailedAttempts": 10,
+  "maxGracePeriodMinutes": 0,
+  "maxInactivityMinutes": 5,
+  "minLength": 8,
+  "pinHistory": 5,
+  "requireAlphanumeric": true
+}

@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "name": "Windows Tier 3 Modular Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-platform",
+    "platform": "WINDOWS",
+    "tier": 3,
+    "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+    "securityLevel": "basis",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 6,
+      "cis": 0,
+      "vendor": 0
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": []
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Antivirus",
+      "description": "Modular Windows baseline block for WINDOWS_ANTIVIRUS. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-antivirus",
+          "title": "Consolidated Relution aggregate: WINDOWS_ANTIVIRUS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "sys-2-2-3-windows",
+            "fd-aenderungen-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowArchiveScanning": true,
+                "allowBehaviorMonitoring": true,
+                "allowCloudProtection": true,
+                "allowEmailScanning": true,
+                "allowIOAVProtection": true,
+                "allowRealtimeMonitoring": true,
+                "allowScriptScanning": true,
+                "enabled": true,
+                "puaProtection": "ON",
+                "realTimeScanDirection": "ALL",
+                "signatureUpdateInterval": 4
+              },
+              "type": "WINDOWS_ANTIVIRUS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Bitlocker",
+      "description": "Modular Windows baseline block for WINDOWS_BITLOCKER. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-bitlocker",
+          "title": "Consolidated Relution aggregate: WINDOWS_BITLOCKER",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-bitlocker-aggregate",
+              "title": "Relution aggregate: WINDOWS_BITLOCKER"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "encryptionTypeForFixedDrives": "XTS_AES_256",
+                "encryptionTypeForOsDrives": "XTS_AES_256",
+                "encryptionTypeForRemovableDrives": "XTS_AES_256",
+                "osDrivesConfigureRecovery": true,
+                "osDrivesCreateRecoveryPassword": "REQUIRED",
+                "osDrivesEncryptionType": "USED_SPACE_ONLY",
+                "requireDeviceEncryption": true,
+                "startAuthenticationRequired": true,
+                "tpmOnIncompatibleDevices": false,
+                "tpmStartup": "REQUIRED",
+                "tpmStartupKey": "DISALLOWED",
+                "tpmStartupPin": "DISALLOWED",
+                "tpmStartupPinAndKey": "DISALLOWED"
+              },
+              "type": "WINDOWS_BITLOCKER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Local Device Security",
+      "description": "Modular Windows baseline block for WINDOWS_LOCAL_DEVICE_SECURITY. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-local-device-security",
+          "title": "Consolidated Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-local-device-security-aggregate",
+              "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "inactivityTimeUntilScreenSaver": 900,
+                "userInformationOnLockScreenConfiguration": "NO_USER_INFORMATION"
+              },
+              "type": "WINDOWS_LOCAL_DEVICE_SECURITY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Passcode",
+      "description": "Modular Windows baseline block for WINDOWS_PASSCODE. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-passcode",
+          "title": "Consolidated Relution aggregate: WINDOWS_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-passcode-aggregate",
+              "title": "Relution aggregate: WINDOWS_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowSimplePassword": false,
+                "enabled": true,
+                "history": 5,
+                "maxFailAttempts": 10,
+                "maxInactivityTime": 15,
+                "minLength": 12,
+                "quality": "ALPHANUMERIC"
+              },
+              "type": "WINDOWS_PASSCODE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Restriction",
+      "description": "Modular Windows baseline block for WINDOWS_RESTRICTION. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-restriction",
+          "title": "Consolidated Relution aggregate: WINDOWS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "sys-2-2-3-windows",
+            "fd-aenderungen-2023",
+            "it-grundschutz-errata-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-restriction-aggregate",
+              "title": "Relution aggregate: WINDOWS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowAccounts": false,
+                "allowAddingForeignAccountsManually": false,
+                "allowInputPersonalization": false,
+                "allowPrivacyExperience": false,
+                "allowSyncMySettings": false,
+                "allowYourAccount": false,
+                "appGetDiagnosticInfo": "DENY",
+                "enabled": true
+              },
+              "type": "WINDOWS_RESTRICTION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 3 Baseline - Windows Update",
+      "description": "Modular Windows baseline block for WINDOWS_UPDATE. Tier 3 - minimum secure BSI Basis baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-update",
+          "title": "Consolidated Relution aggregate: WINDOWS_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-update-aggregate",
+              "title": "Relution aggregate: WINDOWS_UPDATE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "autoUpdateType": "AUTO_INSTALL_AND_RESTART_AT_SPECIFIED_TIME",
+                "deadlineForFeatureUpdates": 30,
+                "deadlineForQualityUpdates": 7,
+                "enablePauseUpdates": false,
+                "enableWindowsUpdateAccess": true,
+                "enabled": true,
+                "installDay": "EVERY_DAY",
+                "installTime": 3
+              },
+              "type": "WINDOWS_UPDATE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

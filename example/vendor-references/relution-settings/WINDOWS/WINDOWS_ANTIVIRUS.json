@@ -1,0 +1,13 @@
+{
+  "type": "WINDOWS_ANTIVIRUS",
+  "allowArchiveScanning": true,
+  "allowBehaviorMonitoring": true,
+  "allowCloudProtection": true,
+  "allowRealtimeMonitoring": true,
+  "allowScriptScanning": true,
+  "cloudBlockLevel": "HIGH",
+  "enableNetworkProtection": "ON",
+  "puaProtection": "ON",
+  "realTimeScanDirection": "ALL",
+  "submitSamplesConsent": "ALL"
+}

@@ -1,0 +1,158 @@
+{
+  "verifiedAsOf": "2026-04-23",
+  "sourceIndexPath": "example/cis-references/sources.json",
+  "downloadManifestPath": "example/cis-references/downloads/manifest.json",
+  "harvestedBenchmarkPdfs": [
+    {
+      "benchmarkId": "cis-apple-ios-17-ipados-17-intune-1-0-0",
+      "benchmarkTitle": "CIS Apple iOS 17 and iPadOS 17 Intune Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_iOS_17_and_iPadOS_17_Intune_Benchmark_v1.0.0.pdf",
+      "version": "1.0.0",
+      "documentDate": "2024-04-04",
+      "platform": "IOS",
+      "managementSurface": "MICROSOFT_INTUNE"
+    },
+    {
+      "benchmarkId": "cis-apple-ios-18-2-0-0",
+      "benchmarkTitle": "CIS Apple iOS 18 Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_iOS_18_Benchmark_v2.0.0.pdf",
+      "version": "2.0.0",
+      "documentDate": "2026-01-12",
+      "platform": "IOS",
+      "managementSurface": "APPLE_CONFIGURATION_PROFILE"
+    },
+    {
+      "benchmarkId": "cis-apple-ios-26-1-0-0",
+      "benchmarkTitle": "CIS Apple iOS 26 Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_iOS_26_Benchmark_v1.0.0.pdf",
+      "version": "1.0.0",
+      "documentDate": "2026-03-06",
+      "platform": "IOS",
+      "managementSurface": "APPLE_CONFIGURATION_PROFILE"
+    },
+    {
+      "benchmarkId": "cis-apple-ipados-18-2-0-0",
+      "benchmarkTitle": "CIS Apple iPadOS 18 Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_iPadOS_18_Benchmark_v2.0.0.pdf",
+      "version": "2.0.0",
+      "documentDate": "2026-01-12",
+      "platform": "IOS",
+      "managementSurface": "APPLE_CONFIGURATION_PROFILE"
+    },
+    {
+      "benchmarkId": "cis-apple-ipados-26-1-0-0",
+      "benchmarkTitle": "CIS Apple iPadOS 26 Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_iPadOS_26_Benchmark_v1.0.0.pdf",
+      "version": "1.0.0",
+      "documentDate": "2026-03-06",
+      "platform": "IOS",
+      "managementSurface": "APPLE_CONFIGURATION_PROFILE"
+    },
+    {
+      "benchmarkId": "cis-apple-macos-15-sequoia-2-0-0",
+      "benchmarkTitle": "CIS Apple macOS 15.0 Sequoia Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_macOS_15.0_Sequoia_Benchmark_v2.0.0.pdf",
+      "version": "2.0.0",
+      "documentDate": "2026-01-12",
+      "platform": "MACOS",
+      "managementSurface": "APPLE_CONFIGURATION_PROFILE"
+    },
+    {
+      "benchmarkId": "cis-apple-macos-26-tahoe-1-0-0",
+      "benchmarkTitle": "CIS Apple macOS 26 Tahoe Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Apple_macOS_26_Tahoe_Benchmark_v1.0.0.pdf",
+      "version": "1.0.0",
+      "documentDate": "2026-03-06",
+      "platform": "MACOS",
+      "managementSurface": "APPLE_CONFIGURATION_PROFILE"
+    },
+    {
+      "benchmarkId": "cis-google-android-1-6-0",
+      "benchmarkTitle": "CIS Google Android Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Google_Android_Benchmark_v1.6.0.pdf",
+      "version": "1.6.0",
+      "documentDate": "2025-09-30",
+      "platform": "ANDROID_ENTERPRISE",
+      "managementSurface": "ANDROID_MANUAL"
+    },
+    {
+      "benchmarkId": "cis-microsoft-defender-antivirus-1-0-0",
+      "benchmarkTitle": "CIS Microsoft Defender Antivirus Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Microsoft_Defender_Antivirus_Benchmark_v1.0.0.pdf",
+      "version": "1.0.0",
+      "documentDate": "2025-11-26",
+      "platform": "WINDOWS",
+      "managementSurface": "WINDOWS_GROUP_POLICY"
+    },
+    {
+      "benchmarkId": "cis-microsoft-windows-11-standalone-5-0-0",
+      "benchmarkTitle": "CIS Microsoft Windows 11 Stand-alone Benchmark",
+      "sourcePdfPath": "example/cis-references/downloads/pdf/CIS_Microsoft_Windows_11_Stand-alone_Benchmark_v5.0.0.pdf",
+      "version": "5.0.0",
+      "documentDate": "2026-03-25",
+      "platform": "WINDOWS",
+      "managementSurface": "WINDOWS_STANDALONE"
+    }
+  ],
+  "currentFamilies": {
+    "windows": {
+      "familySourceId": "cis-windows-desktop-family",
+      "currentVersions": [
+        "Microsoft Windows 11 Enterprise (5.0.1)",
+        "Microsoft Windows 11 Stand-alone (5.0.0)",
+        "Microsoft Windows 10 Enterprise (4.0.0)",
+        "Microsoft Windows 10 Stand-alone (4.0.0)"
+      ]
+    },
+    "android": {
+      "familySourceId": "cis-google-android-family",
+      "currentVersions": [
+        "Google Android (1.6.0)"
+      ]
+    },
+    "ios": {
+      "familySourceId": "cis-apple-ios-family",
+      "currentVersions": [
+        "Apple iOS 26 (1.0.0)",
+        "Apple iOS 18 (2.0.0)",
+        "Apple iOS 17 (1.1.0)"
+      ]
+    },
+    "macos": {
+      "familySourceId": "cis-apple-macos-family",
+      "currentVersions": [
+        "Apple macOS 26 Tahoe (1.0.0)",
+        "Apple macOS 15.0 Sequoia (2.0.0)",
+        "Apple macOS 14.0 Sonoma (3.0.0)",
+        "Apple macOS 13.0 Ventura (4.0.0)"
+      ]
+    }
+  },
+  "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+  "importableRulesetPath": "example/cis-references/cis-relution-ruleset.json",
+  "recommendationCounts": {
+    "total": 1336,
+    "byPlatform": {
+      "IOS": 496,
+      "MACOS": 248,
+      "ANDROID_ENTERPRISE": 45,
+      "WINDOWS": 547
+    }
+  },
+  "helperFallbackCounts": {
+    "total": 1275,
+    "byPlatform": {
+      "MACOS": 246,
+      "WINDOWS": 1029
+    },
+    "byMethod": {
+      "terminal": 122,
+      "profile-method": 124,
+      "group-policy-path": 502,
+      "registry-reference": 456,
+      "powershell": 44,
+      "auditpol": 27
+    }
+  },
+  "settingBundleCatalogPath": "example/cis-references/cis-relution-settings-catalog.json"
+}

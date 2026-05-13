@@ -1,0 +1,14 @@
+{
+  "type": "MACOS_FILE_VAULT",
+  "enableRecoveryKeyEscrow": true,
+  "enabled": true,
+  "fdeFileVault": {
+    "defer": true,
+    "enable": "ON",
+    "showRecoveryKey": true,
+    "useRecoveryKey": true
+  },
+  "fdeFileVaultOptions": {
+    "dontAllowFDEDisable": true
+  }
+}

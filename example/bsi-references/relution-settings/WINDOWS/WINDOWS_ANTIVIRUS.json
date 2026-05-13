@@ -1,0 +1,14 @@
+{
+  "type": "WINDOWS_ANTIVIRUS",
+  "allowArchiveScanning": true,
+  "allowBehaviorMonitoring": true,
+  "allowCloudProtection": true,
+  "allowEmailScanning": true,
+  "allowIOAVProtection": true,
+  "allowRealtimeMonitoring": true,
+  "allowScriptScanning": true,
+  "enabled": true,
+  "puaProtection": "ON",
+  "realTimeScanDirection": "ALL",
+  "signatureUpdateInterval": 4
+}

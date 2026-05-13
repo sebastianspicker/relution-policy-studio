@@ -1,0 +1,11 @@
+{
+  "type": "WINDOWS_UPDATE",
+  "autoUpdateType": "AUTO_INSTALL_AND_RESTART_AT_SPECIFIED_TIME",
+  "deadlineForFeatureUpdates": 30,
+  "deadlineForQualityUpdates": 7,
+  "enablePauseUpdates": false,
+  "enableWindowsUpdateAccess": true,
+  "enabled": true,
+  "installDay": "EVERY_DAY",
+  "installTime": 3
+}

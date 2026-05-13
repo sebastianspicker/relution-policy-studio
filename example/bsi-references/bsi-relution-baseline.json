@@ -1,0 +1,272 @@
+{
+  "verifiedAsOf": "2026-04-23",
+  "sourceIndexPath": "example/bsi-references/sources.json",
+  "downloadManifestPath": "example/bsi-references/downloads/manifest.json",
+  "operativeBaseline": {
+    "edition": "2023",
+    "status": "current-applicable-baseline",
+    "noEdition2025Release": true,
+    "transitionModel": "IT-Grundschutz++",
+    "evidence": {
+      "currentPageSourceId": "it-grundschutz-current",
+      "noEdition2025ReleaseSourceId": "it-grundschutz-2025-outlook",
+      "noEdition2025ReleaseExcerpt": "Aktuelle Entwicklungen und Ausblick zum IT-Grundschutz Fortentwicklung des IT-Grundschutzes zu IT-Grundschutz++ Holger Schildt, Referatsleiter S13 - IT-Grundschutz 1. IT-Grundschutz-Tag 2025 | Magdeburg | 04.02.2025 Bild: © AdobeStock/Nirut Fortentwicklung IT-Grundschutz IT-Grundschutz-Kompendium 2025 2018 bis 2023: Jährliche Veröffentlichung eines IT-Grundschutz-Kompendiums Seit 2023: Fortentwicklung „IT-Grundschutz ++“ Auch 2025 keine Veröffentlichung einer Edition Eventuell weitere Veröffentlichung von Community und Final Drafts Eventuelle Fehler werden in Errata korrigiert Keine Aufwände bei Anwendern, da nicht auf eine Edition 2025 migriert werden braucht Bund, Land und Stakeholder und Perspektiven Kommune Tool- Wirtschaft, Viele Brillen, ein Bild Hersteller KMU, KKU"
+    },
+    "currentUpdateLayer": {
+      "errataDate": "2025-05-05",
+      "errataSourceId": "it-grundschutz-errata-2023",
+      "checklistDate": "2025-03-11",
+      "checklistSourceId": "it-grundschutz-checklists-2023"
+    }
+  },
+  "platforms": {
+    "windows": {
+      "relutionPlatforms": [
+        "WINDOWS"
+      ],
+      "baselineModules": [
+        {
+          "moduleId": "SYS.2.1",
+          "sourceId": "sys-2-1-general-client",
+          "role": "shared-client-baseline"
+        },
+        {
+          "moduleId": "SYS.2.2.3",
+          "sourceId": "sys-2-2-3-windows",
+          "role": "windows-specific-baseline"
+        }
+      ],
+      "edition2023Highlights": [
+        {
+          "sourceId": "fd-aenderungen-2023",
+          "summary": "Windows baustein was renamed from Clients unter Windows 10 to Clients unter Windows and expanded to Windows 11.",
+          "excerpt": "rdungslage .............................................................................................................................................................. 20 Kapitel 3: Anforderungen ................................................................................................................................................................. 20 Änderungsdokument zum Baustein SYS.2.1 Allgemeiner Client ...................................................... 21 Kapitel 3: Anforderungen ................................................................................................................................................................. 21 Änderungsdokument zum Baustein SYS.2.2.3 Clients unter Windows 10 ..................................... 22 Seite 2 von 29 Änderungen in der Edition 2023 des IT-Grundschutz-Kompendiums Kapitel 1.3: Abgrenzung und Modellierung ............................................................................................................................ 22 Kapitel 2: Gefährdungslage .............................................................................................................................................................. 22 Kapitel 3: Anforderungen ...................."
+        }
+      ],
+      "currentUpdates": [
+        "it-grundschutz-errata-2023",
+        "it-grundschutz-checklists-2023"
+      ],
+      "errataFindings": [
+        {
+          "moduleId": "SYS.2.2.3",
+          "sourceId": "it-grundschutz-errata-2023",
+          "summary": "Errata corrects the modal verb in SYS.2.2.3.A6 Integration von Online-Konten in das Betriebssystem from DARF NUR to SOLLTE.",
+          "excerpt": "lierung Die folgende Zuordnung von Bausteinen zu Zielobjekten ist korrekt: Baustein Reihenfolge Anzuwenden auf Zielobjekt OPS.1.2.6 NTP R2 Anwendung -Zeitsynchronisation IT-System SYS.1.2.3 Windows Server 3.2. Standard-Anforderungen Folgende Anforderungsnummer ist korrekt: Verwendete Anforderungsnummer Korrekte Anforderungsnummer SYS.1.2.2.A5 Sichere Authentisierung und SYS.1.2.3.A5 Sichere Authentisierung und Autorisierung in Windows Server (S) Autorisierung in Windows Server (S) 1 SYS.2.2.3 Clients unter Windows SYS.2.2.3.A6 Integration von Online-Konten in das Betriebssystem (B) In der ersten Teilanforderung ist das verwendete Modalverb nicht korrekt: Verwendetes Modalverb Korrektes Modalverb Die Anmeldung am System sowie an der Die Anmeldung am System sowie an der Domäne DARF NUR mit dem Konto eines Domäne SOLLTE nur mit dem Konto eines selbst betriebenen Verzeichnisdienstes selbst betriebenen Verzeichnisdienstes möglich sein. möglich sein. CON.11.1 Geheimschutz VS-NUR FÜR DEN DIENSTGEBRAUCH (VS- NfD) Kapitel 1.3 Abgrenzung und Modellierung Bisherige Abgrenzung Überarbeitete Abgren"
+        }
+      ],
+      "relutionMapping": {
+        "templateTypePrefixes": [
+          "WINDOWS_"
+        ],
+        "supportsAppleMobileconfig": false,
+        "repoBuiltInRuleIds": []
+      }
+    },
+    "macos": {
+      "relutionPlatforms": [
+        "MACOS"
+      ],
+      "baselineModules": [
+        {
+          "moduleId": "SYS.2.1",
+          "sourceId": "sys-2-1-general-client",
+          "role": "shared-client-baseline"
+        },
+        {
+          "moduleId": "SYS.2.4",
+          "sourceId": "sys-2-4-macos",
+          "role": "macos-specific-baseline"
+        }
+      ],
+      "implementationGuidance": [
+        "umsetzungshinweis-sys-2-4-macos"
+      ],
+      "currentUpdates": [
+        "it-grundschutz-errata-2023",
+        "it-grundschutz-checklists-2023"
+      ],
+      "errataFindings": [],
+      "relutionMapping": {
+        "templateTypePrefixes": [
+          "MACOS_",
+          "APPLE_"
+        ],
+        "supportsAppleMobileconfig": true,
+        "repoBuiltInRuleIds": [
+          "bsi-macos-passcode"
+        ]
+      }
+    },
+    "ios": {
+      "relutionPlatforms": [
+        "IOS"
+      ],
+      "baselineModules": [
+        {
+          "moduleId": "SYS.3.2.1",
+          "sourceId": "sys-3-2-1-smartphones-tablets",
+          "role": "shared-mobile-baseline"
+        },
+        {
+          "moduleId": "SYS.3.2.2",
+          "sourceId": "sys-3-2-2-mdm",
+          "role": "shared-mobile-mdm-baseline"
+        },
+        {
+          "moduleId": "SYS.3.2.3",
+          "sourceId": "sys-3-2-3-ios",
+          "role": "ios-specific-baseline"
+        }
+      ],
+      "minimumStandards": [
+        "mdm-minimum-standard-v2"
+      ],
+      "currentUpdates": [
+        "it-grundschutz-errata-2023",
+        "it-grundschutz-checklists-2023"
+      ],
+      "errataFindings": [],
+      "relutionMapping": {
+        "templateTypePrefixes": [
+          "IOS_",
+          "APPLE_"
+        ],
+        "supportsAppleMobileconfig": true,
+        "repoBuiltInRuleIds": [
+          "bsi-ios-disable-camera"
+        ]
+      }
+    },
+    "android": {
+      "relutionPlatforms": [
+        "ANDROID",
+        "ANDROID_ENTERPRISE"
+      ],
+      "preferredManagedPlatform": "ANDROID_ENTERPRISE",
+      "baselineModules": [
+        {
+          "moduleId": "SYS.3.2.1",
+          "sourceId": "sys-3-2-1-smartphones-tablets",
+          "role": "shared-mobile-baseline"
+        },
+        {
+          "moduleId": "SYS.3.2.2",
+          "sourceId": "sys-3-2-2-mdm",
+          "role": "shared-mobile-mdm-baseline"
+        },
+        {
+          "moduleId": "SYS.3.2.4",
+          "sourceId": "sys-3-2-4-android",
+          "role": "android-specific-baseline"
+        }
+      ],
+      "minimumStandards": [
+        "mdm-minimum-standard-v2"
+      ],
+      "currentUpdates": [
+        "it-grundschutz-errata-2023",
+        "it-grundschutz-checklists-2023"
+      ],
+      "errataFindings": [],
+      "relutionMapping": {
+        "templateTypePrefixes": [
+          "ANDROID_",
+          "ANDROID_ENTERPRISE_"
+        ],
+        "supportsAppleMobileconfig": false,
+        "repoBuiltInRuleIds": [
+          "bsi-android-disable-camera"
+        ]
+      }
+    }
+  },
+  "relutionMapping": {
+    "repoBuiltInRulesetMappings": [
+      {
+        "ruleId": "bsi-ios-disable-camera",
+        "platform": "IOS",
+        "mappingKind": "relution-native",
+        "targetType": "IOS_RESTRICTION",
+        "values": {
+          "allowCamera": false
+        },
+        "source": "web/src/editor/ruleset-import.ts"
+      },
+      {
+        "ruleId": "bsi-macos-passcode",
+        "platform": "MACOS",
+        "mappingKind": "relution-native",
+        "targetType": "IOS_PASSCODE",
+        "values": {
+          "forcePIN": true,
+          "minLength": 8
+        },
+        "source": "web/src/editor/ruleset-import.ts"
+      },
+      {
+        "ruleId": "bsi-android-disable-camera",
+        "platform": "ANDROID_ENTERPRISE",
+        "mappingKind": "relution-native",
+        "targetType": "ANDROID_ENTERPRISE_DISABLE_CAMERAS",
+        "values": {
+          "cameraDisabled": true
+        },
+        "source": "web/src/editor/ruleset-import.ts"
+      }
+    ],
+    "interpretationNotes": [
+      "BSI bausteine are control baselines, not one-to-one Relution configuration types.",
+      "The JSON maps each operating-system baseline to the closest Relution platform and configuration family surface available in this repo.",
+      "For Apple platforms, APPLE_MOBILECONFIG is an additional transport alongside native Relution template types.",
+      "For Android, managed-device interpretation should usually prefer ANDROID_ENTERPRISE over legacy ANDROID when both are available."
+    ]
+  },
+  "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+  "importableRulesetPath": "example/bsi-references/bsi-relution-ruleset.json",
+  "recommendationCounts": {
+    "total": 278,
+    "active": 205,
+    "retired": 73,
+    "byPlatform": {
+      "ANDROID_ENTERPRISE": 65,
+      "IOS": 85,
+      "MACOS": 57,
+      "WINDOWS": 71
+    }
+  },
+  "downloadCount": 16,
+  "settingBundleCatalogPath": "example/bsi-references/bsi-relution-settings-catalog.json",
+  "grundschutzKompendiumChecklists": {
+    "comparisonPath": "example/bsi-references/bsi-grundschutz-kompendium-checklist-comparison.json",
+    "individualWorkbookCount": 111,
+    "individualRequirementCount": 2124,
+    "policyRelevantRequirementCount": 440,
+    "sourceDirectory": "example/bsi-references/downloads/pdf-xlsx-html/Checklisten zum IT-Grundschutz-Kompendium (Edition 2023)",
+    "consolidatedThreatWorkbookPath": "example/bsi-references/downloads/pdf-xlsx-html/krt2023_Excel.xlsx"
+  },
+  "grundschutzPlusPlus": {
+    "systematicsPath": "example/bsi-references/bsi-grundschutz-plusplus-systematics.json",
+    "catalogTitle": "Anwenderkatalog Grundschutz++",
+    "catalogVersion": "2026-04-20T11:58:28.849874+00:00",
+    "catalogLastModified": "2026-04-20T11:58:38.048452946Z",
+    "methodDocument": "Leitfaden zur Methodik Grundschutz++",
+    "methodVersion": "März 2026",
+    "methodDate": "2026-03-16",
+    "status": "Einführungs- und Erprobungsphase",
+    "controlCount": 647,
+    "practiceGroupCount": 20,
+    "policyRelevantControlCount": 42,
+    "modalVerbDefinitions": {
+      "MUSS": "verpflichtend; keine Abweichung vorgesehen",
+      "SOLLTE": "regelmäßig verpflichtend; begründete Ausnahme möglich",
+      "KANN": "optional; situationsabhängig sinnvoll"
+    },
+    "policyEditorUse": {
+      "scope": "Relution policies are realization and monitoring artifacts for already modeled assets.",
+      "assetModeling": "GS++ builds a tailored requirement package from information federation, assets, target object categories, inherited parent categories, and risk/compliance additions.",
+      "parameterization": "Parameterized GS++ requirements need local values; the editor must not invent thresholds.",
+      "nonGoals": "GS++ context does not by itself create an exact Relution mapping or replace local scope, asset, owner, and risk decisions."
+    }
+  }
+}

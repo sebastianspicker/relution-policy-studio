@@ -1,0 +1,6 @@
+{
+  "type": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+  "appAutoUpdatePolicy": "ALWAYS",
+  "enabled": true,
+  "restrictedPlayStoreMode": true
+}

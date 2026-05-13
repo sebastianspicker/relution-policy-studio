@@ -1,0 +1,8 @@
+{
+  "type": "WINDOWS_CUSTOM_CSP",
+  "deleteSyncML": "<Delete>\n  <CmdID>1</CmdID>\n  <Item>\n    <Target>\n      <LocURI>./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSystemIntegrity</LocURI>\n    </Target>\n  </Item>\n</Delete>",
+  "enabled": true,
+  "installSyncML": "<Replace>\n  <CmdID>1</CmdID>\n  <Item>\n    <Target>\n      <LocURI>./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSystemIntegrity</LocURI>\n    </Target>\n    <Meta>\n      <Format xmlns=\"syncml:metinf\">int</Format>\n    </Meta>\n    <Data>3</Data>\n  </Item>\n</Replace>",
+  "name": "System_AuditSystemIntegrity",
+  "wrapInAtomic": true
+}

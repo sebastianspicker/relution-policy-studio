@@ -1,0 +1,9 @@
+{
+  "type": "WINDOWS_LOCAL_DEVICE_SECURITY",
+  "allowRemoteLogonWithoutPassword": false,
+  "elevationPromptForAdmins": "PROMPT_CONSENT_SECURE_DESKTOP",
+  "runAllAdminsInAdminApprovalMode": true,
+  "smartCardRemovalBehavior": "LOCK_WORKSTATION",
+  "useAdminApprovalModeForAdminAcc": true,
+  "virtualizeFileRegistry": true
+}

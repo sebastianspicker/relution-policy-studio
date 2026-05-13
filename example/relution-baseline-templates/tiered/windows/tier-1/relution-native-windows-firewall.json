@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "name": "Windows Tier 1 Baseline - Windows Firewall Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "WINDOWS",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "WINDOWS_FIREWALL",
+      "slug": "relution-native-windows-firewall",
+      "label": "Windows Firewall"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 1 Baseline - Windows Firewall",
+      "description": "Modular Windows baseline block for WINDOWS_FIREWALL. Tier 1 - most restrictive Grundschutz baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-firewall",
+          "title": "Consolidated Relution aggregate: WINDOWS_FIREWALL",
+          "informational": false,
+          "reason": "Consolidates exact mappings from vendor.",
+          "sourceIds": [
+            "microsoft-intune-windows-mdm-baseline-settings"
+          ],
+          "sourceRules": [
+            {
+              "source": "vendor",
+              "ruleId": "vendor-windows-windows-firewall-aggregate",
+              "title": "Relution aggregate: WINDOWS_FIREWALL"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "domainProfile": {
+                  "allowDefaultInboundAction": false,
+                  "allowDefaultOutboundAction": true,
+                  "configureProfileProperties": true,
+                  "disableInboundNotifications": true,
+                  "enableFirewall": true,
+                  "profileType": "DOMAIN_PROFILE"
+                },
+                "privateProfile": {
+                  "allowDefaultInboundAction": false,
+                  "allowDefaultOutboundAction": true,
+                  "configureProfileProperties": true,
+                  "disableInboundNotifications": true,
+                  "enableFirewall": true,
+                  "profileType": "PRIVATE_PROFILE"
+                },
+                "publicProfile": {
+                  "allowDefaultInboundAction": false,
+                  "allowDefaultOutboundAction": true,
+                  "configureProfileProperties": true,
+                  "disableInboundNotifications": true,
+                  "enableFirewall": true,
+                  "profileType": "PUBLIC_PROFILE"
+                }
+              },
+              "type": "WINDOWS_FIREWALL"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

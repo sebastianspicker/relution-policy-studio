@@ -1,0 +1,2488 @@
+{
+  "version": 1,
+  "name": "BSI Mandatory Basis Relution Mapping Ledger",
+  "generatedAt": "2026-04-26T17:20:18Z",
+  "scope": {
+    "source": "BSI IT-Grundschutz Kompendium Edition 2023",
+    "requirements": "Active Basis requirements containing mandatory modal verbs.",
+    "target": "Relution-managed Windows, macOS, iOS, and Android Enterprise client configuration."
+  },
+  "summary": {
+    "totalMandatoryBasisRequirements": 49,
+    "byPlatform": {
+      "ANDROID_ENTERPRISE": 14,
+      "IOS": 17,
+      "MACOS": 8,
+      "WINDOWS": 10
+    },
+    "bySolutionStatus": {
+      "exact": 22,
+      "parameterized": 27
+    },
+    "byMappingStatus": {
+      "exact": 22,
+      "parameterized": 27
+    },
+    "settingBundleCount": 20
+  },
+  "rows": [
+    {
+      "id": "android-enterprise-sys-3-2-1-a1",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A1",
+      "title": "Festlegung einer Richtlinie für den Einsatz von Smartphones und Tablets",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Bevor eine Institution Smartphones oder Tablets bereitstellt, betreibt oder einsetzt, MUSS eine generelle Richtlinie für die Nutzung und Kontrolle der Geräte festgelegt werden.",
+        "Hierbei MUSS unter anderem festgelegt werden, wer mit Smartphones auf welche Informationen der Institution zugreifen darf."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a2",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A2",
+      "title": "Festlegung einer Strategie für die Cloud-Nutzung",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die Institution MUSS im Zusammenhang mit Smartphones und Tablets eine generelle Strategie für die Cloud-Nutzung sowie für den Schutz und die Kontrolle der Informationen festlegen.",
+        "Die erlaubte Nutzung von Cloud-Diensten für Informationen der Institution MUSS geklärt und festgelegt werden.",
+        "Es MUSS festgelegt werden, ob und in welchem Umfang Cloud-Dienste bei privater Nutzung der Geräte erlaubt sind.",
+        "Die Benutzenden MÜSSEN regelmäßig bezüglich der Nutzung solcher Cloud-Dienste sensibilisiert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a3",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A3",
+      "title": "Sichere Grundkonfiguration für mobile Geräte",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Alle mobilen Endgeräte MÜSSEN so konfiguriert sein, dass sie das erforderliche Schutzniveau angemessen erfüllen.",
+        "Dafür MUSS eine passende Grundkonfiguration der Sicherheitsmechanismen und -einstellungen zusammengestellt und dokumentiert werden.",
+        "Die Freischaltung von Kommunikationsschnittstellen MUSS geregelt und auf das dienstlich notwendige Maß reduziert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DISABLE_CAMERAS",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_SYSTEM_AUDIO_MANAGEMENT"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a4",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A4",
+      "title": "Verwendung eines Zugriffsschutzes",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Smartphones und Tablets MÜSSEN mit einem angemessen komplexen Gerätesperrcode geschützt werden.",
+        "Die Bildschirmsperre MUSS genutzt werden.",
+        "Die Anzeige von vertraulichen Informationen auf dem Sperrbildschirm MUSS deaktiviert sein.",
+        "Alle mobilen Geräte MÜSSEN nach einer angemessen kurzen Zeitspanne selbsttätig die Bildschirmsperre aktivieren.",
+        "Diese Zeitspanne MUSS in Abhängigkeit zum angestrebten Schutzniveau stehen.",
+        "Die Anzahl der Gerätesperrcodes, nach der sich ein Code wiederholen darf, SOLLTE festgelegt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_DISPLAY"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+          "values": {
+            "enabled": true,
+            "quality": "ALPHANUMERIC",
+            "minLength": 8,
+            "passcodeHistory": 5,
+            "maxFailedPasswordsForWipe": 10
+          }
+        },
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_DISPLAY",
+          "values": {
+            "enabled": true,
+            "screenTimeoutMode": "SCREEN_TIMEOUT_ENFORCED",
+            "screenTimeout": 300000
+          }
+        }
+      ],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "ANDROID_ENTERPRISE_DISPLAY",
+        "ANDROID_ENTERPRISE_HOME_SCREEN_LAYOUT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_CERTIFICATE",
+        "ANDROID_ENTERPRISE_RECOMMENDED_GLOBAL_PROXY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: require a complex Android Enterprise device passcode and enforced display timeout."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: require a complex Android Enterprise device passcode and enforced display timeout."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a5",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A5",
+      "title": "Updates von Betriebssystem und Apps",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Bereits bei der Auswahl von zu beschaffenden mobilen Geräten MUSS die Institution darauf achten, dass die herstellende Institution angibt, über welchen geplanten Nutzungszeitraum Sicherheitsaktualisierungen für die Geräte bereitgestellt werden.",
+        "Ältere Geräte, für die keine Aktualisierungen mehr bereitgestellt werden, MÜSSEN ausgesondert und durch von der herstellenden Institution unterstützte Geräte ersetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+          "values": {
+            "enabled": true,
+            "systemUpdateType": "AUTOMATIC"
+          }
+        },
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+          "values": {
+            "enabled": true,
+            "appAutoUpdatePolicy": "ALWAYS"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: install Android system updates automatically and keep managed apps updated."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: install Android system updates automatically and keep managed apps updated."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a6",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A6",
+      "title": "Datenschutzeinstellungen und Berechtigungen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Der Zugriff von Apps und Betriebssystem auf Daten und Schnittstellen MUSS angemessen eingeschränkt werden.",
+        "Die Datenschutzeinstellungen MÜSSEN so restriktiv wie möglich konfiguriert werden.",
+        "Fitnessdaten MUSS auf Konformität mit den organisationsinternen Datenschutz- und Sicherheitsvorgaben überprüft werden.",
+        "Der Zugriff MUSS restriktiv konfiguriert bzw.",
+        "Sicherheitsrelevante Berechtigungseinstellungen MÜSSEN so festgelegt werden, dass sie nicht durch Benutzende oder Apps geändert werden können.",
+        "Wo dies technisch nicht möglich ist, MÜSSEN die Berechtigungseinstellungen regelmäßig geprüft und erneut gesetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+          "values": {
+            "enabled": true,
+            "defaultPermissionPolicy": "DENY"
+          }
+        },
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "shareLocationDisabled": true,
+            "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+            "microphoneAccessPermission": "MICROPHONE_ACCESS_USER_CHOICE",
+            "screenCaptureDisabled": true
+          }
+        }
+      ],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_DISABLE_CAMERAS"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: deny permissions by default and restrict privacy-sensitive interfaces unless explicitly allowed."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: deny permissions by default and restrict privacy-sensitive interfaces unless explicitly allowed."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a7",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A7",
+      "title": "Verhaltensregeln bei Sicherheitsvorfällen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Gehen Geräte verloren oder werden unberechtigte Änderungen an Gerät und Software festgestellt, MÜSSEN die Benutzenden sofort die Zuständigen informieren."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-1-a8",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A8",
+      "title": "Installation von Apps",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die Institution MUSS regeln, ob, wie und welche Apps Benutzende selbst auf ihren Geräten installieren dürfen.",
+        "Sie SOLLTEN nur freigegebene Apps installieren dürfen.",
+        "Die Institution MUSS festlegen, aus welchen Quellen Apps installiert werden dürfen.",
+        "Es MUSS unterbunden werden, dass sich Apps aus nicht zugelassenen Quellen installieren lassen."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+          "values": {
+            "enabled": true,
+            "untrustedAppsPolicy": "DISALLOW_INSTALL",
+            "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED"
+          }
+        },
+        {
+          "kind": "relution-native",
+          "target": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+          "values": {
+            "enabled": true,
+            "restrictedPlayStoreMode": true
+          }
+        }
+      ],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: disallow untrusted app sources and restrict Play Store availability to managed scope."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: disallow untrusted app sources and restrict Play Store availability to managed scope."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-2-a1",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A1",
+      "title": "Festlegung einer Strategie für das Mobile Device Management",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Es MUSS eine Strategie erarbeitet werden, die festlegt, wie Mitarbeitende mobile Endgeräte benutzen dürfen und wie die Geräte in die IT-Strukturen der Institution integriert sind.",
+        "Grundlage MUSS dabei der Schutzbedarf der zu verarbeitenden Informationen sein.",
+        "Die Strategie MUSS mindestens folgende Aspekte abdecken: - Darf das MDM als Cloud-Dienst betrieben werden?",
+        "- Soll das MDM alle Apps bereitstellen oder dürfen die Benutzenden selber Apps installieren?",
+        "- Welche Compliance-Anforderungen müssen durchgesetzt werden?",
+        "- Welche mobilen Geräte und welche Betriebssysteme muss das MDM unterstützen?",
+        "- Muss die MDM-Lösung mandantenfähig sein?",
+        "- Müssen Cloud-Dienste eingebunden werden?",
+        "- Müssen Dokumentenmanagementsysteme eingebunden werden?",
+        "- Muss das MDM auch Peripheriegeräte einbinden und verwalten?",
+        "Die Strategie MUSS schriftlich fixiert und von dem oder der ISB freigegeben werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-2-a2",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A2",
+      "title": "Festlegung erlaubter mobiler Endgeräte",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Es MUSS festgelegt werden, welche mobilen Endgeräte und Betriebssysteme in der Institution zugelassen sind.",
+        "Alle erlaubten Geräte und Betriebssysteme MÜSSEN den Anforderungen der MDM-Strategie genügen und die technischen Sicherheitsanforderungen der Institution vollständig erfüllen.",
+        "Das MDM MUSS so konfiguriert werden, dass nur mit freigegebenen Geräten auf Informationen der Institution zugegriffen werden kann.",
+        "Es DÜRFEN nur von der Institution zugelassene mobile Endgeräte beschafft werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-2-a20",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A20",
+      "title": "Regelmäßige Überprüfung des MDM",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Sicherheitseinstellungen MÜSSEN regelmäßig überprüft werden.",
+        "Bei neuen Betriebssystemversionen der mobilen Endgeräte MUSS vorab geprüft werden, ob das MDM diese vollständig unterstützt und die Konfigurationsprofile und Sicherheitseinstellungen weiterhin wirksam und ausreichend sind.",
+        "Abweichungen MÜSSEN korrigiert werden.",
+        "Die zugeteilten Berechtigungen für Benutzende und Administrierende MÜSSEN regelmäßig daraufhin überprüft werden, ob sie weiterhin angemessen sind (Minimalprinzip)."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-2-a3",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A3",
+      "title": "Auswahl eines MDM-Produkts",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Wenn eine geeignete MDM-Software beschafft werden soll, MUSS sichergestellt sein, dass sich mit ihr alle in der MDM-Strategie festgelegten Anforderungen erfüllen lassen.",
+        "Auch MUSS sie sämtliche technischen und organisatorischen Sicherheitsmaßnahmen umsetzen können und alle zugelassenen mobilen Endgeräte unterstützen."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-2-a4",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A4",
+      "title": "Verteilung der Grundkonfiguration auf mobile Endgeräte",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Alle mobilen Endgeräte MÜSSEN, bevor sie eingesetzt werden, in das MDM integriert werden.",
+        "Wenn die Geräte die Grundkonfiguration erhalten, MÜSSEN sie sich im Werkszustand befinden.",
+        "Die Verbindung der mobilen Endgeräte zum MDM MUSS angemessen abgesichert werden.",
+        "Bei bereits benutzten Geräten MÜSSEN vorher alle institutionsbezogenen Daten gelöscht werden.",
+        "Ein nicht über MDM konfiguriertes Endgerät DARF NICHT auf Informationen der Institution zugreifen können."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "android-enterprise-sys-3-2-2-a5",
+      "platform": "ANDROID_ENTERPRISE",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A5",
+      "title": "Installation des MDM-Clients",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Wenn mobile Endgeräte an Mitarbeitende übergeben werden, MUSS, wenn vom Betriebssystem nicht bereits bereitgestellt, darauf der MDM-Client installiert und konfiguriert sein."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "ANDROID_ENTERPRISE_COMPLIANCE_ENFORCEMENT",
+        "ANDROID_ENTERPRISE_APP_POLICY",
+        "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "ANDROID_ENTERPRISE_ALWAYS_ON_VPN",
+        "ANDROID_ENTERPRISE_DEVICE_CONNECTIVITY",
+        "ANDROID_ENTERPRISE_STRONG_SWAN_PROFILE",
+        "ANDROID_ENTERPRISE_WIFI_MANAGEMENT",
+        "ANDROID_ENTERPRISE_RESTRICTION"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a1",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A1",
+      "title": "Festlegung einer Richtlinie für den Einsatz von Smartphones und Tablets",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Bevor eine Institution Smartphones oder Tablets bereitstellt, betreibt oder einsetzt, MUSS eine generelle Richtlinie für die Nutzung und Kontrolle der Geräte festgelegt werden.",
+        "Hierbei MUSS unter anderem festgelegt werden, wer mit Smartphones auf welche Informationen der Institution zugreifen darf."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SHARED_DEVICE",
+        "IOS_SECURED_SHARED_DEVICE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a2",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A2",
+      "title": "Festlegung einer Strategie für die Cloud-Nutzung",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die Institution MUSS im Zusammenhang mit Smartphones und Tablets eine generelle Strategie für die Cloud-Nutzung sowie für den Schutz und die Kontrolle der Informationen festlegen.",
+        "Die erlaubte Nutzung von Cloud-Diensten für Informationen der Institution MUSS geklärt und festgelegt werden.",
+        "Es MUSS festgelegt werden, ob und in welchem Umfang Cloud-Dienste bei privater Nutzung der Geräte erlaubt sind.",
+        "Die Benutzenden MÜSSEN regelmäßig bezüglich der Nutzung solcher Cloud-Dienste sensibilisiert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_CERTIFICATE",
+        "APPLE_TIME_ZONE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a3",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A3",
+      "title": "Sichere Grundkonfiguration für mobile Geräte",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Alle mobilen Endgeräte MÜSSEN so konfiguriert sein, dass sie das erforderliche Schutzniveau angemessen erfüllen.",
+        "Dafür MUSS eine passende Grundkonfiguration der Sicherheitsmechanismen und -einstellungen zusammengestellt und dokumentiert werden.",
+        "Die Freischaltung von Kommunikationsschnittstellen MUSS geregelt und auf das dienstlich notwendige Maß reduziert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_MANAGED_DOMAINS"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a4",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A4",
+      "title": "Verwendung eines Zugriffsschutzes",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Smartphones und Tablets MÜSSEN mit einem angemessen komplexen Gerätesperrcode geschützt werden.",
+        "Die Bildschirmsperre MUSS genutzt werden.",
+        "Die Anzeige von vertraulichen Informationen auf dem Sperrbildschirm MUSS deaktiviert sein.",
+        "Alle mobilen Geräte MÜSSEN nach einer angemessen kurzen Zeitspanne selbsttätig die Bildschirmsperre aktivieren.",
+        "Diese Zeitspanne MUSS in Abhängigkeit zum angestrebten Schutzniveau stehen.",
+        "Die Anzahl der Gerätesperrcodes, nach der sich ein Code wiederholen darf, SOLLTE festgelegt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "IOS_PASSCODE"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "IOS_PASSCODE",
+          "values": {
+            "enabled": true,
+            "allowSimple": false,
+            "requireAlphanumeric": true,
+            "forcePIN": true,
+            "minLength": 8,
+            "maxInactivityMinutes": 5,
+            "maxGracePeriodMinutes": 0,
+            "maxFailedAttempts": 10,
+            "pinHistory": 5
+          }
+        }
+      ],
+      "candidateTargets": [
+        "IOS_PASSCODE",
+        "APPLE_EXTENSIBLE_SINGLE_SIGN_ON",
+        "IOS_RESTRICTION",
+        "IOS_SHARED_DEVICE",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_CERTIFICATE",
+        "IOS_SCEP",
+        "IOS_WEB_CONTENT_FILTER"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: require an alphanumeric device passcode, short auto-lock, and passcode history."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: require an alphanumeric device passcode, short auto-lock, and passcode history."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a5",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A5",
+      "title": "Updates von Betriebssystem und Apps",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Bereits bei der Auswahl von zu beschaffenden mobilen Geräten MUSS die Institution darauf achten, dass die herstellende Institution angibt, über welchen geplanten Nutzungszeitraum Sicherheitsaktualisierungen für die Geräte bereitgestellt werden.",
+        "Ältere Geräte, für die keine Aktualisierungen mehr bereitgestellt werden, MÜSSEN ausgesondert und durch von der herstellenden Institution unterstützte Geräte ersetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "IOS_UPDATE"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "IOS_UPDATE",
+          "values": {
+            "enabled": true,
+            "updateMode": "INSTALL_ASAP"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "IOS_UPDATE",
+        "profile:com.apple.applicationaccess",
+        "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: install iOS updates as soon as possible."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: install iOS updates as soon as possible."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a6",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A6",
+      "title": "Datenschutzeinstellungen und Berechtigungen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Der Zugriff von Apps und Betriebssystem auf Daten und Schnittstellen MUSS angemessen eingeschränkt werden.",
+        "Die Datenschutzeinstellungen MÜSSEN so restriktiv wie möglich konfiguriert werden.",
+        "Fitnessdaten MUSS auf Konformität mit den organisationsinternen Datenschutz- und Sicherheitsvorgaben überprüft werden.",
+        "Der Zugriff MUSS restriktiv konfiguriert bzw.",
+        "Sicherheitsrelevante Berechtigungseinstellungen MÜSSEN so festgelegt werden, dass sie nicht durch Benutzende oder Apps geändert werden können.",
+        "Wo dies technisch nicht möglich ist, MÜSSEN die Berechtigungseinstellungen regelmäßig geprüft und erneut gesetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "IOS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "IOS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowDiagnosticSubmission": false,
+            "allowCloudBackup": false,
+            "allowCloudDocumentSync": false,
+            "allowCloudKeychainSync": false,
+            "allowCloudPhotoLibrary": false,
+            "allowCloudPrivateRelay": false,
+            "allowOpenFromManagedToUnmanaged": false,
+            "allowAssistantWhileLocked": false,
+            "allowLockScreenNotificationsView": false
+          }
+        }
+      ],
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "IOS_APP_LOCK",
+        "IOS_APP_COMPLIANCE",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "IOS_UPDATE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: reduce diagnostic, cloud, camera, lock-screen, and unmanaged data-transfer surfaces."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: reduce diagnostic, cloud, camera, lock-screen, and unmanaged data-transfer surfaces."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a7",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A7",
+      "title": "Verhaltensregeln bei Sicherheitsvorfällen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Gehen Geräte verloren oder werden unberechtigte Änderungen an Gerät und Software festgestellt, MÜSSEN die Benutzenden sofort die Zuständigen informieren."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "profile:com.apple.applicationaccess"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-1-a8",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.1",
+      "requirementId": "SYS.3.2.1.A8",
+      "title": "Installation von Apps",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die Institution MUSS regeln, ob, wie und welche Apps Benutzende selbst auf ihren Geräten installieren dürfen.",
+        "Sie SOLLTEN nur freigegebene Apps installieren dürfen.",
+        "Die Institution MUSS festlegen, aus welchen Quellen Apps installiert werden dürfen.",
+        "Es MUSS unterbunden werden, dass sich Apps aus nicht zugelassenen Quellen installieren lassen."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "IOS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "IOS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowAppInstallation": false,
+            "allowUIAppInstallation": false,
+            "allowEnterpriseAppTrust": false,
+            "allowUIConfigurationProfileInstallation": false
+          }
+        }
+      ],
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "IOS_APP_LOCK",
+        "IOS_APP_COMPLIANCE",
+        "IOS_MANAGED_APP",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: block user-driven app installation/trust while allowing MDM-managed apps."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: block user-driven app installation/trust while allowing MDM-managed apps."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-2-a1",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A1",
+      "title": "Festlegung einer Strategie für das Mobile Device Management",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Es MUSS eine Strategie erarbeitet werden, die festlegt, wie Mitarbeitende mobile Endgeräte benutzen dürfen und wie die Geräte in die IT-Strukturen der Institution integriert sind.",
+        "Grundlage MUSS dabei der Schutzbedarf der zu verarbeitenden Informationen sein.",
+        "Die Strategie MUSS mindestens folgende Aspekte abdecken: - Darf das MDM als Cloud-Dienst betrieben werden?",
+        "- Soll das MDM alle Apps bereitstellen oder dürfen die Benutzenden selber Apps installieren?",
+        "- Welche Compliance-Anforderungen müssen durchgesetzt werden?",
+        "- Welche mobilen Geräte und welche Betriebssysteme muss das MDM unterstützen?",
+        "- Muss die MDM-Lösung mandantenfähig sein?",
+        "- Müssen Cloud-Dienste eingebunden werden?",
+        "- Müssen Dokumentenmanagementsysteme eingebunden werden?",
+        "- Muss das MDM auch Peripheriegeräte einbinden und verwalten?",
+        "Die Strategie MUSS schriftlich fixiert und von dem oder der ISB freigegeben werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_CERTIFICATE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-2-a2",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A2",
+      "title": "Festlegung erlaubter mobiler Endgeräte",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Es MUSS festgelegt werden, welche mobilen Endgeräte und Betriebssysteme in der Institution zugelassen sind.",
+        "Alle erlaubten Geräte und Betriebssysteme MÜSSEN den Anforderungen der MDM-Strategie genügen und die technischen Sicherheitsanforderungen der Institution vollständig erfüllen.",
+        "Das MDM MUSS so konfiguriert werden, dass nur mit freigegebenen Geräten auf Informationen der Institution zugegriffen werden kann.",
+        "Es DÜRFEN nur von der Institution zugelassene mobile Endgeräte beschafft werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-2-a20",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A20",
+      "title": "Regelmäßige Überprüfung des MDM",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Sicherheitseinstellungen MÜSSEN regelmäßig überprüft werden.",
+        "Bei neuen Betriebssystemversionen der mobilen Endgeräte MUSS vorab geprüft werden, ob das MDM diese vollständig unterstützt und die Konfigurationsprofile und Sicherheitseinstellungen weiterhin wirksam und ausreichend sind.",
+        "Abweichungen MÜSSEN korrigiert werden.",
+        "Die zugeteilten Berechtigungen für Benutzende und Administrierende MÜSSEN regelmäßig daraufhin überprüft werden, ob sie weiterhin angemessen sind (Minimalprinzip)."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_MANAGED_APP",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-2-a3",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A3",
+      "title": "Auswahl eines MDM-Produkts",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Wenn eine geeignete MDM-Software beschafft werden soll, MUSS sichergestellt sein, dass sich mit ihr alle in der MDM-Strategie festgelegten Anforderungen erfüllen lassen.",
+        "Auch MUSS sie sämtliche technischen und organisatorischen Sicherheitsmaßnahmen umsetzen können und alle zugelassenen mobilen Endgeräte unterstützen."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-2-a4",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A4",
+      "title": "Verteilung der Grundkonfiguration auf mobile Endgeräte",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Alle mobilen Endgeräte MÜSSEN, bevor sie eingesetzt werden, in das MDM integriert werden.",
+        "Wenn die Geräte die Grundkonfiguration erhalten, MÜSSEN sie sich im Werkszustand befinden.",
+        "Die Verbindung der mobilen Endgeräte zum MDM MUSS angemessen abgesichert werden.",
+        "Bei bereits benutzten Geräten MÜSSEN vorher alle institutionsbezogenen Daten gelöscht werden.",
+        "Ein nicht über MDM konfiguriertes Endgerät DARF NICHT auf Informationen der Institution zugreifen können."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI",
+        "profile:com.apple.applicationaccess",
+        "IOS_SECURED_SHARED_DEVICE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-2-a5",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.2",
+      "requirementId": "SYS.3.2.2.A5",
+      "title": "Installation des MDM-Clients",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Wenn mobile Endgeräte an Mitarbeitende übergeben werden, MUSS, wenn vom Betriebssystem nicht bereits bereitgestellt, darauf der MDM-Client installiert und konfiguriert sein."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-3-a1",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.3",
+      "requirementId": "SYS.3.2.3.A1",
+      "title": "Strategie für die iOS-Nutzung",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Wird ein MDM eingesetzt, so MÜSSEN die iOS-basierten Geräte über das MDM verwaltet und konfiguriert werden.",
+        "Hierzu MUSS eine Strategie zur iOS-Nutzung vorliegen, in der Aspekte wie die Auswahl der Endgeräte oder Strategien für Datensicherungen festgelegt werden.",
+        "Es MUSS geregelt werden, ob zusätzliche Apps von Drittanbietenden genutzt werden sollen bzw.",
+        "dürfen.",
+        "Außerdem MÜSSEN Jailbreaks organisatorisch untersagt und nach Möglichkeit technisch verhindert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "IOS_PASSCODE",
+        "IOS_SECURED_SHARED_DEVICE",
+        "IOS_SHARED_DEVICE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ],
+      "notes": [
+        "BSI mandatory Basis governance requirement: Relution provides policy, enrollment, inventory, compliance, and reporting evidence, but local scope decisions remain required."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-3-a2",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.3",
+      "requirementId": "SYS.3.2.3.A2",
+      "title": "Planung des Einsatzes von Cloud-Diensten",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Bevor iOS-basierte Geräte verwendet werden, MUSS festgelegt werden, welche Cloud-Services in welchem Umfang genutzt werden sollen bzw.",
+        "dürfen."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "IOS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "IOS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowDiagnosticSubmission": false,
+            "allowCloudBackup": false,
+            "allowCloudDocumentSync": false,
+            "allowCloudKeychainSync": false,
+            "allowCloudPhotoLibrary": false,
+            "allowCloudPrivateRelay": false,
+            "allowOpenFromManagedToUnmanaged": false,
+            "allowAssistantWhileLocked": false,
+            "allowLockScreenNotificationsView": false
+          }
+        }
+      ],
+      "candidateTargets": [
+        "IOS_RESTRICTION",
+        "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "profile:com.apple.applicationaccess",
+        "IOS_CELLULAR",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_CERTIFICATE",
+        "APPLE_TIME_ZONE",
+        "IOS_APP_COMPLIANCE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: reduce diagnostic, cloud, camera, lock-screen, and unmanaged data-transfer surfaces."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: reduce diagnostic, cloud, camera, lock-screen, and unmanaged data-transfer surfaces."
+      ]
+    },
+    {
+      "id": "ios-sys-3-2-3-a7",
+      "platform": "IOS",
+      "moduleId": "SYS.3.2.3",
+      "requirementId": "SYS.3.2.3.A7",
+      "title": "Verhinderung des unautorisierten Löschens von Konfigurationsprofilen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Damit Konfigurationsprofile nicht unautorisiert gelöscht werden können, MÜSSEN geeignete technische (z."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "IOS_APP_COMPLIANCE",
+        "IOS_RESTRICTION",
+        "APPLE_DNS_SETTINGS",
+        "IOS_CELLULAR",
+        "IOS_DNS_PROXY",
+        "IOS_GLOBAL_HTTP_PROXY",
+        "IOS_VPN",
+        "IOS_WIFI"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI profile-removal protection depends on supervision/enrollment and Relution management state evidence."
+      ],
+      "notes": [
+        "BSI profile-removal protection depends on supervision/enrollment and Relution management state evidence."
+      ]
+    },
+    {
+      "id": "macos-sys-2-1-a1",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A1",
+      "title": "Sichere Authentisierung von Benutzenden",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Um den Client zu nutzen, MÜSSEN sich die Benutzenden gegenüber dem IT-System authentisieren.",
+        "Benutzende MÜSSEN eine Bildschirmsperre verwenden, wenn sie den Client unbeaufsichtigt betreiben.",
+        "Die Bildschirmsperre DARF NUR durch eine erfolgreiche Authentisierung wieder deaktiviert werden können."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "apple-schema-profile",
+          "target": "profile:com.apple.mobiledevice.passwordpolicy",
+          "values": {
+            "allowSimple": false,
+            "forcePIN": true,
+            "minLength": 8,
+            "requireAlphanumeric": true,
+            "maxInactivity": 5,
+            "maxGracePeriod": 0,
+            "maxFailedAttempts": 10,
+            "pinHistory": 5
+          }
+        },
+        {
+          "kind": "relution-native",
+          "target": "MACOS_SCREENSAVER",
+          "values": {
+            "enabled": true,
+            "askForPassword": true,
+            "askForPasswordDelay": 0,
+            "loginWindowIdleTime": 900
+          }
+        }
+      ],
+      "candidateTargets": [
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER",
+        "profile:com.apple.applicationaccess",
+        "MACOS_RESTRICTION",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: require password authentication and screen-saver lock on macOS."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: require password authentication and screen-saver lock on macOS."
+      ]
+    },
+    {
+      "id": "macos-sys-2-1-a3",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A3",
+      "title": "Aktivieren von Autoupdate-Mechanismen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Automatische Update-Mechanismen (Autoupdate) MÜSSEN aktiviert werden, sofern nicht andere Mechanismen wie regelmäßige manuelle Wartung oder ein zentrales Softwareverteilungssystem für Updates eingesetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "profile:com.apple.SoftwareUpdate"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "apple-schema-profile",
+          "target": "profile:com.apple.SoftwareUpdate",
+          "values": {
+            "AutomaticCheckEnabled": true,
+            "AutomaticDownload": true,
+            "AutomaticallyInstallMacOSUpdates": true,
+            "AutomaticallyInstallAppUpdates": true,
+            "CriticalUpdateInstall": true,
+            "ConfigDataInstall": true
+          }
+        }
+      ],
+      "candidateTargets": [
+        "profile:com.apple.SoftwareUpdate",
+        "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "MACOS_UPDATE",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "APPLE_DNS_SETTINGS"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Curated Apple profile analogs cover this enforceable requirement through Relution APPLE_MOBILECONFIG-backed schema profiles."
+      ],
+      "notes": [
+        "Curated Apple profile analogs cover this enforceable requirement through Relution APPLE_MOBILECONFIG-backed schema profiles."
+      ]
+    },
+    {
+      "id": "macos-sys-2-1-a42",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A42",
+      "title": "Nutzung von Cloud- und Online-Funktionen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Es DÜRFEN NUR zwingend notwendige Cloud- und Online-Funktionen des Betriebssystems genutzt werden.",
+        "Die entsprechenden Einstellungen des Betriebssystems MÜSSEN auf Konformität mit den organisatorischen Datenschutz- und Sicherheitsvorgaben überprüft und restriktiv konfiguriert bzw."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "MACOS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "MACOS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowCloudDocumentSync": false,
+            "allowCloudKeychainSync": false,
+            "allowCloudPhotoLibrary": false,
+            "allowCloudDesktopAndDocuments": false,
+            "allowActivityContinuation": false,
+            "allowAirDrop": false,
+            "allowDiagnosticSubmission": false
+          }
+        }
+      ],
+      "candidateTargets": [
+        "MACOS_RESTRICTION",
+        "profile:com.apple.applicationaccess",
+        "com.apple.TCC.configuration-profile-policy",
+        "profile:com.apple.MCX.FileVault2",
+        "profile:com.apple.security.root",
+        "profile:com.apple.security.scep",
+        "APPLE_TIME_ZONE",
+        "MACOS_APP_COMPLIANCE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: disable unmanaged cloud sync and continuity surfaces on macOS."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: disable unmanaged cloud sync and continuity surfaces on macOS."
+      ]
+    },
+    {
+      "id": "macos-sys-2-1-a6",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A6",
+      "title": "Einsatz von Schutzprogrammen gegen Schadsoftware",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Abhängig vom installierten Betriebssystem und von anderen vorhandenen Schutzmechanismen des Clients MUSS geprüft werden, ob Schutzprogramme gegen Schadsoftware eingesetzt werden sollen.",
+        "Soweit vorhanden, MÜSSEN konkrete Aussagen, ob ein solcher Schutz notwendig ist, aus den spezifischen Betriebssystem-Bausteinen des IT-Grundschutz-Kompendiums berücksichtigt werden.",
+        "Schutzprogramme auf den Clients MÜSSEN so konfiguriert sein, dass Benutzende weder sicherheitsrelevante Änderungen an den Einstellungen vornehmen noch die Schutzprogramme deaktivieren können.",
+        "Das Schutzprogramm MUSS nach Schadsoftware suchen, wenn Dateien ausgetauscht oder übertragen werden.",
+        "Der gesamte Datenbestand eines Clients MUSS regelmäßig auf Schadsoftware geprüft werden.",
+        "Wenn ein Client infiziert ist, MUSS im Offlinebetrieb untersucht werden, ob ein gefundenes Schadprogramm bereits vertrauliche Daten gesammelt, Schutzfunktionen deaktiviert oder Code aus dem Internet nachgeladen hat."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "MACOS_SYSTEM_POLICY_CONTROL",
+          "values": {
+            "enabled": true,
+            "allowIdentifiedDevelopers": true,
+            "enableAssessment": true
+          }
+        }
+      ],
+      "candidateTargets": [
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: enforce Gatekeeper assessment for identified developers."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: enforce Gatekeeper assessment for identified developers."
+      ]
+    },
+    {
+      "id": "macos-sys-2-1-a8",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A8",
+      "title": "Absicherung des Bootvorgangs",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Der Startvorgang des IT-Systems („Booten“) MUSS gegen Manipulation abgesichert werden.",
+        "Es MUSS festgelegt werden, von welchen Medien gebootet werden darf.",
+        "Es MUSS sichergestellt werden, dass nur Administrierende die Clients von einem anderen als den voreingestellten Laufwerken oder externen Speichermedien booten können.",
+        "NUR Administrierende DÜRFEN von wechselbaren oder externen Speichermedien booten können.",
+        "Die Konfigurationseinstellungen des Bootvorgangs DÜRFEN NUR durch Administrierende verändert werden können.",
+        "Alle nicht benötigten Funktionen in der Firmware des Client-Systems MÜSSEN deaktiviert werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "MACOS_FILE_VAULT"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "MACOS_FILE_VAULT",
+          "values": {
+            "enabled": true,
+            "fdeFileVault": {
+              "enable": "ON",
+              "defer": true,
+              "useRecoveryKey": true,
+              "showRecoveryKey": true
+            },
+            "fdeFileVaultOptions": {
+              "dontAllowFDEDisable": true
+            },
+            "enableRecoveryKeyEscrow": true
+          }
+        }
+      ],
+      "candidateTargets": [
+        "MACOS_FILE_VAULT",
+        "profile:com.apple.preference.security",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.MCX.FileVault2",
+        "profile:com.apple.mobiledevice.passwordpolicy",
+        "MACOS_SCREENSAVER"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: enforce FileVault and prevent users from disabling disk encryption."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: enforce FileVault and prevent users from disabling disk encryption."
+      ]
+    },
+    {
+      "id": "macos-sys-2-4-a1",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.4",
+      "requirementId": "SYS.2.4.A1",
+      "title": "Planung des sicheren Einsatzes von macOS",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die Einführung von macOS MUSS sorgfältig geplant werden.",
+        "Es MUSS entschieden werden, wo und wie Daten abgelegt werden.",
+        "Es MUSS geplant werden, wie die Datensicherung in das institutionsweite Datensicherungskonzept integriert werden kann.",
+        "Es MUSS geplant werden, wie Sicherheits- und sonstige Aktualisierungen für macOS und Anwendungen systematisch installiert werden können.",
+        "Es MUSS ermittelt werden, welche Anwendungen bei einem Plattformwechsel zu macOS benötigt werden.",
+        "Wird der Mac in einem Datennetz betrieben, MUSS zusätzlich berücksichtigt werden, welche Netzprotokolle eingesetzt werden sollen."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_UPDATE",
+        "MACOS_APPSTORE",
+        "profile:com.apple.SoftwareUpdate",
+        "profile:com.apple.applicationaccess",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI macOS planning requires local deployment and support decisions; Relution can enforce the resulting profile baseline."
+      ],
+      "notes": [
+        "BSI macOS planning requires local deployment and support decisions; Relution can enforce the resulting profile baseline."
+      ]
+    },
+    {
+      "id": "macos-sys-2-4-a2",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.4",
+      "requirementId": "SYS.2.4.A2",
+      "title": "Nutzung der integrierten Sicherheitsfunktionen von macOS",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die in macOS integrierten Schutzmechanismen „System Integrity Protection“ (SIP), „Xprotect“ und „Gatekeeper“ MÜSSEN aktiviert sein.",
+        "Gatekeeper DARF NUR die Ausführung signierter Programme erlauben, sofern unsignierte Programme nicht zwingend notwendig sind."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_LOGIN_WINDOW",
+        "MACOS_SYSTEM_POLICY_CONTROL",
+        "profile:com.apple.vpn.managed",
+        "profile:com.apple.wifi.managed",
+        "APPLE_DNS_SETTINGS",
+        "IOS_DNS_PROXY"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI integrated macOS security functions require local enablement decisions plus Relution profile evidence."
+      ],
+      "notes": [
+        "BSI integrated macOS security functions require local enablement decisions plus Relution profile evidence."
+      ]
+    },
+    {
+      "id": "macos-sys-2-4-a3",
+      "platform": "MACOS",
+      "moduleId": "SYS.2.4",
+      "requirementId": "SYS.2.4.A3",
+      "title": "Verwendung geeigneter Konten",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Das bei der Erstkonfiguration von macOS angelegte Konto hat Administrationsrechte und DARF NUR zu administrativen Zwecken verwendet werden.",
+        "Für die normale Verwendung des Macs MUSS ein Konto mit Standard-Berechtigungen angelegt werden.",
+        "Sollte der Mac von mehreren Benutzenden verwendet werden, MUSS für jeden Benutzenden ein eigenes Konto angelegt werden.",
+        "Das Gast-Konto MUSS deaktiviert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "MACOS_APP_COMPLIANCE",
+        "MACOS_RESTRICTION",
+        "MACOS_ACCOUNTS",
+        "com.apple.TCC.configuration-profile-policy",
+        "profile:com.apple.applicationaccess.new",
+        "MACOS_ACCOUNT_SETUP",
+        "MACOS_SECURITY_PREFERENCES",
+        "MACOS_SYSTEM_POLICY_CONTROL"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI account suitability requires local identity and admin-role decisions; Relution can enforce related account restrictions."
+      ],
+      "notes": [
+        "BSI account suitability requires local identity and admin-role decisions; Relution can enforce related account restrictions."
+      ]
+    },
+    {
+      "id": "windows-sys-2-1-a1",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A1",
+      "title": "Sichere Authentisierung von Benutzenden",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Um den Client zu nutzen, MÜSSEN sich die Benutzenden gegenüber dem IT-System authentisieren.",
+        "Benutzende MÜSSEN eine Bildschirmsperre verwenden, wenn sie den Client unbeaufsichtigt betreiben.",
+        "Die Bildschirmsperre DARF NUR durch eine erfolgreiche Authentisierung wieder deaktiviert werden können."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_PASSCODE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_PASSCODE",
+          "values": {
+            "enabled": true,
+            "allowSimplePassword": false,
+            "quality": "ALPHANUMERIC",
+            "minLength": 12,
+            "history": 5,
+            "maxFailAttempts": 10,
+            "maxInactivityTime": 15
+          }
+        },
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_LOCAL_DEVICE_SECURITY",
+          "values": {
+            "enabled": true,
+            "inactivityTimeUntilScreenSaver": 900,
+            "userInformationOnLockScreenConfiguration": "NO_USER_INFORMATION"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_PASSCODE",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_HELLO",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: require authentication, non-simple alphanumeric password, idle lock, and lock-screen privacy."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: require authentication, non-simple alphanumeric password, idle lock, and lock-screen privacy."
+      ]
+    },
+    {
+      "id": "windows-sys-2-1-a3",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A3",
+      "title": "Aktivieren von Autoupdate-Mechanismen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Automatische Update-Mechanismen (Autoupdate) MÜSSEN aktiviert werden, sofern nicht andere Mechanismen wie regelmäßige manuelle Wartung oder ein zentrales Softwareverteilungssystem für Updates eingesetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_UPDATE"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_UPDATE",
+          "values": {
+            "enabled": true,
+            "enableWindowsUpdateAccess": true,
+            "enablePauseUpdates": false,
+            "autoUpdateType": "AUTO_INSTALL_AND_RESTART_AT_SPECIFIED_TIME",
+            "installDay": "EVERY_DAY",
+            "installTime": 3,
+            "deadlineForQualityUpdates": 7,
+            "deadlineForFeatureUpdates": 30
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_UPDATE",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_APP_COMPLIANCE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: enable Windows Update with automatic install and daily checks."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: enable Windows Update with automatic install and daily checks."
+      ]
+    },
+    {
+      "id": "windows-sys-2-1-a42",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A42",
+      "title": "Nutzung von Cloud- und Online-Funktionen",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Es DÜRFEN NUR zwingend notwendige Cloud- und Online-Funktionen des Betriebssystems genutzt werden.",
+        "Die entsprechenden Einstellungen des Betriebssystems MÜSSEN auf Konformität mit den organisatorischen Datenschutz- und Sicherheitsvorgaben überprüft und restriktiv konfiguriert bzw."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowSyncMySettings": false,
+            "allowAddingForeignAccountsManually": false,
+            "allowAccounts": false,
+            "allowYourAccount": false,
+            "allowPrivacyExperience": false,
+            "allowInputPersonalization": false,
+            "appGetDiagnosticInfo": "DENY"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_BITLOCKER"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: reduce Microsoft account, sync, privacy, and diagnostic integration surfaces."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: reduce Microsoft account, sync, privacy, and diagnostic integration surfaces."
+      ]
+    },
+    {
+      "id": "windows-sys-2-1-a6",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A6",
+      "title": "Einsatz von Schutzprogrammen gegen Schadsoftware",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Abhängig vom installierten Betriebssystem und von anderen vorhandenen Schutzmechanismen des Clients MUSS geprüft werden, ob Schutzprogramme gegen Schadsoftware eingesetzt werden sollen.",
+        "Soweit vorhanden, MÜSSEN konkrete Aussagen, ob ein solcher Schutz notwendig ist, aus den spezifischen Betriebssystem-Bausteinen des IT-Grundschutz-Kompendiums berücksichtigt werden.",
+        "Schutzprogramme auf den Clients MÜSSEN so konfiguriert sein, dass Benutzende weder sicherheitsrelevante Änderungen an den Einstellungen vornehmen noch die Schutzprogramme deaktivieren können.",
+        "Das Schutzprogramm MUSS nach Schadsoftware suchen, wenn Dateien ausgetauscht oder übertragen werden.",
+        "Der gesamte Datenbestand eines Clients MUSS regelmäßig auf Schadsoftware geprüft werden.",
+        "Wenn ein Client infiziert ist, MUSS im Offlinebetrieb untersucht werden, ob ein gefundenes Schadprogramm bereits vertrauliche Daten gesammelt, Schutzfunktionen deaktiviert oder Code aus dem Internet nachgeladen hat."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_ANTIVIRUS"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_ANTIVIRUS",
+          "values": {
+            "enabled": true,
+            "allowRealtimeMonitoring": true,
+            "allowBehaviorMonitoring": true,
+            "allowCloudProtection": true,
+            "allowArchiveScanning": true,
+            "allowEmailScanning": true,
+            "allowIOAVProtection": true,
+            "allowScriptScanning": true,
+            "puaProtection": "ON",
+            "signatureUpdateInterval": 4,
+            "realTimeScanDirection": "ALL"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_COMPANION",
+        "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "WINDOWS_RESTRICTION"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: enable Microsoft Defender real-time, cloud, archive, script, and IOAV protection."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: enable Microsoft Defender real-time, cloud, archive, script, and IOAV protection."
+      ]
+    },
+    {
+      "id": "windows-sys-2-1-a8",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.1",
+      "requirementId": "SYS.2.1.A8",
+      "title": "Absicherung des Bootvorgangs",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Der Startvorgang des IT-Systems („Booten“) MUSS gegen Manipulation abgesichert werden.",
+        "Es MUSS festgelegt werden, von welchen Medien gebootet werden darf.",
+        "Es MUSS sichergestellt werden, dass nur Administrierende die Clients von einem anderen als den voreingestellten Laufwerken oder externen Speichermedien booten können.",
+        "NUR Administrierende DÜRFEN von wechselbaren oder externen Speichermedien booten können.",
+        "Die Konfigurationseinstellungen des Bootvorgangs DÜRFEN NUR durch Administrierende verändert werden können.",
+        "Alle nicht benötigten Funktionen in der Firmware des Client-Systems MÜSSEN deaktiviert werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_BITLOCKER"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_BITLOCKER",
+          "values": {
+            "enabled": true,
+            "requireDeviceEncryption": true,
+            "startAuthenticationRequired": true,
+            "tpmOnIncompatibleDevices": false,
+            "tpmStartup": "REQUIRED",
+            "tpmStartupPin": "DISALLOWED",
+            "tpmStartupKey": "DISALLOWED",
+            "tpmStartupPinAndKey": "DISALLOWED",
+            "encryptionTypeForOsDrives": "XTS_AES_256",
+            "encryptionTypeForFixedDrives": "XTS_AES_256",
+            "encryptionTypeForRemovableDrives": "XTS_AES_256",
+            "osDrivesEncryptionType": "USED_SPACE_ONLY",
+            "osDrivesConfigureRecovery": true,
+            "osDrivesCreateRecoveryPassword": "REQUIRED"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: require device encryption and TPM-backed BitLocker protection where supported."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: require device encryption and TPM-backed BitLocker protection where supported."
+      ]
+    },
+    {
+      "id": "windows-sys-2-2-3-a1",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.2.3",
+      "requirementId": "SYS.2.2.3.A1",
+      "title": "Planung des Einsatzes von Cloud-Diensten unter Windows",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Da Windows-basierte Geräte eng mit den Cloud-Diensten des Herstellers Microsoft verzahnt sind, MUSS vor ihrer Verwendung strategisch festgelegt werden, welche enthaltenen Cloud-Dienste in welchem Umfang genutzt werden sollen bzw.",
+        "dürfen."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_NETWORK_PROXY",
+        "WINDOWS_REMOTE_DESKTOP",
+        "WINDOWS_VPN",
+        "WINDOWS_WIFI",
+        "WINDOWS_CERTIFICATE"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI cloud planning requires local service, identity, and data-location decisions; Relution can enforce resulting policy settings."
+      ],
+      "notes": [
+        "BSI cloud planning requires local service, identity, and data-location decisions; Relution can enforce resulting policy settings."
+      ]
+    },
+    {
+      "id": "windows-sys-2-2-3-a2",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.2.3",
+      "requirementId": "SYS.2.2.3.A2",
+      "title": "Auswahl und Beschaffung einer geeigneten Windows-Version",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Der Funktionsumfang und die Versorgung mit funktionalen Änderungen einer Windows-Version MÜSSEN unter Berücksichtigung des ermittelten Schutzbedarfs und des Einsatzzwecks ausgewählt werden.",
+        "Die Umsetzbarkeit der erforderlichen Absicherungsmaßnahmen MUSS bei der Auswahl berücksichtigt werden.",
+        "Basierend auf dem Ergebnis der Überprüfung MUSS der etablierte Beschaffungsprozess um die Auswahl des entsprechenden Lizenzmodells und „Service Branches“ (CB, CBB oder LTSC) erweitert werden."
+      ],
+      "mappingStatus": "parameterized",
+      "solutionStatus": "parameterized",
+      "exactTargets": [],
+      "exactTargetValues": [],
+      "candidateTargets": [
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_CERTIFICATE",
+        "WINDOWS_HELLO",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "parameterRequirements": [
+        {
+          "id": "local-scope",
+          "path": "scope.assetGroup",
+          "label": "Managed asset scope",
+          "description": "Define the device group, ownership model, and approved users for this BSI requirement."
+        }
+      ],
+      "processSupport": [
+        {
+          "id": "relution-evidence",
+          "relutionFunction": "Relution policy, enrollment, inventory, compliance, and reporting workflow",
+          "evidence": "Attach Relution policy/export/report evidence to the local BSI implementation record."
+        }
+      ],
+      "blockingReasons": [
+        "BSI Windows version selection is procurement and lifecycle governance; Relution inventory and policy targeting provide evidence."
+      ],
+      "notes": [
+        "BSI Windows version selection is procurement and lifecycle governance; Relution inventory and policy targeting provide evidence."
+      ]
+    },
+    {
+      "id": "windows-sys-2-2-3-a4",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.2.3",
+      "requirementId": "SYS.2.2.3.A4",
+      "title": "Telemetrie und Datenschutzeinstellungen unter Windows",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Um die Übertragung von Diagnose- und Nutzungsdaten an Microsoft stark zu reduzieren, MUSS das Telemetrie-Level 0 (Security) in der Enterprise-Edition von Windows konfiguriert werden.",
+        "Wenn diese Einstellung nicht wirksam umgesetzt wird oder bei anderen Windows-Edition umgesetzt werden kann, dann MUSS durch geeignete Maßnahmen, etwa auf Netzebene, sichergestellt werden, dass die Daten nicht an den Hersteller übertragen werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowSyncMySettings": false,
+            "allowAddingForeignAccountsManually": false,
+            "allowAccounts": false,
+            "allowYourAccount": false,
+            "allowPrivacyExperience": false,
+            "allowInputPersonalization": false,
+            "appGetDiagnosticInfo": "DENY"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_LICENSING",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_LOCAL_DEVICE_SECURITY"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: reduce Microsoft account, sync, privacy, and diagnostic integration surfaces."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: reduce Microsoft account, sync, privacy, and diagnostic integration surfaces."
+      ]
+    },
+    {
+      "id": "windows-sys-2-2-3-a5",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.2.3",
+      "requirementId": "SYS.2.2.3.A5",
+      "title": "Schutz vor Schadsoftware unter Windows",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Ausführungskontrolle, zum Schutz des IT-Systems vor einer Infektion mit Schadsoftware getroffen wurden, MUSS eine spezialisierte Komponente zum Schutz vor Schadsoftware auf Windows-Clients eingesetzt werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_ANTIVIRUS"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_ANTIVIRUS",
+          "values": {
+            "enabled": true,
+            "allowRealtimeMonitoring": true,
+            "allowBehaviorMonitoring": true,
+            "allowCloudProtection": true,
+            "allowArchiveScanning": true,
+            "allowEmailScanning": true,
+            "allowIOAVProtection": true,
+            "allowScriptScanning": true,
+            "puaProtection": "ON",
+            "signatureUpdateInterval": 4,
+            "realTimeScanDirection": "ALL"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_ANTIVIRUS",
+        "WINDOWS_CUSTOM_CSP",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_APP_CONTROL",
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_CERTIFICATE"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: enable Microsoft Defender real-time, cloud, archive, script, and IOAV protection."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: enable Microsoft Defender real-time, cloud, archive, script, and IOAV protection."
+      ]
+    },
+    {
+      "id": "windows-sys-2-2-3-a6",
+      "platform": "WINDOWS",
+      "moduleId": "SYS.2.2.3",
+      "requirementId": "SYS.2.2.3.A6",
+      "title": "Integration von Online-Konten in das Betriebssystem",
+      "protectionLevel": "B",
+      "mandatoryClauses": [
+        "Die Anmeldung am System sowie an der Domäne DARF NUR mit dem Konto eines selbst betriebenen Verzeichnisdienstes möglich sein.",
+        "Online-Konten zur Anmeldung, etwa ein Microsoft-Konto oder Konten anderer Identitätsmanagementsysteme, DÜRFEN NICHT verwendet werden, da hier personenbezogene Daten an die Systeme Dritter übertragen werden."
+      ],
+      "mappingStatus": "exact",
+      "solutionStatus": "exact",
+      "exactTargets": [
+        "WINDOWS_RESTRICTION"
+      ],
+      "exactTargetValues": [
+        {
+          "kind": "relution-native",
+          "target": "WINDOWS_RESTRICTION",
+          "values": {
+            "enabled": true,
+            "allowSyncMySettings": false,
+            "allowAddingForeignAccountsManually": false,
+            "allowAccounts": false,
+            "allowYourAccount": false,
+            "allowPrivacyExperience": false,
+            "allowInputPersonalization": false,
+            "appGetDiagnosticInfo": "DENY"
+          }
+        }
+      ],
+      "candidateTargets": [
+        "WINDOWS_RESTRICTION",
+        "WINDOWS_HELLO",
+        "WINDOWS_PASSCODE",
+        "WINDOWS_APP_COMPLIANCE",
+        "WINDOWS_COMPANION",
+        "WINDOWS_CUSTOM_CSP"
+      ],
+      "parameterRequirements": [],
+      "processSupport": [],
+      "blockingReasons": [
+        "Conservative BSI Basis default: reduce Microsoft account, sync, privacy, and diagnostic integration surfaces."
+      ],
+      "notes": [
+        "Conservative BSI Basis default: reduce Microsoft account, sync, privacy, and diagnostic integration surfaces."
+      ]
+    }
+  ]
+}

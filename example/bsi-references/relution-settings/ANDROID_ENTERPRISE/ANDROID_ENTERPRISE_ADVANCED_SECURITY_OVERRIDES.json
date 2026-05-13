@@ -1,0 +1,7 @@
+{
+  "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+  "developerSettings": "DEVELOPER_SETTINGS_DISABLED",
+  "enabled": true,
+  "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED",
+  "untrustedAppsPolicy": "DISALLOW_INSTALL"
+}

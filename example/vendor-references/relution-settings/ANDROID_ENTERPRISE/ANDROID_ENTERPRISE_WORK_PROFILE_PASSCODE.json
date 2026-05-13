@@ -1,0 +1,4 @@
+{
+  "type": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+  "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK"
+}

@@ -1,6 +1,0 @@
-{
-  "type": "WINDOWS_RESTRICTION",
-  "allowCamera": false,
-  "allowCortana": false,
-  "uploadUserActivities": false
-}

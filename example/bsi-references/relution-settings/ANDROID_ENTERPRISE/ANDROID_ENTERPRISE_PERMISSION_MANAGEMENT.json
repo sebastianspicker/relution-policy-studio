@@ -1,5 +1,0 @@
-{
-  "type": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
-  "defaultPermissionPolicy": "DENY",
-  "enabled": true
-}

@@ -1,0 +1,6 @@
+{
+  "type": "ANDROID_ENTERPRISE_DISPLAY",
+  "enabled": true,
+  "screenTimeout": 300000,
+  "screenTimeoutMode": "SCREEN_TIMEOUT_ENFORCED"
+}

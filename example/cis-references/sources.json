@@ -1,0 +1,179 @@
+[
+  {
+    "id": "cis-benchmarks-overview",
+    "scope": ["windows", "android", "ios", "macos"],
+    "title": "CIS Benchmarks",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/cis-benchmarks",
+    "type": "overview-page",
+    "note": "Top-level CIS Benchmarks overview page for locating current family pages."
+  },
+  {
+    "id": "cis-windows-desktop-family",
+    "scope": ["windows"],
+    "title": "CIS Microsoft Windows Desktop Benchmarks",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/benchmark/microsoft_windows_desktop",
+    "type": "family-page",
+    "current_versions": [
+      "Microsoft Windows 11 Enterprise (5.0.1)",
+      "Microsoft Windows 11 Stand-alone (5.0.0)",
+      "Microsoft Windows 10 Enterprise (4.0.0)",
+      "Microsoft Windows 10 Stand-alone (4.0.0)"
+    ],
+    "note": "Current public Windows desktop family page. Also repeats the active versions in the CIS-CAT Pro and Build Kits sections."
+  },
+  {
+    "id": "cis-windows-june-2025-update",
+    "scope": ["windows"],
+    "title": "CIS Benchmarks June 2025 Update",
+    "document_date": "2025-06-11",
+    "verified_as_of": "2026-04-23",
+    "url": "https://portal.cisecurity.org/insights/articles/cis-benchmarks-june-2025-update",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Microsoft Windows 10 Enterprise Benchmark v4.0.0",
+      "CIS Microsoft Windows 11 Stand-alone Benchmark v4.0.0"
+    ],
+    "note": "Public dated release post for the current Windows 10 Enterprise and Windows 11 Stand-alone benchmark generation."
+  },
+  {
+    "id": "cis-windows-march-2026-update",
+    "scope": ["windows"],
+    "title": "CIS Benchmarks March 2026 Update",
+    "document_date": "2026-03-06",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/insights/blog/cis-benchmarks-march-2026-update",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Microsoft Windows 11 Enterprise Benchmark v5.0.0"
+    ],
+    "note": "Public dated release post for Windows 11 Enterprise v5.0.0. The family page now shows 5.0.1 as the active current version."
+  },
+  {
+    "id": "cis-google-android-family",
+    "scope": ["android"],
+    "title": "CIS Google Android Benchmarks",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/benchmark/google_android",
+    "type": "family-page",
+    "current_versions": [
+      "Google Android (1.6.0)"
+    ],
+    "note": "Current public Android family page."
+  },
+  {
+    "id": "cis-google-android-october-2025-update",
+    "scope": ["android"],
+    "title": "CIS Benchmarks Monthly Update October 2025",
+    "document_date": "2025-11-07",
+    "verified_as_of": "2026-04-23",
+    "url": "https://portal.cisecurity.org/insights/articles/cis%20benchmarks%20monthly%20update%20october%202025",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Google Android Benchmark v1.6.0"
+    ],
+    "note": "Public dated release post for the currently active Android benchmark version."
+  },
+  {
+    "id": "cis-apple-ios-family",
+    "scope": ["ios"],
+    "title": "CIS Apple iOS Benchmarks",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/benchmark/apple_ios",
+    "type": "family-page",
+    "current_versions": [
+      "Apple iOS 26 (1.0.0)",
+      "Apple iOS 18 (2.0.0)",
+      "Apple iOS 17 (1.1.0)"
+    ],
+    "related_versions": [
+      "Apple iPadOS 26 (1.0.0)",
+      "Apple iPadOS 18 (2.0.0)",
+      "Apple iPadOS 17 (1.1.0)"
+    ],
+    "note": "Current public iOS family page. Also useful for observing current benchmark-versus-Build-Kit version differences."
+  },
+  {
+    "id": "cis-apple-ios-july-2025-update",
+    "scope": ["ios"],
+    "title": "CIS Benchmarks July 2025 Update",
+    "document_date": "2025-07-08",
+    "verified_as_of": "2026-04-23",
+    "url": "https://portal.cisecurity.org/insights/articles/cis-benchmarks-july-2025-update",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Apple iOS 18 Benchmark v1.1.0"
+    ],
+    "note": "Public dated release post for iOS 18 v1.1.0."
+  },
+  {
+    "id": "cis-apple-ios-january-2026-update",
+    "scope": ["ios"],
+    "title": "CIS Benchmarks January 2026 Update",
+    "document_date": "2026-01-12",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/insights/blog/cis-benchmarks-january-2026-update",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Apple iOS 18.0 Benchmark v2.0.0",
+      "CIS Apple iPadOS 18.0 Benchmark v2.0.0"
+    ],
+    "note": "Public dated release post for the final iOS/iPadOS 18 2.0.0 update."
+  },
+  {
+    "id": "cis-apple-macos-family",
+    "scope": ["macos"],
+    "title": "CIS Apple macOS Benchmarks",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/benchmark/apple_os",
+    "type": "family-page",
+    "current_versions": [
+      "Apple macOS 26 Tahoe (1.0.0)",
+      "Apple macOS 15.0 Sequoia (2.0.0)",
+      "Apple macOS 14.0 Sonoma (3.0.0)",
+      "Apple macOS 13.0 Ventura (4.0.0)"
+    ],
+    "related_versions": [
+      "Apple macOS 15.0 Sequoia Cloud-tailored (1.0.0)",
+      "Apple macOS 14.0 Sonoma Cloud-tailored (1.1.0)",
+      "Apple macOS 13.0 Ventura Cloud-tailored (1.1.0)",
+      "Apple macOS 12.0 Monterey (4.0.0)"
+    ],
+    "note": "Current public macOS family page."
+  },
+  {
+    "id": "cis-apple-macos-july-2025-update",
+    "scope": ["macos"],
+    "title": "CIS Benchmarks July 2025 Update",
+    "document_date": "2025-07-08",
+    "verified_as_of": "2026-04-23",
+    "url": "https://portal.cisecurity.org/insights/articles/cis-benchmarks-july-2025-update",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Apple macOS 15.0 Sequoia Benchmark v1.1.0"
+    ],
+    "note": "Public dated release post for macOS 15.0 Sequoia v1.1.0."
+  },
+  {
+    "id": "cis-apple-platform-march-2026-update",
+    "scope": ["ios", "macos"],
+    "title": "CIS Benchmarks March 2026 Update",
+    "document_date": "2026-03-06",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.cisecurity.org/insights/blog/cis-benchmarks-march-2026-update",
+    "type": "update-post",
+    "benchmark_versions": [
+      "CIS Apple iOS 26 Benchmark v1.0.0",
+      "CIS Apple iOS 18.0 Benchmark v2.0.0",
+      "CIS Apple macOS 15.0 Sequoia Benchmark v2.0.0",
+      "CIS Apple macOS 26 Tahoe Benchmark v1.0.0"
+    ],
+    "note": "Public March 2026 CIS update surface for current Apple Build Kits. The Apple family pages remain the clearest public benchmark source for what is current now."
+  }
+]

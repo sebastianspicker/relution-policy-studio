@@ -1,0 +1,5 @@
+{
+  "type": "ANDROID_ENTERPRISE_RESTRICTION",
+  "androidAutoDateAndTimeZoneSetting": "AUTO_DATE_AND_TIME_ZONE_ENFORCED",
+  "safeBootDisabled": true
+}

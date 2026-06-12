@@ -1,0 +1,49 @@
+services:
+  relution-db:
+    image: ${RELUTION_E2E_POSTGRES_IMAGE:-postgres:16-alpine}
+    environment:
+      POSTGRES_DB: relution
+      POSTGRES_USER: relution
+      POSTGRES_PASSWORD: relution
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U relution -d relution"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+    volumes:
+      - relution-e2e-db:/var/lib/postgresql/data
+
+  relution:
+    image: ${RELUTION_DOCKER_IMAGE:-relution/relution:26.1.1}
+    depends_on:
+      relution-db:
+        condition: service_healthy
+    ports:
+      - "${RELUTION_DOCKER_PORT:-8080}:8080"
+    environment:
+      DATABASE_TYPE: postgresql
+      DATABASE_URL: jdbc:postgresql://relution-db:5432/relution
+      DATABASE_USER: relution
+      DATABASE_PWD: relution
+      STORAGE_TYPE: SQL
+      HOSTNAME: http://localhost:${RELUTION_DOCKER_PORT:-8080}
+      ORGA_NAME: local
+      ORGA_FULLNAME: Local Relution E2E
+      ORGA_REPLYTOMAIL: relution-e2e@example.invalid
+      ORGA_ADMIN_USERNAME: ${RELUTION_E2E_USERNAME:-admin}
+      ORGA_ADMIN_GIVENNAME: Local
+      ORGA_ADMIN_SURNAME: Admin
+      ORGA_ADMIN_EMAIL: relution-e2e@example.invalid
+      ORGA_ADMIN_PASSWORD: ${RELUTION_E2E_PASSWORD:-relution-e2e-admin}
+      SYSTEM_ADMIN_EMAIL: system-relution-e2e@example.invalid
+      SYSTEM_ADMIN_PASSWORD: ${RELUTION_E2E_SYSTEM_PASSWORD:-relution-e2e-system}
+      RELUTION_MEMORY: ${RELUTION_DOCKER_MEMORY:-1536m}
+      RELUTION_OPTS: -Dserver.address=0.0.0.0 -Drelution.cluster.clusterMode=DISABLED
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8080/ >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 60
+
+volumes:
+  relution-e2e-db:

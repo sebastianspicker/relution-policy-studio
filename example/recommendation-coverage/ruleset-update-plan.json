@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "name": "Guideline Ruleset Update Plan",
+  "generatedAt": "2026-04-26T17:20:43Z",
+  "mode": "offline-safe-update-plan",
+  "description": "Machine-readable review plan for source changes. Candidate similarity does not promote exact mappings.",
+  "inputs": {
+    "sourceChangeReportPath": "example/recommendation-coverage/source-change-report.json",
+    "exactMappingReferencePath": "example/recommendation-coverage/exact-mapping-reference.json",
+    "mappingCandidateReviewPath": "example/recommendation-coverage/mapping-candidate-review.json",
+    "manualPromotionLedgerPath": "example/recommendation-coverage/manual-mapping-promotions.json"
+  },
+  "rows": [],
+  "summary": {
+    "totalUpdateRows": 0,
+    "totalChangedSources": 0,
+    "proposedUpdates": 0,
+    "bySource": {},
+    "byConfidenceTier": {},
+    "byRequiredAction": {}
+  }
+}

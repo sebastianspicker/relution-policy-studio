@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "name": "Institution Managed Device Policy Catalog Index",
+  "sourceRoot": "example/sample-policy-docs",
+  "policies": [
+    {
+      "id": "WIN-TEST-010",
+      "platform": "WINDOWS",
+      "title": "WIN-TEST-010 - Example Windows Security Baseline",
+      "sourcePath": "docs/managed-devices/05-policies-catalog/windows-policies.md",
+      "lineStart": 3,
+      "lineEnd": 18,
+      "policyNames": [
+        "Institution Windows Security Baseline"
+      ],
+      "controls": [
+        "SYS.3.2.2.A23"
+      ],
+      "relutionTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_PASSCODE"
+      ],
+      "matchText": "win-test-010 example windows security baseline minimum password length bitlocker",
+      "matchTerms": [
+        "baseline",
+        "bitlocker",
+        "example",
+        "password",
+        "security",
+        "windows"
+      ],
+      "settings": {
+        "WINDOWS_PASSCODE": {
+          "minLength": 12
+        },
+        "WINDOWS_BITLOCKER": {
+          "enabled": true
+        }
+      },
+      "status": "planned",
+      "excerpt": "### WIN-TEST-010 - Example Windows Security Baseline"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "byPlatform": {
+      "WINDOWS": 1
+    }
+  }
+}

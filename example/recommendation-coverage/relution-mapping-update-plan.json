@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "name": "Recommendation to Relution Mapping Update Plan",
+  "generatedAt": "2026-04-26T17:20:43Z",
+  "mode": "offline-safe-mapping-update-plan",
+  "description": "Review-gated plan for recommendation-to-Relution mapping drift. Candidate similarity does not promote exact mappings.",
+  "inputs": {
+    "mappingChangeReportPath": "example/recommendation-coverage/relution-mapping-change-report.json",
+    "exactMappingReferencePath": "example/recommendation-coverage/exact-mapping-reference.json",
+    "mappingCandidateReviewPath": "example/recommendation-coverage/mapping-candidate-review.json",
+    "manualPromotionLedgerPath": "example/recommendation-coverage/manual-mapping-promotions.json"
+  },
+  "rows": [],
+  "summary": {
+    "totalChangedRecommendations": 0,
+    "proposedUpdates": 0,
+    "bySource": {},
+    "byPlatform": {},
+    "byRequiredAction": {},
+    "byConfidenceTier": {}
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "name": "Institution Policy Catalog vs Generated Relution Baseline",
+  "generatedAt": "2026-04-25T10:33:21Z",
+  "inputs": {
+    "institutionPolicyIndexPath": "example/institution-policy-comparison/institution-policy-index.json",
+    "relutionBaselineIndexPath": "example/institution-policy-comparison/relution-baseline-index.json"
+  },
+  "policyResults": [
+    {
+      "policyId": "WIN-TEST-010",
+      "platform": "WINDOWS",
+      "title": "WIN-TEST-010 - Example Windows Security Baseline",
+      "status": "documented-only",
+      "matchedTargets": [],
+      "conflicts": [],
+      "controls": [
+        "SYS.3.2.2.A23"
+      ],
+      "relutionTargets": [
+        "WINDOWS_BITLOCKER",
+        "WINDOWS_PASSCODE"
+      ],
+      "sourcePath": "docs/managed-devices/05-policies-catalog/windows-policies.md",
+      "lineStart": 3,
+      "lineEnd": 18
+    }
+  ],
+  "baselineMissingInInstitution": [],
+  "suppressedBaselineConflicts": [
+    {
+      "platform": "WINDOWS",
+      "source": "cis",
+      "ruleId": "cis-windows-windows-passcode-aggregate",
+      "target": "WINDOWS_PASSCODE",
+      "conflictingPaths": [
+        "history",
+        "minLength"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    },
+    {
+      "platform": "MACOS",
+      "source": "cis",
+      "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+      "target": "profile:com.apple.applicationaccess",
+      "preferredTarget": "MACOS_RESTRICTION",
+      "reason": "Relution treats macOS restrictions and the application access payload as conflicting server singletons; the BSI native restriction mapping has precedence."
+    },
+    {
+      "platform": "MACOS",
+      "source": "cis",
+      "ruleId": "cis-macos-ios-passcode-aggregate",
+      "target": "IOS_PASSCODE",
+      "preferredTarget": "profile:com.apple.mobiledevice.passwordpolicy",
+      "reason": "Relution imports the macOS password policy profile as the server-side passcode singleton."
+    },
+    {
+      "platform": "MACOS",
+      "source": "cis",
+      "ruleId": "cis-macos-macos-firewall-aggregate",
+      "target": "MACOS_FIREWALL",
+      "preferredTarget": "profile:com.apple.security.firewall",
+      "reason": "Relution imports the macOS firewall profile as the server-side firewall singleton."
+    },
+    {
+      "platform": "IOS",
+      "source": "cis",
+      "ruleId": "cis-ios-ios-passcode-aggregate",
+      "target": "IOS_PASSCODE",
+      "conflictingPaths": [
+        "minLength"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    },
+    {
+      "platform": "IOS",
+      "source": "bsi",
+      "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+      "target": "profile:com.apple.applicationaccess",
+      "preferredTarget": "IOS_RESTRICTION",
+      "reason": "Relution treats the iOS application access payload and native restrictions as conflicting server singletons; the BSI native restriction mapping has precedence."
+    },
+    {
+      "platform": "IOS",
+      "source": "cis",
+      "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+      "target": "profile:com.apple.applicationaccess",
+      "preferredTarget": "IOS_RESTRICTION",
+      "reason": "Relution treats the iOS application access payload and native restrictions as conflicting server singletons; the BSI native restriction mapping has precedence."
+    },
+    {
+      "platform": "IOS",
+      "source": "cis",
+      "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+      "target": "profile:com.apple.mobiledevice.passwordpolicy",
+      "preferredTarget": "IOS_PASSCODE",
+      "reason": "Relution treats the iOS password policy profile and native passcode setting as conflicting server singletons; the BSI native passcode mapping has precedence."
+    },
+    {
+      "platform": "IOS",
+      "source": "cis",
+      "ruleId": "cis-ios-ios-wifi-aggregate",
+      "target": "IOS_WIFI",
+      "reason": "IOS_WIFI requires organization-specific ssid, encryptionType, and proxyType values; disableAssociationMACRandomization is retained as informational guidance instead of an importable singleton."
+    },
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "source": "cis",
+      "ruleId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
+      "target": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
+      "conflictingPaths": [
+        "keyguardDisabledFeatures"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    },
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "source": "cis",
+      "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+      "target": "ANDROID_ENTERPRISE_RESTRICTION",
+      "conflictingPaths": [
+        "microphoneAccessPermission"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    },
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "source": "cis",
+      "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+      "target": "ANDROID_ENTERPRISE_RESTRICTION",
+      "conflictingPaths": [
+        "microphoneAccessPermission"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    },
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "source": "vendor",
+      "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+      "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+      "conflictingPaths": [
+        "systemUpdateType"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    },
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "source": "vendor",
+      "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+      "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+      "conflictingPaths": [
+        "systemUpdateType"
+      ],
+      "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+    }
+  ],
+  "summary": {
+    "institutionPolicies": 1,
+    "baselineActionableTargets": 183,
+    "baselineMissingInInstitution": 0,
+    "statusCounts": {
+      "documented-only": 1
+    },
+    "byPlatform": {
+      "WINDOWS": {
+        "institutionPolicies": 1,
+        "statusCounts": {
+          "documented-only": 1
+        },
+        "baselineMissingInInstitution": 0
+      },
+      "MACOS": {
+        "institutionPolicies": 0,
+        "statusCounts": {},
+        "baselineMissingInInstitution": 0
+      },
+      "IOS": {
+        "institutionPolicies": 0,
+        "statusCounts": {},
+        "baselineMissingInInstitution": 0
+      },
+      "ANDROID_ENTERPRISE": {
+        "institutionPolicies": 0,
+        "statusCounts": {},
+        "baselineMissingInInstitution": 0
+      }
+    }
+  }
+}

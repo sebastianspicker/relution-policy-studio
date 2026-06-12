@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "name": "iOS Tier 3 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "IOS",
+    "tier": 3,
+    "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+    "securityLevel": "basis",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "IOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 3,
+      "cis": 0,
+      "vendor": 0
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": []
+  },
+  "policies": [
+    {
+      "platform": "IOS",
+      "name": "iOS Tier 3 Baseline",
+      "description": "Tier 3 - minimum secure BSI Basis baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-passcode",
+          "title": "Consolidated Relution aggregate: IOS_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-passcode-aggregate",
+              "title": "Relution aggregate: IOS_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowSimple": false,
+                "enabled": true,
+                "forcePIN": true,
+                "maxFailedAttempts": 10,
+                "maxGracePeriodMinutes": 0,
+                "maxInactivityMinutes": 5,
+                "minLength": 8,
+                "pinHistory": 5,
+                "requireAlphanumeric": true
+              },
+              "type": "IOS_PASSCODE"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-restriction",
+          "title": "Consolidated Relution aggregate: IOS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023",
+            "sys-3-2-3-ios"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "title": "Relution aggregate: IOS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowAppInstallation": false,
+                "allowAssistant": false,
+                "allowAssistantWhileLocked": false,
+                "allowCloudBackup": false,
+                "allowCloudDocumentSync": false,
+                "allowCloudKeychainSync": false,
+                "allowCloudPhotoLibrary": false,
+                "allowCloudPrivateRelay": false,
+                "allowDiagnosticSubmission": false,
+                "allowEnterpriseAppTrust": false,
+                "allowLockScreenNotificationsView": false,
+                "allowOpenFromManagedToUnmanaged": false,
+                "allowUIAppInstallation": false,
+                "allowUIConfigurationProfileInstallation": false,
+                "enabled": true
+              },
+              "type": "IOS_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-ios-relution-native-merged-ios-update",
+          "title": "Consolidated Relution aggregate: IOS_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-ios-ios-update-aggregate",
+              "title": "Relution aggregate: IOS_UPDATE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "updateMode": "INSTALL_ASAP"
+              },
+              "type": "IOS_UPDATE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

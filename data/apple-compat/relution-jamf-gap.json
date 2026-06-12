@@ -1,0 +1,433 @@
+{
+  "summary": {
+    "totalJamfGapSettings": 23,
+    "mobileconfigBacked": 22,
+    "notMobileconfigWireable": 1,
+    "relutionHasMobileconfigTransport": true,
+    "relutionMobileconfigPlatforms": [
+      "TVOS",
+      "MACOS",
+      "WATCHOS",
+      "VISIONOS",
+      "IOS"
+    ]
+  },
+  "sources": [
+    "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+    "https://support.apple.com/guide/deployment/intro-to-device-management-payloads-depd73c1b83c/web",
+    "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html",
+    "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html",
+    "https://hub.relution.io/en/docs/apple-tvos/policies/apple-configurator-2/"
+  ],
+  "settings": [
+    {
+      "id": "pppc",
+      "label": "Privacy Preferences Policy Control",
+      "jamfFeature": "Privacy Preferences Policy Control payload",
+      "payloadType": "com.apple.TCC.configuration-profile-policy",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Privacy Preferences Policy Control *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "managed-preferences",
+      "label": "Managed Preferences",
+      "jamfFeature": "Custom settings / managed preferences payload",
+      "payloadType": "com.apple.ManagedClient.preferences",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Managed Preferences *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "associated-domains",
+      "label": "Associated Domains",
+      "jamfFeature": "Associated Domains payload",
+      "payloadType": "com.apple.associated-domains",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Associated Domains *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "managed-login-items",
+      "label": "Managed Login Items",
+      "jamfFeature": "Managed Login Items payload",
+      "payloadType": "com.apple.servicemanagement",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": true,
+      "guiHint": "Managed Login Items *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "network-relay",
+      "label": "Network Relay",
+      "jamfFeature": "Network Relay payload",
+      "payloadType": "com.apple.relay.managed",
+      "platforms": [
+        "IOS",
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Network Relay *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "certificate-transparency",
+      "label": "Certificate Transparency",
+      "jamfFeature": "Certificate Transparency payload",
+      "payloadType": "com.apple.security.certificatetransparency",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "WATCHOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Certificate Transparency *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "smart-card",
+      "label": "Smart Card",
+      "jamfFeature": "Smart Card payload",
+      "payloadType": "com.apple.security.smartcard",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Smart Card *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "printing",
+      "label": "Printing",
+      "jamfFeature": "Printing payload",
+      "payloadType": "com.apple.mcxprinting",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Printing *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "network-usage-rules",
+      "label": "Network Usage Rules",
+      "jamfFeature": "Network Usage Rules payload",
+      "payloadType": "com.apple.networkusagerules",
+      "platforms": [
+        "IOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Network Usage Rules *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "system-migration",
+      "label": "System Migration",
+      "jamfFeature": "System Migration payload",
+      "payloadType": "com.apple.systemmigration",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "System Migration *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "acme-certificate",
+      "label": "ACME Certificate",
+      "jamfFeature": "ACME Certificate payload",
+      "payloadType": "com.apple.security.acme",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "WATCHOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "ACME Certificate *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "autonomous-single-app-mode",
+      "label": "Autonomous Single App Mode",
+      "jamfFeature": "Autonomous Single App Mode payload",
+      "payloadType": "com.apple.asam",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Autonomous Single App Mode *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "cellular-private-network",
+      "label": "Cellular Private Network",
+      "jamfFeature": "Cellular Private Network payload",
+      "payloadType": "com.apple.cellularprivatenetwork.managed",
+      "platforms": [
+        "IOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Cellular Private Network *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "certificate-preference",
+      "label": "Certificate Preference",
+      "jamfFeature": "Certificate Preference payload",
+      "payloadType": "com.apple.security.certificatepreference",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Certificate Preference *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "certificate-revocation",
+      "label": "Certificate Revocation",
+      "jamfFeature": "Certificate Revocation payload",
+      "payloadType": "com.apple.security.certificaterevocation",
+      "platforms": [
+        "IOS",
+        "VISIONOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Certificate Revocation *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "exchange-web-services",
+      "label": "Exchange Web Services",
+      "jamfFeature": "Exchange Web Services payload",
+      "payloadType": "com.apple.ews.account",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Exchange Web Services *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "identity-preference",
+      "label": "Identity Preference",
+      "jamfFeature": "Identity Preference payload",
+      "payloadType": "com.apple.security.identitypreference",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Identity Preference *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "lights-out-management",
+      "label": "Lights Out Management",
+      "jamfFeature": "Lights Out Management payload",
+      "payloadType": "com.apple.lom",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Lights Out Management *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "lock-screen-message",
+      "label": "Lock Screen Message",
+      "jamfFeature": "Lock Screen Message payload",
+      "payloadType": "com.apple.shareddeviceconfiguration",
+      "platforms": [
+        "IOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Lock Screen Message *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "tv-remote",
+      "label": "TV Remote",
+      "jamfFeature": "TV Remote payload",
+      "payloadType": "com.apple.tvremote",
+      "platforms": [
+        "IOS",
+        "TVOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "TV Remote *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "xsan",
+      "label": "Xsan",
+      "jamfFeature": "Xsan payload",
+      "payloadType": "com.apple.xsan",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Xsan *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "xsan-preferences",
+      "label": "Xsan Preferences",
+      "jamfFeature": "Xsan Preferences payload",
+      "payloadType": "com.apple.xsan.preferences",
+      "platforms": [
+        "MACOS"
+      ],
+      "status": "mobileconfig-backed",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Xsan Preferences *",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Computer_Configuration_Profiles.html"
+      ],
+      "relutionTransportType": "APPLE_MOBILECONFIG"
+    },
+    {
+      "id": "declarative-management-declarations",
+      "label": "Declarative Management Declarations",
+      "jamfFeature": "Declarative Device Management declarations",
+      "payloadType": "declarative-management",
+      "platforms": [
+        "IOS",
+        "MACOS",
+        "TVOS",
+        "WATCHOS",
+        "VISIONOS"
+      ],
+      "status": "not-mobileconfig-wireable",
+      "relutionNativeTypePresent": false,
+      "guiHint": "Declarative Management Declarations",
+      "sourceUrls": [
+        "https://developer.apple.com/documentation/devicemanagement/profile-specific-payload-keys",
+        "https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Mobile_Device_Configuration_Profiles.html"
+      ]
+    }
+  ]
+}

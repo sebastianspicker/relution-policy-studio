@@ -1,0 +1,7 @@
+{
+  "type": "WINDOWS_ANTIVIRUS",
+  "allowBehaviorMonitoring": true,
+  "allowScriptScanning": true,
+  "enableNetworkProtection": "ON",
+  "puaProtection": "ON"
+}

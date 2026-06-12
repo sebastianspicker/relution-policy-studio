@@ -1,0 +1,2507 @@
+{
+  "version": 1,
+  "name": "Relution Baseline Import Templates",
+  "generatedAt": "2026-04-26T17:20:44Z",
+  "format": "relution-ruleset-json",
+  "platforms": [
+    "windows",
+    "macos",
+    "ios",
+    "android-enterprise"
+  ],
+  "consolidatedTemplates": [
+    {
+      "path": "example/relution-baseline-templates/consolidated/windows-full.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1242,
+      "actionableRuleCount": 158,
+      "informationalRuleCount": 1084,
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/consolidated/macos-full.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 329,
+      "actionableRuleCount": 11,
+      "informationalRuleCount": 318,
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/consolidated/ios-full.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 560,
+      "actionableRuleCount": 4,
+      "informationalRuleCount": 556,
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/consolidated/android-enterprise-full.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 208,
+      "actionableRuleCount": 10,
+      "informationalRuleCount": 198,
+      "suppressedConflictRuleCount": 5
+    }
+  ],
+  "modularBundleTemplates": [
+    {
+      "path": "example/relution-baseline-templates/modular/windows-modules.json",
+      "platform": "WINDOWS",
+      "policyCount": 8,
+      "ruleCount": 158,
+      "actionableRuleCount": 158,
+      "informationalRuleCount": 0,
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos-modules.json",
+      "platform": "MACOS",
+      "policyCount": 11,
+      "ruleCount": 11,
+      "actionableRuleCount": 11,
+      "informationalRuleCount": 0,
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/ios-modules.json",
+      "platform": "IOS",
+      "policyCount": 4,
+      "ruleCount": 4,
+      "actionableRuleCount": 4,
+      "informationalRuleCount": 0,
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise-modules.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 10,
+      "ruleCount": 10,
+      "actionableRuleCount": 10,
+      "informationalRuleCount": 0,
+      "suppressedConflictRuleCount": 5
+    }
+  ],
+  "modularTemplates": [
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-antivirus.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_ANTIVIRUS",
+        "slug": "relution-native-windows-antivirus",
+        "label": "Windows Antivirus"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-bitlocker.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_BITLOCKER",
+        "slug": "relution-native-windows-bitlocker",
+        "label": "Windows Bitlocker"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-custom-csp.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 151,
+      "actionableRuleCount": 151,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_CUSTOM_CSP",
+        "slug": "relution-native-windows-custom-csp",
+        "label": "Windows Custom Csp"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-firewall.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_FIREWALL",
+        "slug": "relution-native-windows-firewall",
+        "label": "Windows Firewall"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-local-device-security.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "slug": "relution-native-windows-local-device-security",
+        "label": "Windows Local Device Security"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-passcode.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_PASSCODE",
+        "slug": "relution-native-windows-passcode",
+        "label": "Windows Passcode"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-restriction.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_RESTRICTION",
+        "slug": "relution-native-windows-restriction",
+        "label": "Windows Restriction"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/windows/relution-native-windows-update.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_UPDATE",
+        "slug": "relution-native-windows-update",
+        "label": "Windows Update"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.MCX:mdm-profiles-com-apple-mcx-accounts",
+        "slug": "apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts",
+        "label": "Apple Mcx:Mdm-Profiles-Com-Apple-Mcx-Accounts"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/apple-schema-profile-profile-com-apple-softwareupdate.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.SoftwareUpdate",
+        "slug": "apple-schema-profile-profile-com-apple-softwareupdate",
+        "label": "Apple Softwareupdate"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/apple-schema-profile-profile-com-apple-loginwindow.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.loginwindow",
+        "slug": "apple-schema-profile-profile-com-apple-loginwindow",
+        "label": "Apple Loginwindow"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.mobiledevice.passwordpolicy",
+        "slug": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy",
+        "label": "Apple Mobiledevice Passwordpolicy"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/apple-schema-profile-profile-com-apple-security-firewall.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.security.firewall",
+        "slug": "apple-schema-profile-profile-com-apple-security-firewall",
+        "label": "Apple Security Firewall"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/relution-native-apple-device-settings.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "APPLE_DEVICE_SETTINGS",
+        "slug": "relution-native-apple-device-settings",
+        "label": "Apple Device Settings"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/relution-native-apple-software-update-settings.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "slug": "relution-native-apple-software-update-settings",
+        "label": "Apple Software Update Settings"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/relution-native-macos-file-vault.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_FILE_VAULT",
+        "slug": "relution-native-macos-file-vault",
+        "label": "macOS File Vault"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/relution-native-macos-restriction.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_RESTRICTION",
+        "slug": "relution-native-macos-restriction",
+        "label": "macOS Restriction"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/relution-native-macos-screensaver.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SCREENSAVER",
+        "slug": "relution-native-macos-screensaver",
+        "label": "macOS Screensaver"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/macos/relution-native-macos-system-policy-control.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SYSTEM_POLICY_CONTROL",
+        "slug": "relution-native-macos-system-policy-control",
+        "label": "macOS System Policy Control"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/ios/relution-native-apple-device-settings.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "APPLE_DEVICE_SETTINGS",
+        "slug": "relution-native-apple-device-settings",
+        "label": "Apple Device Settings"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/ios/relution-native-ios-passcode.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_PASSCODE",
+        "slug": "relution-native-ios-passcode",
+        "label": "iOS Passcode"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/ios/relution-native-ios-restriction.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_RESTRICTION",
+        "slug": "relution-native-ios-restriction",
+        "label": "iOS Restriction"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/ios/relution-native-ios-update.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_UPDATE",
+        "slug": "relution-native-ios-update",
+        "label": "iOS Update"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-advanced-security-overrides.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "slug": "relution-native-android-enterprise-advanced-security-overrides",
+        "label": "Android Enterprise Advanced Security Overrides"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-device-passcode.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "slug": "relution-native-android-enterprise-device-passcode",
+        "label": "Android Enterprise Device Passcode"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-display.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DISPLAY",
+        "slug": "relution-native-android-enterprise-display",
+        "label": "Android Enterprise Display"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-keyguard-feature-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-keyguard-feature-management",
+        "label": "Android Enterprise Keyguard Feature Management"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-location-sharing-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-location-sharing-management",
+        "label": "Android Enterprise Location Sharing Management"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-permission-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-permission-management",
+        "label": "Android Enterprise Permission Management"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-play-store-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-play-store-management",
+        "label": "Android Enterprise Play Store Management"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-restriction.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_RESTRICTION",
+        "slug": "relution-native-android-enterprise-restriction",
+        "label": "Android Enterprise Restriction"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-system-update.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "slug": "relution-native-android-enterprise-system-update",
+        "label": "Android Enterprise System Update"
+      },
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/modular/android-enterprise/relution-native-android-enterprise-work-profile-passcode.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+        "slug": "relution-native-android-enterprise-work-profile-passcode",
+        "label": "Android Enterprise Work Profile Passcode"
+      },
+      "suppressedConflictRuleCount": 0
+    }
+  ],
+  "tieredConsolidatedTemplates": [
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1-full.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 159,
+      "actionableRuleCount": 158,
+      "informationalRuleCount": 1,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2-full.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 7,
+      "actionableRuleCount": 6,
+      "informationalRuleCount": 1,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3-full.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 6,
+      "actionableRuleCount": 6,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1-full.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 15,
+      "actionableRuleCount": 11,
+      "informationalRuleCount": 4,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2-full.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3-full.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-1-full.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 8,
+      "actionableRuleCount": 4,
+      "informationalRuleCount": 4,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-2-full.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 4,
+      "actionableRuleCount": 3,
+      "informationalRuleCount": 1,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-3-full.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 3,
+      "actionableRuleCount": 3,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1-full.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 15,
+      "actionableRuleCount": 10,
+      "informationalRuleCount": 5,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 5
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2-full.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 11,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 4,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3-full.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    }
+  ],
+  "tieredModularBundleTemplates": [
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1-modules.json",
+      "platform": "WINDOWS",
+      "policyCount": 8,
+      "ruleCount": 158,
+      "actionableRuleCount": 158,
+      "informationalRuleCount": 0,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2-modules.json",
+      "platform": "WINDOWS",
+      "policyCount": 6,
+      "ruleCount": 6,
+      "actionableRuleCount": 6,
+      "informationalRuleCount": 0,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3-modules.json",
+      "platform": "WINDOWS",
+      "policyCount": 6,
+      "ruleCount": 6,
+      "actionableRuleCount": 6,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1-modules.json",
+      "platform": "MACOS",
+      "policyCount": 11,
+      "ruleCount": 11,
+      "actionableRuleCount": 11,
+      "informationalRuleCount": 0,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2-modules.json",
+      "platform": "MACOS",
+      "policyCount": 7,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3-modules.json",
+      "platform": "MACOS",
+      "policyCount": 7,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-1-modules.json",
+      "platform": "IOS",
+      "policyCount": 4,
+      "ruleCount": 4,
+      "actionableRuleCount": 4,
+      "informationalRuleCount": 0,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-2-modules.json",
+      "platform": "IOS",
+      "policyCount": 3,
+      "ruleCount": 3,
+      "actionableRuleCount": 3,
+      "informationalRuleCount": 0,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 1
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-3-modules.json",
+      "platform": "IOS",
+      "policyCount": 3,
+      "ruleCount": 3,
+      "actionableRuleCount": 3,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1-modules.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 10,
+      "ruleCount": 10,
+      "actionableRuleCount": 10,
+      "informationalRuleCount": 0,
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 5
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2-modules.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 7,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 4
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3-modules.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 7,
+      "ruleCount": 7,
+      "actionableRuleCount": 7,
+      "informationalRuleCount": 0,
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    }
+  ],
+  "tieredModularTemplates": [
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-antivirus.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_ANTIVIRUS",
+        "slug": "relution-native-windows-antivirus",
+        "label": "Windows Antivirus"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-bitlocker.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_BITLOCKER",
+        "slug": "relution-native-windows-bitlocker",
+        "label": "Windows Bitlocker"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-custom-csp.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 151,
+      "actionableRuleCount": 151,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_CUSTOM_CSP",
+        "slug": "relution-native-windows-custom-csp",
+        "label": "Windows Custom Csp"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-firewall.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_FIREWALL",
+        "slug": "relution-native-windows-firewall",
+        "label": "Windows Firewall"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-local-device-security.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "slug": "relution-native-windows-local-device-security",
+        "label": "Windows Local Device Security"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-passcode.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_PASSCODE",
+        "slug": "relution-native-windows-passcode",
+        "label": "Windows Passcode"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-restriction.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_RESTRICTION",
+        "slug": "relution-native-windows-restriction",
+        "label": "Windows Restriction"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-1/relution-native-windows-update.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_UPDATE",
+        "slug": "relution-native-windows-update",
+        "label": "Windows Update"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2/relution-native-windows-antivirus.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_ANTIVIRUS",
+        "slug": "relution-native-windows-antivirus",
+        "label": "Windows Antivirus"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2/relution-native-windows-bitlocker.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_BITLOCKER",
+        "slug": "relution-native-windows-bitlocker",
+        "label": "Windows Bitlocker"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2/relution-native-windows-local-device-security.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "slug": "relution-native-windows-local-device-security",
+        "label": "Windows Local Device Security"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2/relution-native-windows-passcode.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_PASSCODE",
+        "slug": "relution-native-windows-passcode",
+        "label": "Windows Passcode"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2/relution-native-windows-restriction.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_RESTRICTION",
+        "slug": "relution-native-windows-restriction",
+        "label": "Windows Restriction"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-2/relution-native-windows-update.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_UPDATE",
+        "slug": "relution-native-windows-update",
+        "label": "Windows Update"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3/relution-native-windows-antivirus.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_ANTIVIRUS",
+        "slug": "relution-native-windows-antivirus",
+        "label": "Windows Antivirus"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3/relution-native-windows-bitlocker.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_BITLOCKER",
+        "slug": "relution-native-windows-bitlocker",
+        "label": "Windows Bitlocker"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3/relution-native-windows-local-device-security.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_LOCAL_DEVICE_SECURITY",
+        "slug": "relution-native-windows-local-device-security",
+        "label": "Windows Local Device Security"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3/relution-native-windows-passcode.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_PASSCODE",
+        "slug": "relution-native-windows-passcode",
+        "label": "Windows Passcode"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3/relution-native-windows-restriction.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_RESTRICTION",
+        "slug": "relution-native-windows-restriction",
+        "label": "Windows Restriction"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/windows/tier-3/relution-native-windows-update.json",
+      "platform": "WINDOWS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "WINDOWS_UPDATE",
+        "slug": "relution-native-windows-update",
+        "label": "Windows Update"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.MCX:mdm-profiles-com-apple-mcx-accounts",
+        "slug": "apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts",
+        "label": "Apple Mcx:Mdm-Profiles-Com-Apple-Mcx-Accounts"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/apple-schema-profile-profile-com-apple-softwareupdate.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.SoftwareUpdate",
+        "slug": "apple-schema-profile-profile-com-apple-softwareupdate",
+        "label": "Apple Softwareupdate"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/apple-schema-profile-profile-com-apple-loginwindow.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.loginwindow",
+        "slug": "apple-schema-profile-profile-com-apple-loginwindow",
+        "label": "Apple Loginwindow"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.mobiledevice.passwordpolicy",
+        "slug": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy",
+        "label": "Apple Mobiledevice Passwordpolicy"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/apple-schema-profile-profile-com-apple-security-firewall.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.security.firewall",
+        "slug": "apple-schema-profile-profile-com-apple-security-firewall",
+        "label": "Apple Security Firewall"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/relution-native-apple-device-settings.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "APPLE_DEVICE_SETTINGS",
+        "slug": "relution-native-apple-device-settings",
+        "label": "Apple Device Settings"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/relution-native-apple-software-update-settings.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "APPLE_SOFTWARE_UPDATE_SETTINGS",
+        "slug": "relution-native-apple-software-update-settings",
+        "label": "Apple Software Update Settings"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/relution-native-macos-file-vault.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_FILE_VAULT",
+        "slug": "relution-native-macos-file-vault",
+        "label": "macOS File Vault"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/relution-native-macos-restriction.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_RESTRICTION",
+        "slug": "relution-native-macos-restriction",
+        "label": "macOS Restriction"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/relution-native-macos-screensaver.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SCREENSAVER",
+        "slug": "relution-native-macos-screensaver",
+        "label": "macOS Screensaver"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-1/relution-native-macos-system-policy-control.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SYSTEM_POLICY_CONTROL",
+        "slug": "relution-native-macos-system-policy-control",
+        "label": "macOS System Policy Control"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/apple-schema-profile-profile-com-apple-softwareupdate.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.SoftwareUpdate",
+        "slug": "apple-schema-profile-profile-com-apple-softwareupdate",
+        "label": "Apple Softwareupdate"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.mobiledevice.passwordpolicy",
+        "slug": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy",
+        "label": "Apple Mobiledevice Passwordpolicy"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/apple-schema-profile-profile-com-apple-security-firewall.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.security.firewall",
+        "slug": "apple-schema-profile-profile-com-apple-security-firewall",
+        "label": "Apple Security Firewall"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/relution-native-macos-file-vault.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_FILE_VAULT",
+        "slug": "relution-native-macos-file-vault",
+        "label": "macOS File Vault"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/relution-native-macos-restriction.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_RESTRICTION",
+        "slug": "relution-native-macos-restriction",
+        "label": "macOS Restriction"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/relution-native-macos-screensaver.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SCREENSAVER",
+        "slug": "relution-native-macos-screensaver",
+        "label": "macOS Screensaver"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-2/relution-native-macos-system-policy-control.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SYSTEM_POLICY_CONTROL",
+        "slug": "relution-native-macos-system-policy-control",
+        "label": "macOS System Policy Control"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/apple-schema-profile-profile-com-apple-softwareupdate.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.SoftwareUpdate",
+        "slug": "apple-schema-profile-profile-com-apple-softwareupdate",
+        "label": "Apple Softwareupdate"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.mobiledevice.passwordpolicy",
+        "slug": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy",
+        "label": "Apple Mobiledevice Passwordpolicy"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/apple-schema-profile-profile-com-apple-security-firewall.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "apple-schema-profile",
+        "target": "profile:com.apple.security.firewall",
+        "slug": "apple-schema-profile-profile-com-apple-security-firewall",
+        "label": "Apple Security Firewall"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/relution-native-macos-file-vault.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_FILE_VAULT",
+        "slug": "relution-native-macos-file-vault",
+        "label": "macOS File Vault"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/relution-native-macos-restriction.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_RESTRICTION",
+        "slug": "relution-native-macos-restriction",
+        "label": "macOS Restriction"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/relution-native-macos-screensaver.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SCREENSAVER",
+        "slug": "relution-native-macos-screensaver",
+        "label": "macOS Screensaver"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/macos/tier-3/relution-native-macos-system-policy-control.json",
+      "platform": "MACOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "MACOS_SYSTEM_POLICY_CONTROL",
+        "slug": "relution-native-macos-system-policy-control",
+        "label": "macOS System Policy Control"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-1/relution-native-apple-device-settings.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "APPLE_DEVICE_SETTINGS",
+        "slug": "relution-native-apple-device-settings",
+        "label": "Apple Device Settings"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-1/relution-native-ios-passcode.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_PASSCODE",
+        "slug": "relution-native-ios-passcode",
+        "label": "iOS Passcode"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-1/relution-native-ios-restriction.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_RESTRICTION",
+        "slug": "relution-native-ios-restriction",
+        "label": "iOS Restriction"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-1/relution-native-ios-update.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_UPDATE",
+        "slug": "relution-native-ios-update",
+        "label": "iOS Update"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-2/relution-native-ios-passcode.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_PASSCODE",
+        "slug": "relution-native-ios-passcode",
+        "label": "iOS Passcode"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-2/relution-native-ios-restriction.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_RESTRICTION",
+        "slug": "relution-native-ios-restriction",
+        "label": "iOS Restriction"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-2/relution-native-ios-update.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_UPDATE",
+        "slug": "relution-native-ios-update",
+        "label": "iOS Update"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-3/relution-native-ios-passcode.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_PASSCODE",
+        "slug": "relution-native-ios-passcode",
+        "label": "iOS Passcode"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-3/relution-native-ios-restriction.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_RESTRICTION",
+        "slug": "relution-native-ios-restriction",
+        "label": "iOS Restriction"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/ios/tier-3/relution-native-ios-update.json",
+      "platform": "IOS",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "IOS_UPDATE",
+        "slug": "relution-native-ios-update",
+        "label": "iOS Update"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-advanced-security-overrides.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "slug": "relution-native-android-enterprise-advanced-security-overrides",
+        "label": "Android Enterprise Advanced Security Overrides"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-device-passcode.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "slug": "relution-native-android-enterprise-device-passcode",
+        "label": "Android Enterprise Device Passcode"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-display.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DISPLAY",
+        "slug": "relution-native-android-enterprise-display",
+        "label": "Android Enterprise Display"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-keyguard-feature-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-keyguard-feature-management",
+        "label": "Android Enterprise Keyguard Feature Management"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-location-sharing-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-location-sharing-management",
+        "label": "Android Enterprise Location Sharing Management"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-permission-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-permission-management",
+        "label": "Android Enterprise Permission Management"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-play-store-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-play-store-management",
+        "label": "Android Enterprise Play Store Management"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-restriction.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_RESTRICTION",
+        "slug": "relution-native-android-enterprise-restriction",
+        "label": "Android Enterprise Restriction"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-system-update.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "slug": "relution-native-android-enterprise-system-update",
+        "label": "Android Enterprise System Update"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-1/relution-native-android-enterprise-work-profile-passcode.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+        "slug": "relution-native-android-enterprise-work-profile-passcode",
+        "label": "Android Enterprise Work Profile Passcode"
+      },
+      "tier": 1,
+      "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+      "securityLevel": "grundschutz",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-advanced-security-overrides.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "slug": "relution-native-android-enterprise-advanced-security-overrides",
+        "label": "Android Enterprise Advanced Security Overrides"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-device-passcode.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "slug": "relution-native-android-enterprise-device-passcode",
+        "label": "Android Enterprise Device Passcode"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-display.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DISPLAY",
+        "slug": "relution-native-android-enterprise-display",
+        "label": "Android Enterprise Display"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-permission-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-permission-management",
+        "label": "Android Enterprise Permission Management"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-play-store-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-play-store-management",
+        "label": "Android Enterprise Play Store Management"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-restriction.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_RESTRICTION",
+        "slug": "relution-native-android-enterprise-restriction",
+        "label": "Android Enterprise Restriction"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-2/relution-native-android-enterprise-system-update.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "slug": "relution-native-android-enterprise-system-update",
+        "label": "Android Enterprise System Update"
+      },
+      "tier": 2,
+      "tierLabel": "Tier 2 - strengthened BSI baseline",
+      "securityLevel": "standard-hardening",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "distinct",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-advanced-security-overrides.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+        "slug": "relution-native-android-enterprise-advanced-security-overrides",
+        "label": "Android Enterprise Advanced Security Overrides"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-device-passcode.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+        "slug": "relution-native-android-enterprise-device-passcode",
+        "label": "Android Enterprise Device Passcode"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-display.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_DISPLAY",
+        "slug": "relution-native-android-enterprise-display",
+        "label": "Android Enterprise Display"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-permission-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-permission-management",
+        "label": "Android Enterprise Permission Management"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-play-store-management.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
+        "slug": "relution-native-android-enterprise-play-store-management",
+        "label": "Android Enterprise Play Store Management"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-restriction.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_RESTRICTION",
+        "slug": "relution-native-android-enterprise-restriction",
+        "label": "Android Enterprise Restriction"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    },
+    {
+      "path": "example/relution-baseline-templates/tiered/android-enterprise/tier-3/relution-native-android-enterprise-system-update.json",
+      "platform": "ANDROID_ENTERPRISE",
+      "policyCount": 1,
+      "ruleCount": 1,
+      "actionableRuleCount": 1,
+      "informationalRuleCount": 0,
+      "module": {
+        "kind": "relution-native",
+        "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+        "slug": "relution-native-android-enterprise-system-update",
+        "label": "Android Enterprise System Update"
+      },
+      "tier": 3,
+      "tierLabel": "Tier 3 - minimum secure BSI Basis baseline",
+      "securityLevel": "basis",
+      "tierSourcePolicy": "bsi-cis-vendor",
+      "tierCoverage": "inherited",
+      "suppressedConflictRuleCount": 0
+    }
+  ]
+}

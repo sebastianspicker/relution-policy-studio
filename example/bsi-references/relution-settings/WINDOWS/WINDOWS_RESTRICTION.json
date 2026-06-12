@@ -1,0 +1,11 @@
+{
+  "type": "WINDOWS_RESTRICTION",
+  "allowAccounts": false,
+  "allowAddingForeignAccountsManually": false,
+  "allowInputPersonalization": false,
+  "allowPrivacyExperience": false,
+  "allowSyncMySettings": false,
+  "allowYourAccount": false,
+  "appGetDiagnosticInfo": "DENY",
+  "enabled": true
+}

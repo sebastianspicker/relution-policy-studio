@@ -1,11 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { loadAppleSchemaCatalog } from "../src/apple-schema-catalog.js";
 import { loadTemplateBundle } from "../src/templates.js";
 import { importRulesetWorkspace } from "../web/src/editor/ruleset-import.js";
 import { valueAtPath, type DownloadManifestEntry, type ImportableRuleset, type JsonRecord, type SourceEntry } from "./reference-test-helpers.js";
+import { readJson } from "./rexp-helpers.js";
 
 type CisBaselineSummary = {
   verifiedAsOf: string;
@@ -461,10 +460,6 @@ function findCisRecommendation(recommendations: CisRecommendation[], benchmarkId
 
 function findCisRecommendationById(recommendations: CisRecommendation[], id: string): CisRecommendation | undefined {
   return recommendations.find((entry) => entry.id === id);
-}
-
-function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
 }
 
 function hasSchemaValue(entry: CisRecommendation | undefined, schemaId: string, path: string, expected: unknown): boolean {

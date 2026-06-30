@@ -13,7 +13,7 @@ from .artifact_io import (
     update_plan_payload,
     write_json,
 )
-from .artifact_pipeline import (
+from .artifact_paths import (
     ALL_SOURCES,
     EXACT_MAPPING_REFERENCE_PATH,
     MANUAL_MAPPING_PROMOTIONS_PATH,
@@ -21,6 +21,8 @@ from .artifact_pipeline import (
     PLATFORM_ORDER,
     RELUTION_MAPPING_CHANGE_REPORT_PATH,
     RELUTION_MAPPING_UPDATE_PLAN_PATH,
+)
+from .artifact_pipeline import (
     optional_dict_entries,
     optional_string_entries,
 )

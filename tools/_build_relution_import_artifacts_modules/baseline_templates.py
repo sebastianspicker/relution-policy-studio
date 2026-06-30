@@ -6,14 +6,20 @@ from collections.abc import Callable
 from typing import Any
 
 from .artifact_io import relative_path
-from .artifact_pipeline import (
+from .artifact_paths import (
     REPO_ROOT,
     SOURCE_CONFIGS,
     SourceConfig,
-    mapping_target,
+)
+from .artifact_io import (
     path_to_string,
     slugify,
     stable_json,
+)
+from .mapping_helpers import (
+    mapping_target,
+)
+from recommendation_mapping import (
     unique_preserving_order,
 )
 from .mapping_helpers import mapping_with_target

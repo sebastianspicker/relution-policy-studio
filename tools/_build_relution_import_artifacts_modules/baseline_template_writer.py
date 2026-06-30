@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import shutil
 
-from .artifact_pipeline import SOURCE_CONFIGS
+from .artifact_paths import (
+    SOURCE_CONFIGS,
+)
 from .artifact_io import read_json, write_json
 from .baseline_templates import (
     BASELINE_TEMPLATE_CONSOLIDATED_ROOT,

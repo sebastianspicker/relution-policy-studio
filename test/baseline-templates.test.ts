@@ -1,12 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { existsSync, mkdtempSync, readFileSync } from "node:fs";
+import { existsSync, mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { loadAppleSchemaCatalog } from "../src/apple-schema-catalog.js";
 import { listBaselineTemplateOptions, loadBaselineExpertOptions, loadBaselineTemplate } from "../src/baseline-templates.js";
 import { loadTemplateBundle } from "../src/templates.js";
 import { importRulesetWorkspace } from "../web/src/editor/ruleset-import.js";
+import { readJson } from "./rexp-helpers.js";
 
 type Platform = "WINDOWS" | "MACOS" | "IOS" | "ANDROID_ENTERPRISE";
 type Source = "bsi" | "cis" | "vendor";
@@ -420,10 +421,6 @@ function assertSuppressedConflictsAreInformational(template: BaselineTemplate, p
     true,
     platform,
   );
-}
-
-function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
 }
 
 function allTemplateEntries(index: TemplateIndex): TemplateIndexEntry[] {

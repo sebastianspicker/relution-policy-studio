@@ -9,25 +9,31 @@
     "rexp": "./dist/src/cli.js"
   },
   "scripts": {
-    "build": "rm -rf dist dist-web && tsc -p tsconfig.json && vite build",
+    "build:node": "rm -rf dist && tsc -p tsconfig.json",
+    "build:web": "rm -rf dist-web && vite build",
+    "build": "pnpm build:node && pnpm build:web",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "python:clean-cache": "find test tools -type d -name __pycache__ -prune -exec rm -rf {} +",
     "python:lint": "uv run --locked ruff check .",
     "python:test": "uv run --locked pytest",
-    "test:node": "pnpm build && node --test dist/test/*.test.js",
-    "test:fuzz": "pnpm build && node --test dist/test/fuzz.test.js",
-    "test:meta": "pnpm build && node --test dist/test/meta/*.test.js",
+    "test:node:built": "node --test dist/test/*.test.js",
+    "test:node": "pnpm build:node && pnpm test:node:built",
+    "test:fuzz:built": "node --test dist/test/fuzz.test.js",
+    "test:fuzz": "pnpm build:node && pnpm test:fuzz:built",
+    "test:meta:built": "node --test dist/test/meta/*.test.js",
+    "test:meta": "pnpm build:node && pnpm test:meta:built",
     "test:web": "vitest run",
     "test": "pnpm test:node && pnpm test:web",
-    "verify:ci": "pnpm python:clean-cache && pnpm typecheck && pnpm test && pnpm python:lint && pnpm python:test && pnpm test:meta && pnpm python:clean-cache",
+    "verify:ci": "pnpm python:clean-cache && pnpm typecheck && pnpm build && pnpm test:node:built && pnpm test:web && pnpm python:lint && pnpm python:test && pnpm test:meta:built && pnpm python:clean-cache",
     "verify:pre-pr": "pnpm verify:ci && pnpm codacy:cloud:inspect && pnpm codacy:cloud",
     "codacy:cloud-config": "node tools/run_codacy_cloud.mjs config",
     "codacy:cloud:inspect": "node tools/run_codacy_cloud.mjs inspect",
     "codacy:cloud": "node tools/run_codacy_cloud.mjs analyze",
-    "test:e2e:web": "env -u FORCE_COLOR PLAYWRIGHT_BROWSERS_PATH=/tmp/ms-playwright playwright test",
-    "screenshots:readme": "env -u FORCE_COLOR PLAYWRIGHT_BROWSERS_PATH=/tmp/ms-playwright playwright test -c playwright.readme.config.ts",
-    "test:e2e:relution": "pnpm build && node --test dist/test/relution-docker.e2e.js",
-    "test:e2e:relution-dashboard": "pnpm build && node --test dist/test/relution-dashboard-docker.e2e.js",
+    "playwright:ci": "env -u FORCE_COLOR PLAYWRIGHT_BROWSERS_PATH=/tmp/ms-playwright playwright",
+    "test:e2e:web": "pnpm build && pnpm playwright:ci test",
+    "screenshots:readme": "pnpm build && pnpm playwright:ci test -c playwright.readme.config.ts",
+    "test:e2e:relution": "pnpm build:node && node --test dist/test/relution-docker.e2e.js",
+    "test:e2e:relution-dashboard": "pnpm build:node && node --test dist/test/relution-dashboard-docker.e2e.js",
     "rexp:evidence": "pnpm build && node tools/build_windows_rexp_evidence.mjs",
     "rexp:built": "node dist/src/cli.js",
     "rexp": "pnpm build && node dist/src/cli.js"
@@ -54,10 +60,5 @@
     "js-yaml": "^4.1.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
-  },
-  "pnpm": {
-    "overrides": {
-      "fast-uri": "3.1.2"
-    }
   }
 }

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
-import { mkdtempSync } from "node:fs";
+import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import type { AppleCompatReport } from "../src/apple-compat.js";
@@ -14,6 +14,10 @@ export const password = Buffer.from([0x6b, 0x65, 0x79, 0x31, 0x32, 0x33]).toStri
 
 export function makeTempDir(prefix: string): string {
   return mkdtempSync(join(tmpdir(), `${prefix}-${randomUUID().slice(0, 8)}-`));
+}
+
+export function readJson<T>(path: string): T {
+  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
 }
 
 export async function startTestEditor(options: {

@@ -1,13 +1,10 @@
 import { useEffect, useState, type JSX } from "react";
-import type {
-  BsiRecommendationRecord,
-  RecommendationRecord,
-  RecommendationSource,
-} from "../../../src/recommendation-types.js";
+import type { RecommendationSource } from "../../../src/recommendation-types.js";
 import type { ComplianceRecommendationResult, ComplianceStatus } from "../../../src/compliance.js";
 import { secondaryRecommendationId } from "./recommendation-record-utils.js";
 import { FallbackTranslationsSection } from "./FallbackTranslationsSection.js";
 import { CisRecommendationSummaryDetail, VendorRecommendationDetail } from "./RecommendationDetails.js";
+import { BsiDetail } from "./RecommendationsBsiDetail.js";
 import type { EditorController } from "./types.js";
 
 const ALL_STATUSES = "ALL";
@@ -194,24 +191,6 @@ function ComplianceDetail(props: {
         ) : null}
       </section>
     </div>
-  );
-}
-
-function BsiDetail({ recommendation }: { readonly recommendation: RecommendationRecord }): JSX.Element {
-  const item = recommendation as BsiRecommendationRecord;
-  return (
-    <>
-      <p>{item.moduleId} | {item.moduleTitle}</p>
-      <p>{item.category} | {item.status} | {item.protectionLevel}</p>
-      <details className="preview-block" open>
-        <summary>Requirement</summary>
-        <p>{item.requirementText}</p>
-      </details>
-      <details className="preview-block">
-        <summary>Reason</summary>
-        <p>{item.reason}</p>
-      </details>
-    </>
   );
 }
 

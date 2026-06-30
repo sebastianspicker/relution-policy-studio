@@ -2,15 +2,8 @@ import { useEffect, useRef, type JSX } from "react";
 import type { AppleCompatSetting } from "../../../src/apple-compat.js";
 import type { AppleSchemaEntry } from "../../../src/apple-schema.js";
 import type { ConfigurationTemplate } from "../../../src/templates.js";
-import { configurationOptions, groupConfigurationOptions, optionMatches } from "./AddConfigurationControl.js";
+import { ADD_GROUP_LABELS, configurationOptions, groupConfigurationOptions, optionMatches } from "./AddConfigurationControl.js";
 import type { AddGroup } from "./types.js";
-
-const ADD_GROUP_LABELS: Record<Exclude<AddGroup, "all">, string> = {
-  native: "Relution native",
-  "apple-compat": "Apple mobileconfig gaps",
-  "apple-profile": "Apple schema profiles",
-  "custom-settings": "Custom settings",
-};
 
 type ConfigurationPickerModalProps = {
   readonly availableTemplates: readonly ConfigurationTemplate[];
@@ -39,16 +32,6 @@ export function ConfigurationPickerModal(props: ConfigurationPickerModalProps): 
     searchRef.current?.focus();
   }, []);
 
-  useEffect(() => {
-    function handleKeyDown(event: KeyboardEvent): void {
-      if (event.key === "Escape") {
-        props.onClose();
-      }
-    }
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [props.onClose]);
-
   const allOptions = configurationOptions(props);
   const filtered = allOptions.filter((opt) => optionMatches(opt, props.query, props.group));
   const groups = groupConfigurationOptions(filtered);
@@ -61,12 +44,17 @@ export function ConfigurationPickerModal(props: ConfigurationPickerModalProps): 
     }
   }
 
-  function parseAddGroup(value: string): AddGroup {
-    return value === "native" || value === "apple-compat" || value === "apple-profile" || value === "custom-settings" ? value : "all";
-  }
-
   return (
-    <dialog ref={dialogRef} className="config-picker-dialog" aria-label="Add configuration" onClick={handleBackdropClick}>
+    <dialog
+      ref={dialogRef}
+      className="config-picker-dialog"
+      aria-label="Add configuration"
+      onCancel={(event) => {
+        event.preventDefault();
+        props.onClose();
+      }}
+      onClick={handleBackdropClick}
+    >
       <div className="config-picker-card">
         <header className="config-picker-header">
           <h2>Add configuration</h2>

@@ -4,14 +4,18 @@
 import sys
 
 from _build_relution_import_artifacts_modules.artifact_io import write_settings_files
-from _build_relution_import_artifacts_modules.artifact_pipeline import (
+from _build_relution_import_artifacts_modules.artifact_paths import (
     SourceConfig,
+)
+from _build_relution_import_artifacts_modules.ruleset_builder import (
+    semantic_support_level,
+)
+from _build_relution_import_artifacts_modules.artifact_pipeline import (
     build_coverage_matrix,
     build_semantic_index,
     build_unified_recommendation_analysis,
     exact_leaf_difference_is_hard,
     normalize_recommendations,
-    semantic_support_level,
 )
 from _build_relution_import_artifacts_modules.mapping_review_artifacts import (
     build_source_change_rows,

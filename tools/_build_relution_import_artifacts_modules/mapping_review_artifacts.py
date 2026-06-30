@@ -9,7 +9,7 @@ from typing import Any
 from recommendation_mapping import flatten_value_paths
 
 from .artifact_io import relative_path, update_plan_inputs, update_plan_payload
-from .artifact_pipeline import (  # noqa: F401
+from .artifact_paths import (
     ALL_SOURCES,
     COVERAGE_MATRIX_PATH,
     EXACT_MAPPING_REFERENCE_PATH,
@@ -21,15 +21,23 @@ from .artifact_pipeline import (  # noqa: F401
     RULESET_UPDATE_PLAN_PATH,
     SEMANTIC_INDEX_PATH,
     SOURCE_CHANGE_REPORT_PATH,
-    exact_mappings,
-    mapping_target,
-    missing_required_inputs_message,
+)
+from .artifact_io import (
     normalize_policy_platform,
     read_json,
     slugify,
     stable_json,
-    unique_preserving_order,
     write_json,
+)
+from .mapping_helpers import (
+    exact_mappings,
+    mapping_target,
+)
+from recommendation_mapping import (
+    unique_preserving_order,
+)
+from .artifact_pipeline import (
+    missing_required_inputs_message,
 )
 from .manual_mapping_promotions import (  # noqa: F401
     ensure_manual_mapping_promotions_file,

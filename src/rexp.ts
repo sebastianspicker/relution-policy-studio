@@ -4,7 +4,6 @@ import {
   constants as fsConstants,
   existsSync,
   fstatSync,
-  lstatSync,
   mkdirSync,
   opendirSync,
   openSync,
@@ -15,6 +14,7 @@ import {
 } from "node:fs";
 import { dirname, join, resolve, sep } from "node:path";
 import { asRecord } from "./utils/json-guards.js";
+import { assertNoSymlinkPath } from "./utils/path-safety.js";
 import { readZip, writeZip, type ZipEntry, type ZipEntryInput } from "./zip.js";
 
 export type ArchiveHashStatus = "match" | "mismatch" | "absent";
@@ -370,13 +370,13 @@ function listPolicyFiles(inputDir: string): string[] {
   if (!existsSync(policiesDir) || !statSync(policiesDir).isDirectory()) {
     return [];
   }
-  assertProjectPathUsesNoSymlink(inputDir, "policies");
+  assertNoSymlinkPath(inputDir, "policies", "Project path");
   const policyFiles = listDirectoryNames(policiesDir)
     .filter((name) => name.startsWith("policy_") && name.endsWith(POLICY_SUFFIX))
     .sort()
     .map((name) => `policies/${name}`);
   for (const policyFile of policyFiles) {
-    assertProjectPathUsesNoSymlink(inputDir, policyFile);
+    assertNoSymlinkPath(inputDir, policyFile, "Project path");
   }
   return policyFiles;
 }
@@ -388,7 +388,7 @@ function writeProjectFile(outputDir: string, relativePath: string, data: Buffer)
 }
 
 function readProjectFile(inputDir: string, relativePath: string): Buffer {
-  assertProjectPathUsesNoSymlink(inputDir, relativePath);
+  assertNoSymlinkPath(inputDir, relativePath, "Project path");
   return readRegularFile(resolveManagedProjectPath(inputDir, relativePath), relativePath);
 }
 
@@ -418,24 +418,6 @@ function resolveManagedProjectPath(rootDir: string, relativePath: string): strin
     throw new Error(`Project path resolves outside extraction root: ${relativePath}`);
   }
   return candidate;
-}
-
-function assertProjectPathUsesNoSymlink(rootDir: string, relativePath: string): void {
-  const resolvedRoot = resolve(rootDir);
-  if (existsSync(resolvedRoot) && lstatSync(resolvedRoot).isSymbolicLink()) {
-    throw new Error(`Project path must not use symlinks: ${rootDir}`);
-  }
-
-  let current = resolvedRoot;
-  for (const segment of relativePath.split(/[\\/]/u).filter((part) => part.length > 0)) {
-    current = join(current, segment);
-    if (!existsSync(current)) {
-      break;
-    }
-    if (lstatSync(current).isSymbolicLink()) {
-      throw new Error(`Project path must not use symlinks: ${relativePath}`);
-    }
-  }
 }
 
 function readRegularFile(path: string, label: string): Buffer {

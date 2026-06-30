@@ -11,8 +11,10 @@ from .artifact_io import (
     write_json,
     write_settings_files,
 )
-from .artifact_pipeline import (
+from .artifact_paths import (
     SOURCE_CONFIGS,
+)
+from .artifact_pipeline import (
     build_coverage_matrix,
     build_semantic_index,
     build_unified_recommendation_analysis,

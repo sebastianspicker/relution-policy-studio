@@ -58,150 +58,61 @@ from .unified_analysis import (
     exact_leaf_difference_is_hard,
     write_unified_analysis_report as _write_unified_analysis_report,
 )
-from . import artifact_io, recommendation_catalog, ruleset_builder
+from .recommendation_catalog import load_recommendations_by_global_id
+from .ruleset_builder import (
+    append_unique,
+    candidate_target_specs,
+    count_by,
+    difference_severity_rank,
+    ensure_semantic_concept,
+    ensure_semantic_target,
+    exact_target_specs,
+    semantic_support_level,
+    semantic_target_id,
+    source_coverage_counts,
+    source_recommendation_counts,
+    target_link_concept_ids,
+)
 
 _COMPAT_EXPORTS = (REPO_ROOT, SourceConfig, implementation_category, implementation_for)
 
 
-def read_json(path: Path) -> Any:
-    """Read JSON through the compatibility facade used by legacy imports."""
-
-    return artifact_io.read_json(path)
 
 
-def write_json(path: Path, payload: Any) -> None:
-    """Write stable JSON through the compatibility facade used by callers."""
-
-    artifact_io.write_json(path, payload)
 
 
-def normalize_policy_platform(platform: str) -> str:
-    """Normalize source policy platform labels to the shared artifact keys."""
-
-    return artifact_io.normalize_policy_platform(platform)
 
 
-def path_to_string(path: tuple[str, ...]) -> str:
-    """Render a nested value path in the field-path format used by reports."""
-
-    return artifact_io.path_to_string(path)
 
 
-def stable_json(value: Any) -> str:
-    """Return the deterministic JSON signature used for value comparisons."""
-
-    return artifact_io.stable_json(value)
 
 
-def slugify(value: str) -> str:
-    """Create a stable report identifier segment from free-form text."""
-
-    return artifact_io.slugify(value)
 
 
-def flatten_values(
-    value: Any, prefix: tuple[str, ...] = ()
-) -> dict[tuple[str, ...], Any]:
-    """Flatten nested mapping values into comparable leaf paths."""
-
-    return ruleset_builder.flatten_values(value, prefix)
 
 
-def semantic_target_id(
-    platform: str, kind: str, target: str, field_paths: list[str]
-) -> str:
-    """Build the stable semantic-index id for a Relution target."""
-
-    return ruleset_builder.semantic_target_id(
-        platform, kind, target, field_paths
-    )
 
 
-def ensure_semantic_target(
-    targets: dict[str, dict[str, Any]],
-    platform: str,
-    kind: str,
-    target: str,
-    field_paths: list[str],
-) -> dict[str, Any]:
-    """Return or create the semantic-index target entry for a Relution field."""
-
-    return ruleset_builder.ensure_semantic_target(
-        targets, platform, kind, target, field_paths
-    )
 
 
-def ensure_semantic_concept(
-    concepts: dict[str, dict[str, Any]], concept: dict[str, Any]
-) -> dict[str, Any]:
-    """Return or create a semantic concept while preserving existing links."""
-
-    return ruleset_builder.ensure_semantic_concept(concepts, concept)
 
 
-def append_unique(values: list[Any], value: Any) -> None:
-    """Append a value only when it is not already present."""
-
-    ruleset_builder.append_unique(values, value)
 
 
-def exact_target_specs(recommendation: dict[str, Any]) -> list[dict[str, Any]]:
-    """Extract exact Relution target specs from a normalized recommendation."""
-
-    return ruleset_builder.exact_target_specs(recommendation)
 
 
-def candidate_target_specs(recommendation: dict[str, Any]) -> list[dict[str, Any]]:
-    """Extract candidate Relution target specs from a recommendation."""
-
-    return ruleset_builder.candidate_target_specs(recommendation)
 
 
-def target_link_concept_ids(
-    targets: dict[str, dict[str, Any]],
-    platform: str,
-    spec: dict[str, Any],
-    raw_semantic_ids: list[str],
-) -> list[str]:
-    """Resolve concept ids that should connect a recommendation to a target."""
-
-    return ruleset_builder.target_link_concept_ids(
-        targets, platform, spec, raw_semantic_ids
-    )
 
 
-def load_recommendations_by_global_id() -> dict[str, dict[str, Any]]:
-    """Load normalized recommendations keyed as source-prefixed global ids."""
-
-    return recommendation_catalog.load_recommendations_by_global_id()
 
 
-def difference_severity_rank(entry: dict[str, Any]) -> int:
-    """Return the deterministic sort rank for unified-analysis differences."""
-
-    return ruleset_builder.difference_severity_rank(entry)
 
 
-def count_by(entries: list[dict[str, Any]], key: str) -> dict[str, int]:
-    """Count report entries by a string field."""
-
-    return ruleset_builder.count_by(entries, key)
 
 
-def source_coverage_counts(groups: list[dict[str, Any]]) -> dict[str, int]:
-    """Count unified-analysis common groups by source coverage breadth."""
-
-    return ruleset_builder.source_coverage_counts(groups)
 
 
-def source_recommendation_counts(
-    recommendations: dict[str, dict[str, Any]],
-) -> dict[str, int]:
-    """Count normalized recommendations per source."""
-
-    return ruleset_builder.source_recommendation_counts(
-        recommendations
-    )
 
 
 def write_unified_analysis_report(payload: dict[str, Any]) -> None:
@@ -210,14 +121,6 @@ def write_unified_analysis_report(payload: dict[str, Any]) -> None:
     _write_unified_analysis_report(payload)
 
 
-def semantic_support_level(
-    exact_target_ids: list[str], candidate_target_ids: list[str]
-) -> str:
-    """Classify whether a semantic group has exact, candidate, or no support."""
-
-    return ruleset_builder.semantic_support_level(
-        exact_target_ids, candidate_target_ids
-    )
 
 
 def required_recommendation_catalog_paths() -> list[tuple[str, Path]]:

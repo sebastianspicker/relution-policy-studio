@@ -15,7 +15,7 @@ assignees: ""
 - [ ] Public docs
 - [ ] GitHub templates or workflows
 - [ ] `.gitignore` or generated/local artifact boundary
-- [ ] Archive/status/ledger cleanup
+- [ ] Local-only artifact cleanup
 - [ ] Codacy/GitHub analysis exclusion boundary
 - [ ] Other:
 
@@ -29,10 +29,10 @@ assignees: ""
 
 -
 
-## Archive Boundary
+## Local Artifact Boundary
 
 - Public summary needed:
-- Local-only packet or ledger to ignore:
-- Excluded analysis/remediation path involved:
+- Local-only file to ignore:
+- Excluded generated or local path involved:
 - Superseded material to retire:
 - Ignore-boundary proof expected:

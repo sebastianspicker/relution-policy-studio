@@ -1,4 +1,3 @@
-import type { JSX } from "react";
 import type { AppleCompatSetting } from "../../../src/apple-compat.js";
 import type { AppleSchemaEntry } from "../../../src/apple-schema.js";
 import type { ConfigurationTemplate } from "../../../src/templates.js";
@@ -20,67 +19,12 @@ export type ConfigurationOptionGroup = {
 
 const ADD_GROUP_ORDER: readonly Exclude<AddGroup, "all">[] = ["native", "apple-compat", "apple-profile", "custom-settings"];
 
-const ADD_GROUP_LABELS: Record<Exclude<AddGroup, "all">, string> = {
+export const ADD_GROUP_LABELS: Record<Exclude<AddGroup, "all">, string> = {
   native: "Relution native",
   "apple-compat": "Apple mobileconfig gaps",
   "apple-profile": "Apple schema profiles",
   "custom-settings": "Custom settings",
 };
-
-export function AddConfigurationControl(props: {
-  readonly availableTemplates: readonly ConfigurationTemplate[];
-  readonly presentNativeTypes: readonly string[];
-  readonly availableAppleCompatSettings: readonly AppleCompatSetting[];
-  readonly availableAppleSchemaProfiles: readonly AppleSchemaEntry[];
-  readonly customSettingsAvailable: boolean;
-  readonly selectedType: string;
-  readonly query: string;
-  readonly group: AddGroup;
-  readonly onSelectedTypeChange: (value: string) => void;
-  readonly onQueryChange: (value: string) => void;
-  readonly onGroupChange: (value: AddGroup) => void;
-  readonly onAdd: () => void;
-}): JSX.Element {
-  const options = configurationOptions(props).filter((option) => optionMatches(option, props.query, props.group));
-  const optionGroups = groupConfigurationOptions(options);
-  const selectedOptionVisible = options.some((option) => option.value === props.selectedType);
-  return (
-    <div className="add-config">
-      <input
-        aria-label="Search configurations"
-        placeholder="Search configurations"
-        value={props.query}
-        onChange={(event) => props.onQueryChange(event.target.value)}
-      />
-      <select aria-label="Configuration source" value={props.group} onChange={(event) => props.onGroupChange(parseAddGroup(event.target.value))}>
-        <option value="all">All</option>
-        <option value="native">Relution native</option>
-        <option value="apple-compat">Apple mobileconfig gaps</option>
-        <option value="apple-profile">Apple schema profiles</option>
-        {props.customSettingsAvailable ? <option value="custom-settings">Custom settings</option> : null}
-      </select>
-      <select
-        aria-label="Configuration template"
-        value={selectedOptionVisible ? props.selectedType : ""}
-        onChange={(event) => props.onSelectedTypeChange(event.target.value)}
-      >
-        <option value="">{options.length} matching configurations</option>
-        {optionGroups.map((optionGroup) => (
-          <optgroup key={optionGroup.group} label={`${optionGroup.label} (${optionGroup.options.length})`}>
-            {optionGroup.options.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label} ({option.meta})
-              </option>
-            ))}
-          </optgroup>
-        ))}
-      </select>
-      <button type="button" disabled={!selectedOptionVisible} onClick={props.onAdd}>
-        Add
-      </button>
-    </div>
-  );
-}
 
 export function optionMatches(option: ConfigurationOption, query: string, group: AddGroup): boolean {
   if (group !== "all" && option.group !== group) {

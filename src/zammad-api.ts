@@ -1,5 +1,6 @@
 import type { ZammadTicketDraft } from "./zammad-ticket-drafts.js";
 import { normalizeHttpConnectionInput } from "./connection-normalization.js";
+import { fetchHttpServiceUrl, httpServiceRequestUrl } from "./http-service-transport.js";
 import { asRecord } from "./utils/json-guards.js";
 
 export type ZammadProtocol = "http" | "https";
@@ -156,10 +157,10 @@ export async function createZammadTicket(connection: ZammadConnection, draft: Za
 }
 
 async function zammadFetch(connection: ZammadConnection, path: string, init: RequestInit): Promise<Response> {
-  const url = zammadRequestUrl(connection, path);
+  const url = httpServiceRequestUrl(connection, path, "Zammad");
   let response: Response;
   try {
-    response = await fetchZammadUrl(connection, url, {
+    response = await fetchHttpServiceUrl(connection, url, {
       ...init,
       headers: {
         "accept": "application/json",
@@ -167,7 +168,7 @@ async function zammadFetch(connection: ZammadConnection, path: string, init: Req
         "Authorization": `Token token=${connection.apiToken}`,
         ...init.headers,
       },
-    });
+    }, "Zammad");
   } catch (error) {
     throw new ZammadNetworkError(`Zammad API request failed before an HTTP response: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
   }
@@ -175,37 +176,4 @@ async function zammadFetch(connection: ZammadConnection, path: string, init: Req
     throw new Error(`Zammad API request failed: ${String(response.status)} ${response.statusText}`);
   }
   return response;
-}
-
-function zammadRequestUrl(connection: ZammadConnection, path: string): URL {
-  const origin = `${connection.protocol}://${connection.port === undefined ? connection.host : `${connection.host}:${String(connection.port)}`}`;
-  const url = new URL(`${connection.basePath}${path}`, origin);
-  if (url.protocol !== `${connection.protocol}:` || url.hostname !== connection.host || url.pathname !== `${connection.basePath}${path}`) {
-    throw new Error(`Zammad API path resolves outside the configured service root: ${path}`);
-  }
-  return url;
-}
-
-async function fetchZammadUrl(connection: ZammadConnection, url: URL, init: RequestInit): Promise<Response> {
-  assertZammadServiceUrl(connection, url);
-  const fetchImpl = globalThis.fetch;
-  return await fetchImpl(url, init);
-}
-
-function assertZammadServiceUrl(connection: ZammadConnection, url: URL): void {
-  if (
-    url.protocol !== `${connection.protocol}:`
-    || url.hostname !== connection.host
-    || url.port !== expectedUrlPort(connection.protocol, connection.port)
-    || !url.pathname.startsWith(connection.basePath)
-  ) {
-    throw new Error(`Zammad API URL resolves outside the configured service root: ${url.href}`);
-  }
-}
-
-function expectedUrlPort(protocol: ZammadProtocol, port: number | undefined): string {
-  if (port === undefined || (protocol === "https" && port === 443) || (protocol === "http" && port === 80)) {
-    return "";
-  }
-  return String(port);
 }

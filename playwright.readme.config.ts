@@ -1,4 +1,5 @@
 import { defineConfig } from "@playwright/test";
+import { editorServerCommand } from "./e2e/editor-server-command.js";
 
 const port = 8792;
 const workspace = "/tmp/relution-policy-workbench-readme-tour";
@@ -20,7 +21,7 @@ export default defineConfig({
     trace: "off",
   },
   webServer: {
-    command: `rm -rf ${workspace} ${output} && env -u FORCE_COLOR pnpm build && env -u FORCE_COLOR node dist/src/cli.js serve --workspace ${workspace} --out ${output} --host 127.0.0.1 --port ${String(port)} --key key123`,
+    command: editorServerCommand({ workspace, output, port }),
     url: `http://127.0.0.1:${String(port)}/`,
     reuseExistingServer: false,
     timeout: 120_000,

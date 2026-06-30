@@ -2,7 +2,7 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import { createDdmArtifact, createMdmCommandArtifact, findAppleSchemaEntry, type AppleSchemaCatalog } from "./apple-schema.js";
 import { sendJson } from "./editor-routes-utils.js";
 import { badRequest, optionalRecord, optionalString, readJsonBody, requireNumber, requireString, type JsonRecord } from "./editor-server-helpers.js";
-import type { EditorApiHandler, EditorRequestContext } from "./editor-server.js";
+import { runEditorApiHandlers, type EditorApiHandler, type EditorRequestContext } from "./editor-server.js";
 import {
   addDdmArtifact,
   addMdmCommandArtifact,
@@ -26,10 +26,7 @@ export async function handleAppleArtifactApiRequest(
   response: ServerResponse,
   context: EditorRequestContext,
 ): Promise<boolean> {
-  for (const handler of APPLE_ARTIFACT_API_HANDLERS) {
-    if (await handler(url, request, response, context)) return true;
-  }
-  return false;
+  return await runEditorApiHandlers(APPLE_ARTIFACT_API_HANDLERS, url, request, response, context);
 }
 
 async function handleAppleProfileApiRequest(
@@ -63,26 +60,7 @@ async function handleDdmArtifactApiRequest(
   response: ServerResponse,
   context: EditorRequestContext,
 ): Promise<boolean> {
-  const { options, appleSchema } = context;
-  if (url.pathname === "/api/ddm/artifact" && request.method === "POST") {
-    const body = await readJsonBody(request);
-    const entry = requireDdmAuthoringEntry(appleSchema, requireString(body, "schemaId"));
-    const sidecar = addDdmArtifact(options.workspace, createDdmArtifact(entry, optionalRecord(body, "values") ?? {}), appleSchema.source.revision);
-    sendJson(response, 200, { sidecar });
-    return true;
-  }
-  if (url.pathname === "/api/ddm/artifact/update" && request.method === "POST") {
-    const body = await readJsonBody(request);
-    const sidecar = updateDdmArtifact(options.workspace, appleSchema, requireString(body, "uuid"), optionalRecord(body, "values") ?? {}, appleSchema.source.revision);
-    sendJson(response, 200, { sidecar });
-    return true;
-  }
-  if (url.pathname === "/api/ddm/artifact/remove" && request.method === "POST") {
-    const body = await readJsonBody(request);
-    sendJson(response, 200, { sidecar: removeDdmArtifact(options.workspace, requireString(body, "uuid"), appleSchema.source.revision) });
-    return true;
-  }
-  return false;
+  return await handleManagedAppleArtifactApiRequest(url, request, response, context, DDM_ARTIFACT_ROUTE);
 }
 
 async function handleMdmCommandArtifactApiRequest(
@@ -91,27 +69,57 @@ async function handleMdmCommandArtifactApiRequest(
   response: ServerResponse,
   context: EditorRequestContext,
 ): Promise<boolean> {
-  const { options, appleSchema } = context;
-  if (url.pathname === "/api/mdm-command/artifact" && request.method === "POST") {
-    const body = await readJsonBody(request);
-    const entry = requireMdmCommandEntry(appleSchema, requireString(body, "schemaId"));
-    const sidecar = addMdmCommandArtifact(options.workspace, createMdmCommandArtifact(entry, optionalRecord(body, "values") ?? {}), appleSchema.source.revision);
-    sendJson(response, 200, { sidecar });
-    return true;
-  }
-  if (url.pathname === "/api/mdm-command/artifact/update" && request.method === "POST") {
-    const body = await readJsonBody(request);
-    const sidecar = updateMdmCommandArtifact(options.workspace, appleSchema, requireString(body, "uuid"), optionalRecord(body, "values") ?? {}, appleSchema.source.revision);
-    sendJson(response, 200, { sidecar });
-    return true;
-  }
-  if (url.pathname === "/api/mdm-command/artifact/remove" && request.method === "POST") {
-    const body = await readJsonBody(request);
-    sendJson(response, 200, { sidecar: removeMdmCommandArtifact(options.workspace, requireString(body, "uuid"), appleSchema.source.revision) });
-    return true;
-  }
-  return false;
+  return await handleManagedAppleArtifactApiRequest(url, request, response, context, MDM_COMMAND_ARTIFACT_ROUTE);
 }
+
+type ManagedAppleArtifactRoute = {
+  readonly basePath: string;
+  readonly add: (context: EditorRequestContext, body: JsonRecord) => unknown;
+  readonly update: (context: EditorRequestContext, body: JsonRecord) => unknown;
+  readonly remove: (context: EditorRequestContext, body: JsonRecord) => unknown;
+};
+
+async function handleManagedAppleArtifactApiRequest(
+  url: URL,
+  request: IncomingMessage,
+  response: ServerResponse,
+  context: EditorRequestContext,
+  route: ManagedAppleArtifactRoute,
+): Promise<boolean> {
+  const action =
+    url.pathname === route.basePath ? route.add
+    : url.pathname === `${route.basePath}/update` ? route.update
+    : url.pathname === `${route.basePath}/remove` ? route.remove
+    : undefined;
+  if (request.method !== "POST" || action === undefined) return false;
+  const body = await readJsonBody(request);
+  sendJson(response, 200, { sidecar: action(context, body) });
+  return true;
+}
+
+const DDM_ARTIFACT_ROUTE: ManagedAppleArtifactRoute = {
+  basePath: "/api/ddm/artifact",
+  add: ({ options, appleSchema }, body) => {
+    const entry = requireDdmAuthoringEntry(appleSchema, requireString(body, "schemaId"));
+    return addDdmArtifact(options.workspace, createDdmArtifact(entry, optionalRecord(body, "values") ?? {}), appleSchema.source.revision);
+  },
+  update: ({ options, appleSchema }, body) =>
+    updateDdmArtifact(options.workspace, appleSchema, requireString(body, "uuid"), optionalRecord(body, "values") ?? {}, appleSchema.source.revision),
+  remove: ({ options, appleSchema }, body) =>
+    removeDdmArtifact(options.workspace, requireString(body, "uuid"), appleSchema.source.revision),
+};
+
+const MDM_COMMAND_ARTIFACT_ROUTE: ManagedAppleArtifactRoute = {
+  basePath: "/api/mdm-command/artifact",
+  add: ({ options, appleSchema }, body) => {
+    const entry = requireMdmCommandEntry(appleSchema, requireString(body, "schemaId"));
+    return addMdmCommandArtifact(options.workspace, createMdmCommandArtifact(entry, optionalRecord(body, "values") ?? {}), appleSchema.source.revision);
+  },
+  update: ({ options, appleSchema }, body) =>
+    updateMdmCommandArtifact(options.workspace, appleSchema, requireString(body, "uuid"), optionalRecord(body, "values") ?? {}, appleSchema.source.revision),
+  remove: ({ options, appleSchema }, body) =>
+    removeMdmCommandArtifact(options.workspace, requireString(body, "uuid"), appleSchema.source.revision),
+};
 
 async function handleMobileConfigInspectApiRequest(
   url: URL,

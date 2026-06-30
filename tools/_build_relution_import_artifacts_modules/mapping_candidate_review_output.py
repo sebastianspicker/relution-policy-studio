@@ -2,10 +2,14 @@
 
 from typing import Any
 
-from .artifact_pipeline import (
+from .artifact_paths import (
     MAPPING_CANDIDATE_REVIEW_REPORT_PATH,
+)
+from .artifact_io import (
     normalize_policy_platform,
     stable_json,
+)
+from recommendation_mapping import (
     unique_preserving_order,
 )
 from .semantic_review_candidates import (

@@ -107,16 +107,6 @@
   gap: 8px;
 }
 
-.policy-details textarea {
-  min-height: 72px;
-  resize: vertical;
-  border: 1px solid var(--ci-color-border-strong, #aab5c1);
-  border-radius: var(--ci-radius-control, 5px);
-  padding: 5px 8px;
-  background: var(--ci-color-field-bg, #ffffff);
-  color: var(--ci-color-text, #20242a);
-}
-
 .checkbox-field {
   align-content: start;
 }

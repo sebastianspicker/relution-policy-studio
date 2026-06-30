@@ -35,7 +35,7 @@ Semantic concepts are grounded in the current exact or candidate Relution/Apple 
 - `exact`: Relution or Apple profile transport can enforce the concrete recommendation value.
 - `parameterized`: Relution support exists, but local identifiers, scope, or process evidence must be supplied before compliance can be closed.
 - `partial`: Related Relution targets exist, but exact values, scope, app identifiers, certificates, network names, schedules, or local policy choices are still required.
-- `helper-only`: structured audit/remediation guidance exists outside Relution importable settings.
+- `helper-only`: structured review guidance exists outside Relution importable settings.
 - `gap`: no supported Relution, Apple profile, mobileconfig, or helper target is available in this repo snapshot.
 
 ## Notable Differences
@@ -45,4 +45,4 @@ Semantic concepts are grounded in the current exact or candidate Relution/Apple 
 - Differences noted: `107`
 - BSI-authoritative differences: `107`
 
-The machine-readable ledger is `example/recommendation-coverage/llm-relution-mapping-review.json`.
+The machine-readable review output is `example/recommendation-coverage/llm-relution-mapping-review.json`.

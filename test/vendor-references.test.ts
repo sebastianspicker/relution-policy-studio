@@ -8,6 +8,7 @@ import { loadAppleSchemaCatalog } from "../src/apple-schema-catalog.js";
 import { extractRexp } from "../src/rexp.js";
 import { loadTemplateBundle } from "../src/templates.js";
 import { importRulesetWorkspace } from "../web/src/editor/ruleset-import.js";
+import { readJson } from "./rexp-helpers.js";
 import type { DownloadManifestEntry, ImportableRuleset, JsonRecord, SourceEntry } from "./reference-test-helpers.js";
 
 type VendorSummary = {
@@ -299,10 +300,6 @@ test("vendor ruleset is importable and preserves rule metadata", () => {
   assert.notEqual(result.workspace, undefined);
   assert.equal((result.workspace?.policies.length ?? 0) >= 3, true);
 });
-
-function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
-}
 
 function hasSemanticConcept(entry: VendorRecommendation | undefined, conceptId: string): boolean {
   return entry?.semanticConcepts?.some((concept) => concept.id === conceptId) ?? false;

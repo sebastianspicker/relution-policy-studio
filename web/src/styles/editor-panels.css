@@ -348,15 +348,6 @@
 
 /* Inspector toggle button is now part of the WorkspaceToolbar (see .toolbar-icon-btn). */
 
-.editor-panel-wrapper {
-  position: relative;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: 1fr;
-}
-
 /* ---- Add configuration button ---- */
 
 .btn-add-configuration {

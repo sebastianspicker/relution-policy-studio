@@ -21,9 +21,9 @@ Candidate similarity is advisory. Exact mappings require a validated entry in `e
 ## Guideline Drift Artifacts
 
 - `example/recommendation-coverage/source-change-report.json` tracks BSI/CIS/vendor source hash drift against the previous generated report.
-- `example/recommendation-coverage/ruleset-update-plan.json` turns changed sources into review-gated update rows. Safe rows may be retained mechanically; exact mapping promotions still require the manual ledger.
+- `example/recommendation-coverage/ruleset-update-plan.json` turns changed sources into review-gated update rows. Safe rows may be retained mechanically; exact mapping promotions still require manual review.
 - `example/recommendation-coverage/relution-mapping-change-report.json` tracks recommendation-to-Relution mapping drift against the previous generated report.
-- `example/recommendation-coverage/relution-mapping-update-plan.json` records safe mapping updates separately from manual-ledger review rows.
+- `example/recommendation-coverage/relution-mapping-update-plan.json` records safe mapping updates separately from manual-review rows.
 - `tools/update_guideline_mappings.py --offline --source all` rebuilds these artifacts from checked-in source material. Online refresh currently fails closed for BSI/CIS because no safe downloader is implemented there.
 
 ## Top Review Queues

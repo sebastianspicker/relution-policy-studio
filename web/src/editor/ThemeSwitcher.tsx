@@ -7,6 +7,7 @@ import {
   parseCorporateTheme,
   readCustomThemeTokens,
   resetCustomThemeTokens,
+  themeStorage,
   THEME_PACKS,
   writeCustomThemeTokens,
   type CorporateTheme,
@@ -19,20 +20,8 @@ type ThemeSwitcherProps = {
   readonly onThemeChange: (theme: CorporateTheme) => void;
 };
 
-function getThemeStorage(): Storage | undefined {
-  if (typeof window === "undefined") {
-    return undefined;
-  }
-
-  try {
-    return window.localStorage;
-  } catch {
-    return undefined;
-  }
-}
-
 function getCustomTokens(): CustomThemeTokens {
-  return { ...DEFAULT_CUSTOM_THEME_TOKENS, ...readCustomThemeTokens(getThemeStorage()) };
+  return { ...DEFAULT_CUSTOM_THEME_TOKENS, ...readCustomThemeTokens(themeStorage()) };
 }
 
 export function ThemeSwitcher({ theme, onThemeChange }: ThemeSwitcherProps): JSX.Element {
@@ -54,12 +43,12 @@ export function ThemeSwitcher({ theme, onThemeChange }: ThemeSwitcherProps): JSX
   function updateCustomToken(tokenName: CustomThemeTokenName, tokenValue: string): void {
     const nextTokens = { ...customTokens, [tokenName]: tokenValue };
     setCustomTokens(nextTokens);
-    writeCustomThemeTokens(getThemeStorage(), nextTokens);
+    writeCustomThemeTokens(themeStorage(), nextTokens);
     onThemeChange("custom");
   }
 
   function resetCustomTokens(): void {
-    resetCustomThemeTokens(getThemeStorage());
+    resetCustomThemeTokens(themeStorage());
     setCustomTokens(DEFAULT_CUSTOM_THEME_TOKENS);
     onThemeChange("custom");
   }

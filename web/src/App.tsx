@@ -1,27 +1,15 @@
 import { useEffect, useState, type JSX } from "react";
 import { EditorShell } from "./editor/EditorShell.js";
 import { StatusBar } from "./editor/StatusBar.js";
-import { readCorporateTheme, writeCorporateTheme, type CorporateTheme, type ThemeStorage } from "./editor/theme.js";
+import { readCorporateTheme, themeStorage, writeCorporateTheme, type CorporateTheme } from "./editor/theme.js";
 import { useEditorController } from "./editor/useEditorController.js";
-
-function getThemeStorage(): ThemeStorage | undefined {
-  if (typeof window === "undefined") {
-    return undefined;
-  }
-
-  try {
-    return window.localStorage;
-  } catch {
-    return undefined;
-  }
-}
 
 export function App(): JSX.Element {
   const controllerResult = useEditorController();
-  const [theme, setTheme] = useState<CorporateTheme>(() => readCorporateTheme(getThemeStorage()));
+  const [theme, setTheme] = useState<CorporateTheme>(() => readCorporateTheme(themeStorage()));
 
   useEffect(() => {
-    writeCorporateTheme(getThemeStorage(), theme);
+    writeCorporateTheme(themeStorage(), theme);
 
     if (typeof document !== "undefined") {
       document.documentElement.dataset.theme = theme;

@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { PolicyWorkspace } from "../src/workspace.js";
+import { readJson } from "./rexp-helpers.js";
 
 export interface BaselineTemplateIndex {
   consolidatedTemplates: BaselineTemplateIndexEntry[];
@@ -308,9 +309,7 @@ export function isRelutionExportablePolicy(expectedTypes: string[]): boolean {
   return expectedTypes.some((type) => type !== "APPLE_MOBILECONFIG");
 }
 
-export function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
-}
+export { readJson };
 
 export function workspaceHasConfigurationType(workspace: PolicyWorkspace, type: string): boolean {
   return workspace.policies.some((policy) => {

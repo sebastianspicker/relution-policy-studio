@@ -65,7 +65,7 @@ example/**/*.cmtx
 example/**/*.PolicyRules
 example/**/*.md
 
-# Local audit, agent, and review artifacts.
+# Local audit and review artifacts.
 AUDIT*.md
 FUNCTION_AUDIT*.md
 LIVE_AUDIT*.md
@@ -76,39 +76,28 @@ SECURITY_NOTES*.md
 TODO*.md
 /plan.md
 /status.md
-/ledger.md
 /audit.md
 /*-plan.md
 /*-status.md
-/*-ledger.md
 /*-audit.md
 /*_plan.md
 /*_status.md
-/*_ledger.md
 /*_audit.md
 
-# Internal or superseded documentation packets. Keep archive packets local-only.
+# Internal or superseded documentation packets. Keep them local-only.
 docs/*-audit.md
+docs/*-audit-*.md
 docs/*-plan.md
-docs/*-ledger.md
 docs/*-status.md
 docs/*_audit.md
 docs/*_plan.md
-docs/*_ledger.md
 docs/*_status.md
 docs/*-readout.md
 docs/*_readout.md
 docs/overengineering-index.md
-docs/agent/
 docs/archive/
 
-.agents/
 .codacy/
-.codex/
-.claude/
-.cursor/
-AGENTS.md
-CLAUDE.md
 playwright-report/
 test-results/
 coverage/

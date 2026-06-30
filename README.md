@@ -414,42 +414,49 @@ The refresh command reads `BOOT-INF/classes/openapi.json`, bundled iOS system ap
 ## Documentation Status
 
 The public documentation surface is intentionally small: this README,
-`SECURITY.md`, the active evidence summaries in `docs/`, and README
-screenshots.
+`SECURITY.md`, active evidence summaries in `docs/`, and README screenshots.
 
-Internal remediation, audit, plan, ledger, and status packets are local-only
-artifacts. They are ignored by git, superseded once archived under
-`docs/archive/`, and are not active project documentation.
+Planning notes, scratch reports, superseded packets, and generated local check
+output are local-only artifacts. They are ignored by git and are not active
+project documentation.
 
-## Audit and Evidence Artifacts
+See [docs/README.md](docs/README.md) for the public docs index.
+
+## Audit Evidence Artifacts
 
 Run a deep local audit of the harvested Relution configuration surface and mock `.rexp` roundtrips:
 
 ```sh
 pnpm rexp audit \
-  --key "$RELUTION_REXP_KEY" \
-  --json-out data/relution-26.1.1/audit-report.json \
-  --markdown-out reports/relution-audit.md
+ --key "$RELUTION_REXP_KEY" \
+ --json-out data/relution-26.1.1/audit-report.json \
+ --markdown-out reports/relution-audit.md
 ```
 
 The audit checks:
 
 - platform-to-configuration coverage for all Relution platform enum values
-- every harvested configuration template and field
+- every harvested configuration template field
 - schema compatibility issues where Relution publishes Java/OpenAPI patterns that Node/AJV cannot compile directly
 - local mock import/export compatibility by creating, validating, packing, verifying, extracting, and re-reading one `.rexp` per configuration type
 - the provided example export, when present
 
-The JSON report contains the full parameter matrix under `configurationTypes[].fields`; the Markdown report summarizes coverage and failures. The `reports/` directory is intended for local audit output and is ignored by git.
+The JSON report contains the full parameter matrix under
+`configurationTypes[].fields`; the Markdown report summarizes coverage
+failures. The `reports/` directory is intended for local audit output and is
+ignored by git.
 
 Companion evidence docs:
 
+- `docs/README.md`: public docs index and local-only material boundary
 - `docs/JAMF_RELUTION_APPLE_GAP.md`: Apple/Jamf gap matrix for `APPLE_MOBILECONFIG` transport
 - `docs/LLM_RELUTION_MAPPING.md`: offline mapping review summary for BSI, CIS, and vendor recommendations
 - `docs/MAPPING_CANDIDATE_REVIEW.md`: review queues for non-exact mapping candidates
 - `example/recommendation-coverage/unified-recommendation-analysis.json`: semantic grouping and BSI-precedence analysis
 
-The machine-readable recommendation artifacts live under `example/recommendation-coverage/`. They are generated from committed evidence; no online source refresh or external LLM API call is part of those checked-in artifacts.
+Machine-readable recommendation artifacts live under
+`example/recommendation-coverage/`. Generated committed evidence does not call
+an online source refresh or external LLM API.
 
 ## Verification
 

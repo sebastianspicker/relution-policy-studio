@@ -1,5 +1,5 @@
 import { normalizeHttpConnectionInput } from "./connection-normalization.js";
-import { buildRelutionDeviceQueryResult } from "./relution-query-result.js";
+import { fetchHttpServiceUrl, httpServiceRequestUrl } from "./http-service-transport.js";
 import { asRecord } from "./utils/json-guards.js";
 
 export type RelutionProtocol = "http" | "https";
@@ -194,7 +194,14 @@ export async function queryRelutionDevices(
   });
   const body = relutionQueryResponse(await response.json());
   const devices = body.results.map(normalizeDevice);
-  return buildRelutionDeviceQueryResult(connection.baseUrl, devices, relutionResultTotal(body));
+  const total = relutionResultTotal(body);
+  return {
+    baseUrl: connection.baseUrl,
+    count: devices.length,
+    ...(total === undefined ? {} : { total }),
+    truncated: total !== undefined && devices.length < total,
+    devices,
+  };
 }
 
 function relutionResultTotal(body: RelutionQueryResponse): number | undefined {
@@ -278,10 +285,10 @@ function searchFilter(search: string | undefined): Array<Record<string, unknown>
 
 async function relutionFetch(connection: RelutionConnection, path: string, init: RequestInit): Promise<Response> {
   assertRelutionReadOnlyRequest(init.method, path);
-  const url = relutionRequestUrl(connection, path);
+  const url = httpServiceRequestUrl(connection, path, "Relution");
   let response: Response;
   try {
-    response = await fetchRelutionUrl(connection, url, {
+    response = await fetchHttpServiceUrl(connection, url, {
       ...init,
       headers: {
         "accept": "application/json",
@@ -290,7 +297,7 @@ async function relutionFetch(connection: RelutionConnection, path: string, init:
         "X-User-Access-Token": connection.apiToken,
         ...init.headers,
       },
-    });
+    }, "Relution");
   } catch (error) {
     throw new RelutionNetworkError(`Relution API request failed before an HTTP response: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
   }
@@ -298,39 +305,6 @@ async function relutionFetch(connection: RelutionConnection, path: string, init:
     throw new Error(`Relution API request failed: ${String(response.status)} ${response.statusText}`);
   }
   return response;
-}
-
-function relutionRequestUrl(connection: RelutionConnection, path: string): URL {
-  const origin = `${connection.protocol}://${connection.port === undefined ? connection.host : `${connection.host}:${String(connection.port)}`}`;
-  const url = new URL(`${connection.basePath}${path}`, origin);
-  if (url.protocol !== `${connection.protocol}:` || url.hostname !== connection.host || url.pathname !== `${connection.basePath}${path}`) {
-    throw new Error(`Relution API path resolves outside the configured service root: ${path}`);
-  }
-  return url;
-}
-
-async function fetchRelutionUrl(connection: RelutionConnection, url: URL, init: RequestInit): Promise<Response> {
-  assertRelutionServiceUrl(connection, url);
-  const fetchImpl = globalThis.fetch;
-  return await fetchImpl(url, init);
-}
-
-function assertRelutionServiceUrl(connection: RelutionConnection, url: URL): void {
-  if (
-    url.protocol !== `${connection.protocol}:`
-    || url.hostname !== connection.host
-    || url.port !== expectedUrlPort(connection.protocol, connection.port)
-    || !url.pathname.startsWith(connection.basePath)
-  ) {
-    throw new Error(`Relution API URL resolves outside the configured service root: ${url.href}`);
-  }
-}
-
-function expectedUrlPort(protocol: RelutionProtocol, port: number | undefined): string {
-  if (port === undefined || (protocol === "https" && port === 443) || (protocol === "http" && port === 80)) {
-    return "";
-  }
-  return String(port);
 }
 
 export function assertRelutionReadOnlyRequest(method: string | undefined, path: string): void {

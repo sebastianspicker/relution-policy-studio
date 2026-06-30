@@ -3,6 +3,7 @@ import test from "node:test";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { parseSettingDetailsJson } from "../web/src/editor/json-template-import.js";
+import { readJson } from "./rexp-helpers.js";
 
 type SourceKey = "bsi" | "cis" | "vendor";
 
@@ -288,10 +289,6 @@ test("vendor Windows Custom CSP mappings emit additive bundles from Relution REX
     true,
   );
 });
-
-function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
-}
 
 function recommendationById(catalog: RecommendationCatalogEntry[], id: string): RecommendationCatalogEntry {
   const entry = catalog.find((candidate) => candidate.id === id);

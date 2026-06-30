@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { readJson } from "./rexp-helpers.js";
 
 type ExactMappingReference = {
   version: number;
@@ -407,10 +406,6 @@ test("recommendation-to-relution mapping drift artifacts stay review-gated", () 
   assert.equal(updatePlan.summary.totalChangedRecommendations, changeReport.summary.changedRecommendations);
   assert.equal(updatePlan.summary.proposedUpdates, updatePlan.rows.length);
 });
-
-function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
-}
 
 function countOf(counts: Record<string, number>, key: string): number {
   return counts[key] ?? 0;

@@ -1,4 +1,3 @@
-import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -16,6 +15,7 @@ import {
   type RecommendationSourceSummary,
   type RecommendationUnifiedAnalysis,
 } from "./recommendation-types.js";
+import { readJsonCatalog } from "./utils/json-catalog.js";
 import { asRecord, uniqueStrings } from "./utils/json-guards.js";
 
 interface RecommendationSourceFiles {
@@ -128,9 +128,10 @@ export function loadRecommendationCoverage(options: { rootDir?: string } = {}): 
     return coverageCache;
   }
   const path = resolve(rootDir, COVERAGE_PATH);
-  const coverage = readJsonCatalog<RecommendationCoverageMatrix>(path, "Recommendation coverage matrix", (record) =>
-    Array.isArray(record.rows) && asRecord(record.summary) !== undefined,
-  );
+  const coverage = readJsonCatalog<RecommendationCoverageMatrix>(path, "Recommendation coverage matrix", (value) => {
+    const record = asRecord(value);
+    return record !== undefined && Array.isArray(record.rows) && asRecord(record.summary) !== undefined;
+  });
   if (rootDir === DEFAULT_RECOMMENDATION_ROOT) {
     coverageCache = coverage;
   }
@@ -143,9 +144,15 @@ export function loadRecommendationSemanticIndex(options: { rootDir?: string } = 
     return semanticIndexCache;
   }
   const path = resolve(rootDir, SEMANTIC_INDEX_PATH);
-  const semanticIndex = readJsonCatalog<RecommendationSemanticIndex>(path, "Recommendation semantic index", (record) =>
-    Array.isArray(record.concepts) && Array.isArray(record.relutionTargets) && Array.isArray(record.recommendations),
-  );
+  const semanticIndex = readJsonCatalog<RecommendationSemanticIndex>(path, "Recommendation semantic index", (value) => {
+    const record = asRecord(value);
+    return (
+      record !== undefined &&
+      Array.isArray(record.concepts) &&
+      Array.isArray(record.relutionTargets) &&
+      Array.isArray(record.recommendations)
+    );
+  });
   if (rootDir === DEFAULT_RECOMMENDATION_ROOT) {
     semanticIndexCache = semanticIndex;
   }
@@ -158,9 +165,15 @@ export function loadUnifiedRecommendationAnalysis(options: { rootDir?: string } 
     return unifiedAnalysisCache;
   }
   const path = resolve(rootDir, UNIFIED_ANALYSIS_PATH);
-  const unifiedAnalysis = readJsonCatalog<RecommendationUnifiedAnalysis>(path, "Unified recommendation analysis", (record) =>
-    Array.isArray(record.commonGroups) && Array.isArray(record.contradictions) && Array.isArray(record.differences),
-  );
+  const unifiedAnalysis = readJsonCatalog<RecommendationUnifiedAnalysis>(path, "Unified recommendation analysis", (value) => {
+    const record = asRecord(value);
+    return (
+      record !== undefined &&
+      Array.isArray(record.commonGroups) &&
+      Array.isArray(record.contradictions) &&
+      Array.isArray(record.differences)
+    );
+  });
   if (rootDir === DEFAULT_RECOMMENDATION_ROOT) {
     unifiedAnalysisCache = unifiedAnalysis;
   }
@@ -178,29 +191,19 @@ export function loadRecommendationSettingBundleCatalog(
     return cached;
   }
   const path = resolve(rootDir, SOURCE_FILES[source].settingBundleCatalogPath);
-  const catalog = readJsonCatalog<RecommendationSettingBundleCatalog>(path, "Recommendation setting bundle catalog", (record) =>
-    Array.isArray(record.bundles) && Array.isArray(record.variantGroups) && Array.isArray(record.nonImportableRecommendations),
-  );
+  const catalog = readJsonCatalog<RecommendationSettingBundleCatalog>(path, "Recommendation setting bundle catalog", (value) => {
+    const record = asRecord(value);
+    return (
+      record !== undefined &&
+      Array.isArray(record.bundles) &&
+      Array.isArray(record.variantGroups) &&
+      Array.isArray(record.nonImportableRecommendations)
+    );
+  });
   if (useCache) {
     settingsCatalogCache[source] = catalog;
   }
   return catalog;
-}
-
-function readJsonCatalog<T>(
-  path: string,
-  label: string,
-  isValid: (record: Record<string, unknown>) => boolean,
-): T {
-  if (!existsSync(path)) {
-    throw new Error(`${label} not found: ${path}`);
-  }
-  const parsed = JSON.parse(readFileSync(path, "utf8")) as unknown;
-  const record = asRecord(parsed);
-  if (record === undefined || !isValid(record)) {
-    throw new Error(`Invalid ${label.charAt(0).toLowerCase()}${label.slice(1)}: ${path}`);
-  }
-  return parsed as T;
 }
 
 function toSummary(catalog: RecommendationCatalogResponse): RecommendationSourceSummary {
@@ -253,26 +256,14 @@ function emptyCoverageSummary(): RecommendationSourceCoverageSummary {
 }
 
 function readRecommendations(path: string): RecommendationRecord[] {
-  if (!existsSync(path)) {
-    throw new Error(`Recommendation catalog not found: ${path}`);
-  }
-  const parsed = JSON.parse(readFileSync(path, "utf8")) as unknown;
-  if (!Array.isArray(parsed)) {
-    throw new Error(`Invalid recommendation catalog: ${path}`);
-  }
-  return parsed as RecommendationRecord[];
+  return readJsonCatalog<RecommendationRecord[]>(path, "Recommendation catalog", Array.isArray);
 }
 
 function readRuleset(path: string): RecommendationRuleset {
-  if (!existsSync(path)) {
-    throw new Error(`Recommendation ruleset not found: ${path}`);
-  }
-  const parsed = JSON.parse(readFileSync(path, "utf8")) as unknown;
-  const record = asRecord(parsed);
-  if (record === undefined || !Array.isArray(record.policies)) {
-    throw new Error(`Invalid recommendation ruleset: ${path}`);
-  }
-  return parsed as RecommendationRuleset;
+  return readJsonCatalog<RecommendationRuleset>(path, "Recommendation ruleset", (value) => {
+    const record = asRecord(value);
+    return record !== undefined && Array.isArray(record.policies);
+  });
 }
 
 function createDisplayToImportPlatform(

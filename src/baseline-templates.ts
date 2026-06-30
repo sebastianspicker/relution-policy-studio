@@ -1,6 +1,7 @@
-import { existsSync, readFileSync, realpathSync } from "node:fs";
+import { existsSync, realpathSync } from "node:fs";
 import { resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readJsonCatalog } from "./utils/json-catalog.js";
 
 export const BASELINE_TEMPLATE_PLATFORMS = ["WINDOWS", "MACOS", "IOS", "ANDROID_ENTERPRISE"] as const;
 export const BASELINE_TEMPLATE_TIERS = [1, 2, 3] as const;
@@ -195,7 +196,7 @@ export function listBaselineTemplateOptions(): BaselineTemplateOptionsResponse {
 export function loadBaselineTemplate(selection: BaselineTemplateSelection): unknown {
   const entry = findTemplateEntry(loadTemplateIndex(), selection);
   const file = safeTemplatePath(entry.path);
-  return JSON.parse(readFileSync(file, "utf8")) as unknown;
+  return readJsonCatalog<unknown>(file, "Baseline template");
 }
 
 export function loadBaselineExpertOptions(selection: Omit<BaselineTemplateSelection, "tier">): BaselineExpertOptionsResponse {
@@ -406,7 +407,7 @@ function mappingTarget(kind: string, type: string | undefined, payloadType: stri
 }
 
 function loadTemplateIndex(): TemplateIndex {
-  const parsed = JSON.parse(readFileSync(INDEX_PATH, "utf8")) as unknown;
+  const parsed = readJsonCatalog<unknown>(INDEX_PATH, "Baseline template index");
   const record = requireRecord(parsed, "baseline template index");
   return {
     version: requireNumber(record, "version"),
@@ -566,17 +567,13 @@ function optionalNumber(record: Record<string, unknown>, key: string): number | 
 }
 
 function isBaselineTemplatePlatform(value: string): value is BaselineTemplatePlatform {
-  return isOneOf(BASELINE_TEMPLATE_PLATFORMS, value);
+  return BASELINE_TEMPLATE_PLATFORMS.includes(value as BaselineTemplatePlatform);
 }
 
 function isBaselineTemplateTier(value: number): value is BaselineTemplateTier {
-  return isOneOf(BASELINE_TEMPLATE_TIERS, value);
+  return BASELINE_TEMPLATE_TIERS.includes(value as BaselineTemplateTier);
 }
 
 function isBaselineTemplateShape(value: string): value is BaselineTemplateShape {
-  return isOneOf(BASELINE_TEMPLATE_SHAPES, value);
-}
-
-function isOneOf<T>(values: readonly T[], value: unknown): value is T {
-  return values.some((entry) => entry === value);
+  return BASELINE_TEMPLATE_SHAPES.includes(value as BaselineTemplateShape);
 }

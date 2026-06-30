@@ -5,14 +5,18 @@ from typing import Any
 
 from recommendation_mapping import build_setting_index, flatten_value_paths
 
-from .artifact_pipeline import (
+from .artifact_paths import (
     ALL_SOURCES,
     MANUAL_MAPPING_PROMOTIONS_PATH,
     REPO_ROOT,
-    mapping_target,
+)
+from .artifact_io import (
     normalize_policy_platform,
     read_json,
     write_json,
+)
+from .mapping_helpers import (
+    mapping_target,
 )
 from .artifact_io import relative_path
 from .mapping_helpers import mapping_with_target

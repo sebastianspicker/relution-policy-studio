@@ -1,6 +1,7 @@
 import { defineConfig } from "@playwright/test";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { editorServerCommand } from "./e2e/editor-server-command.js";
 
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.EDITOR_PORT ?? "8791");
@@ -24,7 +25,7 @@ export default defineConfig({
     trace: "on-first-retry",
   },
   webServer: {
-    command: `rm -rf ${workspace} ${output} && env -u FORCE_COLOR pnpm build && env -u FORCE_COLOR node dist/src/cli.js serve --workspace ${workspace} --out ${output} --host 127.0.0.1 --port ${String(port)} --key key123`,
+    command: editorServerCommand({ workspace, output, port }),
     url: `http://127.0.0.1:${String(port)}/`,
     reuseExistingServer: false,
     timeout: 180_000,

@@ -90,13 +90,11 @@
   }
 
   .toolbar-brand,
-  .toolbar-primary,
-  .toolbar-group {
+  .toolbar-primary {
     width: 100%;
   }
 
-  .toolbar-primary,
-  .toolbar-group {
+  .toolbar-primary {
     justify-content: flex-start;
     flex-wrap: wrap;
   }

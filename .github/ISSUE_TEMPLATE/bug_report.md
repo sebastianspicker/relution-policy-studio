@@ -37,7 +37,7 @@ assignees: ""
 - Command or workflow run:
 - Relution server version, if relevant:
 - Archive/workspace fixture, if relevant:
-- Local-only artifact or ignored ledger, if relevant:
+- Local-only artifact, if relevant:
 
 ## Impact And Risk
 

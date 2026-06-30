@@ -1,9 +1,4 @@
 import type { AppleSchemaCatalog } from "../src/apple-schema.js";
-import type {
-  RecommendationCatalogResponse,
-  RecommendationRecord,
-  RecommendationSource,
-} from "../src/recommendation-types.js";
 import type { ConfigurationTemplate, RelutionTemplateBundle } from "../src/templates.js";
 import type { PolicyWorkspace } from "../src/workspace.js";
 
@@ -84,24 +79,5 @@ export function createTestPolicyWorkspace(options: {
         },
       },
     ],
-  };
-}
-
-export function createTestRecommendationCatalog(options: {
-  readonly source: RecommendationSource;
-  readonly label?: string;
-  readonly platforms: string[];
-  readonly recommendations: RecommendationRecord[];
-}): RecommendationCatalogResponse {
-  const [displayPlatform = "IOS"] = options.platforms;
-  return {
-    source: options.source,
-    label: options.label ?? options.source.toUpperCase(),
-    available: true,
-    recommendationCount: options.recommendations.length,
-    displayPlatforms: options.platforms,
-    importPlatforms: options.platforms,
-    displayToImportPlatform: { [displayPlatform]: displayPlatform },
-    recommendations: options.recommendations,
   };
 }

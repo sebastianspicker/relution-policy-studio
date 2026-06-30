@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { readJson } from "./rexp-helpers.js";
 
 type CoverageRow = {
   source: string;
@@ -460,10 +461,6 @@ test("LLM mapping review covers every recommendation and links to known setting 
     }
   }
 });
-
-function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(resolve(path), "utf8")) as T;
-}
 
 function recommendationKey(source: string, recommendationId: string): string {
   return `${source}:${recommendationId}`;

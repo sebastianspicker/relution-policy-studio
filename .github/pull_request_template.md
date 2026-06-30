@@ -5,7 +5,7 @@
 ## Scope
 
 - [ ] Documentation, metadata, or repository hygiene only
-- [ ] Archive/status/ledger routing changed
+- [ ] Local-only artifact routing changed
 - [ ] Runtime code or generated artifacts changed
 - [ ] Local editor/API behavior changed
 - [ ] Relution/Zammad integration behavior changed
@@ -32,8 +32,7 @@
 - Local workspace/archive impact:
 - Security or network exposure impact:
 - Codacy/local analysis impact:
-- Excluded analysis/remediation paths touched (`AGENTS.md`, `private/`,
-  `node_modules/`, `docs/archive/`): no / yes, details:
+- Excluded generated or local paths touched: no / yes, details:
 - Codacy Cloud closure claimed: no / yes, evidence:
 
 ## Notes
@@ -41,4 +40,4 @@
 - Tests or checks skipped:
 - Remaining risks:
 - Release notes or docs updated:
-- Archive or ignored-local artifacts updated, with `git check-ignore -v` proof:
+- Local-only artifacts checked with `git check-ignore -v`:

@@ -44,6 +44,17 @@ export const CUSTOM_THEME_TOKEN_OPTIONS = [
   { name: "--ci-color-primary-contrast", label: "Primary text" },
 ] as const satisfies readonly { readonly name: CustomThemeTokenName; readonly label: string }[];
 
+export function themeStorage(): ThemeStorage | undefined {
+  if (typeof window === "undefined") {
+    return undefined;
+  }
+  try {
+    return window.localStorage;
+  } catch {
+    return undefined;
+  }
+}
+
 export function isCorporateTheme(value: unknown): value is CorporateTheme {
   return typeof value === "string" && THEME_PACKS.some((theme) => theme.value === value);
 }

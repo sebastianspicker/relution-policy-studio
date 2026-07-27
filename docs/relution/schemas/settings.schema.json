@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/settings.schema.json",
+  "title": "Relution setting-domain registry",
+  "allOf": [
+    {
+      "$ref": "concept-registry.schema.json"
+    },
+    {
+      "properties": {
+        "$schema": {
+          "const": "../schemas/settings.schema.json"
+        },
+        "document_id": {
+          "const": "relution.settings"
+        },
+        "document_type": {
+          "const": "setting_registry"
+        },
+        "records": {
+          "items": {
+            "properties": {
+              "id": {
+                "pattern": "^setting\\."
+              },
+              "record_kind": {
+                "enum": [
+                  "organization_setting",
+                  "system_setting",
+                  "security_setting",
+                  "platform_setting",
+                  "integration_setting",
+                  "service_setting"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

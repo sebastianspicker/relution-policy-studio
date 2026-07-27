@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/target-bindings.schema.json",
+  "schema_version": "1.0.0",
+  "document_type": "relution-target-contract-bindings",
+  "binding_status": "template",
+  "sensitive_values_present": false,
+  "target": {
+    "authorized_origin": null,
+    "reported_version": null,
+    "organization_id": null
+  },
+  "contract": {
+    "catalog_path": "docs/relution/generated/API_CATALOG.json",
+    "source_sha256": null,
+    "operation_count": null,
+    "catalog_checked_current": false,
+    "validated_at": null
+  },
+  "bindings": [],
+  "unresolved_concept_ids": []
+}

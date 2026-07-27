@@ -1,8 +1,2 @@
-blank_issues_enabled: true
-contact_links:
-  - name: Private vulnerability report
-    url: https://github.com/sebastianspicker/relution-policy-workbench/security/advisories/new
-    about: Report suspected vulnerabilities privately instead of opening a public issue.
-  - name: Repository README
-    url: https://github.com/sebastianspicker/relution-policy-workbench#readme
-    about: Check current setup, command, and documentation status before filing.
+---
+blank_issues_enabled: false

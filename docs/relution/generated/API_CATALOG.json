@@ -1,0 +1,15 @@
+{
+  "document_type": "relution_openapi_operation_catalog",
+  "schema_version": "1.0.0",
+  "status": "not_generated",
+  "source": {
+    "sha256": null
+  },
+  "contract": {
+    "counts": {
+      "operations": 0
+    }
+  },
+  "operation_count": 0,
+  "operations": []
+}

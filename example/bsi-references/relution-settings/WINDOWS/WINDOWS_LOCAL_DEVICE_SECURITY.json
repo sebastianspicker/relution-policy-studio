@@ -1,6 +1,0 @@
-{
-  "type": "WINDOWS_LOCAL_DEVICE_SECURITY",
-  "enabled": true,
-  "inactivityTimeUntilScreenSaver": 900,
-  "userInformationOnLockScreenConfiguration": "NO_USER_INFORMATION"
-}

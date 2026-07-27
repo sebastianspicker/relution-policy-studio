@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/groups.schema.json",
+  "title": "Relution group-domain registry",
+  "allOf": [
+    {
+      "$ref": "concept-registry.schema.json"
+    },
+    {
+      "properties": {
+        "$schema": {
+          "const": "../schemas/groups.schema.json"
+        },
+        "document_id": {
+          "const": "relution.groups"
+        },
+        "document_type": {
+          "const": "group_registry"
+        },
+        "records": {
+          "items": {
+            "properties": {
+              "id": {
+                "pattern": "^group\\."
+              },
+              "record_kind": {
+                "enum": [
+                  "device_group_model",
+                  "device_group_membership",
+                  "device_group_assignment",
+                  "device_group_automation",
+                  "user_group_model"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

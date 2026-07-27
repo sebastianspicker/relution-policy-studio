@@ -1,0 +1,2710 @@
+{
+  "$schema": "urn:campusweave-relution:schema:university-profile:1.0.0",
+  "schema_version": "1.0.0",
+  "document_type": "relution-university-offline-desired-state",
+  "package": {
+    "package_id": "university-relution-desired-state-v1",
+    "institution_code": "university",
+    "institution_label": "Reference University",
+    "status": "PROPOSED",
+    "evidence_state": "NOT_EVIDENCED",
+    "sensitivity": "public_design_no_target_data",
+    "execution_capability": "none",
+    "execution_authorized": false,
+    "target_contract_required": true,
+    "production_ready": false
+  },
+  "provenance": {
+    "authority_order": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "conflict_rule": "higher_authority_controls",
+    "applicability_rule": "unsupported_vendor_capability_becomes_gap_not_override",
+    "cis_content_policy": "metadata_and_control_refs_only",
+    "sources": [
+      {
+        "source_id": "source.bsi",
+        "authority": "bsi",
+        "authority_rank": 1,
+        "title": "BSI protection-objective and risk-treatment sources",
+        "version": null,
+        "publication_date": null,
+        "content_sha256": null,
+        "mapping_status": "unresolved",
+        "status": "applicability_pending",
+        "redistribution": "public_metadata_only",
+        "evidence_scope": "control_objectives"
+      },
+      {
+        "source_id": "source.cis",
+        "authority": "cis",
+        "authority_rank": 2,
+        "title": "CIS compatible-hardening source",
+        "version": null,
+        "publication_date": null,
+        "content_sha256": null,
+        "mapping_status": "unresolved",
+        "status": "licensed_local_reference",
+        "redistribution": "no_benchmark_body",
+        "evidence_scope": "compatibility_review"
+      },
+      {
+        "source_id": "source.vendor",
+        "authority": "vendor",
+        "authority_rank": 3,
+        "title": "Relution target-instance OpenAPI contract and supported platform documentation",
+        "version": null,
+        "publication_date": null,
+        "content_sha256": null,
+        "mapping_status": "unresolved",
+        "status": "applicability_pending",
+        "redistribution": "public_metadata_only",
+        "evidence_scope": "implementability"
+      }
+    ],
+    "control_intents": [
+      {
+        "control_id": "control.trust-recovery",
+        "title": "Management trust and recovery",
+        "intent": "Maintain a tested, supported management and recovery path before restrictive or connectivity-affecting changes.",
+        "provenance_chain": [
+          "source.bsi",
+          "source.vendor"
+        ],
+        "platforms": [
+          "ios_ipados",
+          "macos",
+          "android_enterprise",
+          "windows"
+        ],
+        "models": [
+          "corp",
+          "byod",
+          "shared",
+          "kiosk"
+        ],
+        "unresolved_items": [
+          "target capability",
+          "recovery design",
+          "ownership inventory"
+        ],
+        "exception_required_if_weakened": true
+      },
+      {
+        "control_id": "control.single-writer",
+        "title": "Single writer per effective setting",
+        "intent": "Assign one policy writer per platform, model, and cohort for every effective setting; reject unknown overlap and priority conflicts.",
+        "provenance_chain": [
+          "source.bsi",
+          "source.vendor"
+        ],
+        "platforms": [
+          "ios_ipados",
+          "macos",
+          "android_enterprise",
+          "windows"
+        ],
+        "models": [
+          "corp",
+          "byod",
+          "shared",
+          "kiosk"
+        ],
+        "unresolved_items": [
+          "effective policy inventory",
+          "priority semantics"
+        ],
+        "exception_required_if_weakened": true
+      },
+      {
+        "control_id": "control.usability",
+        "title": "Usability-preserving hardening",
+        "intent": "Use Tier 2 as the normal baseline, reserve Tier 1 for dedicated privileged or high-risk cases, and prove supported workflows and recovery before promotion.",
+        "provenance_chain": [
+          "source.bsi",
+          "source.cis",
+          "source.vendor"
+        ],
+        "platforms": [
+          "ios_ipados",
+          "macos",
+          "android_enterprise",
+          "windows"
+        ],
+        "models": [
+          "corp",
+          "byod",
+          "shared",
+          "kiosk"
+        ],
+        "unresolved_items": [
+          "workflow acceptance",
+          "accessibility needs",
+          "platform support"
+        ],
+        "exception_required_if_weakened": true
+      },
+      {
+        "control_id": "control.minimal-scope",
+        "title": "Inventory-backed minimal scope",
+        "intent": "Do not derive group membership or assignments from organizational metadata. Use one approved, inventory-backed scope at a time.",
+        "provenance_chain": [
+          "source.bsi",
+          "source.vendor"
+        ],
+        "platforms": [
+          "ios_ipados",
+          "macos",
+          "android_enterprise",
+          "windows"
+        ],
+        "models": [
+          "corp",
+          "byod",
+          "shared",
+          "kiosk"
+        ],
+        "unresolved_items": [
+          "device inventory",
+          "ownership",
+          "functional model",
+          "policy reach"
+        ],
+        "exception_required_if_weakened": true
+      }
+    ]
+  },
+  "organization_units": [
+    {
+      "unit_id": "ou.university",
+      "parent_unit_id": null,
+      "kind": "institution",
+      "label": "Reference University",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "mixed",
+      "usability_requirements": [
+        "no organization-derived targeting"
+      ]
+    },
+    {
+      "unit_id": "ou.leadership",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Leadership and attached functions",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "confidential",
+      "usability_requirements": [
+        "managed access continuity",
+        "explicit exception process"
+      ]
+    },
+    {
+      "unit_id": "ou.people_organization",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "People and organization",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "sensitive_personal",
+      "usability_requirements": [
+        "supported personnel workflows",
+        "tested authentication recovery"
+      ]
+    },
+    {
+      "unit_id": "ou.study_teaching",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Study and teaching administration",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus",
+        "site.north-campus",
+        "site.south-campus"
+      ],
+      "data_risk": "sensitive_personal",
+      "usability_requirements": [
+        "service-period continuity",
+        "no untested broad restriction"
+      ]
+    },
+    {
+      "unit_id": "ou.communications_events",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Communications and events",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "general",
+      "usability_requirements": [
+        "approved media workflows",
+        "time-bounded event exceptions"
+      ]
+    },
+    {
+      "unit_id": "ou.finance",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Finance",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "financial",
+      "usability_requirements": [
+        "segregated approval workflows",
+        "tested strong-authentication recovery"
+      ]
+    },
+    {
+      "unit_id": "ou.facilities",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Facilities management",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus",
+        "site.service-campus"
+      ],
+      "data_risk": "operational",
+      "usability_requirements": [
+        "offline-tolerant field work",
+        "protected management connectivity"
+      ]
+    },
+    {
+      "unit_id": "ou.library",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Library",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "general",
+      "usability_requirements": [
+        "circulation and digitization workflow separation",
+        "inventory proof for shared devices"
+      ]
+    },
+    {
+      "unit_id": "ou.digitalization_it",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Digitalization and IT",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "privileged",
+      "usability_requirements": [
+        "separate privileged and daily-use workflows",
+        "approved emergency recovery"
+      ]
+    },
+    {
+      "unit_id": "ou.statutory_officers",
+      "parent_unit_id": "ou.university",
+      "kind": "department",
+      "label": "Statutory officers",
+      "assignment_eligible": false,
+      "person_fields_present": false,
+      "default_location_ids": [
+        "site.primary-campus"
+      ],
+      "data_risk": "confidential",
+      "usability_requirements": [
+        "minimum necessary controls",
+        "explicit review for exceptions"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "location_id": "site.primary-campus",
+      "label": "Primary campus",
+      "role": "primary",
+      "network_overlay_target_local": true
+    },
+    {
+      "location_id": "site.north-campus",
+      "label": "North campus",
+      "role": "campus",
+      "network_overlay_target_local": true
+    },
+    {
+      "location_id": "site.south-campus",
+      "label": "South campus",
+      "role": "campus",
+      "network_overlay_target_local": true
+    },
+    {
+      "location_id": "site.service-campus",
+      "label": "Service campus",
+      "role": "service",
+      "network_overlay_target_local": true
+    }
+  ],
+  "functional_cohorts": [
+    {
+      "cohort_id": "persona.standard_office",
+      "label": "Standard administration",
+      "purpose": "normal supported administrative work",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "approved productivity applications",
+        "supported recovery path"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_department",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    },
+    {
+      "cohort_id": "persona.executive_confidential",
+      "label": "Executive and confidential",
+      "purpose": "high-confidentiality administrative work",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "secure travel and external access",
+        "named exception process"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_department",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    },
+    {
+      "cohort_id": "persona.personnel_sensitive",
+      "label": "Personnel-sensitive",
+      "purpose": "approved personnel workflows",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "identity recovery test",
+        "supported document access"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_department",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    },
+    {
+      "cohort_id": "persona.student_record_sensitive",
+      "label": "Student-record sensitive",
+      "purpose": "approved study and teaching administration",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "deadline-period continuity",
+        "service workflow pilot"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_department",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    },
+    {
+      "cohort_id": "persona.finance_sensitive",
+      "label": "Finance-sensitive",
+      "purpose": "financial approval and processing workflows",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "segregated duty workflow",
+        "authentication recovery"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_department",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    },
+    {
+      "cohort_id": "persona.public_service_creative",
+      "label": "Public service and creative",
+      "purpose": "communications, events, and library public-service work",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "approved media and presentation work",
+        "no automatic kiosk classification"
+      ],
+      "prohibited_capabilities": [
+        "automatic_shared_device_classification",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    },
+    {
+      "cohort_id": "persona.field_operations",
+      "label": "Field operations",
+      "purpose": "facilities and operational field work",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": false,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp"
+      ],
+      "usability_requirements": [
+        "offline-tolerant workflow",
+        "connectivity preservation"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_location"
+      ]
+    },
+    {
+      "cohort_id": "persona.privileged_it",
+      "label": "Privileged IT",
+      "purpose": "approved administrative access on dedicated managed endpoints",
+      "membership_authority": "approved_service_register",
+      "privileged": true,
+      "expiry_required": true,
+      "organization_derived": false,
+      "default_baseline_tier": 1,
+      "eligible_models": [
+        "privileged"
+      ],
+      "usability_requirements": [
+        "separate privileged workflow",
+        "emergency recovery"
+      ],
+      "prohibited_capabilities": [
+        "broad_auto_promotion",
+        "automatic_membership_from_department"
+      ]
+    },
+    {
+      "cohort_id": "persona.library_shared_candidate",
+      "label": "Library shared-device candidate",
+      "purpose": "candidate shared library operation pending inventory proof",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": true,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "shared",
+        "kiosk"
+      ],
+      "usability_requirements": [
+        "session-reset test",
+        "accessibility workflow test"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_public_service"
+      ]
+    },
+    {
+      "cohort_id": "persona.trainee",
+      "label": "Trainee",
+      "purpose": "supported learning and administrative work",
+      "membership_authority": "approved_service_register",
+      "privileged": false,
+      "expiry_required": true,
+      "organization_derived": false,
+      "default_baseline_tier": 2,
+      "eligible_models": [
+        "corp",
+        "byod"
+      ],
+      "usability_requirements": [
+        "guided application set",
+        "clear support path"
+      ],
+      "prohibited_capabilities": [
+        "automatic_membership_from_department",
+        "full_device_wipe",
+        "lost_mode",
+        "personal_app_inventory",
+        "personal_location_collection",
+        "device_wide_restrictions"
+      ]
+    }
+  ],
+  "department_persona_rules": [
+    {
+      "rule_id": "rule.leadership",
+      "unit_id": "ou.leadership",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.executive_confidential",
+        "persona.standard_office"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.privileged_it",
+        "persona.library_shared_candidate"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "retain supported external access",
+        "review travel workflow"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "target inventory evidence"
+      ]
+    },
+    {
+      "rule_id": "rule.people",
+      "unit_id": "ou.people_organization",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.personnel_sensitive",
+        "persona.standard_office",
+        "persona.trainee"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.library_shared_candidate"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "pilot personnel workflow",
+        "test recovery"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "workflow owner approval"
+      ]
+    },
+    {
+      "rule_id": "rule.study",
+      "unit_id": "ou.study_teaching",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.student_record_sensitive",
+        "persona.standard_office",
+        "persona.trainee"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.library_shared_candidate"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "avoid deadline-period disruption",
+        "pilot service workflow"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "workflow owner approval"
+      ]
+    },
+    {
+      "rule_id": "rule.communications",
+      "unit_id": "ou.communications_events",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.public_service_creative",
+        "persona.standard_office",
+        "persona.trainee"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "protect media workflow",
+        "time-bound event exception"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "workflow owner approval"
+      ]
+    },
+    {
+      "rule_id": "rule.finance",
+      "unit_id": "ou.finance",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.finance_sensitive",
+        "persona.standard_office",
+        "persona.trainee"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.library_shared_candidate"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "test approval workflow",
+        "separate duties"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "workflow owner approval"
+      ]
+    },
+    {
+      "rule_id": "rule.facilities",
+      "unit_id": "ou.facilities",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.field_operations",
+        "persona.standard_office"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "offline work test",
+        "connectivity protection"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "field workflow approval"
+      ]
+    },
+    {
+      "rule_id": "rule.library",
+      "unit_id": "ou.library",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.public_service_creative",
+        "persona.library_shared_candidate",
+        "persona.standard_office",
+        "persona.trainee"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "separate staff and shared workflows",
+        "prove shared operation"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "inventory proof"
+      ]
+    },
+    {
+      "rule_id": "rule.it",
+      "unit_id": "ou.digitalization_it",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.standard_office",
+        "persona.privileged_it",
+        "persona.trainee"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.library_shared_candidate"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "separate privileged endpoint",
+        "emergency recovery"
+      ],
+      "approval_requirements": [
+        "privileged approval",
+        "dedicated pilot"
+      ]
+    },
+    {
+      "rule_id": "rule.officers",
+      "unit_id": "ou.statutory_officers",
+      "default_cohort_id": "persona.standard_office",
+      "permitted_cohort_ids": [
+        "persona.executive_confidential",
+        "persona.standard_office"
+      ],
+      "prohibited_cohort_ids": [
+        "persona.privileged_it",
+        "persona.library_shared_candidate"
+      ],
+      "activation_mode": "review_required",
+      "creates_membership": false,
+      "usability_safeguards": [
+        "minimum necessary controls",
+        "explicit exception review"
+      ],
+      "approval_requirements": [
+        "role confirmation",
+        "workflow owner approval"
+      ]
+    }
+  ],
+  "policy_layers": [
+    {
+      "layer_id": "layer.0.trust",
+      "order": 0,
+      "label": "Trust and enrollment",
+      "purpose": "ownership, enrollment, management trust, and recovery prerequisites",
+      "assignment_semantics": "prerequisite_only"
+    },
+    {
+      "layer_id": "layer.1.baseline",
+      "order": 1,
+      "label": "Platform baseline",
+      "purpose": "platform-specific secure baseline",
+      "assignment_semantics": "inventory_backed"
+    },
+    {
+      "layer_id": "layer.2.connectivity",
+      "order": 2,
+      "label": "Connectivity and site",
+      "purpose": "validated connectivity and site-dependent configuration",
+      "assignment_semantics": "inventory_backed_and_piloted"
+    },
+    {
+      "layer_id": "layer.3.protection",
+      "order": 3,
+      "label": "Data protection and ownership",
+      "purpose": "ownership and data-protection safeguards",
+      "assignment_semantics": "inventory_backed_and_piloted"
+    },
+    {
+      "layer_id": "layer.4.apps",
+      "order": 4,
+      "label": "Applications",
+      "purpose": "approved application availability and protection",
+      "assignment_semantics": "approved_application_dependency"
+    },
+    {
+      "layer_id": "layer.5.persona",
+      "order": 5,
+      "label": "Functional persona",
+      "purpose": "role-specific controls with usability evidence",
+      "assignment_semantics": "approved_device_role_relationship"
+    },
+    {
+      "layer_id": "layer.6.compliance",
+      "order": 6,
+      "label": "Compliance and access",
+      "purpose": "compliance state and access integration",
+      "assignment_semantics": "target_contract_supported_status"
+    },
+    {
+      "layer_id": "layer.7.exception",
+      "order": 7,
+      "label": "Exception",
+      "purpose": "time-bounded approved deviations",
+      "assignment_semantics": "explicit_exception_approval"
+    }
+  ],
+  "policy_units": [
+    {
+      "policy_id": "university-policy.trust-enrollment",
+      "label": "Trust and enrollment prerequisite",
+      "layer_id": "layer.0.trust",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.platform.ios_ipados",
+        "policy.status.application"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "trust_enrollment",
+          "desired_outcome": "establish only target-supported enrollment and recovery prerequisites",
+          "capability_ids": [
+            "trust_enrollment",
+            "management_recovery"
+          ],
+          "writer_scope": "writer.trust_enrollment_ios_corp"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-observation.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "preserve recovery",
+        "no enrollment action without explicit approval"
+      ],
+      "prerequisites": [
+        "target contract",
+        "ownership evidence",
+        "recovery design"
+      ],
+      "exclusions": [
+        "no enrollment action"
+      ]
+    },
+    {
+      "policy_id": "university-policy.platform-baseline",
+      "label": "Platform baseline",
+      "layer_id": "layer.1.baseline",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 2,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.lifecycle.versioning_publication",
+        "policy.priority.conflict_resolution",
+        "policy.platform.ios_ipados"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "platform_baseline",
+          "desired_outcome": "one compatible baseline writer per platform",
+          "capability_ids": [
+            "platform_baseline"
+          ],
+          "writer_scope": "writer.platform_baseline"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "pilot supported work",
+        "preserve recovery"
+      ],
+      "prerequisites": [
+        "target contract",
+        "inventory",
+        "conflict review"
+      ],
+      "exclusions": [
+        "no broad rollout"
+      ]
+    },
+    {
+      "policy_id": "university-policy.connectivity",
+      "label": "Management connectivity",
+      "layer_id": "layer.2.connectivity",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office",
+        "persona.field_operations"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.configuration.identity_network",
+        "policy.assignment.device_group",
+        "policy.status.application"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "management_connectivity",
+          "desired_outcome": "keep a tested management path",
+          "capability_ids": [
+            "managed_connectivity"
+          ],
+          "writer_scope": "writer.management_connectivity"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1",
+        "university.policy-assignment.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "offline field work",
+        "pilot connectivity"
+      ],
+      "prerequisites": [
+        "network design",
+        "recovery test"
+      ],
+      "exclusions": [
+        "no inferred site scope"
+      ]
+    },
+    {
+      "policy_id": "university-policy.data-protection",
+      "label": "Sensitive data protection",
+      "layer_id": "layer.3.protection",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.executive_confidential",
+        "persona.personnel_sensitive",
+        "persona.student_record_sensitive",
+        "persona.finance_sensitive"
+      ],
+      "control_ids": [
+        "control.single-writer",
+        "control.usability",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.configuration.compliance_access",
+        "policy.configuration.identity_network"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "sensitive_data_protection",
+          "desired_outcome": "apply compatible ownership and data safeguards",
+          "capability_ids": [
+            "managed_data_protection"
+          ],
+          "writer_scope": "writer.sensitive_data_protection"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "test approved business workflow",
+        "recovery verification"
+      ],
+      "prerequisites": [
+        "platform applicability",
+        "workflow acceptance"
+      ],
+      "exclusions": [
+        "no replacement payload copying"
+      ]
+    },
+    {
+      "policy_id": "university-policy.applications",
+      "label": "Approved applications",
+      "layer_id": "layer.4.apps",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office",
+        "persona.public_service_creative",
+        "persona.field_operations",
+        "persona.trainee"
+      ],
+      "control_ids": [
+        "control.usability",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.configuration.apps_kiosk",
+        "policy.status.application"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "approved_applications",
+          "desired_outcome": "make only validated supported application changes",
+          "capability_ids": [
+            "managed_applications"
+          ],
+          "writer_scope": "writer.approved_applications"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "application dependency test",
+        "accessibility test for shared candidates"
+      ],
+      "prerequisites": [
+        "application portfolio",
+        "license and support evidence"
+      ],
+      "exclusions": [
+        "no automatic install or removal"
+      ]
+    },
+    {
+      "policy_id": "university-policy.persona-sensitive",
+      "label": "Sensitive functional persona",
+      "layer_id": "layer.5.persona",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.executive_confidential",
+        "persona.personnel_sensitive",
+        "persona.student_record_sensitive",
+        "persona.finance_sensitive"
+      ],
+      "control_ids": [
+        "control.single-writer",
+        "control.usability",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.assignment.device_group",
+        "policy.priority.conflict_resolution"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "persona_controls",
+          "desired_outcome": "apply only role-approved sensitive controls",
+          "capability_ids": [
+            "persona_controls"
+          ],
+          "writer_scope": "writer.persona_controls"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1",
+        "university.policy-assignment.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "department rule never creates membership",
+        "pilot one representative use case"
+      ],
+      "prerequisites": [
+        "device-role proof",
+        "priority review"
+      ],
+      "exclusions": [
+        "no department-wide assignment"
+      ]
+    },
+    {
+      "policy_id": "university-policy.compliance-access",
+      "label": "Compliance and access",
+      "layer_id": "layer.6.compliance",
+      "platform": "cross_platform_outcome",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office",
+        "persona.executive_confidential",
+        "persona.personnel_sensitive",
+        "persona.student_record_sensitive",
+        "persona.finance_sensitive"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 4,
+      "concept_ids": [
+        "policy.configuration.compliance_access",
+        "policy.status.application",
+        "policy.assignment.device_group"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "compliance_access",
+          "desired_outcome": "use target-supported compliance state only after recovery testing",
+          "capability_ids": [
+            "work_access_compliance"
+          ],
+          "writer_scope": "writer.compliance_access"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1",
+        "university.policy-assignment.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "avoid lockout",
+        "test access recovery"
+      ],
+      "prerequisites": [
+        "identity integration evidence",
+        "pilot outcome"
+      ],
+      "exclusions": [
+        "no broad enforcement"
+      ]
+    },
+    {
+      "policy_id": "university-policy.exception",
+      "label": "Time-bounded exception",
+      "layer_id": "layer.7.exception",
+      "platform": "ios_ipados",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office",
+        "persona.executive_confidential",
+        "persona.personnel_sensitive",
+        "persona.student_record_sensitive",
+        "persona.finance_sensitive",
+        "persona.public_service_creative",
+        "persona.field_operations",
+        "persona.trainee"
+      ],
+      "control_ids": [
+        "control.minimal-scope",
+        "control.usability"
+      ],
+      "baseline_tier": 3,
+      "impact_tier_floor": 4,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.lifecycle.versioning_publication",
+        "policy.assignment.device_group"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "exception_scope",
+          "desired_outcome": "narrow, expiry-bound deviation with compensating control",
+          "capability_ids": [
+            "exception_scope"
+          ],
+          "writer_scope": "writer.exception_scope"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1",
+        "university.policy-assignment.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "document business reason",
+        "verify expiry removal"
+      ],
+      "prerequisites": [
+        "explicit approval",
+        "rollback path"
+      ],
+      "exclusions": [
+        "no permanent broad exception"
+      ]
+    },
+    {
+      "policy_id": "university-policy.platform-baseline-macos",
+      "label": "macOS corporate platform baseline",
+      "layer_id": "layer.1.baseline",
+      "platform": "macos",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 2,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.lifecycle.versioning_publication",
+        "policy.priority.conflict_resolution",
+        "policy.platform.macos"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "platform_baseline",
+          "desired_outcome": "one compatible corporate macOS baseline writer",
+          "capability_ids": [
+            "platform_baseline"
+          ],
+          "writer_scope": "writer.platform_baseline_macos_corp"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "pilot supported work",
+        "preserve recovery"
+      ],
+      "prerequisites": [
+        "target contract",
+        "macOS inventory",
+        "conflict review"
+      ],
+      "exclusions": [
+        "no broad rollout"
+      ]
+    },
+    {
+      "policy_id": "university-policy.platform-baseline-windows",
+      "label": "Windows corporate platform baseline",
+      "layer_id": "layer.1.baseline",
+      "platform": "windows",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 2,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.lifecycle.versioning_publication",
+        "policy.priority.conflict_resolution",
+        "policy.platform.windows"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "platform_baseline",
+          "desired_outcome": "one compatible corporate Windows baseline writer",
+          "capability_ids": [
+            "platform_baseline"
+          ],
+          "writer_scope": "writer.platform_baseline_windows_corp"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "pilot supported work",
+        "preserve recovery"
+      ],
+      "prerequisites": [
+        "target contract",
+        "Windows inventory",
+        "conflict review"
+      ],
+      "exclusions": [
+        "no broad rollout"
+      ]
+    },
+    {
+      "policy_id": "university-policy.platform-baseline-android-enterprise",
+      "label": "Android Enterprise corporate platform baseline",
+      "layer_id": "layer.1.baseline",
+      "platform": "android_enterprise",
+      "models": [
+        "corp"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability"
+      ],
+      "baseline_tier": 2,
+      "impact_tier_floor": 2,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.lifecycle.versioning_publication",
+        "policy.priority.conflict_resolution",
+        "policy.platform.android_enterprise"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "platform_baseline",
+          "desired_outcome": "one compatible corporate Android Enterprise baseline writer",
+          "capability_ids": [
+            "platform_baseline"
+          ],
+          "writer_scope": "writer.platform_baseline_android_enterprise_corp"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "pilot supported work",
+        "preserve recovery"
+      ],
+      "prerequisites": [
+        "target contract",
+        "Android Enterprise inventory",
+        "conflict review"
+      ],
+      "exclusions": [
+        "no broad rollout"
+      ]
+    },
+    {
+      "policy_id": "university-policy.byod-ios-user-enrollment",
+      "label": "iOS and iPadOS BYOD user-enrollment privacy boundary",
+      "layer_id": "layer.3.protection",
+      "platform": "ios_ipados",
+      "models": [
+        "byod"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.minimal-scope",
+        "control.usability"
+      ],
+      "baseline_tier": 3,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.platform.ios_ipados",
+        "policy.configuration.identity_network"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "byod_privacy_boundary",
+          "desired_outcome": "target-supported user-enrollment protection without personal-device control",
+          "capability_ids": [
+            "user_enrollment",
+            "managed_data_boundary",
+            "selective_work_data_removal"
+          ],
+          "writer_scope": "writer.byod_ios_user_enrollment"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "personal privacy boundary",
+        "supported work access"
+      ],
+      "prerequisites": [
+        "user-enrollment applicability",
+        "privacy review",
+        "pilot recovery"
+      ],
+      "exclusions": [
+        "exclude device-wide restrictions",
+        "exclude personal application inventory",
+        "exclude personal location collection",
+        "exclude full device wipe",
+        "exclude lost mode"
+      ]
+    },
+    {
+      "policy_id": "university-policy.byod-android-work-profile",
+      "label": "Android Enterprise BYOD work-profile privacy boundary",
+      "layer_id": "layer.3.protection",
+      "platform": "android_enterprise",
+      "models": [
+        "byod"
+      ],
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.minimal-scope",
+        "control.usability"
+      ],
+      "baseline_tier": 3,
+      "impact_tier_floor": 3,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.platform.android_enterprise",
+        "policy.configuration.identity_network"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "byod_privacy_boundary",
+          "desired_outcome": "target-supported work-profile protection without personal-device control",
+          "capability_ids": [
+            "work_profile",
+            "managed_data_boundary",
+            "selective_work_data_removal"
+          ],
+          "writer_scope": "writer.byod_android_work_profile"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "personal privacy boundary",
+        "supported work access"
+      ],
+      "prerequisites": [
+        "work-profile applicability",
+        "privacy review",
+        "pilot recovery"
+      ],
+      "exclusions": [
+        "exclude device-wide restrictions",
+        "exclude personal application inventory",
+        "exclude personal location collection",
+        "exclude full device wipe",
+        "exclude lost mode"
+      ]
+    },
+    {
+      "policy_id": "university-policy.privileged-macos",
+      "label": "macOS dedicated privileged endpoint",
+      "layer_id": "layer.5.persona",
+      "platform": "macos",
+      "models": [
+        "privileged"
+      ],
+      "cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 1,
+      "impact_tier_floor": 4,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.platform.macos",
+        "policy.configuration.compliance_access",
+        "policy.priority.conflict_resolution"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "privileged_access",
+          "desired_outcome": "dedicated macOS privileged endpoint with tested recovery",
+          "capability_ids": [
+            "privileged_access"
+          ],
+          "writer_scope": "writer.privileged_access_macos"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1",
+        "university.policy-assignment.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "separate daily-use work",
+        "break-glass recovery test"
+      ],
+      "prerequisites": [
+        "explicit privileged approval",
+        "dedicated LAB pilot"
+      ],
+      "exclusions": [
+        "no broad automatic promotion"
+      ]
+    },
+    {
+      "policy_id": "university-policy.privileged-windows",
+      "label": "Windows dedicated privileged endpoint",
+      "layer_id": "layer.5.persona",
+      "platform": "windows",
+      "models": [
+        "privileged"
+      ],
+      "cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "control_ids": [
+        "control.trust-recovery",
+        "control.single-writer",
+        "control.usability",
+        "control.minimal-scope"
+      ],
+      "baseline_tier": 1,
+      "impact_tier_floor": 4,
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.platform.windows",
+        "policy.configuration.compliance_access",
+        "policy.priority.conflict_resolution"
+      ],
+      "intent_settings": [
+        {
+          "setting_key": "privileged_access",
+          "desired_outcome": "dedicated Windows privileged endpoint with tested recovery",
+          "capability_ids": [
+            "privileged_access"
+          ],
+          "writer_scope": "writer.privileged_access_windows"
+        }
+      ],
+      "payload_mode": "target_contract_required",
+      "workflow_ids": [
+        "university.policy-definition.v1",
+        "university.policy-publication.v1",
+        "university.policy-assignment.v1"
+      ],
+      "desired_publication_state": "unpublished",
+      "activation_state": "inactive",
+      "usability_safeguards": [
+        "separate daily-use work",
+        "break-glass recovery test"
+      ],
+      "prerequisites": [
+        "explicit privileged approval",
+        "dedicated LAB pilot"
+      ],
+      "exclusions": [
+        "no broad automatic promotion"
+      ]
+    }
+  ],
+  "group_blueprints": [
+    {
+      "group_id": "grp.platform",
+      "label": "Platform",
+      "group_kind": "primitive",
+      "membership_mode": "target_contract_required",
+      "primary_dimension": "platform",
+      "values": [
+        "ios_ipados",
+        "macos",
+        "android_enterprise",
+        "windows"
+      ],
+      "membership_authority": "target_contract_required",
+      "filter_tree": null,
+      "referenced_group_ids": [],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": false
+    },
+    {
+      "group_id": "grp.model",
+      "label": "Device model",
+      "group_kind": "primitive",
+      "membership_mode": "target_contract_required",
+      "primary_dimension": "model",
+      "values": [
+        "corp",
+        "byod",
+        "cope",
+        "shared",
+        "kiosk",
+        "privileged"
+      ],
+      "membership_authority": "target_contract_required",
+      "filter_tree": null,
+      "referenced_group_ids": [],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": false
+    },
+    {
+      "group_id": "grp.persona",
+      "label": "Functional persona",
+      "group_kind": "primitive",
+      "membership_mode": "target_contract_required",
+      "primary_dimension": "cohort",
+      "values": [
+        "persona.standard_office",
+        "persona.executive_confidential",
+        "persona.personnel_sensitive",
+        "persona.student_record_sensitive",
+        "persona.finance_sensitive",
+        "persona.public_service_creative",
+        "persona.field_operations",
+        "persona.privileged_it",
+        "persona.library_shared_candidate",
+        "persona.trainee"
+      ],
+      "membership_authority": "target_contract_required",
+      "filter_tree": null,
+      "referenced_group_ids": [],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": false
+    },
+    {
+      "group_id": "grp.ring",
+      "label": "Rollout ring",
+      "group_kind": "primitive",
+      "membership_mode": "static",
+      "primary_dimension": "ring",
+      "values": [
+        "ring.lab",
+        "ring.pilot",
+        "ring.early",
+        "ring.broad",
+        "ring.elevated",
+        "ring.quarantine"
+      ],
+      "membership_authority": "target_contract_required",
+      "filter_tree": null,
+      "referenced_group_ids": [],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": false
+    },
+    {
+      "group_id": "grp.compliance",
+      "label": "Compliance",
+      "group_kind": "compliance_state",
+      "membership_mode": "dynamic",
+      "primary_dimension": "compliance",
+      "values": [
+        "compliant",
+        "noncompliant",
+        "unknown"
+      ],
+      "membership_authority": "target_contract_required",
+      "filter_tree": null,
+      "referenced_group_ids": [],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": false
+    },
+    {
+      "group_id": "grp.exception",
+      "label": "Exception",
+      "group_kind": "exception",
+      "membership_mode": "static",
+      "primary_dimension": "exception",
+      "values": [
+        "approved_time_bounded"
+      ],
+      "membership_authority": "target_contract_required",
+      "filter_tree": null,
+      "referenced_group_ids": [],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": false
+    },
+    {
+      "group_id": "grp.assignment_scope",
+      "label": "Approved assignment scope",
+      "group_kind": "assignment_scope",
+      "membership_mode": "target_contract_required",
+      "primary_dimension": "assignment",
+      "values": [
+        "inventory_confirmed"
+      ],
+      "membership_authority": "boolean_intersection",
+      "filter_tree": null,
+      "referenced_group_ids": [
+        "grp.platform",
+        "grp.model",
+        "grp.persona",
+        "grp.ring"
+      ],
+      "actions": [],
+      "future_membership_affects_scope": true,
+      "target_contract_required": true,
+      "assignment_eligible": true
+    }
+  ],
+  "assignment_intents": [
+    {
+      "assignment_id": "assignment.baseline-lab",
+      "policy_id": "university-policy.platform-baseline",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "corp",
+      "platform": "ios_ipados",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 2,
+      "notes": [
+        "Only an approved, inventory-confirmed LAB scope; no membership is created."
+      ]
+    },
+    {
+      "assignment_id": "assignment.connectivity-lab",
+      "policy_id": "university-policy.connectivity",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office",
+        "persona.field_operations"
+      ],
+      "model": "corp",
+      "platform": "ios_ipados",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 3,
+      "notes": [
+        "Requires compatible pilot, recovery test, and preserved management path."
+      ]
+    },
+    {
+      "assignment_id": "assignment.persona-lab",
+      "policy_id": "university-policy.persona-sensitive",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.executive_confidential",
+        "persona.personnel_sensitive",
+        "persona.student_record_sensitive",
+        "persona.finance_sensitive"
+      ],
+      "model": "corp",
+      "platform": "ios_ipados",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 3,
+      "notes": [
+        "Requires device-role proof; administrative unit is not a target scope."
+      ]
+    },
+    {
+      "assignment_id": "assignment.exception-lab",
+      "policy_id": "university-policy.exception",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "corp",
+      "platform": "ios_ipados",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 4,
+      "notes": [
+        "Narrow, expiry-bound exception only; no default or department-wide reach."
+      ]
+    },
+    {
+      "assignment_id": "assignment.baseline-macos-lab",
+      "policy_id": "university-policy.platform-baseline-macos",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "corp",
+      "platform": "macos",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 2,
+      "notes": [
+        "LAB-only abstract corporate macOS baseline intent."
+      ]
+    },
+    {
+      "assignment_id": "assignment.baseline-windows-lab",
+      "policy_id": "university-policy.platform-baseline-windows",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "corp",
+      "platform": "windows",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 2,
+      "notes": [
+        "LAB-only abstract corporate Windows baseline intent."
+      ]
+    },
+    {
+      "assignment_id": "assignment.baseline-android-enterprise-lab",
+      "policy_id": "university-policy.platform-baseline-android-enterprise",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "corp",
+      "platform": "android_enterprise",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 2,
+      "notes": [
+        "LAB-only abstract corporate Android Enterprise baseline intent."
+      ]
+    },
+    {
+      "assignment_id": "assignment.byod-ios-lab",
+      "policy_id": "university-policy.byod-ios-user-enrollment",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "byod",
+      "platform": "ios_ipados",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 3,
+      "notes": [
+        "LAB-only privacy-bound iOS and iPadOS user-enrollment intent."
+      ]
+    },
+    {
+      "assignment_id": "assignment.byod-android-lab",
+      "policy_id": "university-policy.byod-android-work-profile",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.standard_office"
+      ],
+      "model": "byod",
+      "platform": "android_enterprise",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 3,
+      "notes": [
+        "LAB-only privacy-bound Android Enterprise work-profile intent."
+      ]
+    },
+    {
+      "assignment_id": "assignment.privileged-macos-lab",
+      "policy_id": "university-policy.privileged-macos",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "model": "privileged",
+      "platform": "macos",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 4,
+      "notes": [
+        "LAB-only dedicated macOS privileged endpoint intent."
+      ]
+    },
+    {
+      "assignment_id": "assignment.privileged-windows-lab",
+      "policy_id": "university-policy.privileged-windows",
+      "scope_blueprint_id": "grp.assignment_scope",
+      "cohort_ids": [
+        "persona.privileged_it"
+      ],
+      "model": "privileged",
+      "platform": "windows",
+      "ring_id": "ring.lab",
+      "state": "unbound",
+      "requires_published_policy": true,
+      "membership_snapshot_required": true,
+      "impact_tier_floor": 4,
+      "notes": [
+        "LAB-only dedicated Windows privileged endpoint intent."
+      ]
+    }
+  ],
+  "rollout_rings": [
+    {
+      "ring_id": "ring.lab",
+      "label": "Lab",
+      "order": 0,
+      "promotion_ring": true,
+      "predecessor_ring_id": null,
+      "minimum_business_days": 3,
+      "scope_rule": "non-production, inventory-confirmed test scope only",
+      "approval_required": true,
+      "scope_mode": "fixed_lab",
+      "target_percentage": null,
+      "minimum_devices": 1,
+      "requires_frozen_membership": true,
+      "dynamic_membership_allowed": false,
+      "promotion_requires_new_plan": true,
+      "rollback_thresholds": [
+        "any management loss",
+        "unexpected policy conflict"
+      ]
+    },
+    {
+      "ring_id": "ring.pilot",
+      "label": "Pilot",
+      "order": 1,
+      "promotion_ring": true,
+      "predecessor_ring_id": "ring.lab",
+      "minimum_business_days": 5,
+      "scope_rule": "one approved representative device per platform and use case",
+      "approval_required": true,
+      "scope_mode": "bounded_pilot",
+      "target_percentage": 5,
+      "minimum_devices": 5,
+      "requires_frozen_membership": true,
+      "dynamic_membership_allowed": false,
+      "promotion_requires_new_plan": true,
+      "rollback_thresholds": [
+        "failed read-back",
+        "functional regression",
+        "recovery failure"
+      ]
+    },
+    {
+      "ring_id": "ring.early",
+      "label": "Early",
+      "order": 2,
+      "promotion_ring": true,
+      "predecessor_ring_id": "ring.pilot",
+      "minimum_business_days": 10,
+      "scope_rule": "small approved reversible cohort",
+      "approval_required": true,
+      "scope_mode": "bounded_early",
+      "target_percentage": 20,
+      "minimum_devices": 1,
+      "requires_frozen_membership": true,
+      "dynamic_membership_allowed": false,
+      "promotion_requires_new_plan": true,
+      "rollback_thresholds": [
+        "delivery instability",
+        "support-impact threshold exceeded"
+      ]
+    },
+    {
+      "ring_id": "ring.broad",
+      "label": "Broad",
+      "order": 3,
+      "promotion_ring": true,
+      "predecessor_ring_id": "ring.early",
+      "minimum_business_days": 10,
+      "scope_rule": "explicitly approved inventory-frozen production cohort",
+      "approval_required": true,
+      "scope_mode": "frozen_broad",
+      "target_percentage": 100,
+      "minimum_devices": 1,
+      "requires_frozen_membership": true,
+      "dynamic_membership_allowed": false,
+      "promotion_requires_new_plan": true,
+      "rollback_thresholds": [
+        "audience drift",
+        "unresolved audit evidence"
+      ]
+    },
+    {
+      "ring_id": "ring.elevated",
+      "label": "Elevated",
+      "order": null,
+      "promotion_ring": false,
+      "predecessor_ring_id": null,
+      "minimum_business_days": 0,
+      "scope_rule": "separate controlled path for privileged or higher sensitivity",
+      "approval_required": true,
+      "scope_mode": "fixed_elevated",
+      "target_percentage": null,
+      "minimum_devices": 1,
+      "requires_frozen_membership": true,
+      "dynamic_membership_allowed": false,
+      "promotion_requires_new_plan": true,
+      "rollback_thresholds": [
+        "missing dedicated recovery evidence",
+        "missing separate risk approval"
+      ]
+    },
+    {
+      "ring_id": "ring.quarantine",
+      "label": "Quarantine",
+      "order": null,
+      "promotion_ring": false,
+      "predecessor_ring_id": null,
+      "minimum_business_days": 0,
+      "scope_rule": "containment or remediation only, never a promotion stage",
+      "approval_required": true,
+      "scope_mode": "fixed_quarantine",
+      "target_percentage": null,
+      "minimum_devices": 1,
+      "requires_frozen_membership": true,
+      "dynamic_membership_allowed": false,
+      "promotion_requires_new_plan": true,
+      "rollback_thresholds": [
+        "no documented exit criteria",
+        "unapproved scope expansion"
+      ]
+    }
+  ],
+  "api_workflows": [
+    {
+      "workflow_id": "university.contract-discovery.v1",
+      "purpose": "Acquire and validate the exact target contract with API and organization administrators",
+      "concept_ids": [
+        "feature.api_access"
+      ],
+      "required_roles": [
+        "read",
+        "query",
+        "validate"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": false,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.group-discovery.v1",
+      "purpose": "Read group types, membership semantics, and target inventory with group administration authority",
+      "concept_ids": [
+        "group.device.model",
+        "group.device.static",
+        "group.device.dynamic",
+        "group.device.policy_assignment"
+      ],
+      "required_roles": [
+        "read",
+        "query",
+        "readback"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": false,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.policy-assignment.v1",
+      "purpose": "Plan one published-policy assignment mutation after target binding and group administration approval",
+      "concept_ids": [
+        "policy.assignment.device_group",
+        "group.device.policy_assignment"
+      ],
+      "required_roles": [
+        "query",
+        "read",
+        "readback",
+        "audit",
+        "rollback",
+        "assign",
+        "unassign",
+        "status"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": true,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.settings-readback.v1",
+      "purpose": "Read and verify target settings without change using security administration authority",
+      "concept_ids": [
+        "setting.mdm.core",
+        "setting.audit"
+      ],
+      "required_roles": [
+        "read",
+        "query",
+        "readback",
+        "audit"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": false,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.audit-verification.v1",
+      "purpose": "Verify actor, organization, change, and read-back evidence with audit review authority",
+      "concept_ids": [
+        "feature.audit_logging",
+        "setting.audit"
+      ],
+      "required_roles": [
+        "read",
+        "query",
+        "readback",
+        "audit"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": false,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.group.static-lifecycle.v1",
+      "purpose": "Plan one static group lifecycle mutation after target binding",
+      "concept_ids": [
+        "group.device.static",
+        "group.device.model"
+      ],
+      "required_roles": [
+        "query",
+        "read",
+        "readback",
+        "audit",
+        "rollback",
+        "create",
+        "update",
+        "delete"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": true,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.group.dynamic-lifecycle.v1",
+      "purpose": "Plan one dynamic group lifecycle mutation after target binding",
+      "concept_ids": [
+        "group.device.dynamic",
+        "group.device.model"
+      ],
+      "required_roles": [
+        "query",
+        "read",
+        "readback",
+        "audit",
+        "rollback",
+        "create",
+        "update",
+        "validate",
+        "delete"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": true,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.group.membership.v1",
+      "purpose": "Plan one group membership change after approved target scope resolution",
+      "concept_ids": [
+        "group.device.static",
+        "group.device.dynamic",
+        "group.device.policy_assignment"
+      ],
+      "required_roles": [
+        "query",
+        "read",
+        "readback",
+        "audit",
+        "rollback",
+        "assign",
+        "unassign"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": true,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.policy-definition.v1",
+      "purpose": "Plan one policy-definition mutation after target schema validation",
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.priority.conflict_resolution"
+      ],
+      "required_roles": [
+        "query",
+        "read",
+        "readback",
+        "audit",
+        "rollback",
+        "create",
+        "update"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": true,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.policy-publication.v1",
+      "purpose": "Plan one policy publication mutation after diff and audience approval",
+      "concept_ids": [
+        "policy.lifecycle.versioning_publication",
+        "policy.status.application"
+      ],
+      "required_roles": [
+        "read",
+        "readback",
+        "audit",
+        "rollback",
+        "publish",
+        "status"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": true,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.policy-observation.v1",
+      "purpose": "Read policy definition, publication, priority, assignment, and application state",
+      "concept_ids": [
+        "policy.model.collection",
+        "policy.lifecycle.versioning_publication",
+        "policy.priority.conflict_resolution",
+        "policy.status.application"
+      ],
+      "required_roles": [
+        "read",
+        "query",
+        "readback",
+        "audit",
+        "status"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": false,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    },
+    {
+      "workflow_id": "university.permission-readiness.v1",
+      "purpose": "Read target role and organization readiness before any mutation plan",
+      "concept_ids": [
+        "feature.access_control",
+        "feature.organization_management"
+      ],
+      "required_roles": [
+        "read",
+        "query",
+        "validate",
+        "readback",
+        "audit"
+      ],
+      "binding_status": "target_contract_required",
+      "mutation_capable": false,
+      "organization_scope_required": true,
+      "exact_target_contract_required": true,
+      "output_plan_granularity": "one_resource_one_organization",
+      "automatic_retry_allowed": false
+    }
+  ],
+  "activation_gates": [
+    {
+      "gate_id": "G0_OFFLINE_VALID",
+      "order": 0,
+      "label": "Offline package validation",
+      "required_evidence": [
+        "offline validator result"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "all_target_api_workflows"
+      ]
+    },
+    {
+      "gate_id": "G1_CONTRACT_CURRENT",
+      "order": 1,
+      "label": "Exact target contract",
+      "required_evidence": [
+        "local OpenAPI export",
+        "checked catalog",
+        "digest-matched bindings"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "all_mutations"
+      ]
+    },
+    {
+      "gate_id": "G2_INVENTORY_RESOLVED",
+      "order": 2,
+      "label": "Inventory-backed scope",
+      "required_evidence": [
+        "platform",
+        "ownership",
+        "management state",
+        "functional model"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "group_creation",
+        "assignment"
+      ]
+    },
+    {
+      "gate_id": "G3_PERMISSION_READY",
+      "order": 3,
+      "label": "Authorized role scope",
+      "required_evidence": [
+        "acting role",
+        "organization scope"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "mutation"
+      ]
+    },
+    {
+      "gate_id": "G4_LAB_BUILD_VALID",
+      "order": 4,
+      "label": "LAB build validation",
+      "required_evidence": [
+        "one-resource plan",
+        "semantic diff",
+        "rollback"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "lab_mutation"
+      ]
+    },
+    {
+      "gate_id": "G5_LAB_MUTATION_VERIFIED",
+      "order": 5,
+      "label": "LAB mutation verification",
+      "required_evidence": [
+        "response",
+        "read-back",
+        "audit"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "activation"
+      ]
+    },
+    {
+      "gate_id": "G6_LAB_ACTIVATED",
+      "order": 6,
+      "label": "LAB functional evidence",
+      "required_evidence": [
+        "workflow test",
+        "recovery test"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "precedence"
+      ]
+    },
+    {
+      "gate_id": "G7_PRECEDENCE_PROVEN",
+      "order": 7,
+      "label": "Precedence proof",
+      "required_evidence": [
+        "priority review",
+        "single-writer review"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "pilot"
+      ]
+    },
+    {
+      "gate_id": "G8_PILOT_APPROVED",
+      "order": 8,
+      "label": "Pilot approval",
+      "required_evidence": [
+        "pilot approval",
+        "support review"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "early"
+      ]
+    },
+    {
+      "gate_id": "G9_EARLY_APPROVED",
+      "order": 9,
+      "label": "Early approval",
+      "required_evidence": [
+        "early cohort evidence",
+        "rollback readiness"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "broad"
+      ]
+    },
+    {
+      "gate_id": "G10_BROAD_APPROVED",
+      "order": 10,
+      "label": "Broad approval",
+      "required_evidence": [
+        "explicit broad approval",
+        "frozen scope"
+      ],
+      "status": "blocked",
+      "blocks": [
+        "broad_rollout"
+      ]
+    }
+  ],
+  "commit_boundary": {
+    "commit_safe_classes": [
+      "PII-free desired-state proposal",
+      "non-sensitive machine-readable planning identifiers",
+      "schema-independent validation evidence"
+    ],
+    "target_local_classes": [
+      "target OpenAPI export",
+      "target bindings with customer identifiers",
+      "one-resource plans with target identifiers",
+      "inventory",
+      "audit exports"
+    ],
+    "forbidden_classes": [
+      "credentials",
+      "tokens",
+      "cookies",
+      "private keys",
+      "certificate bundles",
+      "request payload secrets",
+      "person records",
+      "customer hostnames"
+    ],
+    "target_local_root": "private/university"
+  },
+  "unresolved_inputs": [
+    {
+      "input_id": "input.target",
+      "description": "Target version, tenant topology, organization scope, roles, and license",
+      "blocks_gate_ids": [
+        "G1_CONTRACT_CURRENT"
+      ],
+      "resolution_evidence": "authorized target metadata and role review",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.contract",
+      "description": "OpenAPI operations, schemas, identifiers, enums, concurrency controls, responses, and audit capability",
+      "blocks_gate_ids": [
+        "G1_CONTRACT_CURRENT"
+      ],
+      "resolution_evidence": "checked local generated catalog and bindings",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.inventory",
+      "description": "Platform, OS support, ownership, enrollment, management state, functional model, site, and current reach",
+      "blocks_gate_ids": [
+        "G2_INVENTORY_RESOLVED"
+      ],
+      "resolution_evidence": "authorized read-only inventory export and approval",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.applications",
+      "description": "Approved application portfolio, dependencies, licensing, and deployment/removal semantics",
+      "blocks_gate_ids": [
+        "G6_LAB_ACTIVATED"
+      ],
+      "resolution_evidence": "application owner acceptance and target applicability",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.identity-network",
+      "description": "Identity, network, certificate, conditional-access, authentication, and recovery design",
+      "blocks_gate_ids": [
+        "G6_LAB_ACTIVATED",
+        "G4_LAB_BUILD_VALID"
+      ],
+      "resolution_evidence": "service-owner design review and pilot evidence",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.policy-state",
+      "description": "Policy priorities, publication state, assignments, overrides, and rollback version availability",
+      "blocks_gate_ids": [
+        "G7_PRECEDENCE_PROVEN"
+      ],
+      "resolution_evidence": "authorized target read-back",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.usability",
+      "description": "Accessibility, teaching/event, library, field-operation, and peak-service acceptance criteria",
+      "blocks_gate_ids": [
+        "G6_LAB_ACTIVATED"
+      ],
+      "resolution_evidence": "workflow-owner acceptance from LAB and PILOT",
+      "status": "unresolved"
+    },
+    {
+      "input_id": "input.approvals",
+      "description": "Risk acceptance and explicit approval for elevated, quarantine, shared, kiosk, BYOD, destructive, externally visible, or broad actions",
+      "blocks_gate_ids": [
+        "G4_LAB_BUILD_VALID",
+        "G6_LAB_ACTIVATED"
+      ],
+      "resolution_evidence": "recorded change approval",
+      "status": "unresolved"
+    }
+  ]
+}

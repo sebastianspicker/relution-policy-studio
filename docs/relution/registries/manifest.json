@@ -1,0 +1,103 @@
+{
+  "$schema": "../schemas/manifest.schema.json",
+  "schema_version": "1.0.0",
+  "document_id": "relution.machine_readable_manifest",
+  "document_type": "machine_readable_manifest",
+  "product": "Relution MDM",
+  "as_of": "2026-07-18",
+  "purpose": "Canonical entry point for operator-facing Relution feature, setting, policy, group, and public API example documentation with explicit authority and execution boundaries.",
+  "authority_order": [
+    "target_instance_openapi_contract",
+    "authenticated_target_read",
+    "official_relution_documentation",
+    "repository_workflow_examples"
+  ],
+  "execution_boundary": {
+    "concept_registries": "Discovery, dependency, scope, risk, approval, verification, rollback, and target-contract search metadata only; never an executable API binding.",
+    "public_api_examples": "Non-exhaustive first-party examples retained for discovery and version-drift checks; never a target operation set.",
+    "target_catalog": "Concrete methods, paths, parameters, security, servers, responses, and structural schemas become selectable only after deterministic generation from the exact target contract and digest verification.",
+    "mutation": "Requires explicit authorization, a digest-bound operation binding, smallest semantic diff, prior-state capture, one bounded write, independent read-back, audit evidence, and a viable rollback or acknowledged irreversibility."
+  },
+  "id_namespaces": [
+    {"prefix": "feature.", "dataset_id": "relution.features", "meaning": "Stable product capability or service domain."},
+    {"prefix": "setting.", "dataset_id": "relution.settings", "meaning": "Stable system, organization, security, platform, integration, or service setting domain."},
+    {"prefix": "policy.", "dataset_id": "relution.policies", "meaning": "Stable policy model, lifecycle, assignment, platform, configuration-family, or specialization concept."},
+    {"prefix": "group.", "dataset_id": "relution.groups", "meaning": "Stable device-group membership, assignment, automation, or user/security grouping concept."}
+  ],
+  "cross_reference_rules": [
+    "Every related_ids value must resolve to exactly one concept ID in a manifest-listed concept registry.",
+    "Concept IDs are immutable machine keys and must not be inferred from display names or array positions.",
+    "A relationship is a discovery and dependency hint, not proof that a feature is licensed, enabled, authorized, or exposed by the target API.",
+    "All hand-authored concept api_discovery bindings remain target_contract_required with null method, path, operation ID, and schema references.",
+    "Public API example IDs are not concept IDs and cannot satisfy a target operation binding.",
+    "Any target binding is invalid when the source contract SHA-256 changes."
+  ],
+  "evidence_classes": [
+    {"id": "official_documentation", "meaning": "A factual capability or behavior directly supported by the linked first-party Relution documentation."},
+    {"id": "target_contract", "meaning": "A method, path, schema, security, server, or response present in the exact target OpenAPI contract and tied to its SHA-256 digest."},
+    {"id": "observed_runtime", "meaning": "State or behavior returned by an authorized read from the exact target during the task."},
+    {"id": "recommendation", "meaning": "An explicitly labeled safety practice or inference, not a Relution API or product claim."}
+  ],
+  "datasets": [
+    {
+      "id": "relution.features",
+      "document_type": "feature_registry",
+      "file": "features.json",
+      "schema_path": "../schemas/features.schema.json",
+      "record_container": "records",
+      "record_count": 22,
+      "completeness": "stable_capability_map",
+      "authority_level": "official_capability_map",
+      "execution_eligible": false,
+      "description": "Product features, prerequisites, dependencies, sensitive data, risk, approval, mutation effects, verification, rollback, and target-contract search vocabulary."
+    },
+    {
+      "id": "relution.settings",
+      "document_type": "setting_registry",
+      "file": "settings.json",
+      "schema_path": "../schemas/settings.schema.json",
+      "record_container": "records",
+      "record_count": 27,
+      "completeness": "stable_capability_map",
+      "authority_level": "official_capability_map",
+      "execution_eligible": false,
+      "description": "System, organization, security, platform, integration, and service setting domains with mutation and recovery gates."
+    },
+    {
+      "id": "relution.policies",
+      "document_type": "policy_registry",
+      "file": "policies.json",
+      "schema_path": "../schemas/policies.schema.json",
+      "record_container": "records",
+      "record_count": 15,
+      "completeness": "stable_capability_map",
+      "authority_level": "official_capability_map",
+      "execution_eligible": false,
+      "description": "Policy model, publication/version lifecycle, assignment, priority, status, platform, and configuration-family semantics."
+    },
+    {
+      "id": "relution.groups",
+      "document_type": "group_registry",
+      "file": "groups.json",
+      "schema_path": "../schemas/groups.schema.json",
+      "record_container": "records",
+      "record_count": 8,
+      "completeness": "stable_capability_map",
+      "authority_level": "official_capability_map",
+      "execution_eligible": false,
+      "description": "Static and dynamic device groups, user/security groups, policy assignment, user-based targeting, and event or scheduled automation semantics."
+    },
+    {
+      "id": "relution.public_api_operations",
+      "document_type": "public_api_operation_registry",
+      "file": "public-api-operations.json",
+      "schema_path": "../schemas/public-api-operations.schema.json",
+      "record_container": "operations",
+      "record_count": 6,
+      "completeness": "public_non_exhaustive_examples",
+      "authority_level": "public_example_subset",
+      "execution_eligible": false,
+      "description": "Six exact public guide examples retained as non-executable discovery and version-drift evidence."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "urn:campusweave-relution:schema:university-runtime-target:1.0.0",
+  "schema_version": "1.0.0",
+  "document_type": "relution-university-runtime-target",
+  "context_status": "template",
+  "sensitive_values_present": false,
+  "execution_authorized": false,
+  "profile": {
+    "path": "university-profile.json",
+    "package_id": "university-relution-desired-state-v1",
+    "sha256": null
+  },
+  "target": {
+    "authorized_origin": null,
+    "effective_api_server": null,
+    "relution_version": null,
+    "organization_id": null,
+    "organization_name": null
+  },
+  "contract": {
+    "openapi_path": null,
+    "openapi_sha256": null,
+    "catalog_path": null,
+    "catalog_sha256": null,
+    "operation_count": null,
+    "checked_current": false
+  },
+  "bindings": {
+    "path": null,
+    "sha256": null,
+    "status": "template",
+    "semantic_role_status": "unresolved"
+  },
+  "inventory": {
+    "path": null,
+    "sha256": null,
+    "captured_at": null,
+    "complete_for_scope": false
+  },
+  "evidence_root": "artifacts",
+  "stop_reasons": [
+    "Template only: profile copy, exact target contract, catalog, contract-bound operation references, bounded inventory, and private evidence root are unresolved."
+  ]
+}

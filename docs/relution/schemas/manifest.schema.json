@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/manifest.schema.json",
+  "title": "Relution machine-readable documentation manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "document_id", "document_type", "product", "as_of", "purpose", "authority_order", "execution_boundary", "id_namespaces", "cross_reference_rules", "evidence_classes", "datasets"],
+  "properties": {
+    "$schema": {"const": "../schemas/manifest.schema.json"},
+    "schema_version": {"const": "1.0.0"},
+    "document_id": {"const": "relution.machine_readable_manifest"},
+    "document_type": {"const": "machine_readable_manifest"},
+    "product": {"const": "Relution MDM"},
+    "as_of": {"$ref": "common.schema.json#/$defs/date"},
+    "purpose": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+    "authority_order": {
+      "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true,
+      "prefixItems": [
+        {"const": "target_instance_openapi_contract"},
+        {"const": "authenticated_target_read"},
+        {"const": "official_relution_documentation"},
+        {"const": "repository_workflow_examples"}
+      ],
+      "items": false
+    },
+    "execution_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["concept_registries", "public_api_examples", "target_catalog", "mutation"],
+      "properties": {
+        "concept_registries": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+        "public_api_examples": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+        "target_catalog": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+        "mutation": {"$ref": "common.schema.json#/$defs/non_empty_string"}
+      }
+    },
+    "id_namespaces": {
+      "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["prefix", "dataset_id", "meaning"],
+        "properties": {
+          "prefix": {"enum": ["feature.", "setting.", "policy.", "group."]},
+          "dataset_id": {"enum": ["relution.features", "relution.settings", "relution.policies", "relution.groups"]},
+          "meaning": {"$ref": "common.schema.json#/$defs/non_empty_string"}
+        },
+        "oneOf": [
+          {"properties": {"prefix": {"const": "feature."}, "dataset_id": {"const": "relution.features"}}},
+          {"properties": {"prefix": {"const": "setting."}, "dataset_id": {"const": "relution.settings"}}},
+          {"properties": {"prefix": {"const": "policy."}, "dataset_id": {"const": "relution.policies"}}},
+          {"properties": {"prefix": {"const": "group."}, "dataset_id": {"const": "relution.groups"}}}
+        ]
+      }
+    },
+    "cross_reference_rules": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/non_empty_string"}},
+    "evidence_classes": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "meaning"],
+        "properties": {
+          "id": {"enum": ["official_documentation", "target_contract", "observed_runtime", "recommendation"]},
+          "meaning": {"$ref": "common.schema.json#/$defs/non_empty_string"}
+        }
+      }
+    },
+    "datasets": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "document_type", "file", "schema_path", "record_container", "record_count", "completeness", "authority_level", "execution_eligible", "description"],
+        "properties": {
+          "id": {"enum": ["relution.features", "relution.settings", "relution.policies", "relution.groups", "relution.public_api_operations"]},
+          "document_type": {"enum": ["feature_registry", "setting_registry", "policy_registry", "group_registry", "public_api_operation_registry"]},
+          "file": {"type": "string", "pattern": "^[a-z][a-z0-9-]*\\.json$"},
+          "schema_path": {"type": "string", "pattern": "^\\.\\./schemas/[a-z][a-z0-9-]*\\.schema\\.json$"},
+          "record_container": {"enum": ["records", "operations"]},
+          "record_count": {"type": "integer", "minimum": 1},
+          "completeness": {"enum": ["stable_capability_map", "public_non_exhaustive_examples"]},
+          "authority_level": {"enum": ["official_capability_map", "public_example_subset"]},
+          "execution_eligible": {"const": false},
+          "description": {"$ref": "common.schema.json#/$defs/non_empty_string"}
+        },
+        "allOf": [
+          {"if": {"properties": {"document_type": {"const": "public_api_operation_registry"}}, "required": ["document_type"]}, "then": {"properties": {"record_container": {"const": "operations"}, "completeness": {"const": "public_non_exhaustive_examples"}, "authority_level": {"const": "public_example_subset"}}}},
+          {"if": {"properties": {"document_type": {"enum": ["feature_registry", "setting_registry", "policy_registry", "group_registry"]}}, "required": ["document_type"]}, "then": {"properties": {"record_container": {"const": "records"}, "completeness": {"const": "stable_capability_map"}, "authority_level": {"const": "official_capability_map"}}}},
+          {"if": {"properties": {"id": {"const": "relution.features"}}, "required": ["id"]}, "then": {"properties": {"document_type": {"const": "feature_registry"}, "file": {"const": "features.json"}, "schema_path": {"const": "../schemas/features.schema.json"}, "record_count": {"const": 22}}}},
+          {"if": {"properties": {"id": {"const": "relution.settings"}}, "required": ["id"]}, "then": {"properties": {"document_type": {"const": "setting_registry"}, "file": {"const": "settings.json"}, "schema_path": {"const": "../schemas/settings.schema.json"}, "record_count": {"const": 27}}}},
+          {"if": {"properties": {"id": {"const": "relution.policies"}}, "required": ["id"]}, "then": {"properties": {"document_type": {"const": "policy_registry"}, "file": {"const": "policies.json"}, "schema_path": {"const": "../schemas/policies.schema.json"}, "record_count": {"const": 15}}}},
+          {"if": {"properties": {"id": {"const": "relution.groups"}}, "required": ["id"]}, "then": {"properties": {"document_type": {"const": "group_registry"}, "file": {"const": "groups.json"}, "schema_path": {"const": "../schemas/groups.schema.json"}, "record_count": {"const": 8}}}},
+          {"if": {"properties": {"id": {"const": "relution.public_api_operations"}}, "required": ["id"]}, "then": {"properties": {"document_type": {"const": "public_api_operation_registry"}, "file": {"const": "public-api-operations.json"}, "schema_path": {"const": "../schemas/public-api-operations.schema.json"}, "record_count": {"const": 6}}}}
+        ]
+      }
+    }
+  }
+}

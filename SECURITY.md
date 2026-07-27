@@ -1,45 +1,46 @@
-# Security Policy
+# Security policy
 
-## Supported Versions
+## Supported versions
 
-Security fixes target the latest state of the `main` branch. This project is
-local-first and does not run a hosted service for users.
+CampusWeave is unpublished alpha software. Security fixes apply only to the
+current source candidate.
 
-## Reporting A Vulnerability
+## Reporting a vulnerability
 
-Do not open a public GitHub issue for suspected vulnerabilities.
+Use GitHub private vulnerability reporting when it is available. Do not include
+credentials, customer exports, tenant identifiers, device or user data, or live
+configuration in a public issue.
 
-Use GitHub private vulnerability reporting:
+If private reporting is unavailable, open a public issue with a minimal
+non-sensitive description and request a private contact channel. Do not publish
+exploit details before a fix and disclosure plan are available.
 
-https://github.com/sebastianspicker/relution-policy-workbench/security/advisories/new
+## Security boundary
 
-If GitHub returns a 404 or permission error for the private reporting link,
-contact the maintainer privately and include:
+CampusWeave is designed to:
 
-- affected commit or release, or `main` when no narrower version is known
-- reproduction steps
-- expected and actual impact
-- sanitized logs or sample files that reproduce the issue
+- listen only on `127.0.0.1:8766`;
+- accept only fixed local routes and request shapes;
+- validate strict bounded JSON;
+- compile profiles and plans without network or mutation capability;
+- keep target contracts and evidence outside the public source tree; and
+- keep Relution authentication material out of process arguments and files.
 
-Please avoid sending real Relution exports, credentials, tenant data, private
-keys, or encryption keys unless a secure exchange path has been agreed first.
+Report any behavior that:
 
-## Security-Relevant Data
+- reads a credential or target artifact during normal web or offline CLI use;
+- contacts a non-loopback service;
+- accepts arbitrary target configuration through the browser;
+- produces a plan with operation bindings or execution authorization;
+- exposes sensitive values in errors, logs, output, or screenshots; or
+- bypasses path, ownership, mode, symlink, origin, or request-size checks.
 
-Treat these as sensitive:
+## Relution operations
 
-- Relution `.rexp` archives, decrypted workspaces, and generated imports
-- archive encryption keys and `.env` files
-- Relution API URLs, credentials, and read-only device audit exports
-- policy payloads, screenshots, logs, and generated baseline artifacts
+Repository documentation does not authorize access to a Relution instance.
+Live work requires an explicitly authorized target, exact target contract,
+defined organization and resource scope, least-privilege identity, read-back,
+audit evidence, and a recovery plan.
 
-Keep real exports, credentials, and private tenant data out of git. Use tracked
-examples only when they are sanitized fixtures.
-
-## Disclosure And Response
-
-The maintainer will triage privately reported vulnerabilities, determine the
-affected scope from the reported commit or release and reproduction steps, and
-publish a GitHub security advisory after a fix or mitigation is available.
-Fixes target the `main` branch unless the report identifies an affected release
-branch.
+Do not retry a timed-out mutation until current state and audit evidence show
+that another request is safe.

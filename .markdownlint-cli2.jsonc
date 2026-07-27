@@ -1,0 +1,24 @@
+{
+  "config": {
+    "MD013": false,
+    "MD024": {
+      "siblings_only": true
+    }
+  },
+  "ignores": [
+    ".local/**",
+    "archive/**",
+    "backups/**",
+    "build/**",
+    "dist/**",
+    "evidence/**",
+    "exports/**",
+    "htmlcov/**",
+    "local/**",
+    "node_modules/**",
+    "playwright-report/**",
+    "private/**",
+    "screenshots/**",
+    "test-results/**"
+  ]
+}

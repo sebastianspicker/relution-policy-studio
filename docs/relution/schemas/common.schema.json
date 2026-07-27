@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/common.schema.json",
+  "title": "CampusWeave Relution documentation common definitions",
+  "$defs": {
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "string_array": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/non_empty_string"
+      },
+      "uniqueItems": true
+    },
+    "concept_id": {
+      "type": "string",
+      "pattern": "^(feature|setting|policy|group)\\.[a-z0-9][a-z0-9._-]*$"
+    },
+    "concept_id_array": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/concept_id"
+      },
+      "uniqueItems": true
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "server",
+        "cross_platform",
+        "apple_shared",
+        "ios_ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos",
+        "android_enterprise",
+        "android_classic_legacy",
+        "windows",
+        "linux"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "levels",
+        "organization_behavior"
+      ],
+      "properties": {
+        "levels": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "system",
+              "global_organization",
+              "organization",
+              "group",
+              "user",
+              "device",
+              "fleet",
+              "external_service"
+            ]
+          }
+        },
+        "organization_behavior": {
+          "$ref": "#/$defs/non_empty_string"
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "reasons",
+        "blast_radius"
+      ],
+      "properties": {
+        "tier": {
+          "type": "string",
+          "enum": [
+            "informational",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "reasons": {
+          "$ref": "#/$defs/string_array"
+        },
+        "blast_radius": {
+          "$ref": "#/$defs/non_empty_string"
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "required_for"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "read_only_authorization",
+            "task_specific_authorization",
+            "explicit_immediate_approval"
+          ]
+        },
+        "required_for": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "mutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "possible",
+        "effects",
+        "external_effects",
+        "destructive_effects",
+        "concurrency_cautions"
+      ],
+      "properties": {
+        "possible": {
+          "type": "boolean"
+        },
+        "effects": {
+          "$ref": "#/$defs/string_array"
+        },
+        "external_effects": {
+          "$ref": "#/$defs/string_array"
+        },
+        "destructive_effects": {
+          "$ref": "#/$defs/string_array"
+        },
+        "concurrency_cautions": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preconditions",
+        "read_back",
+        "audit",
+        "functional_checks",
+        "stop_conditions"
+      ],
+      "properties": {
+        "preconditions": {
+          "$ref": "#/$defs/string_array"
+        },
+        "read_back": {
+          "$ref": "#/$defs/string_array"
+        },
+        "audit": {
+          "$ref": "#/$defs/string_array"
+        },
+        "functional_checks": {
+          "$ref": "#/$defs/string_array"
+        },
+        "stop_conditions": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "requirements",
+        "limitations"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "enum": [
+            "not_applicable",
+            "restore_captured_state",
+            "restore_prior_published_version",
+            "compensating_action",
+            "manual_recovery",
+            "irreversible"
+          ]
+        },
+        "requirements": {
+          "$ref": "#/$defs/string_array"
+        },
+        "limitations": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "related_ids": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "features",
+        "settings",
+        "policies",
+        "groups"
+      ],
+      "properties": {
+        "features": {
+          "$ref": "#/$defs/concept_id_array"
+        },
+        "settings": {
+          "$ref": "#/$defs/concept_id_array"
+        },
+        "policies": {
+          "$ref": "#/$defs/concept_id_array"
+        },
+        "groups": {
+          "$ref": "#/$defs/concept_id_array"
+        }
+      }
+    },
+    "api_discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "binding_status",
+        "operation_id",
+        "method",
+        "path",
+        "request_schema_ref",
+        "response_schema_ref",
+        "tags",
+        "search_terms",
+        "contract_checks"
+      ],
+      "properties": {
+        "binding_status": {
+          "const": "target_contract_required"
+        },
+        "operation_id": {
+          "type": "null"
+        },
+        "method": {
+          "type": "null"
+        },
+        "path": {
+          "type": "null"
+        },
+        "request_schema_ref": {
+          "type": "null"
+        },
+        "response_schema_ref": {
+          "type": "null"
+        },
+        "tags": {
+          "$ref": "#/$defs/string_array"
+        },
+        "search_terms": {
+          "$ref": "#/$defs/string_array"
+        },
+        "contract_checks": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class",
+        "url",
+        "claim",
+        "accessed_at"
+      ],
+      "properties": {
+        "class": {
+          "type": "string",
+          "enum": [
+            "official_documentation",
+            "target_contract",
+            "observed_runtime",
+            "recommendation"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "claim": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "accessed_at": {
+          "$ref": "#/$defs/date"
+        }
+      }
+    },
+    "concept_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_kind",
+        "name",
+        "summary",
+        "capabilities",
+        "prerequisites",
+        "sensitive_value_classes",
+        "platforms",
+        "scope",
+        "risk",
+        "approval",
+        "mutation",
+        "verification",
+        "rollback",
+        "related_ids",
+        "api_discovery",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/concept_id"
+        },
+        "record_kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "name": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "summary": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          }
+        },
+        "prerequisites": {
+          "$ref": "#/$defs/string_array"
+        },
+        "sensitive_value_classes": {
+          "$ref": "#/$defs/string_array"
+        },
+        "platforms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/platform"
+          }
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "risk": {
+          "$ref": "#/$defs/risk"
+        },
+        "approval": {
+          "$ref": "#/$defs/approval"
+        },
+        "mutation": {
+          "$ref": "#/$defs/mutation"
+        },
+        "verification": {
+          "$ref": "#/$defs/verification"
+        },
+        "rollback": {
+          "$ref": "#/$defs/rollback"
+        },
+        "related_ids": {
+          "$ref": "#/$defs/related_ids"
+        },
+        "api_discovery": {
+          "$ref": "#/$defs/api_discovery"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      }
+    }
+  }
+}

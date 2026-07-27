@@ -1,0 +1,121 @@
+{
+  "$schema": "../schemas/settings-change-plan.schema.json",
+  "schema_version": "1.0.0",
+  "document_type": "relution-settings-change-plan",
+  "plan_status": "template",
+  "execution_authorized": false,
+  "sensitive_values_present": false,
+  "concept_ids": [],
+  "target": {
+    "authorized_origin": null,
+    "effective_api_server": null,
+    "relution_version": null,
+    "organization_id": null,
+    "organization_name": null
+  },
+  "contract": {
+    "catalog_path": "docs/relution/generated/API_CATALOG.json",
+    "sha256": null,
+    "operation_count": null,
+    "checked_current": false
+  },
+  "authorization": {
+    "request_owner": null,
+    "operator_identity": null,
+    "token_owner": null,
+    "permission_scope": [],
+    "approved_effect": null,
+    "approved_object_count": 0,
+    "approved_at": null,
+    "expires_at": null
+  },
+  "impact": {
+    "tier": null,
+    "reason": null,
+    "externally_visible": null,
+    "destructive_or_irreversible": null,
+    "affects_authentication_or_access": null,
+    "affects_multiple_organizations": null,
+    "requires_immediate_approval": null,
+    "requires_canary": null,
+    "canary_scope": null,
+    "monitoring_owner": null,
+    "monitoring_window": null,
+    "requires_second_access_path": null
+  },
+  "resource": {
+    "type": null,
+    "stable_id": null,
+    "display_name": null,
+    "scope": null,
+    "resolved_uniquely": false
+  },
+  "operations": {
+    "read": null,
+    "write": null,
+    "readback": null,
+    "rollback": null,
+    "audit": null,
+    "status": null
+  },
+  "change": {
+    "before_fields": {},
+    "desired_fields": {},
+    "unchanged_invariants": [],
+    "omitted_server_managed_fields": [],
+    "write_only_fields": [],
+    "destructive_sentinels_reviewed": false,
+    "smallest_semantic_diff_confirmed": false
+  },
+  "request": {
+    "method": null,
+    "path_template": null,
+    "path_parameters": {},
+    "query_parameters": {},
+    "media_type": null,
+    "request_schema_ref": null,
+    "request_body_file": null,
+    "expected_success_statuses": [],
+    "concurrency_controls": [],
+    "automatic_retry_allowed": false,
+    "maximum_attempts": 1
+  },
+  "audit_plan": {
+    "mode": null,
+    "instructions": [],
+    "required_match_fields": [],
+    "evidence_source": null
+  },
+  "success_assertions": [],
+  "rollback": {
+    "available": null,
+    "execution_mode": null,
+    "strategy": null,
+    "prior_values_captured": false,
+    "recovery_owner": null,
+    "recovery_window": null,
+    "irreversibility_acknowledged": false
+  },
+  "verification": {
+    "documented_status_observed": null,
+    "response_schema_valid": null,
+    "readback_matches": null,
+    "unchanged_invariants_match": null,
+    "audit_entry_matches": null,
+    "functional_check": "not_run",
+    "job_terminal_state": null,
+    "per_target_results_checked": null
+  },
+  "result": {
+    "request_transport": "not_sent",
+    "server_acceptance": "not_attempted",
+    "readback": "not_attempted",
+    "audit": "not_attempted",
+    "overall": "not_attempted",
+    "observed_at": null,
+    "residual_uncertainty": []
+  },
+  "stop_reasons": [
+    "Template only: exact target contract, operation bindings, authorization, before state, verification, and rollback are unresolved."
+  ]
+}

@@ -1,12 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relution Policy Workbench</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="CampusWeave reviews university groups, policy intent, and assignments and compiles an offline plan.">
+    <meta name="theme-color" content="#0f2a3d">
+    <title>CampusWeave</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <a class="skip-link" href="#main-content">Skip to workspace</a>
+    <div id="app" class="app-shell" aria-busy="true">
+      <main class="boot-state"><div class="loader"></div><h1>CampusWeave</h1><p>Opening the local university profile…</p></main>
+    </div>
+    <noscript>CampusWeave requires JavaScript for its guided interface. The command-line university runtime remains available without it.</noscript>
+    <script type="module" src="/app.js"></script>
   </body>
 </html>

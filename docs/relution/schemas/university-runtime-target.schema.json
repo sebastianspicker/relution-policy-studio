@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:campusweave-relution:schema:university-runtime-target:1.0.0",
+  "title": "CampusWeave private runtime target context",
+  "description": "A credential-free local binding of one university profile to one exact Relution origin, organization, contract, catalog, binding set, inventory snapshot, and private evidence root. Evidence-bound contexts explicitly keep operation-role semantics operator-asserted and unproven. This document cannot authorize or execute a live operation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema_version", "document_type", "context_status",
+    "sensitive_values_present", "execution_authorized", "profile", "target",
+    "contract", "bindings", "inventory", "evidence_root", "stop_reasons"
+  ],
+  "properties": {
+    "$schema": { "const": "urn:campusweave-relution:schema:university-runtime-target:1.0.0" },
+    "schema_version": { "const": "1.0.0" },
+    "document_type": { "const": "relution-university-runtime-target" },
+    "context_status": { "enum": ["template", "evidence_bound", "stale"] },
+    "sensitive_values_present": { "const": false },
+    "execution_authorized": { "const": false },
+    "profile": { "$ref": "#/$defs/profile" },
+    "target": { "$ref": "#/$defs/target" },
+    "contract": { "$ref": "#/$defs/contract" },
+    "bindings": { "$ref": "#/$defs/bindings" },
+    "inventory": { "$ref": "#/$defs/inventory" },
+    "evidence_root": { "$ref": "#/$defs/relativePath" },
+    "stop_reasons": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "nullableSha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "nullableRelativePath": {
+      "type": ["string", "null"],
+      "maxLength": 512,
+      "pattern": "^(?!.*//)(?!.*(?:^|/)\\.{1,2}(?:/|$))[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*$"
+    },
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^(?!.*//)(?!.*(?:^|/)\\.{1,2}(?:/|$))[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*$"
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "package_id", "sha256"],
+      "properties": {
+        "path": { "$ref": "#/$defs/relativePath" },
+        "package_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*-relution-desired-state-v1$" },
+        "sha256": { "$ref": "#/$defs/nullableSha256" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorized_origin", "effective_api_server", "relution_version", "organization_id", "organization_name"],
+      "properties": {
+        "authorized_origin": { "$ref": "#/$defs/nullableString" },
+        "effective_api_server": { "$ref": "#/$defs/nullableString" },
+        "relution_version": { "$ref": "#/$defs/nullableString" },
+        "organization_id": { "$ref": "#/$defs/nullableString" },
+        "organization_name": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["openapi_path", "openapi_sha256", "catalog_path", "catalog_sha256", "operation_count", "checked_current"],
+      "properties": {
+        "openapi_path": { "$ref": "#/$defs/nullableRelativePath" },
+        "openapi_sha256": { "$ref": "#/$defs/nullableSha256" },
+        "catalog_path": { "$ref": "#/$defs/nullableRelativePath" },
+        "catalog_sha256": { "$ref": "#/$defs/nullableSha256" },
+        "operation_count": { "type": ["integer", "null"], "minimum": 1 },
+        "checked_current": { "type": "boolean" }
+      }
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "status", "semantic_role_status"],
+      "properties": {
+        "path": { "$ref": "#/$defs/nullableRelativePath" },
+        "sha256": { "$ref": "#/$defs/nullableSha256" },
+        "status": { "enum": ["template", "contract_bound", "stale"] },
+        "semantic_role_status": { "enum": ["unresolved", "operator_asserted_unproven"] }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "captured_at", "complete_for_scope"],
+      "properties": {
+        "path": { "$ref": "#/$defs/nullableRelativePath" },
+        "sha256": { "$ref": "#/$defs/nullableSha256" },
+        "captured_at": { "$ref": "#/$defs/nullableString" },
+        "complete_for_scope": { "type": "boolean" }
+      }
+    }
+  }
+}

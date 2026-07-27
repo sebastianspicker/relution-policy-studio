@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/public-api-operations.schema.json",
+  "title": "Relution public API example registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "document_id", "document_type", "product", "as_of", "scope", "completeness", "superseded_for_execution_by", "operations"],
+  "properties": {
+    "$schema": {"const": "../schemas/public-api-operations.schema.json"},
+    "schema_version": {"const": "1.0.0"},
+    "document_id": {"const": "relution.public_api_operations"},
+    "document_type": {"const": "public_api_operation_registry"},
+    "product": {"const": "Relution MDM"},
+    "as_of": {"$ref": "common.schema.json#/$defs/date"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["intended_use", "not_authoritative_for"],
+      "properties": {
+        "intended_use": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+        "not_authoritative_for": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/non_empty_string"}}
+      }
+    },
+    "completeness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["level", "coverage_basis", "known_exclusions", "contract_boundary"],
+      "properties": {
+        "level": {"const": "public_non_exhaustive_examples"},
+        "coverage_basis": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+        "known_exclusions": {"$ref": "common.schema.json#/$defs/string_array"},
+        "contract_boundary": {"$ref": "common.schema.json#/$defs/non_empty_string"}
+      }
+    },
+    "superseded_for_execution_by": {"const": "../generated/API_CATALOG.json"},
+    "operations": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "method", "method_status", "path", "purpose", "execution_status", "boundary", "related_ids", "target_contract_resolution", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^public_api\\.[a-z0-9][a-z0-9._-]*$"},
+          "method": {"oneOf": [{"type": "string", "pattern": "^[A-Z][A-Z0-9!#$%&'*+.^_`|~-]*$"}, {"type": "null"}]},
+          "method_status": {"enum": ["official_documentation", "target_contract_required"]},
+          "path": {"type": "string", "pattern": "^/api/"},
+          "purpose": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+          "execution_status": {"enum": ["target_contract_required", "example_only_target_contract_required"]},
+          "boundary": {"$ref": "common.schema.json#/$defs/non_empty_string"},
+          "related_ids": {"$ref": "common.schema.json#/$defs/concept_id_array"},
+          "target_contract_resolution": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/non_empty_string"}},
+          "evidence": {
+            "type": "array", "minItems": 1,
+            "items": {"allOf": [{"$ref": "common.schema.json#/$defs/evidence"}, {"properties": {"class": {"const": "official_documentation"}}}]}
+          }
+        },
+        "allOf": [
+          {"if": {"properties": {"method": {"type": "null"}}, "required": ["method"]}, "then": {"properties": {"method_status": {"const": "target_contract_required"}}}},
+          {"if": {"properties": {"method": {"type": "string"}}, "required": ["method"]}, "then": {"properties": {"method_status": {"const": "official_documentation"}}}}
+        ]
+      }
+    }
+  }
+}

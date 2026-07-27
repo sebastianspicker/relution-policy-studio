@@ -1,0 +1,12 @@
+pytest
+ruff
+
+# forced-catalog-1
+
+# forced-release-2
+
+# forced-verification-3
+
+# forced-profile-4
+
+# forced-compiler-5

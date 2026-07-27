@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  font-synthesis: none;
+  --display: "Avenir Next", "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+  --paper: #eef1f4;
+  --canvas: #eef1f4;
+  --surface: #ffffff;
+  --surface-raised: #f7f9fb;
+  --ink: #101820;
+  --ink-soft: #24313c;
+  --muted: #4d5c68;
+  --quiet: #6b7a86;
+  --line: #d5dde4;
+  --line-strong: #aebbc6;
+  /* cobalt/sage/amber kept as aliases for less view churn */
+  --cobalt: #1f4f7a;
+  --cobalt-deep: #173c5d;
+  --blueprint: #eaf1f7;
+  --sage: #1a6b56;
+  --sage-soft: #e6f2ee;
+  --amber: #9a4b1f;
+  --amber-soft: #f8efe6;
+  --red: #9b2f38;
+  --red-deep: #7a242c;
+  --red-soft: #f8e9ea;
+  --seal: #163a52;
+  --seal-deep: #0f2a3d;
+  --weave-a: #1f4f7a;
+  --weave-b: #2a7a66;
+  --top-height: 56px;
+  --journey-height: 72px;
+  --status-height: 40px;
+  --inspector-width: minmax(360px, 0.92fr);
+  --radius: 6px;
+  --shadow-soft: 0 1px 0 rgba(16, 24, 32, 0.04);
+}

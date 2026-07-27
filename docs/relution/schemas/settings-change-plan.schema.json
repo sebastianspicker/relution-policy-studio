@@ -1,0 +1,1318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:campusweave-relution:schema:settings-change-plan:1.0.0",
+  "title": "Relution settings change plan",
+  "description": "Machine-readable control record for one bounded Relution API settings mutation. It contains no secret values and is not authorization by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "document_type",
+    "plan_status",
+    "execution_authorized",
+    "sensitive_values_present",
+    "concept_ids",
+    "target",
+    "contract",
+    "authorization",
+    "impact",
+    "resource",
+    "operations",
+    "change",
+    "request",
+    "audit_plan",
+    "success_assertions",
+    "rollback",
+    "verification",
+    "result",
+    "stop_reasons"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "document_type": {
+      "const": "relution-settings-change-plan"
+    },
+    "plan_status": {
+      "enum": [
+        "template",
+        "discovery",
+        "planned",
+        "approved",
+        "executing",
+        "verified",
+        "rolled_back",
+        "blocked",
+        "outcome_unknown"
+      ]
+    },
+    "execution_authorized": {
+      "type": "boolean"
+    },
+    "sensitive_values_present": {
+      "description": "Must remain false. Store secrets only in an approved external secret mechanism.",
+      "const": false
+    },
+    "concept_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(feature|setting|policy|group)\\.[a-z0-9][a-z0-9._-]*$"
+      }
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "contract": {
+      "$ref": "#/$defs/contract"
+    },
+    "authorization": {
+      "$ref": "#/$defs/authorization"
+    },
+    "impact": {
+      "$ref": "#/$defs/impact"
+    },
+    "resource": {
+      "$ref": "#/$defs/resource"
+    },
+    "operations": {
+      "$ref": "#/$defs/operations"
+    },
+    "change": {
+      "$ref": "#/$defs/change"
+    },
+    "request": {
+      "$ref": "#/$defs/request"
+    },
+    "audit_plan": {
+      "$ref": "#/$defs/auditPlan"
+    },
+    "success_assertions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assertion"
+      }
+    },
+    "rollback": {
+      "$ref": "#/$defs/rollback"
+    },
+    "verification": {
+      "$ref": "#/$defs/verification"
+    },
+    "result": {
+      "$ref": "#/$defs/result"
+    },
+    "stop_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": ["planned", "approved", "executing", "verified", "rolled_back", "outcome_unknown"]
+          },
+          "audit_plan": {
+            "properties": { "mode": { "const": "api_operation" } },
+            "required": ["mode"]
+          }
+        },
+        "required": ["plan_status", "audit_plan"]
+      },
+      "then": {
+        "properties": {
+          "operations": {
+            "properties": { "audit": { "$ref": "#/$defs/operation" } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": [
+              "planned",
+              "approved",
+              "executing",
+              "verified",
+              "rolled_back",
+              "outcome_unknown"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "concept_ids": {
+            "minItems": 1
+          },
+          "target": {
+            "$ref": "#/$defs/resolvedTarget"
+          },
+          "contract": {
+            "$ref": "#/$defs/resolvedContract"
+          },
+          "impact": {
+            "$ref": "#/$defs/classifiedImpact"
+          },
+          "resource": {
+            "$ref": "#/$defs/resolvedResource"
+          },
+          "operations": {
+            "$ref": "#/$defs/resolvedOperations"
+          },
+          "rollback": {
+            "$ref": "#/$defs/resolvedRollback"
+          },
+          "audit_plan": {
+            "$ref": "#/$defs/resolvedAuditPlan"
+          },
+          "success_assertions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": ["planned", "approved", "executing", "verified", "rolled_back", "outcome_unknown"]
+          },
+          "rollback": {
+            "properties": { "available": { "const": true }, "execution_mode": { "const": "bound_operation" } },
+            "required": ["available", "execution_mode"]
+          }
+        },
+        "required": ["plan_status", "rollback"]
+      },
+      "then": {
+        "properties": {
+          "operations": {
+            "properties": { "rollback": { "$ref": "#/$defs/operation" } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": [
+              "planned",
+              "approved",
+              "executing",
+              "verified",
+              "rolled_back",
+              "outcome_unknown"
+            ]
+          },
+          "impact": {
+            "properties": {
+              "tier": { "const": 4 }
+            },
+            "required": ["tier"]
+          }
+        },
+        "required": ["plan_status", "impact"]
+      },
+      "then": {
+        "properties": {
+          "impact": {
+            "properties": {
+              "requires_immediate_approval": { "const": true },
+              "requires_canary": { "const": true },
+              "canary_scope": { "type": "string", "minLength": 1 },
+              "monitoring_owner": { "type": "string", "minLength": 1 },
+              "monitoring_window": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": ["planned", "approved", "executing", "verified", "rolled_back", "outcome_unknown"]
+          },
+          "impact": {
+            "properties": { "tier": { "const": 3 } },
+            "required": ["tier"]
+          }
+        },
+        "required": ["plan_status", "impact"]
+      },
+      "then": {
+        "properties": {
+          "impact": {
+            "properties": { "requires_immediate_approval": { "const": true } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": ["approved", "executing", "verified", "rolled_back"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization": {
+            "$ref": "#/$defs/approvedAuthorization"
+          },
+          "stop_reasons": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": ["approved", "executing"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "execution_authorized": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "enum": [
+              "template",
+              "discovery",
+              "planned",
+              "verified",
+              "rolled_back",
+              "blocked",
+              "outcome_unknown"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "execution_authorized": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "const": "verified"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "verification": {
+            "$ref": "#/$defs/verifiedEvidence"
+          },
+          "result": {
+            "$ref": "#/$defs/verifiedResult"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "const": "rolled_back"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "verification": {
+            "$ref": "#/$defs/rolledBackEvidence"
+          },
+          "result": {
+            "$ref": "#/$defs/rolledBackResult"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "const": "outcome_unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization": {
+            "$ref": "#/$defs/approvedAuthorization"
+          },
+          "result": {
+            "$ref": "#/$defs/outcomeUnknownResult"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nullableString": {
+      "type": ["string", "null"]
+    },
+    "nullableBoolean": {
+      "type": ["boolean", "null"]
+    },
+    "nullableInteger": {
+      "type": ["integer", "null"]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authorized_origin",
+        "effective_api_server",
+        "relution_version",
+        "organization_id",
+        "organization_name"
+      ],
+      "properties": {
+        "authorized_origin": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "effective_api_server": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "relution_version": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "organization_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "organization_name": {
+          "$ref": "#/$defs/nullableString"
+        }
+      }
+    },
+    "resolvedTarget": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/target"
+        },
+        {
+          "properties": {
+            "authorized_origin": {
+              "type": "string",
+              "pattern": "^https://"
+            },
+            "effective_api_server": {
+              "type": "string",
+              "pattern": "^https://"
+            },
+            "relution_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "organization_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "organization_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["catalog_path", "sha256", "operation_count", "checked_current"],
+      "properties": {
+        "catalog_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "operation_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "checked_current": {
+          "type": "boolean"
+        }
+      }
+    },
+    "resolvedContract": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contract"
+        },
+        {
+          "properties": {
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "operation_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "checked_current": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_owner",
+        "operator_identity",
+        "token_owner",
+        "permission_scope",
+        "approved_effect",
+        "approved_object_count",
+        "approved_at",
+        "expires_at"
+      ],
+      "properties": {
+        "request_owner": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "operator_identity": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "token_owner": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "permission_scope": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "approved_effect": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "approved_object_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "approved_at": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableString"
+        }
+      }
+    },
+    "approvedAuthorization": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/authorization"
+        },
+        {
+          "properties": {
+            "request_owner": {
+              "type": "string",
+              "minLength": 1
+            },
+            "operator_identity": {
+              "type": "string",
+              "minLength": 1
+            },
+            "token_owner": {
+              "type": "string",
+              "minLength": 1
+            },
+            "permission_scope": {
+              "minItems": 1
+            },
+            "approved_effect": {
+              "type": "string",
+              "minLength": 1
+            },
+            "approved_object_count": {
+              "const": 1
+            },
+            "approved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      ]
+    },
+    "impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "reason",
+        "externally_visible",
+        "destructive_or_irreversible",
+        "affects_authentication_or_access",
+        "affects_multiple_organizations",
+        "requires_immediate_approval",
+        "requires_canary",
+        "canary_scope",
+        "monitoring_owner",
+        "monitoring_window",
+        "requires_second_access_path"
+      ],
+      "properties": {
+        "tier": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "reason": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "externally_visible": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "destructive_or_irreversible": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "affects_authentication_or_access": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "affects_multiple_organizations": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "requires_immediate_approval": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "requires_canary": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "canary_scope": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "monitoring_owner": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "monitoring_window": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "requires_second_access_path": {
+          "$ref": "#/$defs/nullableBoolean"
+        }
+      }
+    },
+    "classifiedImpact": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/impact"
+        },
+        {
+          "properties": {
+            "tier": {
+              "type": "integer"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "externally_visible": {
+              "type": "boolean"
+            },
+            "destructive_or_irreversible": {
+              "type": "boolean"
+            },
+            "affects_authentication_or_access": {
+              "type": "boolean"
+            },
+            "affects_multiple_organizations": {
+              "type": "boolean"
+            },
+            "requires_immediate_approval": {
+              "type": "boolean"
+            },
+            "requires_canary": {
+              "type": "boolean"
+            },
+            "canary_scope": {
+              "$ref": "#/$defs/nullableString"
+            },
+            "monitoring_owner": {
+              "$ref": "#/$defs/nullableString"
+            },
+            "monitoring_window": {
+              "$ref": "#/$defs/nullableString"
+            },
+            "requires_second_access_path": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "stable_id", "display_name", "scope", "resolved_uniquely"],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "stable_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "display_name": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "scope": {
+          "type": ["string", "null"],
+          "enum": [null, "system", "global_organization", "organization", "group", "user", "device"]
+        },
+        "resolved_uniquely": {
+          "type": "boolean"
+        }
+      }
+    },
+    "resolvedResource": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/resource"
+        },
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stable_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "display_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scope": {
+              "type": "string"
+            },
+            "resolved_uniquely": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operation_key",
+        "operation_id",
+        "surface",
+        "method",
+        "path",
+        "lineage",
+        "catalog_sha256"
+      ],
+      "properties": {
+        "operation_key": {
+          "type": "string",
+          "pattern": "^operation\\.sha256\\.[0-9a-f]{64}$"
+        },
+        "operation_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "surface": {
+          "const": "paths"
+        },
+        "method": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9!#$%&'*+.^_`|~-]*$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "lineage": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "catalog_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "operations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["read", "write", "readback", "rollback", "audit", "status"],
+      "properties": {
+        "read": {
+          "oneOf": [
+            {"$ref": "#/$defs/operation"},
+            {"type": "null"}
+          ]
+        },
+        "write": {
+          "oneOf": [
+            {"$ref": "#/$defs/operation"},
+            {"type": "null"}
+          ]
+        },
+        "readback": {
+          "oneOf": [
+            {"$ref": "#/$defs/operation"},
+            {"type": "null"}
+          ]
+        },
+        "rollback": {
+          "oneOf": [
+            {"$ref": "#/$defs/operation"},
+            {"type": "null"}
+          ]
+        },
+        "audit": {
+          "oneOf": [
+            {"$ref": "#/$defs/operation"},
+            {"type": "null"}
+          ]
+        },
+        "status": {
+          "oneOf": [
+            {"$ref": "#/$defs/operation"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "resolvedOperations": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/operations"
+        },
+        {
+          "properties": {
+            "read": {
+              "$ref": "#/$defs/operation"
+            },
+            "write": {
+              "$ref": "#/$defs/operation"
+            },
+            "readback": {
+              "$ref": "#/$defs/operation"
+            }
+          }
+        }
+      ]
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "before_fields",
+        "desired_fields",
+        "unchanged_invariants",
+        "omitted_server_managed_fields",
+        "write_only_fields",
+        "destructive_sentinels_reviewed",
+        "smallest_semantic_diff_confirmed"
+      ],
+      "properties": {
+        "before_fields": {
+          "type": "object"
+        },
+        "desired_fields": {
+          "type": "object"
+        },
+        "unchanged_invariants": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "omitted_server_managed_fields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "write_only_fields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "destructive_sentinels_reviewed": {
+          "type": "boolean"
+        },
+        "smallest_semantic_diff_confirmed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "path_template",
+        "path_parameters",
+        "query_parameters",
+        "media_type",
+        "request_schema_ref",
+        "request_body_file",
+        "expected_success_statuses",
+        "concurrency_controls",
+        "automatic_retry_allowed",
+        "maximum_attempts"
+      ],
+      "properties": {
+        "method": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "path_template": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "path_parameters": {
+          "type": "object"
+        },
+        "query_parameters": {
+          "type": "object"
+        },
+        "media_type": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "request_schema_ref": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "request_body_file": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "expected_success_statuses": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(?:2[0-9]{2}|2XX)$"
+          }
+        },
+        "concurrency_controls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "automatic_retry_allowed": {
+          "const": false
+        },
+        "maximum_attempts": {
+          "const": 1
+        }
+      }
+    },
+    "auditPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "instructions", "required_match_fields", "evidence_source"],
+      "properties": {
+        "mode": {
+          "type": ["string", "null"],
+          "enum": [null, "api_operation", "manual_ui"]
+        },
+        "instructions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "required_match_fields": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "evidence_source": {
+          "type": ["string", "null"],
+          "enum": [null, "target_contract", "official_documentation"]
+        }
+      }
+    },
+    "resolvedAuditPlan": {
+      "allOf": [
+        { "$ref": "#/$defs/auditPlan" },
+        {
+          "properties": {
+            "mode": { "type": "string" },
+            "required_match_fields": { "minItems": 1 }
+          }
+        },
+        {
+          "if": { "properties": { "mode": { "const": "manual_ui" } }, "required": ["mode"] },
+          "then": {
+            "properties": {
+              "instructions": { "minItems": 1 },
+              "evidence_source": { "const": "official_documentation" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "mode": { "const": "api_operation" } }, "required": ["mode"] },
+          "then": {
+            "properties": { "evidence_source": { "const": "target_contract" } }
+          }
+        }
+      ]
+    },
+    "assertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "json_pointer", "operator", "expected"],
+      "properties": {
+        "source": {
+          "enum": ["response", "readback", "audit", "job_status", "functional_check"]
+        },
+        "json_pointer": {
+          "type": "string"
+        },
+        "operator": {
+          "enum": ["equals", "not_equals", "contains", "present", "absent", "in", "matches"]
+        },
+        "expected": {}
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "available",
+        "execution_mode",
+        "strategy",
+        "prior_values_captured",
+        "recovery_owner",
+        "recovery_window",
+        "irreversibility_acknowledged"
+      ],
+      "properties": {
+        "available": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "execution_mode": {
+          "type": ["string", "null"],
+          "enum": [null, "bound_operation", "restore_with_write_operation", "manual_recovery", "irreversible"]
+        },
+        "strategy": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "prior_values_captured": {
+          "type": "boolean"
+        },
+        "recovery_owner": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "recovery_window": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "irreversibility_acknowledged": {
+          "type": "boolean"
+        }
+      }
+    },
+    "resolvedRollback": {
+      "allOf": [
+        { "$ref": "#/$defs/rollback" },
+        { "properties": { "execution_mode": { "type": "string" } } },
+        {
+          "if": { "properties": { "execution_mode": { "const": "irreversible" } }, "required": ["execution_mode"] },
+          "then": {
+            "properties": {
+              "available": { "const": false },
+              "irreversibility_acknowledged": { "const": true }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "execution_mode": { "const": "restore_with_write_operation" } }, "required": ["execution_mode"] },
+          "then": { "properties": { "prior_values_captured": { "const": true } } }
+        }
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documented_status_observed",
+        "response_schema_valid",
+        "readback_matches",
+        "unchanged_invariants_match",
+        "audit_entry_matches",
+        "functional_check",
+        "job_terminal_state",
+        "per_target_results_checked"
+      ],
+      "properties": {
+        "documented_status_observed": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "response_schema_valid": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "readback_matches": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "unchanged_invariants_match": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "audit_entry_matches": {
+          "$ref": "#/$defs/nullableBoolean"
+        },
+        "functional_check": {
+          "enum": ["passed", "failed", "not_run", "not_applicable"]
+        },
+        "job_terminal_state": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "per_target_results_checked": {
+          "$ref": "#/$defs/nullableBoolean"
+        }
+      }
+    },
+    "verifiedEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/verification"
+        },
+        {
+          "properties": {
+            "documented_status_observed": {
+              "const": true
+            },
+            "response_schema_valid": {
+              "const": true
+            },
+            "readback_matches": {
+              "const": true
+            },
+            "unchanged_invariants_match": {
+              "const": true
+            },
+            "audit_entry_matches": {
+              "const": true
+            },
+            "functional_check": {
+              "enum": ["passed", "not_applicable"]
+            }
+          }
+        }
+      ]
+    },
+    "rolledBackEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/verification"
+        },
+        {
+          "properties": {
+            "documented_status_observed": {
+              "const": true
+            },
+            "response_schema_valid": {
+              "const": true
+            },
+            "readback_matches": {
+              "const": true
+            },
+            "unchanged_invariants_match": {
+              "const": true
+            },
+            "audit_entry_matches": {
+              "const": true
+            },
+            "functional_check": {
+              "enum": ["passed", "not_applicable"]
+            }
+          }
+        }
+      ]
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_transport",
+        "server_acceptance",
+        "readback",
+        "audit",
+        "overall",
+        "observed_at",
+        "residual_uncertainty"
+      ],
+      "properties": {
+        "request_transport": {
+          "enum": ["not_sent", "sent", "failed", "unknown"]
+        },
+        "server_acceptance": {
+          "enum": [
+            "not_attempted",
+            "documented_success",
+            "documented_failure",
+            "undocumented",
+            "unknown"
+          ]
+        },
+        "readback": {
+          "enum": ["not_attempted", "matches", "differs", "unavailable", "unknown"]
+        },
+        "audit": {
+          "enum": ["not_attempted", "matching", "missing", "unavailable", "unknown"]
+        },
+        "overall": {
+          "enum": [
+            "not_attempted",
+            "verified",
+            "partially_verified",
+            "not_changed",
+            "rolled_back",
+            "blocked",
+            "outcome_unknown"
+          ]
+        },
+        "observed_at": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "residual_uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "verifiedResult": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/result"
+        },
+        {
+          "properties": {
+            "request_transport": {
+              "const": "sent"
+            },
+            "server_acceptance": {
+              "const": "documented_success"
+            },
+            "readback": {
+              "const": "matches"
+            },
+            "audit": {
+              "const": "matching"
+            },
+            "overall": {
+              "const": "verified"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "residual_uncertainty": {
+              "maxItems": 0
+            }
+          }
+        }
+      ]
+    },
+    "rolledBackResult": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/result"
+        },
+        {
+          "properties": {
+            "request_transport": {
+              "const": "sent"
+            },
+            "server_acceptance": {
+              "const": "documented_success"
+            },
+            "readback": {
+              "const": "matches"
+            },
+            "audit": {
+              "const": "matching"
+            },
+            "overall": {
+              "const": "rolled_back"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "residual_uncertainty": {
+              "maxItems": 0
+            }
+          }
+        }
+      ]
+    },
+    "outcomeUnknownResult": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/result"
+        },
+        {
+          "properties": {
+            "request_transport": {
+              "enum": ["sent", "failed", "unknown"]
+            },
+            "overall": {
+              "const": "outcome_unknown"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

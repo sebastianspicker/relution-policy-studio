@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/policies.schema.json",
+  "title": "Relution policy-domain registry",
+  "allOf": [
+    {
+      "$ref": "concept-registry.schema.json"
+    },
+    {
+      "properties": {
+        "$schema": {
+          "const": "../schemas/policies.schema.json"
+        },
+        "document_id": {
+          "const": "relution.policies"
+        },
+        "document_type": {
+          "const": "policy_registry"
+        },
+        "records": {
+          "items": {
+            "properties": {
+              "id": {
+                "pattern": "^policy\\."
+              },
+              "record_kind": {
+                "enum": [
+                  "policy_model",
+                  "policy_lifecycle",
+                  "policy_assignment",
+                  "policy_platform",
+                  "policy_configuration_family",
+                  "policy_specialization"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "../schemas/public-api-operations.schema.json",
+  "schema_version": "1.0.0",
+  "document_id": "relution.public_api_operations",
+  "document_type": "public_api_operation_registry",
+  "product": "Relution MDM",
+  "as_of": "2026-07-18",
+  "scope": {
+    "intended_use": "Preserve the six concrete path examples published in Relution's REST API guide as discovery clues and version-drift checks.",
+    "not_authoritative_for": ["Execution against any target", "Complete operation coverage", "Current target methods, parameters, schemas, security, servers, or responses", "Idempotency, permission, licensing, or runtime availability"]
+  },
+  "completeness": {
+    "level": "public_non_exhaustive_examples",
+    "coverage_basis": "Only concrete management API examples discussed in the first-party REST API guide and summarized in API_OPERATIONS.md on 2026-07-18.",
+    "known_exclusions": ["Every operation not explicitly represented in the public guide examples", "Full request and response schemas", "Target-specific versions and modules"],
+    "contract_boundary": "These records remain non-executable. Generate the target catalog, verify its digest, and resolve the exact target operation and source schema before any request."
+  },
+  "superseded_for_execution_by": "../generated/API_CATALOG.json",
+  "operations": [
+    {
+      "id": "public_api.users.csv_upload",
+      "method": "POST",
+      "method_status": "official_documentation",
+      "path": "/api/management/v1/csvImport/upload/users",
+      "purpose": "Upload a user-import CSV as the first step of the documented asynchronous import workflow.",
+      "execution_status": "example_only_target_contract_required",
+      "boundary": "The public prose does not establish the target multipart field names, content constraints, upload limits, authentication, organization scope, responses, or cleanup behavior.",
+      "related_ids": ["feature.api_access", "feature.identity_users"],
+      "target_contract_resolution": ["Confirm that the exact path and POST method exist in the target contract", "Inspect multipart media types, required part names, file constraints, security, scope, and responses", "Resolve the returned file identifier schema and safe cleanup lifecycle", "Confirm target upload and storage quotas before sending a file"],
+      "evidence": [{"class": "official_documentation", "url": "https://hub.relution.io/en/docs/settings/rest-api/", "claim": "The Relution REST API guide publishes this POST path as the CSV upload step for user import.", "accessed_at": "2026-07-18"}]
+    },
+    {
+      "id": "public_api.users.import_from_file",
+      "method": "POST",
+      "method_status": "official_documentation",
+      "path": "/api/management/v1/security/users/import/fromFile/{file_uuid}",
+      "purpose": "Start a background user import from a previously uploaded file identifier.",
+      "execution_status": "example_only_target_contract_required",
+      "boundary": "The path template is an example; the target contract decides the identifier format, query options, validation flags, organization context, body, response, and duplicate or retry behavior.",
+      "related_ids": ["feature.api_access", "feature.identity_users"],
+      "target_contract_resolution": ["Resolve the target path parameter name, format, and source from the upload response", "Inspect query parameters, body, validation modes, authorization, and documented success responses", "Prove whether the operation creates one job and whether any retry is idempotent", "Freeze the import organization and expected entity population before execution"],
+      "evidence": [{"class": "official_documentation", "url": "https://hub.relution.io/en/docs/settings/rest-api/", "claim": "The Relution REST API guide publishes this POST path for starting an asynchronous user import from an uploaded file.", "accessed_at": "2026-07-18"}]
+    },
+    {
+      "id": "public_api.csv_import.job_status",
+      "method": "GET",
+      "method_status": "official_documentation",
+      "path": "/api/management/v1/csvImport/job/{job_uuid}",
+      "purpose": "Read the overall status of a CSV-import background job.",
+      "execution_status": "example_only_target_contract_required",
+      "boundary": "The public example does not prove the target job identifier schema, terminal-state enum, polling limits, error representation, retention, cancellation, or authorization scope.",
+      "related_ids": ["feature.api_access", "feature.identity_users"],
+      "target_contract_resolution": ["Confirm path, GET method, identifier schema, security, and organization visibility", "Inspect every documented job state and distinguish running, complete, failed, canceled, and partial outcomes", "Define a bounded polling interval, deadline, and terminal-state stop rule", "Resolve whether a completed overall job still requires per-entity outcome inspection"],
+      "evidence": [{"class": "official_documentation", "url": "https://hub.relution.io/en/docs/settings/rest-api/", "claim": "The Relution REST API guide publishes this GET path for reading asynchronous CSV-import job status.", "accessed_at": "2026-07-18"}]
+    },
+    {
+      "id": "public_api.csv_import.entity_states_query",
+      "method": "POST",
+      "method_status": "official_documentation",
+      "path": "/api/management/v1/csvImport/job/{job_uuid}/entityStates/query",
+      "purpose": "Query per-entity outcomes for a CSV-import job so partial successes and failures are not hidden by aggregate status.",
+      "execution_status": "example_only_target_contract_required",
+      "boundary": "The target contract must supply the query body, pagination, sorting, entity-state schema, error details, permissions, and terminal-state semantics.",
+      "related_ids": ["feature.api_access", "feature.identity_users"],
+      "target_contract_resolution": ["Confirm POST, path parameter, request media type, query schema, pagination, and responses", "Enumerate all per-entity status values and stable identifiers", "Require inspection of every page and reconciliation to the frozen input population", "Stop on partial failures rather than treating aggregate job completion as full success"],
+      "evidence": [{"class": "official_documentation", "url": "https://hub.relution.io/en/docs/settings/rest-api/", "claim": "The Relution REST API guide publishes this POST query path for per-entity CSV-import outcomes.", "accessed_at": "2026-07-18"}]
+    },
+    {
+      "id": "public_api.organizations.creation_wizard_request",
+      "method": "POST",
+      "method_status": "official_documentation",
+      "path": "/api/management/v1/security/organizations/creationWizardRequests",
+      "purpose": "Submit the documented organization creation-wizard request workflow.",
+      "execution_status": "example_only_target_contract_required",
+      "boundary": "The public example is not authority for required organization fields, parent scope, domain or license effects, asynchronous behavior, duplicate handling, permissions, or rollback.",
+      "related_ids": ["feature.api_access", "feature.organization_management", "setting.organization.general"],
+      "target_contract_resolution": ["Confirm path, method, target organization context, and required system permission", "Inspect the complete request schema including immutable, parent, domain, license, and administrator fields", "Resolve response or job semantics and a direct organization read-back operation", "Treat creation and any follow-on activation, licensing, or administrator invitation as separate effects"],
+      "evidence": [{"class": "official_documentation", "url": "https://hub.relution.io/en/docs/settings/rest-api/", "claim": "The Relution REST API guide publishes this POST path as an organization creation-wizard example.", "accessed_at": "2026-07-18"}]
+    },
+    {
+      "id": "public_api.devices.base_info_query",
+      "method": null,
+      "method_status": "target_contract_required",
+      "path": "/api/management/v2/devices/baseInfo/query",
+      "purpose": "Query device base information using a public guide example whose method and body presentation is not safe to generalize across API generations.",
+      "execution_status": "target_contract_required",
+      "boundary": "API_OPERATIONS.md records a public GET presentation but flags method and body ambiguity. This registry intentionally makes the method null; no client may select a verb from this record.",
+      "related_ids": ["feature.api_access", "feature.device_inventory"],
+      "target_contract_resolution": ["Find this path or its target-version equivalent in the exact contract", "Use only the method declared by that target Path Item", "Inspect query parameters or request body, pagination, filters, sort keys, scope, security, and responses", "Use a read-only pilot and compare returned device identities to the explicitly authorized organization"] ,
+      "evidence": [{"class": "official_documentation", "url": "https://hub.relution.io/en/docs/settings/rest-api/", "claim": "The Relution REST API guide publishes this device base-information query path; the local handbook records its method/body ambiguity as requiring target-contract resolution.", "accessed_at": "2026-07-18"}]
+    }
+  ]
+}

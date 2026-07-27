@@ -1,0 +1,420 @@
+/* App chrome: seal masthead, phase thread, workspace, status rail */
+
+.app-shell {
+  display: grid;
+  grid-template-rows: var(--top-height) var(--journey-height) minmax(0, 1fr) var(--status-height);
+  width: 100%;
+  height: 100dvh;
+  background: var(--canvas);
+}
+
+/* - -  Seal masthead - -  */
+.top-bar {
+  position: relative;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 28px auto minmax(240px, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 0 clamp(20px, 2.2vw, 28px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--seal-deep);
+  color: #f4f7f9;
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.brand-mark svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke-linecap: square;
+  stroke-width: 2.4;
+}
+
+/* Light weave strokes on dark seal */
+.brand-mark .weave-a { stroke: #7eb6d9; }
+.brand-mark .weave-b { stroke: #6fc4a8; }
+
+.product-title {
+  padding-right: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -.02em;
+  color: #f4f7f9;
+}
+
+.institution-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 8px;
+  min-width: 0;
+  min-height: 34px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: #d7e4ee;
+  cursor: pointer;
+}
+
+.institution-switch:hover { background: rgba(255, 255, 255, 0.08); }
+
+.institution-switch .institution-label {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: 600;
+}
+
+.institution-switch .institution-meta {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.institution-switch span {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.institution-switch .icon { color: rgba(255, 255, 255, 0.55); }
+.institution-switch .icon:last-child { width: 16px; }
+
+.top-actions,
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ghost / light primary buttons on seal masthead */
+.top-bar .button {
+  min-height: 34px;
+  padding: 0 13px;
+  font-size: 13px;
+}
+
+.top-bar .button.secondary {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: #eef4f8;
+}
+
+.top-bar .button.secondary:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.top-bar .button.primary {
+  background: #e8f1f8;
+  color: var(--seal-deep);
+}
+
+.top-bar .button.primary:hover { background: #fff; }
+
+.top-bar .icon-button {
+  width: 34px;
+  height: 34px;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: #eef4f8;
+}
+
+.top-bar .icon-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu,
+.top-bar .mobile-menu { display: none; }
+
+/* - -  Phase thread (lower-profile journey) - -  */
+.journey-navigation {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  min-width: 0;
+  padding: 0 clamp(20px, 2.4vw, 28px);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.journey-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px 36px 12px 0;
+}
+
+/* Dual-line weave connectors */
+.journey-group:not(:last-child)::before,
+.journey-group:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  width: 36px;
+  height: 1.5px;
+  border-radius: 1px;
+}
+
+.journey-group:not(:last-child)::before {
+  background: var(--weave-a);
+  transform: translateY(-2px);
+  opacity: 0.55;
+}
+
+.journey-group:not(:last-child)::after {
+  background: var(--weave-b);
+  transform: translateY(2px);
+  opacity: 0.55;
+}
+
+.journey-group.active:not(:last-child)::before,
+.journey-group.active:not(:last-child)::after {
+  opacity: 0.95;
+}
+
+/* Phase label + dots (Academic Ledger thread) */
+.journey-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--quiet);
+}
+
+.journey-dot,
+.journey-icon {
+  display: block;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+}
+
+/* Prefer the explicit journey-dot; hide empty legacy journey-icon when both exist */
+.journey-label .journey-dot + .journey-icon { display: none; }
+
+.journey-icon .icon { display: none; }
+
+.journey-group strong {
+  display: block;
+  margin: 0;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.journey-group.active .journey-label {
+  color: var(--cobalt);
+}
+
+.journey-group.active .journey-dot,
+.journey-group.active .journey-icon {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.16);
+}
+
+.journey-group.done .journey-label {
+  color: var(--sage);
+}
+
+.journey-group.done .journey-dot,
+.journey-group.done .journey-icon {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+
+.journey-group.done:not(:last-child)::before,
+.journey-group.done:not(:last-child)::after,
+.journey-group.active:not(:last-child)::before,
+.journey-group.active:not(:last-child)::after {
+  opacity: 0.95;
+}
+
+.journey-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+
+.journey-group button {
+  position: relative;
+  min-height: 26px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.journey-group button[aria-current="step"] {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.journey-group button[aria-current="step"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--cobalt);
+  content: "";
+}
+
+.journey-group button:hover { color: var(--cobalt); }
+
+.journey-group i {
+  margin: 0 8px;
+  color: var(--line-strong);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* - -  Workspace - -  */
+.workspace.with-inspector {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) var(--inspector-width);
+  min-width: 0;
+  min-height: 0;
+  background: var(--canvas);
+}
+
+.workspace.without-inspector {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  background: var(--canvas);
+}
+
+.canvas,
+.inspector {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+}
+
+.canvas { background: var(--canvas); }
+
+/* - -  Instrument status rail - -  */
+.status-rail {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 20px;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.status-rail > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  min-height: 26px;
+  padding: 0 12px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.status-rail > span:first-child { padding-left: 0; }
+
+.status-rail > span:last-child {
+  margin-left: auto;
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+
+.status-rail .icon { width: 14px; height: 14px; color: var(--quiet); }
+
+/* Instrument chips with pips */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-chip .pip,
+.local-status .pip,
+.local-status i.pip {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.local-status {
+  color: var(--ink-soft) !important;
+  font-weight: 650;
+}
+
+.local-status i:not(.pip) {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.status-rail .warning-status {
+  color: var(--amber);
+  font-weight: 650;
+}
+
+.status-rail .warning-status .icon { color: var(--amber); }
+
+.status-rail .no-connection {
+  color: var(--quiet);
+}
+
+/* Mobile nav shell pieces (shown under compact breakpoint) */
+.step-rail { display: none; }
+.menu-import { display: none; }
+.mobile-nav-title { display: none; }
+.nav-backdrop { display: none; }
+.rail-save { display: none; }

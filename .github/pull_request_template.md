@@ -1,43 +1,15 @@
+# Pull request
+
 ## Summary
 
--
-
-## Scope
-
-- [ ] Documentation, metadata, or repository hygiene only
-- [ ] Local-only artifact routing changed
-- [ ] Runtime code or generated artifacts changed
-- [ ] Local editor/API behavior changed
-- [ ] Relution/Zammad integration behavior changed
+Describe the CampusWeave outcome and its safety boundary.
 
 ## Verification
 
-- [ ] `pnpm verify:pre-pr`
-- [ ] `pnpm verify:ci`
-- [ ] `pnpm build`
-- [ ] `pnpm typecheck`
-- [ ] `pnpm test`
-- [ ] `pnpm test:meta`
-- [ ] `ruff check .`
-- [ ] `pytest`
-- [ ] `pnpm codacy:cloud:inspect`
-- [ ] `pnpm codacy:cloud`
-- [ ] `git diff --check`
-- [ ] Other relevant checks:
-- If `pnpm verify:pre-pr` was skipped, explain why:
+- [ ] Complete local gate passed
+- [ ] Public documentation reflects current behavior
+- [ ] UI changes were checked at desktop and mobile widths
+- [ ] Screenshots were refreshed when the visible product changed
+- [ ] No credentials, customer data, target evidence, or local tool state is included
 
-## Runtime And Data Impact
-
-- Relution production API impact:
-- Local workspace/archive impact:
-- Security or network exposure impact:
-- Codacy/local analysis impact:
-- Excluded generated or local paths touched: no / yes, details:
-- Codacy Cloud closure claimed: no / yes, evidence:
-
-## Notes
-
-- Tests or checks skipped:
-- Remaining risks:
-- Release notes or docs updated:
-- Local-only artifacts checked with `git check-ignore -v`:
+List exact commands, results, skipped checks, and remaining uncertainty.

@@ -1,0 +1,195 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Relution Test Contract",
+    "version": "26.test"
+  },
+  "servers": [
+    {
+      "url": "https://mdm.example.invalid",
+      "description": "Authorized test target"
+    }
+  ],
+  "security": [
+    {
+      "userAccessTokenAuth": []
+    }
+  ],
+  "paths": {
+    "/api/settings/{settingId}": {
+      "parameters": [
+        {
+          "name": "settingId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Stable setting identifier"
+        }
+      ],
+      "get": {
+        "operationId": "getSetting",
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Read one setting",
+        "responses": {
+          "200": {
+            "description": "Current setting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setting"
+                }
+              }
+            },
+            "headers": {
+              "ETag": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateSetting",
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Update one setting",
+        "description": "Applies only fields supplied in the request.",
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SettingPatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Setting updated"
+          },
+          "412": {
+            "description": "Revision mismatch"
+          }
+        }
+      }
+    },
+    "/api/tasks/query": {
+      "$ref": "#/components/pathItems/TaskQuery"
+    }
+  },
+  "webhooks": {
+    "taskFinished": {
+      "post": {
+        "operationId": "taskFinishedWebhook",
+        "tags": [
+          "Callbacks"
+        ],
+        "summary": "Receive task completion",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Accepted"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "pathItems": {
+      "TaskQuery": {
+        "post": {
+          "operationId": "queryTasks",
+          "tags": [
+            "Tasks"
+          ],
+          "summary": "Query tasks",
+          "requestBody": {
+            "$ref": "#/components/requestBodies/Query"
+          },
+          "responses": {
+            "200": {
+              "description": "Task page",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Task"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "userAccessTokenAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-User-Access-Token",
+        "description": "User access token"
+      }
+    },
+    "requestBodies": {
+      "Query": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "NotFound": {
+        "description": "Not found"
+      }
+    },
+    "schemas": {
+      "Setting": {
+        "type": "object"
+      },
+      "SettingPatch": {
+        "type": "object"
+      },
+      "Task": {
+        "type": "object"
+      }
+    }
+  }
+}

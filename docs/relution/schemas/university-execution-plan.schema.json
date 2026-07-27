@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:campusweave-relution:schema:university-execution-plan:1.0.0",
+  "title": "CampusWeave offline university intent plan",
+  "description": "A digest-bound, zero-network graph of abstract university profile intents and lifecycle prerequisites. The reference profile produces 48 unresolved nodes: 7 group-scope blueprints, 15 policy-definition intents, 15 blocked policy-publication prerequisites, and 11 assignment intents. It is not a target resource plan and cannot authorize or execute an API mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema_version", "document_type", "plan_status",
+    "execution_authorized", "network_capable", "mutation_capable", "profile",
+    "runtime_boundary", "phases", "steps", "blockers", "plan_sha256"
+  ],
+  "properties": {
+    "$schema": { "const": "urn:campusweave-relution:schema:university-execution-plan:1.0.0" },
+    "schema_version": { "const": "1.0.0" },
+    "document_type": { "const": "relution-university-offline-intent-plan-v1" },
+    "plan_status": { "const": "offline_valid" },
+    "execution_authorized": { "const": false },
+    "network_capable": { "const": false },
+    "mutation_capable": { "const": false },
+    "profile": { "$ref": "#/$defs/profile" },
+    "runtime_boundary": { "$ref": "#/$defs/runtimeBoundary" },
+    "phases": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/phase" }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/step" }
+    },
+    "blockers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "plan_sha256": { "$ref": "#/$defs/sha256" }
+  },
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package_id", "institution_code", "institution_label", "schema_version", "sha256"],
+      "properties": {
+        "package_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*-relution-desired-state-v1$" },
+        "institution_code": { "type": "string", "maxLength": 48, "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "institution_label": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "schema_version": { "const": "1.0.0" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "runtimeBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode", "target_contract_status", "target_binding_status",
+        "inventory_status", "approval_status", "live_executor"
+      ],
+      "properties": {
+        "mode": { "const": "offline_planning_only" },
+        "target_contract_status": { "const": "unresolved" },
+        "target_binding_status": { "const": "unresolved" },
+        "inventory_status": { "const": "unresolved" },
+        "approval_status": { "const": "absent" },
+        "live_executor": { "type": "null" }
+      }
+    },
+    "phase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["phase_id", "depends_on", "state", "gate_ids"],
+      "properties": {
+        "phase_id": { "type": "string", "pattern": "^P[0-4]_[A-Z][A-Z0-9_]*$" },
+        "depends_on": { "$ref": "#/$defs/stringArray" },
+        "state": { "enum": ["ready", "blocked"] },
+        "gate_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^G(?:[0-9]|10)_[A-Z][A-Z0-9_]*$" }
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step_id", "kind", "intent_id", "resource_type", "resource_cardinality",
+        "dependencies", "concept_ids", "workflow_ids", "required_roles",
+        "impact_tier_floor", "rollout_ring_id", "desired_state",
+        "operation_bindings", "automatic_retry_allowed", "state", "blockers"
+      ],
+      "properties": {
+        "step_id": { "type": "string", "pattern": "^(group|policy|publication|assignment):[a-z0-9][a-z0-9._-]*$" },
+        "kind": { "enum": ["group_scope_blueprint", "policy_definition_intent", "policy_publication_prerequisite", "assignment_intent"] },
+        "intent_id": { "$ref": "#/$defs/nonEmptyString" },
+        "resource_type": { "enum": ["abstract_group_scope", "abstract_policy_definition", "abstract_policy_publication", "abstract_policy_group_assignment"] },
+        "resource_cardinality": { "const": "unresolved" },
+        "dependencies": { "$ref": "#/$defs/stringArray" },
+        "concept_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(feature|setting|policy|group)\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "workflow_ids": { "$ref": "#/$defs/stringArray" },
+        "required_roles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "read", "query", "create", "update", "replace", "patch", "delete",
+              "publish", "assign", "unassign", "action", "validate", "status",
+              "readback", "rollback", "audit"
+            ]
+          }
+        },
+        "impact_tier_floor": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "rollout_ring_id": { "type": "string", "pattern": "^ring\\.[a-z0-9][a-z0-9._-]*$" },
+        "desired_state": { "type": "object" },
+        "operation_bindings": { "type": "array", "maxItems": 0 },
+        "automatic_retry_allowed": { "const": false },
+        "state": { "const": "unbound" },
+        "blockers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        }
+      }
+    }
+  }
+}

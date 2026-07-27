@@ -1,7 +1,0 @@
-{
-  "type": "MACOS_SCREENSAVER",
-  "askForPassword": true,
-  "askForPasswordDelay": 0,
-  "enabled": true,
-  "loginWindowIdleTime": 900
-}

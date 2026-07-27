@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave-relution.invalid/schemas/features.schema.json",
+  "title": "Relution feature registry",
+  "allOf": [
+    {
+      "$ref": "concept-registry.schema.json"
+    },
+    {
+      "properties": {
+        "$schema": {
+          "const": "../schemas/features.schema.json"
+        },
+        "document_id": {
+          "const": "relution.features"
+        },
+        "document_type": {
+          "const": "feature_registry"
+        },
+        "records": {
+          "items": {
+            "properties": {
+              "id": {
+                "pattern": "^feature\\."
+              },
+              "record_kind": {
+                "enum": [
+                  "service_feature",
+                  "management_feature",
+                  "platform_feature",
+                  "integration_feature"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,594 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:campusweave-relution:schema:university-profile:1.0.0",
+  "title": "University Relution offline profile package",
+  "description": "A PII-free, non-executable desired-state proposal for a university. Exact Relution operations and target data are deliberately excluded.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "document_type",
+    "package",
+    "provenance",
+    "organization_units",
+    "locations",
+    "functional_cohorts",
+    "department_persona_rules",
+    "policy_layers",
+    "policy_units",
+    "group_blueprints",
+    "assignment_intents",
+    "rollout_rings",
+    "api_workflows",
+    "activation_gates",
+    "commit_boundary",
+    "unresolved_inputs"
+  ],
+  "properties": {
+    "$schema": { "const": "urn:campusweave-relution:schema:university-profile:1.0.0" },
+    "schema_version": { "const": "1.0.0" },
+    "document_type": { "const": "relution-university-offline-desired-state" },
+    "package": { "$ref": "#/$defs/package" },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "organization_units": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/organizationUnit" }
+    },
+    "locations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/location" }
+    },
+    "functional_cohorts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/cohort" }
+    },
+    "department_persona_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/departmentRule" }
+    },
+    "policy_layers": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/policyLayer" }
+    },
+    "policy_units": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/policyUnit" }
+    },
+    "group_blueprints": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/groupBlueprint" }
+    },
+    "assignment_intents": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/assignmentIntent" }
+    },
+    "rollout_rings": {
+      "type": "array",
+      "minItems": 6,
+      "items": { "$ref": "#/$defs/rolloutRing" }
+    },
+    "api_workflows": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/apiWorkflow" }
+    },
+    "activation_gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/activationGate" }
+    },
+    "commit_boundary": { "$ref": "#/$defs/commitBoundary" },
+    "unresolved_inputs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/unresolvedInput" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "nullableString": { "type": ["string", "null"] },
+    "baselineTier": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "impactTier": { "type": "integer", "minimum": 0, "maximum": 4 },
+    "platform": {
+      "enum": ["ios_ipados", "macos", "windows", "android_enterprise", "cross_platform_outcome"]
+    },
+    "model": {
+      "enum": ["corp", "byod", "cope", "shared", "kiosk", "privileged"]
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package_id", "institution_code", "institution_label", "status",
+        "evidence_state", "sensitivity", "execution_capability",
+        "execution_authorized", "target_contract_required", "production_ready"
+      ],
+      "properties": {
+        "package_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*-relution-desired-state-v1$" },
+        "institution_code": { "type": "string", "minLength": 1, "maxLength": 48, "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "institution_label": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "status": { "const": "PROPOSED" },
+        "evidence_state": { "const": "NOT_EVIDENCED" },
+        "sensitivity": { "const": "public_design_no_target_data" },
+        "execution_capability": { "const": "none" },
+        "execution_authorized": { "const": false },
+        "target_contract_required": { "const": true },
+        "production_ready": { "const": false }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_order", "conflict_rule", "applicability_rule",
+        "cis_content_policy", "sources", "control_intents"
+      ],
+      "properties": {
+        "authority_order": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "bsi" }, { "const": "cis" }, { "const": "vendor" }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "conflict_rule": { "const": "higher_authority_controls" },
+        "applicability_rule": { "const": "unsupported_vendor_capability_becomes_gap_not_override" },
+        "cis_content_policy": { "const": "metadata_and_control_refs_only" },
+        "sources": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "$ref": "#/$defs/source" }
+        },
+        "control_intents": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/controlIntent" }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id", "authority", "authority_rank", "title", "version",
+        "publication_date", "content_sha256", "mapping_status", "status",
+        "redistribution", "evidence_scope"
+      ],
+      "properties": {
+        "source_id": { "type": "string", "pattern": "^source\\.[a-z0-9][a-z0-9._-]*$" },
+        "authority": { "enum": ["bsi", "cis", "vendor"] },
+        "authority_rank": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nullableString" },
+        "publication_date": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "content_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mapping_status": { "enum": ["unresolved", "metadata_only", "verified_local"] },
+        "status": { "enum": ["documented", "licensed_local_reference", "applicability_pending"] },
+        "redistribution": { "enum": ["public_metadata_only", "no_benchmark_body"] },
+        "evidence_scope": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "controlIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "control_id", "title", "intent", "provenance_chain", "platforms",
+        "models", "unresolved_items", "exception_required_if_weakened"
+      ],
+      "properties": {
+        "control_id": { "type": "string", "pattern": "^control\\.[a-z0-9][a-z0-9._-]*$" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "intent": { "$ref": "#/$defs/nonEmptyString" },
+        "provenance_chain": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^source\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "platforms": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "$ref": "#/$defs/platform" }
+        },
+        "models": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "$ref": "#/$defs/model" }
+        },
+        "unresolved_items": { "$ref": "#/$defs/stringArray" },
+        "exception_required_if_weakened": { "const": true }
+      }
+    },
+    "organizationUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id", "parent_unit_id", "kind", "label", "assignment_eligible",
+        "person_fields_present", "default_location_ids", "data_risk",
+        "usability_requirements"
+      ],
+      "properties": {
+        "unit_id": { "type": "string", "pattern": "^ou\\.[a-z0-9][a-z0-9._-]*$" },
+        "parent_unit_id": { "type": ["string", "null"], "pattern": "^ou\\.[a-z0-9][a-z0-9._-]*$" },
+        "kind": { "enum": ["institution", "leadership", "staff", "department", "central_unit", "library", "statutory_function"] },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "assignment_eligible": { "type": "boolean" },
+        "person_fields_present": { "const": false },
+        "default_location_ids": {
+          "type": "array", "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^site\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "data_risk": { "enum": ["general", "confidential", "sensitive_personal", "financial", "operational", "privileged", "mixed"] },
+        "usability_requirements": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["location_id", "label", "role", "network_overlay_target_local"],
+      "properties": {
+        "location_id": { "type": "string", "pattern": "^site\\.[a-z0-9][a-z0-9._-]*$" },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "role": { "enum": ["primary", "campus", "administrative", "service"] },
+        "network_overlay_target_local": { "const": true }
+      }
+    },
+    "cohort": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cohort_id", "label", "purpose", "membership_authority", "privileged",
+        "expiry_required", "organization_derived", "default_baseline_tier",
+        "eligible_models", "usability_requirements", "prohibited_capabilities"
+      ],
+      "properties": {
+        "cohort_id": { "type": "string", "pattern": "^persona\\.[a-z0-9][a-z0-9._-]*$" },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "purpose": { "$ref": "#/$defs/nonEmptyString" },
+        "membership_authority": { "enum": ["asset_purpose_register", "approved_service_register"] },
+        "privileged": { "type": "boolean" },
+        "expiry_required": { "type": "boolean" },
+        "organization_derived": { "const": false },
+        "default_baseline_tier": { "$ref": "#/$defs/baselineTier" },
+        "eligible_models": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "$ref": "#/$defs/model" }
+        },
+        "usability_requirements": { "$ref": "#/$defs/stringArray" },
+        "prohibited_capabilities": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "departmentRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id", "unit_id", "default_cohort_id", "permitted_cohort_ids",
+        "prohibited_cohort_ids", "activation_mode", "creates_membership",
+        "usability_safeguards", "approval_requirements"
+      ],
+      "properties": {
+        "rule_id": { "type": "string", "pattern": "^rule\\.[a-z0-9][a-z0-9._-]*$" },
+        "unit_id": { "type": "string", "pattern": "^ou\\.[a-z0-9][a-z0-9._-]*$" },
+        "default_cohort_id": { "const": "persona.standard_office" },
+        "permitted_cohort_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^persona\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "prohibited_cohort_ids": {
+          "type": "array", "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^persona\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "activation_mode": { "const": "review_required" },
+        "creates_membership": { "const": false },
+        "usability_safeguards": { "$ref": "#/$defs/stringArray" },
+        "approval_requirements": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "policyLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layer_id", "order", "label", "purpose", "assignment_semantics"],
+      "properties": {
+        "layer_id": { "type": "string", "pattern": "^layer\\.[0-7]\\.[a-z0-9][a-z0-9._-]*$" },
+        "order": { "type": "integer", "minimum": 0, "maximum": 7 },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "purpose": { "$ref": "#/$defs/nonEmptyString" },
+        "assignment_semantics": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "intentSetting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setting_key", "desired_outcome", "capability_ids", "writer_scope"],
+      "properties": {
+        "setting_key": {
+          "enum": [
+            "approved_applications", "byod_privacy_boundary",
+            "compliance_access", "exception_scope", "management_connectivity",
+            "persona_controls", "platform_baseline", "privileged_access",
+            "sensitive_data_protection", "trust_enrollment"
+          ]
+        },
+        "desired_outcome": {
+          "description": "Canonical non-authoritative display summary. capability_ids and the validator's setting/platform contract define semantics.",
+          "enum": [
+            "make only validated supported application changes",
+            "target-supported work-profile protection without personal-device control",
+            "target-supported user-enrollment protection without personal-device control",
+            "use target-supported compliance state only after recovery testing",
+            "narrow, expiry-bound deviation with compensating control",
+            "keep a tested management path",
+            "apply only role-approved sensitive controls",
+            "one compatible corporate Android Enterprise baseline writer",
+            "one compatible baseline writer per platform",
+            "one compatible corporate macOS baseline writer",
+            "one compatible corporate Windows baseline writer",
+            "dedicated macOS privileged endpoint with tested recovery",
+            "dedicated Windows privileged endpoint with tested recovery",
+            "apply compatible ownership and data safeguards",
+            "establish only target-supported enrollment and recovery prerequisites"
+          ]
+        },
+        "capability_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "exception_scope", "managed_applications", "managed_connectivity",
+              "managed_data_boundary", "managed_data_protection",
+              "management_recovery", "persona_controls", "platform_baseline",
+              "privileged_access", "selective_work_data_removal",
+              "trust_enrollment", "user_enrollment", "work_access_compliance",
+              "work_profile"
+            ]
+          }
+        },
+        "writer_scope": { "type": "string", "pattern": "^writer\\.[a-z0-9][a-z0-9._-]*$" }
+      }
+    },
+    "policyUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id", "label", "layer_id", "platform", "models", "cohort_ids",
+        "control_ids", "baseline_tier", "impact_tier_floor", "concept_ids",
+        "intent_settings", "payload_mode", "workflow_ids",
+        "desired_publication_state", "activation_state", "usability_safeguards",
+        "prerequisites", "exclusions"
+      ],
+      "properties": {
+        "policy_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*-policy\\.[a-z0-9][a-z0-9._-]*$" },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "layer_id": { "type": "string", "pattern": "^layer\\.[0-7]\\.[a-z0-9][a-z0-9._-]*$" },
+        "platform": { "$ref": "#/$defs/platform" },
+        "models": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "$ref": "#/$defs/model" }
+        },
+        "cohort_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^persona\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "control_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^control\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "baseline_tier": { "$ref": "#/$defs/baselineTier" },
+        "impact_tier_floor": { "$ref": "#/$defs/impactTier" },
+        "concept_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(feature|setting|policy|group)\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "intent_settings": {
+          "type": "array", "minItems": 1,
+          "items": { "$ref": "#/$defs/intentSetting" }
+        },
+        "payload_mode": { "const": "target_contract_required" },
+        "workflow_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*\\.[a-z0-9][a-z0-9._-]*\\.v1$" }
+        },
+        "desired_publication_state": { "const": "unpublished" },
+        "activation_state": { "const": "inactive" },
+        "usability_safeguards": { "$ref": "#/$defs/stringArray" },
+        "prerequisites": { "$ref": "#/$defs/stringArray" },
+        "exclusions": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "groupBlueprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id", "label", "group_kind", "membership_mode",
+        "primary_dimension", "values", "membership_authority", "filter_tree",
+        "referenced_group_ids", "actions", "future_membership_affects_scope",
+        "target_contract_required", "assignment_eligible"
+      ],
+      "properties": {
+        "group_id": { "type": "string", "pattern": "^grp\\.[a-z0-9][a-z0-9._-]*$" },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "group_kind": { "enum": ["primitive", "assignment_scope", "compliance_state", "exception"] },
+        "membership_mode": { "enum": ["static", "dynamic", "target_contract_required"] },
+        "primary_dimension": { "enum": ["platform", "model", "cohort", "ring", "compliance", "exception", "assignment"] },
+        "values": { "$ref": "#/$defs/stringArray" },
+        "membership_authority": { "enum": ["device_inventory", "asset_purpose_register", "explicit_ring_register", "compliance_observation", "approved_exception_register", "boolean_intersection", "target_contract_required"] },
+        "filter_tree": { "type": ["object", "null"] },
+        "referenced_group_ids": {
+          "type": "array", "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^grp\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "actions": { "type": "array", "maxItems": 0 },
+        "future_membership_affects_scope": { "type": "boolean" },
+        "target_contract_required": { "const": true },
+        "assignment_eligible": { "type": "boolean" }
+      }
+    },
+    "assignmentIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assignment_id", "policy_id", "scope_blueprint_id", "cohort_ids",
+        "model", "platform", "ring_id", "state", "requires_published_policy",
+        "membership_snapshot_required", "impact_tier_floor", "notes"
+      ],
+      "properties": {
+        "assignment_id": { "type": "string", "pattern": "^assignment\\.[a-z0-9][a-z0-9._-]*$" },
+        "policy_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*-policy\\.[a-z0-9][a-z0-9._-]*$" },
+        "scope_blueprint_id": { "type": "string", "pattern": "^grp\\.[a-z0-9][a-z0-9._-]*$" },
+        "cohort_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^persona\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "model": { "$ref": "#/$defs/model" },
+        "platform": { "$ref": "#/$defs/platform" },
+        "ring_id": { "type": "string", "pattern": "^ring\\.[a-z0-9][a-z0-9._-]*$" },
+        "state": { "const": "unbound" },
+        "requires_published_policy": { "const": true },
+        "membership_snapshot_required": { "const": true },
+        "impact_tier_floor": { "$ref": "#/$defs/impactTier" },
+        "notes": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "rolloutRing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ring_id", "label", "order", "promotion_ring", "predecessor_ring_id",
+        "minimum_business_days", "scope_rule", "approval_required", "scope_mode",
+        "target_percentage", "minimum_devices", "requires_frozen_membership",
+        "dynamic_membership_allowed", "promotion_requires_new_plan",
+        "rollback_thresholds"
+      ],
+      "properties": {
+        "ring_id": { "type": "string", "pattern": "^ring\\.[a-z0-9][a-z0-9._-]*$" },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "order": { "type": ["integer", "null"], "minimum": 0, "maximum": 3 },
+        "promotion_ring": { "type": "boolean" },
+        "predecessor_ring_id": { "type": ["string", "null"], "pattern": "^ring\\.[a-z0-9][a-z0-9._-]*$" },
+        "minimum_business_days": { "type": "integer", "minimum": 0 },
+        "scope_rule": {
+          "description": "Canonical non-authoritative display summary derived from scope_mode; machine scope fields define semantics.",
+          "enum": [
+            "non-production, inventory-confirmed test scope only",
+            "one approved representative device per platform and use case",
+            "small approved reversible cohort",
+            "explicitly approved inventory-frozen production cohort",
+            "separate controlled path for privileged or higher sensitivity",
+            "containment or remediation only, never a promotion stage"
+          ]
+        },
+        "approval_required": { "type": "boolean" },
+        "scope_mode": {
+          "enum": [
+            "fixed_lab", "bounded_pilot", "bounded_early", "frozen_broad",
+            "fixed_elevated", "fixed_quarantine"
+          ]
+        },
+        "target_percentage": {
+          "type": ["integer", "null"],
+          "minimum": 1,
+          "maximum": 100
+        },
+        "minimum_devices": { "type": "integer", "minimum": 1 },
+        "requires_frozen_membership": { "const": true },
+        "dynamic_membership_allowed": { "const": false },
+        "promotion_requires_new_plan": { "const": true },
+        "rollback_thresholds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        }
+      }
+    },
+    "apiWorkflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workflow_id", "purpose", "concept_ids", "required_roles",
+        "binding_status", "mutation_capable", "organization_scope_required",
+        "exact_target_contract_required", "output_plan_granularity",
+        "automatic_retry_allowed"
+      ],
+      "properties": {
+        "workflow_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*\\.[a-z0-9][a-z0-9._-]*\\.v1$" },
+        "purpose": { "$ref": "#/$defs/nonEmptyString" },
+        "concept_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(feature|setting|policy|group)\\.[a-z0-9][a-z0-9._-]*$" }
+        },
+        "required_roles": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {
+            "enum": ["read", "query", "create", "update", "replace", "patch", "delete", "publish", "assign", "unassign", "action", "validate", "status", "readback", "rollback", "audit"]
+          }
+        },
+        "binding_status": { "const": "target_contract_required" },
+        "mutation_capable": { "type": "boolean" },
+        "organization_scope_required": { "const": true },
+        "exact_target_contract_required": { "const": true },
+        "output_plan_granularity": { "const": "one_resource_one_organization" },
+        "automatic_retry_allowed": { "const": false }
+      }
+    },
+    "activationGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "order", "label", "required_evidence", "status", "blocks"],
+      "properties": {
+        "gate_id": { "type": "string", "pattern": "^G(?:[0-9]|10)_[A-Z][A-Z0-9_]*$" },
+        "order": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "required_evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "status": { "enum": ["defined", "blocked", "passed"] },
+        "blocks": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "commitBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit_safe_classes", "target_local_classes", "forbidden_classes", "target_local_root"],
+      "properties": {
+        "commit_safe_classes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "target_local_classes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "forbidden_classes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "target_local_root": { "type": "string", "pattern": "^private/[a-z0-9][a-z0-9-]*$" }
+      }
+    },
+    "unresolvedInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_id", "description", "blocks_gate_ids", "resolution_evidence", "status"],
+      "properties": {
+        "input_id": { "type": "string", "pattern": "^input\\.[a-z0-9][a-z0-9._-]*$" },
+        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "blocks_gate_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^G(?:[0-9]|10)_[A-Z][A-Z0-9_]*$" }
+        },
+        "resolution_evidence": { "$ref": "#/$defs/nonEmptyString" },
+        "status": { "const": "unresolved" }
+      }
+    }
+  }
+}

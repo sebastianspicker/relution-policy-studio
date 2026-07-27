@@ -1,0 +1,31 @@
+---
+name: Documentation problem
+description: Report unclear, missing, or outdated CampusWeave documentation.
+title: "[Docs]: "
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include credentials, customer exports, tenant identifiers, or
+        live-environment screenshots.
+  - type: input
+    id: page
+    attributes:
+      label: Page or section
+      description: Provide the repository path and heading.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is unclear or outdated?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected documentation
+      description: What should a reader be able to understand or do?
+    validations:
+      required: true

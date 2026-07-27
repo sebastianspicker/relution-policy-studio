@@ -1,0 +1,9 @@
+/* CampusWeave Academic Ledger - modular stylesheet entry */
+@import url("./styles/tokens.css");
+@import url("./styles/base.css");
+@import url("./styles/shell.css");
+@import url("./styles/components.css");
+@import url("./styles/lists.css");
+@import url("./styles/inspector.css");
+@import url("./styles/screens.css");
+@import url("./styles/responsive.css");

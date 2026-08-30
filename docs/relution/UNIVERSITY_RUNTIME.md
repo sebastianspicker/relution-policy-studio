@@ -16,7 +16,7 @@ one live change is safe.
 | Layer | Location | Content and authority |
 | --- | --- | --- |
 | University profile | `packages/university/desired-state.json` | Public, PII-free organization, cohort, policy, group, assignment, workflow, and rollout intent; never target authority |
-| Profile schema and validator | `schemas/university-profile.schema.json`, `scripts/university_profile.py` | Structural and semantic rules, including namespace closure, one-writer policy, BYOD safety, dependency cycles, and forbidden target/secret fields |
+| Profile schema and validator | `schemas/university-profile.schema.json`, `campusweave.profiles` | Structural and semantic rules, including namespace closure, one-writer policy, BYOD safety, dependency cycles, and forbidden target/secret fields |
 | Target-context template | `templates/university-runtime-target.json` | Credential-free local binding shape for one origin, organization, contract, catalog, binding set, inventory snapshot, profile digest, and private `evidence_root` |
 | Offline plan | Output from `plan build` | Owner-only, deterministic 48-step graph of abstract, unresolved intents; every step remains `unbound` and blocked, rather than identifying one target resource |
 | Exact target contract layer | OpenAPI export, generated catalog, and contract-bound operation references | Target-local evidence with operator-asserted, explicitly unproven role semantics; still not authorization |

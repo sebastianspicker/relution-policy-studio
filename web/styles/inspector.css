@@ -4,7 +4,7 @@
   position: relative;
   padding: 22px 22px 28px;
   border-left: 1px solid var(--line);
-  background: linear-gradient(180deg, #f4f7fa 0%, #eef2f6 100%);
+  background: linear-gradient(180deg, rgb(244 247 250) 0%, rgb(238 242 246) 100%);
 }
 
 /* Raised dossier card: style header + sections as a continuous surface card */
@@ -212,10 +212,10 @@
 .inspector-boundary {
   margin: 12px 0 0;
   padding: 12px 14px;
-  border: 1px solid #e5d3bf;
+  border: 1px solid rgb(229 211 191);
   border-radius: var(--radius);
   background: var(--amber-soft);
-  color: #6b3a18;
+  color: rgb(107 58 24);
   font-size: 12.5px;
   line-height: 1.45;
 }

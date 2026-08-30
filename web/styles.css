@@ -1,4 +1,4 @@
-/* CampusWeave Academic Ledger - modular stylesheet entry */
+/* Modular stylesheet entry point. */
 @import url("./styles/tokens.css");
 @import url("./styles/base.css");
 @import url("./styles/shell.css");

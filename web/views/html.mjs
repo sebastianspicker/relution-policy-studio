@@ -18,7 +18,7 @@ export function escapeHtml(value) {
     .replaceAll("'", '&#039;')
 }
 
-const DISPLAY_VALUES = {
+const DISPLAY_VALUES = new Map(Object.entries({
   android_enterprise: 'Android Enterprise',
   assignment_scope: 'Assignment scope',
   byod: 'BYOD',
@@ -31,18 +31,19 @@ const DISPLAY_VALUES = {
   sensitive_personal: 'Sensitive personal',
   target_contract_required: 'Target contract required',
   windows: 'Windows',
-}
+}))
 
 export function displayValue(value) {
   const source = String(value ?? '')
-  if (DISPLAY_VALUES[source]) return DISPLAY_VALUES[source]
+  const display = DISPLAY_VALUES.get(source)
+  if (display) return display
   return source
     .replace(/^ring\./, '')
     .replaceAll('_', ' ')
     .replace(/\b\w/g, (letter) => letter.toUpperCase())
 }
 
-export const paths = {
+export const paths = new Map(Object.entries({
   home: '<path d="M3 10.7 12 3l9 7.7v9.8a.5.5 0 0 1-.5.5H15v-7H9v7H3.5a.5.5 0 0 1-.5-.5z"/>',
   institution: '<path d="M3 9h18M5 9v9m4-9v9m6-9v9m4-9v9M2 21h20M12 3 3 7h18z"/>',
   organization: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M5 15.5v-4h14v4"/>',
@@ -69,10 +70,10 @@ export const paths = {
   copy: '<rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V4H4v12h4"/>',
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
   close: '<path d="m6 6 12 12M18 6 6 18"/>',
-}
+}))
 
 export function icon(name, className = '') {
-  return `<svg class="icon ${escapeHtml(className)}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.review}</svg>`
+  return `<svg class="icon ${escapeHtml(className)}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths.get(name) || paths.get('review')}</svg>`
 }
 
 export function statusTag(text, tone = 'neutral') {

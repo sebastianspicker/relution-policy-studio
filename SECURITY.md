@@ -1,46 +1,18 @@
 # Security policy
 
-## Supported versions
+Security fixes apply to the current unpublished source candidate. Use private
+vulnerability reporting when available. Never include credentials, customer data,
+target hostnames, inventories, contracts, or live configuration in a public issue.
 
-CampusWeave is unpublished alpha software. Security fixes apply only to the
-current source candidate.
+Normal CampusWeave behavior is loopback-only and offline: strict bounded JSON,
+reference-derived profiles, unbound plans, no credential access, no target
+configuration, and no outbound network. Report any path that weakens those
+boundaries or exposes sensitive values.
 
-## Reporting a vulnerability
+Private artifact access requires POSIX no-follow, directory-relative,
+mode-setting, and hard-link primitives and fails closed when they are missing.
+Only macOS is exercised in the current CI matrix; an unverified platform must not
+silently receive weaker symlink or file-mode protection.
 
-Use GitHub private vulnerability reporting when it is available. Do not include
-credentials, customer exports, tenant identifiers, device or user data, or live
-configuration in a public issue.
-
-If private reporting is unavailable, open a public issue with a minimal
-non-sensitive description and request a private contact channel. Do not publish
-exploit details before a fix and disclosure plan are available.
-
-## Security boundary
-
-CampusWeave is designed to:
-
-- listen only on `127.0.0.1:8766`;
-- accept only fixed local routes and request shapes;
-- validate strict bounded JSON;
-- compile profiles and plans without network or mutation capability;
-- keep target contracts and evidence outside the public source tree; and
-- keep Relution authentication material out of process arguments and files.
-
-Report any behavior that:
-
-- reads a credential or target artifact during normal web or offline CLI use;
-- contacts a non-loopback service;
-- accepts arbitrary target configuration through the browser;
-- produces a plan with operation bindings or execution authorization;
-- exposes sensitive values in errors, logs, output, or screenshots; or
-- bypasses path, ownership, mode, symlink, origin, or request-size checks.
-
-## Relution operations
-
-Repository documentation does not authorize access to a Relution instance.
-Live work requires an explicitly authorized target, exact target contract,
-defined organization and resource scope, least-privilege identity, read-back,
-audit evidence, and a recovery plan.
-
-Do not retry a timed-out mutation until current state and audit evidence show
-that another request is safe.
+The Relution transport adapter requires separate, explicit authorization and exact
+target validation. It is not a supported mechanism for probing or mutating targets.

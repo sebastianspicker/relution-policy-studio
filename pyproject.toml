@@ -1,10 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "campusweave"
 version = "0.1.0"
+description = "Offline university intent planning and Relution contract review"
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
+classifiers = ["Operating System :: POSIX"]
+
+[project.optional-dependencies]
+dev = [
+  "pyright==1.1.411",
+  "ruff==0.16.5",
+]
+
+[project.scripts]
+campusweave = "campusweave.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["campusweave*"]
 
 [tool.ruff]
 line-length = 100
-[tool.pytest.ini_options]
-addopts = "-q"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

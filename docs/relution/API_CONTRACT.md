@@ -104,8 +104,9 @@ printf '\n'
 Source the repository's tested zsh wrapper. It supplies the header through a
 pipe to curl's standard-input configuration, so the expanded token is neither a
 curl process argument, exported environment value, nor disk-backed/persistent
-config file. It disables ambient `.curlrc` configuration before loading the
-pipe, bypasses proxies, and requires exactly one HTTPS URL within the explicitly
+config file. The wrapper rejects `RELUTION_API_TOKEN` when it has the zsh export
+attribute. It disables ambient `.curlrc` configuration before loading the pipe,
+bypasses proxies, and requires exactly one HTTPS URL within the explicitly
 configured `RELUTION_API_SERVER` origin and base path. Its option allowlist
 blocks redirects, TLS bypass, alternate authentication, generated libcurl
 source, and ambiguous curl option forms.
@@ -113,6 +114,10 @@ source, and ambiguous curl option forms.
 ```zsh
 source scripts/relution_curl.zsh
 ```
+
+Use the wrapper only in a trusted interactive shell with a trusted `PATH` that
+resolves the intended curl executable. The caller also remains responsible for
+the local request-body and evidence-output paths supplied to curl.
 
 `relution_curl` consumes standard input for its ephemeral curl configuration.
 Provide request bodies with `--data-binary @file`, not `@-`. The wrapper permits

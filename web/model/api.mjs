@@ -3,13 +3,13 @@ export const MAX_IMPORT_BYTES = 2 * 1024 * 1024
 export class CampusWeaveApiError extends Error {
   constructor(status, payload) {
     const code = payload?.code || payload?.error || 'request_failed'
-    const messages = {
-      invalid_request: 'The local compiler rejected this profile.',
-      planner_unavailable: 'The local planner could not produce a safe plan.',
-      reference_unavailable: 'The checked-in university profile is unavailable.',
-      invalid_request_origin: 'CampusWeave refused a non-loopback request.',
-    }
-    super(payload?.message || messages[code] || `CampusWeave request failed (${status})`)
+    const messages = new Map([
+      ['invalid_request', 'The local compiler rejected this profile.'],
+      ['planner_unavailable', 'The local planner could not produce a safe plan.'],
+      ['reference_unavailable', 'The checked-in university profile is unavailable.'],
+      ['invalid_request_origin', 'CampusWeave refused a non-loopback request.'],
+    ])
+    super(payload?.message || messages.get(code) || `CampusWeave request failed (${status})`)
     this.name = 'CampusWeaveApiError'
     this.status = status
     this.code = code

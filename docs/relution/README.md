@@ -4,6 +4,8 @@ This directory contains the Relution contract handbook, machine-readable
 registries, schemas, templates, reference university profile, and fail-closed
 catalog placeholders used by CampusWeave.
 
+The adapter commands below assume `python3 -m pip install --editable .`.
+
 CampusWeave performs no live Relution request. The transport helper is available
 only for separately authorized operations that satisfy the contract and safety
 requirements below.

@@ -24,18 +24,22 @@ jobs:
           python-version: "3.11"
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-      - name: Python tests
-        run: python3 -m unittest discover -s tests -v
-      - name: CampusWeave JavaScript tests
-        run: node --test tests/test_campusweave_ui.mjs
-      - name: Static syntax and machine docs
+          node-version: "20.19.0"
+      - name: Install package
+        run: python3 -m pip install --editable '.[dev]'
+      - name: Install frontend tooling
+        run: npm ci
+      - name: Behavioral and architecture tests
         run: |
-          node --check web/app.js
-          node --check web/model.mjs
-          node --check web/views.mjs
-          python3 -m py_compile scripts/render_relution_openapi.py
-          python3 -m py_compile scripts/validate_machine_docs.py
+          ruff check .
+          ruff format --check campusweave scripts tests
+          pyright
+          python3 -m unittest discover -s tests -v
+          npm test
+          npm run lint
+      - name: Syntax and machine-contract validation
+        run: |
+          find web -type f \( -name '*.js' -o -name '*.mjs' \) -exec node --check {} +
+          find campusweave scripts -type f -name '*.py' -exec python3 -m py_compile {} +
           python3 scripts/validate_machine_docs.py
           zsh -n scripts/relution_curl.zsh
-          zsh -n scripts/capture_campusweave_screenshots.zsh

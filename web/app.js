@@ -25,38 +25,55 @@ const {
   resetToReference,
 } = createActions({ state, runtime, app })
 
+const actionHandlers = new Map([
+  ['navigate', (control) => void navigate(control.dataset.step)],
+  ['toggle-navigation', () => setNavigation(!state.navigationOpen, { returnFocus: state.navigationOpen })],
+  ['close-navigation', () => setNavigation(false, { returnFocus: true })],
+  ['import', () => void beginImport()],
+  ['validate', () => void compileCurrent()],
+  ['use-reference', () => void resetToReference()],
+  ['confirm-accept', () => resolveConfirmation(true)],
+  ['confirm-cancel', () => resolveConfirmation(false)],
+  ['retry-reference', () => void loadReference()],
+  ['dismiss', dismissNotice],
+  ['export', (control) => exportArtifact(control.dataset.kind)],
+  ['copy-digest', () => void copyProfileDigest()],
+  ['clear-filter', clearFilter],
+])
+
+function dismissNotice() {
+  clearNoticeTimer()
+  state.notice = ''
+  state.error = undefined
+  render()
+}
+
+function clearFilter(control) {
+  const filter = control.dataset.filter
+  const focusId = filter === 'policies' ? 'policy-search' : 'assignment-search'
+  if (filter === 'policies') state.filters.policies = ''
+  else if (filter === 'assignments') state.filters.assignments = ''
+  else return
+  render({ focusId })
+}
+
+function selectEntity(control, action) {
+  const section = action.slice('select-'.length)
+  if (section === 'groups') state.selected.groups = control.dataset.id
+  else if (section === 'policies') state.selected.policies = control.dataset.id
+  else if (section === 'assignments') state.selected.assignments = control.dataset.id
+  else return
+  state.selectionAnnouncement = `${control.querySelector('strong')?.textContent || 'Item'} selected. Details updated.`
+  render({ focusSelection: { action, id: control.dataset.id } })
+}
+
 app.addEventListener('click', (event) => {
   const control = event.target.closest('[data-action]')
   if (!control) return
   const action = control.dataset.action
-  if (action === 'navigate') void navigate(control.dataset.step)
-  else if (action === 'toggle-navigation') {
-    setNavigation(!state.navigationOpen, { returnFocus: state.navigationOpen })
-  } else if (action === 'close-navigation') setNavigation(false, { returnFocus: true })
-  else if (action === 'import') void beginImport()
-  else if (action === 'validate') void compileCurrent()
-  else if (action === 'use-reference') void resetToReference()
-  else if (action === 'confirm-accept') resolveConfirmation(true)
-  else if (action === 'confirm-cancel') resolveConfirmation(false)
-  else if (action === 'retry-reference') void loadReference()
-  else if (action === 'dismiss') {
-    clearNoticeTimer()
-    state.notice = ''
-    state.error = undefined
-    render()
-  } else if (action === 'export') exportArtifact(control.dataset.kind)
-  else if (action === 'copy-digest') void copyProfileDigest()
-  else if (action === 'clear-filter') {
-    const filter = control.dataset.filter
-    state.filters[filter] = ''
-    render({ focusId: filter === 'policies' ? 'policy-search' : 'assignment-search' })
-  }
-  else if (action?.startsWith('select-')) {
-    const section = action.slice('select-'.length)
-    state.selected[section] = control.dataset.id
-    state.selectionAnnouncement = `${control.querySelector('strong')?.textContent || 'Item'} selected. Details updated.`
-    render({ focusSelection: { action, id: control.dataset.id } })
-  }
+  const handler = actionHandlers.get(action)
+  if (handler) handler(control)
+  else if (action?.startsWith('select-')) selectEntity(control, action)
 })
 
 app.addEventListener('submit', (event) => {
@@ -85,7 +102,9 @@ app.addEventListener('input', (event) => {
   const control = event.target.closest('[data-filter]')
   if (!control) return
   const filter = control.dataset.filter
-  state.filters[filter] = control.value
+  if (filter === 'policies') state.filters.policies = control.value
+  else if (filter === 'assignments') state.filters.assignments = control.value
+  else return
   const selectionStart = control.selectionStart
   render({ focusId: control.id, selectionStart })
 })
@@ -102,41 +121,43 @@ skipLink?.addEventListener('click', (event) => {
   document.querySelector('#main-content')?.focus({ preventScroll: true })
 })
 
-window.addEventListener('keydown', (event) => {
-  if (state.confirmation && event.key === 'Tab') {
-    const controls = [...document.querySelectorAll('.confirmation-dialog button:not([disabled])')]
-    const first = controls[0]
-    const last = controls.at(-1)
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault()
-      last?.focus()
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault()
-      first?.focus()
-    }
-  }
-  if (event.key === 'Tab' && state.compact && state.navigationOpen) {
-    const controls = [...document.querySelectorAll('#workflow-navigation button:not([disabled])')]
-    const first = controls[0]
-    const last = controls.at(-1)
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault()
-      last?.focus()
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault()
-      first?.focus()
-    }
-  }
-  if (!state.confirmation && (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') {
-    event.preventDefault()
-    void compileCurrent('Profile and offline plan revalidated.')
-  }
-  if (event.key === 'Escape' && state.confirmation) {
+function trapFocus(event, selector) {
+  const controls = [...document.querySelectorAll(selector)]
+  const first = controls[0]
+  const last = controls.at(-1)
+  const backwardsFromFirst = event.shiftKey && document.activeElement === first
+  const forwardsFromLast = !event.shiftKey && document.activeElement === last
+  if (!backwardsFromFirst && !forwardsFromLast) return
+  event.preventDefault()
+  if (backwardsFromFirst) last?.focus()
+  else first?.focus()
+}
+
+function handleKeyboardShortcut(event) {
+  if (state.confirmation || !(event.metaKey || event.ctrlKey) || event.key.toLowerCase() !== 's') return
+  event.preventDefault()
+  void compileCurrent('Profile and offline plan revalidated.')
+}
+
+function handleEscape(event) {
+  if (event.key !== 'Escape') return
+  if (state.confirmation) {
     event.preventDefault()
     resolveConfirmation(false)
-  } else if (event.key === 'Escape' && state.navigationOpen) {
+  } else if (state.navigationOpen) {
     setNavigation(false, { returnFocus: true })
   }
+}
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab' && state.confirmation) {
+    trapFocus(event, '.confirmation-dialog button:not([disabled])')
+  }
+  if (event.key === 'Tab' && state.compact && state.navigationOpen) {
+    trapFocus(event, '#workflow-navigation button:not([disabled])')
+  }
+  handleKeyboardShortcut(event)
+  handleEscape(event)
 })
 
 const compactQuery = window.matchMedia('(max-width: 900px)')

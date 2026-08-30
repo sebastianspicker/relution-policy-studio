@@ -65,7 +65,7 @@
 
 .entity-row:last-child { border-bottom: 0; }
 
-.entity-row:hover { background: #f5f8fb; }
+.entity-row:hover { background: rgb(245 248 251); }
 
 /* Selection: full-row fill + inset ring (no left stripe) */
 .entity-row.selected {
@@ -187,7 +187,7 @@
 
 .assignment-row:last-of-type { border-bottom: 0; }
 
-.assignment-row:hover { background: #f5f8fb; }
+.assignment-row:hover { background: rgb(245 248 251); }
 
 .assignment-row.selected {
   background: var(--blueprint);
@@ -196,7 +196,7 @@
 
 .assignment-row.selected .device-icon {
   border-color: var(--cobalt);
-  background: #fff;
+  background: rgb(255 255 255);
   color: var(--cobalt);
 }
 

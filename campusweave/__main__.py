@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from .service import create_server
+from .server import create_server
 
 
 def main() -> int:

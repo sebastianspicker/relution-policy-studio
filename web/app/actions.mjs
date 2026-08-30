@@ -17,7 +17,8 @@ import { renderApp, selectedDefaults } from '../views.mjs'
 export function createActions({ state, runtime, app }) {
   function render(options = {}) {
     app.setAttribute('aria-busy', String(state.busy || !state.bundle))
-    app.innerHTML = renderApp(state)
+    const rendered = new DOMParser().parseFromString(renderApp(state), 'text/html')
+    app.replaceChildren(...rendered.body.childNodes)
     consumeSelectionAnnouncement()
     if (state.bundle) {
       document.title = `${state.bundle.profile.package.institution_label} · CampusWeave`
@@ -229,12 +230,7 @@ export function createActions({ state, runtime, app }) {
 
   async function navigate(step, { confirmDiscard = true, updateHistory = 'push' } = {}) {
     const nextStep = stepFromHash(`#${step}`)
-    if (
-      confirmDiscard
-      && state.step === 'institution'
-      && nextStep !== 'institution'
-      && institutionDraftIsDirty()
-    ) {
+    if (shouldConfirmDiscard(nextStep, confirmDiscard)) {
       const discard = await requestConfirmation({
         title: 'Discard institution changes?',
         message: 'The validated local draft will not change. Any unsaved institution name or namespace edits will be lost.',
@@ -259,6 +255,12 @@ export function createActions({ state, runtime, app }) {
     render()
     document.querySelector('#main-content')?.focus({ preventScroll: true })
     return true
+  }
+
+  function shouldConfirmDiscard(nextStep, confirmDiscard) {
+    if (!confirmDiscard || state.step !== 'institution') return false
+    if (nextStep === 'institution') return false
+    return institutionDraftIsDirty()
   }
 
   async function confirmDraftReplacement(action) {
@@ -316,30 +318,44 @@ export function createActions({ state, runtime, app }) {
   function exportArtifact(kind) {
     if (!state.bundle || state.busy) return
     const stem = safeFilename(state.bundle.profile.package.institution_code)
-    if (kind === 'profile') {
-      downloadJson(`${stem}-profile.json`, state.bundle.profile)
-      state.exportedProfileSha256 = state.bundle.profile_sha256
-    } else if (kind === 'plan') {
-      if (state.exportedProfileSha256 !== state.bundle.profile_sha256) {
-        showError(new Error('Export this exact profile before exporting its digest-bound plan.'))
-        return
-      }
-      downloadJson(`${stem}-plan.json`, state.bundle.plan)
-    } else if (kind === 'dry-run') {
-      downloadJson(`${stem}-dry-run.json`, {
-        ...state.bundle.dry_run,
-        counts: state.bundle.counts,
-        profile_sha256: state.bundle.profile_sha256,
-        plan_sha256: state.bundle.plan_sha256,
-      })
+    const exportKind = new Map([
+      ['profile', () => exportProfile(stem)],
+      ['plan', () => exportPlan(stem)],
+      ['dry-run', () => exportDryRun(stem)],
+    ]).get(kind)
+    if (!exportKind || !exportKind()) return
+    showNotice(exportNotice(kind))
+  }
+
+  function exportProfile(stem) {
+    downloadJson(`${stem}-profile.json`, state.bundle.profile)
+    state.exportedProfileSha256 = state.bundle.profile_sha256
+    return true
+  }
+
+  function exportPlan(stem) {
+    if (state.exportedProfileSha256 !== state.bundle.profile_sha256) {
+      showError(new Error('Export this exact profile before exporting its digest-bound plan.'))
+      return false
     }
-    showNotice(
-      kind === 'plan'
-        ? 'Matching plan exported. Keep it with the profile you just exported and set the plan to mode 0600.'
-        : kind === 'profile'
-          ? 'Profile exported. You may now export its exact digest-bound plan.'
-        : 'Validated local artifact exported. No live operation was created.',
-    )
+    downloadJson(`${stem}-plan.json`, state.bundle.plan)
+    return true
+  }
+
+  function exportDryRun(stem) {
+    downloadJson(`${stem}-dry-run.json`, {
+      ...state.bundle.dry_run,
+      counts: state.bundle.counts,
+      profile_sha256: state.bundle.profile_sha256,
+      plan_sha256: state.bundle.plan_sha256,
+    })
+    return true
+  }
+
+  function exportNotice(kind) {
+    if (kind === 'plan') return 'Matching plan exported. Keep it with the profile you just exported and set the plan to mode 0600.'
+    if (kind === 'profile') return 'Profile exported. You may now export its exact digest-bound plan.'
+    return 'Validated local artifact exported. No live operation was created.'
   }
 
   async function copyProfileDigest() {

@@ -160,7 +160,7 @@
   gap: 10px;
   width: min(440px, calc(100vw - 32px));
   padding: 14px;
-  border: 1px solid #a8cdbf;
+  border: 1px solid rgb(168 205 191);
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: 0 14px 36px rgba(16, 24, 32, 0.12);
@@ -168,7 +168,7 @@
 }
 
 .toast.error {
-  border-color: #e3afb3;
+  border-color: rgb(227 175 179);
   color: var(--red);
 }
 

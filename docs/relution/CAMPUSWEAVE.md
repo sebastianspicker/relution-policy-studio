@@ -1,7 +1,8 @@
 # CampusWeave interface
 
 CampusWeave is the browser interface for the checked-in university profile and
-offline plan compiler. It runs locally and has no Relution connection.
+offline plan compiler. It runs locally, has no Relution connection, and is served
+by the package loopback boundary.
 
 ## Start the service
 
@@ -97,8 +98,7 @@ rollback viability.
 ## Tests
 
 ```sh
-python3 -m unittest tests/test_campusweave.py -v
-node --test tests/test_campusweave_ui.mjs
+python3 -m unittest discover -s tests -v
 ```
 
 Frontend architecture and manual browser checks are documented in

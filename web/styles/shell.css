@@ -19,7 +19,7 @@
   padding: 0 clamp(20px, 2.2vw, 28px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   background: var(--seal-deep);
-  color: #f4f7f9;
+  color: rgb(244 247 249);
   box-shadow: var(--shadow-soft);
 }
 
@@ -39,8 +39,8 @@
 }
 
 /* Light weave strokes on dark seal */
-.brand-mark .weave-a { stroke: #7eb6d9; }
-.brand-mark .weave-b { stroke: #6fc4a8; }
+.brand-mark .weave-a { stroke: rgb(126 182 217); }
+.brand-mark .weave-b { stroke: rgb(111 196 168); }
 
 .product-title {
   padding-right: 16px;
@@ -49,7 +49,7 @@
   font-size: 16px;
   font-weight: 650;
   letter-spacing: -.02em;
-  color: #f4f7f9;
+  color: rgb(244 247 249);
 }
 
 .institution-switch {
@@ -63,7 +63,7 @@
   border: 0;
   border-radius: var(--radius);
   background: transparent;
-  color: #d7e4ee;
+  color: rgb(215 228 238);
   cursor: pointer;
 }
 
@@ -74,7 +74,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #fff;
+  color: rgb(255 255 255);
   font-weight: 600;
 }
 
@@ -112,28 +112,28 @@
 .top-bar .button.secondary {
   border-color: rgba(255, 255, 255, 0.22);
   background: transparent;
-  color: #eef4f8;
+  color: rgb(238 244 248);
 }
 
 .top-bar .button.secondary:hover {
   border-color: rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  color: rgb(255 255 255);
 }
 
 .top-bar .button.primary {
-  background: #e8f1f8;
+  background: rgb(232 241 248);
   color: var(--seal-deep);
 }
 
-.top-bar .button.primary:hover { background: #fff; }
+.top-bar .button.primary:hover { background: rgb(255 255 255); }
 
 .top-bar .icon-button {
   width: 34px;
   height: 34px;
   border-color: rgba(255, 255, 255, 0.22);
   background: transparent;
-  color: #eef4f8;
+  color: rgb(238 244 248);
 }
 
 .top-bar .icon-button:hover {
@@ -196,7 +196,7 @@
   opacity: 0.95;
 }
 
-/* Phase label + dots (Academic Ledger thread) */
+/* Phase labels and progress markers. */
 .journey-label {
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@
   color: inherit;
 }
 
-/* Prefer the explicit journey-dot; hide empty legacy journey-icon when both exist */
+/* The empty icon span preserves alignment while the dot supplies the marker. */
 .journey-label .journey-dot + .journey-icon { display: none; }
 
 .journey-icon .icon { display: none; }
@@ -280,12 +280,12 @@
   cursor: pointer;
 }
 
-.journey-group button[aria-current="step"] {
+.journey-group.journey-group [aria-current="step"] {
   color: var(--ink);
   font-weight: 700;
 }
 
-.journey-group button[aria-current="step"]::after {
+.journey-group.journey-group [aria-current="step"]::after {
   position: absolute;
   right: 0;
   bottom: -6px;
@@ -377,8 +377,7 @@
 }
 
 .status-chip .pip,
-.local-status .pip,
-.local-status i.pip {
+.local-status .pip {
   width: 7px;
   height: 7px;
   flex: 0 0 auto;
@@ -387,8 +386,8 @@
   background: var(--sage);
 }
 
-.local-status {
-  color: var(--ink-soft) !important;
+.status-rail .local-status {
+  color: var(--ink-soft);
   font-weight: 650;
 }
 

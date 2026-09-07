@@ -1,0 +1,50 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only dedicated_kiosk task_specific_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "WINDOWS",
+  "uuid": "CD478A71-2A36-401B-A93A-78CF890D9B3E",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "edgeBrowserRefreshIdleTime": 15,
+            "edgeKioskModeType": "PUBLIC_BROWSING",
+            "edgeKioskURL": "${ENV:WINDOWS_KIOSK_URL}",
+            "enabled": true,
+            "kioskAppType": "MICROSOFT_EDGE_BROWSER",
+            "kioskModeType": "SINGLE_APP",
+            "showEndSessionButton": true,
+            "type": "WINDOWS_KIOSK_MODE",
+            "userLogonType": "AUTO_LOGON",
+            "uuid": "FF57812B-8881-49EB-A6FF-0C246AA11905"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "4F93D88D-2F51-4AAD-A22F-8CD65CD192B4"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "DDAA95DC-F8B3-48A6-A02D-0B207D5009CB",
+      "version": 1
+    }
+  ]
+}

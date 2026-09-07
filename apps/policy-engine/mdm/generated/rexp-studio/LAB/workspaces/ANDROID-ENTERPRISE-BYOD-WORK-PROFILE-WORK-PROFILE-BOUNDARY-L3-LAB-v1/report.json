@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "331B6177-FD15-4DB6-ACEE-FAFA24DD7144": "ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

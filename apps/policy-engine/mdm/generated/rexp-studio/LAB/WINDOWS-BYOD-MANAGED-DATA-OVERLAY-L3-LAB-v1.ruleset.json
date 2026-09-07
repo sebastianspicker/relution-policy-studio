@@ -1,0 +1,16 @@
+{
+  "configurations": [],
+  "controls": [
+    "MDM-DATA-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [],
+  "enrollment_model": "WINDOWS",
+  "generated_name": "WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1",
+  "layer": 3,
+  "platform": "WINDOWS",
+  "policy_id": "WIN-BYOD-DATA-L3-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

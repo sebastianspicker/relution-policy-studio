@@ -1,0 +1,32 @@
+schema_version: 1
+policy_id: AND-KIOSK-DEDICATED-L5-LAB-v1
+platform: ANDROID_ENTERPRISE
+model: dedicated
+ownership: corporate
+enrollment_model: ANDROID_ENTERPRISE_DEVICE_OWNER
+layer: 5
+purpose: task_specific_overlay
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-APP-001, MDM-LIFE-001]
+dependencies: [AND-CORP-BASELINE-L1-LAB-v1]
+environment_placeholders: ['${ENV:ANDROID_KIOSK_PACKAGE}']
+settings:
+  - configuration_type: ANDROID_ENTERPRISE_KIOSK_MODE
+    values:
+      powerButtonActions: POWER_BUTTON_AVAILABLE
+      systemErrorWarnings: ERROR_AND_WARNINGS_ENABLED
+      systemNavigation: HOME_BUTTON_ONLY
+      statusBar: SYSTEM_INFO_ONLY
+      deviceSettings: SETTINGS_ACCESS_BLOCKED
+      kioskCustomLauncher:
+        displayName: Managed task app
+        packageName: '${ENV:ANDROID_KIOSK_PACKAGE}'
+        installType: KIOSK
+        source: PLAY_STORE
+        defaultPermissionPolicy: PROMPT
+        lockTaskAllowed: true
+    control_ids: [MDM-APP-001]
+rings: [LAB]
+production_ready: false

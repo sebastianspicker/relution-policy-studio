@@ -1,0 +1,17 @@
+{
+  "configurations": [],
+  "controls": [
+    "MDM-INT-001"
+  ],
+  "dependencies": [
+    "AND-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "ANDROID_ENTERPRISE_DEVICE_OWNER",
+  "generated_name": "ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1",
+  "layer": 5,
+  "platform": "ANDROID_ENTERPRISE",
+  "policy_id": "AND-SAMSUNG-OEM-L5-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

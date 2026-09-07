@@ -1,0 +1,95 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only corporate_mac baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "MACOS",
+  "uuid": "F710001F-81BB-4097-A7A9-80E93582C1B6",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "forcePIN": true,
+            "maxInactivityMinutes": 15,
+            "minLength": 12,
+            "requireAlphanumeric": true,
+            "type": "IOS_PASSCODE",
+            "uuid": "11F3B3D2-59BE-44DE-A44E-B2E3A40DCB2C"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "EED8FEF1-FB62-439E-A194-91B8FBC28410"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "enableRecoveryKeyEscrow": true,
+            "type": "MACOS_FILE_VAULT",
+            "uuid": "B209E6C0-78E7-456A-A30C-64FF45A92203"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "65E9A175-949D-4ABD-A819-EA6DA5B5B764"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowSigned": true,
+            "allowSignedApp": true,
+            "blockAllIncoming": false,
+            "enabled": true,
+            "enableFirewall": true,
+            "enableStealthMode": true,
+            "type": "MACOS_FIREWALL",
+            "uuid": "82CE3A3A-270F-49D2-A219-20E34B7CBBB5"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "42151B86-A9E3-42F1-A1BA-31876506CEF0"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowPreReleaseInstallation": false,
+            "automaticCheckEnabled": true,
+            "automaticDownload": true,
+            "configDataInstall": true,
+            "criticalUpdateInstall": true,
+            "enabled": true,
+            "type": "MACOS_UPDATE",
+            "updateMode": "INSTALL_ASAP",
+            "uuid": "31587DE5-6AF6-4562-A2B7-D607B828A69B"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "466B9F8C-308A-42FE-AAA9-E7B78AA7EA10"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "E0D690B7-B7F2-445B-ACD7-30C98DF61E2F",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-DATA-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_RESTRICTION",
+      "values": {
+        "androidEnterpriseCrossProfilePolicy": {
+          "crossProfileCopyPaste": "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED",
+          "crossProfileDataSharing": "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED"
+        },
+        "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+        "enabled": true,
+        "type": "ANDROID_ENTERPRISE_RESTRICTION"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-AUTH-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+      "values": {
+        "enabled": true,
+        "minLength": 8,
+        "quality": "ALPHANUMERIC",
+        "type": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+        "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-DATA-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [],
+  "enrollment_model": "ANDROID_ENTERPRISE_PROFILE_OWNER",
+  "generated_name": "ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1",
+  "layer": 3,
+  "platform": "ANDROID_ENTERPRISE",
+  "policy_id": "AND-BYOD-DATA-L3-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

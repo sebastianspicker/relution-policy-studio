@@ -1,0 +1,38 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-APP-001"
+      ],
+      "type": "IOS_APP_LOCK",
+      "values": {
+        "disableAutoLock": false,
+        "enableAssistiveTouch": true,
+        "enabled": true,
+        "enableVoiceOver": true,
+        "enableZoom": true,
+        "identifier": {
+          "appType": "PUBLIC",
+          "displayName": "Managed task app",
+          "packageName": "${ENV:IOS_KIOSK_BUNDLE_ID}"
+        },
+        "type": "IOS_APP_LOCK"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-APP-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "APL-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "IOS",
+  "generated_name": "IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1",
+  "layer": 5,
+  "platform": "IOS",
+  "policy_id": "APL-KIOSK-DEDICATED-L5-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

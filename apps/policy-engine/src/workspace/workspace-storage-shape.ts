@@ -1,0 +1,7 @@
+/** Validates serializable workspace values and portable policy paths. */
+import { assertPlainJson } from "../platform/serialization/json-integrity.js";
+import { isPolicyPath, policyPathCollisionKey } from "./policy-path.js";
+import type { JsonRecord } from "../platform/serialization/json-guards.js";
+import type { PolicyWorkspace } from "./types.js";
+export function assertPersistableWorkspaceShape(workspace: PolicyWorkspace, maximumPolicies: number): void { assertWorkspaceRecord(workspace.metadata, "Workspace metadata"); assertWorkspaceRecord(workspace.report, "Workspace report"); if (!Array.isArray(workspace.policies)) throw new Error("Workspace policies must be an array"); if (workspace.policies.length > maximumPolicies) throw new Error(`Workspace contains more than ${String(maximumPolicies)} policy files`); const seen = new Set<string>(); for (const policy of workspace.policies) { if (typeof policy.path !== "string" || !isPolicyPath(policy.path)) throw new Error(`Workspace policy path is invalid: ${String(policy.path)}`); const key = policyPathCollisionKey(policy.path); if (seen.has(key)) throw new Error(`Workspace policy path is duplicated or collides on a portable filesystem: ${policy.path}`); seen.add(key); assertWorkspaceRecord(policy.document, `Workspace policy document ${policy.path}`); } }
+function assertWorkspaceRecord(value: unknown, label: string): asserts value is JsonRecord { if (typeof value !== "object" || value === null || Array.isArray(value)) throw new Error(`${label} must be a JSON object`); assertPlainJson(value, label); }

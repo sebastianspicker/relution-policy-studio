@@ -1,0 +1,137 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only corporate_workstation_laptop baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "WINDOWS",
+  "uuid": "1AEC1DB3-C513-4572-A08E-FCC9DB360AD3",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowBehaviorMonitoring": true,
+            "allowCloudProtection": true,
+            "allowRealtimeMonitoring": true,
+            "enabled": true,
+            "enableNetworkProtection": "ON",
+            "puaProtection": "ON",
+            "submitSamplesConsent": "SAFE",
+            "type": "WINDOWS_ANTIVIRUS",
+            "uuid": "7E0FEED4-F71C-4983-A338-078886C4E741"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "B37BAD8C-EA8B-4030-AC02-C75A405F7577"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowStandardUserEncryption": false,
+            "enabled": true,
+            "requireDeviceEncryption": true,
+            "type": "WINDOWS_BITLOCKER",
+            "uuid": "5B8B84A1-817C-4B45-A8A0-A524D68BD616"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "419FC261-164B-4C32-A6D8-7AD212E7DE14"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "configureGlobalProperties": true,
+            "domainProfile": {
+              "configureProfileProperties": true,
+              "enableFirewall": true,
+              "profileType": "DOMAIN_PROFILE"
+            },
+            "enabled": true,
+            "privateProfile": {
+              "configureProfileProperties": true,
+              "enableFirewall": true,
+              "profileType": "PRIVATE_PROFILE"
+            },
+            "publicProfile": {
+              "configureProfileProperties": true,
+              "enableFirewall": true,
+              "profileType": "PUBLIC_PROFILE"
+            },
+            "type": "WINDOWS_FIREWALL",
+            "uuid": "111D0963-1B84-4659-A796-D3022BAB4AC5"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "A17F3C55-F431-4CFB-A878-B0830068C7A5"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowBiometricAuthentication": true,
+            "enabled": true,
+            "minimumPinLength": 6,
+            "type": "WINDOWS_HELLO",
+            "useTpm": true,
+            "uuid": "CA071779-1ED0-4A37-A187-843BD80F139E"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "5BCFF681-3857-42C3-A65C-1AFC8CBC8D0E"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "history": 8,
+            "maxInactivityTime": 15,
+            "minLength": 12,
+            "type": "WINDOWS_PASSCODE",
+            "uuid": "7930AD0C-9647-4448-ACA9-D5C07B2A65C9"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "47784B4F-D5BE-407A-A8F3-6AC13F6C8AE0"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowDownloadsOverMeteredNetworks": false,
+            "deadlineForFeatureUpdates": 30,
+            "deadlineForQualityUpdates": 7,
+            "deadlineGracePeriod": 0,
+            "enabled": true,
+            "type": "WINDOWS_UPDATE",
+            "uuid": "F5B0376F-7B83-45ED-AAC4-A282C3136D17"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "57EE91F6-43AF-410F-A871-24DA7FB44703"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "1FB4A225-D347-4024-A725-FDE8C4D6675A",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "type": "IOS_PASSCODE",
+  "allowSimple": false,
+  "minLength": 6
+}

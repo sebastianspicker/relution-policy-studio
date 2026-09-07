@@ -1,0 +1,22 @@
+schema_version: 1
+policy_id: WIN-PRIV-ADMIN-L5-LAB-v1
+platform: WINDOWS
+model: privileged_workstation
+ownership: corporate
+enrollment_model: WINDOWS
+layer: 5
+purpose: privileged_overlay
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-APP-001, MDM-INT-001]
+dependencies: [WIN-CORP-BASELINE-L1-LAB-v1]
+environment_placeholders: ['${ENV:WINDOWS_WDAC_POLICY_BASE64}', '${ENV:WINDOWS_WDAC_POLICY_ID}']
+settings:
+  - configuration_type: WINDOWS_APP_CONTROL
+    values:
+      fileBytes: '${ENV:WINDOWS_WDAC_POLICY_BASE64}'
+      appControlId: '${ENV:WINDOWS_WDAC_POLICY_ID}'
+    control_ids: [MDM-APP-001, MDM-INT-001]
+rings: [LAB]
+production_ready: false

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rexp-studio.example/schemas/mdm-generated-manifest.schema.json",
+  "title": "MdmGeneratedManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "relution_version", "generated_ring", "status", "production_ready", "source_hashes", "output_hashes", "artifacts", "import_behavior", "required_manual_values", "archive_generation", "validation"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "relution_version": {"const": "26.1.1"},
+    "generated_ring": {"const": "LAB"},
+    "status": {"const": "REFERENCE_VALIDATED"},
+    "production_ready": {"const": false},
+    "source_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+    "output_hashes": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "kind"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "kind": {"enum": ["ruleset", "workspace"]}}}},
+    "artifacts": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+    "import_behavior": {"const": "create-or-explicit-update-after-human-diff"},
+    "required_manual_values": {"type": "array", "items": {"type": "string", "pattern": "^\\$\\{ENV:[A-Z][A-Z0-9_]*\\}$"}},
+    "archive_generation": {"type": "object", "additionalProperties": false, "required": ["runtime_key_env", "output_lane", "deterministic_manifest_excludes_encrypted_archive_hashes"], "properties": {"runtime_key_env": {"const": "RELUTION_REXP_KEY"}, "output_lane": {"const": "private/mdm-archives/LAB"}, "deterministic_manifest_excludes_encrypted_archive_hashes": {"const": true}}},
+    "validation": {"$ref": "#/$defs/validation"}
+  },
+  "$defs": {
+    "validation": {"type": "object", "additionalProperties": false, "required": ["syntax_validated", "schema_validated", "roundtrip_imported_in_lab", "applied_to_test_device", "rollback_tested", "production_approved"], "properties": {"syntax_validated": {"type": "boolean"}, "schema_validated": {"type": "boolean"}, "roundtrip_imported_in_lab": {"type": "boolean"}, "applied_to_test_device": {"type": "boolean"}, "rollback_tested": {"type": "boolean"}, "production_approved": {"const": false}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["policy_id", "source_path", "ruleset_path", "workspace_path", "prerequisites", "required_manual_values", "expected_create_update_behavior", "rollback_reference", "syntax_validated", "schema_validated", "roundtrip_imported_in_lab", "applied_to_test_device", "rollback_tested", "production_approved"], "properties": {"policy_id": {"type": "string"}, "source_path": {"type": "string"}, "ruleset_path": {"type": "string"}, "workspace_path": {"type": "string"}, "prerequisites": {"type": "array", "items": {"type": "string"}}, "required_manual_values": {"type": "array", "items": {"type": "string"}}, "expected_create_update_behavior": {"const": "create-or-explicit-update-after-human-diff"}, "rollback_reference": {"type": "string"}, "syntax_validated": {"type": "boolean"}, "schema_validated": {"type": "boolean"}, "roundtrip_imported_in_lab": {"type": "boolean"}, "applied_to_test_device": {"type": "boolean"}, "rollback_tested": {"type": "boolean"}, "production_approved": {"const": false}}}
+  }
+}

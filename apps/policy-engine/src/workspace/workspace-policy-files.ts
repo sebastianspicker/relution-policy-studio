@@ -1,0 +1,7 @@
+/** Lists only safe canonical policy filenames from a workspace. */
+import { existsSync, opendirSync } from "node:fs";
+import { join } from "node:path";
+import { isPolicyPath, policyPathCollisionKey } from "./policy-path.js";
+import { assertNoSymlinkPath } from "../platform/filesystem/path-safety.js";
+export function listPolicyFiles(root: string, maximum: number): string[] { const policies = join(root, "policies"); if (!existsSync(policies)) return []; assertNoSymlinkPath(root, "policies", "Workspace path"); const directory = opendirSync(policies); const result: string[] = []; const seen = new Set<string>(); try { for (let entry = directory.readSync(); entry !== null; entry = directory.readSync()) addEntry(entry.name, root, result, seen, maximum); } finally { directory.closeSync(); } return result.sort(); }
+function addEntry(name: string, root: string, result: string[], seen: Set<string>, maximum: number): void { const path = `policies/${name}`; if (!isPolicyPath(path)) throw new Error(`Workspace policies directory contains an unexpected entry: ${name}`); assertNoSymlinkPath(root, path, "Workspace path"); const key = policyPathCollisionKey(path); if (seen.has(key)) throw new Error(`Workspace policy filenames collide on a portable filesystem: ${name}`); seen.add(key); result.push(path); if (result.length > maximum) throw new Error(`Workspace contains more than ${String(maximum)} policy files`); }

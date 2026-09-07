@@ -1,0 +1,265 @@
+/* App shell, icon rail, provenance strip */
+
+.app-shell {
+  display: flex;
+  min-width: 0;
+  min-height: 100vh;
+  height: 100vh;
+  flex-direction: column;
+  background: var(--ci-color-page);
+}
+
+.editor-root {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  grid-template-columns: var(--ci-layout-rail-width) minmax(0, 1fr);
+  grid-template-rows: 48px 28px minmax(0, 1fr);
+}
+
+.editor-root > .app-rail {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+.editor-root > .toolbar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.editor-root > .provenance-strip {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.editor-root > .workbench-layout {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.workbench-layout {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* Icon rail — 56px ink gradient, centered 40×40 controls */
+.app-rail {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  width: var(--ci-layout-rail-width);
+  padding: 10px 0 12px;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  overflow: visible;
+  color: #a3b0bf;
+  background: var(--ci-color-ink-900, #0c1219);
+  border: 0;
+  border-right: 1px solid rgb(255 255 255 / 5%);
+}
+
+.app-rail-brand {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin: 0 0 14px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  color: #ffffff;
+  border: 0;
+  line-height: 1;
+}
+
+.app-rail-brand-mark {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ci-color-primary);
+  font-family: var(--ci-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 18%);
+}
+
+.app-rail-brand-name,
+.app-rail-brand-product {
+  /* Icon rail: brand mark only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.app-rail-btn {
+  position: relative;
+  display: grid;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0;
+  place-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0;
+  color: #a3b0bf;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.app-rail-btn:hover {
+  color: #e8eef5;
+  background: rgb(255 255 255 / 5%);
+}
+
+.app-rail-btn[aria-current="page"] {
+  color: #7fd6cd;
+  background: rgb(13 110 102 / 18%);
+  box-shadow: none;
+}
+
+.app-rail-btn[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: #5ecfc4;
+}
+
+.app-rail-icon {
+  display: inline-flex;
+  opacity: 0.92;
+}
+
+.app-rail-label {
+  /* Labels live in title/aria; hide text in icon rail */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Optional vertical local meta at rail bottom */
+.app-rail-local {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: auto 0 0;
+  padding: 10px 0 0;
+  color: #5b6b7f;
+  border-top: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--ci-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-rail-local-status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #45c4a8;
+  box-shadow: 0 0 0 3px rgb(69 196 168 / 18%);
+  writing-mode: horizontal-tb;
+  transform: none;
+}
+
+.app-rail-local strong,
+.app-rail-local small {
+  display: inline;
+  font-size: inherit;
+  font-weight: 500;
+  color: inherit;
+}
+
+.app-rail-local strong {
+  font-weight: 500;
+}
+
+.app-rail-local small {
+  margin-top: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Provenance instrument strip — Signal Desk signature */
+.provenance-strip {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  height: 28px;
+  gap: 0;
+  padding: 0 12px;
+  overflow: hidden;
+  color: #a3b0bf;
+  background: var(--ci-color-ink-800, #182230);
+  border-bottom: 1px solid rgb(255 255 255 / 5%);
+  font-family: var(--ci-font-mono);
+  font-size: 11px;
+}
+
+.provenance-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding: 0 12px;
+  border-right: 1px solid rgb(255 255 255 / 6%);
+  white-space: nowrap;
+}
+
+.provenance-item:last-child {
+  margin-left: auto;
+  border-right: 0;
+}
+
+.provenance-label {
+  color: #5b6b7f;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.provenance-value {
+  color: #d2dde8;
+}
+
+.provenance-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #45c4a8;
+  box-shadow: 0 0 0 3px rgb(69 196 168 / 18%);
+}

@@ -1,0 +1,93 @@
+/* Status bar and badges — denser ink-950 footer */
+
+.status-bar {
+  display: flex;
+  flex: 0 0 auto;
+  height: 28px;
+  padding: 0 14px;
+  align-items: center;
+  gap: 14px;
+  color: #7a8a9c;
+  background: var(--ci-color-ink-950, #070b10);
+  border-top: 1px solid rgb(255 255 255 / 6%);
+  font-family: var(--ci-font-mono);
+  font-size: 11px;
+}
+
+.status-bar-message {
+  min-width: 0;
+  overflow: hidden;
+  color: #8ad9cb;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-bar-context {
+  margin-left: auto;
+  color: #5b6b7f;
+  max-width: 48ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-bar-loopback {
+  color: #7a8a9c;
+}
+
+.status-bar-path {
+  max-width: 42ch;
+  overflow: hidden;
+  color: #5b6b7f;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-bar-message--error {
+  color: #ff9892;
+}
+
+.dirty-badge,
+.saved-badge {
+  position: relative;
+  padding: 0 0 0 14px;
+  color: #8ad9cb;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-family: var(--ci-font-mono);
+  font-size: 11px;
+}
+
+.dirty-badge {
+  color: #f3bd62;
+}
+
+.dirty-badge::before,
+.saved-badge::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.dirty-badge::before {
+  background: #f1ad49;
+  box-shadow: none;
+}
+
+.saved-badge::before {
+  background: #45c4a8;
+  box-shadow: 0 0 0 3px rgb(69 196 168 / 20%);
+}
+
+.dirty-dot {
+  width: 6px;
+  height: 6px;
+  margin-left: 0;
+  background: #e18c2f;
+}

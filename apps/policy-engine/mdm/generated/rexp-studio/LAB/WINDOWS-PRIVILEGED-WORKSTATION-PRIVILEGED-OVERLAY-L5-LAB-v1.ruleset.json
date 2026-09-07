@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-APP-001",
+        "MDM-INT-001"
+      ],
+      "type": "WINDOWS_APP_CONTROL",
+      "values": {
+        "appControlId": "${ENV:WINDOWS_WDAC_POLICY_ID}",
+        "enabled": true,
+        "fileBytes": "${ENV:WINDOWS_WDAC_POLICY_BASE64}",
+        "type": "WINDOWS_APP_CONTROL"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-APP-001",
+    "MDM-INT-001"
+  ],
+  "dependencies": [
+    "WIN-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "WINDOWS",
+  "generated_name": "WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1",
+  "layer": 5,
+  "platform": "WINDOWS",
+  "policy_id": "WIN-PRIV-ADMIN-L5-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

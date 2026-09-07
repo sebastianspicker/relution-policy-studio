@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "F710001F-81BB-4097-A7A9-80E93582C1B6": "MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

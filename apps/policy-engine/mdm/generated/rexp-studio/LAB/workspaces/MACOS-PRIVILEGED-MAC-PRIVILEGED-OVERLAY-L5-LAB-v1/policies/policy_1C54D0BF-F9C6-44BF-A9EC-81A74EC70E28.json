@@ -1,0 +1,46 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only privileged_mac privileged_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "MACOS",
+  "uuid": "1C54D0BF-F9C6-44BF-A9EC-81A74EC70E28",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowIdentifiedDevelopers": false,
+            "displayName": "Privileged endpoint Gatekeeper",
+            "enableAssessment": true,
+            "enabled": true,
+            "type": "MACOS_SYSTEM_POLICY_CONTROL",
+            "uuid": "C6ED673E-EF7D-4B6A-ADE4-D9E17DF0763C"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "DE3EA1C7-A728-4C6C-AE2B-D5DC7A1CA9DB"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "D69BF68A-944A-477E-A368-E8E1008CDE55",
+      "version": 1
+    }
+  ]
+}

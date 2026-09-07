@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "F91270E3-F76E-4D55-A511-D1AD945CC529": "ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "name": "Android Enterprise Baseline - Android Enterprise Permission Management Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "modular-target",
+    "platform": "ANDROID_ENTERPRISE",
+    "module": {
+      "kind": "relution-native",
+      "target": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+      "slug": "relution-native-android-enterprise-permission-management",
+      "label": "Android Enterprise Permission Management"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "ANDROID_ENTERPRISE",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "ANDROID_ENTERPRISE",
+      "name": "Android Enterprise Baseline - Android Enterprise Permission Management",
+      "description": "Modular Android Enterprise baseline block for ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-android-enterprise-relution-native-merged-android-enterprise-permission-management",
+          "title": "Consolidated Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-3-2-1-smartphones-tablets",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
+              "title": "Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "defaultPermissionPolicy": "DENY",
+                "enabled": true
+              },
+              "type": "ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

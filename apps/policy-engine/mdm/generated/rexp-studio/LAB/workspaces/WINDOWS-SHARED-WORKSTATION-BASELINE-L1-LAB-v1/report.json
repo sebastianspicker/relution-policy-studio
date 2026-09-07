@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "209586E4-5D61-44C8-ACD2-AEA398ADE41A": "WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

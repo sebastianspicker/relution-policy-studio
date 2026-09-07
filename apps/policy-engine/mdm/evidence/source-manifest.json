@@ -1,0 +1,2273 @@
+{
+  "schema_version": 1,
+  "generated_by": "tools/build_mdm_source_manifest.py",
+  "expected_recovered_counts": {
+    "BSI": 121,
+    "CIS": 10,
+    "Microsoft": 1
+  },
+  "required_additional_sources": 1,
+  "sources": [
+    {
+      "id": "51fbeafb047ee050",
+      "title": "APP.1.1 Office-Produkte",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "795941cfceac9027a937e61d9c06d49f1b6ebb22cac30dbf60d2b6a0b8c23930",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.1.1 Office-Produkte.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "c952bb039896eeb38f57c4593375b08ee88eb81acc237461fd845378a9437bb7",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "3b09befa9d2ff55d",
+      "title": "APP.1.2 Webbrowser",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "16ce7b05ea4642b3de781b621248a67fc17d778c390b5707e6e5e6d314d66fd5",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.1.2 Webbrowser.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "2c1dc364a35b687accd85f9c2d97a12e7ecb1f154eab6b39df4fe76d98f9bf31",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e3d26b3ff852f479",
+      "title": "APP.1.4 Mobile Anwendungen (Apps)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "73119e8cd7b7fee67805d43ec684518e5990edbbff8ba6587bebdfb2ad450aca",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.1.4 Mobile Anwendungen (Apps).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "f8529bee35b71ebbf97df16a0700bcdef385d9a329ba5cb2e875efa58a83032e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7e71c382869c2e46",
+      "title": "APP.2.1 Allgemeiner Verzeichnisdienst",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "8b042fa96250ceb7cab48213cc8ea1f570986c66ea656072a52393829cc5ee07",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.2.1 Allgemeiner Verzeichnisdienst.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "b95866a7c76ca4a0a22fcebc5469554d63e8c5f72abb2fc13180ea82bc4be855",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "2d33ffea0b8bf33b",
+      "title": "APP.2.2 Active Directory Domain Services",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f63944ba1c201db15662d7dcaa2ff745dd4667bbd7f313e0d183431cfbd7cedf",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.2.2 Active Directory Domain Services.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "b064147896a4cf38b5788601b192cfeec89957f1d066e94816dfa6ab3f7e48d9",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "a731309a91cc0a40",
+      "title": "APP.2.3 OpenLDAP",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f8ef7d9de3102eea1462e7e147f2e8a105817235b70d3fb334462fb596187d4d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.2.3 OpenLDAP.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "2563f6842a1f955af7c492e296ba38c4103b80ffe125f7d3c84fef88f89d8def",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "6b71dec0083d7870",
+      "title": "APP.3.1 Webanwendungen und Webservices",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "261ded73f63e34e92a16ddaa9f471c5c142784a0cfee4b6e8d259d1597993ae7",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.3.1 Webanwendungen und Webservices.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "95891c6f5e5c0b5653474c2aa4c010d8a3c952e8160ca25c86ed25dcd3a89de5",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "25e80b99a2a8a941",
+      "title": "APP.3.2 Webserver",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "9a57d65bcac32fe32b96c513734dee5485984f543eac1163627fd3d977357916",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.3.2 Webserver.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "c20dad3dd8412b8bd0865258cc56d9d6f98d5542c661debc516673eca36cba9c",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "05a8d4fc5bc0ebd5",
+      "title": "APP.3.3 Fileserver",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "010e53f2345e2a8f592a25700f16dff78c5ee24b08942d8deacdda5aa856255a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.3.3 Fileserver.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "c3c732989b5481fb297da0f3fd2ba939fe5cb7b8dffa86191529920f3571ef1f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "ede82c54f74aabe4",
+      "title": "APP.3.4 Samba",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "05aeeeaf7665d611cc85c27b4b90937d5c260118ed372249a2b8c9a29a5145a7",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.3.4 Samba.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "ecfcbcae418e45248a3f41376db59483a945617dbd28f419788bd4fb6bb04ec6",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "05dbdac242b047bb",
+      "title": "APP.3.6 DNS-Server",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "77f46be5c2c9c60fff3f1227df971bcc482b93057e3f199f77765bfdf5e4003a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.3.6 DNS-Server.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "0ccb11d07c569f04e88cd8d3be6db309e25706bdd4d95150f34f25da8f8c9695",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d88968e709ef9c5b",
+      "title": "APP.4.2 SAP-ERP-System",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "d98e3d59b2f492c542637874dcd1ebcbe4bfd7a2f0f057117d19c6da98df498f",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.4.2 SAP-ERP-System.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "634ae46cfb5cd29bbdbc0bb3239d99c1925dec173b25ba6571cb2be1e5996023",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d9465bf5d65a8971",
+      "title": "APP.4.3 Relationale Datenbanken",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "10f35037ea82741f348f05c23667dc0e6694c56a6efbeca3940501bc335b8693",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.4.3 Relationale Datenbanken.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "e4c36396e52a382a9d48093763abbb4274ac88e7594fb27d6f0e320eef40e278",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "a6d516e6a6177a39",
+      "title": "APP.4.4 Kubernetes",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "03c63c58909476e20e3ec4da5e2b8be4beb03cf55c7a708bf11854c8f2a6be44",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.4.4 Kubernetes.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "6ec2f48ec98587d1594528c0bbd3303076c9c3889c57c1d6c52a1a85de370273",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7fd3b6691fc0fc80",
+      "title": "APP.4.6 SAP ABAP-Programmierung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "7c3d701fc12c0c3c9d636e8579712984e61d24788829d8f0fc3f38adedf63911",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.4.6 SAP ABAP-Programmierung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "37eba9d634c8c0bc92dd832f2ee9d878c561d42bdfe203c86f6df776fb12d36e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "62c87cad31f1e42e",
+      "title": "APP.5.2 Microsoft Exchange und Outlook",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "a3b4bb1ebe60bd2fa942d34750686a45e0dc48d30664ad49a3ba78cf6a864863",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.5.2 Microsoft Exchange und Outlook.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "07d73a2e45487f528f77250ff5250a6d55784146df9eb1401e5f0d117fe5b30c",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "54b0164af446110f",
+      "title": "APP.5.3 Allgemeiner E-Mail-Client und -Server",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f31b2875fdcc57422ed8ae6873d542f6753a42516607ffd4d336890c211d7aae",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.5.3 Allgemeiner E-Mail-Client und -Server.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "d120112dae522fd2ccef7a100fa7b343dac49d31458035ecd02df5224c91cc89",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "cd9698e663d32097",
+      "title": "APP.5.4 Unified Communications und Collaboration (UCC)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "1ab59d2ff18a98820ab936b2c1adf90e14bb23e39f8d8228757e70a21ebf3126",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.5.4 Unified Communications und Collaboration (UCC).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 11,
+        "text_sha256": "e4017cfabdf0d0182b3d03c68c49d3bb304edfdef14eefd203993271704a7022",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d63b24fdf838dd9d",
+      "title": "APP.6 Allgemeine Software",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "8dd0bf305c940c26af17bf70d4c9e75257be13e355dd8ebd605fbfdbfcf3acb2",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.6 Allgemeine Software.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "0652751096abaac2d845401159142dccf76e41e23c6b5736fa4ba9f83eced1d7",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "91d231e050bfdbe8",
+      "title": "APP.7 Entwicklung von Individualsoftware",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "c2adb4d01fd7d66ca61a4eb56d944b24cd6f1f4eeab5d952f751678d181d7ceb",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/APP.7 Entwicklung von Individualsoftware.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "1e39760a36c70e670cd4c270aa48558da1bc04637688af07be5636271566ab73",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "a3b8d75ab7b64dfa",
+      "title": "CON.1 Kryptokonzept",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "01e6be8dc91855f0076b113cb46d789eb3531dae15ef8f75dfcd7add1aa0a2f6",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.1 Kryptokonzept.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "db4e2f8126cef27108a01dc56e382611737fb5fdac6b6feecec565568542ddb1",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "57e9b2bc48642842",
+      "title": "CON.10 Entwicklung von Webanwendungen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "337eced083d5e816f7b19ba783de5285c7685a3985ea7a6cdf9c3aa824121d0d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.10 Entwicklung von Webanwendungen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "015350cd04366fb37281812f56fcd607d7ab50492bc427215f35bd166ad1c258",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "4dec0d5cc8a2523e",
+      "title": "CON.11.1 Geheimschutz VS-NUR FÜR DEN DIENSTGEBRAUCH (VS-NfD)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "2cb8247ba4433c144eb267db8bc782d11bab166390be6bb8c68c2cc4df673563",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.11.1 Geheimschutz VS-NUR FÜR DEN DIENSTGEBRAUCH (VS-NfD).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 11,
+        "text_sha256": "56e06b63cefb23171195d1752961a824fe75c58d80cc3fb9a50c202882d05d99",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d4c5cfff87667da4",
+      "title": "CON.2 Datenschutz",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "2044d6ff9a724f67a6fc54ea2b98310a8b40765511042874b4d38b88525e4d48",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.2 Datenschutz.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "08c258ac71dff0b761028544ceb261564200ac2562a18a475a86677442973596",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "c3bcd7fe4183b9c1",
+      "title": "CON.3 Datensicherungskonzept",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "cef7b8b3623f1496368fbd54fe6974537208d639a437c37fffb86689c4345116",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.3 Datensicherungskonzept.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "d625535f2f31c32d518c6298391e671ac8973d02b192fd4e84379dce3f74f879",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d855fc493c56502e",
+      "title": "CON.6 Löschen und Vernichten",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "6599cf653b4889995bf1a6a8e8f9b109787bb15c509fd480d5e85efd3c2b0cad",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.6 Löschen und Vernichten.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "7e9a4398df7d442ca7c16444b8bd21353c15da37035ec34a1c1e30a5c445e1e4",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "282e83410859bbfb",
+      "title": "CON.7 Informationssicherheit auf Auslandsreisen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "65619eef80e6ad2101c98baf5ea6c3ed3855f158a3303fdb740cf82e49b45f26",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.7 Informationssicherheit auf Auslandsreisen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "2bacd20d9016fa1ff96fdeff888fdc7b7a9e637a0c38d9e9015de68822dec7d2",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "b898b5263ada3c9d",
+      "title": "CON.8 Software-Entwicklung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "68f031af31fa996966357a5c06b4acec0af275b903285295a7dab3ba2abb3366",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.8 Software-Entwicklung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "0853da4983c017e85831b0c6329e6b59c33dd68cd2aea648430c0431df999f6f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "63583898ebaf451b",
+      "title": "CON.9 Informationsaustausch",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "4fc7c9b34ec4326467b74c467f2562014ea5d1548680c5d9b5e41cee581ff8fb",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/CCON.9 Informationsaustausch.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 4,
+        "text_sha256": "20a1c8b3120c48947dc0209e949fa4ae47386055b485a274d0cb0ffbf131b6b0",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "619d4983e34641db",
+      "title": "DER.1 Detektion von sicherheitsrelevanten Ereignissen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "093554878bb1394a24664efaa85d839f05f1fbf1a075767b671d5369b98ab600",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.1 Detektion von sicherheitsrelevanten Ereignissen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "d175aee5387353025f29c54146333ec5681f28eff7c09e36f0afba4ac5047208",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "098d171c508ad063",
+      "title": "DER.2.1 Behandlung von Sicherheitsvorfällen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "391012836a64848c9419f81876e47e030bcd37c5fd8d2a308b582ed9f012469d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.2.1 Behandlung von Sicherheitsvorfällen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "f9dd7b2ecaa57bd305a9fdbd0149f6932c202bba105aee1ef1ce40a0cff999c3",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "befc1c616609196f",
+      "title": "DER.2.2 Vorsorge für die IT-Forensik",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "21e14fc5449ab7a99773590313fb6d7cc9067dedd7e6c90ad0af9cce76821ff4",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.2.2 Vorsorge für die IT-Forensik.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "583ecb20530ddf4b9786e3eb53d5c31c8a25d46c217e9a44c7c227372dc411dc",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d7ef0252d4928edc",
+      "title": "DER.2.3 Bereinigung weitreichender Sicherheitsvorfälle",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "555a8d23bcfcc01c5b48fd77891b884b545a1d8ce26d56afbd43ba2e9de4495a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.2.3 Bereinigung weitreichender Sicherheitsvorfälle.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "a15fb301097f057c2f41ce14f2067eb5f8256e16da616415ecfe466ce3551d97",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e27abd2daef0b1a8",
+      "title": "DER.3.1 Audits und Revisionen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "3fbdfe7ccec6e463a1f9437da3ea69e5ffc9c55497ae96437b9456fff63be80b",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.3.1 Audits und Revisionen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "fb694b4d89f8877596360c045e2e0e3f9e28c840aa5ebb9d4cc2dd5d1a4e8c21",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "181e9dd57edd4a71",
+      "title": "DER.3.2 Revisionen auf Basis des Leitfadens IS-Revision",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f086c33390ab9b917969042ac9e2e4d234234674fb2987d7fc97140d084828cf",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.3.2 Revisionen auf Basis des Leitfadens IS-Revision.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "5dda893cf8e52734813f67e84bad425b46c6675c1c87d32dd8e8daccfdd2dd81",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "9a1e6978eedb5b00",
+      "title": "DER.4 Notfallmanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "8d2011c0c1735de9a7f5adc5dd873961e213b005d9aca0f43292198adaed2644",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/DER.4 Notfallmanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "16a3a8fb86ba9cffc1d9115218b5d7f4d85eb44e687e7d2dd407d7b105615a8f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "be8e45e6f84022f9",
+      "title": "IND.1 Prozessleit- und Automatisierungstechnik",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "a33dad467acb88b87d08ca1c99d933b5ac2940c079917df7268f0f618e81908f",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.1 Prozessleit- und Automatisierungstechnik.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "71ed104e3e2518e6c37d5813a8353cf8c64779ed48a6c44d68446dc079ecffc2",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e85a735cf707dcbd",
+      "title": "IND.2.1 Allgemeine ICS-Komponente",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "34a0304e7f06e2c548bd3e9c4f429073b4b17203cbbc5b295700105dfa1e136c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.2.1 Allgemeine ICS-Komponente.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "4081e8d7b57348614de99752d8ec20376ed6e7a123d1bfd45cb02486301e982e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "ff74d9cf45c8ab30",
+      "title": "IND.2.2 Speicherprogrammierbare Steuerung (SPS)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "ae749bf01bc36ea2805c16e45d6aad0d3fad15592e2b12c5cf92962d6b1b50fe",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.2.2 Speicherprogrammierbare Steuerung (SPS).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 3,
+        "text_sha256": "e5d1d0ee4d0145c99e01e98c3513f3755d5204444c85bb050603df1e210a857d",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "b845ca3d27e1679f",
+      "title": "IND.2.3 Sensoren und Aktoren",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "82817c9bb866a9cf782bb9560f9027af2adb16ee8d53ac26836b1c87d8cc595a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.2.3 Sensoren und Aktoren.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 3,
+        "text_sha256": "0a9266991c9ab8e7076836dbaaf3b17e3e39ce486b985cfa84e304ff375b4fab",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e1bb8d76d57e13b0",
+      "title": "IND.2.4 Maschine",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "690409b76bb5e7db256b296c98a28d7577db4da1c6b2a0563e2c985679ff9c40",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.2.4 Maschine.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 3,
+        "text_sha256": "2cbd8efca28653a6eda4b18505d4c5f64dc6035f8a59e5318f7cf67d4258d520",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e2cf16b15d5cd11e",
+      "title": "IND.2.7 Safety Instrumented Systems",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "7bd92f9d26bed3a8d6e331f5c496874a21d789c4c69a4a27319b95da795b01a0",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.2.7 Safety Instrumented Systems.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "9f210754130dcda80b2ce052ef7163a6d1a307832553c5526c3e5cba6946eb72",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f1ab3481302bcfe7",
+      "title": "IND.3.2 Fernwartung im industriellen Umfeld",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "ff46e7883569df24e7ca63e7e240d328fb8ad191827d95877a11f0ab4f697938",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/IND.3.2 Fernwartung im industriellen Umfeld.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "9aeeeaff642316ec9186c308e5f73ac9f1097164f211a69a4f360545309dc53b",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "4bf825686d6fe69b",
+      "title": "INF.1 Allgemeines Gebäude",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "b4b67a5f1d65d76e58ef429cd2df8579b6be958b01e44573ad741b5306541c6a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.1 Allgemeines Gebäude.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "77da282ed253d5c87608863dd0c8f24016ad92516c717c623b99e38a5260d369",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "599638cba4d5cf77",
+      "title": "INF.10 Besprechungs-, Veranstaltungs- und Schulungsräume",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "0df9cc18c9328683e1bf7fa8564727f46b22c846620318cb85da099c34bf5566",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.10 Besprechungs-, Veranstaltungs- und Schulungsräume.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "683e496a68d5109d1a9396ba516fc2a55b49abe1dddf6802afbca924ed3ea7a8",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "5ee6f925eacf5ec0",
+      "title": "INF.11 Allgemeines Fahrzeug",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "8d28aa801942aac35159fd3ad96fd730af24c1875a80ca7ae04b4568bc3437d7",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.11 Allgemeines Fahrzeug.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "571ca0a6d1bdc1e3acedee07d103290495919486a63cf9833c3331b57cb870f9",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "95354f04a3ce75f2",
+      "title": "INF.12 Verkabelung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "c456b4c0979eeaaec960e988eedd1e7c0331ac961db4b19b8fb258ac9815e6ac",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.12 Verkabelung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "0725775315a8a770b2f72303614a33b0578adb1d782fb1dec42db486a768738f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "0228a3fd3c88a951",
+      "title": "INF.13 Technisches Gebäudemanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "97be46d76e72843462d0317dfec437fc9d7e82e5ea91b9d9669ae681a4c7d3f0",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.13 Technisches Gebäudemanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 13,
+        "text_sha256": "37c158af1890fced3fd72c9ca5c0cc8b699ce256f697d01b9eba40810dca9c32",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "fce0ff209b659301",
+      "title": "INF.14 Gebäudeautomation",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "82d2658ebc7d920e02fbd9351cac171ba6cba19812b889bf71ff8ed7087b71be",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.14 Gebäudeautomation.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 16,
+        "text_sha256": "da69e8d9caa138588b0d130cd6ef462250d835e401df7614ec4e3960dbcf1651",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "c2683dd15a4720ea",
+      "title": "INF.2 Rechenzentrum sowie Serverraum",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "61e53b402c082da5f9b0821432284beeefa3d59996a49e16418dfaa71d0ec68d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.2 Rechenzentrum sowie Serverraum.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "f6829c29ef86f0cd5a322e43e0069d50a239b651aa96d6a5470e4a9629a2798b",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "270fb5789faef826",
+      "title": "INF.5 Raum sowie Schrank für technische Infrastruktur",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f8865ce464b5e9220897c900d7f39f751cbcf98343d6db72144913c12956aca2",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.5 Raum sowie Schrank für technische Infrastruktur.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "750495f28ac059180f08ac2f0f657c42a1ea630c4b0600bbdde3bb91cb300d52",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "49089e97ea7799a6",
+      "title": "INF.6 Datenträgerarchiv",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "4d2a3b803c4fffc4698089c001d5e645e3da47a60d14433166a1eb7f0a5d172f",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.6 Datenträgerarchiv.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 4,
+        "text_sha256": "e068e892400d7ab81c816bc8491fda6f06cae21712641c93dbd599163cfada1b",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "3fa93f0d78131f14",
+      "title": "INF.7 Büroarbeitsplatz",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "197c54f28a6b20c59edef91be8b02246aeca4e3ad4968f6882463b5e09b4bba2",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.7 Büroarbeitsplatz.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "a236d66c880068ecc61f058664cbcb4d72d509ecf98816bae2c4546707972bfb",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "96ff09d3340bf8bc",
+      "title": "INF.8 Häuslicher Arbeitsplatz",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f0c9595638ed9346a80872ed2296700621df0d69d71a33a4a6d0e596d46971ae",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.8 Häuslicher Arbeitsplatz.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "c2effb7c17445a112a8862d1f4567d09e5a9096ed460ed5d527931b80d30c59e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f180dc31a6b91bcf",
+      "title": "INF.9 Mobiler Arbeitsplatz",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "73c783d2fa8a59ed043e785a72f00a9f7f011a0d6a1ea6542583c91834049b8b",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/INF.9 Mobiler Arbeitsplatz.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "88bf7404d7b8a983a331b4ade18b1689d6c781c549327953d5bf62860bf29979",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "0067b987d0a56b16",
+      "title": "ISMS.1 Sicherheitsmanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "da9a26e30fb9fa4a2f61e5e7ad7779f43f790291561a08a86e25f426bb018fde",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/ISMS.1 Sicherheitsmanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "cfdfa712363e81f548b1d98b2d5f4012930eb7170e2e8751f61f1c81ab5be724",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "fc38f5044009a086",
+      "title": "NET.1.1 Netzarchitektur und -design",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "fad4fcceb11119f564c0557bc05c3e930029a9329ee56f07aaadead10e732f2b",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.1.1 Netzarchitektur und -design.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "99ddd359a4f0fe4f7bb45877bc208982a4fe49db138e3925748b689c91085c81",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "9e2fe78c75c4d950",
+      "title": "NET.1.2 Netzmanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "4a3bbc451faf393e15fba55b9c81ca5e48ae7dd8618538db71315e5e5e581eed",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.1.2 Netzmanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "504cddab8241c8ad307ca9f771f485429b588b573767f1f60c63333c1cca40cd",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "fdd9ef22589bb00b",
+      "title": "NET.2.1 WLAN-Betrieb",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "d9ecea1c25eb310ae4d0a53dcfb2be0dea5207bb986abb27889e884cdae3ad93",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.2.1 WLAN-Betrieb.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "ee3c86ec74431ebba227292ab39e2ae456ae287413d54b5e55d0be7688536a8b",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f3bb463610485f3b",
+      "title": "NET.2.2 WLAN-Nutzung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "6596a41685e0ee046cfa846c313c79ae8869d9d4664d5915b8cba1fe9d8fb618",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.2.2 WLAN-Nutzung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "e72a1988219f2a76b5cff4757c28e8b8ea32f657aeb6b45095857e3b0ecdfd3a",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "8441c4d5131f5466",
+      "title": "NET.3.1 Router und Switches",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "0b2846e9df3ca3fda441d9c281b7522ce3cc2bbc2e1f929330fd22e4dedf3aeb",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.3.1 Router und Switches.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "f955413540d6a034317b083af5af755d9e1e6add0dcf791bbfacb7ae2a21fe29",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "55030ed8069fc49a",
+      "title": "NET.3.2 Firewall",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "12709f4cf285d2c6fc4d5e2ff2d0e168269e35c14b9339c62a956981ce886561",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.3.2 Firewall.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "ca79099c89d48c2b9ed7b46cfe2a6e7f3eb762e030d97e1928652cd827efa105",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "4324cfeb3d88aa5a",
+      "title": "NET.3.3 VPN",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "e28e23aed909733f49809bc3b38f116da2914ff6236bed777f71ecb70f5fa842",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.3.3 VPN.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "273e212b396f0b096ec97e5233b785905956a970c889cd9dd7103bc65bb450af",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e27e4bbdf55b96fc",
+      "title": "NET.3.4 Network Access Control",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "531115dca734590a6915f1055ec07cd236248f3ad9a08a8764485189401ba50c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.3.4 Network Access Control.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 11,
+        "text_sha256": "502b91d53b8880fda9f860d6ff8ec12b63a701e4e72550ef956a1b869541915d",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7e01b32eff5929b4",
+      "title": "NET.4.1 TK-Anlagen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "256bd6b42b7bec3d8b598596d5a0b863858e6a6553cd39ec211a85e11e69eedd",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.4.1 TK-Anlagen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "9793de49f9d1a802c0ab3d470fd510c6e91bd5d6f17fa022dfc0883b0dbece6f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "dbee3177d77a2489",
+      "title": "NET.4.2 VoIP",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "cb186b7db2dbea5d4a54bd25f48c9501d15a8ceb502c692bbde95283c1f5ba6c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.4.2 VoIP.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "1adf9f857c7f8a70e0814f1d87cbe0f0ecb13c795324a3c8fe0e1164d02a130e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "fc6b0653a8ea38fd",
+      "title": "NET.4.3 Faxgeräte und Faxserver",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "3c9487d7121f22503fa8b849ad4383298e2eb401e675a9ef4b126e9e9ada8718",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/NET.4.3 Faxgeräte und Faxserver.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "1baaeea8eb1fbd92059e31097b5ff3198950bca17dd6776f7ce1096d45786d67",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d903c9d54c3f9216",
+      "title": "OPS.1.1.1 Allgemeiner IT-Betrieb",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "ea256db143b006ab174a7ff7cda8fc4da48a0fa9fd77021faca9ccae7e810c90",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.1 Allgemeiner IT-Betrieb.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 11,
+        "text_sha256": "8e6b37ce4a99e89c0d6649c8a7d3aa9b7d754b392c68367a7af55449d231d777",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "b43dc0f933c16337",
+      "title": "OPS.1.1.2 Ordnungsgemäße IT-Administration",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "1cd6c569337d63c78f0e20524a07409318e5e5e7476545d4b21d587a1bf829ec",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.2 Ordnungsgemäße IT-Administration.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "a272a0ec7405b30775489b7f7f3c85a0da9dd32e4a95be286916055b71750628",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "64412669edfd9018",
+      "title": "OPS.1.1.3 Patch- und Änderungsmanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "59d066e61834eb827f3de661414932b026c37c783cc3638ebf3f561bba212776",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.3 Patch- und Änderungsmanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "5d109e3bbfd29baa55f909a0872a84d4f4302aa79015fa94d8e9c0e388b4c0ba",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7e4b6a83ab0a9c73",
+      "title": "OPS.1.1.4 Schutz vor Schadprogrammen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "1dfe102550dbe3215d3c859d3fcc28859bb01c31b6499b613b99c6e592d27d42",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.4 Schutz vor Schadprogrammen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "ec06898b684232ef626a8ed48912529292620f262951230a4f54ce96dc54f28f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "ef3d285ab1f1c49d",
+      "title": "OPS.1.1.5 Protokollierung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "89831fe7bbe6686685ae138dc09ab06453335e8798788148f09980118ced228c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.5 Protokollierung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "317837148f64c257987200a112f94b9fbe678ae10df4c95da09675a8ea0fa2f6",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f68644caf8a7057c",
+      "title": "OPS.1.1.6 Software-Tests und -Freigaben",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "d0c0d2901a6ae706196a9e05f826ad82f70822e0c29b2a91468686d36adbae18",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.6 Software-Tests und -Freigaben.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "fd11b63924658cbadd9eca372918c0490554a9ffe9f658f1f44e3f1dffeeca92",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e186feb04cdb8bce",
+      "title": "OPS.1.1.7 Systemmanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "0550e6272e2a6712930e3655230ce137d69f68251d1b12a7c636fec064c3c5dc",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.1.7 Systemmanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "b169105447a638bbcf918aba7bb99bed20bf589a4cb74b2b754ab2740fd3da55",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "6f395b3cb3c76248",
+      "title": "OPS.1.2.2 Archivierung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "063dc4dc46478ef835bc349a9cd56ca748303f4b4cd0f2c182f9bd843ab37d50",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.2.2 Archivierung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "dcc29bac5f94bb385a8f2fc6641a6c1a717ac2f2418c8f87cb0abb9e56331fd6",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f61e6b8b5ab9278d",
+      "title": "OPS.1.2.4 Telearbeit",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "2292fec3cd911e626789a24267a892968e9b272f883c31ada0d116832505713c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.2.4 Telearbeit.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "075d835a89358a8f042940d7b171d633f2f45f22583a14429af5ead77649e0c1",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "fc460c71ec418c02",
+      "title": "OPS.1.2.5 Fernwartung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "4108357188993441fff3e5e8990b7b1624ebd5f975b0656a8d4dae423a2dc2db",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.2.5 Fernwartung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "7e5d0e314e904cf6a019a46242c15ff30607c91092bf2f417aec8aeaf21f3b48",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "4918312fa4b54745",
+      "title": "OPS.1.2.6 NTP-Zeitsynchronisation",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "052da2881967d8f1af5f969694a34d8540c0c465a09b84c66f8817c977b0a609",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.1.2.6 NTP-Zeitsynchronisation.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "cf864d0f36bb4d62a6cbddab4729ae51985a57122414bd77cd7213275f01706e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "6e8035a8c5bbdecf",
+      "title": "OPS.2.2 Cloud-Nutzung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "93f17be4a592ee8ad40a337d339c86807486766437685a76e4d62be282b335c2",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.2.2 Cloud-Nutzung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "f7a3a6b292628cf17169facda3f3da54c74ec69a49906e01017d94c22e45455e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "1084013fb1e4fcfc",
+      "title": "OPS.2.3 Nutzung von Outsourcing",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "e2520fd95adf927974a6251d0377e18edfb7923ebeba5febb056e983db73a360",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.2.3 Nutzung von Outsourcing.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 11,
+        "text_sha256": "978a7fb2773443290255d967379303730af15231ab13a9159e63ea0444fa517c",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "cb854a7055913452",
+      "title": "OPS.3.2 Anbieten von Outsourcing",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "7720734e1d81f7e5536919ff2a395ee05e7fec3dde4a2ccb5ac45dbeba3a3c1c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/OPS.3.2 Anbieten von Outsourcing.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "93592ff65768c2e7797ddf6d41fb9dac8ce7d27d867ca4a36b07cad646b294d9",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "2d84736d44fef611",
+      "title": "ORP.1 Organisation",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "01f9b9a87faf5a444c9780620ef71e7d39c853a3c114f229545a601c35552594",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/ORP.1 Organisation.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "08a889a602351c5ec243386f9fb484f1ba8f7c91e26505c0b21830b907e57d96",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "1a39e717dce23eee",
+      "title": "ORP.2 Personal",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "ff9f527476c4cc3e8d02836b3aec1c4e95ae030b5ced5810688aa22df5bc3416",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/ORP.2 Personal.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "b134027fbeaba438f4666773d56092819d07a5e965cc5cc4a77184d19fe8d431",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "1736cb7761d019de",
+      "title": "ORP.3 Sensibilisierung und Schulung zur Informationssicherheit",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "27ea3f46df84245dad38ffe4428f653c7dd22a170ec0f7351360ca043141babf",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/ORP.3 Sensibilisierung und Schulung zur Informationssicherheit.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "7102bce63c219917ac0367639cfa93ca26e55221158c0e29b4fad59e9d648540",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d3feca4b6e9fe9bd",
+      "title": "ORP.4 Identitäts- und Berechtigungsmanagement",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "613238537b0467e5b92e3244fa21e4652ce278eb00d387b4a44641d7c4ec0d82",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/ORP.4 Identitäts- und Berechtigungsmanagement.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "2a02d573ab9c06d1052bb4996e773a61678f0538a7209d02f0db8fefe62bad5a",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "9a76335c2a181b64",
+      "title": "ORP.5 Compliance Management (Anforderungsmanagement)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "70560a9d846c6a5d8479d819b1727b34406a489d8bab203d6284cc8862c596a9",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/ORP.5 Compliance Management (Anforderungsmanagement).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "b8a2d2070d054d397e678214af5754e7b5997a57d593705cab50c98fc561689c",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f8cb7c0d6e1e6b6d",
+      "title": "SYS.1.1 Allgemeiner Server",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "98a6070af1044597ad073f7447f5f489f3aedb5ad3bc7778e8515b941aaa5365",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.1 Allgemeiner Server.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "543b0fc61bf7539e7c6468174f6e005ab100f460d387a97c95dfd8085bb9c4d0",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "a77f841747a7ac5e",
+      "title": "SYS.1.2.2 Windows Server 2012",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "0982407dd01d527f4d3f7be6f161f0ea373012eb45ac0b4bf7c8f139d3e32df8",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.2.2 Windows Server 2012.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "df8b21ea57691cbdb237541e9390bb64e56a27c2d3389fe2d5306753c3f16487",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "25f0dccd431e1a03",
+      "title": "SYS.1.2.3 Windows Server",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "f95a3c269ea5c9850d62b6ef2ad3e0d1e5602d47692fb91fc68f0ea880c43a02",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.2.3 Windows Server.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "20a30cd5e1acc0e39ed5fa3ab28a3aa9d0eced6e150a8c54a1e09dd63e595f10",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "df23abcabe219da0",
+      "title": "SYS.1.3 Server unter Linux und Unix",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "08de5b7ea8aa6e9d38d4ddb1a88c48ea44e432e21cd45716edbd06055f85fe81",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.3 Server unter Linux und Unix.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "f6658d2d7478d75b70d694147485047fb2dd38ee94fb90699762b2b57761aecc",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e28f5c0e5f480afd",
+      "title": "SYS.1.5 Virtualisierung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "6c0ab545bbb0372bb250d6604999890a05f6b7d37734f71fad53f57dc42999f0",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.5 Virtualisierung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "5c54dbddd267d83f6382e66511ee90aaf842226bc96f89d9d0789652f477b312",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "051e32107ff12669",
+      "title": "SYS.1.6 Containerisierung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "114d9fabc9077a93d24c778a4cb2959998bcaa233416415f6e2cbc05964f2393",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.6 Containerisierung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "26c176ab6d92babbf3e311d5618bece86ac3da1a69a9966b178b8e69a0a4951f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "0bdb13b6f7cee862",
+      "title": "SYS.1.7 IBM Z",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "2a74807cb7e29670ea8996acaae5c8d19928497bb33220d384ed589358da4637",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.7 IBM Z.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "3b89e4a4cf7860f311034f92fdb1b1c50824bd9d360c9d39d6d0655292557172",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "6c7e3a599bcdf253",
+      "title": "SYS.1.8 Speicherlösungen",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "bef82bc7df5fa643a0212b112b40991204939dd33320509169c504d97deaf25a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.8 Speicherlösungen.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "4c9b31b10564b4ac9a3903925a73af66693471021d3d888c0c4de91a705a5b32",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "742053aceb8379e2",
+      "title": "SYS.1.9 Terminalserver",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "3a9189fc981002c94ef6e76adde7b242435de41d4e3cb1f70223bce4d568947f",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.1.9 Terminalserver.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 11,
+        "text_sha256": "e2f3d396639179350af144fbb75131cf5ffe9ea144484361a46b9c86e8fefc25",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "fc8745ba7187c5bb",
+      "title": "SYS.2.1 Allgemeiner Client",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "0e10f2a8890bf98015903cd86c8c26d76cb86782cad35ac0ab2c0c5b057cc23c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.2.1 Allgemeiner Client.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 10,
+        "text_sha256": "184c1eda4708ddf432a9b4598c264a81ebfbfd85e28e50fb3a4ec06a841ef1c9",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f77800e23627c363",
+      "title": "SYS.2.2.3 Clients unter Windows",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "0c90811db72f9bc1368cdbf8f2336eae4fa04a02eae60d8c1303f4bd28f1fd17",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.2.2.3 Clients unter Windows.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "e487ec296e22f3de1118729a924a94051cd88544eccae804512065fa15cce466",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "65d6b01000d15801",
+      "title": "SYS.2.3 Clients unter Linux und Unix",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "cd30e6b2d2b9cf1d85b32673459bc9607c66125c66dcf8732874c6161d91de47",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.2.3 Clients unter Linux und Unix.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "d980dfb7789f1fa5090f0acfd9f8330270ee3d1d399c218060fab76d528232dc",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7181bd63d9ee3659",
+      "title": "SYS.2.4 Clients unter macOS",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "81cd16141da69750a1bbf5ece7cd7672ac2af9c11bac9a254ed8389e8923371e",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.2.4 Clients unter macOS.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "d6d8b38b9f76559c99cad139a291043a6a2819d0246f87d1ace56ae0d22342ef",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "00c9bcb5ed42ecb3",
+      "title": "SYS.2.5 Client-Virtualisierung",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "b8f6dff073edf2dc6d5de029083589f34100997866b06b21157fe1dbaaaaefcd",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.2.5 Client-Virtualisierung.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "eb787722e8039eea6d85d1f634b44293d1f83f4ae756e2e5b7fb68d8f724ccaf",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "86ba29cb24651eba",
+      "title": "SYS.2.6 Virtual Desktop Infrastructure",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "827f9a750a63cd8b31b4dcf7410e5d254518e8f78af515b5a19f42f2896033d6",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.2.6 Virtual Desktop Infrastructure.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 8,
+        "text_sha256": "20b3c240eed5048834d0afb01c5b44ac3e566b681ce2b232dcfc54280cb221db",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "4a0d506a294fc496",
+      "title": "SYS.3.1 Laptops",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "7a5cdaf6d9a3f31b20c785995d3ea7467c5e452dabd508c383e4db85e65b615c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.1 Laptops.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 5,
+        "text_sha256": "ea611c9abdf802f66bec91696128cc843f1db026efd3c0e1b66a6ed2c0b1fdbf",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7ae4df93a27ca8d4",
+      "title": "SYS.3.2.1 Allgemeine Smartphones und Tablets",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "07a7518dc624b0e8e1d947fafb064e84ddccad00e3634be68c74e3807ece4f9f",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.2.1 Allgemeine Smartphones und Tablets.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "1af51686e47a18e8b6f2122a14d5ebea26e184752fe8fbd60766393c3b38a36a",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "75031f79f8997811",
+      "title": "SYS.3.2.2 Mobile Device Management (MDM)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "4790bd4f7478ceb7e032ededf042fe51384e75cd4f4c6c3c26c94e87c990a0c0",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.2.2 Mobile Device Management (MDM).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "3ad116de8755ba69f265a4ba31a65c4124cf667cc1271ab8bb55cf32fdcb8ffa",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "99c761de5587e81e",
+      "title": "SYS.3.2.3 iOS (for Enterprise)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.2.3 iOS (for Enterprise).pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "637a5ef8bd6338b84ddfb791a79ce3fecfa66947403bf9617dbca6c366104f38",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7902e217afafa925",
+      "title": "SYS.3.2.4 Android",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.2.4 Android.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 4,
+        "text_sha256": "88d686e77f22eb0a50a7cdb2cab40728a99c30fd20b260681005ed4e4cef5e11",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "75f8c49e7c4e015a",
+      "title": "SYS.3.3 Mobiltelefon",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "d41d73836095763b029b0819165a581aa53c5129a927a584a9722d27eb25a45c",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.3 Mobiltelefon.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "b1e4d28786535214504c9f69a59878d8614e1aa57ad387d7e71f06d96bbd26a0",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "136db97a3df09f43",
+      "title": "SYS.4.1 Drucker, Kopierer und Multifunktionsgeräte",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "c58d63ab236bd9715d1632d7fd77793c037c2d6aee52328cc9100f73588a7af6",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.4.1 Drucker, Kopierer und Multifunktionsgeräte.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 9,
+        "text_sha256": "934f6f4e8a2b512f9459e5e856e6b1e9b7e0152dd4d7606b60dfcca6fa0689bc",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "b2110d4ffcad8c78",
+      "title": "SYS.4.3 Eingebettete Systeme",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "9a8955fe1b11deefa6f25f9ced4c698512c1ab65d02ef66598c249e3d8ffa2d2",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.4.3 Eingebettete Systeme.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "3c01565f78a2bd612631c065ab735aade11df15a95ab551cfa52f2ffac08bf1f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "17932e561d91cded",
+      "title": "SYS.4.4 Allgemeines IoT-Gerät",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "812c746f01a389cfaf026e7530c1a43b7408769007d8acbcfcf4d33ae2450dc3",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.4.4 Allgemeines IoT-Gerät.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 7,
+        "text_sha256": "37cb65d025c7491e1b171d827dcf329bc0c52f257ce64a97f09eec9386590d9b",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "d60f5f79afdaa2cf",
+      "title": "SYS.4.5 Wechseldatenträger",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "2c41e1f01c8631ebe485f200657afd25c912f4f4e8821fb0fc08cdff26f7356f",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.4.5 Wechseldatenträger.pdf.clean.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "3801f0c5ee63ec4c46860ce327179d868030a8bb2a40246c6ab7fd42ebd70a73",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "0d296a92b554c7c8",
+      "title": "IT_Grundschutz_Kompendium_Edition2023",
+      "publisher": "BSI",
+      "version": "not-stated",
+      "date": "not-stated",
+      "sha256": "bf710b4e3cccf5792f71782b10ff014a39a49a04a6bcfa559e8210815e9a1050",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/IT_Grundschutz_Kompendium_Edition2023.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 858,
+        "text_sha256": "44bb98d08d7ad234a4a3b17198363ec74f8f7cc4a5ea903a18bf58b56d223d3e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "e38dff4c60b4269d",
+      "title": "Leitfaden zur Methodik Grundschutz++",
+      "publisher": "BSI",
+      "version": "not-stated",
+      "date": "2026-03-31",
+      "sha256": "427910589ce244686abe92edee2f439382360bec94773d95d1c414221231d256",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Methodik_Grundschutz_PlusPlus.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 45,
+        "text_sha256": "79073b2b3098d1350afbc308ffc54104743f4f7f2a305049f04536a60aa66a14",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7aae0c59d735a855",
+      "title": "IT-Grundschutz-Profil für Hochschulen",
+      "publisher": "BSI",
+      "version": "Hochschulen, Profil, IT-Grundschutz",
+      "date": "not-stated",
+      "sha256": "bea911c1bff1105a5ac74a7c99805e24d3f538c2da60902a97a533a226b2838d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Profil_Hochschulen.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 27,
+        "text_sha256": "6ca4d992324a65bb82c506f8e215e5ef04a49997165d389b5c0805383eb21d1f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "c0b6c70b4ef748fd",
+      "title": "Errata zum IT-Grundschutz-Kompendium Edition 2023",
+      "publisher": "BSI",
+      "version": "Errata, IT-Grundschutz-Kompendium, 2023",
+      "date": "not-stated",
+      "sha256": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/errata_2023.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 3,
+        "text_sha256": "06bd6d6473c1a65f17a1c343448d4726b3b18e78b466f292eae8e2282400e9a3",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "072e61bf24ffc95f",
+      "title": "Änderungen in der Edition 2023 des IT-Grundschutz-Kompendiums",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Kompendium, Edition 2023, Änderungsdokument",
+      "date": "not-stated",
+      "sha256": "0aee3d36b4d493b64c7de9f66e0a07a2d04bfe1248ccc73b3a0eb54f88e3bf50",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/raw/fd-aenderungen-2023.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 29,
+        "text_sha256": "135a124deffdef1f7626deb5552332209b3001d153680ad045cf3d07aba23235",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "b724c12d9e048430",
+      "title": "Mit BSI-Masterfolien arbeiten",
+      "publisher": "BSI",
+      "version": "not-stated",
+      "date": "not-stated",
+      "sha256": "ef718b66a8a910d9c5ce11e2bd45a2356a92ca0709c0b0569773980487168b48",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/raw/it-grundschutz-2025-outlook.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 20,
+        "text_sha256": "271b620279ac411be4e2ddbe583886aa83390361b37d8f1554c7814f498b161a",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "969d93ff0f6a2b00",
+      "title": "Errata zum IT-Grundschutz-Kompendium Edition 2023",
+      "publisher": "BSI",
+      "version": "Errata, IT-Grundschutz-Kompendium, 2023",
+      "date": "not-stated",
+      "sha256": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/raw/it-grundschutz-errata-2023.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 3,
+        "text_sha256": "06bd6d6473c1a65f17a1c343448d4726b3b18e78b466f292eae8e2282400e9a3",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "5820ab1f7f6533c5",
+      "title": "SYS.3.2.3 iOS (for Enterprise)",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/raw/sys-3-2-3-ios.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 6,
+        "text_sha256": "637a5ef8bd6338b84ddfb791a79ce3fecfa66947403bf9617dbca6c366104f38",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "c4afb0e0ddf4a494",
+      "title": "SYS.3.2.4 Android",
+      "publisher": "BSI",
+      "version": "IT-Grundschutz, Bausteine, Edition 2023",
+      "date": "not-stated",
+      "sha256": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/raw/sys-3-2-4-android.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 4,
+        "text_sha256": "88d686e77f22eb0a50a7cdb2cab40728a99c30fd20b260681005ed4e4cef5e11",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "07e245f3e561635f",
+      "title": "Umsetzungshinweise zum Baustein: SYS.2.4 Clients unter macOS",
+      "publisher": "BSI",
+      "version": "Umsetzungshinweise zum Baustein: SYS.2.4 Clients unter macOS",
+      "date": "2021-03-02",
+      "sha256": "48d8c3255cb79e621802121325d3a0668227ffb3d8d3d4b3037e509fa353a235",
+      "local_path": "private/source-pdfs-cache/example/bsi-references/downloads/raw/umsetzungshinweis-sys-2-4-macos.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 15,
+        "text_sha256": "d5362dc3e95a701ea6f0d55283b094a5c37cf5b1608bccfd50b1198da39bcd40",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "626fb0affd8ae0ce",
+      "title": "CIS_Apple_iOS_17_and_iPadOS_17_Intune_Benchmark_v1.0.0",
+      "publisher": "CIS",
+      "version": "1.0.0",
+      "date": "2024-02-27",
+      "sha256": "0261dae65b7acf404d82a93c1f48e732f1b36436ed7e81bd44b6ca4cad097ac7",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_iOS_17_and_iPadOS_17_Intune_Benchmark_v1.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 262,
+        "text_sha256": "f68c55e1a9c3a6de1b3d407936c9076d208082d718122ff478440009cd252236",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "cf93f37493fc44e9",
+      "title": "CIS_Apple_iOS_18_Benchmark_v2.0.0",
+      "publisher": "CIS",
+      "version": "2.0.0",
+      "date": "2025-11-30",
+      "sha256": "4d7336db21bd36797997395d085bf26980331d955d8e11b49f4ef567b1168158",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_iOS_18_Benchmark_v2.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 286,
+        "text_sha256": "2ed537692ccb59c6a1236385fbbb737dd901f90a9593405326241a1e8b634a42",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "07c2201ab6567071",
+      "title": "CIS_Apple_iOS_26_Benchmark_v1.0.0",
+      "publisher": "CIS",
+      "version": "1.0.0",
+      "date": "2025-10-31",
+      "sha256": "6260ed9a8e805260babcb9e098b32da9277f70933913d9f2d3659b7537be3c18",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_iOS_26_Benchmark_v1.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 290,
+        "text_sha256": "2424e37b71b5c8b304db04f3f2e5b8fbd25c9c8c3f27440f6b0ee129926d6f3d",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "83bee2886adc47c5",
+      "title": "CIS_Apple_iPadOS_18_Benchmark_v2.0.0",
+      "publisher": "CIS",
+      "version": "2.0.0",
+      "date": "2025-11-30",
+      "sha256": "13e2f4d0322aed3b3e91ff7d3fb75b22f3b2d038d831e8c783df6bea2beb045a",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_iPadOS_18_Benchmark_v2.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 292,
+        "text_sha256": "8936eb4e49db446a7d193c7f6a2278131d0c00cea3bd7327c42c624cf173863a",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f3a52662b1a022ab",
+      "title": "CIS_Apple_iPadOS_26_Benchmark_v1.0.0",
+      "publisher": "CIS",
+      "version": "1.0.0",
+      "date": "2025-10-31",
+      "sha256": "afe68ce2810a60735febc86142ef8ccfc4a8ec75e5d05e4a831bacd65f3bfac8",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_iPadOS_26_Benchmark_v1.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 294,
+        "text_sha256": "26f724f8e2aabebc9b92e5169e5c10199ad3b766145cc2358b43172cc49f1082",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f32e592cf842d3bb",
+      "title": "CIS_Apple_macOS_15.0_Sequoia_Benchmark_v2.0.0",
+      "publisher": "CIS",
+      "version": "2.0.0",
+      "date": "2025-10-31",
+      "sha256": "eb3a5a162f376a84fe8a5d28ffdbd1afbb58c1d14c54fa255f5363df13d326bc",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_macOS_15.0_Sequoia_Benchmark_v2.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 448,
+        "text_sha256": "45d76f211b6ab2ca7377daf4d5b4652b9ba1aec1fcbd5628506c3cd64ce6d9bd",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "bce10b0684c064c3",
+      "title": "CIS_Apple_macOS_26_Tahoe_Benchmark_v1.0.0",
+      "publisher": "CIS",
+      "version": "1.0.0",
+      "date": "2025-10-31",
+      "sha256": "96b17f3640bf04de62761f4e612d35badcedddc50a64519699064777ef2149d1",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Apple_macOS_26_Tahoe_Benchmark_v1.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 446,
+        "text_sha256": "a34a44f891836fe08fd93224ff7b32c47c164364f0a2d6ad5cc0df0f786ea31e",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "6769039fe846085a",
+      "title": "CIS_Google_Android_Benchmark_v1.6.0",
+      "publisher": "CIS",
+      "version": "1.6.0",
+      "date": "2025-09-30",
+      "sha256": "2430d2ee8f88ab96814a89ba3530ced239cdef93b56d76de4652b81b4b080224",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Google_Android_Benchmark_v1.6.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 110,
+        "text_sha256": "215e4410910121588282944a3b0d3da41be5a26cfcbe4d23166facbfdaf22c4f",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "7d6b24509c7d3582",
+      "title": "CIS_Microsoft_Defender_Antivirus_Benchmark_v1.0.0",
+      "publisher": "CIS",
+      "version": "1.0.0",
+      "date": "2026-02-13",
+      "sha256": "c66e90c183cfdc29b406c7cb73402f1db564ae4f61de95e84c50bd072573c17c",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Microsoft_Defender_Antivirus_Benchmark_v1.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 173,
+        "text_sha256": "f562dfabbf4ecfb20a8ba044c2e47d6579cbb8522e9567f5c3bd76f00ae0183d",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "f9662b38cc3948ab",
+      "title": "CIS_Microsoft_Windows_11_Stand-alone_Benchmark_v5.0.0",
+      "publisher": "CIS",
+      "version": "5.0.0",
+      "date": "2026-03-25",
+      "sha256": "822580434f241a15c9072224170a60350e472a6a9df62151bf251ac75614b2c3",
+      "local_path": "private/source-pdfs-cache/example/cis-references/downloads/pdf/CIS_Microsoft_Windows_11_Stand-alone_Benchmark_v5.0.0.pdf",
+      "licence": "CIS SecureSuite benchmark licence; local use only; do not redistribute",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 1341,
+        "text_sha256": "8b9620c62a2c2226a2b9797f61cd2c51f384823f5e91b69af4228b933913634a",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "075c4cee843e85f8",
+      "title": "Windows 11 24H2 Security Baseline Release Notes",
+      "publisher": "Microsoft",
+      "version": "not-stated",
+      "date": "2024-09-30",
+      "sha256": "bdfb78f410479efbcc65f754df106a916ab1ecc5a1241f9fc8354a2374f820c9",
+      "local_path": "private/source-pdfs-cache/example/vendor-references/downloads/extracted/microsoft-windows-11-24h2-security-baseline-zip/Windows 11 v24H2 Security Baseline/Documentation/Windows 11 24H2 Security Baseline Release Notes.pdf",
+      "licence": "Microsoft documentation terms; local evidence only",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 4,
+        "text_sha256": "82cb681c7cc0a7b486d544d7d5947da8e8e8841633bc2f3bd376c414b7615995",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    },
+    {
+      "id": "ddca84f8154537ea",
+      "title": "Mindeststandard des BSI für Mobile Device Management",
+      "publisher": "BSI",
+      "version": "2.0",
+      "date": "2022-09-06",
+      "sha256": "cde46ae22921f5456ffe4913842c6e7c8e8f8b6d3772314e3f6a8fced577d99f",
+      "local_path": "private/source-pdfs-cache/official-bsi/Mindeststandard_Mobile-Device-ManagementV2_0.pdf",
+      "licence": "BSI publication terms; verify reuse terms before redistribution",
+      "scope": "offline evidence; normalized controls and short citations only",
+      "extraction": {
+        "status": "extracted",
+        "pages": 24,
+        "text_sha256": "fa6f852cbc1329ef7f53a3bf458c1fe50910a565b2ff1c23842c82d74165c893",
+        "engine": "PyMuPDF 1.27.2.3"
+      }
+    }
+  ]
+}

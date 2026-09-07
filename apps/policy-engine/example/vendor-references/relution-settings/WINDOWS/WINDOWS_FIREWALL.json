@@ -1,0 +1,27 @@
+{
+  "type": "WINDOWS_FIREWALL",
+  "domainProfile": {
+    "allowDefaultInboundAction": false,
+    "allowDefaultOutboundAction": true,
+    "configureProfileProperties": true,
+    "disableInboundNotifications": true,
+    "enableFirewall": true,
+    "profileType": "DOMAIN_PROFILE"
+  },
+  "privateProfile": {
+    "allowDefaultInboundAction": false,
+    "allowDefaultOutboundAction": true,
+    "configureProfileProperties": true,
+    "disableInboundNotifications": true,
+    "enableFirewall": true,
+    "profileType": "PRIVATE_PROFILE"
+  },
+  "publicProfile": {
+    "allowDefaultInboundAction": false,
+    "allowDefaultOutboundAction": true,
+    "configureProfileProperties": true,
+    "disableInboundNotifications": true,
+    "enableFirewall": true,
+    "profileType": "PUBLIC_PROFILE"
+  }
+}

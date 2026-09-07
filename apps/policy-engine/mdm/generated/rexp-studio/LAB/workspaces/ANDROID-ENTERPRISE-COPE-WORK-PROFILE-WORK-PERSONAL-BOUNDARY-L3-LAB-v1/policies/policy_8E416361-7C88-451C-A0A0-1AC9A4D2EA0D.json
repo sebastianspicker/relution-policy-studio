@@ -1,0 +1,64 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only cope_work_profile work_personal_boundary; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "ANDROID_ENTERPRISE",
+  "uuid": "8E416361-7C88-451C-A0A0-1AC9A4D2EA0D",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowBluetoothSharing": true,
+            "cameraDisabled": false,
+            "enabled": true,
+            "personalPlayStoreMode": "BLOCKLIST",
+            "screenCaptureDisabled": false,
+            "type": "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+            "uuid": "BCD45D47-C9A2-47C5-AA3C-0370DC8ECD3D"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "1EBC5477-9F39-4E88-A3EA-177269AEDCC8"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "androidEnterpriseCrossProfilePolicy": {
+              "crossProfileCopyPaste": "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED",
+              "crossProfileDataSharing": "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED"
+            },
+            "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+            "enabled": true,
+            "type": "ANDROID_ENTERPRISE_RESTRICTION",
+            "uuid": "3B81F3BB-9F06-49F5-AFCA-E51FA0BC15F0"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "783D32AC-AAC4-4F63-A8B6-AFEECB6EFB7D"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "0330F12D-A378-4080-AFC2-E77D13DAEBFD",
+      "version": 1
+    }
+  ]
+}

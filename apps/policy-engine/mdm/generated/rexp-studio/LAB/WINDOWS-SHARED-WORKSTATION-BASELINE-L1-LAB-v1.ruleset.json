@@ -1,0 +1,38 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-AUTH-001",
+        "MDM-LIFE-001"
+      ],
+      "type": "WINDOWS_SHARED_PC",
+      "values": {
+        "accountModel": "DOMAIN",
+        "deletionPolicy": "DISK_SPACE_AND_INACTIVE_THRESHOLD",
+        "enableAccountManager": true,
+        "enabled": true,
+        "enableSharedPCMode": true,
+        "inactiveThreshold": 7,
+        "restrictLocalStorage": true,
+        "signInOnResume": true,
+        "type": "WINDOWS_SHARED_PC"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-ENC-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "WIN-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "WINDOWS",
+  "generated_name": "WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "WINDOWS",
+  "policy_id": "WIN-SHARED-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

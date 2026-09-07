@@ -1,0 +1,308 @@
+/* Policy navigator, tree, workspace grid */
+
+.mobile-section-controls,
+.mobile-pane-controls {
+  display: none;
+}
+
+.policy-workspace-grid {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns: var(--ci-layout-navigation-width) minmax(0, 1fr) 0;
+}
+
+.policy-workspace-grid.inspector-pinned {
+  grid-template-columns: var(--ci-layout-navigation-width) minmax(0, 1fr) var(--ci-layout-inspector-width);
+}
+
+.sidebar {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  overflow-x: visible;
+  background: var(--ci-color-surface);
+  border-right: 1px solid var(--ci-color-border);
+}
+
+.policy-navigator {
+  display: flex;
+  min-height: 0;
+  height: 100%;
+  flex-direction: column;
+  padding: 0;
+}
+
+.policy-navigator .policy-tree,
+.policy-navigator > .empty-state {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--ci-space-2);
+}
+
+.policy-navigator > .policy-navigator-empty {
+  flex: 1 1 auto;
+  margin: 0 var(--ci-space-3);
+  padding-inline: 0;
+}
+
+.pane-head,
+.nav-pane-head {
+  display: flex;
+  height: 44px;
+  flex: 0 0 auto;
+  padding: 0 14px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ci-color-border);
+}
+
+.pane-head h2,
+.nav-pane-head h2 {
+  margin: 0;
+  color: var(--ci-color-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-toolbar {
+  display: grid;
+  position: static;
+  gap: var(--ci-space-2);
+  margin: 0;
+  padding: 10px 12px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ci-color-border);
+}
+
+.nav-toolbar input {
+  min-height: var(--ci-control-height);
+  padding-left: 34px;
+  border-color: var(--ci-color-border-strong);
+  border-radius: var(--ci-radius-control);
+  background-position: 11px center;
+  box-shadow: 0 1px 1px rgb(11 23 41 / 3%);
+}
+
+.nav-new-btn {
+  display: flex;
+  width: 100%;
+  height: var(--ci-control-height);
+  min-height: var(--ci-control-height);
+  padding: 0 var(--ci-space-3);
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--ci-color-primary-contrast);
+  background: var(--ci-color-primary);
+  border-color: var(--ci-color-primary);
+  border-radius: var(--ci-radius-control);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.tree-count {
+  display: inline-flex;
+  min-width: 22px;
+  padding: 1px 6px;
+  align-items: center;
+  justify-content: center;
+  color: var(--ci-color-muted);
+  background: var(--ci-color-panel);
+  border: 1px solid var(--ci-color-border);
+  border-radius: 999px;
+  font-family: var(--ci-font-mono);
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.tree-item.active .tree-count,
+.tree-item-select.active .tree-count {
+  color: var(--ci-color-primary);
+  border-color: var(--ci-color-accent-2);
+}
+
+.tree-item-meta--controls {
+  font-family: var(--ci-font-mono);
+  font-size: 10.5px;
+}
+
+.nav-new-btn > span:first-child {
+  font-size: 20px;
+  font-weight: 350;
+}
+
+.nav-new-btn:hover,
+.nav-new-btn[aria-expanded="true"] {
+  background: var(--ci-color-primary-hover);
+  border-color: var(--ci-color-primary-hover);
+}
+
+.new-policy-form-wrapper--open {
+  display: block;
+  margin: -12px 0 20px;
+}
+
+.new-policy-form-wrapper {
+  display: none;
+}
+
+.new-policy-form-wrapper--open {
+  display: block;
+}
+
+.new-policy-form {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  background: var(--ci-color-surface-muted);
+  border-radius: var(--ci-radius-control);
+  box-shadow: none;
+}
+
+.new-policy-form label {
+  display: grid;
+  gap: 5px;
+  color: var(--ci-color-text);
+  font-size: 12px;
+  font-weight: 590;
+}
+
+.policy-tree {
+  position: relative;
+  padding: 0 0 18px;
+}
+
+.policy-tree + .policy-tree {
+  padding-top: var(--ci-space-4);
+  border-top: 1px solid var(--ci-color-border);
+}
+
+.policy-tree h3 {
+  margin: 0 4px 7px;
+  color: var(--ci-color-heading);
+  font-size: 13px;
+  font-weight: 640;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.policy-tree p {
+  display: inline-flex;
+  margin: 0 4px 9px;
+  padding: 2px 5px;
+  color: var(--ci-color-muted);
+  background: var(--ci-color-surface-muted);
+  border: 1px solid var(--ci-color-border);
+  border-radius: 4px;
+  font-family: var(--ci-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.version-item {
+  margin: 7px 4px 4px;
+  color: var(--ci-color-muted);
+  font-size: 11px;
+  font-weight: 560;
+}
+
+.version-block {
+  display: grid;
+  gap: 3px;
+}
+
+.tree-item-row {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  gap: 2px;
+  margin-bottom: 3px;
+}
+
+.tree-item {
+  display: grid;
+  position: relative;
+  width: 100%;
+  min-height: 42px;
+  padding: 7px 9px 7px 12px;
+  align-content: center;
+  justify-items: start;
+  text-align: left;
+  background: transparent;
+  border-color: transparent;
+  border-radius: var(--ci-radius-control);
+}
+
+.tree-item-select {
+  min-width: 0;
+  flex: 1;
+}
+
+.tree-item-label {
+  color: var(--ci-color-heading);
+  font-size: 13px;
+  font-weight: 570;
+}
+
+.tree-item-meta {
+  margin-top: 3px;
+  color: var(--ci-color-muted);
+  font-size: 9px;
+  letter-spacing: 0.015em;
+}
+
+.tree-item.active {
+  color: var(--ci-color-primary);
+  background: var(--ci-color-active-bg);
+  border-color: transparent;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ci-color-primary) 20%, transparent);
+}
+
+.tree-item.active .tree-item-label,
+.tree-item.active .tree-item-meta {
+  color: var(--ci-color-primary);
+}
+
+.tree-item.active::after {
+  display: none;
+}
+
+.tree-item:not(.active):hover {
+  background: var(--ci-color-surface-muted);
+}
+
+.tree-item-actions {
+  position: absolute;
+  z-index: 2;
+  top: 7px;
+  right: 5px;
+  padding: 2px;
+  gap: 2px;
+  background: var(--ci-color-surface);
+  border: 1px solid var(--ci-color-border);
+  border-radius: 6px;
+  box-shadow: 0 5px 14px rgb(11 23 41 / 10%);
+}
+
+.tree-item-actions .icon-button {
+  width: 26px;
+  min-width: 26px;
+  min-height: 26px;
+  border: 0;
+}
+
+.icon-button {
+  display: inline-flex;
+  width: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}

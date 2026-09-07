@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en" data-theme="studio">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>REXP Studio — 2026 design preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+
+<div class="shell">
+  <!-- Command bar -->
+  <header class="commandbar">
+    <div class="brand"><span class="mark">RX</span> REXP Studio <span class="ver">v0.1.0</span></div>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="#">Policies</a><span class="sep">/</span>
+      <a href="#">iOS Tier 3 Baseline – iOS Passcode</a><span class="sep">/</span>
+      <span class="here">iOS Passcode</span>
+    </nav>
+    <div class="spacer"></div>
+    <span class="unsaved-dot">Unsaved changes</span>
+    <button class="btn btn-icon" title="Undo" aria-label="Undo"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3 3 6l3 3M3 6h7a4 4 0 0 1 0 8H8"/></svg></button>
+    <button class="btn btn-icon" title="Redo" aria-label="Redo"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3l3 3-3 3M13 6H6a4 4 0 0 0 0 8h2"/></svg></button>
+    <button class="btn btn-ghost-chrome">Save</button>
+    <button class="btn btn-primary">Build archive</button>
+    <button class="btn btn-ghost-chrome">Download</button>
+  </header>
+
+  <!-- Provenance strip -->
+  <div class="provenance" aria-label="Session provenance">
+    <span class="item"><span class="dot"></span><span class="k">SCOPE</span><span class="v">Local workspace</span></span>
+    <span class="item"><span class="k">SCHEMA</span><span class="v">Relution 26.1.1</span></span>
+    <span class="item"><span class="k">RING</span><span class="v">LAB</span></span>
+    <span class="spacer"></span>
+    <span class="item"><span class="k">TENANT WRITE</span><span class="v blocked">Disabled</span></span>
+  </div>
+
+  <div class="workbench">
+    <!-- Rail -->
+    <nav class="rail" aria-label="Sections">
+      <button class="on" title="Policies" aria-current="page"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 9h6M5 12h4"/></svg></button>
+      <button title="Baselines"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1.8 13.5 4v4c0 3.4-2.3 5.4-5.5 6.2C4.8 13.4 2.5 11.4 2.5 8V4L8 1.8Z"/><path d="m5.8 8 1.5 1.5 3-3"/></svg></button>
+      <button title="Device audit"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 13.5v-4M6.5 13.5v-7M10.5 13.5v-3M14.5 13.5V6"/></svg></button>
+      <button title="Settings"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/></svg></button>
+      <span class="loopback">LOCAL · LOOPBACK</span>
+    </nav>
+
+    <!-- Navigator -->
+    <aside class="navigator" aria-label="Policy navigator">
+      <div class="head">
+        <h2>Policies</h2>
+        <div class="search">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+          Find a policy <kbd>⌘K</kbd>
+        </div>
+      </div>
+      <button class="btn btn-primary nav-new">+ New policy</button>
+      <div class="policy-list">
+        <div class="policy sel">
+          <div class="row1"><span class="name">iOS Tier 3 Baseline – iOS Passcode</span><span class="ptag">iOS</span></div>
+          <div class="vrow">Version 1 <span class="count">1 config</span></div>
+          <button class="config-item sel"><span>iOS Passcode</span><span class="frac">11/15</span></button>
+        </div>
+        <div class="policy">
+          <div class="row1"><span class="name">iOS Tier 3 Baseline – iOS Restriction</span><span class="ptag">iOS</span></div>
+          <div class="vrow">Version 1 <span class="count">1 config</span></div>
+          <button class="config-item"><span>iOS Restrictions</span><span class="frac">17/174</span></button>
+        </div>
+        <div class="policy">
+          <div class="row1"><span class="name">iOS Tier 3 Baseline – iOS Update</span><span class="ptag">iOS</span></div>
+          <div class="vrow">Version 1 <span class="count">1 config</span></div>
+          <button class="config-item"><span>iOS Update</span><span class="frac done">8/8</span></button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Editor -->
+    <main class="editor">
+      <div class="editor-inner">
+        <div class="config-head">
+          <div class="tags">
+            <span class="chip flat">iOS</span>
+            <span class="chip flat">Single configuration</span>
+            <span class="chip ok"><span class="dot"></span>Schema valid</span>
+            <span class="chip warn"><span class="dot"></span>24 compatibility notes</span>
+          </div>
+          <h1>iOS Passcode</h1>
+          <div class="keys">IOS_PASSCODE<span class="sep">·</span>IosPasscodeConfiguration<span class="sep">·</span>single</div>
+          <div class="progress">
+            <div class="meter" role="progressbar" aria-valuenow="11" aria-valuemax="15" aria-label="Configured controls"><i></i></div>
+            <span class="stat"><b>11 / 15</b> configured</span>
+            <span class="stat">0 recommendations</span>
+            <span class="stat ok">No blocking issues</span>
+          </div>
+          <div class="addrow">
+            <button class="btn btn-outline">+ Add configuration</button>
+            <button class="btn btn-outline">Import JSON</button>
+          </div>
+        </div>
+
+        <section class="group" aria-labelledby="g1">
+          <h3 id="g1">Passcode requirements</h3>
+          <p class="desc">BSI Tier 3 recommends alphanumeric passcodes of at least 8 characters.</p>
+          <div class="field">
+            <div class="lab"><span class="name">Enabled</span><span class="key">enabled</span></div>
+            <button class="switch" role="switch" aria-checked="true" aria-label="Enabled"></button>
+          </div>
+          <div class="field">
+            <div class="lab"><span class="name">Require alphanumeric</span><span class="key">requireAlphanumeric</span></div>
+            <button class="switch" role="switch" aria-checked="true" aria-label="Require alphanumeric"></button>
+          </div>
+          <div class="field">
+            <div class="lab"><span class="name">Minimum length</span><span class="key">minLength</span></div>
+            <input class="num" type="number" value="8" aria-label="Minimum length" />
+          </div>
+          <div class="field">
+            <div class="lab"><span class="name">Allow simple value</span><span class="key">allowSimple</span></div>
+            <button class="switch" role="switch" aria-checked="false" aria-label="Allow simple value"></button>
+            <div class="hint info">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="flex:none;margin-top:2px"><circle cx="8" cy="8" r="6.5"/><path d="M8 7.5V11M8 5.2v.2"/></svg>
+              <span>BSI-annotated: disabling raises device risk tier. <span class="mono">SYP.1.1.A9</span></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="g2">
+          <h3 id="g2">Locking</h3>
+          <div class="field">
+            <div class="lab"><span class="name">Maximum failed attempts</span><span class="key">maxFailedAttempts</span></div>
+            <input class="num" type="number" value="11" aria-label="Maximum failed attempts" aria-invalid="true" />
+            <div class="hint err">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="flex:none;margin-top:2px"><path d="M8 2 14.5 13.5h-13L8 2Z"/><path d="M8 7v3M8 11.6v.2"/></svg>
+              <span>Out of range — Relution 26.1.1 accepts 2–10 for this payload.</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="lab"><span class="name">Maximum grace period</span><span class="key">maxGracePeriodInMinutes</span></div>
+            <button class="select">5 minutes <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m4 6 4 4 4-4"/></svg></button>
+          </div>
+          <div class="field">
+            <div class="lab"><span class="name">Maximum inactivity before lock</span><span class="key">maxInactivityInMinutes</span></div>
+            <button class="select">5 minutes <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m4 6 4 4 4-4"/></svg></button>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="g3">
+          <h3 id="g3">Biometrics</h3>
+          <div class="field">
+            <div class="lab"><span class="name">Allow fingerprint modification</span><span class="key">allowFingerprintModification</span></div>
+            <button class="switch" role="switch" aria-checked="false" aria-label="Allow fingerprint modification"></button>
+            <div class="hint warn">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="flex:none;margin-top:2px"><path d="M8 2 14.5 13.5h-13L8 2Z"/><path d="M8 7v3M8 11.6v.2"/></svg>
+              <span>Deprecated above iOS 14 — value is ignored by current devices.</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="lab"><span class="name">Allow face modification</span><span class="key">allowFaceModification</span></div>
+            <button class="switch" role="switch" aria-checked="false" aria-label="Allow face modification"></button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Assurance rail -->
+    <aside class="assurance" aria-label="Assurance">
+      <div class="ahead">
+        <h2>Assurance</h2>
+        <span class="scope-pill">LOCAL CHECKS</span>
+      </div>
+      <div class="verdict">
+        <span class="ring"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3.5 8.5 3 3 6-6.5"/></svg></span>
+        <div>
+          <div class="t">Ready to build</div>
+          <div class="s">No blocking issues · local evidence only</div>
+        </div>
+      </div>
+      <div class="seg" role="tablist" aria-label="Assurance views">
+        <button class="on" role="tab" aria-selected="true">Validation</button>
+        <button role="tab" aria-selected="false">Preview</button>
+        <button role="tab" aria-selected="false">JSON</button>
+        <button role="tab" aria-selected="false">Files</button>
+      </div>
+      <div class="assurance-body">
+        <div class="finding">
+          <span class="sev warn"></span>
+          <div>
+            <div class="ft">Validation degraded</div>
+            <div class="fs">24 regex constraints removed during import — results are partial, not negative.</div>
+          </div>
+        </div>
+        <button class="disclosure">
+          <svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m6 4 4 4-4 4"/></svg>
+          Compatibility notes
+          <span class="count">24</span>
+        </button>
+        <div class="finding">
+          <span class="sev info"></span>
+          <div>
+            <div class="ft">Unsaved workspace changes</div>
+            <div class="fs">Validated locally and saved before build. Nothing leaves this machine.</div>
+          </div>
+        </div>
+        <div class="finding">
+          <span class="sev ok"></span>
+          <div>
+            <div class="ft">Ruleset import</div>
+            <div class="fs">Applied 3 · Conflicts 0 · Unresolved 0 · Warnings 0</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Status footer -->
+  <footer class="statusbar">
+    <span>Local workspace</span><span>·</span><span>autosave off</span><span>·</span><span>127.0.0.1</span><span>·</span><span>/tmp/rexp-studio-output.rexp</span>
+    <span class="right"><span class="sdot unsaved"></span><span class="unsaved">Unsaved</span></span>
+  </footer>
+</div>
+
+<!-- ============ States showcase (design-system evidence) ============ -->
+<section class="showcase">
+  <h2>States</h2>
+  <p>Empty, loading, error and confirmation feedback in the same visual language — no modal dialogs for routine operations.</p>
+  <div class="state-grid">
+    <div class="state-card">
+      <h3>Empty — Policies</h3>
+      <div class="empty-state">
+        <div class="glyph"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 9h6M5 12h4"/></svg></div>
+        <h4>Select a policy to start editing</h4>
+        <p>Pick a policy version in the navigator, or create a new platform policy to add configurations.</p>
+        <button class="btn btn-primary">+ New policy</button>
+      </div>
+    </div>
+    <div class="state-card">
+      <h3>Loading — compliance report</h3>
+      <div class="skel" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <div class="state-card">
+      <h3>Error — inline, recoverable</h3>
+      <div class="err-box">
+        <span class="sev"></span>
+        <div><div class="t">Compliance check failed</div><div class="s">The local evaluator could not parse the ruleset. Workspace data is unchanged.</div></div>
+        <button>Retry</button>
+      </div>
+    </div>
+    <div class="state-card">
+      <h3>Confirmation — toast</h3>
+      <div class="toast-row"><svg class="ok-ic" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6.5"/><path d="m5.5 8.2 1.8 1.8 3.4-3.8"/></svg> Baseline applied — 3 settings updated, 0 conflicts.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Preview-only controls -->
+<div class="preview-banner">
+  2026 design preview · theme:
+  <button id="t-light" class="on" onclick="setTheme('studio')">Light</button>
+  <button id="t-dark" onclick="setTheme('dark')">Dark</button>
+</div>
+<script>
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  document.getElementById('t-light').classList.toggle('on', t === 'studio');
+  document.getElementById('t-dark').classList.toggle('on', t === 'dark');
+}
+</script>
+</body>
+</html>

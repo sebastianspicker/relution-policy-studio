@@ -1,0 +1,18 @@
+{
+  "configurations": [],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-ENC-001"
+  ],
+  "dependencies": [
+    "AND-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "ANDROID_ENTERPRISE_DEVICE_OWNER",
+  "generated_name": "ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "ANDROID_ENTERPRISE",
+  "policy_id": "AND-SHARED-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

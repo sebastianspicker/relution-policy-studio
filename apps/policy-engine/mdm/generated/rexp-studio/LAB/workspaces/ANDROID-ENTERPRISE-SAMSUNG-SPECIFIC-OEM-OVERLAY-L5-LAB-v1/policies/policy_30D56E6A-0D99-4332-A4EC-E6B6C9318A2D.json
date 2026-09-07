@@ -1,0 +1,30 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only samsung_specific oem_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "ANDROID_ENTERPRISE",
+  "uuid": "30D56E6A-0D99-4332-A4EC-E6B6C9318A2D",
+  "versions": [
+    {
+      "configurations": [],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "248A6447-01E5-40CC-A057-67784C015D0D",
+      "version": 1
+    }
+  ]
+}

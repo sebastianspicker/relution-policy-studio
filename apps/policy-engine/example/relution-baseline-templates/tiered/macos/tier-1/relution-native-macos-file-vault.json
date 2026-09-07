@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "name": "macOS Tier 1 Baseline - macOS File Vault Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "MACOS",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "MACOS_FILE_VAULT",
+      "slug": "relution-native-macos-file-vault",
+      "label": "macOS File Vault"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "MACOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "MACOS",
+      "name": "macOS Tier 1 Baseline - macOS File Vault",
+      "description": "Modular macOS baseline block for MACOS_FILE_VAULT. Tier 1 - most restrictive Grundschutz baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-file-vault",
+          "title": "Consolidated Relution aggregate: MACOS_FILE_VAULT",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0",
+            "apple-managing-filevault-macos",
+            "apple-manage-filevault-device-management"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enableRecoveryKeyEscrow": true,
+                "enabled": true,
+                "fdeFileVault": {
+                  "defer": true,
+                  "enable": "ON",
+                  "showRecoveryKey": true,
+                  "useRecoveryKey": true
+                },
+                "fdeFileVaultOptions": {
+                  "dontAllowFDEDisable": true
+                }
+              },
+              "type": "MACOS_FILE_VAULT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

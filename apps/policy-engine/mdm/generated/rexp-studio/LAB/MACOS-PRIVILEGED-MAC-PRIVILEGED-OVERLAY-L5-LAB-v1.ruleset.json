@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-APP-001",
+        "MDM-INT-001"
+      ],
+      "type": "MACOS_SYSTEM_POLICY_CONTROL",
+      "values": {
+        "allowIdentifiedDevelopers": false,
+        "displayName": "Privileged endpoint Gatekeeper",
+        "enableAssessment": true,
+        "enabled": true,
+        "type": "MACOS_SYSTEM_POLICY_CONTROL"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-APP-001",
+    "MDM-INT-001"
+  ],
+  "dependencies": [
+    "MAC-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "MACOS",
+  "generated_name": "MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1",
+  "layer": 5,
+  "platform": "MACOS",
+  "policy_id": "MAC-PRIV-ADMIN-L5-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

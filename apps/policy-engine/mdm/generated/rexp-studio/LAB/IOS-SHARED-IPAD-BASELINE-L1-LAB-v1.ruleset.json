@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-AUTH-001",
+        "MDM-LIFE-001"
+      ],
+      "type": "IOS_SHARED_IPAD_SETTINGS",
+      "values": {
+        "blockRelutionUserChange": true,
+        "enabled": true,
+        "temporarySessionOnly": false,
+        "temporarySessionTimeout": 900,
+        "type": "IOS_SHARED_IPAD_SETTINGS",
+        "userSessionTimeout": 900
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-ENC-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "APL-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "IOS",
+  "generated_name": "IOS-SHARED-IPAD-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "IOS",
+  "policy_id": "APL-SHARED-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

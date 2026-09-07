@@ -1,0 +1,5 @@
+{
+  "type": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+  "enabled": true,
+  "systemUpdateType": "AUTOMATIC"
+}

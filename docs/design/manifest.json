@@ -1,0 +1,39 @@
+{
+  "source": "/Users/sebastian/.codex/generated_images/01a07abf-da5a-7ae2-aab3-60c1105620ed",
+  "assets": [
+    {
+      "source": "exec-98d3c2be-3f9d-416b-9c41-4f43e78d24b8.png",
+      "file": "planning-original.png",
+      "sha256": "32d765ba2ccb9457460c8713bf292a531c55eb1939752649751004ae52f8a41d"
+    },
+    {
+      "source": "exec-8de859da-4c75-46d5-b72b-954007b4f5d0.png",
+      "file": "planning-corrected.png",
+      "sha256": "529d4a381d65c09527f366a3557ae30aa8ebf6f17259066cda82334aa47ae9a0"
+    },
+    {
+      "source": "exec-c5115128-53b7-4fbd-a989-76a88c193b84.png",
+      "file": "responsive-dark.png",
+      "sha256": "1e985939fa19cc99f45d70b6043640a6680c3046870ca00407950227ab598475"
+    },
+    {
+      "source": "exec-4bd34034-7599-4f6a-9132-3eec85babc93.png",
+      "file": "review-corrected.png",
+      "sha256": "0cdbb7a03cdff5fb80abfb78056d6f0e4ca354dc4f038d0276d61000282ab97c"
+    },
+    {
+      "source": "exec-ae406c14-910e-4082-860f-84e0fa113546.png",
+      "file": "policy-editor-corrected.png",
+      "sha256": "ef68352055e71084bb8abfeff426b67ddbf6df4817a332ba4f4717d848361244"
+    }
+  ],
+  "corrections": [
+    "No help or account controls without a function",
+    "Workflow steps indicate navigation separately from completion",
+    "Incomplete review retains missing target/device evidence",
+    "Policy save is explicit; validation and build use saved revisions",
+    "No mockup configuration value is a real default",
+    "Planning drafts autosave, including narrow layout; narrow concept Save changes is superseded",
+    "Guided navigation never prevents expert access"
+  ]
+}

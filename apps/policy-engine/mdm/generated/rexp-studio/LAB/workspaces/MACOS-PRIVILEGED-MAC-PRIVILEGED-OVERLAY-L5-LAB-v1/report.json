@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "1C54D0BF-F9C6-44BF-A9EC-81A74EC70E28": "MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

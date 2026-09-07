@@ -1,0 +1,62 @@
+/* Policy version context */
+.policy-version-context {
+  display: flex;
+  padding: 28px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--ci-color-surface);
+  border-bottom: 1px solid var(--ci-color-border);
+}
+
+.pvc-identity {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 6px;
+}
+
+.pvc-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pvc-platform {
+  color: var(--ci-color-primary);
+  font-size: 12px;
+  font-weight: 640;
+}
+
+.pvc-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pvc-name {
+  width: 100%;
+  min-height: 42px;
+  border-color: transparent;
+  padding: 2px 0;
+  color: var(--ci-color-heading);
+  background: transparent;
+  font-family: var(--ci-font-display);
+  font-size: clamp(28px, 2.25vw, 38px);
+  font-weight: 690;
+  letter-spacing: -0.04em;
+}
+
+.pvc-name:hover,
+.pvc-name:focus {
+  background: var(--ci-color-field-bg);
+}
+
+.pvc-description {
+  width: 100%;
+  min-height: 64px;
+  border-color: transparent;
+  resize: vertical;
+  padding: 4px 0;
+  color: var(--ci-color-muted);
+}

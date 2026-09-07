@@ -1,15 +1,6 @@
 {
-  "name": "campusweave-web",
+  "name": "campusweave-monorepo",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=20.19.0"
-  },
-  "scripts": {
-    "test": "node --test tests/web/*.test.mjs",
-    "lint": "eslint web tests/web"
-  },
-  "devDependencies": {
-    "eslint": "10.9.1"
-  }
+  "scripts": {}
 }

@@ -1,0 +1,56 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only dedicated task_specific_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "ANDROID_ENTERPRISE",
+  "uuid": "F91270E3-F76E-4D55-A511-D1AD945CC529",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "deviceSettings": "SETTINGS_ACCESS_BLOCKED",
+            "enabled": true,
+            "kioskCustomLauncher": {
+              "defaultPermissionPolicy": "PROMPT",
+              "displayName": "Managed task app",
+              "installType": "KIOSK",
+              "lockTaskAllowed": true,
+              "packageName": "${ENV:ANDROID_KIOSK_PACKAGE}",
+              "source": "PLAY_STORE"
+            },
+            "powerButtonActions": "POWER_BUTTON_AVAILABLE",
+            "statusBar": "SYSTEM_INFO_ONLY",
+            "systemErrorWarnings": "ERROR_AND_WARNINGS_ENABLED",
+            "systemNavigation": "HOME_BUTTON_ONLY",
+            "type": "ANDROID_ENTERPRISE_KIOSK_MODE",
+            "uuid": "55FDA279-44E9-4077-A987-5374E974EF30"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "AEB20C13-79B3-4244-ACD9-CA1C8E6F2F03"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "CCE677AD-3B21-46B4-A524-F30AF91ECDA0",
+      "version": 1
+    }
+  ]
+}

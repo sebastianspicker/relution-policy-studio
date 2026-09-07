@@ -1,0 +1,80 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only corporate_iphone_ipad baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "IOS",
+  "uuid": "93DC7D75-F8EE-457B-AE22-F3A0653E9F5F",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "forcePIN": true,
+            "maxInactivityMinutes": 5,
+            "minLength": 8,
+            "requireAlphanumeric": true,
+            "type": "IOS_PASSCODE",
+            "uuid": "215A31C0-6252-4CB7-A758-E3A4147D94DA"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "8C88DBC1-4EBA-4EBA-A477-F62B56955C31"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowAirDrop": true,
+            "allowCamera": true,
+            "allowEnterpriseAppTrust": false,
+            "allowOpenFromManagedToUnmanaged": false,
+            "allowOpenFromUnmanagedToManaged": true,
+            "allowScreenShot": true,
+            "allowUIConfigurationProfileInstallation": false,
+            "enabled": true,
+            "requireManagedPasteboard": true,
+            "type": "IOS_RESTRICTION",
+            "uuid": "F46144CA-87D2-478B-A2EB-E8F15D26A95A"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "FCDBCB6F-A7BC-4377-A6BA-E66B78BE7C69"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "type": "IOS_UPDATE",
+            "updateMode": "INSTALL_ASAP",
+            "uuid": "DBBA780C-495D-49E1-A202-50D64EAF8986"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "42B18E55-628D-44C4-A615-80EEB66EB5E7"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "9F8EBDAF-9732-4845-ABA0-88C2B797420B",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+schema_version: 1
+exception_id: REQUIRED
+status: draft
+affected_control_ids: []
+affected_device_or_group: REQUIRED_PSEUDONYMOUS_SCOPE
+reason: REQUIRED
+risk: REQUIRED
+business_justification: REQUIRED
+compensating_controls: []
+requester_role: REQUIRED
+approver_role: REQUIRED
+owner_role: REQUIRED
+start_date: REQUIRED_YYYY-MM-DD
+expiry_date: REQUIRED_YYYY-MM-DD
+review_date: REQUIRED_YYYY-MM-DD
+relution_group_or_policy: null
+verification: REQUIRED
+closure_evidence: null
+rules:
+  permanent: false
+  expiry_required: true
+  broad_baseline_change_allowed: false
+  secrets_or_personal_data_allowed: false
+

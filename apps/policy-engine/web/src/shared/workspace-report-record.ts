@@ -1,0 +1,4 @@
+/** Adds a policy result using own-property-safe UUID keys. */
+import { asRecord } from "./editor-record-utils.js";
+import type { JsonRecord } from "./editor-contracts.js";
+export function recordPolicyInReport(report: JsonRecord, policy: JsonRecord): void { const uuid = typeof policy.uuid === "string" ? policy.uuid : undefined; if (uuid === undefined) return; const name = typeof policy.name === "string" ? policy.name : "Policy copy"; const ids = Array.isArray(report.policiesToExport) ? report.policiesToExport.filter((entry): entry is string => typeof entry === "string") : []; report.policiesToExport = ids.includes(uuid) ? ids : [...ids, uuid]; const exported = asRecord(report.exportedPolicies) ?? Object.create(null) as JsonRecord; Object.defineProperty(exported, uuid, { value: { policyUuid: uuid, policyName: name, result: "SUCCESS", errors: [] }, writable: true, enumerable: true, configurable: true }); report.exportedPolicies = exported; }

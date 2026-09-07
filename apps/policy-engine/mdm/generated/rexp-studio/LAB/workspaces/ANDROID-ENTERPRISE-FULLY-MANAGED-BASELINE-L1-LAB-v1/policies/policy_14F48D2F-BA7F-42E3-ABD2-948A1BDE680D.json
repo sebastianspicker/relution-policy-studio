@@ -1,0 +1,86 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only fully_managed baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "ANDROID_ENTERPRISE",
+  "uuid": "14F48D2F-BA7F-42E3-ABD2-948A1BDE680D",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED",
+            "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+            "uuid": "AD6F70D7-7EF6-4938-A404-90F89CB76D39"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "F15825BE-D444-4E9C-A88A-1BE1EE2E19A4"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "minLength": 8,
+            "quality": "ALPHANUMERIC",
+            "type": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+            "uuid": "3D8C7E9C-E718-4C8F-AEAE-7DF2DF975421"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "BF27DA0A-73F2-41DD-A12B-AC9067027573"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "debuggingFeaturesAllowed": false,
+            "enabled": true,
+            "ensureVerifyAppsEnabled": true,
+            "factoryResetDisabled": false,
+            "type": "ANDROID_ENTERPRISE_RESTRICTION",
+            "uuid": "3F987579-1BF2-474F-A4C8-5B3169B42565"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "A9D4F14C-E9B9-40F1-AACC-8F2E22C4FB33"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "systemUpdateType": "AUTOMATIC",
+            "type": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+            "uuid": "FAD1C46A-5594-4202-A8E1-A98E346E29E8"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "FBED841C-199A-4C52-A1B2-BB6A0D48221A"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "A2176327-080F-4794-A63C-4820C6F45B7A",
+      "version": 1
+    }
+  ]
+}

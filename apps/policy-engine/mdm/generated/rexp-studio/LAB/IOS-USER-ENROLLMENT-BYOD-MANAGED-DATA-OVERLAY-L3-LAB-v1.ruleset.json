@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-DATA-001"
+      ],
+      "type": "IOS_RESTRICTION",
+      "values": {
+        "allowManagedAppsCloudSync": false,
+        "allowOpenFromManagedToUnmanaged": false,
+        "allowOpenFromUnmanagedToManaged": true,
+        "enabled": true,
+        "requireManagedPasteboard": true,
+        "type": "IOS_RESTRICTION"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-DATA-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "APL-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "IOS_USER_ENROLLMENT",
+  "generated_name": "IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1",
+  "layer": 3,
+  "platform": "IOS",
+  "policy_id": "APL-BYOD-DATA-L3-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

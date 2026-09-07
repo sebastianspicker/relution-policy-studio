@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "14F48D2F-BA7F-42E3-ABD2-948A1BDE680D": "ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

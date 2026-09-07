@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "CD478A71-2A36-401B-A93A-78CF890D9B3E": "WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

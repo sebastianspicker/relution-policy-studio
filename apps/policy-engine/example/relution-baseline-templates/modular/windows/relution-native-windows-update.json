@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "name": "Windows Baseline - Windows Update Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "modular-target",
+    "platform": "WINDOWS",
+    "module": {
+      "kind": "relution-native",
+      "target": "WINDOWS_UPDATE",
+      "slug": "relution-native-windows-update",
+      "label": "Windows Update"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Baseline - Windows Update",
+      "description": "Modular Windows baseline block for WINDOWS_UPDATE. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-update",
+          "title": "Consolidated Relution aggregate: WINDOWS_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-update-aggregate",
+              "title": "Relution aggregate: WINDOWS_UPDATE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "autoUpdateType": "AUTO_INSTALL_AND_RESTART_AT_SPECIFIED_TIME",
+                "deadlineForFeatureUpdates": 30,
+                "deadlineForQualityUpdates": 7,
+                "enablePauseUpdates": false,
+                "enableWindowsUpdateAccess": true,
+                "enabled": true,
+                "installDay": "EVERY_DAY",
+                "installTime": 3
+              },
+              "type": "WINDOWS_UPDATE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

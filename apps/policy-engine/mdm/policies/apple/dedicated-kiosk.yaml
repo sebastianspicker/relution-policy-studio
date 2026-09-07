@@ -1,0 +1,25 @@
+schema_version: 1
+policy_id: APL-KIOSK-DEDICATED-L5-LAB-v1
+platform: IOS
+model: dedicated_kiosk
+ownership: corporate
+enrollment_model: IOS
+layer: 5
+purpose: task_specific_overlay
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-APP-001, MDM-LIFE-001]
+dependencies: [APL-CORP-BASELINE-L1-LAB-v1]
+environment_placeholders: ['${ENV:IOS_KIOSK_BUNDLE_ID}']
+settings:
+  - configuration_type: IOS_APP_LOCK
+    values:
+      identifier: {displayName: Managed task app, packageName: '${ENV:IOS_KIOSK_BUNDLE_ID}', appType: PUBLIC}
+      disableAutoLock: false
+      enableVoiceOver: true
+      enableZoom: true
+      enableAssistiveTouch: true
+    control_ids: [MDM-APP-001]
+rings: [LAB]
+production_ready: false

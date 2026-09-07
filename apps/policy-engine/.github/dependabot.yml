@@ -1,0 +1,21 @@
+# Group weekly GitHub Actions and npm dependency updates into reviewable pull requests.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      npm-dev-dependencies:
+        dependency-type: "development"
+      npm-production-dependencies:
+        dependency-type: "production"

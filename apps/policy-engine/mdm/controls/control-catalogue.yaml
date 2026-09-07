@@ -1,0 +1,252 @@
+schema_version: 2
+status: APPROVED
+source_of_truth: true
+generated_relution_json_allowed: true
+classification_values: [mandatory, recommended, optional, use-case-specific, not-recommended, unsupported, not-applicable]
+common:
+  minimum_supported_version: tenant-dependent
+  relution_schema_status: REFERENCE_VALIDATED-26.1.1
+  evidence_status: NOT_EVIDENCED
+  review_frequency: annual-and-on-material-change
+  vendor_mapping: exact-platform-guidance-to-be-confirmed-for-active-model-and-version
+  cis_mapping: pending-current-benchmark-title-version-profile-licence-and-applicability-review
+  default_platform_behaviour: must-be-recorded-from-current-vendor-documentation-and-lab-device
+  residual_and_bypass_risk: must-be-recorded-per-active-device-model
+controls:
+  - control_id: MDM-GOV-001
+    title: Define MDM strategy and permitted device models
+    classification: mandatory
+    objective: Establish scope, ownership, enrolment, privacy, support and risk decisions before technical enforcement.
+    sources: [BSI-MDM-2.0:MDM.2.1.01, BSI-SYS-3.2.2-2023:SYS.3.2.2.A1]
+    platforms: [cross-platform]
+    applicability: {ownership: [corporate, byod], prerequisites: [approved information-classification and use cases]}
+    configuration: {baseline: documented strategy and permitted-device register, variants: [elevated, shared, kiosk]}
+    impacts: {usability: low, operational: moderate, privacy: positive}
+    rationale: Prevent unsupported one-size-fits-all policy and undocumented privacy overreach.
+    relution: {method: organisational-plus-inventory, payload: none}
+    verification: approved strategy, model register and annual review minutes
+    exceptions: {allowed: false}
+
+  - control_id: MDM-ADM-001
+    title: Protect privileged Relution administration
+    classification: mandatory
+    objective: Prevent unauthorised management-plane actions.
+    sources: [BSI-MDM-2.0:MDM.2.2.08, BSI-SYS-3.2.2-2023:SYS.3.2.2.A12]
+    platforms: [management-plane]
+    applicability: {ownership: [all], prerequisites: [identity-provider and break-glass design]}
+    configuration: {baseline: named accounts, MFA, least privilege, audit logging and protected admin workstation, variants: [break-glass]}
+    impacts: {usability: moderate-for-admins, operational: moderate, privacy: neutral}
+    rationale: MDM compromise has fleet-wide impact.
+    relution: {method: RBAC-authentication-audit-configuration, payload: none}
+    verification: role export, MFA test, dormant-account review and privileged-action log sample
+    exceptions: {allowed: true, approval: CISO, expiry_required: true, compensating_control: restricted network and dual control}
+
+  - control_id: MDM-AUTH-001
+    title: Require device unlock authentication
+    classification: mandatory
+    objective: Prevent unauthorised local access to organisational data.
+    sources: [BSI-SYS-3.2.1-2023:SYS.3.2.1.A4]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [supported enrolment mode]}
+    configuration: {baseline: strong platform-appropriate credential, inactivity_lock: risk-based, arbitrary_rotation: prohibited-without-requirement, variants: [passwordless-hardware-backed]}
+    impacts: {usability: moderate, operational: lockout-recovery-required, privacy: neutral}
+    rationale: Balance guessing resistance with biometrics/passwordless and recoverability.
+    relution: {method: native-passcode-or-CSP, payload: verify-installed-schema}
+    verification: effective configuration plus test-device lock and recovery test
+    exceptions: {allowed: true, approval: security-risk-owner, expiry_required: true}
+
+  - control_id: MDM-ENC-001
+    title: Require platform storage encryption and controlled recovery
+    classification: mandatory
+    objective: Protect data at rest on lost, stolen or decommissioned devices.
+    sources: [BSI-SYS-3.2.1-2023:SYS.3.2.1.A11, MS-BITLOCKER-CSP]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [hardware-and-edition-support]}
+    configuration: {baseline: encryption-enabled, variants: [FileVault-escrow, BitLocker-TPM-recovery-escrow, platform-native-mobile-encryption]}
+    impacts: {usability: low, operational: recovery-key-governance-high, privacy: positive}
+    rationale: Encryption without recovery, access control and rotation evidence is incomplete.
+    relution: {method: native-payload-plus-compliance, payload: MACOS_FILE_VAULT-or-WINDOWS_BITLOCKER-or-device-state}
+    verification: device effective state, escrow access test, recovery test and key-access audit
+    exceptions: {allowed: true, approval: CISO, expiry_required: true, compensating_control: no-local-organisational-data}
+
+  - control_id: MDM-UPD-001
+    title: Maintain supported OS and staged security updates
+    classification: mandatory
+    objective: Reduce exposure to known vulnerabilities without fleet-wide update failure.
+    sources: [BSI-SYS-3.2.1-2023:SYS.3.2.1.A5, APPLE-DEPLOY-2026-05, MS-UPDATE-CSP]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [support-matrix and rings]}
+    configuration: {baseline: supported-OS and risk-based deadline, variants: [lab, pilot, early, broad, emergency]}
+    impacts: {usability: moderate, operational: high, privacy: neutral}
+    rationale: Use measured rings; emergency acceleration needs explicit incident authority.
+    relution: {method: platform-update-payload-and-compliance, payload: verify-installed-schema-and-capability}
+    verification: ring deployment report, effective deadline, patch/build evidence and failure recovery
+    exceptions: {allowed: true, approval: security-and-application-owner, expiry_required: true}
+
+  - control_id: MDM-INT-001
+    title: Detect compromised or unsupported device integrity
+    classification: mandatory
+    objective: Prevent high-risk devices from accessing organisational data.
+    sources: [BSI-MDM-2.0:MDM.2.2.02, GOOGLE-AM-POLICY]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [signal-availability]}
+    configuration: {baseline: jailbreak-root-secure-boot-verified-boot-TPM and stale-management signals, variants: [attestation-where-supported]}
+    impacts: {usability: moderate-on-failure, operational: false-positive-handling-required, privacy: data-minimised}
+    rationale: Integrity is a risk signal, not an automatic wipe instruction.
+    relution: {method: inventory-compliance-and-access-restriction, payload: platform-dependent}
+    verification: injected test condition, alert, grace/restriction and recovery evidence
+    exceptions: {allowed: true, approval: security-risk-owner, expiry_required: true}
+
+  - control_id: MDM-DATA-001
+    title: Enforce managed and unmanaged data boundaries
+    classification: mandatory
+    objective: Limit organisational data transfer without disabling ordinary personal productivity.
+    sources: [BSI-MDM-2.0:MDM.2.6, APPLE-DEPLOY-2026-05, GOOGLE-AM-POLICY]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [managed-app-and-data-classification]}
+    configuration: {baseline: managed-open-in-or-work-profile-boundary, variants: [per-app-VPN, elevated-no-export]}
+    impacts: {usability: moderate, operational: app-testing-required, privacy: positive-for-byod}
+    rationale: Prefer scoped boundaries to global screenshot, clipboard, Bluetooth or cloud bans.
+    relution: {method: managed-app-restriction-or-work-profile, payload: verify-by-model}
+    verification: positive and negative data-flow tests across representative apps
+    exceptions: {allowed: true, approval: data-owner, expiry_required: true}
+
+  - control_id: MDM-APP-001
+    title: Govern application provenance and lifecycle
+    classification: mandatory
+    objective: Ensure required apps are supported and risky apps cannot access organisational data.
+    sources: [BSI-SYS-3.2.1-2023:SYS.3.2.1.A8, BSI-SYS-3.2.2-2023:SYS.3.2.2.A7]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [application-owner-and-licence]}
+    configuration: {baseline: managed-distribution-and-updates, variants: [risk-based-deny, dedicated-allowlist]}
+    impacts: {usability: low-to-high, operational: application-catalogue-required, privacy: avoid-personal-app-inventory-where-not-needed}
+    rationale: Broad allowlisting is use-case-specific, not an ordinary baseline.
+    relution: {method: managed-app-policy-and-compliance, payload: platform-dependent}
+    verification: install/update/removal and managed-config test; app-owner sign-off
+    exceptions: {allowed: true, approval: application-and-security-owner, expiry_required: true}
+
+  - control_id: MDM-NET-001
+    title: Deploy authenticated organisational connectivity
+    classification: recommended
+    objective: Protect network access and reduce credential exposure.
+    sources: [BSI-SYS-3.2.1-2023:SYS.3.2.1.A22, BSI-SYS-3.2.1-2023:SYS.3.2.1.A34]
+    platforms: [ios, ipados, macos, windows, android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [PKI-and-network-design]}
+    configuration: {baseline: certificate-authenticated-Wi-Fi-and-approved-DNS, variants: [per-app-VPN, always-on-VPN-for-elevated]}
+    impacts: {usability: low-to-moderate, operational: certificate-and-captive-portal-support, privacy: VPN-scope-disclosure}
+    rationale: Always-on VPN is not automatically proportionate for every user and network.
+    relution: {method: Wi-Fi-VPN-DNS-certificate-payloads, payload: environment-overlay-required}
+    verification: authentication, renewal, roaming, offline and captive-portal tests
+    exceptions: {allowed: true, approval: network-and-security-owner, expiry_required: true}
+
+  - control_id: MDM-CERT-001
+    title: Govern device and service certificate lifecycle
+    classification: mandatory
+    objective: Prevent expired, duplicated or compromised credentials.
+    sources: [BSI-SYS-3.2.2-2023:SYS.3.2.2.A21]
+    platforms: [cross-platform]
+    applicability: {ownership: [all-managed], prerequisites: [approved-PKI]}
+    configuration: {baseline: unique-device-identity, renewal, revocation and protected-key-generation, variants: [SCEP-or-equivalent]}
+    impacts: {usability: low, operational: high, privacy: minimise-subject-identifiers}
+    rationale: Never store private keys or production secrets in source or generated JSON.
+    relution: {method: certificate-enrolment-and-inventory, payload: external-secret-reference-only}
+    verification: issuance, renewal-before-expiry, revocation and dependent-service denial test
+    exceptions: {allowed: true, approval: PKI-owner, expiry_required: true}
+
+  - control_id: MDM-CMP-001
+    title: Apply graduated compliance remediation
+    classification: mandatory
+    objective: Restore compliance proportionately without accidental destructive action.
+    sources: [BSI-SYS-3.2.2-2023:SYS.3.2.2.A23, GOOGLE-AM-COMPLIANCE]
+    platforms: [cross-platform]
+    applicability: {ownership: [all-managed], prerequisites: [measurable-signals-and-support-process]}
+    configuration: {baseline: notify-self-remediate-support-restrict-quarantine, variants: [authorised-retire-or-wipe]}
+    impacts: {usability: moderate, operational: high, privacy: ownership-specific-notices}
+    rationale: Unknown and unsupported signals must not be treated as compliant or trigger immediate wipe.
+    relution: {method: compliance-rules-groups-and-access-integration, payload: tenant-behaviour-test-required}
+    verification: simulated failure, notice, ticket, restriction, exception and recovery test
+    exceptions: {allowed: true, approval: risk-owner, expiry_required: true}
+
+  - control_id: MDM-LOG-001
+    title: Record and review device and administrative state
+    classification: mandatory
+    objective: Provide reproducible audit, incident and change evidence.
+    sources: [BSI-SYS-3.2.2-2023:SYS.3.2.2.A6, BSI-MDM-2.0:MDM.2.2.08]
+    platforms: [management-plane, cross-platform]
+    applicability: {ownership: [all-managed], prerequisites: [retention-and-access-policy]}
+    configuration: {baseline: privileged-actions-policy-delivery-compliance-and-lifecycle-events, variants: [SIEM-export]}
+    impacts: {usability: none, operational: storage-and-review, privacy: minimise-and-retain-only-as-needed}
+    rationale: Configuration without dated effective-state and change evidence is not auditable.
+    relution: {method: audit-log-report-and-review, payload: none}
+    verification: event generation, export completeness, access control, time sync and retention test
+    exceptions: {allowed: false}
+
+  - control_id: MDM-LIFE-001
+    title: Secure loss, transfer, retirement and deletion
+    classification: mandatory
+    objective: Remove organisational access and data through an authorised lifecycle.
+    sources: [BSI-SYS-3.2.2-2023:SYS.3.2.2.A22]
+    platforms: [cross-platform]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [ownership-and-wipe-semantics]}
+    configuration: {baseline: revoke-access-retire-selective-wipe-or-corporate-wipe-with-proof, variants: [lost-mode]}
+    impacts: {usability: high-when-invoked, operational: dual-control-and-offline-failure-handling, privacy: critical}
+    rationale: Full wipe is inappropriate for BYOD except where separately lawful, supported and authorised.
+    relution: {method: lifecycle-command-plus-access-and-certificate-revocation, payload: none}
+    verification: lab lost/retire/wipe tests and evidence of downstream revocation
+    exceptions: {allowed: true, approval: security-and-asset-owner, expiry_required: true}
+
+  - control_id: APL-UPD-001
+    title: Use supported Apple declarative update enforcement where available
+    classification: recommended
+    objective: Deliver timely Apple updates with observable deadlines.
+    sources: [APPLE-DEPLOY-2026-05, RELUTION-26.1]
+    platforms: [ios, ipados, macos]
+    applicability: {ownership: [corporate], prerequisites: [DDM-capability-and-supported-Relution-payload]}
+    configuration: {baseline: declarative-update-deadline-in-rings, variants: [legacy-only-device]}
+    impacts: {usability: moderate, operational: legacy-conflict-analysis, privacy: neutral}
+    rationale: Do not assume legacy and declarative settings have identical merge or precedence.
+    relution: {method: Apple-software-update-settings, payload: verify-installed-version}
+    verification: declaration status and device update result on each OS family
+    exceptions: {allowed: true, approval: endpoint-owner, expiry_required: true}
+
+  - control_id: WIN-WDAC-001
+    title: Stage Windows application control from audit to enforcement
+    classification: use-case-specific
+    objective: Prevent unapproved code on stable corporate or privileged workloads.
+    sources: [MS-WINDOWS-MDM]
+    platforms: [windows]
+    applicability: {ownership: [corporate], prerequisites: [application-inventory-supported-edition-and-recovery]}
+    configuration: {baseline: audit-only, variants: [signed-enforced-policy-for-approved-populations]}
+    impacts: {usability: potentially-high, operational: high, privacy: event-review}
+    rationale: Blanket enforcement on mixed-use endpoints is not proportionate without event-led allowlisting.
+    relution: {method: WDAC-configuration-if-supported, payload: installed-version-and-signing-validation-required}
+    verification: audit events, representative application suite, enforcement bypass resistance and rollback
+    exceptions: {allowed: true, approval: application-and-security-owner, expiry_required: true}
+
+  - control_id: AND-MODE-001
+    title: Preserve Android Enterprise ownership and privacy boundaries
+    classification: mandatory
+    objective: Apply only commands and visibility appropriate to fully managed, COPE, BYOD or dedicated mode.
+    sources: [GOOGLE-AM-POLICY, BSI-MDM-2.0:MDM.2.6]
+    platforms: [android]
+    applicability: {ownership: [corporate, byod-work-container], prerequisites: [verified-enrolment-mode]}
+    configuration: {baseline: explicit-policy-values-and-work-boundary, variants: [fully-managed, COPE, BYOD-work-profile, dedicated]}
+    impacts: {usability: model-dependent, operational: moderate, privacy: critical}
+    rationale: Fully managed restrictions and full wipe must not be applied to personal work-profile devices.
+    relution: {method: Android-Enterprise-mode-specific-policy, payload: verify-effective-policy}
+    verification: device-owner/profile-owner status, work/personal data-flow and wipe-semantics lab tests
+    exceptions: {allowed: false}
+
+  - control_id: MDM-EXC-001
+    title: Time-limit and review every control exception
+    classification: mandatory
+    objective: Prevent silent permanent baseline erosion.
+    sources: [BSI-MDM-2.0:MDM.2.1.02]
+    platforms: [cross-platform]
+    applicability: {ownership: [all], prerequisites: [risk-acceptance-process]}
+    configuration: {baseline: unique-ID-scope-risk-justification-compensation-owner-approval-expiry-review-closure, variants: []}
+    impacts: {usability: positive, operational: moderate, privacy: documented}
+    rationale: One exceptional device must not weaken the general baseline.
+    relution: {method: narrow-exception-group-and-policy, payload: none-until-approved}
+    verification: monthly expiry report and sampled closure evidence
+    exceptions: {allowed: false}

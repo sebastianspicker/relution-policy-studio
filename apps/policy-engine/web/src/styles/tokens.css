@@ -1,0 +1,183 @@
+/* Design tokens — theme packs (studio / neutral / custom / organization / dark) */
+
+:root,
+:root[data-theme="studio"],
+[data-theme="studio"],
+:root[data-theme="neutral"],
+[data-theme="neutral"],
+:root[data-theme="custom"],
+[data-theme="custom"] {
+  color-scheme: light;
+  --ci-font-display: "IBM Plex Sans", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --ci-font-body: "IBM Plex Sans", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --ci-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* Refined Instrument scale: six compact UI steps and 4px rhythm aliases. */
+  --ci-type-micro: 11px;
+  --ci-type-label: 12px;
+  --ci-type-body: 13.5px;
+  --ci-type-title: 15px;
+  --ci-type-heading: 20px;
+  --ci-type-display: 26px;
+  --ci-space-1: 4px;
+  --ci-space-2: 8px;
+  --ci-space-3: 12px;
+  --ci-space-4: 16px;
+  --ci-space-5: 24px;
+  --ci-space-6: 32px;
+  --ci-space-7: 48px;
+  --ci-color-page: #eceff3;
+  --ci-color-surface: #f7f9fb;
+  --ci-color-surface-muted: #f1f4f7;
+  --ci-color-panel: #ffffff;
+  --ci-color-field-bg: #ffffff;
+  --ci-color-text: #1a2533;
+  --ci-color-heading: #0b1420;
+  --ci-color-muted: #5a6a7c;
+  --ci-color-border: #dde3ea;
+  --ci-color-border-strong: #c9d2dc;
+  --ci-color-toolbar-bg: #0b1118;
+  --ci-color-toolbar-text: #d7e0ea;
+  --ci-color-toolbar-muted: #7a8a9c;
+  --ci-color-toolbar-border: rgb(255 255 255 / 6%);
+  --ci-color-primary: #0d6e66;
+  --ci-color-primary-hover: #0a5a54;
+  --ci-color-primary-active: #084943;
+  --ci-color-primary-contrast: #f4fffd;
+  --ci-color-accent: #0d6e66;
+  --ci-color-accent-2: #d9f0ed;
+  --ci-color-accent-3: #0b1420;
+  --ci-color-focus: #0d6e66;
+  --ci-color-focus-ring: rgb(13 110 102 / 20%);
+  --ci-color-active-bg: #d9f0ed;
+  --ci-color-success-bg: #e4f5ed;
+  --ci-color-success-text: #0a6b48;
+  --ci-color-info-bg: #e7f1f8;
+  --ci-color-info-text: #2a5678;
+  --ci-color-warning-bg: #fbf0dc;
+  --ci-color-warning-text: #8f5608;
+  --ci-color-danger-bg: #fceceb;
+  --ci-color-danger-text: #a8322d;
+  --ci-color-ink-950: #070b10;
+  --ci-color-ink-900: #0c1219;
+  --ci-color-ink-850: #121a24;
+  --ci-color-ink-800: #182230;
+  --ci-radius-control: 6px;
+  --ci-radius-card: 8px;
+  --ci-control-height: 30px;
+  --ci-layout-rail-width: 56px;
+  --ci-layout-navigation-width: 268px;
+  --ci-layout-inspector-width: 320px;
+}
+
+:root,
+:root[data-theme="studio"],
+[data-theme="studio"] {
+  --ci-shadow-card: 0 1px 0 rgb(12 18 25 / 4%);
+  --ci-touch-target: 44px;
+  --ci-motion-fast: 120ms;
+  --ci-motion-standard: 140ms;
+  --z-dropdown: 100;
+  --z-popover: 200;
+  --z-sticky: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+}
+
+:root[data-theme="custom"],
+[data-theme="custom"] {
+  --ci-color-toolbar-bg: #091726;
+  --ci-color-toolbar-text: #ffffff;
+  --ci-color-toolbar-muted: #afbed0;
+  --ci-color-toolbar-border: #20364b;
+}
+
+:root[data-theme="organization"],
+[data-theme="organization"] {
+  color-scheme: light;
+  --ci-font-display: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --ci-font-body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --ci-color-page: #f5f7fa;
+  --ci-color-surface: #ffffff;
+  --ci-color-surface-muted: #f2f4f7;
+  --ci-color-panel: #ffffff;
+  --ci-color-field-bg: #ffffff;
+  --ci-color-text: #20242a;
+  --ci-color-heading: #090909;
+  --ci-color-muted: #5f6772;
+  --ci-color-border: #d8dde4;
+  --ci-color-border-strong: #a8b0ba;
+  --ci-color-toolbar-bg: #ffffff;
+  --ci-color-toolbar-text: #090909;
+  --ci-color-toolbar-muted: #5f6772;
+  --ci-color-toolbar-border: #d8dde4;
+  --ci-color-primary: #a90063;
+  --ci-color-primary-hover: #8e0053;
+  --ci-color-primary-active: #730044;
+  --ci-color-primary-contrast: #ffffff;
+  --ci-color-accent: #a90063;
+  --ci-color-accent-2: #fff0f8;
+  --ci-color-accent-3: #090909;
+  --ci-color-focus: #007da3;
+  --ci-color-focus-ring: rgb(0 125 163 / 22%);
+  --ci-color-active-bg: #fff0f8;
+  --ci-color-success-bg: #e8f8ef;
+  --ci-color-success-text: #165f36;
+  --ci-color-info-bg: #e6f8ff;
+  --ci-color-info-text: #005d78;
+  --ci-color-warning-bg: #fff8bf;
+  --ci-color-warning-text: #665400;
+  --ci-color-danger-bg: #ffe8f5;
+  --ci-color-danger-text: #8d004f;
+  --ci-radius-control: 4px;
+  --ci-radius-card: 6px;
+  --ci-layout-rail-width: 56px;
+  --ci-layout-navigation-width: 268px;
+  --ci-layout-inspector-width: 320px;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ci-color-page: #0e1724;
+  --ci-color-surface: #121e2d;
+  --ci-color-surface-muted: #182638;
+  --ci-color-panel: #121e2d;
+  --ci-color-field-bg: #162335;
+  --ci-color-text: #d8e2ee;
+  --ci-color-heading: #f7f9fc;
+  --ci-color-muted: #94a5ba;
+  --ci-color-border: #2b3b4e;
+  --ci-color-border-strong: #46596f;
+  --ci-color-toolbar-bg: #0c1219;
+  --ci-color-toolbar-text: #f7f9fc;
+  --ci-color-toolbar-muted: #94a5ba;
+  --ci-color-toolbar-border: rgb(255 255 255 / 6%);
+  --ci-color-primary: #178074;
+  --ci-color-primary-hover: #1c9486;
+  --ci-color-primary-active: #12675e;
+  --ci-color-primary-contrast: #f4fffd;
+  --ci-color-accent: #178074;
+  --ci-color-accent-2: #163a36;
+  --ci-color-accent-3: #f7f9fc;
+  --ci-color-active-bg: #163a36;
+  --ci-color-focus: #5ecfc4;
+  --ci-color-focus-ring: rgb(23 128 116 / 28%);
+  --ci-color-success-bg: #17382d;
+  --ci-color-success-text: #72d9ae;
+  --ci-color-info-bg: #152a3d;
+  --ci-color-info-text: #8ec5e8;
+  --ci-color-warning-bg: #3a2c14;
+  --ci-color-warning-text: #f3bd62;
+  --ci-color-danger-bg: #3c2223;
+  --ci-color-danger-text: #ff9892;
+  --ci-color-ink-950: #070b10;
+  --ci-color-ink-900: #0c1219;
+  --ci-color-ink-850: #121a24;
+  --ci-color-ink-800: #182230;
+  --ci-shadow-card: 0 1px 2px rgb(0 0 0 / 24%);
+  --ci-layout-rail-width: 56px;
+  --ci-layout-navigation-width: 268px;
+  --ci-layout-inspector-width: 320px;
+}

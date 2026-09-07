@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-APP-001",
+        "MDM-LIFE-001"
+      ],
+      "type": "WINDOWS_KIOSK_MODE",
+      "values": {
+        "edgeBrowserRefreshIdleTime": 15,
+        "edgeKioskModeType": "PUBLIC_BROWSING",
+        "edgeKioskURL": "${ENV:WINDOWS_KIOSK_URL}",
+        "enabled": true,
+        "kioskAppType": "MICROSOFT_EDGE_BROWSER",
+        "kioskModeType": "SINGLE_APP",
+        "showEndSessionButton": true,
+        "type": "WINDOWS_KIOSK_MODE",
+        "userLogonType": "AUTO_LOGON"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-APP-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "WIN-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "WINDOWS",
+  "generated_name": "WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1",
+  "layer": 5,
+  "platform": "WINDOWS",
+  "policy_id": "WIN-KIOSK-DEDICATED-L5-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

@@ -1,0 +1,63 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only byod_work_profile work_profile_boundary; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "ANDROID_ENTERPRISE",
+  "uuid": "331B6177-FD15-4DB6-ACEE-FAFA24DD7144",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "androidEnterpriseCrossProfilePolicy": {
+              "crossProfileCopyPaste": "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED",
+              "crossProfileDataSharing": "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED"
+            },
+            "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+            "enabled": true,
+            "type": "ANDROID_ENTERPRISE_RESTRICTION",
+            "uuid": "2BDB5037-5797-4FEA-A063-0938781285C9"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "C12F1971-CB1A-48FE-AD57-7CDC15E7E59B"
+        },
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "enabled": true,
+            "minLength": 8,
+            "quality": "ALPHANUMERIC",
+            "type": "ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
+            "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK",
+            "uuid": "395178C5-81CE-43C1-AFC2-A8638814B426"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "FD0D81C1-567E-4BC7-A5A6-A7ACDE0DD0AC"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "C70DA224-C67E-4FFC-A0B4-9B3CD1E93DFD",
+      "version": 1
+    }
+  ]
+}

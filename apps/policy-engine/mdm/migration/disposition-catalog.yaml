@@ -1,0 +1,31 @@
+schema_version: 1
+status: REFERENCE_VALIDATED
+production_ready: false
+dispositions:
+  - disposition: retain
+    meaning: "Keep an inventoried object unchanged after Lab effective-state comparison."
+    prerequisites: [owner, dependency_map, lab_comparison]
+  - disposition: replace
+    meaning: "Replace one object with one approved target object after parallel Lab proof."
+    prerequisites: [rollback_export, effective_state_comparison, approval]
+  - disposition: merge
+    meaning: "Consolidate equivalent objects only after overlap and precedence proof."
+    prerequisites: [dependency_map, conflict_matrix, rollback_export]
+  - disposition: split
+    meaning: "Separate an object whose models, ownership boundaries or purposes differ."
+    prerequisites: [model_inventory, privacy_review, lab_proof]
+  - disposition: rename
+    meaning: "Rename without semantic change; confirm identifiers and assignments remain stable."
+    prerequisites: [identifier_semantics, assignment_comparison]
+  - disposition: retire
+    meaning: "Remove an object only after target effectiveness and observation period are evidenced."
+    prerequisites: [replacement_or_not_applicable, observation_period, rollback_export]
+record_template:
+  legacy_object_id: replace-with-inventoried-id
+  object_type: group_or_policy
+  disposition: replace
+  status: NOT_EVIDENCED
+  target_policy_id: null
+  dependencies: []
+  evidence: []
+  production_ready: false

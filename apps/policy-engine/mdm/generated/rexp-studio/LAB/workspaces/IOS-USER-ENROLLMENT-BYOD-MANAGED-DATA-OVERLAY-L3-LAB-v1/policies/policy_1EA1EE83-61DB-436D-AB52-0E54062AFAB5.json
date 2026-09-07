@@ -1,0 +1,47 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only user_enrollment_byod managed_data_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "IOS",
+  "uuid": "1EA1EE83-61DB-436D-AB52-0E54062AFAB5",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "allowManagedAppsCloudSync": false,
+            "allowOpenFromManagedToUnmanaged": false,
+            "allowOpenFromUnmanagedToManaged": true,
+            "enabled": true,
+            "requireManagedPasteboard": true,
+            "type": "IOS_RESTRICTION",
+            "uuid": "E92E381F-4633-44C7-AC32-A029A4ADA07A"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "1D78291D-C1B6-417D-A2CF-D7E7CCB16B76"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "E65CB52C-C888-4FD4-ABE3-B0D7AC077BEB",
+      "version": 1
+    }
+  ]
+}

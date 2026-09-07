@@ -1,0 +1,47 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only shared_ipad baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "IOS-SHARED-IPAD-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "IOS",
+  "uuid": "B66F6A70-50C0-4CE5-A4E9-67C496C39100",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "blockRelutionUserChange": true,
+            "enabled": true,
+            "temporarySessionOnly": false,
+            "temporarySessionTimeout": 900,
+            "type": "IOS_SHARED_IPAD_SETTINGS",
+            "userSessionTimeout": 900,
+            "uuid": "38CE1072-0D9E-489D-AA34-605C95F3DC6D"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "F2C30385-AA23-4BF5-A781-CFA5C9A79BCD"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "2BDC515D-9F7C-4C44-A422-4D8AE15E3188",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "it-grundschutz-current",
+    "scope": ["windows", "macos", "ios", "android"],
+    "title": "IT-Grundschutz",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz.html",
+    "type": "overview-page",
+    "note": "BSI states the current IT-Grundschutz remains applicable during the transition to the new rule-based Grundschutz++ model."
+  },
+  {
+    "id": "it-grundschutz-2025-outlook",
+    "scope": ["windows", "macos", "ios", "android"],
+    "title": "Aktuelle Entwicklungen und Ausblick zum IT-Grundschutz",
+    "document_date": "2025-02-04",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Veranstaltungen/Grundschutz/1GS_Tag_2025/Aktuelle_Entwicklungen_Ausblick_IT-GS.pdf?__blob=publicationFile&v=2",
+    "type": "presentation",
+    "note": "Confirms that there was no Edition 2025 release."
+  },
+  {
+    "id": "it-grundschutz-errata-2023",
+    "scope": ["windows", "macos", "ios", "android"],
+    "title": "Errata zum IT-Grundschutz-Kompendium Edition 2023",
+    "document_date": "2025-05-05",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/errata_2023.pdf?__blob=publicationFile&v=8",
+    "type": "errata",
+    "note": "Current corrections layer; BSI says these corrections are verbindlich anzuwenden."
+  },
+  {
+    "id": "it-grundschutz-checklists-2023",
+    "scope": ["windows", "macos", "ios", "android"],
+    "title": "Checklisten zum IT-Grundschutz-Kompendium (Edition 2023)",
+    "document_date": "2025-03-11",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/checklisten_2023.html",
+    "type": "checklists",
+    "note": "Current BSI checklist layer for implementation tracking."
+  },
+  {
+    "id": "it-grundschutz-bausteine-edition-2023",
+    "scope": ["windows", "macos", "ios", "android"],
+    "title": "IT-Grundschutz-Bausteine (Edition 2023)",
+    "document_date": "Edition 2023 / February 2023 baseline",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html",
+    "type": "index-page",
+    "note": "Canonical index for the OS-specific bausteine."
+  },
+  {
+    "id": "sys-2-1-general-client",
+    "scope": ["windows", "macos"],
+    "title": "SYS.2.1 Allgemeiner Client (Edition 2023)",
+    "document_date": "Edition 2023 / February 2023 baseline",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_1_Allgemeiner_Client_Edition_2023.pdf",
+    "type": "baustein",
+    "note": "General client hardening baseline shared by Windows and macOS."
+  },
+  {
+    "id": "sys-2-2-3-windows",
+    "scope": ["windows"],
+    "title": "SYS.2.2.3 Clients unter Windows (Edition 2023)",
+    "document_date": "2023-06-01",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_2_3_Clients_unter_Windows_Edition_2023.html",
+    "type": "baustein",
+    "note": "Windows-specific baustein covering supported Windows 10 and 11 client versions."
+  },
+  {
+    "id": "fd-aenderungen-2023",
+    "scope": ["windows"],
+    "title": "Änderungen in der Edition 2023",
+    "document_date": "Edition 2023 change document",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/FD_Aenderungen2023.pdf?__blob=publicationFile&v=3",
+    "type": "change-document",
+    "note": "Explains the Windows baustein renaming and Windows 11 scope extension."
+  },
+  {
+    "id": "sys-2-4-macos",
+    "scope": ["macos"],
+    "title": "SYS.2.4 Clients unter macOS (Edition 2023)",
+    "document_date": "Edition 2023 / February 2023 baseline",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_4_Clients_unter_macOS_Edition_2023.html",
+    "type": "baustein",
+    "note": "macOS-specific baustein."
+  },
+  {
+    "id": "umsetzungshinweis-sys-2-4-macos",
+    "scope": ["macos"],
+    "title": "Umsetzungshinweise zum Baustein SYS.2.4 Clients unter macOS",
+    "document_date": "Edition 2022 implementation guide",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2022/Umsetzungshinweis_zum_Baustein_SYS_2_4_Clients_unter_macOS.pdf?__blob=publicationFile&v=2",
+    "type": "implementation-guide",
+    "note": "Still the currently listed macOS implementation guide on the BSI Umsetzungshinweise page."
+  },
+  {
+    "id": "umsetzungshinweise-index",
+    "scope": ["macos"],
+    "title": "Umsetzungshinweise",
+    "document_date": null,
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/Umsetzungshinweise/umsetzungshinweise_node.html",
+    "type": "index-page",
+    "note": "Current index page showing the listed implementation guides."
+  },
+  {
+    "id": "sys-3-2-1-smartphones-tablets",
+    "scope": ["ios", "android"],
+    "title": "SYS.3.2.1 Allgemeine Smartphones und Tablets (Edition 2023)",
+    "document_date": "2023-02-01",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_1_Allgemeine_Smartphones_und_Tablets_Edition_2023.pdf",
+    "type": "baustein",
+    "note": "Mobile baseline for both iOS and Android."
+  },
+  {
+    "id": "sys-3-2-2-mdm",
+    "scope": ["ios", "android"],
+    "title": "SYS.3.2.2 Mobile Device Management (MDM) (Edition 2023)",
+    "document_date": "2023-02-01",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_2_Mobile_Device_Management_Edition_2023.pdf",
+    "type": "baustein",
+    "note": "BSI's technical and organizational MDM baustein."
+  },
+  {
+    "id": "mdm-minimum-standard-v2",
+    "scope": ["ios", "android"],
+    "title": "Mindeststandard des BSI für Mobile Device Management Version 2.0",
+    "document_date": "2022-09-06",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.html",
+    "type": "minimum-standard",
+    "note": "Still the current BSI minimum standard for MDM operation and procurement."
+  },
+  {
+    "id": "sys-3-2-3-ios",
+    "scope": ["ios"],
+    "title": "SYS.3.2.3 iOS (for Enterprise) (Edition 2023)",
+    "document_date": "Edition 2023 / February 2023 baseline",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_3_iOS_for_Enterprise_2023.pdf?__blob=publicationFile&v=4",
+    "type": "baustein",
+    "note": "iOS-specific enterprise baustein."
+  },
+  {
+    "id": "sys-3-2-4-android",
+    "scope": ["android"],
+    "title": "SYS.3.2.4 Android (Edition 2023)",
+    "document_date": "Edition 2023 / February 2023 baseline",
+    "verified_as_of": "2026-04-23",
+    "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_4_Android_Edition_2023.pdf?__blob=publicationFile&v=3",
+    "type": "baustein",
+    "note": "Android-specific baustein."
+  }
+]

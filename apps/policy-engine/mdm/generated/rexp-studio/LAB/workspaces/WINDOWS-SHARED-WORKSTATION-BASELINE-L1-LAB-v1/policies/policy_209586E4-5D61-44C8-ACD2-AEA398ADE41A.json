@@ -1,0 +1,50 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only shared_workstation baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "WINDOWS",
+  "uuid": "209586E4-5D61-44C8-ACD2-AEA398ADE41A",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "accountModel": "DOMAIN",
+            "deletionPolicy": "DISK_SPACE_AND_INACTIVE_THRESHOLD",
+            "enableAccountManager": true,
+            "enabled": true,
+            "enableSharedPCMode": true,
+            "inactiveThreshold": 7,
+            "restrictLocalStorage": true,
+            "signInOnResume": true,
+            "type": "WINDOWS_SHARED_PC",
+            "uuid": "50129380-F03B-444E-ACEE-3F244DD6F347"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "DEC42493-C72D-46CE-A828-15F639D33B6F"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "9B13E042-A30A-4039-AD9A-98C78A228292",
+      "version": 1
+    }
+  ]
+}

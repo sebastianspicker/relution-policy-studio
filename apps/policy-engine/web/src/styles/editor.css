@@ -1,0 +1,4 @@
+/* Editor styles are ordered to preserve the original cascade. */
+@import "./editor-shell.css";
+@import "./editor-field-controls.css";
+@import "./editor-policy-context.css";

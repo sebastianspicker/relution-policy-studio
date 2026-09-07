@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "462F7CC3-0A81-452C-A1F0-C23960EF123D": "WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

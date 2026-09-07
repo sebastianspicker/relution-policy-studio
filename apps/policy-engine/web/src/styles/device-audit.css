@@ -1,0 +1,226 @@
+/* Device audit dashboard */
+
+.device-audit-session-line {
+  padding: 9px 12px;
+  color: var(--ci-color-muted);
+  background: var(--ci-color-surface-muted);
+  border-radius: 6px;
+  font-family: var(--ci-font-mono);
+  font-size: 11px;
+}
+
+.device-audit-setup {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.audit-disclosure,
+.audit-summary,
+.audit-findings {
+  background: var(--ci-color-surface);
+  border: 1px solid var(--ci-color-border);
+}
+
+.audit-disclosure > summary,
+.audit-summary-heading,
+.audit-findings-heading {
+  display: flex;
+  min-height: 48px;
+  padding: 12px 14px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ci-color-heading);
+  border-bottom: 1px solid var(--ci-color-border);
+  font-weight: 630;
+}
+
+.audit-disclosure > summary::before {
+  order: 3;
+  margin: 0 0 0 auto;
+}
+
+.audit-disclosure--external {
+  border-color: color-mix(in srgb, var(--ci-color-warning-text) 36%, var(--ci-color-border));
+}
+
+.audit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  padding: 14px;
+  align-items: end;
+  gap: 10px;
+}
+
+.audit-form-grid label,
+.audit-filter-bar label {
+  display: grid;
+  gap: 5px;
+  color: var(--ci-color-text);
+  font-size: 11px;
+  font-weight: 590;
+}
+
+.audit-form-wide {
+  grid-column: span 2;
+}
+
+.audit-form-grid--run {
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+}
+
+.audit-form-grid--zammad {
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+
+.audit-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.audit-summary-heading h2,
+.audit-findings-heading h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.audit-summary-stats,
+.audit-filter-bar {
+  display: flex;
+  padding: 12px 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.audit-findings-heading .warning {
+  margin-top: 8px;
+}
+
+.audit-device-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.audit-device-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.audit-device-table th,
+.audit-device-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ci-color-border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.audit-device-table th {
+  color: var(--ci-color-muted);
+  background: var(--ci-color-surface-muted);
+  font-size: 11px;
+  font-weight: 640;
+}
+
+.audit-device-table td {
+  font-size: 12px;
+}
+
+.audit-device-table td:first-child {
+  min-width: 210px;
+}
+
+.audit-device-table td strong,
+.audit-device-table td small {
+  display: block;
+}
+
+.audit-device-table td small {
+  margin-top: 2px;
+  color: var(--ci-color-muted);
+}
+
+.audit-device-row--selected {
+  background: var(--ci-color-active-bg);
+}
+
+.audit-device-row button[aria-pressed="true"] {
+  color: var(--ci-color-primary-contrast);
+  background: var(--ci-color-primary);
+  border-color: var(--ci-color-primary);
+}
+
+.audit-finding-detail {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  border-top: 1px solid var(--ci-color-border);
+}
+
+.audit-finding-context,
+.audit-issue-list,
+.audit-issue,
+.ticket-draft,
+.zammad-content {
+  display: grid;
+  padding: 14px;
+  gap: 10px;
+}
+
+.audit-finding-context {
+  background: var(--ci-color-surface-muted);
+  border-right: 1px solid var(--ci-color-border);
+}
+
+.audit-finding-context dl,
+.audit-issue dl {
+  display: grid;
+  gap: 8px;
+}
+
+.audit-finding-context dt,
+.audit-issue dt {
+  color: var(--ci-color-muted);
+  font-size: 10px;
+}
+
+.audit-finding-context dd,
+.audit-issue dd {
+  color: var(--ci-color-heading);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.audit-issue {
+  background: var(--ci-color-surface);
+  border: 1px solid var(--ci-color-border);
+  border-radius: 7px;
+}
+
+.audit-issue-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.zammad-warning {
+  padding: 10px 12px;
+  color: var(--ci-color-warning-text);
+  background: var(--ci-color-warning-bg);
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.ticket-draft,
+.ticket-confirmation {
+  border: 1px solid var(--ci-color-border);
+  border-radius: 7px;
+}
+
+.ticket-draft pre {
+  max-height: 300px;
+  overflow: auto;
+  white-space: pre-wrap;
+}

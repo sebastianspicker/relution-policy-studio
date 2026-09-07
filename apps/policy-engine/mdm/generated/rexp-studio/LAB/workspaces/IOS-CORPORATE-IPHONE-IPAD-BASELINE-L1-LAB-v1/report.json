@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "93DC7D75-F8EE-457B-AE22-F3A0653E9F5F": "IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

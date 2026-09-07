@@ -1,0 +1,75 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-AUTH-001"
+      ],
+      "type": "IOS_PASSCODE",
+      "values": {
+        "enabled": true,
+        "forcePIN": true,
+        "maxInactivityMinutes": 15,
+        "minLength": 12,
+        "requireAlphanumeric": true,
+        "type": "IOS_PASSCODE"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-ENC-001"
+      ],
+      "type": "MACOS_FILE_VAULT",
+      "values": {
+        "enabled": true,
+        "enableRecoveryKeyEscrow": true,
+        "type": "MACOS_FILE_VAULT"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-INT-001"
+      ],
+      "type": "MACOS_FIREWALL",
+      "values": {
+        "allowSigned": true,
+        "allowSignedApp": true,
+        "blockAllIncoming": false,
+        "enabled": true,
+        "enableFirewall": true,
+        "enableStealthMode": true,
+        "type": "MACOS_FIREWALL"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-UPD-001"
+      ],
+      "type": "MACOS_UPDATE",
+      "values": {
+        "allowPreReleaseInstallation": false,
+        "automaticCheckEnabled": true,
+        "automaticDownload": true,
+        "configDataInstall": true,
+        "criticalUpdateInstall": true,
+        "enabled": true,
+        "type": "MACOS_UPDATE",
+        "updateMode": "INSTALL_ASAP"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-ENC-001",
+    "MDM-INT-001",
+    "MDM-UPD-001"
+  ],
+  "dependencies": [],
+  "enrollment_model": "MACOS",
+  "generated_name": "MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "MACOS",
+  "policy_id": "MAC-CORP-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

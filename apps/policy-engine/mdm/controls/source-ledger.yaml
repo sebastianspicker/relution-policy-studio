@@ -1,0 +1,75 @@
+schema_version: 2
+verified_on: 2026-07-11
+pdf_manifest: mdm/evidence/source-manifest.json
+recommendation_reconciliation: mdm/evidence/recommendation-reconciliation.json
+offline_pdf_state:
+  recovered: 132
+  recovered_by_publisher: {BSI: 121, CIS: 10, Microsoft: 1}
+  required_additional: 1
+  acquired_additional: 1
+  verification: VERIFIED_133_PDFS
+sources:
+  - id: BSI-MDM-2.0
+    publisher: BSI
+    title: Mindeststandard für Mobile Device Management
+    version: "2.0"
+    publication_date: 2022-09-06
+    url: https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.pdf?__blob=publicationFile&v=2
+    local_evidence: private/source-pdfs-cache/official-bsi/Mindeststandard_Mobile-Device-ManagementV2_0.pdf
+    sha256: cde46ae22921f5456ffe4913842c6e7c8e8f8b6d3772314e3f6a8fced577d99f
+    extraction_status: extracted-24-pages
+    use: binding only where legally or organisationally applicable; otherwise primary German public-sector baseline
+  - id: BSI-SYS-3.2.2-2023
+    publisher: BSI
+    title: SYS.3.2.2 Mobile Device Management
+    version: Edition 2023
+    local_evidence: private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.2.2 Mobile Device Management (MDM).pdf.clean.pdf
+    sha256: 4790bd4f7478ceb7e032ededf042fe51384e75cd4f4c6c3c26c94e87c990a0c0
+  - id: BSI-SYS-3.2.1-2023
+    publisher: BSI
+    title: SYS.3.2.1 Allgemeine Smartphones und Tablets
+    version: Edition 2023
+    local_evidence: private/source-pdfs-cache/example/bsi-references/downloads/pdf-xlsx-html/Einzeln_PDF/SYS.3.2.1 Allgemeine Smartphones und Tablets.pdf.clean.pdf
+    sha256: 07a7518dc624b0e8e1d947fafb064e84ddccad00e3634be68c74e3807ece4f9f
+  - id: APPLE-DEPLOY-2026-05
+    publisher: Apple
+    title: Apple Platform Deployment
+    version: May 2026
+    url: https://support.apple.com/en-euro/guide/deployment/welcome/web
+  - id: MS-WINDOWS-MDM
+    publisher: Microsoft
+    title: Mobile device management for Windows
+    url: https://learn.microsoft.com/en-us/windows/client-management/mdm-overview
+  - id: MS-BITLOCKER-CSP
+    publisher: Microsoft
+    title: BitLocker CSP
+    url: https://learn.microsoft.com/en-ca/windows/client-management/mdm/bitlocker-csp
+  - id: MS-UPDATE-CSP
+    publisher: Microsoft
+    title: Update CSP
+    url: https://learn.microsoft.com/en-us/windows/client-management/mdm/update-csp
+  - id: GOOGLE-AM-POLICY
+    publisher: Google
+    title: Android Management API policy
+    url: https://developers.google.com/android/management/reference/rest/v1/enterprises.policies
+  - id: GOOGLE-AM-COMPLIANCE
+    publisher: Google
+    title: Policy compliance rules
+    url: https://developers.google.com/android/management/compliance
+  - id: RELUTION-26.0
+    publisher: Relution
+    title: Relution Server 26.0 release notes
+    publication_date: 2026-01-12
+    url: https://relution.io/en/release-notes/relution-server-26-0/
+  - id: RELUTION-26.1
+    publisher: Relution
+    title: Relution Server 26.1 release notes
+    publication_date: 2026-03-18
+    url: https://relution.io/en/release-notes/relution-server-26-1/
+  - id: CIS-CATALOGUE
+    publisher: CIS
+    title: CIS Benchmarks
+    url: https://www.cisecurity.org/cis-benchmarks
+    local_evidence: private/source-pdfs-cache/example/cis-references/downloads/pdf/
+    extraction_status: 10-pdfs-verified-in-source-manifest
+    use: locally possessed benchmark evidence under the applicable CIS licence; do not reproduce or redistribute benchmark bodies

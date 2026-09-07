@@ -1,0 +1,11 @@
+{
+  "type": "MACOS_RESTRICTION",
+  "allowActivityContinuation": false,
+  "allowAirDrop": false,
+  "allowCloudDesktopAndDocuments": false,
+  "allowCloudDocumentSync": false,
+  "allowCloudKeychainSync": false,
+  "allowCloudPhotoLibrary": false,
+  "allowDiagnosticSubmission": false,
+  "enabled": true
+}

@@ -1,0 +1,104 @@
+
+/* Empty state and routed workspaces */
+.editor-welcome {
+  max-width: 760px;
+  padding: 52px 48px;
+}
+
+.empty-state.editor-welcome h1 {
+  color: var(--ci-color-heading);
+  font-family: var(--ci-font-display);
+  font-size: var(--ci-type-title);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.section-workspace {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  background: var(--ci-color-page);
+}
+
+.section-workspace-content {
+  min-height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 36px 52px;
+}
+
+.section-header {
+  display: flex;
+  margin-bottom: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-header-copy {
+  min-width: 0;
+}
+
+.section-header h1 {
+  margin-bottom: 7px;
+  color: var(--ci-color-heading);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.section-header p {
+  max-width: 70ch;
+  color: var(--ci-color-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.section-header-meta {
+  flex: 0 0 auto;
+}
+
+.baseline-workspace-panel,
+.settings-workspace,
+.device-audit-workspace {
+  max-width: 1120px;
+}
+
+.baseline-workspace-surface {
+  min-width: 0;
+}
+
+.baseline-workspace-panel {
+  padding: 0;
+}
+
+.baseline-tabs {
+  display: flex;
+  max-width: 620px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--ci-color-border);
+}
+
+.baseline-tabs button {
+  min-width: 140px;
+  min-height: 42px;
+  padding: 9px 14px;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  color: var(--ci-color-muted);
+}
+
+.baseline-tabs .active {
+  color: var(--ci-color-primary);
+  border-bottom: 2px solid var(--ci-color-primary);
+}
+
+.baseline-tabs button > span {
+  margin-right: 7px;
+  color: var(--ci-color-muted);
+  font-family: var(--ci-font-mono);
+  font-size: 10px;
+}

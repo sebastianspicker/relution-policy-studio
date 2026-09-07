@@ -1,0 +1,49 @@
+schema_version: 1
+policy_id: WIN-CORP-BASELINE-L1-LAB-v1
+platform: WINDOWS
+model: corporate_workstation_laptop
+ownership: corporate
+enrollment_model: WINDOWS
+layer: 1
+purpose: baseline
+status: active
+evidence_status: REFERENCE_VALIDATED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-AUTH-001, MDM-ENC-001, MDM-INT-001, MDM-UPD-001]
+dependencies: []
+environment_placeholders: []
+settings:
+  - configuration_type: WINDOWS_PASSCODE
+    values: {minLength: 12, history: 8, maxInactivityTime: 15}
+    control_ids: [MDM-AUTH-001]
+  - configuration_type: WINDOWS_HELLO
+    values: {minimumPinLength: 6, useTpm: true, allowBiometricAuthentication: true}
+    control_ids: [MDM-AUTH-001]
+  - configuration_type: WINDOWS_BITLOCKER
+    values: {requireDeviceEncryption: true, allowStandardUserEncryption: false}
+    control_ids: [MDM-ENC-001]
+  - configuration_type: WINDOWS_ANTIVIRUS
+    values:
+      allowRealtimeMonitoring: true
+      allowBehaviorMonitoring: true
+      allowCloudProtection: true
+      submitSamplesConsent: SAFE
+      puaProtection: ON
+      enableNetworkProtection: ON
+    control_ids: [MDM-INT-001]
+  - configuration_type: WINDOWS_FIREWALL
+    values:
+      configureGlobalProperties: true
+      domainProfile: {configureProfileProperties: true, profileType: DOMAIN_PROFILE, enableFirewall: true}
+      privateProfile: {configureProfileProperties: true, profileType: PRIVATE_PROFILE, enableFirewall: true}
+      publicProfile: {configureProfileProperties: true, profileType: PUBLIC_PROFILE, enableFirewall: true}
+    control_ids: [MDM-INT-001]
+  - configuration_type: WINDOWS_UPDATE
+    values:
+      allowDownloadsOverMeteredNetworks: false
+      deadlineForQualityUpdates: 7
+      deadlineForFeatureUpdates: 30
+      deadlineGracePeriod: 0
+    control_ids: [MDM-UPD-001]
+rings: [LAB]
+production_ready: false

@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "30D56E6A-0D99-4332-A4EC-E6B6C9318A2D": "ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

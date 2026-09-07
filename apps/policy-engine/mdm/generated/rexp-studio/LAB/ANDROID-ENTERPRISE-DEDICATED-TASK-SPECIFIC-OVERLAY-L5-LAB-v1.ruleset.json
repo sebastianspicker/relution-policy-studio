@@ -1,0 +1,42 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-APP-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_KIOSK_MODE",
+      "values": {
+        "deviceSettings": "SETTINGS_ACCESS_BLOCKED",
+        "enabled": true,
+        "kioskCustomLauncher": {
+          "defaultPermissionPolicy": "PROMPT",
+          "displayName": "Managed task app",
+          "installType": "KIOSK",
+          "lockTaskAllowed": true,
+          "packageName": "${ENV:ANDROID_KIOSK_PACKAGE}",
+          "source": "PLAY_STORE"
+        },
+        "powerButtonActions": "POWER_BUTTON_AVAILABLE",
+        "statusBar": "SYSTEM_INFO_ONLY",
+        "systemErrorWarnings": "ERROR_AND_WARNINGS_ENABLED",
+        "systemNavigation": "HOME_BUTTON_ONLY",
+        "type": "ANDROID_ENTERPRISE_KIOSK_MODE"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-APP-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "AND-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "ANDROID_ENTERPRISE_DEVICE_OWNER",
+  "generated_name": "ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1",
+  "layer": 5,
+  "platform": "ANDROID_ENTERPRISE",
+  "policy_id": "AND-KIOSK-DEDICATED-L5-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

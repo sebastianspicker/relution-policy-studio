@@ -1,0 +1,118 @@
+schema_version: 1
+assessment_date: 2026-07-11
+classification: internal-sanitised-template
+tenant_evidence_state: NOT_EVIDENCED
+rules:
+  unknown_is_not_zero: true
+  secrets_allowed: false
+  personal_data_allowed: false
+  full_inventory_storage: private/
+
+workbench_evidence:
+  relution_template_bundle:
+    path: data/relution-26.1.1/template-bundle.json
+    server_version: 26.1.1
+    source_image: local-jar
+    source_image_digest: unknown
+    generated_at: 2026-04-23T11:00:01.196Z
+    authority: tooling-compatibility-only
+  audit_report:
+    path: data/relution-26.1.1/audit-report.json
+    platform_count: 19
+    configuration_type_count: 201
+    schema_count: 2067
+    schema_compatibility_issue_count: 24
+    mock_roundtrip_passed: 201
+    mock_roundtrip_failed: 0
+  exports:
+    - path: example/sample-policy-export.rexp
+      server_version: 26.1.1
+      classification: synthetic-fixture
+      sha256: 71368b2836b8cba67b4479e1ddd1d067debdc4529bffa73f490d403baeee90df
+    - path: example/Windows Group Policy Definitions.rexp
+      server_version: 5.30.0
+      classification: historical-fixture
+      sha256: 064dc56c57561958a5114aa6699e7c1ca9d0aa3611d4821403af6c7adeab3be3
+    - path: example/Windows Policies Win11 24H2.rexp
+      server_version: 5.30.0
+      classification: historical-fixture
+      sha256: 3bec2f033a914080dc63d67d1c80c9a4e705fc0b2423e7c65195365b3fdd28f0
+    - path: example/Windows Security Baselines Edge v128.rexp
+      server_version: 5.30.0
+      classification: historical-fixture
+      sha256: cc21c828a0a0477ef9768f77b01f5e1059606d1a5a91a09b05f332443ebae648
+    - path: example/Windows Security Baselines Win11 24H2.rexp
+      server_version: 5.30.0
+      classification: historical-fixture
+      sha256: e26da126c4db75ddff167a7e17ec54b8a2acf22c62e8ffef4c122e118cc43870
+
+critical_inputs:
+  - id: INV-SYS-001
+    object: installed_relution_versions
+    state: NOT_EVIDENCED
+    acquire: Server, Portal, Companion, mobile clients, connectors, API/OpenAPI versions and build identifiers
+    evidence: system metadata plus sanitised screenshots/API response
+  - id: INV-SYS-002
+    object: deployment_and_licensing
+    state: NOT_EVIDENCED
+    acquire: hosting model, enabled modules, licensed features, database, reverse proxy, backups and DR
+  - id: INV-ORG-001
+    object: organisations_and_boundaries
+    state: NOT_EVIDENCED
+    acquire: tenant/suborganisation hierarchy, delegated administration and data/trust boundaries
+  - id: INV-IAM-001
+    object: administrators_roles_and_accounts
+    state: NOT_EVIDENCED
+    acquire: sanitised admins, roles, permissions, IdP, MFA, break-glass, service/API accounts, last use
+  - id: INV-GRP-001
+    object: groups
+    state: NOT_EVIDENCED
+    acquire: name, type, membership rule/source, owner, members count, assignments, overlaps and last use
+  - id: INV-DEV-001
+    object: devices
+    state: NOT_EVIDENCED
+    acquire: pseudonymous ID, platform/build/model, ownership, enrolment/supervision, primary/shared use, encryption, patch, integrity, check-in, policy/app/certificate/compliance state
+  - id: INV-POL-001
+    object: policies_versions_and_assignments
+    state: NOT_EVIDENCED
+    acquire: known-good .rexp exports, settings, versions, groups, precedence, dependencies, dates, expected/effective state and errors
+  - id: INV-APP-001
+    object: applications_and_content
+    state: NOT_EVIDENCED
+    acquire: required/optional/prohibited apps, licences, configs, updates, permissions, data-sharing and owner
+  - id: INV-PKI-001
+    object: certificates_and_enrolment_services
+    state: NOT_EVIDENCED
+    acquire: CA/connectors/templates, purpose, issuer, expiry, renewal, revocation and escrow without key material
+  - id: INV-CMP-001
+    object: compliance_rules_and_exceptions
+    state: NOT_EVIDENCED
+    acquire: checks, thresholds, cadence, actions, notices, recovery, exceptions and expiry
+  - id: INV-OPS-001
+    object: logging_retention_backup_and_incident_process
+    state: NOT_EVIDENCED
+    acquire: audit events, retention/access review, backup/restore test, loss/wipe/offboarding and change records
+
+inventories:
+  organisations: []
+  roles: []
+  administrators: []
+  groups: []
+  users: []
+  devices: []
+  policies: []
+  assignments: []
+  applications: []
+  certificates: []
+  integrations: []
+  compliance_rules: []
+  exceptions: []
+
+collection_controls:
+  - use read-only exports or API operations first
+  - record query limit, total, truncation and collection timestamp
+  - pseudonymise user and device identifiers before promotion to tracked files
+  - never collect private keys, passwords, tokens, Wi-Fi secrets or personal app lists
+  - distinguish configured, assigned, delivered, effective and verified states
+  - hash and date every source export; retain originals only in private storage
+

@@ -1,0 +1,5 @@
+{
+  "type": "MACOS_SYSTEM_POLICY_CONTROL",
+  "allowIdentifiedDevelopers": true,
+  "enableAssessment": true
+}

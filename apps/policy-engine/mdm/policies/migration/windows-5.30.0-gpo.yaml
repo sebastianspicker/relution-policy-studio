@@ -1,0 +1,19 @@
+schema_version: 1
+policy_id: WIN-LEGACY-GPO-L0-LAB-v1
+platform: WINDOWS
+model: historical_gpo_fixture
+ownership: unknown
+enrollment_model: unknown
+layer: 0
+purpose: migration_reference
+status: migration-only
+evidence_status: REFERENCE_VALIDATED
+minimum_os: NOT_EVIDENCED
+controls: []
+dependencies: []
+environment_placeholders: []
+settings: []
+rings: [LAB]
+production_ready: false
+legacy_source: example/Windows Group Policy Definitions.rexp
+legacy_server_version: 5.30.0

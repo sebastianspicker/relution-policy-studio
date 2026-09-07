@@ -1,0 +1,361 @@
+{
+  "version": 1,
+  "name": "Windows Tier 2 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "WINDOWS",
+    "tier": 2,
+    "tierLabel": "Tier 2 - strengthened BSI baseline",
+    "securityLevel": "standard-hardening",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "WINDOWS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 6,
+      "cis": 3,
+      "vendor": 3
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": [
+      {
+        "source": "cis",
+        "ruleId": "cis-windows-windows-passcode-aggregate",
+        "target": "WINDOWS_PASSCODE",
+        "conflictingPaths": [
+          "history",
+          "minLength"
+        ],
+        "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+      }
+    ]
+  },
+  "policies": [
+    {
+      "platform": "WINDOWS",
+      "name": "Windows Tier 2 Baseline",
+      "description": "Tier 2 - strengthened BSI baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-antivirus",
+          "title": "Consolidated Relution aggregate: WINDOWS_ANTIVIRUS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "sys-2-2-3-windows",
+            "fd-aenderungen-2023",
+            "cis-microsoft-defender-antivirus-1-0-0",
+            "cis-windows-desktop-family",
+            "microsoft-intune-windows-mdm-baseline-settings"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-windows-windows-antivirus-aggregate",
+              "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowArchiveScanning": true,
+                "allowBehaviorMonitoring": true,
+                "allowCloudProtection": true,
+                "allowEmailScanning": true,
+                "allowIOAVProtection": true,
+                "allowRealtimeMonitoring": true,
+                "allowScriptScanning": true,
+                "cloudBlockLevel": "HIGH",
+                "enableNetworkProtection": "ON",
+                "enabled": true,
+                "puaProtection": "ON",
+                "realTimeScanDirection": "ALL",
+                "signatureUpdateInterval": 4,
+                "submitSamplesConsent": "ALL"
+              },
+              "type": "WINDOWS_ANTIVIRUS"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-bitlocker",
+          "title": "Consolidated Relution aggregate: WINDOWS_BITLOCKER",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "cis-microsoft-windows-11-standalone-5-0-0",
+            "cis-windows-desktop-family"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-bitlocker-aggregate",
+              "title": "Relution aggregate: WINDOWS_BITLOCKER"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-windows-windows-bitlocker-aggregate",
+              "title": "Relution aggregate: WINDOWS_BITLOCKER"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enabled": true,
+                "encryptionTypeForFixedDrives": "XTS_AES_256",
+                "encryptionTypeForOsDrives": "XTS_AES_256",
+                "encryptionTypeForRemovableDrives": "XTS_AES_256",
+                "osDrivesConfigureRecovery": true,
+                "osDrivesCreateRecoveryPassword": "REQUIRED",
+                "osDrivesEncryptionType": "USED_SPACE_ONLY",
+                "requireDeviceEncryption": true,
+                "startAuthenticationRequired": true,
+                "tpmOnIncompatibleDevices": false,
+                "tpmStartup": "REQUIRED",
+                "tpmStartupKey": "DISALLOWED",
+                "tpmStartupPin": "DISALLOWED",
+                "tpmStartupPinAndKey": "DISALLOWED"
+              },
+              "type": "WINDOWS_BITLOCKER"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-local-device-security",
+          "title": "Consolidated Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "microsoft-intune-windows-mdm-baseline-settings"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-local-device-security-aggregate",
+              "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-windows-windows-local-device-security-aggregate",
+              "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowRemoteLogonWithoutPassword": false,
+                "elevationPromptForAdmins": "PROMPT_CONSENT_SECURE_DESKTOP",
+                "enabled": true,
+                "inactivityTimeUntilScreenSaver": 900,
+                "runAllAdminsInAdminApprovalMode": true,
+                "smartCardRemovalBehavior": "LOCK_WORKSTATION",
+                "useAdminApprovalModeForAdminAcc": true,
+                "userInformationOnLockScreenConfiguration": "NO_USER_INFORMATION",
+                "virtualizeFileRegistry": true
+              },
+              "type": "WINDOWS_LOCAL_DEVICE_SECURITY"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-passcode",
+          "title": "Consolidated Relution aggregate: WINDOWS_PASSCODE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-passcode-aggregate",
+              "title": "Relution aggregate: WINDOWS_PASSCODE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowSimplePassword": false,
+                "enabled": true,
+                "history": 5,
+                "maxFailAttempts": 10,
+                "maxInactivityTime": 15,
+                "minLength": 12,
+                "quality": "ALPHANUMERIC"
+              },
+              "type": "WINDOWS_PASSCODE"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-restriction",
+          "title": "Consolidated Relution aggregate: WINDOWS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "sys-2-2-3-windows",
+            "fd-aenderungen-2023",
+            "it-grundschutz-errata-2023",
+            "cis-microsoft-windows-11-standalone-5-0-0",
+            "cis-windows-desktop-family",
+            "microsoft-intune-windows-mdm-baseline-settings"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-restriction-aggregate",
+              "title": "Relution aggregate: WINDOWS_RESTRICTION"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-windows-windows-restriction-aggregate",
+              "title": "Relution aggregate: WINDOWS_RESTRICTION"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-windows-windows-restriction-aggregate",
+              "title": "Relution aggregate: WINDOWS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowAccounts": false,
+                "allowAddingForeignAccountsManually": false,
+                "allowCamera": false,
+                "allowCortana": false,
+                "allowGameDVR": false,
+                "allowInputPersonalization": false,
+                "allowPrivacyExperience": false,
+                "allowSyncMySettings": false,
+                "allowYourAccount": false,
+                "appGetDiagnosticInfo": "DENY",
+                "enabled": true,
+                "uploadUserActivities": false
+              },
+              "type": "WINDOWS_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-windows-relution-native-merged-windows-update",
+          "title": "Consolidated Relution aggregate: WINDOWS_UPDATE",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-windows-windows-update-aggregate",
+              "title": "Relution aggregate: WINDOWS_UPDATE"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "autoUpdateType": "AUTO_INSTALL_AND_RESTART_AT_SPECIFIED_TIME",
+                "deadlineForFeatureUpdates": 30,
+                "deadlineForQualityUpdates": 7,
+                "enablePauseUpdates": false,
+                "enableWindowsUpdateAccess": true,
+                "enabled": true,
+                "installDay": "EVERY_DAY",
+                "installTime": 3
+              },
+              "type": "WINDOWS_UPDATE"
+            }
+          ]
+        },
+        {
+          "id": "suppressed-cis-cis-windows-windows-passcode-aggregate",
+          "title": "Suppressed conflict: Relution aggregate: WINDOWS_PASSCODE",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-microsoft-windows-11-standalone-5-0-0-1-1-1, cis-microsoft-windows-11-standalone-5-0-0-1-1-4.",
+          "sourceIds": [
+            "cis-microsoft-windows-11-standalone-5-0-0",
+            "cis-windows-desktop-family"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-windows-windows-passcode-aggregate",
+            "target": "WINDOWS_PASSCODE",
+            "conflictingPaths": [
+              "history",
+              "minLength"
+            ],
+            "reason": "Suppressed from consolidated import because a higher-precedence exact mapping already set a different value."
+          }
+        }
+      ]
+    }
+  ]
+}

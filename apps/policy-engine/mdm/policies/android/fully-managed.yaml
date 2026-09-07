@@ -1,0 +1,29 @@
+schema_version: 1
+policy_id: AND-CORP-BASELINE-L1-LAB-v1
+platform: ANDROID_ENTERPRISE
+model: fully_managed
+ownership: corporate
+enrollment_model: ANDROID_ENTERPRISE_DEVICE_OWNER
+layer: 1
+purpose: baseline
+status: active
+evidence_status: REFERENCE_VALIDATED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-AUTH-001, MDM-ENC-001, MDM-INT-001, MDM-UPD-001]
+dependencies: []
+environment_placeholders: []
+settings:
+  - configuration_type: ANDROID_ENTERPRISE_DEVICE_PASSCODE
+    values: {quality: ALPHANUMERIC, minLength: 8}
+    control_ids: [MDM-AUTH-001]
+  - configuration_type: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES
+    values: {googlePlayProtectVerifyApps: VERIFY_APPS_ENFORCED}
+    control_ids: [MDM-INT-001]
+  - configuration_type: ANDROID_ENTERPRISE_RESTRICTION
+    values: {debuggingFeaturesAllowed: false, ensureVerifyAppsEnabled: true, factoryResetDisabled: false}
+    control_ids: [MDM-INT-001]
+  - configuration_type: ANDROID_ENTERPRISE_SYSTEM_UPDATE
+    values: {systemUpdateType: AUTOMATIC}
+    control_ids: [MDM-UPD-001]
+rings: [LAB]
+production_ready: false

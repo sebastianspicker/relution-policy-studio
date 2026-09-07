@@ -1,0 +1,542 @@
+{
+  "version": 1,
+  "name": "macOS Tier 1 Baseline Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-consolidated-platform",
+    "platform": "MACOS",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "MACOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    },
+    "actionableRuleCounts": {
+      "bsi": 7,
+      "cis": 5,
+      "vendor": 4
+    },
+    "informationalRuleCounts": {
+      "bsi": 0,
+      "cis": 0,
+      "vendor": 0
+    },
+    "suppressedConflictRules": [
+      {
+        "source": "cis",
+        "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+        "target": "profile:com.apple.applicationaccess",
+        "preferredTarget": "MACOS_RESTRICTION",
+        "reason": "Relution treats macOS restrictions and the application access payload as conflicting server singletons; the BSI native restriction mapping has precedence."
+      },
+      {
+        "source": "cis",
+        "ruleId": "apple-schema-profile-profile-com-apple-screensaver-aggregate",
+        "target": "profile:com.apple.screensaver",
+        "preferredTarget": "MACOS_SCREENSAVER",
+        "reason": "Relution imports the macOS screensaver profile as the server-side screensaver singleton; the BSI native screensaver mapping has precedence."
+      },
+      {
+        "source": "cis",
+        "ruleId": "cis-macos-ios-passcode-aggregate",
+        "target": "IOS_PASSCODE",
+        "preferredTarget": "profile:com.apple.mobiledevice.passwordpolicy",
+        "reason": "Relution imports the macOS password policy profile as the server-side passcode singleton."
+      },
+      {
+        "source": "cis",
+        "ruleId": "cis-macos-macos-firewall-aggregate",
+        "target": "MACOS_FIREWALL",
+        "preferredTarget": "profile:com.apple.security.firewall",
+        "reason": "Relution imports the macOS firewall profile as the server-side firewall singleton."
+      }
+    ]
+  },
+  "policies": [
+    {
+      "platform": "MACOS",
+      "name": "macOS Tier 1 Baseline",
+      "description": "Tier 1 - most restrictive Grundschutz baseline. Generated from BSI, CIS, and vendor guidance with BSI precedence.",
+      "rules": [
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-loginwindow",
+          "title": "Consolidated Relution aggregate: profile:com.apple.loginwindow",
+          "informational": false,
+          "reason": "Consolidates exact mappings from cis.",
+          "sourceIds": [
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "cis",
+              "ruleId": "apple-schema-profile-profile-com-apple-loginwindow-aggregate",
+              "title": "Relution aggregate: profile:com.apple.loginwindow"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "SHOWFULLNAME": true
+              },
+              "schemaId": "profile:com.apple.loginwindow"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts",
+          "title": "Consolidated Relution aggregate: profile:com.apple.MCX:mdm-profiles-com-apple-mcx-accounts",
+          "informational": false,
+          "reason": "Consolidates exact mappings from cis.",
+          "sourceIds": [
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "cis",
+              "ruleId": "apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts-aggregate",
+              "title": "Relution aggregate: profile:com.apple.MCX:mdm-profiles-com-apple-mcx-accounts"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "DisableGuestAccount": true
+              },
+              "schemaId": "profile:com.apple.MCX:mdm-profiles-com-apple-mcx-accounts"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-mobiledevice-passwordpolicy",
+          "title": "Consolidated Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+              "title": "Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "allowSimple": false,
+                "forcePIN": true,
+                "maxFailedAttempts": 10,
+                "maxGracePeriod": 0,
+                "maxInactivity": 5,
+                "minLength": 8,
+                "pinHistory": 5,
+                "requireAlphanumeric": true
+              },
+              "schemaId": "profile:com.apple.mobiledevice.passwordpolicy"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-security-firewall",
+          "title": "Consolidated Relution aggregate: profile:com.apple.security.firewall",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis.",
+          "sourceIds": [
+            "sys-2-4-macos",
+            "it-grundschutz-checklists-2023",
+            "umsetzungshinweis-sys-2-4-macos",
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "title": "Relution aggregate: profile:com.apple.security.firewall"
+            },
+            {
+              "source": "cis",
+              "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "title": "Relution aggregate: profile:com.apple.security.firewall"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "EnableFirewall": true,
+                "EnableStealthMode": true
+              },
+              "schemaId": "profile:com.apple.security.firewall"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-apple-schema-profile-merged-profile-com-apple-softwareupdate",
+          "title": "Consolidated Relution aggregate: profile:com.apple.SoftwareUpdate",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
+            },
+            {
+              "source": "cis",
+              "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "apple-schema-profile",
+              "values": {
+                "AutomaticCheckEnabled": true,
+                "AutomaticDownload": true,
+                "AutomaticallyInstallAppUpdates": true,
+                "AutomaticallyInstallMacOSUpdates": true,
+                "ConfigDataInstall": true,
+                "CriticalUpdateInstall": true
+              },
+              "schemaId": "profile:com.apple.SoftwareUpdate"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-apple-device-settings",
+          "title": "Consolidated Relution aggregate: APPLE_DEVICE_SETTINGS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from vendor.",
+          "sourceIds": [
+            "apple-activation-lock"
+          ],
+          "sourceRules": [
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-apple-device-settings-aggregate",
+              "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowActivationLock": true
+              },
+              "type": "APPLE_DEVICE_SETTINGS"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-apple-software-update-settings",
+          "title": "Consolidated Relution aggregate: APPLE_SOFTWARE_UPDATE_SETTINGS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from vendor.",
+          "sourceIds": [
+            "apple-install-enforce-software-updates"
+          ],
+          "sourceRules": [
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-apple-software-update-settings-aggregate",
+              "title": "Relution aggregate: APPLE_SOFTWARE_UPDATE_SETTINGS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "automaticActions": {
+                  "download": "ALWAYS_ON",
+                  "installOSUpdates": "ALWAYS_ON",
+                  "installSecurityUpdate": "ALWAYS_ON"
+                }
+              },
+              "type": "APPLE_SOFTWARE_UPDATE_SETTINGS"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-file-vault",
+          "title": "Consolidated Relution aggregate: MACOS_FILE_VAULT",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, cis, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0",
+            "apple-managing-filevault-macos",
+            "apple-manage-filevault-device-management"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            },
+            {
+              "source": "cis",
+              "ruleId": "cis-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-macos-file-vault-aggregate",
+              "title": "Relution aggregate: MACOS_FILE_VAULT"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "enableRecoveryKeyEscrow": true,
+                "enabled": true,
+                "fdeFileVault": {
+                  "defer": true,
+                  "enable": "ON",
+                  "showRecoveryKey": true,
+                  "useRecoveryKey": true
+                },
+                "fdeFileVaultOptions": {
+                  "dontAllowFDEDisable": true
+                }
+              },
+              "type": "MACOS_FILE_VAULT"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-restriction",
+          "title": "Consolidated Relution aggregate: MACOS_RESTRICTION",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-restriction-aggregate",
+              "title": "Relution aggregate: MACOS_RESTRICTION"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowActivityContinuation": false,
+                "allowAirDrop": false,
+                "allowCloudDesktopAndDocuments": false,
+                "allowCloudDocumentSync": false,
+                "allowCloudKeychainSync": false,
+                "allowCloudPhotoLibrary": false,
+                "allowDiagnosticSubmission": false,
+                "enabled": true
+              },
+              "type": "MACOS_RESTRICTION"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-screensaver",
+          "title": "Consolidated Relution aggregate: MACOS_SCREENSAVER",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-screensaver-aggregate",
+              "title": "Relution aggregate: MACOS_SCREENSAVER"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "askForPassword": true,
+                "askForPasswordDelay": 0,
+                "enabled": true,
+                "loginWindowIdleTime": 900
+              },
+              "type": "MACOS_SCREENSAVER"
+            }
+          ]
+        },
+        {
+          "id": "consolidated-macos-relution-native-merged-macos-system-policy-control",
+          "title": "Consolidated Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL",
+          "informational": false,
+          "reason": "Consolidates exact mappings from bsi, vendor.",
+          "sourceIds": [
+            "sys-2-1-general-client",
+            "it-grundschutz-checklists-2023",
+            "apple-gatekeeper-runtime-protection-macos"
+          ],
+          "sourceRules": [
+            {
+              "source": "bsi",
+              "ruleId": "bsi-macos-macos-system-policy-control-aggregate",
+              "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
+            },
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-macos-system-policy-control-aggregate",
+              "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowIdentifiedDevelopers": true,
+                "enableAssessment": true,
+                "enabled": true
+              },
+              "type": "MACOS_SYSTEM_POLICY_CONTROL"
+            }
+          ]
+        },
+        {
+          "id": "suppressed-import-conflict-cis-apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+          "title": "Suppressed import conflict: Relution aggregate: profile:com.apple.applicationaccess",
+          "informational": true,
+          "reason": "Aggregates exact apple-schema-profile mappings from cis-apple-macos-15-sequoia-2-0-0-2-1-1-3, cis-apple-macos-15-sequoia-2-0-0-2-3-1-1, cis-apple-macos-15-sequoia-2-0-0-2-3-1-2, cis-apple-macos-15-sequoia-2-0-0-2-3-2-1, cis-apple-macos-15-sequoia-2-0-0-2-5-1-1, cis-apple-macos-15-sequoia-2-0-0-2-5-1-2, cis-apple-macos-15-sequoia-2-0-0-2-5-1-3, cis-apple-macos-15-sequoia-2-0-0-2-5-1-4, cis-apple-macos-15-sequoia-2-0-0-2-5-2-1, cis-apple-macos-15-sequoia-2-0-0-2-5-2-2, cis-apple-macos-15-sequoia-2-0-0-2-6-3-1, cis-apple-macos-15-sequoia-2-0-0-2-6-4, cis-apple-macos-15-sequoia-2-0-0-2-18-1, cis-apple-macos-15-sequoia-2-0-0-6-3-3, cis-apple-macos-26-tahoe-1-0-0-2-1-1-3, cis-apple-macos-26-tahoe-1-0-0-2-3-1-1, cis-apple-macos-26-tahoe-1-0-0-2-3-1-2, cis-apple-macos-26-tahoe-1-0-0-2-3-2-1, cis-apple-macos-26-tahoe-1-0-0-2-5-1-1, cis-apple-macos-26-tahoe-1-0-0-2-5-1-2, cis-apple-macos-26-tahoe-1-0-0-2-5-1-3, cis-apple-macos-26-tahoe-1-0-0-2-5-1-4, cis-apple-macos-26-tahoe-1-0-0-2-5-2-1, cis-apple-macos-26-tahoe-1-0-0-2-5-2-2, cis-apple-macos-26-tahoe-1-0-0-2-6-3-1, cis-apple-macos-26-tahoe-1-0-0-2-6-4, cis-apple-macos-26-tahoe-1-0-0-2-18-1, cis-apple-macos-26-tahoe-1-0-0-6-3-3.",
+          "sourceIds": [
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+            "target": "profile:com.apple.applicationaccess",
+            "preferredTarget": "MACOS_RESTRICTION",
+            "reason": "Relution treats macOS restrictions and the application access payload as conflicting server singletons; the BSI native restriction mapping has precedence."
+          }
+        },
+        {
+          "id": "suppressed-import-conflict-cis-apple-schema-profile-profile-com-apple-screensaver-aggregate",
+          "title": "Suppressed import conflict: Relution aggregate: profile:com.apple.screensaver",
+          "informational": true,
+          "reason": "Aggregates exact apple-schema-profile mappings from cis-apple-macos-15-sequoia-2-0-0-2-11-1, cis-apple-macos-15-sequoia-2-0-0-2-11-2, cis-apple-macos-26-tahoe-1-0-0-2-11-1, cis-apple-macos-26-tahoe-1-0-0-2-11-2.",
+          "sourceIds": [
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "apple-schema-profile-profile-com-apple-screensaver-aggregate",
+            "target": "profile:com.apple.screensaver",
+            "preferredTarget": "MACOS_SCREENSAVER",
+            "reason": "Relution imports the macOS screensaver profile as the server-side screensaver singleton; the BSI native screensaver mapping has precedence."
+          }
+        },
+        {
+          "id": "suppressed-import-conflict-cis-cis-macos-ios-passcode-aggregate",
+          "title": "Suppressed import conflict: Relution aggregate: IOS_PASSCODE",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-apple-macos-15-sequoia-2-0-0-5-2-8, cis-apple-macos-26-tahoe-1-0-0-5-2-8.",
+          "sourceIds": [
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-macos-ios-passcode-aggregate",
+            "target": "IOS_PASSCODE",
+            "preferredTarget": "profile:com.apple.mobiledevice.passwordpolicy",
+            "reason": "Relution imports the macOS password policy profile as the server-side passcode singleton."
+          }
+        },
+        {
+          "id": "suppressed-import-conflict-cis-cis-macos-macos-firewall-aggregate",
+          "title": "Suppressed import conflict: Relution aggregate: MACOS_FIREWALL",
+          "informational": true,
+          "reason": "Aggregates exact Relution mappings from cis-apple-macos-15-sequoia-2-0-0-2-2-1, cis-apple-macos-26-tahoe-1-0-0-2-2-1.",
+          "sourceIds": [
+            "cis-apple-macos-15-sequoia-2-0-0",
+            "cis-apple-macos-family",
+            "cis-apple-macos-26-tahoe-1-0-0"
+          ],
+          "mappings": [],
+          "source": "cis",
+          "conflict": {
+            "source": "cis",
+            "ruleId": "cis-macos-macos-firewall-aggregate",
+            "target": "MACOS_FIREWALL",
+            "preferredTarget": "profile:com.apple.security.firewall",
+            "reason": "Relution imports the macOS firewall profile as the server-side firewall singleton."
+          }
+        }
+      ]
+    }
+  ]
+}

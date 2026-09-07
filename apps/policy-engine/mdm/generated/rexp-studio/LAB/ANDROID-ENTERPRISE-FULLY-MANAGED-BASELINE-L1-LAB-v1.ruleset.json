@@ -1,0 +1,66 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-INT-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
+      "values": {
+        "enabled": true,
+        "googlePlayProtectVerifyApps": "VERIFY_APPS_ENFORCED",
+        "type": "ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-AUTH-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_DEVICE_PASSCODE",
+      "values": {
+        "enabled": true,
+        "minLength": 8,
+        "quality": "ALPHANUMERIC",
+        "type": "ANDROID_ENTERPRISE_DEVICE_PASSCODE"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-INT-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_RESTRICTION",
+      "values": {
+        "debuggingFeaturesAllowed": false,
+        "enabled": true,
+        "ensureVerifyAppsEnabled": true,
+        "factoryResetDisabled": false,
+        "type": "ANDROID_ENTERPRISE_RESTRICTION"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-UPD-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
+      "values": {
+        "enabled": true,
+        "systemUpdateType": "AUTOMATIC",
+        "type": "ANDROID_ENTERPRISE_SYSTEM_UPDATE"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-ENC-001",
+    "MDM-INT-001",
+    "MDM-UPD-001"
+  ],
+  "dependencies": [],
+  "enrollment_model": "ANDROID_ENTERPRISE_DEVICE_OWNER",
+  "generated_name": "ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "ANDROID_ENTERPRISE",
+  "policy_id": "AND-CORP-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

@@ -1,0 +1,17 @@
+schema_version: 1
+policy_id: WIN-BYOD-DATA-L3-LAB-v1
+platform: WINDOWS
+model: byod
+ownership: employee
+enrollment_model: WINDOWS
+layer: 3
+purpose: managed_data_overlay
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-DATA-001, MDM-LIFE-001]
+dependencies: []
+environment_placeholders: []
+settings: []
+rings: [LAB]
+production_ready: false

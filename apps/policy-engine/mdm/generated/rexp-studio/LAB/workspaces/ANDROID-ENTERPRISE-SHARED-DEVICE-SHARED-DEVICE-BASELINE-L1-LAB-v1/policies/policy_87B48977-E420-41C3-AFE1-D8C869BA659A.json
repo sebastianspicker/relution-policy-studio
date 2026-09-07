@@ -1,0 +1,30 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only shared_device shared_device_baseline; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "ANDROID_ENTERPRISE",
+  "uuid": "87B48977-E420-41C3-AFE1-D8C869BA659A",
+  "versions": [
+    {
+      "configurations": [],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "2FBDBEC8-E2E0-4C1D-A4D2-676054DDFA9D",
+      "version": 1
+    }
+  ]
+}

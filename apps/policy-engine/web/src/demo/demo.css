@@ -1,0 +1,37 @@
+/* The hosted build retains the product shell and exposes only the demo boundary. */
+.demo-runtime-indicator {
+  position: fixed;
+  z-index: 20;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px 7px 10px;
+  color: var(--ci-color-heading);
+  background: color-mix(in srgb, var(--ci-color-panel) 94%, transparent);
+  border: 1px solid var(--ci-color-border-strong);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgb(12 18 25 / 18%);
+  font-family: var(--ci-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.demo-runtime-indicator button {
+  min-height: 26px;
+  padding: 3px 8px;
+  color: var(--ci-color-primary-contrast);
+  background: var(--ci-color-primary);
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  letter-spacing: normal;
+}
+
+@media (max-width: 640px) {
+  .demo-runtime-indicator {
+    right: 8px;
+    bottom: 8px;
+  }
+}

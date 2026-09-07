@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rexp-studio.example/schemas/mdm-test-evidence.schema.json",
+  "title": "MdmTestEvidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evidence_id", "policy_id", "recorded_at", "ring", "lab_import", "publication", "export_roundtrip", "physical_device_application", "rollback", "user_impact", "approval", "production_ready"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "evidence_id": {"type": "string", "pattern": "^EVD-[A-Z0-9-]+$"},
+    "policy_id": {"type": "string"},
+    "recorded_at": {"type": ["string", "null"], "format": "date-time"},
+    "ring": {"const": "LAB"},
+    "lab_import": {"$ref": "#/$defs/testResult"},
+    "publication": {"$ref": "#/$defs/testResult"},
+    "export_roundtrip": {"$ref": "#/$defs/testResult"},
+    "physical_device_application": {"$ref": "#/$defs/testResult"},
+    "rollback": {"$ref": "#/$defs/testResult"},
+    "user_impact": {"type": "object"},
+    "approval": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["NOT_EVIDENCED", "APPROVED", "REJECTED"]}}},
+    "production_ready": {"const": false}
+  },
+  "$defs": {"testResult": {"type": "object", "additionalProperties": false, "required": ["result", "evidence"], "properties": {"result": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT_RUN"]}, "evidence": {"type": "array", "items": {"type": "string"}}, "notes": {"type": "string"}}}}
+}

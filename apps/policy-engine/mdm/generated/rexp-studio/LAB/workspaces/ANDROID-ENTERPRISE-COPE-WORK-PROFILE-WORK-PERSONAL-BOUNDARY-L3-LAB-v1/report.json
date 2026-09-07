@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "8E416361-7C88-451C-A0A0-1AC9A4D2EA0D": "ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

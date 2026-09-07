@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "4C489C79-07A5-4D5A-AA8B-6F3BEFBE5B29": "IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

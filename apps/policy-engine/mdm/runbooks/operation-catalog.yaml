@@ -1,0 +1,34 @@
+schema_version: 1
+status: REFERENCE_VALIDATED
+production_ready: false
+operations:
+  - id: OPS-ENROL-001
+    operation: enrol
+    status: APPROVED
+    trigger: approved asset and model record
+    required_evidence: [ownership, enrolment_method, privacy_notice, lab_baseline_result]
+    stop_condition: "Model, authority or privacy boundary is NOT_EVIDENCED."
+  - id: OPS-CHANGE-001
+    operation: policy_change
+    status: APPROVED
+    trigger: approved source change
+    required_evidence: [peer_review, schema_validation, lab_result, rollback_reference]
+    stop_condition: "Do not promote beyond LAB while production_ready is false."
+  - id: OPS-COMPLIANCE-001
+    operation: compliance_remediation
+    status: REFERENCE_VALIDATED
+    trigger: verified stale or failed state
+    required_evidence: [freshness, notice, support_case, recovery_result]
+    stop_condition: "Ordinary failure must not invoke destructive action."
+  - id: OPS-LIFECYCLE-001
+    operation: loss_transfer_retirement
+    status: REFERENCE_VALIDATED
+    trigger: authenticated lifecycle event
+    required_evidence: [ownership, authorisation, downstream_access_removal]
+    stop_condition: "BYOD requires selective organisational-data removal only."
+  - id: OPS-EVIDENCE-001
+    operation: evidence_retention
+    status: APPROVED
+    trigger: every Lab test or change
+    required_evidence: [utc_timestamp, sha256, tool_version, source_version]
+    stop_condition: "Never store secrets or original tenant exports in tracked files."

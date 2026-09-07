@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "B66F6A70-50C0-4CE5-A4E9-67C496C39100": "IOS-SHARED-IPAD-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

@@ -1,0 +1,52 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only dedicated_kiosk task_specific_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "IOS",
+  "uuid": "4C489C79-07A5-4D5A-AA8B-6F3BEFBE5B29",
+  "versions": [
+    {
+      "configurations": [
+        {
+          "createdBy": "reference-generator",
+          "creationDate": 0,
+          "details": {
+            "disableAutoLock": false,
+            "enableAssistiveTouch": true,
+            "enabled": true,
+            "enableVoiceOver": true,
+            "enableZoom": true,
+            "identifier": {
+              "appType": "PUBLIC",
+              "displayName": "Managed task app",
+              "packageName": "${ENV:IOS_KIOSK_BUNDLE_ID}"
+            },
+            "type": "IOS_APP_LOCK",
+            "uuid": "5F24EA11-A216-4B9A-A925-7369380C9F60"
+          },
+          "modificationDate": 0,
+          "modifiedBy": "reference-generator",
+          "uuid": "71B016A1-E640-4605-AF68-03F63EF1A17D"
+        }
+      ],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "ECF5A71E-69A9-4DC6-AEF6-66F70CA6E19E",
+      "version": 1
+    }
+  ]
+}

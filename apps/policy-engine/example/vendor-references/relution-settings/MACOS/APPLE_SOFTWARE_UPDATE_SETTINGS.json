@@ -1,0 +1,8 @@
+{
+  "type": "APPLE_SOFTWARE_UPDATE_SETTINGS",
+  "automaticActions": {
+    "download": "ALWAYS_ON",
+    "installOSUpdates": "ALWAYS_ON",
+    "installSecurityUpdate": "ALWAYS_ON"
+  }
+}

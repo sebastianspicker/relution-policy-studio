@@ -1,0 +1,15 @@
+---
+exclude_paths:
+  - ".codacy/generated/**"
+  - ".pytest_cache/**"
+  - ".ruff_cache/**"
+  - "coverage/**"
+  - "dist/**"
+  - "dist-web/**"
+  - "data/**/*.json"
+  - "example/**/*.json"
+  - "web/src/features/policy-workspace/types.ts"
+  - "private/**"
+  - "test-results/**"
+  - "tests/**/*.test.ts"
+  - "node_modules/**"

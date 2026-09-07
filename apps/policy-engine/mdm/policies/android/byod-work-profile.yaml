@@ -1,0 +1,27 @@
+schema_version: 1
+policy_id: AND-BYOD-DATA-L3-LAB-v1
+platform: ANDROID_ENTERPRISE
+model: byod_work_profile
+ownership: employee
+enrollment_model: ANDROID_ENTERPRISE_PROFILE_OWNER
+layer: 3
+purpose: work_profile_boundary
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-AUTH-001, MDM-DATA-001, MDM-LIFE-001]
+dependencies: []
+environment_placeholders: []
+settings:
+  - configuration_type: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE
+    values: {quality: ALPHANUMERIC, minLength: 8, unifiedLockSettings: REQUIRE_SEPARATE_WORK_LOCK}
+    control_ids: [MDM-AUTH-001]
+  - configuration_type: ANDROID_ENTERPRISE_RESTRICTION
+    values:
+      cameraAccessPermission: CAMERA_ACCESS_USER_CHOICE
+      androidEnterpriseCrossProfilePolicy:
+        crossProfileCopyPaste: COPY_FROM_WORK_TO_PERSONAL_DISALLOWED
+        crossProfileDataSharing: DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED
+    control_ids: [MDM-DATA-001]
+rings: [LAB]
+production_ready: false

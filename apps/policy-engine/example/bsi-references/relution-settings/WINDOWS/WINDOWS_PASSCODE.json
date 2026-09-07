@@ -1,0 +1,10 @@
+{
+  "type": "WINDOWS_PASSCODE",
+  "allowSimplePassword": false,
+  "enabled": true,
+  "history": 5,
+  "maxFailAttempts": 10,
+  "maxInactivityTime": 15,
+  "minLength": 12,
+  "quality": "ALPHANUMERIC"
+}

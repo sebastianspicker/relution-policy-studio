@@ -1,0 +1,11 @@
+{
+  "type": "IOS_RESTRICTION",
+  "allowAppCellularDataModification": false,
+  "allowCloudBackup": false,
+  "allowCloudDocumentSync": false,
+  "allowFingerprintForUnlock": false,
+  "allowManagedAppsCloudSync": false,
+  "forceAutomaticDateAndTime": true,
+  "forceEncryptedBackup": true,
+  "forceWatchWristDetection": true
+}

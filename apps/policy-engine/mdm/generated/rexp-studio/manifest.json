@@ -1,0 +1,810 @@
+{
+  "archive_generation": {
+    "deterministic_manifest_excludes_encrypted_archive_hashes": true,
+    "output_lane": "private/mdm-archives/LAB",
+    "runtime_key_env": "RELUTION_REXP_KEY"
+  },
+  "artifacts": [
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "AND-BYOD-DATA-L3-LAB-v1",
+      "prerequisites": [],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/android/byod-work-profile.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "AND-COPE-DATA-L3-LAB-v1",
+      "prerequisites": [
+        "AND-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/android/cope.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "AND-CORP-BASELINE-L1-LAB-v1",
+      "prerequisites": [],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/android/fully-managed.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "AND-KIOSK-DEDICATED-L5-LAB-v1",
+      "prerequisites": [
+        "AND-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [
+        "${ENV:ANDROID_KIOSK_PACKAGE}"
+      ],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/android/dedicated.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "AND-SAMSUNG-OEM-L5-LAB-v1",
+      "prerequisites": [
+        "AND-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/android/samsung.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "AND-SHARED-BASELINE-L1-LAB-v1",
+      "prerequisites": [
+        "AND-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/android/shared-device.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "APL-BYOD-DATA-L3-LAB-v1",
+      "prerequisites": [
+        "APL-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/apple/byod-user-enrollment.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "APL-CORP-BASELINE-L1-LAB-v1",
+      "prerequisites": [],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/apple/corporate-mobile.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "APL-KIOSK-DEDICATED-L5-LAB-v1",
+      "prerequisites": [
+        "APL-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [
+        "${ENV:IOS_KIOSK_BUNDLE_ID}"
+      ],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/apple/dedicated-kiosk.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "APL-SHARED-BASELINE-L1-LAB-v1",
+      "prerequisites": [
+        "APL-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/IOS-SHARED-IPAD-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/apple/shared-ipad.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-SHARED-IPAD-BASELINE-L1-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "MAC-CORP-BASELINE-L1-LAB-v1",
+      "prerequisites": [],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/apple/corporate-macos.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "MAC-PRIV-ADMIN-L5-LAB-v1",
+      "prerequisites": [
+        "MAC-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/apple/privileged-macos.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "WIN-BYOD-DATA-L3-LAB-v1",
+      "prerequisites": [],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/windows/byod.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "WIN-CORP-BASELINE-L1-LAB-v1",
+      "prerequisites": [],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/windows/corporate.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "WIN-KIOSK-DEDICATED-L5-LAB-v1",
+      "prerequisites": [
+        "WIN-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [
+        "${ENV:WINDOWS_KIOSK_URL}"
+      ],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/windows/dedicated-kiosk.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "WIN-PRIV-ADMIN-L5-LAB-v1",
+      "prerequisites": [
+        "WIN-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [
+        "${ENV:WINDOWS_WDAC_POLICY_BASE64}",
+        "${ENV:WINDOWS_WDAC_POLICY_ID}"
+      ],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/windows/privileged.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1"
+    },
+    {
+      "applied_to_test_device": false,
+      "expected_create_update_behavior": "create-or-explicit-update-after-human-diff",
+      "policy_id": "WIN-SHARED-BASELINE-L1-LAB-v1",
+      "prerequisites": [
+        "WIN-CORP-BASELINE-L1-LAB-v1"
+      ],
+      "production_approved": false,
+      "required_manual_values": [],
+      "rollback_reference": "mdm/runbooks/operations.md#backup-recovery-and-rollback",
+      "rollback_tested": false,
+      "roundtrip_imported_in_lab": false,
+      "ruleset_path": "mdm/generated/rexp-studio/LAB/WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1.ruleset.json",
+      "schema_validated": true,
+      "source_path": "mdm/policies/windows/shared.yaml",
+      "syntax_validated": true,
+      "workspace_path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1"
+    }
+  ],
+  "generated_ring": "LAB",
+  "import_behavior": "create-or-explicit-update-after-human-diff",
+  "output_hashes": [
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1.ruleset.json",
+      "sha256": "e27cec94aeb241fb9c5e3d6c7477237c7697b9fd8c83936de0300780670faed7"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1.ruleset.json",
+      "sha256": "25f743ed31580f07e00f98661459a5f5fe16d34c8ac1994fe63032ffec6c68a8"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1.ruleset.json",
+      "sha256": "3d142d9c3228c8f575236677d05420042f7e971ba47f622a4c22e038f675e920"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "e4041d38b0772f8b99104bf9aac0bf6e7dcf3c09c2a84cafbe27ea7b1ebc1af3"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1.ruleset.json",
+      "sha256": "99bb08e82ec41616e92c66e17fb216d79f290c566ee15390a4b09279c7685348"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "b7c0f36c556d4ffea6b6f3b545c24c7bc790432d07aaf1511de3e822b2361314"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "cb98acb8af5e08f11c59036087840b9bba37ae50369efc63a47392d14528d302"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1.ruleset.json",
+      "sha256": "800c5691ef50396b71740861b1469fafbdd5dfb2704ab9a60598c3c09d543a59"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/IOS-SHARED-IPAD-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "60e44c028864732e158536ba307ad50dcb9969a9f1b54e947588ea7fa04ec943"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1.ruleset.json",
+      "sha256": "5c74d533339ee74296f0482853ecb1c9ce27b73c4deb41d1be3d19996fdd04bb"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "8446d422357dbccb9229734db43a274ae5bc51cb21f0ec2aca5764f5ff9d4cf1"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1.ruleset.json",
+      "sha256": "36a655b2cf6f1ec9af90095e016b241ec6a268a5a5008c2794ba4fbbca548618"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1.ruleset.json",
+      "sha256": "0c64ceaadaa0130798791bc5e71144b43e2a0907f18fb4c745881e3e602c534c"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "6024e8714632c35ec1bbdcb8b93c2276483846db5524aa8194eee2306240aad0"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1.ruleset.json",
+      "sha256": "b93290d669b2db4b0c154c1a0963ad078f0278350e53d5e2b0ec754db4696ffc"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1.ruleset.json",
+      "sha256": "2812e11c16833a5b7f8bd42784802faced60c0909d49ec46ac5df98a8d8501e2"
+    },
+    {
+      "kind": "ruleset",
+      "path": "mdm/generated/rexp-studio/LAB/WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1.ruleset.json",
+      "sha256": "5fce799b743432137b446b02495810cdee4fee246d7a2abbbaaa87a4df9e801a"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1/policies/policy_331B6177-FD15-4DB6-ACEE-FAFA24DD7144.json",
+      "sha256": "8da1161b4db4ddbcd1de2367fcfd0ba0c836c8ba06f07b0462b30eb299ba678d"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-BYOD-WORK-PROFILE-WORK-PROFILE-BOUNDARY-L3-LAB-v1/report.json",
+      "sha256": "5306a75fed0023aeedd99fb3c3fdeb825084f60a7c4817c16830a04fb0e04a13"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1/policies/policy_8E416361-7C88-451C-A0A0-1AC9A4D2EA0D.json",
+      "sha256": "17744369bc83cfb3690fa5145c1726aff1868cfa2308ae02cbb2fb0a98bc4c28"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1/report.json",
+      "sha256": "3d68a8d7599d34414960f69ce157531d231e4b56ca268dbd379d93ed1f87b1dd"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/policies/policy_F91270E3-F76E-4D55-A511-D1AD945CC529.json",
+      "sha256": "cdbd6f54641c144db57f5ffc2681c41d1d5a791ae06fa898b0db29ec000acccb"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-DEDICATED-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/report.json",
+      "sha256": "5b1c4b398b6b07226a3e237eac447d26003d242c7b38672d85fcd30c40d1b3dc"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1/policies/policy_14F48D2F-BA7F-42E3-ABD2-948A1BDE680D.json",
+      "sha256": "f5e8378065490863c868e9dc0798248e2b79a1f45cf11dba335de75c6be641d8"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-FULLY-MANAGED-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "e1c77df8e3c55c49376679c7d02b4d843a859f53b7f5e2a465e67731c3ba005c"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1/policies/policy_30D56E6A-0D99-4332-A4EC-E6B6C9318A2D.json",
+      "sha256": "0f252c46a741a39677d3ad8e6179b9ceba89a0db5120ed83755cd8e75810db80"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SAMSUNG-SPECIFIC-OEM-OVERLAY-L5-LAB-v1/report.json",
+      "sha256": "ab42d763a9de07af97636c0a819a794e1eedc17884b2c0e8350c3545d51f3fed"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1/policies/policy_87B48977-E420-41C3-AFE1-D8C869BA659A.json",
+      "sha256": "9c4247a6fe949d42eeef35e509da4b6bf7fa93da6ecdc3b476393fe5f199898a"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "895a3690a5eceeda579e150e46726d4842baa8bb1c8c9036d3d3f2a06e82e058"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1/policies/policy_93DC7D75-F8EE-457B-AE22-F3A0653E9F5F.json",
+      "sha256": "a5d16ccd0fbdaeac7c8e37683ad8b015489484659952340ef4f1ca2e59df4cc6"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "d1710ec12047f166866d845385be71723168c9046a16875ebd751645c464e3dd"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/policies/policy_4C489C79-07A5-4D5A-AA8B-6F3BEFBE5B29.json",
+      "sha256": "2a8c3143d114b61adcfe49ff3dd433df40bf06a8dd01d6dc709184316d5a664e"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/report.json",
+      "sha256": "8028b6c1b4c8d383ec8dba6cd4e942255bb690310676d53ca8902dd0d6010c1a"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-SHARED-IPAD-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-SHARED-IPAD-BASELINE-L1-LAB-v1/policies/policy_B66F6A70-50C0-4CE5-A4E9-67C496C39100.json",
+      "sha256": "39cb7bed95f7ce835caa3c439a6d158b578193f137ec3f42c9fda6ff7235c295"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-SHARED-IPAD-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "3ae0e65ae480b73760748939a9825409c6e08fddcecdc18d7357ef2a3c3e4783"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1/policies/policy_1EA1EE83-61DB-436D-AB52-0E54062AFAB5.json",
+      "sha256": "f649e026ad10fe9df4164ed40c8da6b73c266fed514d899f465002eb4db771d1"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/IOS-USER-ENROLLMENT-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1/report.json",
+      "sha256": "8ba12c8e4636906a7b5998b9dbc0fec8253d30d960e560aea5def546d348b69c"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1/policies/policy_F710001F-81BB-4097-A7A9-80E93582C1B6.json",
+      "sha256": "2bc72160df251ff18892498aeba91f669aac8b15f8c2c1022f7b68ca005e3576"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-CORPORATE-MAC-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "4f88b5dfd22aa3cb32267c7591fbae485332ef49b4fd8c4f2574e52c74fe4e1d"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1/policies/policy_1C54D0BF-F9C6-44BF-A9EC-81A74EC70E28.json",
+      "sha256": "e107a0804972f48aa2ae21d9fcfa64cb2ab38e5451e0cff5d842a5ea2f80af73"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/MACOS-PRIVILEGED-MAC-PRIVILEGED-OVERLAY-L5-LAB-v1/report.json",
+      "sha256": "27f985bbe2ff4c28e38fa7018c677939484fa82dc61c657ac064963efe734029"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1/policies/policy_462F7CC3-0A81-452C-A1F0-C23960EF123D.json",
+      "sha256": "c6cb1543785da2e477b2a7c5d48ed29d6fa7ece4e94f6a47d7fc700a6ee7f5be"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1/report.json",
+      "sha256": "7ddadd50b89475d9d98072c112888382654c3b014345581167f8cfa9c30e4f19"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1/policies/policy_1AEC1DB3-C513-4572-A08E-FCC9DB360AD3.json",
+      "sha256": "c13efb5821f6b56acaed8cdd2dac9176b864a8abe58602f4274d1d39dfad5518"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "2cfc9f905a138a24630de9ca1312658222512881edbd7ecc523ad7cb39019ba4"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/policies/policy_CD478A71-2A36-401B-A93A-78CF890D9B3E.json",
+      "sha256": "f320110ad4fdd9c109487416fe54f3c70aadb5e0277ce44c3a8eba12abcfa819"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-DEDICATED-KIOSK-TASK-SPECIFIC-OVERLAY-L5-LAB-v1/report.json",
+      "sha256": "83d595f973a3ebb4f69a1601fd1702856695e7f5ce7043d6dd8d8eff759fe01f"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1/policies/policy_DFC0D18D-5CC1-4A25-A386-1F6115DA8E6B.json",
+      "sha256": "747b04da59b5fad9ada16bb0fad045dc338c1f9277741e3c7d16f1cd326b6784"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1/report.json",
+      "sha256": "107e498c65b6b90005da2b5af42c77ea6b75db45bb160b3c599b45daf42b2ef0"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1/metadata.json",
+      "sha256": "c9f44d857ed7eb4f2cc3266ac7747aa2c9838991b4227b6843d6580b7878a390"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1/policies/policy_209586E4-5D61-44C8-ACD2-AEA398ADE41A.json",
+      "sha256": "8b6e930146057d40b097ffe20d482c47e88231e76aa3e5626929b50ebb65459c"
+    },
+    {
+      "kind": "workspace",
+      "path": "mdm/generated/rexp-studio/LAB/workspaces/WINDOWS-SHARED-WORKSTATION-BASELINE-L1-LAB-v1/report.json",
+      "sha256": "a8b376da37fabd1b58f17ce18c3e9748e78d7cc49bb200b787569c9ee7bfdf5a"
+    }
+  ],
+  "production_ready": false,
+  "relution_version": "26.1.1",
+  "required_manual_values": [
+    "${ENV:ANDROID_KIOSK_PACKAGE}",
+    "${ENV:IOS_KIOSK_BUNDLE_ID}",
+    "${ENV:WINDOWS_KIOSK_URL}",
+    "${ENV:WINDOWS_WDAC_POLICY_BASE64}",
+    "${ENV:WINDOWS_WDAC_POLICY_ID}"
+  ],
+  "schema_version": 1,
+  "source_hashes": {
+    "0067b987d0a56b16": "da9a26e30fb9fa4a2f61e5e7ad7779f43f790291561a08a86e25f426bb018fde",
+    "00c9bcb5ed42ecb3": "b8f6dff073edf2dc6d5de029083589f34100997866b06b21157fe1dbaaaaefcd",
+    "0228a3fd3c88a951": "97be46d76e72843462d0317dfec437fc9d7e82e5ea91b9d9669ae681a4c7d3f0",
+    "051e32107ff12669": "114d9fabc9077a93d24c778a4cb2959998bcaa233416415f6e2cbc05964f2393",
+    "05a8d4fc5bc0ebd5": "010e53f2345e2a8f592a25700f16dff78c5ee24b08942d8deacdda5aa856255a",
+    "05dbdac242b047bb": "77f46be5c2c9c60fff3f1227df971bcc482b93057e3f199f77765bfdf5e4003a",
+    "072e61bf24ffc95f": "0aee3d36b4d493b64c7de9f66e0a07a2d04bfe1248ccc73b3a0eb54f88e3bf50",
+    "075c4cee843e85f8": "bdfb78f410479efbcc65f754df106a916ab1ecc5a1241f9fc8354a2374f820c9",
+    "07c2201ab6567071": "6260ed9a8e805260babcb9e098b32da9277f70933913d9f2d3659b7537be3c18",
+    "07e245f3e561635f": "48d8c3255cb79e621802121325d3a0668227ffb3d8d3d4b3037e509fa353a235",
+    "098d171c508ad063": "391012836a64848c9419f81876e47e030bcd37c5fd8d2a308b582ed9f012469d",
+    "0bdb13b6f7cee862": "2a74807cb7e29670ea8996acaae5c8d19928497bb33220d384ed589358da4637",
+    "0d296a92b554c7c8": "bf710b4e3cccf5792f71782b10ff014a39a49a04a6bcfa559e8210815e9a1050",
+    "1084013fb1e4fcfc": "e2520fd95adf927974a6251d0377e18edfb7923ebeba5febb056e983db73a360",
+    "136db97a3df09f43": "c58d63ab236bd9715d1632d7fd77793c037c2d6aee52328cc9100f73588a7af6",
+    "1736cb7761d019de": "27ea3f46df84245dad38ffe4428f653c7dd22a170ec0f7351360ca043141babf",
+    "17932e561d91cded": "812c746f01a389cfaf026e7530c1a43b7408769007d8acbcfcf4d33ae2450dc3",
+    "181e9dd57edd4a71": "f086c33390ab9b917969042ac9e2e4d234234674fb2987d7fc97140d084828cf",
+    "1a39e717dce23eee": "ff9f527476c4cc3e8d02836b3aec1c4e95ae030b5ced5810688aa22df5bc3416",
+    "25e80b99a2a8a941": "9a57d65bcac32fe32b96c513734dee5485984f543eac1163627fd3d977357916",
+    "25f0dccd431e1a03": "f95a3c269ea5c9850d62b6ef2ad3e0d1e5602d47692fb91fc68f0ea880c43a02",
+    "270fb5789faef826": "f8865ce464b5e9220897c900d7f39f751cbcf98343d6db72144913c12956aca2",
+    "282e83410859bbfb": "65619eef80e6ad2101c98baf5ea6c3ed3855f158a3303fdb740cf82e49b45f26",
+    "2d33ffea0b8bf33b": "f63944ba1c201db15662d7dcaa2ff745dd4667bbd7f313e0d183431cfbd7cedf",
+    "2d84736d44fef611": "01f9b9a87faf5a444c9780620ef71e7d39c853a3c114f229545a601c35552594",
+    "3b09befa9d2ff55d": "16ce7b05ea4642b3de781b621248a67fc17d778c390b5707e6e5e6d314d66fd5",
+    "3fa93f0d78131f14": "197c54f28a6b20c59edef91be8b02246aeca4e3ad4968f6882463b5e09b4bba2",
+    "4324cfeb3d88aa5a": "e28e23aed909733f49809bc3b38f116da2914ff6236bed777f71ecb70f5fa842",
+    "49089e97ea7799a6": "4d2a3b803c4fffc4698089c001d5e645e3da47a60d14433166a1eb7f0a5d172f",
+    "4918312fa4b54745": "052da2881967d8f1af5f969694a34d8540c0c465a09b84c66f8817c977b0a609",
+    "4a0d506a294fc496": "7a5cdaf6d9a3f31b20c785995d3ea7467c5e452dabd508c383e4db85e65b615c",
+    "4bf825686d6fe69b": "b4b67a5f1d65d76e58ef429cd2df8579b6be958b01e44573ad741b5306541c6a",
+    "4dec0d5cc8a2523e": "2cb8247ba4433c144eb267db8bc782d11bab166390be6bb8c68c2cc4df673563",
+    "51fbeafb047ee050": "795941cfceac9027a937e61d9c06d49f1b6ebb22cac30dbf60d2b6a0b8c23930",
+    "54b0164af446110f": "f31b2875fdcc57422ed8ae6873d542f6753a42516607ffd4d336890c211d7aae",
+    "55030ed8069fc49a": "12709f4cf285d2c6fc4d5e2ff2d0e168269e35c14b9339c62a956981ce886561",
+    "57e9b2bc48642842": "337eced083d5e816f7b19ba783de5285c7685a3985ea7a6cdf9c3aa824121d0d",
+    "5820ab1f7f6533c5": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+    "599638cba4d5cf77": "0df9cc18c9328683e1bf7fa8564727f46b22c846620318cb85da099c34bf5566",
+    "5ee6f925eacf5ec0": "8d28aa801942aac35159fd3ad96fd730af24c1875a80ca7ae04b4568bc3437d7",
+    "619d4983e34641db": "093554878bb1394a24664efaa85d839f05f1fbf1a075767b671d5369b98ab600",
+    "626fb0affd8ae0ce": "0261dae65b7acf404d82a93c1f48e732f1b36436ed7e81bd44b6ca4cad097ac7",
+    "62c87cad31f1e42e": "a3b4bb1ebe60bd2fa942d34750686a45e0dc48d30664ad49a3ba78cf6a864863",
+    "63583898ebaf451b": "4fc7c9b34ec4326467b74c467f2562014ea5d1548680c5d9b5e41cee581ff8fb",
+    "64412669edfd9018": "59d066e61834eb827f3de661414932b026c37c783cc3638ebf3f561bba212776",
+    "65d6b01000d15801": "cd30e6b2d2b9cf1d85b32673459bc9607c66125c66dcf8732874c6161d91de47",
+    "6769039fe846085a": "2430d2ee8f88ab96814a89ba3530ced239cdef93b56d76de4652b81b4b080224",
+    "6b71dec0083d7870": "261ded73f63e34e92a16ddaa9f471c5c142784a0cfee4b6e8d259d1597993ae7",
+    "6c7e3a599bcdf253": "bef82bc7df5fa643a0212b112b40991204939dd33320509169c504d97deaf25a",
+    "6e8035a8c5bbdecf": "93f17be4a592ee8ad40a337d339c86807486766437685a76e4d62be282b335c2",
+    "6f395b3cb3c76248": "063dc4dc46478ef835bc349a9cd56ca748303f4b4cd0f2c182f9bd843ab37d50",
+    "7181bd63d9ee3659": "81cd16141da69750a1bbf5ece7cd7672ac2af9c11bac9a254ed8389e8923371e",
+    "742053aceb8379e2": "3a9189fc981002c94ef6e76adde7b242435de41d4e3cb1f70223bce4d568947f",
+    "75031f79f8997811": "4790bd4f7478ceb7e032ededf042fe51384e75cd4f4c6c3c26c94e87c990a0c0",
+    "75f8c49e7c4e015a": "d41d73836095763b029b0819165a581aa53c5129a927a584a9722d27eb25a45c",
+    "7902e217afafa925": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+    "7aae0c59d735a855": "bea911c1bff1105a5ac74a7c99805e24d3f538c2da60902a97a533a226b2838d",
+    "7ae4df93a27ca8d4": "07a7518dc624b0e8e1d947fafb064e84ddccad00e3634be68c74e3807ece4f9f",
+    "7d6b24509c7d3582": "c66e90c183cfdc29b406c7cb73402f1db564ae4f61de95e84c50bd072573c17c",
+    "7e01b32eff5929b4": "256bd6b42b7bec3d8b598596d5a0b863858e6a6553cd39ec211a85e11e69eedd",
+    "7e4b6a83ab0a9c73": "1dfe102550dbe3215d3c859d3fcc28859bb01c31b6499b613b99c6e592d27d42",
+    "7e71c382869c2e46": "8b042fa96250ceb7cab48213cc8ea1f570986c66ea656072a52393829cc5ee07",
+    "7fd3b6691fc0fc80": "7c3d701fc12c0c3c9d636e8579712984e61d24788829d8f0fc3f38adedf63911",
+    "83bee2886adc47c5": "13e2f4d0322aed3b3e91ff7d3fb75b22f3b2d038d831e8c783df6bea2beb045a",
+    "8441c4d5131f5466": "0b2846e9df3ca3fda441d9c281b7522ce3cc2bbc2e1f929330fd22e4dedf3aeb",
+    "86ba29cb24651eba": "827f9a750a63cd8b31b4dcf7410e5d254518e8f78af515b5a19f42f2896033d6",
+    "91d231e050bfdbe8": "c2adb4d01fd7d66ca61a4eb56d944b24cd6f1f4eeab5d952f751678d181d7ceb",
+    "95354f04a3ce75f2": "c456b4c0979eeaaec960e988eedd1e7c0331ac961db4b19b8fb258ac9815e6ac",
+    "969d93ff0f6a2b00": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+    "96ff09d3340bf8bc": "f0c9595638ed9346a80872ed2296700621df0d69d71a33a4a6d0e596d46971ae",
+    "99c761de5587e81e": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+    "9a1e6978eedb5b00": "8d2011c0c1735de9a7f5adc5dd873961e213b005d9aca0f43292198adaed2644",
+    "9a76335c2a181b64": "70560a9d846c6a5d8479d819b1727b34406a489d8bab203d6284cc8862c596a9",
+    "9e2fe78c75c4d950": "4a3bbc451faf393e15fba55b9c81ca5e48ae7dd8618538db71315e5e5e581eed",
+    "a3b8d75ab7b64dfa": "01e6be8dc91855f0076b113cb46d789eb3531dae15ef8f75dfcd7add1aa0a2f6",
+    "a6d516e6a6177a39": "03c63c58909476e20e3ec4da5e2b8be4beb03cf55c7a708bf11854c8f2a6be44",
+    "a731309a91cc0a40": "f8ef7d9de3102eea1462e7e147f2e8a105817235b70d3fb334462fb596187d4d",
+    "a77f841747a7ac5e": "0982407dd01d527f4d3f7be6f161f0ea373012eb45ac0b4bf7c8f139d3e32df8",
+    "b2110d4ffcad8c78": "9a8955fe1b11deefa6f25f9ced4c698512c1ab65d02ef66598c249e3d8ffa2d2",
+    "b43dc0f933c16337": "1cd6c569337d63c78f0e20524a07409318e5e5e7476545d4b21d587a1bf829ec",
+    "b724c12d9e048430": "ef718b66a8a910d9c5ce11e2bd45a2356a92ca0709c0b0569773980487168b48",
+    "b845ca3d27e1679f": "82817c9bb866a9cf782bb9560f9027af2adb16ee8d53ac26836b1c87d8cc595a",
+    "b898b5263ada3c9d": "68f031af31fa996966357a5c06b4acec0af275b903285295a7dab3ba2abb3366",
+    "bce10b0684c064c3": "96b17f3640bf04de62761f4e612d35badcedddc50a64519699064777ef2149d1",
+    "be8e45e6f84022f9": "a33dad467acb88b87d08ca1c99d933b5ac2940c079917df7268f0f618e81908f",
+    "befc1c616609196f": "21e14fc5449ab7a99773590313fb6d7cc9067dedd7e6c90ad0af9cce76821ff4",
+    "c0b6c70b4ef748fd": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+    "c2683dd15a4720ea": "61e53b402c082da5f9b0821432284beeefa3d59996a49e16418dfaa71d0ec68d",
+    "c3bcd7fe4183b9c1": "cef7b8b3623f1496368fbd54fe6974537208d639a437c37fffb86689c4345116",
+    "c4afb0e0ddf4a494": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+    "cb854a7055913452": "7720734e1d81f7e5536919ff2a395ee05e7fec3dde4a2ccb5ac45dbeba3a3c1c",
+    "cd9698e663d32097": "1ab59d2ff18a98820ab936b2c1adf90e14bb23e39f8d8228757e70a21ebf3126",
+    "cf93f37493fc44e9": "4d7336db21bd36797997395d085bf26980331d955d8e11b49f4ef567b1168158",
+    "d3feca4b6e9fe9bd": "613238537b0467e5b92e3244fa21e4652ce278eb00d387b4a44641d7c4ec0d82",
+    "d4c5cfff87667da4": "2044d6ff9a724f67a6fc54ea2b98310a8b40765511042874b4d38b88525e4d48",
+    "d60f5f79afdaa2cf": "2c41e1f01c8631ebe485f200657afd25c912f4f4e8821fb0fc08cdff26f7356f",
+    "d63b24fdf838dd9d": "8dd0bf305c940c26af17bf70d4c9e75257be13e355dd8ebd605fbfdbfcf3acb2",
+    "d7ef0252d4928edc": "555a8d23bcfcc01c5b48fd77891b884b545a1d8ce26d56afbd43ba2e9de4495a",
+    "d855fc493c56502e": "6599cf653b4889995bf1a6a8e8f9b109787bb15c509fd480d5e85efd3c2b0cad",
+    "d88968e709ef9c5b": "d98e3d59b2f492c542637874dcd1ebcbe4bfd7a2f0f057117d19c6da98df498f",
+    "d903c9d54c3f9216": "ea256db143b006ab174a7ff7cda8fc4da48a0fa9fd77021faca9ccae7e810c90",
+    "d9465bf5d65a8971": "10f35037ea82741f348f05c23667dc0e6694c56a6efbeca3940501bc335b8693",
+    "dbee3177d77a2489": "cb186b7db2dbea5d4a54bd25f48c9501d15a8ceb502c692bbde95283c1f5ba6c",
+    "ddca84f8154537ea": "cde46ae22921f5456ffe4913842c6e7c8e8f8b6d3772314e3f6a8fced577d99f",
+    "df23abcabe219da0": "08de5b7ea8aa6e9d38d4ddb1a88c48ea44e432e21cd45716edbd06055f85fe81",
+    "e186feb04cdb8bce": "0550e6272e2a6712930e3655230ce137d69f68251d1b12a7c636fec064c3c5dc",
+    "e1bb8d76d57e13b0": "690409b76bb5e7db256b296c98a28d7577db4da1c6b2a0563e2c985679ff9c40",
+    "e27abd2daef0b1a8": "3fbdfe7ccec6e463a1f9437da3ea69e5ffc9c55497ae96437b9456fff63be80b",
+    "e27e4bbdf55b96fc": "531115dca734590a6915f1055ec07cd236248f3ad9a08a8764485189401ba50c",
+    "e28f5c0e5f480afd": "6c0ab545bbb0372bb250d6604999890a05f6b7d37734f71fad53f57dc42999f0",
+    "e2cf16b15d5cd11e": "7bd92f9d26bed3a8d6e331f5c496874a21d789c4c69a4a27319b95da795b01a0",
+    "e38dff4c60b4269d": "427910589ce244686abe92edee2f439382360bec94773d95d1c414221231d256",
+    "e3d26b3ff852f479": "73119e8cd7b7fee67805d43ec684518e5990edbbff8ba6587bebdfb2ad450aca",
+    "e85a735cf707dcbd": "34a0304e7f06e2c548bd3e9c4f429073b4b17203cbbc5b295700105dfa1e136c",
+    "ede82c54f74aabe4": "05aeeeaf7665d611cc85c27b4b90937d5c260118ed372249a2b8c9a29a5145a7",
+    "ef3d285ab1f1c49d": "89831fe7bbe6686685ae138dc09ab06453335e8798788148f09980118ced228c",
+    "f180dc31a6b91bcf": "73c783d2fa8a59ed043e785a72f00a9f7f011a0d6a1ea6542583c91834049b8b",
+    "f1ab3481302bcfe7": "ff46e7883569df24e7ca63e7e240d328fb8ad191827d95877a11f0ab4f697938",
+    "f32e592cf842d3bb": "eb3a5a162f376a84fe8a5d28ffdbd1afbb58c1d14c54fa255f5363df13d326bc",
+    "f3a52662b1a022ab": "afe68ce2810a60735febc86142ef8ccfc4a8ec75e5d05e4a831bacd65f3bfac8",
+    "f3bb463610485f3b": "6596a41685e0ee046cfa846c313c79ae8869d9d4664d5915b8cba1fe9d8fb618",
+    "f61e6b8b5ab9278d": "2292fec3cd911e626789a24267a892968e9b272f883c31ada0d116832505713c",
+    "f68644caf8a7057c": "d0c0d2901a6ae706196a9e05f826ad82f70822e0c29b2a91468686d36adbae18",
+    "f77800e23627c363": "0c90811db72f9bc1368cdbf8f2336eae4fa04a02eae60d8c1303f4bd28f1fd17",
+    "f8cb7c0d6e1e6b6d": "98a6070af1044597ad073f7447f5f489f3aedb5ad3bc7778e8515b941aaa5365",
+    "f9662b38cc3948ab": "822580434f241a15c9072224170a60350e472a6a9df62151bf251ac75614b2c3",
+    "fc38f5044009a086": "fad4fcceb11119f564c0557bc05c3e930029a9329ee56f07aaadead10e732f2b",
+    "fc460c71ec418c02": "4108357188993441fff3e5e8990b7b1624ebd5f975b0656a8d4dae423a2dc2db",
+    "fc6b0653a8ea38fd": "3c9487d7121f22503fa8b849ad4383298e2eb401e675a9ef4b126e9e9ada8718",
+    "fc8745ba7187c5bb": "0e10f2a8890bf98015903cd86c8c26d76cb86782cad35ac0ab2c0c5b057cc23c",
+    "fce0ff209b659301": "82d2658ebc7d920e02fbd9351cac171ba6cba19812b889bf71ff8ed7087b71be",
+    "fdd9ef22589bb00b": "d9ecea1c25eb310ae4d0a53dcfb2be0dea5207bb986abb27889e884cdae3ad93",
+    "ff74d9cf45c8ab30": "ae749bf01bc36ea2805c16e45d6aad0d3fad15592e2b12c5cf92962d6b1b50fe"
+  },
+  "status": "REFERENCE_VALIDATED",
+  "validation": {
+    "applied_to_test_device": false,
+    "production_approved": false,
+    "rollback_tested": false,
+    "roundtrip_imported_in_lab": false,
+    "schema_validated": true,
+    "syntax_validated": true
+  }
+}

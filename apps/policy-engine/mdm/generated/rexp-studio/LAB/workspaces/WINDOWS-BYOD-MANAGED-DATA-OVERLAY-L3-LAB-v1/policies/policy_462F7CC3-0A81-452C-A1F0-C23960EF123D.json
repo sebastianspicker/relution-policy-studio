@@ -1,0 +1,30 @@
+{
+  "createdBy": "reference-generator",
+  "creationDate": 0,
+  "deletedBy": null,
+  "deletionDate": null,
+  "description": "Reference-only byod managed_data_overlay; LAB assignment only",
+  "modificationDate": 0,
+  "modifiedBy": "reference-generator",
+  "name": "WINDOWS-BYOD-MANAGED-DATA-OVERLAY-L3-LAB-v1",
+  "organizationUuid": null,
+  "payloadUuid": null,
+  "platform": "WINDOWS",
+  "uuid": "462F7CC3-0A81-452C-A1F0-C23960EF123D",
+  "versions": [
+    {
+      "configurations": [],
+      "createdBy": "reference-generator",
+      "creationDate": 0,
+      "description": null,
+      "modificationDate": 0,
+      "modifiedBy": "reference-generator",
+      "name": "Version 1",
+      "publishDate": null,
+      "publisher": null,
+      "state": "PUBLISHED",
+      "uuid": "625B4801-83F1-466D-A661-23D997A15392",
+      "version": 1
+    }
+  ]
+}

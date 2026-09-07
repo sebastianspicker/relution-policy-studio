@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "1AEC1DB3-C513-4572-A08E-FCC9DB360AD3": "WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

@@ -1,0 +1,113 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-INT-001"
+      ],
+      "type": "WINDOWS_ANTIVIRUS",
+      "values": {
+        "allowBehaviorMonitoring": true,
+        "allowCloudProtection": true,
+        "allowRealtimeMonitoring": true,
+        "enabled": true,
+        "enableNetworkProtection": "ON",
+        "puaProtection": "ON",
+        "submitSamplesConsent": "SAFE",
+        "type": "WINDOWS_ANTIVIRUS"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-ENC-001"
+      ],
+      "type": "WINDOWS_BITLOCKER",
+      "values": {
+        "allowStandardUserEncryption": false,
+        "enabled": true,
+        "requireDeviceEncryption": true,
+        "type": "WINDOWS_BITLOCKER"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-INT-001"
+      ],
+      "type": "WINDOWS_FIREWALL",
+      "values": {
+        "configureGlobalProperties": true,
+        "domainProfile": {
+          "configureProfileProperties": true,
+          "enableFirewall": true,
+          "profileType": "DOMAIN_PROFILE"
+        },
+        "enabled": true,
+        "privateProfile": {
+          "configureProfileProperties": true,
+          "enableFirewall": true,
+          "profileType": "PRIVATE_PROFILE"
+        },
+        "publicProfile": {
+          "configureProfileProperties": true,
+          "enableFirewall": true,
+          "profileType": "PUBLIC_PROFILE"
+        },
+        "type": "WINDOWS_FIREWALL"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-AUTH-001"
+      ],
+      "type": "WINDOWS_HELLO",
+      "values": {
+        "allowBiometricAuthentication": true,
+        "enabled": true,
+        "minimumPinLength": 6,
+        "type": "WINDOWS_HELLO",
+        "useTpm": true
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-AUTH-001"
+      ],
+      "type": "WINDOWS_PASSCODE",
+      "values": {
+        "enabled": true,
+        "history": 8,
+        "maxInactivityTime": 15,
+        "minLength": 12,
+        "type": "WINDOWS_PASSCODE"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-UPD-001"
+      ],
+      "type": "WINDOWS_UPDATE",
+      "values": {
+        "allowDownloadsOverMeteredNetworks": false,
+        "deadlineForFeatureUpdates": 30,
+        "deadlineForQualityUpdates": 7,
+        "deadlineGracePeriod": 0,
+        "enabled": true,
+        "type": "WINDOWS_UPDATE"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-ENC-001",
+    "MDM-INT-001",
+    "MDM-UPD-001"
+  ],
+  "dependencies": [],
+  "enrollment_model": "WINDOWS",
+  "generated_name": "WINDOWS-CORPORATE-WORKSTATION-LAPTOP-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "WINDOWS",
+  "policy_id": "WIN-CORP-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

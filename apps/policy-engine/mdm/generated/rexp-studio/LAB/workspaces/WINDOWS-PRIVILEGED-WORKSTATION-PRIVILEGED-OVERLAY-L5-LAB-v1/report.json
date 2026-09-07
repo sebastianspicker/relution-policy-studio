@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "DFC0D18D-5CC1-4A25-A386-1F6115DA8E6B": "WINDOWS-PRIVILEGED-WORKSTATION-PRIVILEGED-OVERLAY-L5-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

@@ -1,0 +1,18 @@
+schema_version: 1
+evidence_id: EVD-EXAMPLE-001
+policy_id: EXAMPLE-POLICY-L1-LAB-v1
+recorded_at: null
+ring: LAB
+lab_import: {result: NOT_RUN, evidence: [], notes: "Record configuration types and server responses."}
+publication: {result: NOT_RUN, evidence: []}
+export_roundtrip: {result: NOT_RUN, evidence: [], notes: "Record APPLE_MOBILECONFIG separately because it is not exported."}
+physical_device_application: {result: NOT_RUN, evidence: []}
+rollback: {result: NOT_RUN, evidence: []}
+user_impact:
+  expected_symptoms: []
+  observed_symptoms: []
+  help_desk_diagnosis: []
+  accessibility_checked: false
+  privacy_boundary_checked: false
+approval: {status: NOT_EVIDENCED}
+production_ready: false

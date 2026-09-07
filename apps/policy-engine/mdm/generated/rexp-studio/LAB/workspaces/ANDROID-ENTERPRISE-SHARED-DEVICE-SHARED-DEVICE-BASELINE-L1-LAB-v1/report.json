@@ -1,0 +1,17 @@
+{
+  "exportedPolicies": {
+    "87B48977-E420-41C3-AFE1-D8C869BA659A": "ANDROID-ENTERPRISE-SHARED-DEVICE-SHARED-DEVICE-BASELINE-L1-LAB-v1"
+  },
+  "exportFile": {
+    "contentType": null,
+    "hashcode": null,
+    "link": null,
+    "modificationDate": 0,
+    "name": null,
+    "properties": {},
+    "size": 0,
+    "uuid": null
+  },
+  "failedPolicies": {},
+  "policiesToExport": []
+}

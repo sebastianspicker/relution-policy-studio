@@ -1,0 +1,48 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-DATA-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_PERSONAL_USAGE",
+      "values": {
+        "allowBluetoothSharing": true,
+        "cameraDisabled": false,
+        "enabled": true,
+        "personalPlayStoreMode": "BLOCKLIST",
+        "screenCaptureDisabled": false,
+        "type": "ANDROID_ENTERPRISE_PERSONAL_USAGE"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-DATA-001"
+      ],
+      "type": "ANDROID_ENTERPRISE_RESTRICTION",
+      "values": {
+        "androidEnterpriseCrossProfilePolicy": {
+          "crossProfileCopyPaste": "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED",
+          "crossProfileDataSharing": "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED"
+        },
+        "cameraAccessPermission": "CAMERA_ACCESS_USER_CHOICE",
+        "enabled": true,
+        "type": "ANDROID_ENTERPRISE_RESTRICTION"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-DATA-001",
+    "MDM-LIFE-001"
+  ],
+  "dependencies": [
+    "AND-CORP-BASELINE-L1-LAB-v1"
+  ],
+  "enrollment_model": "ANDROID_ENTERPRISE_PERSONAL_PROFILE_ENABLED",
+  "generated_name": "ANDROID-ENTERPRISE-COPE-WORK-PROFILE-WORK-PERSONAL-BOUNDARY-L3-LAB-v1",
+  "layer": 3,
+  "platform": "ANDROID_ENTERPRISE",
+  "policy_id": "AND-COPE-DATA-L3-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

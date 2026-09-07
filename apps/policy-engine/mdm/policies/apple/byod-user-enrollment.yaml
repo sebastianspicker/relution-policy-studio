@@ -1,0 +1,24 @@
+schema_version: 1
+policy_id: APL-BYOD-DATA-L3-LAB-v1
+platform: IOS
+model: user_enrollment_byod
+ownership: employee
+enrollment_model: IOS_USER_ENROLLMENT
+layer: 3
+purpose: managed_data_overlay
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-DATA-001, MDM-LIFE-001]
+dependencies: [APL-CORP-BASELINE-L1-LAB-v1]
+environment_placeholders: []
+settings:
+  - configuration_type: IOS_RESTRICTION
+    values:
+      allowOpenFromManagedToUnmanaged: false
+      allowOpenFromUnmanagedToManaged: true
+      requireManagedPasteboard: true
+      allowManagedAppsCloudSync: false
+    control_ids: [MDM-DATA-001]
+rings: [LAB]
+production_ready: false

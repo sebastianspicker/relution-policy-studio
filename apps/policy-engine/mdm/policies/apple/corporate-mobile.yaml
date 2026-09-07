@@ -1,0 +1,34 @@
+schema_version: 1
+policy_id: APL-CORP-BASELINE-L1-LAB-v1
+platform: IOS
+model: corporate_iphone_ipad
+ownership: corporate
+enrollment_model: IOS
+layer: 1
+purpose: baseline
+status: active
+evidence_status: REFERENCE_VALIDATED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-AUTH-001, MDM-INT-001, MDM-UPD-001]
+dependencies: []
+environment_placeholders: []
+settings:
+  - configuration_type: IOS_PASSCODE
+    values: {forcePIN: true, minLength: 8, requireAlphanumeric: true, maxInactivityMinutes: 5}
+    control_ids: [MDM-AUTH-001]
+  - configuration_type: IOS_RESTRICTION
+    values:
+      allowCamera: true
+      allowScreenShot: true
+      allowAirDrop: true
+      allowEnterpriseAppTrust: false
+      allowUIConfigurationProfileInstallation: false
+      allowOpenFromManagedToUnmanaged: false
+      allowOpenFromUnmanagedToManaged: true
+      requireManagedPasteboard: true
+    control_ids: [MDM-INT-001]
+  - configuration_type: IOS_UPDATE
+    values: {updateMode: INSTALL_ASAP}
+    control_ids: [MDM-UPD-001]
+rings: [LAB]
+production_ready: false

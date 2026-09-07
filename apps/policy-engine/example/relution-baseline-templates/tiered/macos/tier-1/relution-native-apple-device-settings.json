@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "name": "macOS Tier 1 Baseline - Apple Device Settings Module Template",
+  "verifiedAsOf": {
+    "bsi": "2026-04-23",
+    "cis": "2026-04-23",
+    "vendor": "2026-04-23"
+  },
+  "baselineTemplate": {
+    "version": 1,
+    "kind": "tiered-modular-target",
+    "platform": "MACOS",
+    "tier": 1,
+    "tierLabel": "Tier 1 - most restrictive Grundschutz baseline",
+    "securityLevel": "grundschutz",
+    "tierSourcePolicy": "bsi-cis-vendor",
+    "tierCoverage": "distinct",
+    "module": {
+      "kind": "relution-native",
+      "target": "APPLE_DEVICE_SETTINGS",
+      "slug": "relution-native-apple-device-settings",
+      "label": "Apple Device Settings"
+    },
+    "generatedAt": "2026-04-26T17:20:44Z"
+  },
+  "consolidation": {
+    "platform": "MACOS",
+    "sources": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "precedence": [
+      "bsi",
+      "cis",
+      "vendor"
+    ],
+    "sourceReferences": {
+      "bsi": {
+        "baselinePath": "example/bsi-references/bsi-relution-baseline.json",
+        "recommendationCatalogPath": "example/bsi-references/bsi-recommendations.json",
+        "rulesetPath": "example/bsi-references/bsi-relution-ruleset.json"
+      },
+      "cis": {
+        "baselinePath": "example/cis-references/cis-relution-baseline.json",
+        "recommendationCatalogPath": "example/cis-references/cis-recommendations.json",
+        "rulesetPath": "example/cis-references/cis-relution-ruleset.json"
+      },
+      "vendor": {
+        "baselinePath": "example/vendor-references/vendor-relution-baseline.json",
+        "recommendationCatalogPath": "example/vendor-references/vendor-recommendations.json",
+        "rulesetPath": "example/vendor-references/vendor-relution-ruleset.json"
+      }
+    }
+  },
+  "policies": [
+    {
+      "platform": "MACOS",
+      "name": "macOS Tier 1 Baseline - Apple Device Settings",
+      "description": "Modular macOS baseline block for APPLE_DEVICE_SETTINGS. Tier 1 - most restrictive Grundschutz baseline. Generated from the consolidated non-conflicting baseline.",
+      "rules": [
+        {
+          "id": "consolidated-macos-relution-native-merged-apple-device-settings",
+          "title": "Consolidated Relution aggregate: APPLE_DEVICE_SETTINGS",
+          "informational": false,
+          "reason": "Consolidates exact mappings from vendor.",
+          "sourceIds": [
+            "apple-activation-lock"
+          ],
+          "sourceRules": [
+            {
+              "source": "vendor",
+              "ruleId": "vendor-macos-apple-device-settings-aggregate",
+              "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
+            }
+          ],
+          "mappings": [
+            {
+              "kind": "relution-native",
+              "values": {
+                "allowActivationLock": true
+              },
+              "type": "APPLE_DEVICE_SETTINGS"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

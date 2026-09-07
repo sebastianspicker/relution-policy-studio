@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rexp-studio.example/schemas/mdm-control.schema.json",
+  "title": "MdmControl",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "control_id", "title", "classification", "source_mappings", "applicability", "platform_prerequisites", "proposed_value", "variants", "impacts", "residual_risk", "relution_target", "verification", "exception", "review_cadence"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "control_id": {"type": "string", "pattern": "^[A-Z]+-[A-Z]+-[0-9]{3}$"},
+    "title": {"type": "string", "minLength": 1},
+    "classification": {"enum": ["mandatory", "recommended", "optional", "use-case-specific", "not-recommended", "unsupported", "not-applicable"]},
+    "source_mappings": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "control_reference", "verification_status"], "properties": {"source_id": {"type": "string"}, "control_reference": {"type": "string"}, "page": {"type": ["integer", "null"]}, "verification_status": {"enum": ["verified", "unverifiable", "stale", "intune-specific", "unsupported"]}}}},
+    "applicability": {"type": "object"},
+    "platform_prerequisites": {"type": "array", "items": {"type": "string"}},
+    "proposed_value": {},
+    "variants": {"type": "array", "items": {"type": "object"}},
+    "impacts": {"type": "object"},
+    "residual_risk": {"type": "string"},
+    "relution_target": {"type": "object"},
+    "verification": {"type": "object"},
+    "exception": {"type": "object"},
+    "review_cadence": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "configurations": [
+    {
+      "control_ids": [
+        "MDM-AUTH-001"
+      ],
+      "type": "IOS_PASSCODE",
+      "values": {
+        "enabled": true,
+        "forcePIN": true,
+        "maxInactivityMinutes": 5,
+        "minLength": 8,
+        "requireAlphanumeric": true,
+        "type": "IOS_PASSCODE"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-INT-001"
+      ],
+      "type": "IOS_RESTRICTION",
+      "values": {
+        "allowAirDrop": true,
+        "allowCamera": true,
+        "allowEnterpriseAppTrust": false,
+        "allowOpenFromManagedToUnmanaged": false,
+        "allowOpenFromUnmanagedToManaged": true,
+        "allowScreenShot": true,
+        "allowUIConfigurationProfileInstallation": false,
+        "enabled": true,
+        "requireManagedPasteboard": true,
+        "type": "IOS_RESTRICTION"
+      }
+    },
+    {
+      "control_ids": [
+        "MDM-UPD-001"
+      ],
+      "type": "IOS_UPDATE",
+      "values": {
+        "enabled": true,
+        "type": "IOS_UPDATE",
+        "updateMode": "INSTALL_ASAP"
+      }
+    }
+  ],
+  "controls": [
+    "MDM-AUTH-001",
+    "MDM-INT-001",
+    "MDM-UPD-001"
+  ],
+  "dependencies": [],
+  "enrollment_model": "IOS",
+  "generated_name": "IOS-CORPORATE-IPHONE-IPAD-BASELINE-L1-LAB-v1",
+  "layer": 1,
+  "platform": "IOS",
+  "policy_id": "APL-CORP-BASELINE-L1-LAB-v1",
+  "production_ready": false,
+  "ring": "LAB",
+  "schema_version": 1
+}

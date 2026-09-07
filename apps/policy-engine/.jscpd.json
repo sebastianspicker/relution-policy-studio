@@ -1,0 +1,33 @@
+{
+  "threshold": 0,
+  "reporters": [
+    "console"
+  ],
+  "minLines": 12,
+  "minTokens": 80,
+  "maxLines": 1000000,
+  "maxSize": "100mb",
+  "mode": "strict",
+  "format": [
+    "typescript",
+    "tsx",
+    "javascript",
+    "jsx",
+    "python",
+    "css"
+  ],
+  "ignore": [
+    "**/.repowise/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/dist/**",
+    "**/dist-demo/**",
+    "**/dist-web/**",
+    "**/generated/**",
+    "**/node_modules/**",
+    "**/out/**",
+    "**/third_party/**",
+    "**/vendor/**",
+    "**/vendored/**"
+  ]
+}

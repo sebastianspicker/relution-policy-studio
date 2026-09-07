@@ -1,0 +1,20 @@
+schema_version: 1
+policy_id: APL-SHARED-BASELINE-L1-LAB-v1
+platform: IOS
+model: shared_ipad
+ownership: corporate
+enrollment_model: IOS
+layer: 1
+purpose: baseline
+status: active
+evidence_status: NOT_EVIDENCED
+minimum_os: NOT_EVIDENCED
+controls: [MDM-AUTH-001, MDM-ENC-001, MDM-LIFE-001]
+dependencies: [APL-CORP-BASELINE-L1-LAB-v1]
+environment_placeholders: []
+settings:
+  - configuration_type: IOS_SHARED_IPAD_SETTINGS
+    values: {temporarySessionOnly: false, userSessionTimeout: 900, temporarySessionTimeout: 900, blockRelutionUserChange: true}
+    control_ids: [MDM-AUTH-001, MDM-LIFE-001]
+rings: [LAB]
+production_ready: false

@@ -15,7 +15,7 @@
     "securityLevel": "standard-hardening",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -60,6 +60,7 @@
       {
         "source": "cis",
         "ruleId": "cis-windows-windows-passcode-aggregate",
+        "sourceRecommendationId": "cis-windows-windows-passcode-aggregate",
         "target": "WINDOWS_PASSCODE",
         "conflictingPaths": [
           "history",
@@ -93,16 +94,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             },
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             }
           ],
@@ -144,11 +148,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-bitlocker-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-bitlocker-aggregate",
               "title": "Relution aggregate: WINDOWS_BITLOCKER"
             },
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-bitlocker-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-bitlocker-aggregate",
               "title": "Relution aggregate: WINDOWS_BITLOCKER"
             }
           ],
@@ -189,11 +195,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-local-device-security-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-local-device-security-aggregate",
               "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-local-device-security-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-local-device-security-aggregate",
               "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
             }
           ],
@@ -228,6 +236,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-passcode-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-passcode-aggregate",
               "title": "Relution aggregate: WINDOWS_PASSCODE"
             }
           ],
@@ -266,16 +275,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             },
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             }
           ],
@@ -313,6 +325,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-update-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-update-aggregate",
               "title": "Relution aggregate: WINDOWS_UPDATE"
             }
           ],
@@ -347,6 +360,7 @@
           "conflict": {
             "source": "cis",
             "ruleId": "cis-windows-windows-passcode-aggregate",
+            "sourceRecommendationId": "cis-windows-windows-passcode-aggregate",
             "target": "WINDOWS_PASSCODE",
             "conflictingPaths": [
               "history",

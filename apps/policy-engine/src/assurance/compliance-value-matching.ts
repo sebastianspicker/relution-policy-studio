@@ -4,11 +4,13 @@ import type { JsonRecord } from "./compliance-types.js";
 import { deepSubsetMatch } from "./compliance-deep-values.js";
 import { comparableNumber } from "./compliance-number-values.js";
 import { valueAtPath, withoutPaths } from "./compliance-value-paths.js";
+import { validCompliancePredicate } from "./compliance-mapping-validation.js";
 
 type ValueConstraint = NonNullable<RecommendationRulesetMapping["constraints"]>[number];
 
 export function mappingValuesMatch(mapping: RecommendationRulesetMapping, expectedValues: JsonRecord, actualValues: unknown): boolean {
-  const constraints = mapping.constraints?.filter((constraint) => constraint.path.length > 0) ?? [];
+  if (!validCompliancePredicate({ ...mapping, values: expectedValues })) return false;
+  const constraints = mapping.constraints ?? [];
   if (constraints.length === 0) return deepSubsetMatch(expectedValues, actualValues);
   const constrainedPaths = new Set(constraints.map((constraint) => constraint.path));
   return deepSubsetMatch(withoutPaths(expectedValues, constrainedPaths), actualValues)

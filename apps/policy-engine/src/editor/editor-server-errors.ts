@@ -7,6 +7,14 @@ import { isEditorMutationCancellation } from "./editor-mutation-routing.js";
 import { sendJson } from "./editor-routes-utils.js";
 import { WorkspaceInputError } from "../workspace/input-values.js";
 import { WorkspaceStateRevisionConflictError } from "../workspace-state/editor-port.js";
+import {
+  CampusWeaveCapacityError,
+  CampusWeaveInputError,
+  CampusWeaveNotFoundError,
+  CampusWeavePlannerError,
+  CampusWeaveRevisionConflictError,
+  CampusWeaveStoreBusyError,
+} from "../contracts/campusweave-errors.js";
 
 interface EditorServerErrorDescriptor {
   readonly status: number;
@@ -31,6 +39,19 @@ export function describeEditorServerError(error: unknown): EditorServerErrorDesc
   }
   if (error instanceof WorkspaceStateRevisionConflictError) {
     return { status: 409, message: error.message };
+  }
+  if (error instanceof CampusWeaveRevisionConflictError) {
+    return { status: 409, message: error.message };
+  }
+  if (error instanceof CampusWeaveStoreBusyError) {
+    return { status: 503, message: error.message };
+  }
+  if (error instanceof CampusWeaveInputError) return { status: 400, message: error.message };
+  if (error instanceof CampusWeaveNotFoundError) return { status: 404, message: error.message };
+  if (error instanceof CampusWeaveCapacityError) return { status: 413, message: error.message };
+  if (error instanceof CampusWeavePlannerError) {
+    const status = error.kind === "capacity" ? 413 : error.kind === "rejected" ? 422 : error.kind === "timeout" ? 504 : 502;
+    return { status, message: error.message };
   }
   if (error instanceof WorkspaceInputError || error instanceof SidecarInputError) {
     return { status: 400, message: error.message };

@@ -6,9 +6,11 @@ archives; npm and PyPI publication are not configured.
 
 No public release has been published from this repository.
 
-The GitHub Pages site is a separate static demonstration artifact. It runs the
-React workbench against deterministic data held only in browser memory and has
-no archive, filesystem, credential, Relution, Zammad, or product API authority.
+The demo (`pnpm build:demo`) is a separate static demonstration artifact. It
+runs the React workbench against deterministic data held only in browser memory
+and has no archive, filesystem, credential, Relution, Zammad, or product API
+authority. The root `pnpm verify` gate builds and verifies it; GitHub Pages
+deployment is not configured in this monorepo.
 
 ## Release scope
 
@@ -90,7 +92,7 @@ Review these files and assets at the selected commit:
 - `docs/readme-tour/`
 - `package.json`
 - `pyproject.toml`
-- `pnpm-lock.yaml`
+- the monorepo root `pnpm-lock.yaml` (this app has no lockfile of its own)
 - `uv.lock`
 
 After creating a GitHub prerelease, inspect its source archives, release notes,

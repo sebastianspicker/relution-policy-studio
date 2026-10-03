@@ -1,0 +1,69 @@
+name: Bug report
+description: >-
+  Report a reproducible problem in the planner, policy engine or workbench
+  without private tenant data.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include credentials, customer exports, tenant identifiers, or
+        device/user data. Report security vulnerabilities privately as
+        described in apps/planner/SECURITY.md or apps/policy-engine/SECURITY.md, not in a public issue.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Affected surface
+      options:
+        - Planner (CampusWeave)
+        - Policy engine CLI or archive handling
+        - Local editor API or loopback runtime
+        - Workbench UI
+        - Relution read-only audit or report flow
+        - Optional Zammad integration
+        - Baseline or recommendation data
+        - LAB-only MDM reference package
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed behavior
+      description: What happened, including exact non-sensitive errors.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: >-
+        Minimal steps using the synthetic Reference University or synthetic
+        fixtures.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or revision
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: >-
+        Python, Node.js, pnpm, browser, operating system and, if relevant,
+        Relution server versions.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and risk
+      description: Runtime, data, security or network impact, and checks already run.

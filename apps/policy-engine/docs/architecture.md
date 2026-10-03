@@ -15,8 +15,13 @@ artifacts. These are runtime and artifact boundaries, not separate services.
 ```mermaid
 flowchart LR
   operator[Operator] --> cli[rexp CLI]
-  operator --> browser[React workbench]
+  operator --> browser[Legacy editor UI: web/]
+  operator --> studio[Studio workbench: apps/workbench]
   browser -->|capability-token API| editor[Loopback editor server]
+  studio -->|capability-token API| editor
+  launcher[pnpm studio] --> host[src/host: startStudioHost]
+  host --> editor
+  editor -->|one bounded stdio process per request| planner[Python planner]
   cli --> core[Node capability modules]
   editor --> core
   core --> local[(Workspace, sidecar, archives, reports)]
@@ -28,8 +33,15 @@ flowchart LR
 ```
 
 The operational editor is the CLI-started Node process plus its React client.
-The GitHub Pages build is an isolated in-memory demo and has no filesystem,
-archive, credential, Relution, Zammad, or product API authority.
+In the monorepo, `src/host/` composes the same loopback server for Relution
+Policy Studio: it serves the built workbench as a static root, owns the private
+project store and invokes the Python planner over versioned JSON stdio (see
+[decision 0006](decisions/0006-unified-node-python-host.md)). `rexp serve` and
+`rexp edit` keep serving the legacy editor UI from `dist-web/`.
+The demo build (`pnpm build:demo`, built and verified by the root `pnpm verify`
+gate) is an isolated in-memory demo and has no filesystem, archive, credential,
+Relution, Zammad, or product API authority. GitHub Pages deployment is not
+configured in this monorepo.
 
 ## Runtime boundaries
 
@@ -47,6 +59,24 @@ archive, credential, Relution, Zammad, or product API authority.
 - Python tools under `tools/` harvest and normalize offline evidence. The Node
   runtime consumes their checked-in JSON outputs and never imports Python code.
 
+## Package entry points
+
+Other monorepo packages may use only the entry points declared in
+`package.json` `exports`; the root `tools/check-boundaries.mjs` rejects relative
+imports that leave an app and imports of another app's build output.
+
+| Entry point | Target | Consumers |
+| --- | --- | --- |
+| `rexp-studio/host` | `dist/src/host/index.js` | Root launcher (`pnpm studio`) |
+| `rexp-studio/testing` | `dist/src/host/testing.js` | Root integration tests only |
+| `rexp-studio/browser` | `src/browser/index.ts` (TypeScript source) | Bundled browser code |
+| `rexp-studio/ui` | `web/src/studio-ui.ts` (TypeScript source) | Workbench (editor controller and field editors) |
+
+`browser` and `ui` export TypeScript source for bundler consumers; Node
+consumers use the built `host` and `testing` entries. The legacy UI keeps its
+internal imports and never imports `studio-ui.ts`, so its bundle budget is
+independent of the workbench.
+
 ## Source ownership
 
 | Path | Responsibility |
@@ -59,15 +89,17 @@ archive, credential, Relution, Zammad, or product API authority.
 | `src/assurance/` | Recommendations, baselines, templates, compliance, and audits |
 | `src/apple/` | Apple schema, compatibility, profile, and plist behavior |
 | `src/editor/` | Loopback HTTP runtime, authority, routes, and HTTP-facing integration adapters |
-| `src/integrations/` | Relution and Zammad protocol clients and durable operation behavior |
+| `src/integrations/` | Relution and Zammad protocol clients, the planner stdio client, and durable operation behavior |
 | `src/platform/` | Bounded filesystem, HTTP, network, and serialization primitives |
 | `src/browser/` | Browser-safe contracts and exact pure projections used by React |
 | `src/cli/` | CLI parsing, dispatch, and command adapters |
+| `src/host/` | Studio composition root (`rexp-studio/host`) and the integration-test entry (`rexp-studio/testing`) |
 | `src/mdm/` | Deterministic LAB-only MDM validation and generation |
 | `web/src/app/` | React composition root, navigation, and shared workspace shell |
 | `web/src/shared/` | Small browser-only contracts shared by the app shell and product features |
 | `web/src/features/` | Product capability UI and feature-owned state/actions |
 | `web/src/ui/` | Reusable presentation controls with no product orchestration |
+| `web/src/studio-ui.ts` | The editor controller and field editors exported to the workbench (`rexp-studio/ui`) |
 | `tools/` | Offline Python pipelines plus developer/build entry points |
 | `tests/` | Focused contract, integration, security, unit, and Python checks |
 
@@ -182,9 +214,9 @@ and imports between sibling feature packages.
 
 `pnpm check:architecture -- --self-test` exercises the editor-persistence and
 frontend isolation rules against allowed and forbidden imports.
-`pnpm verify:ci` combines the architecture check with type checking, dead-code
-analysis, builds, bundle budgets, Node contract tests, Ruff, and Python pipeline
-tests.
+`pnpm verify:ci` combines the architecture check with type checking, builds, bundle budgets, Node contract tests, Ruff, and Python pipeline
+tests. Dead-code analysis (`knip`) runs from the monorepo root in workspace
+mode together with the workbench.
 
 The active safety and structural rationale is recorded in
 [`docs/decisions/`](decisions/README.md). The independently maintained LAB MDM

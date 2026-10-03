@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campusweave.local/schemas/project.schema.json",
+  "title": "CampusWeave Project",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "revision",
+    "profile",
+    "compiled_plan",
+    "mappings",
+    "workspace_refs",
+    "evidence",
+    "operations"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "id": { "$ref": "#/$defs/id" },
+    "name": { "type": "string", "pattern": "\\S", "maxLength": 160 },
+    "revision": { "type": "integer", "minimum": 1 },
+    "profile": { "$ref": "#/$defs/profile" },
+    "compiled_plan": { "type": ["object", "null"] },
+    "mappings": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": { "$ref": "mapping.schema.json" }
+    },
+    "workspace_refs": {
+      "type": "array",
+      "maxItems": 256,
+      "items": { "$ref": "#/$defs/workspace_ref" }
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/evidence" }
+    },
+    "operations": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": { "type": "object" }
+    },
+    "assurance_reviews": {
+      "description": "Optional reviewed selections, decisions, exclusions and external evidence obligations persisted by the engine store.",
+      "type": "array",
+      "maxItems": 1000,
+      "items": { "type": "object" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$" },
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "profile": {
+      "description": "Store-level profile contract: the eleven root fields with array collections. The store keeps extra root fields and unvalidated records, so this is intentionally looser than profile-v2.schema.json, which the planner enforces. Keys named in profile-v2 $defs.reservedKey are rejected at any depth, case-insensitively.",
+      "type": "object",
+      "required": [
+        "schema_version",
+        "id",
+        "name",
+        "organizations",
+        "locations",
+        "cohorts",
+        "intents",
+        "scope_blueprints",
+        "assignments",
+        "rollout_stages",
+        "unresolved"
+      ],
+      "properties": {
+        "schema_version": { "const": 2 },
+        "id": { "type": "string", "pattern": "\\S", "maxLength": 256 },
+        "name": { "type": "string", "pattern": "\\S", "maxLength": 160 },
+        "organizations": { "type": "array", "maxItems": 10000 },
+        "locations": { "type": "array", "maxItems": 10000 },
+        "cohorts": { "type": "array", "maxItems": 10000 },
+        "intents": { "type": "array", "maxItems": 10000 },
+        "scope_blueprints": { "type": "array", "maxItems": 10000 },
+        "assignments": { "type": "array", "maxItems": 10000 },
+        "rollout_stages": { "type": "array", "maxItems": 10000 },
+        "unresolved": { "type": "array", "maxItems": 10000 }
+      },
+      "additionalProperties": true
+    },
+    "workspace_ref": {
+      "type": "object",
+      "required": ["id", "name", "platform", "created_at"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "pattern": "\\S", "maxLength": 160 },
+        "platform": { "type": "string", "pattern": "\\S", "maxLength": 64 },
+        "created_at": { "type": "string", "pattern": "\\S", "maxLength": 64 }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["intent_id", "workspace_id", "requirement_id", "kind", "profile_digest", "policy_revision", "artifact_digest", "catalog_digest"],
+      "properties": {
+        "intent_id": { "type": "string", "pattern": "\\S", "maxLength": 256 },
+        "workspace_id": { "$ref": "#/$defs/id" },
+        "requirement_id": { "type": "string", "pattern": "\\S", "maxLength": 256 },
+        "kind": { "enum": ["local", "target", "device", "recovery"] },
+        "profile_digest": { "$ref": "#/$defs/digest" },
+        "policy_revision": { "type": "string", "pattern": "\\S", "maxLength": 256 },
+        "artifact_digest": { "$ref": "#/$defs/digest" },
+        "catalog_digest": { "$ref": "#/$defs/digest" },
+        "assurance_digest": { "$ref": "#/$defs/digest" }
+      },
+      "additionalProperties": true
+    }
+  }
+}

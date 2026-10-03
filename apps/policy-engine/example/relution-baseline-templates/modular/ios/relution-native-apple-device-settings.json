@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "IOS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "APPLE_DEVICE_SETTINGS",
       "slug": "relution-native-apple-device-settings",
       "label": "Apple Device Settings"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "IOS",
@@ -67,6 +67,7 @@
             {
               "source": "cis",
               "ruleId": "cis-ios-apple-device-settings-aggregate",
+              "sourceRecommendationId": "cis-ios-apple-device-settings-aggregate",
               "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
             }
           ],

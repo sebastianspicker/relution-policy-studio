@@ -28,7 +28,6 @@ const HANDWRITTEN_EXTENSIONS = new Set([
 ]);
 const EXCLUDED_SEGMENTS = new Set([
   ".git",
-  ".repowise",
   "build",
   "coverage",
   "dist",

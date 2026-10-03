@@ -6,33 +6,6 @@ from typing import Any
 from _tooling_text_io import slugify
 
 
-def semantic_group_for_entry(
-    groups: dict[tuple[str, str], dict[str, Any]],
-    concepts: dict[str, dict[str, Any]],
-    platform: str,
-    concept_id: str,
-) -> dict[str, Any]:
-    """Return the accumulator for a platform and semantic concept pair."""
-
-    return groups.setdefault(
-        (platform, concept_id),
-        {
-            "platform": platform,
-            "conceptId": concept_id,
-            "label": concepts.get(concept_id, {}).get("label", {}),
-            "recommendationsBySource": {
-                source_name: [] for source_name in ALL_SOURCES
-            },
-            "exactTargetIdsBySource": {
-                source_name: [] for source_name in ALL_SOURCES
-            },
-            "candidateTargetIdsBySource": {
-                source_name: [] for source_name in ALL_SOURCES
-            },
-        },
-    )
-
-
 def common_semantic_group(
     group: dict[str, Any], recommendations: dict[str, dict[str, Any]]
 ) -> dict[str, Any] | None:

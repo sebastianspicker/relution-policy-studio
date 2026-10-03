@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "Unified Recommendation Semantic Analysis",
-  "generatedAt": "2026-04-26T17:20:41Z",
+  "generatedAt": "2026-09-07T10:51:30Z",
   "precedence": {
     "authoritativeSource": "bsi",
     "behavior": "rank-and-annotate",

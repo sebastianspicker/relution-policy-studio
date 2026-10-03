@@ -1,0 +1,139 @@
+/* Title-block design tokens. Every later rule traces back to these; see docs/design/system.md. */
+@font-face {
+  font-family: Plex;
+  src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plex;
+  src: url('/fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plex;
+  src: url('/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: PlexCondensed;
+  src: url('/fonts/ibm-plex-sans-condensed-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: PlexMono;
+  src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: PlexMono;
+  src: url('/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: SourceSerif;
+  src: url('/fonts/source-serif-4-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+/* Metric-matched fallbacks keep swap from shifting layout. */
+@font-face {
+  font-family: SerifFallback;
+  src: local('Georgia');
+  size-adjust: 97%;
+  ascent-override: 92%;
+}
+
+:root {
+  /* Type: serif titles (report voice), sans work, condensed caps labels (drawing lettering), mono evidence. */
+  --font-title: SourceSerif, SerifFallback, Georgia, serif;
+  --font-ui: Plex, system-ui, sans-serif;
+  --font-label: PlexCondensed, Plex, system-ui, sans-serif;
+  --font-data: PlexMono, ui-monospace, monospace;
+
+  --text-2xs: 10.5px;
+  --text-xs: 11px;
+  --text-sm: 12.5px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 26px;
+  --text-3xl: 34px;
+  --leading-tight: 1.2;
+  --leading: 1.5;
+  --tracking-caps: 0.07em;
+
+  /* Space: 4px base. */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --gutter: clamp(16px, 3.2vw, 48px);
+  --margin-column: clamp(280px, 26vw, 380px);
+
+  /* Shape: square sheet, barely softened controls. */
+  --radius: 2px;
+  --hairline: 1px solid var(--rule);
+  --rule-line: 1px solid var(--rule-strong);
+  --control-height: 38px;
+  --touch: 44px;
+
+  /* Motion: almost none. */
+  --dur: 120ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Color, light: drafting paper and ink. */
+  color-scheme: light;
+  --paper: #f3f1ec;
+  --paper-2: #e9e5dc;
+  --sheet: #fcfbf8;
+  --ink: #1a1c1e;
+  --ink-2: #4b5058;
+  --ink-3: #646973;
+  --rule: #d6d1c6;
+  --rule-strong: #8e877b;
+  --signal: #b8410f;
+  --select: #e8e3d7;
+  --on-ink: #f3f1ec;
+  --ok: #2e6b3f;
+  --ok-wash: #e1eadf;
+  --caution: #7a4f00;
+  --caution-wash: #f4e9cc;
+  --caution-rule: #c9a65a;
+  --danger: #a42a1e;
+  --danger-wash: #f6e0da;
+  --shadow-pop: 0 1px 0 var(--rule), 0 14px 32px rgb(26 28 30 / 14%);
+}
+
+:root[data-theme='dark'] {
+  /* Graphite night sheet for evening maintenance windows. */
+  color-scheme: dark;
+  --paper: #151617;
+  --paper-2: #1f2021;
+  --sheet: #1c1d1f;
+  --ink: #ece8e0;
+  --ink-2: #b3aea4;
+  --ink-3: #9a958b;
+  --rule: #34332f;
+  --rule-strong: #6b665d;
+  --signal: #f08a5d;
+  --select: #2a2825;
+  --on-ink: #151617;
+  --ok: #8fd0a0;
+  --ok-wash: #1d2a20;
+  --caution: #e6bc63;
+  --caution-wash: #2c2516;
+  --caution-rule: #6e5a2c;
+  --danger: #f39a8e;
+  --danger-wash: #331d1a;
+  --shadow-pop: 0 1px 0 var(--rule), 0 14px 32px rgb(0 0 0 / 45%);
+}

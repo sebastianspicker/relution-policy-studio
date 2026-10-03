@@ -21,7 +21,7 @@
       "slug": "relution-native-android-enterprise-display",
       "label": "Android Enterprise Display"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -72,6 +72,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-display-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-display-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DISPLAY"
             }
           ],

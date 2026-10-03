@@ -2,6 +2,7 @@
 import type { AppleCompatReport } from "../../../src/browser/apple.js";
 import type { AppleSchemaCatalog, AppleSchemaEntry } from "../../../src/browser/apple.js";
 import type { ComplianceReport } from "../../../src/browser/assurance.js";
+import type { AssuranceSelectionApplyRequest, AssuranceSelectionApplyResponse } from "../../../src/browser/assurance.js";
 import type { RecommendationBrowseResponse, RecommendationIndexResponse, RecommendationSource } from "../../../src/browser/assurance.js";
 import type { EditorSidecarState } from "../../../src/browser/sidecar.js";
 import type { ConfigurationTemplate, RelutionTemplateBundle } from "../../../src/browser/workspace.js";
@@ -27,6 +28,10 @@ export interface AppState {
   appleCompat: AppleCompatReport;
   appleSchema: AppleSchemaCatalog;
   sidecar: EditorSidecarState;
+  /** CampusWeave workspace the host has active; null when CampusWeave is off or none is active. */
+  active_workspace_id?: string | null;
+  /** Catalog digest of the CampusWeave planner; null when CampusWeave is off. */
+  campusweave_catalog_digest?: string | null;
 }
 
 export interface Selection {
@@ -137,6 +142,7 @@ export interface EditorController {
   setDdmSchemaId: (value: string) => void;
   setMdmCommandSchemaId: (value: string) => void;
   saveWorkspace: () => Promise<void>;
+  applyAssuranceSelection: (request: AssuranceSelectionApplyRequest) => Promise<AssuranceSelectionApplyResponse | undefined>;
   addConfiguration: () => Promise<void>;
   addPolicy: () => Promise<void>;
   removeConfiguration: (selection: Selection) => Promise<void>;
@@ -147,7 +153,7 @@ export interface EditorController {
   importJsonTemplates: () => Promise<void>;
   importRuleset: () => Promise<void>;
   importRecommendationRuleset: () => Promise<void>;
-  refreshCompliance: () => Promise<void>;
+  refreshCompliance: (applicability?: import("../../../src/browser/assurance.js").AssuranceApplicabilityContext) => Promise<void>;
   applyComplianceRemediation: (remediationId: string) => Promise<void>;
   addDdmArtifact: () => Promise<void>;
   addMdmCommandArtifact: () => Promise<void>;

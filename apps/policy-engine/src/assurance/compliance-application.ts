@@ -22,6 +22,10 @@ export function applyRecommendationMappings(
   templateBundle: RelutionTemplateBundle,
   appleSchema: AppleSchemaCatalog,
 ): void {
+  if (recommendation.relutionMapping.rulesetMappings.length === 0
+    || recommendation.relutionMapping.rulesetMappings.some((mapping) => !supportedComplianceMapping(mapping))) {
+    throw new Error("Recommendation contains an unsupported or incomplete compliance mapping");
+  }
   for (const { mapping, values } of groupRecommendationMappings(recommendation).values()) {
     if (mapping.kind === "relution-native" && typeof mapping.type === "string") {
       applyNativeValues(configurations, mapping.type, values, templateBundle);
@@ -37,7 +41,7 @@ export function applyRecommendationMappings(
 
 function groupRecommendationMappings(recommendation: RecommendationRecord): Map<string, GroupedMapping> {
   const grouped = new Map<string, GroupedMapping>();
-  for (const mapping of recommendation.relutionMapping.rulesetMappings.filter(supportedComplianceMapping)) {
+  for (const mapping of recommendation.relutionMapping.rulesetMappings) {
     const key = mappingKey(mapping);
     const values = deepMergePreservingExistingUuids(
       grouped.get(key)?.values ?? {},

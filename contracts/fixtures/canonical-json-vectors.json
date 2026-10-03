@@ -1,0 +1,150 @@
+{
+  "description": "Canonical JSON text (sorted keys, compact, UTF-8, trailing newline) and SHA-256 hex of that text.",
+  "generator": "contracts/fixtures/generate_canonical_json_vectors.py using campusweave.private_artifacts",
+  "vectors": [
+    {
+      "name": "null",
+      "input": null,
+      "canonical": "null\n",
+      "sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed"
+    },
+    {
+      "name": "true",
+      "input": true,
+      "canonical": "true\n",
+      "sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+    },
+    {
+      "name": "false",
+      "input": false,
+      "canonical": "false\n",
+      "sha256": "2ed27c1421e6928dbe13dbfdb5c59e1045b30341fe7ebe05700006bc5ac572c0"
+    },
+    {
+      "name": "integers",
+      "input": [
+        0,
+        1,
+        -1,
+        42,
+        9007199254740991,
+        -9007199254740991
+      ],
+      "canonical": "[0,1,-1,42,9007199254740991,-9007199254740991]\n",
+      "sha256": "faecc9f9f442f86852bb2ae3351b3822a6274995df1acd3cddb73158e421b583"
+    },
+    {
+      "name": "strings",
+      "input": [
+        "",
+        "plain",
+        "quote \" backslash \\ slash /",
+        "tab\t newline\n"
+      ],
+      "canonical": "[\"\",\"plain\",\"quote \\\" backslash \\\\ slash /\",\"tab\\t newline\\n\"]\n",
+      "sha256": "b7596e9a2d4b14939189141ee902398af2e77c080dfe1bd5e164ef1d011e5ce8"
+    },
+    {
+      "name": "empty-object",
+      "input": {},
+      "canonical": "{}\n",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "name": "empty-array",
+      "input": [],
+      "canonical": "[]\n",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "key-ordering",
+      "input": {
+        "b": 1,
+        "a": 2,
+        "B": 3,
+        "A": 4,
+        "_": 5,
+        "ab": 6,
+        "a-": 7,
+        "": 8
+      },
+      "canonical": "{\"\":8,\"A\":4,\"B\":3,\"_\":5,\"a\":2,\"a-\":7,\"ab\":6,\"b\":1}\n",
+      "sha256": "fb7d4cc5afd0caf29543d7e5fef0f159e1a15e03708054c0592d9fa45246cdac"
+    },
+    {
+      "name": "numeric-like-keys",
+      "input": {
+        "10": "x",
+        "9": "y",
+        "1": "z"
+      },
+      "canonical": "{\"1\":\"z\",\"10\":\"x\",\"9\":\"y\"}\n",
+      "sha256": "ab4d690b46387369bbbbda95680e8558b4146ca194ca52008a3c79871c703091"
+    },
+    {
+      "name": "nested",
+      "input": {
+        "z": [
+          {
+            "y": 1,
+            "x": [
+              true,
+              null,
+              {
+                "b": {},
+                "a": []
+              }
+            ]
+          }
+        ],
+        "a": {
+          "c": {
+            "b": {
+              "a": 0
+            }
+          }
+        }
+      },
+      "canonical": "{\"a\":{\"c\":{\"b\":{\"a\":0}}},\"z\":[{\"x\":[true,null,{\"a\":[],\"b\":{}}],\"y\":1}]}\n",
+      "sha256": "03410b8257b4502037ee5168674f5678383baeee5ae1ae56ec982e34714eb7c1"
+    },
+    {
+      "name": "unicode-bmp-values",
+      "input": [
+        "caf\u00e9",
+        "\u00fc\u00f6\u00e4\u00df",
+        "\u65e5\u672c\u8a9e",
+        "\u20ac",
+        "\u2028\u2029",
+        "\u0000"
+      ],
+      "canonical": "[\"caf\u00e9\",\"\u00fc\u00f6\u00e4\u00df\",\"\u65e5\u672c\u8a9e\",\"\u20ac\",\"\u2028\u2029\",\"\\u0000\"]\n",
+      "sha256": "36f3b147db3e5d56ef6d440cca6a5fbccad78ab899c2ca180735d4db9fd25d42"
+    },
+    {
+      "name": "unicode-bmp-keys",
+      "input": {
+        "\u00fc": 1,
+        "z": 2,
+        "\u00e9": 3,
+        "\u65e5": 4,
+        "\u20ac": 5,
+        "a": 6
+      },
+      "canonical": "{\"a\":6,\"z\":2,\"\u00e9\":3,\"\u00fc\":1,\"\u20ac\":5,\"\u65e5\":4}\n",
+      "sha256": "8d8f67da43e90c2f6e61e60a483317535bc1b8922a16e4d5f255fc9392fd051e"
+    },
+    {
+      "name": "planner-v2-blank",
+      "input_file": "planner-v2-blank.json",
+      "canonical": "{\"assignments\":[],\"cohorts\":[],\"id\":\"profile.blank\",\"intents\":[],\"locations\":[],\"name\":\"Blank profile\",\"organizations\":[],\"rollout_stages\":[],\"schema_version\":2,\"scope_blueprints\":[],\"unresolved\":[]}\n",
+      "sha256": "fcb666b236c6b17de8695cb2abf0877c5248c99e45472a8c14b5fdac856ec5f3"
+    },
+    {
+      "name": "planner-v2-custom",
+      "input_file": "planner-v2-custom.json",
+      "canonical": "{\"assignments\":[{\"id\":\"assignment.baseline\",\"intent_id\":\"intent.baseline\",\"name\":\"Baseline staff assignment\",\"requirements\":[\"membership review\"],\"rollout_stage_id\":\"rollout.lab\",\"scope_id\":\"scope.staff\"}],\"cohorts\":[{\"id\":\"cohort.staff\",\"location_ids\":[\"location.primary\"],\"name\":\"Staff\",\"organization_id\":\"org.example\",\"ownership\":\"institution\",\"requirements\":[],\"role\":\"staff\"}],\"id\":\"profile.example\",\"intents\":[{\"cohort_ids\":[\"cohort.staff\"],\"depends_on\":[],\"id\":\"intent.baseline\",\"layer\":2,\"name\":\"Baseline\",\"outcome\":\"Establish a reviewable platform baseline\",\"ownership\":\"institution\",\"platform\":\"ios_ipados\",\"requirements\":[\"setting.baseline\"],\"role\":\"staff\",\"scope_ids\":[\"scope.staff\"]}],\"locations\":[{\"description\":null,\"id\":\"location.primary\",\"name\":\"Primary location\",\"organization_id\":\"org.example\",\"requirements\":[]}],\"name\":\"Example offline profile\",\"organizations\":[{\"description\":null,\"id\":\"org.example\",\"name\":\"Example organization\",\"parent_id\":null,\"requirements\":[]}],\"rollout_stages\":[{\"depends_on\":[],\"id\":\"rollout.lab\",\"name\":\"Lab review\",\"order\":0,\"requirements\":[\"offline review\"]}],\"schema_version\":2,\"scope_blueprints\":[{\"cohort_ids\":[\"cohort.staff\"],\"depends_on\":[],\"id\":\"scope.staff\",\"location_ids\":[\"location.primary\"],\"name\":\"Staff scope\",\"organization_ids\":[\"org.example\"],\"ownerships\":[\"institution\"],\"platforms\":[\"ios_ipados\"],\"requirements\":[],\"roles\":[\"staff\"]}],\"unresolved\":[]}\n",
+      "sha256": "74b317643e29c6b1dff6748ff4914db92af6d9d0f10e458f16a10c9ecfe73c81"
+    }
+  ]
+}

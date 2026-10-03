@@ -21,6 +21,8 @@ export interface EditorComplianceState extends ComplianceStateSetters {
  * selection, and source filters after the debounced request completes.
  */
 export function useComplianceState(props: {
+  readonly isDirty: boolean;
+  readonly requestGuard: { canEditWorkspace(): boolean };
   readonly selection: Selection | undefined;
   readonly state: AppState | undefined;
 }): EditorComplianceState {
@@ -35,6 +37,8 @@ export function useComplianceState(props: {
 
   useComplianceReportRefresh({
     complianceSources,
+    isDirty: props.isDirty,
+    requestGuard: props.requestGuard,
     selection: props.selection,
     setComplianceError,
     setComplianceLoading,
@@ -43,7 +47,7 @@ export function useComplianceState(props: {
   });
 
   const currentWorkspace = props.state?.workspace;
-  const complianceReport = currentWorkspace !== undefined
+  const complianceReport = !props.isDirty && currentWorkspace !== undefined
     && props.selection !== undefined
     && complianceSources.length > 0
     && complianceReportState?.workspace === currentWorkspace

@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "ANDROID_ENTERPRISE",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "ANDROID_ENTERPRISE_RESTRICTION",
       "slug": "relution-native-android-enterprise-restriction",
       "label": "Android Enterprise Restriction"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -68,21 +68,25 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             }
           ],

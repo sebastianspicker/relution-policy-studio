@@ -12,7 +12,7 @@ type RefreshSelection = NonNullable<ComplianceRefreshProps["selection"]>;
 
 export function useComplianceReportRefresh(props: ComplianceRefreshProps): void {
   useEffect(() => {
-    if (props.state === undefined || props.selection === undefined || props.complianceSources.length === 0) {
+    if (props.isDirty || props.state === undefined || props.selection === undefined || props.complianceSources.length === 0) {
       clearComplianceRefresh(props);
       return;
     }
@@ -21,20 +21,30 @@ export function useComplianceReportRefresh(props: ComplianceRefreshProps): void 
     retainMatchingReport(props, workspace, selection);
     props.setComplianceError(undefined);
     let cancelled = false;
-    const timer = window.setTimeout(() => {
+    let timer: number;
+    const refreshWhenIdle = () => {
+      if (cancelled) return;
+      if (!props.requestGuard.canEditWorkspace()) {
+        timer = window.setTimeout(refreshWhenIdle, COMPLIANCE_REFRESH_DELAY_MS);
+        return;
+      }
       void refreshComplianceReport(props, workspace, selection, () => cancelled);
-    }, COMPLIANCE_REFRESH_DELAY_MS);
+    };
+    timer = window.setTimeout(refreshWhenIdle, COMPLIANCE_REFRESH_DELAY_MS);
     return () => {
       cancelled = true;
       window.clearTimeout(timer);
     };
   }, [
     props.complianceSources,
+    props.isDirty,
+    props.requestGuard,
     props.selection,
     props.setComplianceError,
     props.setComplianceLoading,
     props.setComplianceReportState,
     props.state?.workspace,
+    props.state?.revision,
   ]);
 }
 

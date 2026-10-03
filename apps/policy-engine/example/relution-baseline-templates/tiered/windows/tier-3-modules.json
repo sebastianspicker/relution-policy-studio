@@ -15,7 +15,7 @@
     "securityLevel": "basis",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -79,6 +79,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             }
           ],
@@ -122,6 +123,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-bitlocker-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-bitlocker-aggregate",
               "title": "Relution aggregate: WINDOWS_BITLOCKER"
             }
           ],
@@ -168,6 +170,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-local-device-security-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-local-device-security-aggregate",
               "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
             }
           ],
@@ -203,6 +206,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-passcode-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-passcode-aggregate",
               "title": "Relution aggregate: WINDOWS_PASSCODE"
             }
           ],
@@ -245,6 +249,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             }
           ],
@@ -285,6 +290,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-update-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-update-aggregate",
               "title": "Relution aggregate: WINDOWS_UPDATE"
             }
           ],

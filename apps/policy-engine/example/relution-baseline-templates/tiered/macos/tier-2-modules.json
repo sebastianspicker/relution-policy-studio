@@ -15,7 +15,7 @@
     "securityLevel": "standard-hardening",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "MACOS",
@@ -80,11 +80,13 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
               "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
             },
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
               "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
             }
           ],
@@ -123,6 +125,7 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
               "title": "Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy"
             }
           ],
@@ -167,11 +170,13 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
               "title": "Relution aggregate: profile:com.apple.security.firewall"
             },
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
               "title": "Relution aggregate: profile:com.apple.security.firewall"
             }
           ],
@@ -211,16 +216,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             },
             {
               "source": "cis",
               "ruleId": "cis-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "cis-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "vendor-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             }
           ],
@@ -264,6 +272,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-restriction-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-restriction-aggregate",
               "title": "Relution aggregate: MACOS_RESTRICTION"
             }
           ],
@@ -304,6 +313,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-screensaver-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-screensaver-aggregate",
               "title": "Relution aggregate: MACOS_SCREENSAVER"
             }
           ],
@@ -341,11 +351,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-system-policy-control-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-system-policy-control-aggregate",
               "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-macos-macos-system-policy-control-aggregate",
+              "sourceRecommendationId": "vendor-macos-macos-system-policy-control-aggregate",
               "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
             }
           ],

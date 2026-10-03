@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "id": "profile.blank",
+  "name": "Blank profile",
+  "organizations": [],
+  "locations": [],
+  "cohorts": [],
+  "intents": [],
+  "scope_blueprints": [],
+  "assignments": [],
+  "rollout_stages": [],
+  "unresolved": []
+}

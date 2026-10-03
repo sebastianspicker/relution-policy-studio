@@ -15,7 +15,7 @@
     "securityLevel": "basis",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -78,6 +78,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             }
           ],
@@ -107,6 +108,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DEVICE_PASSCODE"
             }
           ],
@@ -137,6 +139,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-display-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-display-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DISPLAY"
             }
           ],
@@ -165,6 +168,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
             }
           ],
@@ -192,6 +196,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             }
           ],
@@ -220,6 +225,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             }
           ],
@@ -250,6 +256,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE"
             }
           ],

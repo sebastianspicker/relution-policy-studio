@@ -47,6 +47,8 @@ function handleStateApiRequest(
     appleSchema,
     sidecar,
     revision,
+    active_workspace_id: runtimeState.campusweave?.activeWorkspaceId ?? null,
+    campusweave_catalog_digest: runtimeState.campusweave?.catalogDigest ?? null,
   });
   return true;
 }

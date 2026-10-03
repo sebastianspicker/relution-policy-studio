@@ -16,7 +16,7 @@ export function packPlainDirectory(inputDir: string, outputFile: string, passwor
   packSource(source, outputFile, password, options, true);
 }
 
-/** Packs a frozen workspace snapshot without materializing a writable directory. */
+/** Packs an already loaded workspace while retaining the public snapshot API. */
 export function packPlainWorkspace(workspace: Readonly<PolicyWorkspace>, outputFile: string, password: string, options: PackOptions = {}): void {
   packSource(workspacePackSource(workspace), outputFile, password, options, true);
 }

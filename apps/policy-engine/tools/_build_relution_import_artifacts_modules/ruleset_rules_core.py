@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+from collections import Counter
+from copy import deepcopy
+import hashlib
 from typing import Any
 
 from .artifact_io_paths import relative_path
@@ -32,23 +35,47 @@ def build_ruleset(
         config, recommendations
     )
 
+    policies = ruleset_policies(
+        {
+            "config": config,
+            "settingsCatalog": settings_catalog,
+            "informativeEntriesByPlatform": informative_entries_by_platform,
+            "bundlesByPlatform": bundles_by_platform,
+            "variantGroupsByPlatform": variant_groups_by_platform,
+            "nonNativeAggregateRules": non_native_aggregate_rules,
+        }
+    )
+    ensure_unique_rule_ids(policies)
     return {
         "version": 1,
         "name": f"{config.label} Relution Ruleset",
         "verifiedAsOf": verified_as_of,
         "sourceIndexPath": relative_source_index_path(config),
         "recommendationCatalogPath": relative_path(config.recommendation_catalog_path),
-        "policies": ruleset_policies(
-            {
-                "config": config,
-                "settingsCatalog": settings_catalog,
-                "informativeEntriesByPlatform": informative_entries_by_platform,
-                "bundlesByPlatform": bundles_by_platform,
-                "variantGroupsByPlatform": variant_groups_by_platform,
-                "nonNativeAggregateRules": non_native_aggregate_rules,
-            }
-        ),
+        "policies": policies,
     }
+
+
+def ensure_unique_rule_ids(policies: list[dict[str, Any]]) -> None:
+    """Qualify repeated variant-policy rule ids and retain their base identity."""
+
+    for policy in policies:
+        policy["rules"] = [deepcopy(rule) for rule in policy.get("rules", [])]
+    counts = Counter(
+        str(rule["id"]) for policy in policies for rule in policy.get("rules", [])
+    )
+    for policy in policies:
+        policy_name = str(policy.get("name", "unnamed-policy"))
+        policy_digest = hashlib.sha256(policy_name.encode("utf8")).hexdigest()[:12]
+        for rule in policy.get("rules", []):
+            base_rule_id = str(rule["id"])
+            if counts[base_rule_id] < 2:
+                continue
+            rule["id"] = f"{base_rule_id}--policy-{policy_digest}"
+            rule["generatedIdentity"] = {
+                "baseRuleId": base_rule_id,
+                "policyName": policy_name,
+            }
 
 
 def relative_source_index_path(config: SourceConfig) -> str | None:

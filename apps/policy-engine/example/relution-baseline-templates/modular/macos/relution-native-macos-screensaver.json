@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "MACOS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "MACOS_SCREENSAVER",
       "slug": "relution-native-macos-screensaver",
       "label": "macOS Screensaver"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "MACOS",
@@ -67,6 +67,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-screensaver-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-screensaver-aggregate",
               "title": "Relution aggregate: MACOS_SCREENSAVER"
             }
           ],

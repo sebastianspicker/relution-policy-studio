@@ -1,0 +1,36 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "workspaces": {
+    "apps/policy-engine": {
+      "entry": [
+        "tests/**/*.test.ts",
+        "tools/**/*.mjs"
+      ],
+      "project": [
+        "src/**/*.ts",
+        "tests/**/*.ts",
+        "web/src/**/*.ts",
+        "web/src/**/*.tsx",
+        "tools/**/*.mjs"
+      ]
+    },
+    "apps/workbench": {
+      "project": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+      ]
+    }
+  },
+  "ignoreWorkspaces": [
+    "apps/planner"
+  ],
+  "includeEntryExports": true,
+  "ignoreBinaries": [
+    "mkfifo",
+    "uv"
+  ],
+  "rules": {
+    "cycles": "error",
+    "duplicates": "error"
+  }
+}

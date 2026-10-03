@@ -28,6 +28,7 @@ export function applyNativeValues(
   targetType: string,
   values: JsonRecord,
   templateBundle: RelutionTemplateBundle,
+  createOptions: { uuidFactory?: () => string; now?: () => number } = {},
 ): void {
   const candidates = configurationCandidates(configurations, (details) => details.type === targetType);
   const matches = (entry: { details: JsonRecord }) => deepSubsetMatch(values, entry.details);
@@ -42,7 +43,7 @@ export function applyNativeValues(
     return;
   }
   if (targetType === "WINDOWS_CUSTOM_CSP") {
-    configurations.push(createNativeConfiguration(targetType, values, templateBundle));
+    configurations.push(createNativeConfiguration(targetType, values, templateBundle, createOptions));
     return;
   }
   applyOrCreateConfiguration({
@@ -53,7 +54,7 @@ export function applyNativeValues(
     ambiguityReason: "multiple target settings exist",
     matches,
     updateCandidate,
-    createCandidate: () => createNativeConfiguration(targetType, values, templateBundle),
+    createCandidate: () => createNativeConfiguration(targetType, values, templateBundle, createOptions),
   });
 }
 
@@ -61,10 +62,11 @@ function createNativeConfiguration(
   targetType: string,
   values: JsonRecord,
   templateBundle: RelutionTemplateBundle,
+  createOptions: { uuidFactory?: () => string; now?: () => number },
 ): JsonRecord {
   const template = findTemplate(templateBundle, targetType);
   if (template === undefined) throw new Error(`Relution template not found for ${targetType}`);
-  const createdRecord = asRecord(createConfiguration(template, templateBundle));
+  const createdRecord = asRecord(createConfiguration(template, templateBundle, createOptions));
   if (createdRecord === undefined) throw new Error(`Failed to create configuration for ${targetType}`);
   createdRecord.details = deepMergePreservingExistingUuids(asRecord(createdRecord.details) ?? {}, values);
   return createdRecord;

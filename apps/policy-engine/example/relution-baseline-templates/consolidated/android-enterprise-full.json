@@ -10,7 +10,7 @@
     "version": 1,
     "kind": "consolidated-platform",
     "platform": "ANDROID_ENTERPRISE",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -55,6 +55,7 @@
       {
         "source": "cis",
         "ruleId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
+        "sourceRecommendationId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
         "target": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
         "conflictingPaths": [
           "keyguardDisabledFeatures"
@@ -63,7 +64,8 @@
       },
       {
         "source": "cis",
-        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate--policy-948562bc28e8",
+        "sourceRecommendationId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
         "target": "ANDROID_ENTERPRISE_RESTRICTION",
         "conflictingPaths": [
           "microphoneAccessPermission"
@@ -72,7 +74,8 @@
       },
       {
         "source": "cis",
-        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate--policy-b41919c3152a",
+        "sourceRecommendationId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
         "target": "ANDROID_ENTERPRISE_RESTRICTION",
         "conflictingPaths": [
           "microphoneAccessPermission"
@@ -82,6 +85,7 @@
       {
         "source": "vendor",
         "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+        "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
         "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
         "conflictingPaths": [
           "systemUpdateType"
@@ -91,6 +95,7 @@
       {
         "source": "vendor",
         "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+        "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
         "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
         "conflictingPaths": [
           "systemUpdateType"
@@ -23490,7 +23495,7 @@
           "source": "bsi"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-1",
+          "id": "cis:cis-google-android-1-6-0-1-1--policy-b41919c3152a",
           "title": "1.1 Ensure device firmware is up to date",
           "informational": true,
           "reason": "Firmware updates often include critical security fixes that reduce the probability of an attacker remotely exploiting the device. The device should be on the latest security patch level as applicable.",
@@ -23686,10 +23691,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-1",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-10",
+          "id": "cis:cis-google-android-1-6-0-1-10--policy-b41919c3152a",
           "title": "1.10 Ensure 'Install unknown apps' is set to 'Disabled'",
           "informational": true,
           "reason": "Disabling installation from untrusted distribution channels protects against the inadvertent installation of untrusted or malicious applications. Google Play Apps are vetted by the Google Security Team and are generally considered safe. Installing apps from other sources can increase the risk of downloading malware or apps that may compromise user privacy and security. Therefore, it is recommended that users avoid installing apps from untrusted distribution channels.",
@@ -23809,10 +23818,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-10",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-11",
+          "id": "cis:cis-google-android-1-6-0-1-11--policy-b41919c3152a",
           "title": "1.11 Do not root a user device",
           "informational": true,
           "reason": "Rooting an Android device breaks the user-level restrictions set by Google. In addition, rooting enables any form of alteration to the device, which could allow privileged actions. As a result, rooting puts the device at greater risk because rooting can modify the device without restrictions. Rooting also voids the warranty and could make installing future security updates is problematic.",
@@ -23934,10 +23947,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-11",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-12",
+          "id": "cis:cis-google-android-1-6-0-1-12--policy-b41919c3152a",
           "title": "1.12 Ensure 'Smart Lock' is set to 'Disabled'",
           "informational": true,
           "reason": "Smart Lock detects the device's presence and automatically keeps it unlocked even if it has a screen password, pin or pattern enabled. Using Smart Lock allows the device to be unlocked if preconditions are met. As a best practice, do not set the device to unlock automatically. For example, if the device is stolen and taken to a location pre-defined in Smart Lock, it would automatically unlock. Similarly, if someone could replay the voice, the device would automatically unlock.",
@@ -24041,10 +24058,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-12",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-13",
+          "id": "cis:cis-google-android-1-6-0-1-13--policy-b41919c3152a",
           "title": "1.13 Ensure 'Find My Device' is set to 'Enabled'",
           "informational": true,
           "reason": "By enabling Find My Device, a user can remotely locate the device, ring the device, lock, or erase the device data. This helps to protect any sensitive data or personal information that may be stored on the device. It also increases the chances of recovering the device or having it returned to the owner, as it can provide location information to law enforcement or other authorities.",
@@ -24182,10 +24203,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-13",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-14",
+          "id": "cis:cis-google-android-1-6-0-1-14--policy-b41919c3152a",
           "title": "1.14 Ensure 'Use network-provided time' and 'Use network- provided time zone' are set to 'Enabled'",
           "informational": true,
           "reason": "Using the network-provided time setting fetches the date and time information from the cellular provider and is generally more reliable. In addition, precise date and time could help forensics device recovery through Android Device Manager and maintain application and logs in a time-sync manner.",
@@ -24369,10 +24394,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-14",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-15",
+          "id": "cis:cis-google-android-1-6-0-1-15--policy-b41919c3152a",
           "title": "1.15 Ensure 'Remotely locate this device' is set to 'Enabled'",
           "informational": true,
           "reason": "By enabling the Remotely locate this device setting users can quickly and easily locate their lost or stolen device, and take action to protect their data and privacy.",
@@ -24474,10 +24503,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-15",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-16",
+          "id": "cis:cis-google-android-1-6-0-1-16--policy-b41919c3152a",
           "title": "1.16 Ensure 'Allow remote lock and erase' is set to 'Enabled'",
           "informational": true,
           "reason": "Allow remote lock and erase setting helps a user to remotely lock a device or erase data through Find My Device. This helps to safeguard privacy and protect data from unsanctioned access.",
@@ -24703,10 +24736,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-16",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-17",
+          "id": "cis:cis-google-android-1-6-0-1-17--policy-b41919c3152a",
           "title": "1.17 Ensure 'Scan device for security threats' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Scan device for security threats setting ensures that the device is regularly scanned for potential threats, and any detected threats can be promptly addressed to prevent harm to the device and the user's personal information.",
@@ -24773,10 +24810,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-17",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-18",
+          "id": "cis:cis-google-android-1-6-0-1-18--policy-b41919c3152a",
           "title": "1.18 Ensure 'Improve harmful app detection' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Improve harmful app detection setting sends anonymous information to Google about non-Google Play apps to enhance the detection and prevention of harmful apps, ultimately enhancing the security of Android devices and benefiting all users.",
@@ -24833,10 +24874,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-18",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-19",
+          "id": "cis:cis-google-android-1-6-0-1-19--policy-b41919c3152a",
           "title": "1.19 Ensure 'Ask for unlock pattern/PIN/password before unpinning' is set to 'Enabled'",
           "informational": true,
           "reason": "A user might lend their device to a friend or anyone else to carry out a single task, such as playing a game. Screen pinning, in such a situation, locks the user to a particular screen, preventing accidental or malicious unpinning and preserving the confidentiality of the device's data. Users cannot use the device outside of the pinned application until the screen is unpinned. Unpinning the screen should require user re-authentication.",
@@ -24913,10 +24958,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-19",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-2",
+          "id": "cis:cis-google-android-1-6-0-1-2--policy-b41919c3152a",
           "title": "1.2 Ensure 'Screen Lock' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Screen Lock requires user authentication before interacting with the device. As a result, Screen Lock strengthens application and data protection and improves device security.",
@@ -25014,10 +25063,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-2",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-20",
+          "id": "cis:cis-google-android-1-6-0-1-20--policy-b41919c3152a",
           "title": "1.20 Ensure 'Screen timeout' is set to '2 minutes'",
           "informational": true,
           "reason": "Setting an inactivity timeout is a recommended security measure to prevent unauthorized access to the device when it's unattended. The inactivity timeout automatically turns off the screen after a specified period of inactivity and also activates other security features like a screen lock to safeguard the device. This helps protect sensitive information from unauthorized access and enhances the overall security of the device.",
@@ -25156,10 +25209,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-20",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-21",
+          "id": "cis:cis-google-android-1-6-0-1-21--policy-b41919c3152a",
           "title": "1.21 Ensure 'Wi-Fi assistant' is set to 'Disabled'",
           "informational": true,
           "reason": "Wi-Fi assistant connects to any open Wi-Fi and tunnels the connection through Google VPN servers. It is considered best practice to only connect to trusted networks manually and leave this setting disabled.",
@@ -25403,10 +25460,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-21",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-22",
+          "id": "cis:cis-google-android-1-6-0-1-22--policy-b41919c3152a",
           "title": "1.22 Keep device Apps up to date",
           "informational": true,
           "reason": "Enabling Keep device Apps up to date ensures that apps are always up to date with the latest features and security fixes without the need for manual updates.",
@@ -25564,10 +25625,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-22",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-23",
+          "id": "cis:cis-google-android-1-6-0-1-23--policy-b41919c3152a",
           "title": "1.23 Ensure 'Add users from lock screen' is set to 'Disabled'",
           "informational": true,
           "reason": "Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, guests could install malicious apps or carry out other activities that compromise overall device security. Therefore, adding users from the lock screen setting should be disabled.",
@@ -25617,10 +25682,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-23",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-24",
+          "id": "cis:cis-google-android-1-6-0-1-24--policy-b41919c3152a",
           "title": "1.24 Ensure 'Guest profiles' do not exist",
           "informational": true,
           "reason": "Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, guests could install malicious apps or carry out other activities that compromise overall device security. Therefore, adding any guest profiles on the device is not recommended.",
@@ -25633,10 +25702,14 @@
           "mappings": [],
           "assessmentStatus": "Manual",
           "semanticNoConceptReason": "No curated shared security concept matched the available evidence.",
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-24",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-25",
+          "id": "cis:cis-google-android-1-6-0-1-25--policy-b41919c3152a",
           "title": "1.25 Review app permissions periodically",
           "informational": true,
           "reason": "Periodically reviewing all apps permissions ensures that those apps have legitimate permissions and only have access to data they actually need. Uninstall apps that may seek overbroad permissions.",
@@ -25748,10 +25821,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-25",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-26",
+          "id": "cis:cis-google-android-1-6-0-1-26--policy-b41919c3152a",
           "title": "1.26 Ensure 'Bluetooth' Pairing is Configured",
           "informational": true,
           "reason": "Some Bluetooth profiles provide for transfer of data without encryption or may be in violation of organization security policies and therefore should be disabled.",
@@ -25942,10 +26019,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-26",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-27",
+          "id": "cis:cis-google-android-1-6-0-1-27--policy-b41919c3152a",
           "title": "1.27 Ensure that no 3rd party keyboards are installed",
           "informational": true,
           "reason": "Many 3rd party keyboards have been known to contain malware and provide an easy method to capture keystrokes.",
@@ -25993,10 +26074,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-27",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-28",
+          "id": "cis:cis-google-android-1-6-0-1-28--policy-b41919c3152a",
           "title": "1.28 Review existing user profiles periodically",
           "informational": true,
           "reason": "Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, additional users could install malicious apps or carry out other activities that compromise overall device security. Therefore, reviewing and removing unnecessary user profiles should be done periodically.",
@@ -26046,10 +26131,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-28",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-3",
+          "id": "cis:cis-google-android-1-6-0-1-3--policy-b41919c3152a",
           "title": "1.3 Ensure 'Make pattern visible' is set to 'Disabled' (if using a pattern as device lock mechanism)",
           "informational": true,
           "reason": "Keeping device unlock patterns visible during device unlock can reveal the pattern and is vulnerable to shoulder surfing attacks. Therefore, is it not a best practice to make the device pattern visible.",
@@ -26127,10 +26216,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-3",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-4",
+          "id": "cis:cis-google-android-1-6-0-1-4--policy-b41919c3152a",
           "title": "1.4 Ensure 'Automatically Lock' is set to 'Immediately'",
           "informational": true,
           "reason": "Automatically and immediately locking the device as soon as it goes to sleep ensures there is no delay between the device entering the sleep state and the device being locked. This is an important security measure as it helps prevent unauthorized access to the device and protects sensitive data stored on it.",
@@ -26189,10 +26282,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-4",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-5",
+          "id": "cis:cis-google-android-1-6-0-1-5--policy-b41919c3152a",
           "title": "1.5 Ensure 'Power button instantly locks' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Power button instantly locks setting ensures that the device is instantly locked as well. This avoids a possible situation where a device is asleep but not locked and would be vulnerable to unauthorized use.",
@@ -26251,10 +26348,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-5",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-6",
+          "id": "cis:cis-google-android-1-6-0-1-6--policy-b41919c3152a",
           "title": "1.6 Ensure 'Lock Screen Message' is configured",
           "informational": true,
           "reason": "When device screen is locked, a lock screen message helps to provide\n\n• Deterrent warnings • Device recognition without needing to unlock the device • Emergency contact information\n\nSuch information could be valuable to both your device security and personnel security. It is thus recommended to have a suitable lock screen message.",
@@ -26349,10 +26450,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-6",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-7",
+          "id": "cis:cis-google-android-1-6-0-1-7--policy-b41919c3152a",
           "title": "1.7 Do not connect to untrusted Wi-Fi networks",
           "informational": true,
           "reason": "Connecting a device to an open untrusted network through unsecured channels can increase the remote attack surface of the device. The cellular data network is a more difficult medium to inspect compared to Wi-Fi. If a user is going to be using public Wi-Fi, using a secure VPN is recommended. In most cases, you should avoid using a public, untrusted or free Wi-Fi.",
@@ -26544,10 +26649,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-7",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-8",
+          "id": "cis:cis-google-android-1-6-0-1-8--policy-b41919c3152a",
           "title": "1.8 Ensure 'Show passwords' is set to 'Disabled'",
           "informational": true,
           "reason": "Disabling this setting prevents potential shoulder surfing attacks.",
@@ -26678,10 +26787,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-8",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-9",
+          "id": "cis:cis-google-android-1-6-0-1-9--policy-b41919c3152a",
           "title": "1.9 Ensure 'Developer Options' is set to 'Disabled'",
           "informational": true,
           "reason": "Enabling Developer Options allows a user to alter specific, very advanced settings on the device. This can severely affect how the device functions and expose additional developmental features to the user. This also exposes the device to respond to features such as USB debugging (when enabled) and other features that could be exploited to gain malicious access to the device sub-systems.",
@@ -26766,10 +26879,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-9",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-1",
+          "id": "cis:cis-google-android-1-6-0-2-1--policy-b41919c3152a",
           "title": "2.1 Ensure 'Lock screen' is set to 'Don't show notifications at all'",
           "informational": true,
           "reason": "If the device is lost or unattended, disabling notifications prevents the information from appearing on the lock screen. This information might be confidential, and thus unwarranted disclosures could be avoided.",
@@ -26782,10 +26899,14 @@
           "mappings": [],
           "assessmentStatus": "Manual",
           "semanticNoConceptReason": "No curated shared security concept matched the available evidence.",
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-1",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-10",
+          "id": "cis:cis-google-android-1-6-0-2-10--policy-b41919c3152a",
           "title": "2.10 Ensure 'Wi-Fi scanning' Is 'Disabled'",
           "informational": true,
           "reason": "Wi-Fi scanning can make you vulnerable to attacks, especially when your device is configured to automatically connect to known networks. Threat actors can set up an \"evil twin\" network—a fake Wi-Fi access point with a common name like \"Free Public Wi-Fi.\" Your phone might automatically connect to this malicious network, allowing the attacker to intercept your data and/or distribute malware.",
@@ -27081,10 +27202,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-10",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-11",
+          "id": "cis:cis-google-android-1-6-0-2-11--policy-b41919c3152a",
           "title": "2.11 Ensure 'Bluetiooth' scanning' Is 'Disabled'",
           "informational": true,
           "reason": "Bluetooth scanning can be used to track your location. By continuously collecting the MAC addresses of nearby Bluetooth devices, this data can be used to create a detailed record of your movements. Malicious actors could potentially use this information to monitor your routine and habits. Although newer Android versions use randomized MAC addresses to mitigate some of this risk, it is still a concern.",
@@ -27377,10 +27502,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-11",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-2",
+          "id": "cis:cis-google-android-1-6-0-2-2--policy-b41919c3152a",
           "title": "2.2 Ensure 'Back up to Google Drive' is 'Disabled'",
           "informational": true,
           "reason": "If a user can back up corporate device data to a personal Google account, the user can later restore the information to a new device. Because of privacy concerns, backing up personal data such as text messages, emails, photos, and contacts to any third party is not recommended.",
@@ -27430,10 +27559,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-2",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-3",
+          "id": "cis:cis-google-android-1-6-0-2-3--policy-b41919c3152a",
           "title": "2.3 Ensure 'Web and App Activity' is set to 'Disabled'",
           "informational": true,
           "reason": "When this setting is enabled, searches and activity from other Google services are linked and saved to the Google Account. This could be privacy-invasive, so it is recommended to disable this setting.",
@@ -27501,10 +27634,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-3",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-4",
+          "id": "cis:cis-google-android-1-6-0-2-4--policy-b41919c3152a",
           "title": "2.4 Ensure 'Device Information' is set to 'Disabled'",
           "informational": true,
           "reason": "When the Device Information setting is enabled, contact lists, calendars, alarms, and applications are saved to provide a personalized experience. The Device Information setting saves this data and replicates the information on Google’s servers. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -27572,10 +27709,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-4",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-5",
+          "id": "cis:cis-google-android-1-6-0-2-5--policy-b41919c3152a",
           "title": "2.5 Ensure 'Voice & Audio Activity' is set to 'Disabled'",
           "informational": true,
           "reason": "Google records your voice and other audio when you use audio activations. Audio can be saved even when your device is offline. When Voice & Audio Activity is off, voice inputs won't be saved to your Google Account, even if you're signed in. Instead, they may only be saved using anonymous identifiers. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -27643,10 +27784,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-5",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-6",
+          "id": "cis:cis-google-android-1-6-0-2-6--policy-b41919c3152a",
           "title": "2.6 Ensure 'YouTube Search History' is set to 'Disabled'",
           "informational": true,
           "reason": "Turning on the YouTube Search History setting stores all YouTube searches to the user’s Google account. YouTube and Google search history influences the recommendations seen on the YouTube homepage. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -27796,10 +27941,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-6",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-7",
+          "id": "cis:cis-google-android-1-6-0-2-7--policy-b41919c3152a",
           "title": "2.7 Ensure 'YouTube Watch History' is set to 'Disabled'",
           "informational": true,
           "reason": "Turning on the YouTube Watch History setting stores all YouTube watch history to the user’s Google account. YouTube and Google watch history influences the recommendations seen on the YouTube homepage. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -27949,10 +28098,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-7",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-8",
+          "id": "cis:cis-google-android-1-6-0-2-8--policy-b41919c3152a",
           "title": "2.8 Ensure 'Google Location History' is set to 'Disabled'",
           "informational": true,
           "reason": "When the Google Location History setting is enabled, the device periodically sends diagnostic information to Google. This setting stores location history to provide results and recommendations across Google products. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -28126,10 +28279,14 @@
               "candidateTargets": []
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-8",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-9",
+          "id": "cis:cis-google-android-1-6-0-2-9--policy-b41919c3152a",
           "title": "2.9 Ensure 'Opt out of Ads Personalization' is set to 'Enabled'",
           "informational": true,
           "reason": "Apps leverage the app/browsing data to build a profile for displaying personalized ads. Disabling this setting prevents building profiles from various app/browsing activities to protect privacy.",
@@ -28179,10 +28336,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-9",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-1",
+          "id": "cis:cis-google-android-1-6-0-3-1--policy-b41919c3152a",
           "title": "3.1 Ensure 'Microphone' is set to 'Enabled'",
           "informational": true,
           "reason": "Websites will have to ask permission before being allowed to access the microphone, which will help prevent unwanted access to the microphone and help protect against potential privacy concerns.",
@@ -28322,10 +28483,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-1",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-2",
+          "id": "cis:cis-google-android-1-6-0-3-2--policy-b41919c3152a",
           "title": "3.2 Ensure 'Location' is set to 'Enabled'",
           "informational": true,
           "reason": "Websites will have to ask permission before being allowed to access the location, which will help prevent unwanted access to the user's location and help protect against potential privacy concerns.",
@@ -28429,10 +28594,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-2",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-3",
+          "id": "cis:cis-google-android-1-6-0-3-3--policy-b41919c3152a",
           "title": "3.3 Ensure 'Allow third-party cookies' is set to 'Disabled'",
           "informational": true,
           "reason": "Blocking third-party cookies can help protect users' privacy by eliminating several website tracking cookies.",
@@ -28557,10 +28726,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-3",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-4",
+          "id": "cis:cis-google-android-1-6-0-3-4--policy-b41919c3152a",
           "title": "3.4 Ensure 'Safe Browsing' is set to 'Enabled'",
           "informational": true,
           "reason": "Google Safe Browsing helps protect devices by warning users when they attempt to navigate dangerous sites or download harmful files.",
@@ -28619,10 +28792,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-4",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-5",
+          "id": "cis:cis-google-android-1-6-0-3-5--policy-b41919c3152a",
           "title": "3.5 Ensure 'Search and URL suggestions' is set to 'Disabled'",
           "informational": true,
           "reason": "Having search suggestions processed is considered a privacy concern.",
@@ -28727,10 +28904,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-5",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-6",
+          "id": "cis:cis-google-android-1-6-0-3-6--policy-b41919c3152a",
           "title": "3.6 Ensure 'Do Not Track' is set to 'Enabled'",
           "informational": true,
           "reason": "Many websites will still collect and use browsing data to improve security, provide content, services, ads, and recommendations on their websites, and generate reporting statistics.",
@@ -28789,10 +28970,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-6",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-1",
+          "id": "cis:cis-google-android-1-6-0-1-1--policy-948562bc28e8",
           "title": "1.1 Ensure device firmware is up to date",
           "informational": true,
           "reason": "Firmware updates often include critical security fixes that reduce the probability of an attacker remotely exploiting the device. The device should be on the latest security patch level as applicable.",
@@ -28988,10 +29173,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-1",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-10",
+          "id": "cis:cis-google-android-1-6-0-1-10--policy-948562bc28e8",
           "title": "1.10 Ensure 'Install unknown apps' is set to 'Disabled'",
           "informational": true,
           "reason": "Disabling installation from untrusted distribution channels protects against the inadvertent installation of untrusted or malicious applications. Google Play Apps are vetted by the Google Security Team and are generally considered safe. Installing apps from other sources can increase the risk of downloading malware or apps that may compromise user privacy and security. Therefore, it is recommended that users avoid installing apps from untrusted distribution channels.",
@@ -29111,10 +29300,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-10",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-11",
+          "id": "cis:cis-google-android-1-6-0-1-11--policy-948562bc28e8",
           "title": "1.11 Do not root a user device",
           "informational": true,
           "reason": "Rooting an Android device breaks the user-level restrictions set by Google. In addition, rooting enables any form of alteration to the device, which could allow privileged actions. As a result, rooting puts the device at greater risk because rooting can modify the device without restrictions. Rooting also voids the warranty and could make installing future security updates is problematic.",
@@ -29236,10 +29429,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-11",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-12",
+          "id": "cis:cis-google-android-1-6-0-1-12--policy-948562bc28e8",
           "title": "1.12 Ensure 'Smart Lock' is set to 'Disabled'",
           "informational": true,
           "reason": "Smart Lock detects the device's presence and automatically keeps it unlocked even if it has a screen password, pin or pattern enabled. Using Smart Lock allows the device to be unlocked if preconditions are met. As a best practice, do not set the device to unlock automatically. For example, if the device is stolen and taken to a location pre-defined in Smart Lock, it would automatically unlock. Similarly, if someone could replay the voice, the device would automatically unlock.",
@@ -29343,10 +29540,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-12",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-13",
+          "id": "cis:cis-google-android-1-6-0-1-13--policy-948562bc28e8",
           "title": "1.13 Ensure 'Find My Device' is set to 'Enabled'",
           "informational": true,
           "reason": "By enabling Find My Device, a user can remotely locate the device, ring the device, lock, or erase the device data. This helps to protect any sensitive data or personal information that may be stored on the device. It also increases the chances of recovering the device or having it returned to the owner, as it can provide location information to law enforcement or other authorities.",
@@ -29484,10 +29685,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-13",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-14",
+          "id": "cis:cis-google-android-1-6-0-1-14--policy-948562bc28e8",
           "title": "1.14 Ensure 'Use network-provided time' and 'Use network- provided time zone' are set to 'Enabled'",
           "informational": true,
           "reason": "Using the network-provided time setting fetches the date and time information from the cellular provider and is generally more reliable. In addition, precise date and time could help forensics device recovery through Android Device Manager and maintain application and logs in a time-sync manner.",
@@ -29671,10 +29876,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-14",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-15",
+          "id": "cis:cis-google-android-1-6-0-1-15--policy-948562bc28e8",
           "title": "1.15 Ensure 'Remotely locate this device' is set to 'Enabled'",
           "informational": true,
           "reason": "By enabling the Remotely locate this device setting users can quickly and easily locate their lost or stolen device, and take action to protect their data and privacy.",
@@ -29776,10 +29985,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-15",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-16",
+          "id": "cis:cis-google-android-1-6-0-1-16--policy-948562bc28e8",
           "title": "1.16 Ensure 'Allow remote lock and erase' is set to 'Enabled'",
           "informational": true,
           "reason": "Allow remote lock and erase setting helps a user to remotely lock a device or erase data through Find My Device. This helps to safeguard privacy and protect data from unsanctioned access.",
@@ -30005,10 +30218,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-16",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-17",
+          "id": "cis:cis-google-android-1-6-0-1-17--policy-948562bc28e8",
           "title": "1.17 Ensure 'Scan device for security threats' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Scan device for security threats setting ensures that the device is regularly scanned for potential threats, and any detected threats can be promptly addressed to prevent harm to the device and the user's personal information.",
@@ -30075,10 +30292,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-17",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-18",
+          "id": "cis:cis-google-android-1-6-0-1-18--policy-948562bc28e8",
           "title": "1.18 Ensure 'Improve harmful app detection' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Improve harmful app detection setting sends anonymous information to Google about non-Google Play apps to enhance the detection and prevention of harmful apps, ultimately enhancing the security of Android devices and benefiting all users.",
@@ -30135,10 +30356,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-18",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-19",
+          "id": "cis:cis-google-android-1-6-0-1-19--policy-948562bc28e8",
           "title": "1.19 Ensure 'Ask for unlock pattern/PIN/password before unpinning' is set to 'Enabled'",
           "informational": true,
           "reason": "A user might lend their device to a friend or anyone else to carry out a single task, such as playing a game. Screen pinning, in such a situation, locks the user to a particular screen, preventing accidental or malicious unpinning and preserving the confidentiality of the device's data. Users cannot use the device outside of the pinned application until the screen is unpinned. Unpinning the screen should require user re-authentication.",
@@ -30215,10 +30440,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-19",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-2",
+          "id": "cis:cis-google-android-1-6-0-1-2--policy-948562bc28e8",
           "title": "1.2 Ensure 'Screen Lock' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Screen Lock requires user authentication before interacting with the device. As a result, Screen Lock strengthens application and data protection and improves device security.",
@@ -30316,10 +30545,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-2",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-20",
+          "id": "cis:cis-google-android-1-6-0-1-20--policy-948562bc28e8",
           "title": "1.20 Ensure 'Screen timeout' is set to '2 minutes'",
           "informational": true,
           "reason": "Setting an inactivity timeout is a recommended security measure to prevent unauthorized access to the device when it's unattended. The inactivity timeout automatically turns off the screen after a specified period of inactivity and also activates other security features like a screen lock to safeguard the device. This helps protect sensitive information from unauthorized access and enhances the overall security of the device.",
@@ -30458,10 +30691,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-20",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-21",
+          "id": "cis:cis-google-android-1-6-0-1-21--policy-948562bc28e8",
           "title": "1.21 Ensure 'Wi-Fi assistant' is set to 'Disabled'",
           "informational": true,
           "reason": "Wi-Fi assistant connects to any open Wi-Fi and tunnels the connection through Google VPN servers. It is considered best practice to only connect to trusted networks manually and leave this setting disabled.",
@@ -30705,10 +30942,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-21",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-22",
+          "id": "cis:cis-google-android-1-6-0-1-22--policy-948562bc28e8",
           "title": "1.22 Keep device Apps up to date",
           "informational": true,
           "reason": "Enabling Keep device Apps up to date ensures that apps are always up to date with the latest features and security fixes without the need for manual updates.",
@@ -30866,10 +31107,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-22",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-23",
+          "id": "cis:cis-google-android-1-6-0-1-23--policy-948562bc28e8",
           "title": "1.23 Ensure 'Add users from lock screen' is set to 'Disabled'",
           "informational": true,
           "reason": "Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, guests could install malicious apps or carry out other activities that compromise overall device security. Therefore, adding users from the lock screen setting should be disabled.",
@@ -30919,10 +31164,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-23",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-24",
+          "id": "cis:cis-google-android-1-6-0-1-24--policy-948562bc28e8",
           "title": "1.24 Ensure 'Guest profiles' do not exist",
           "informational": true,
           "reason": "Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, guests could install malicious apps or carry out other activities that compromise overall device security. Therefore, adding any guest profiles on the device is not recommended.",
@@ -30935,10 +31184,14 @@
           "mappings": [],
           "assessmentStatus": "Manual",
           "semanticNoConceptReason": "No curated shared security concept matched the available evidence.",
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-24",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-25",
+          "id": "cis:cis-google-android-1-6-0-1-25--policy-948562bc28e8",
           "title": "1.25 Review app permissions periodically",
           "informational": true,
           "reason": "Periodically reviewing all apps permissions ensures that those apps have legitimate permissions and only have access to data they actually need. Uninstall apps that may seek overbroad permissions.",
@@ -31050,10 +31303,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-25",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-26",
+          "id": "cis:cis-google-android-1-6-0-1-26--policy-948562bc28e8",
           "title": "1.26 Ensure 'Bluetooth' Pairing is Configured",
           "informational": true,
           "reason": "Some Bluetooth profiles provide for transfer of data without encryption or may be in violation of organization security policies and therefore should be disabled.",
@@ -31244,10 +31501,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-26",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-27",
+          "id": "cis:cis-google-android-1-6-0-1-27--policy-948562bc28e8",
           "title": "1.27 Ensure that no 3rd party keyboards are installed",
           "informational": true,
           "reason": "Many 3rd party keyboards have been known to contain malware and provide an easy method to capture keystrokes.",
@@ -31295,10 +31556,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-27",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-28",
+          "id": "cis:cis-google-android-1-6-0-1-28--policy-948562bc28e8",
           "title": "1.28 Review existing user profiles periodically",
           "informational": true,
           "reason": "Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, additional users could install malicious apps or carry out other activities that compromise overall device security. Therefore, reviewing and removing unnecessary user profiles should be done periodically.",
@@ -31348,10 +31613,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-28",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-3",
+          "id": "cis:cis-google-android-1-6-0-1-3--policy-948562bc28e8",
           "title": "1.3 Ensure 'Make pattern visible' is set to 'Disabled' (if using a pattern as device lock mechanism)",
           "informational": true,
           "reason": "Keeping device unlock patterns visible during device unlock can reveal the pattern and is vulnerable to shoulder surfing attacks. Therefore, is it not a best practice to make the device pattern visible.",
@@ -31429,10 +31698,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-3",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-4",
+          "id": "cis:cis-google-android-1-6-0-1-4--policy-948562bc28e8",
           "title": "1.4 Ensure 'Automatically Lock' is set to 'Immediately'",
           "informational": true,
           "reason": "Automatically and immediately locking the device as soon as it goes to sleep ensures there is no delay between the device entering the sleep state and the device being locked. This is an important security measure as it helps prevent unauthorized access to the device and protects sensitive data stored on it.",
@@ -31491,10 +31764,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-4",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-5",
+          "id": "cis:cis-google-android-1-6-0-1-5--policy-948562bc28e8",
           "title": "1.5 Ensure 'Power button instantly locks' is set to 'Enabled'",
           "informational": true,
           "reason": "Enabling Power button instantly locks setting ensures that the device is instantly locked as well. This avoids a possible situation where a device is asleep but not locked and would be vulnerable to unauthorized use.",
@@ -31553,10 +31830,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-5",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-6",
+          "id": "cis:cis-google-android-1-6-0-1-6--policy-948562bc28e8",
           "title": "1.6 Ensure 'Lock Screen Message' is configured",
           "informational": true,
           "reason": "When device screen is locked, a lock screen message helps to provide\n\n• Deterrent warnings • Device recognition without needing to unlock the device • Emergency contact information\n\nSuch information could be valuable to both your device security and personnel security. It is thus recommended to have a suitable lock screen message.",
@@ -31651,10 +31932,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-6",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-7",
+          "id": "cis:cis-google-android-1-6-0-1-7--policy-948562bc28e8",
           "title": "1.7 Do not connect to untrusted Wi-Fi networks",
           "informational": true,
           "reason": "Connecting a device to an open untrusted network through unsecured channels can increase the remote attack surface of the device. The cellular data network is a more difficult medium to inspect compared to Wi-Fi. If a user is going to be using public Wi-Fi, using a secure VPN is recommended. In most cases, you should avoid using a public, untrusted or free Wi-Fi.",
@@ -31846,10 +32131,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-7",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-8",
+          "id": "cis:cis-google-android-1-6-0-1-8--policy-948562bc28e8",
           "title": "1.8 Ensure 'Show passwords' is set to 'Disabled'",
           "informational": true,
           "reason": "Disabling this setting prevents potential shoulder surfing attacks.",
@@ -31980,10 +32269,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-8",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-1-9",
+          "id": "cis:cis-google-android-1-6-0-1-9--policy-948562bc28e8",
           "title": "1.9 Ensure 'Developer Options' is set to 'Disabled'",
           "informational": true,
           "reason": "Enabling Developer Options allows a user to alter specific, very advanced settings on the device. This can severely affect how the device functions and expose additional developmental features to the user. This also exposes the device to respond to features such as USB debugging (when enabled) and other features that could be exploited to gain malicious access to the device sub-systems.",
@@ -32068,10 +32361,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-1-9",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-1",
+          "id": "cis:cis-google-android-1-6-0-2-1--policy-948562bc28e8",
           "title": "2.1 Ensure 'Lock screen' is set to 'Don't show notifications at all'",
           "informational": true,
           "reason": "If the device is lost or unattended, disabling notifications prevents the information from appearing on the lock screen. This information might be confidential, and thus unwarranted disclosures could be avoided.",
@@ -32084,10 +32381,14 @@
           "mappings": [],
           "assessmentStatus": "Manual",
           "semanticNoConceptReason": "No curated shared security concept matched the available evidence.",
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-1",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-10",
+          "id": "cis:cis-google-android-1-6-0-2-10--policy-948562bc28e8",
           "title": "2.10 Ensure 'Wi-Fi scanning' Is 'Disabled'",
           "informational": true,
           "reason": "Wi-Fi scanning can make you vulnerable to attacks, especially when your device is configured to automatically connect to known networks. Threat actors can set up an \"evil twin\" network—a fake Wi-Fi access point with a common name like \"Free Public Wi-Fi.\" Your phone might automatically connect to this malicious network, allowing the attacker to intercept your data and/or distribute malware.",
@@ -32383,10 +32684,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-10",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-11",
+          "id": "cis:cis-google-android-1-6-0-2-11--policy-948562bc28e8",
           "title": "2.11 Ensure 'Bluetiooth' scanning' Is 'Disabled'",
           "informational": true,
           "reason": "Bluetooth scanning can be used to track your location. By continuously collecting the MAC addresses of nearby Bluetooth devices, this data can be used to create a detailed record of your movements. Malicious actors could potentially use this information to monitor your routine and habits. Although newer Android versions use randomized MAC addresses to mitigate some of this risk, it is still a concern.",
@@ -32679,10 +32984,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-11",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-2",
+          "id": "cis:cis-google-android-1-6-0-2-2--policy-948562bc28e8",
           "title": "2.2 Ensure 'Back up to Google Drive' is 'Disabled'",
           "informational": true,
           "reason": "If a user can back up corporate device data to a personal Google account, the user can later restore the information to a new device. Because of privacy concerns, backing up personal data such as text messages, emails, photos, and contacts to any third party is not recommended.",
@@ -32732,10 +33041,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-2",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-3",
+          "id": "cis:cis-google-android-1-6-0-2-3--policy-948562bc28e8",
           "title": "2.3 Ensure 'Web and App Activity' is set to 'Disabled'",
           "informational": true,
           "reason": "When this setting is enabled, searches and activity from other Google services are linked and saved to the Google Account. This could be privacy-invasive, so it is recommended to disable this setting.",
@@ -32803,10 +33116,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-3",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-4",
+          "id": "cis:cis-google-android-1-6-0-2-4--policy-948562bc28e8",
           "title": "2.4 Ensure 'Device Information' is set to 'Disabled'",
           "informational": true,
           "reason": "When the Device Information setting is enabled, contact lists, calendars, alarms, and applications are saved to provide a personalized experience. The Device Information setting saves this data and replicates the information on Google’s servers. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -32874,10 +33191,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-4",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-5",
+          "id": "cis:cis-google-android-1-6-0-2-5--policy-948562bc28e8",
           "title": "2.5 Ensure 'Voice & Audio Activity' is set to 'Disabled'",
           "informational": true,
           "reason": "Google records your voice and other audio when you use audio activations. Audio can be saved even when your device is offline. When Voice & Audio Activity is off, voice inputs won't be saved to your Google Account, even if you're signed in. Instead, they may only be saved using anonymous identifiers. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -32945,10 +33266,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-5",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-6",
+          "id": "cis:cis-google-android-1-6-0-2-6--policy-948562bc28e8",
           "title": "2.6 Ensure 'YouTube Search History' is set to 'Disabled'",
           "informational": true,
           "reason": "Turning on the YouTube Search History setting stores all YouTube searches to the user’s Google account. YouTube and Google search history influences the recommendations seen on the YouTube homepage. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -33098,10 +33423,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-6",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-7",
+          "id": "cis:cis-google-android-1-6-0-2-7--policy-948562bc28e8",
           "title": "2.7 Ensure 'YouTube Watch History' is set to 'Disabled'",
           "informational": true,
           "reason": "Turning on the YouTube Watch History setting stores all YouTube watch history to the user’s Google account. YouTube and Google watch history influences the recommendations seen on the YouTube homepage. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -33251,10 +33580,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-7",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-8",
+          "id": "cis:cis-google-android-1-6-0-2-8--policy-948562bc28e8",
           "title": "2.8 Ensure 'Google Location History' is set to 'Disabled'",
           "informational": true,
           "reason": "When the Google Location History setting is enabled, the device periodically sends diagnostic information to Google. This setting stores location history to provide results and recommendations across Google products. It is recommended to disable this setting as it could be considered a privacy issue for the organization.",
@@ -33428,10 +33761,14 @@
               "candidateTargets": []
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-8",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-2-9",
+          "id": "cis:cis-google-android-1-6-0-2-9--policy-948562bc28e8",
           "title": "2.9 Ensure 'Opt out of Ads Personalization' is set to 'Enabled'",
           "informational": true,
           "reason": "Apps leverage the app/browsing data to build a profile for displaying personalized ads. Disabling this setting prevents building profiles from various app/browsing activities to protect privacy.",
@@ -33481,10 +33818,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-2-9",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-1",
+          "id": "cis:cis-google-android-1-6-0-3-1--policy-948562bc28e8",
           "title": "3.1 Ensure 'Microphone' is set to 'Enabled'",
           "informational": true,
           "reason": "Websites will have to ask permission before being allowed to access the microphone, which will help prevent unwanted access to the microphone and help protect against potential privacy concerns.",
@@ -33624,10 +33965,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-1",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-2",
+          "id": "cis:cis-google-android-1-6-0-3-2--policy-948562bc28e8",
           "title": "3.2 Ensure 'Location' is set to 'Enabled'",
           "informational": true,
           "reason": "Websites will have to ask permission before being allowed to access the location, which will help prevent unwanted access to the user's location and help protect against potential privacy concerns.",
@@ -33731,10 +34076,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-2",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-3",
+          "id": "cis:cis-google-android-1-6-0-3-3--policy-948562bc28e8",
           "title": "3.3 Ensure 'Allow third-party cookies' is set to 'Disabled'",
           "informational": true,
           "reason": "Blocking third-party cookies can help protect users' privacy by eliminating several website tracking cookies.",
@@ -33859,10 +34208,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-3",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-4",
+          "id": "cis:cis-google-android-1-6-0-3-4--policy-948562bc28e8",
           "title": "3.4 Ensure 'Safe Browsing' is set to 'Enabled'",
           "informational": true,
           "reason": "Google Safe Browsing helps protect devices by warning users when they attempt to navigate dangerous sites or download harmful files.",
@@ -33921,10 +34274,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-4",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-5",
+          "id": "cis:cis-google-android-1-6-0-3-5--policy-948562bc28e8",
           "title": "3.5 Ensure 'Search and URL suggestions' is set to 'Disabled'",
           "informational": true,
           "reason": "Having search suggestions processed is considered a privacy concern.",
@@ -34029,10 +34386,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-5",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "cis:cis-google-android-1-6-0-3-6",
+          "id": "cis:cis-google-android-1-6-0-3-6--policy-948562bc28e8",
           "title": "3.6 Ensure 'Do Not Track' is set to 'Enabled'",
           "informational": true,
           "reason": "Many websites will still collect and use browsing data to improve security, provide content, services, ads, and recommendations on their websites, and generate reporting statistics.",
@@ -34091,10 +34452,14 @@
               ]
             }
           ],
+          "generatedIdentity": {
+            "baseRuleId": "cis-google-android-1-6-0-3-6",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis"
         },
         {
-          "id": "vendor:android-001-enforcegoogleplayprotectonmanageddevices",
+          "id": "vendor:android-001-enforcegoogleplayprotectonmanageddevices--policy-f0b1d2722ae0",
           "title": "Enforce Google Play Protect on managed devices",
           "informational": true,
           "reason": "Google documents managed enforcement of Google Play Protect and harmful-app detection.",
@@ -34105,10 +34470,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Malware protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-001-enforcegoogleplayprotectonmanageddevices",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-002-blockinstallationfromunknownsourcesbydefault",
+          "id": "vendor:android-002-blockinstallationfromunknownsourcesbydefault--policy-f0b1d2722ae0",
           "title": "Block installation from unknown sources by default",
           "informational": true,
           "reason": "Google lists blocking installation from unknown sources as a default Android Enterprise security policy.",
@@ -34119,10 +34488,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-002-blockinstallationfromunknownsourcesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-003-blockdebuggingfeaturesbydefault",
+          "id": "vendor:android-003-blockdebuggingfeaturesbydefault--policy-f0b1d2722ae0",
           "title": "Block debugging features by default",
           "informational": true,
           "reason": "Google lists blocked debugging features as a default Android Enterprise security policy.",
@@ -34133,10 +34506,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-003-blockdebuggingfeaturesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-004-disablesafebootbydefault",
+          "id": "vendor:android-004-disablesafebootbydefault--policy-f0b1d2722ae0",
           "title": "Disable safe boot by default",
           "informational": true,
           "reason": "Google lists safe-boot blocking as a default managed-device policy.",
@@ -34147,10 +34524,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-004-disablesafebootbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-005-turnonverifyappsbydefault",
+          "id": "vendor:android-005-turnonverifyappsbydefault--policy-f0b1d2722ae0",
           "title": "Turn on Verify Apps by default",
           "informational": true,
           "reason": "Google lists Verify Apps enforcement as a default managed-device policy.",
@@ -34161,10 +34542,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Verify Apps enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-005-turnonverifyappsbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+          "id": "vendor:android-006-usecomplianceenforcementwhendevicesfalloutofpoli--policy-f0b1d2722ae0",
           "title": "Use compliance enforcement when devices fall out of policy",
           "informational": true,
           "reason": "Google describes compliance rules that restrict work-resource access when managed devices fall out of policy.",
@@ -34175,10 +34560,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Compliance enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-007-usecompliancepoliciestokeepdevicescurrent",
+          "id": "vendor:android-007-usecompliancepoliciestokeepdevicescurrent--policy-f0b1d2722ae0",
           "title": "Use compliance policies to keep devices current",
           "informational": true,
           "reason": "Google recommends compliance policies for keeping managed devices current in common knowledge-worker deployments.",
@@ -34189,10 +34578,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "System updates",
+          "generatedIdentity": {
+            "baseRuleId": "android-007-usecompliancepoliciestokeepdevicescurrent",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-008-offerautomaticotasystemupdates",
+          "id": "vendor:android-008-offerautomaticotasystemupdates--policy-f0b1d2722ae0",
           "title": "Offer automatic OTA system updates",
           "informational": true,
           "reason": "Google documents AUTOMATIC as installing system updates as soon as they are available.",
@@ -34204,10 +34597,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-008-offerautomaticotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-009-useamaintenancewindowforotasystemupdates",
+          "id": "vendor:android-009-useamaintenancewindowforotasystemupdates--policy-f0b1d2722ae0",
           "title": "Use a maintenance window for OTA system updates",
           "informational": true,
           "reason": "Google documents WINDOWED as installing system updates during a daily maintenance window.",
@@ -34219,10 +34616,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-009-useamaintenancewindowforotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-010-postponeotasystemupdatesforupto30days",
+          "id": "vendor:android-010-postponeotasystemupdatesforupto30days--policy-f0b1d2722ae0",
           "title": "Postpone OTA system updates for up to 30 days",
           "informational": true,
           "reason": "Google documents POSTPONE as delaying system updates for up to 30 days.",
@@ -34234,10 +34635,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-010-postponeotasystemupdatesforupto30days",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-011-configureannualfreezeperiodsforupdateblackoutwin",
+          "id": "vendor:android-011-configureannualfreezeperiodsforupdateblackoutwin--policy-f0b1d2722ae0",
           "title": "Configure annual freeze periods for update blackout windows",
           "informational": true,
           "reason": "Google documents annual system-update freeze periods for planned blackout windows.",
@@ -34249,10 +34654,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Advanced system update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-012-enforceautomaticdateandtimesettings",
+          "id": "vendor:android-012-enforceautomaticdateandtimesettings--policy-f0b1d2722ae0",
           "title": "Enforce automatic date and time settings",
           "informational": true,
           "reason": "Google documents policy enforcement for automatic date, time, and time-zone settings.",
@@ -34263,10 +34672,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System clock management",
+          "generatedIdentity": {
+            "baseRuleId": "android-012-enforceautomaticdateandtimesettings",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-013-requireaseparateworkprofilesecuritychallenge",
+          "id": "vendor:android-013-requireaseparateworkprofilesecuritychallenge--policy-f0b1d2722ae0",
           "title": "Require a separate work profile security challenge",
           "informational": true,
           "reason": "Google documents a separate work-profile security challenge for work data isolation.",
@@ -34277,10 +34690,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Work security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-013-requireaseparateworkprofilesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-014-useamanageddevicesecuritychallenge",
+          "id": "vendor:android-014-useamanageddevicesecuritychallenge--policy-f0b1d2722ae0",
           "title": "Use a managed device security challenge",
           "informational": true,
           "reason": "Google documents managed password-complexity policy for device security challenges.",
@@ -34291,10 +34708,14 @@
           "mappingStatus": "partial",
           "mappings": [],
           "section": "Device security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-014-useamanageddevicesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-015-waitforhbkareissuancewhenpostureisunspecified",
+          "id": "vendor:android-015-waitforhbkareissuancewhenpostureisunspecified--policy-f0b1d2722ae0",
           "title": "Wait for HBKA reissuance when posture is unspecified",
           "informational": true,
           "reason": "Google's posture guidance treats unspecified hardware-backed key attestation as a retryable state.",
@@ -34305,10 +34726,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-016-lockthebootloaderwhenunknownosisreported",
+          "id": "vendor:android-016-lockthebootloaderwhenunknownosisreported--policy-f0b1d2722ae0",
           "title": "Lock the bootloader when unknown OS is reported",
           "informational": true,
           "reason": "Google's posture guidance calls out locked bootloader state as a security signal.",
@@ -34319,10 +34744,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-016-lockthebootloaderwhenunknownosisreported",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-017-enableadvancedprotectionforhighriskuserswhenavai",
+          "id": "vendor:android-017-enableadvancedprotectionforhighriskuserswhenavai--policy-f0b1d2722ae0",
           "title": "Enable Advanced Protection for high-risk users when available",
           "informational": true,
           "reason": "Google documents Android Enterprise Advanced Protection controls for high-risk users.",
@@ -34333,10 +34762,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Advanced protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-018-useapnoverridestorestricttraffictoapprovednetwor",
+          "id": "vendor:android-018-useapnoverridestorestricttraffictoapprovednetwor--policy-f0b1d2722ae0",
           "title": "Use APN overrides to restrict traffic to approved networks",
           "informational": true,
           "reason": "Google documents APN override management for approved cellular connectivity.",
@@ -34347,10 +34780,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Cellular connectivity",
+          "generatedIdentity": {
+            "baseRuleId": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-019-installappupdatesimmediatelywhenapproved",
+          "id": "vendor:android-019-installappupdatesimmediatelywhenapproved--policy-f0b1d2722ae0",
           "title": "Install app updates immediately when approved",
           "informational": true,
           "reason": "Google documents immediate app auto-update behavior through managed Play policy.",
@@ -34361,10 +34798,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "App update management",
+          "generatedIdentity": {
+            "baseRuleId": "android-019-installappupdatesimmediatelywhenapproved",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-001-enforcegoogleplayprotectonmanageddevices",
+          "id": "vendor:android-001-enforcegoogleplayprotectonmanageddevices--policy-7ec9f2d4c7aa",
           "title": "Enforce Google Play Protect on managed devices",
           "informational": true,
           "reason": "Google documents managed enforcement of Google Play Protect and harmful-app detection.",
@@ -34375,10 +34816,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Malware protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-001-enforcegoogleplayprotectonmanageddevices",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-002-blockinstallationfromunknownsourcesbydefault",
+          "id": "vendor:android-002-blockinstallationfromunknownsourcesbydefault--policy-7ec9f2d4c7aa",
           "title": "Block installation from unknown sources by default",
           "informational": true,
           "reason": "Google lists blocking installation from unknown sources as a default Android Enterprise security policy.",
@@ -34389,10 +34834,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-002-blockinstallationfromunknownsourcesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-003-blockdebuggingfeaturesbydefault",
+          "id": "vendor:android-003-blockdebuggingfeaturesbydefault--policy-7ec9f2d4c7aa",
           "title": "Block debugging features by default",
           "informational": true,
           "reason": "Google lists blocked debugging features as a default Android Enterprise security policy.",
@@ -34403,10 +34852,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-003-blockdebuggingfeaturesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-004-disablesafebootbydefault",
+          "id": "vendor:android-004-disablesafebootbydefault--policy-7ec9f2d4c7aa",
           "title": "Disable safe boot by default",
           "informational": true,
           "reason": "Google lists safe-boot blocking as a default managed-device policy.",
@@ -34417,10 +34870,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-004-disablesafebootbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-005-turnonverifyappsbydefault",
+          "id": "vendor:android-005-turnonverifyappsbydefault--policy-7ec9f2d4c7aa",
           "title": "Turn on Verify Apps by default",
           "informational": true,
           "reason": "Google lists Verify Apps enforcement as a default managed-device policy.",
@@ -34431,10 +34888,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Verify Apps enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-005-turnonverifyappsbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+          "id": "vendor:android-006-usecomplianceenforcementwhendevicesfalloutofpoli--policy-7ec9f2d4c7aa",
           "title": "Use compliance enforcement when devices fall out of policy",
           "informational": true,
           "reason": "Google describes compliance rules that restrict work-resource access when managed devices fall out of policy.",
@@ -34445,10 +34906,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Compliance enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-007-usecompliancepoliciestokeepdevicescurrent",
+          "id": "vendor:android-007-usecompliancepoliciestokeepdevicescurrent--policy-7ec9f2d4c7aa",
           "title": "Use compliance policies to keep devices current",
           "informational": true,
           "reason": "Google recommends compliance policies for keeping managed devices current in common knowledge-worker deployments.",
@@ -34459,10 +34924,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "System updates",
+          "generatedIdentity": {
+            "baseRuleId": "android-007-usecompliancepoliciestokeepdevicescurrent",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-008-offerautomaticotasystemupdates",
+          "id": "vendor:android-008-offerautomaticotasystemupdates--policy-7ec9f2d4c7aa",
           "title": "Offer automatic OTA system updates",
           "informational": true,
           "reason": "Google documents AUTOMATIC as installing system updates as soon as they are available.",
@@ -34474,10 +34943,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-008-offerautomaticotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-009-useamaintenancewindowforotasystemupdates",
+          "id": "vendor:android-009-useamaintenancewindowforotasystemupdates--policy-7ec9f2d4c7aa",
           "title": "Use a maintenance window for OTA system updates",
           "informational": true,
           "reason": "Google documents WINDOWED as installing system updates during a daily maintenance window.",
@@ -34489,10 +34962,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-009-useamaintenancewindowforotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-010-postponeotasystemupdatesforupto30days",
+          "id": "vendor:android-010-postponeotasystemupdatesforupto30days--policy-7ec9f2d4c7aa",
           "title": "Postpone OTA system updates for up to 30 days",
           "informational": true,
           "reason": "Google documents POSTPONE as delaying system updates for up to 30 days.",
@@ -34504,10 +34981,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-010-postponeotasystemupdatesforupto30days",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-011-configureannualfreezeperiodsforupdateblackoutwin",
+          "id": "vendor:android-011-configureannualfreezeperiodsforupdateblackoutwin--policy-7ec9f2d4c7aa",
           "title": "Configure annual freeze periods for update blackout windows",
           "informational": true,
           "reason": "Google documents annual system-update freeze periods for planned blackout windows.",
@@ -34519,10 +35000,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Advanced system update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-012-enforceautomaticdateandtimesettings",
+          "id": "vendor:android-012-enforceautomaticdateandtimesettings--policy-7ec9f2d4c7aa",
           "title": "Enforce automatic date and time settings",
           "informational": true,
           "reason": "Google documents policy enforcement for automatic date, time, and time-zone settings.",
@@ -34533,10 +35018,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System clock management",
+          "generatedIdentity": {
+            "baseRuleId": "android-012-enforceautomaticdateandtimesettings",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-013-requireaseparateworkprofilesecuritychallenge",
+          "id": "vendor:android-013-requireaseparateworkprofilesecuritychallenge--policy-7ec9f2d4c7aa",
           "title": "Require a separate work profile security challenge",
           "informational": true,
           "reason": "Google documents a separate work-profile security challenge for work data isolation.",
@@ -34547,10 +35036,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Work security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-013-requireaseparateworkprofilesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-014-useamanageddevicesecuritychallenge",
+          "id": "vendor:android-014-useamanageddevicesecuritychallenge--policy-7ec9f2d4c7aa",
           "title": "Use a managed device security challenge",
           "informational": true,
           "reason": "Google documents managed password-complexity policy for device security challenges.",
@@ -34561,10 +35054,14 @@
           "mappingStatus": "partial",
           "mappings": [],
           "section": "Device security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-014-useamanageddevicesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-015-waitforhbkareissuancewhenpostureisunspecified",
+          "id": "vendor:android-015-waitforhbkareissuancewhenpostureisunspecified--policy-7ec9f2d4c7aa",
           "title": "Wait for HBKA reissuance when posture is unspecified",
           "informational": true,
           "reason": "Google's posture guidance treats unspecified hardware-backed key attestation as a retryable state.",
@@ -34575,10 +35072,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-016-lockthebootloaderwhenunknownosisreported",
+          "id": "vendor:android-016-lockthebootloaderwhenunknownosisreported--policy-7ec9f2d4c7aa",
           "title": "Lock the bootloader when unknown OS is reported",
           "informational": true,
           "reason": "Google's posture guidance calls out locked bootloader state as a security signal.",
@@ -34589,10 +35090,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-016-lockthebootloaderwhenunknownosisreported",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-017-enableadvancedprotectionforhighriskuserswhenavai",
+          "id": "vendor:android-017-enableadvancedprotectionforhighriskuserswhenavai--policy-7ec9f2d4c7aa",
           "title": "Enable Advanced Protection for high-risk users when available",
           "informational": true,
           "reason": "Google documents Android Enterprise Advanced Protection controls for high-risk users.",
@@ -34603,10 +35108,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Advanced protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-018-useapnoverridestorestricttraffictoapprovednetwor",
+          "id": "vendor:android-018-useapnoverridestorestricttraffictoapprovednetwor--policy-7ec9f2d4c7aa",
           "title": "Use APN overrides to restrict traffic to approved networks",
           "informational": true,
           "reason": "Google documents APN override management for approved cellular connectivity.",
@@ -34617,10 +35126,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Cellular connectivity",
+          "generatedIdentity": {
+            "baseRuleId": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-019-installappupdatesimmediatelywhenapproved",
+          "id": "vendor:android-019-installappupdatesimmediatelywhenapproved--policy-7ec9f2d4c7aa",
           "title": "Install app updates immediately when approved",
           "informational": true,
           "reason": "Google documents immediate app auto-update behavior through managed Play policy.",
@@ -34631,10 +35144,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "App update management",
+          "generatedIdentity": {
+            "baseRuleId": "android-019-installappupdatesimmediatelywhenapproved",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-001-enforcegoogleplayprotectonmanageddevices",
+          "id": "vendor:android-001-enforcegoogleplayprotectonmanageddevices--policy-5017e54d49e4",
           "title": "Enforce Google Play Protect on managed devices",
           "informational": true,
           "reason": "Google documents managed enforcement of Google Play Protect and harmful-app detection.",
@@ -34645,10 +35162,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Malware protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-001-enforcegoogleplayprotectonmanageddevices",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-002-blockinstallationfromunknownsourcesbydefault",
+          "id": "vendor:android-002-blockinstallationfromunknownsourcesbydefault--policy-5017e54d49e4",
           "title": "Block installation from unknown sources by default",
           "informational": true,
           "reason": "Google lists blocking installation from unknown sources as a default Android Enterprise security policy.",
@@ -34659,10 +35180,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-002-blockinstallationfromunknownsourcesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-003-blockdebuggingfeaturesbydefault",
+          "id": "vendor:android-003-blockdebuggingfeaturesbydefault--policy-5017e54d49e4",
           "title": "Block debugging features by default",
           "informational": true,
           "reason": "Google lists blocked debugging features as a default Android Enterprise security policy.",
@@ -34673,10 +35198,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-003-blockdebuggingfeaturesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-004-disablesafebootbydefault",
+          "id": "vendor:android-004-disablesafebootbydefault--policy-5017e54d49e4",
           "title": "Disable safe boot by default",
           "informational": true,
           "reason": "Google lists safe-boot blocking as a default managed-device policy.",
@@ -34687,10 +35216,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-004-disablesafebootbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-005-turnonverifyappsbydefault",
+          "id": "vendor:android-005-turnonverifyappsbydefault--policy-5017e54d49e4",
           "title": "Turn on Verify Apps by default",
           "informational": true,
           "reason": "Google lists Verify Apps enforcement as a default managed-device policy.",
@@ -34701,10 +35234,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Verify Apps enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-005-turnonverifyappsbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+          "id": "vendor:android-006-usecomplianceenforcementwhendevicesfalloutofpoli--policy-5017e54d49e4",
           "title": "Use compliance enforcement when devices fall out of policy",
           "informational": true,
           "reason": "Google describes compliance rules that restrict work-resource access when managed devices fall out of policy.",
@@ -34715,10 +35252,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Compliance enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-007-usecompliancepoliciestokeepdevicescurrent",
+          "id": "vendor:android-007-usecompliancepoliciestokeepdevicescurrent--policy-5017e54d49e4",
           "title": "Use compliance policies to keep devices current",
           "informational": true,
           "reason": "Google recommends compliance policies for keeping managed devices current in common knowledge-worker deployments.",
@@ -34729,10 +35270,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "System updates",
+          "generatedIdentity": {
+            "baseRuleId": "android-007-usecompliancepoliciestokeepdevicescurrent",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-008-offerautomaticotasystemupdates",
+          "id": "vendor:android-008-offerautomaticotasystemupdates--policy-5017e54d49e4",
           "title": "Offer automatic OTA system updates",
           "informational": true,
           "reason": "Google documents AUTOMATIC as installing system updates as soon as they are available.",
@@ -34744,10 +35289,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-008-offerautomaticotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-009-useamaintenancewindowforotasystemupdates",
+          "id": "vendor:android-009-useamaintenancewindowforotasystemupdates--policy-5017e54d49e4",
           "title": "Use a maintenance window for OTA system updates",
           "informational": true,
           "reason": "Google documents WINDOWED as installing system updates during a daily maintenance window.",
@@ -34759,10 +35308,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-009-useamaintenancewindowforotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-010-postponeotasystemupdatesforupto30days",
+          "id": "vendor:android-010-postponeotasystemupdatesforupto30days--policy-5017e54d49e4",
           "title": "Postpone OTA system updates for up to 30 days",
           "informational": true,
           "reason": "Google documents POSTPONE as delaying system updates for up to 30 days.",
@@ -34774,10 +35327,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-010-postponeotasystemupdatesforupto30days",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-011-configureannualfreezeperiodsforupdateblackoutwin",
+          "id": "vendor:android-011-configureannualfreezeperiodsforupdateblackoutwin--policy-5017e54d49e4",
           "title": "Configure annual freeze periods for update blackout windows",
           "informational": true,
           "reason": "Google documents annual system-update freeze periods for planned blackout windows.",
@@ -34789,10 +35346,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Advanced system update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-012-enforceautomaticdateandtimesettings",
+          "id": "vendor:android-012-enforceautomaticdateandtimesettings--policy-5017e54d49e4",
           "title": "Enforce automatic date and time settings",
           "informational": true,
           "reason": "Google documents policy enforcement for automatic date, time, and time-zone settings.",
@@ -34803,10 +35364,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "System clock management",
+          "generatedIdentity": {
+            "baseRuleId": "android-012-enforceautomaticdateandtimesettings",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-013-requireaseparateworkprofilesecuritychallenge",
+          "id": "vendor:android-013-requireaseparateworkprofilesecuritychallenge--policy-5017e54d49e4",
           "title": "Require a separate work profile security challenge",
           "informational": true,
           "reason": "Google documents a separate work-profile security challenge for work data isolation.",
@@ -34817,10 +35382,14 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "Work security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-013-requireaseparateworkprofilesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-014-useamanageddevicesecuritychallenge",
+          "id": "vendor:android-014-useamanageddevicesecuritychallenge--policy-5017e54d49e4",
           "title": "Use a managed device security challenge",
           "informational": true,
           "reason": "Google documents managed password-complexity policy for device security challenges.",
@@ -34831,10 +35400,14 @@
           "mappingStatus": "partial",
           "mappings": [],
           "section": "Device security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-014-useamanageddevicesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-015-waitforhbkareissuancewhenpostureisunspecified",
+          "id": "vendor:android-015-waitforhbkareissuancewhenpostureisunspecified--policy-5017e54d49e4",
           "title": "Wait for HBKA reissuance when posture is unspecified",
           "informational": true,
           "reason": "Google's posture guidance treats unspecified hardware-backed key attestation as a retryable state.",
@@ -34845,10 +35418,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-016-lockthebootloaderwhenunknownosisreported",
+          "id": "vendor:android-016-lockthebootloaderwhenunknownosisreported--policy-5017e54d49e4",
           "title": "Lock the bootloader when unknown OS is reported",
           "informational": true,
           "reason": "Google's posture guidance calls out locked bootloader state as a security signal.",
@@ -34859,10 +35436,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-016-lockthebootloaderwhenunknownosisreported",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-017-enableadvancedprotectionforhighriskuserswhenavai",
+          "id": "vendor:android-017-enableadvancedprotectionforhighriskuserswhenavai--policy-5017e54d49e4",
           "title": "Enable Advanced Protection for high-risk users when available",
           "informational": true,
           "reason": "Google documents Android Enterprise Advanced Protection controls for high-risk users.",
@@ -34873,10 +35454,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Advanced protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-018-useapnoverridestorestricttraffictoapprovednetwor",
+          "id": "vendor:android-018-useapnoverridestorestricttraffictoapprovednetwor--policy-5017e54d49e4",
           "title": "Use APN overrides to restrict traffic to approved networks",
           "informational": true,
           "reason": "Google documents APN override management for approved cellular connectivity.",
@@ -34887,10 +35472,14 @@
           "mappingStatus": "suggested",
           "mappings": [],
           "section": "Cellular connectivity",
+          "generatedIdentity": {
+            "baseRuleId": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
-          "id": "vendor:android-019-installappupdatesimmediatelywhenapproved",
+          "id": "vendor:android-019-installappupdatesimmediatelywhenapproved--policy-5017e54d49e4",
           "title": "Install app updates immediately when approved",
           "informational": true,
           "reason": "Google documents immediate app auto-update behavior through managed Play policy.",
@@ -34901,6 +35490,10 @@
           "mappingStatus": "exact",
           "mappings": [],
           "section": "App update management",
+          "generatedIdentity": {
+            "baseRuleId": "android-019-installappupdatesimmediatelywhenapproved",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          },
           "source": "vendor"
         },
         {
@@ -34921,31 +35514,37 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             }
           ],
@@ -34975,6 +35574,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DEVICE_PASSCODE"
             }
           ],
@@ -35005,6 +35605,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-display-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-display-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DISPLAY"
             }
           ],
@@ -35033,6 +35634,7 @@
             {
               "source": "cis",
               "ruleId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-notifications-aggregate",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-notifications-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT (keyguarddisabledfeatures-notifications)"
             }
           ],
@@ -35060,12 +35662,14 @@
           "sourceRules": [
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT"
             }
           ],
@@ -35092,6 +35696,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
             }
           ],
@@ -35122,31 +35727,37 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             }
           ],
@@ -35176,21 +35787,25 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             }
           ],
@@ -35225,11 +35840,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-automatic-aggregate",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-automatic-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE (systemupdatetype-automatic)"
             }
           ],
@@ -35255,17 +35872,20 @@
           "sourceRules": [
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
             }
           ],
@@ -35294,6 +35914,7 @@
           "conflict": {
             "source": "cis",
             "ruleId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
+            "sourceRecommendationId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
             "target": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
             "conflictingPaths": [
               "keyguardDisabledFeatures"
@@ -35302,7 +35923,7 @@
           }
         },
         {
-          "id": "suppressed-cis-cis-android-enterprise-android-enterprise-restriction-aggregate",
+          "id": "suppressed-cis-cis-android-enterprise-android-enterprise-restriction-aggregate-policy-948562bc28e8",
           "title": "Suppressed conflict: Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
           "informational": true,
           "reason": "Aggregates exact Relution mappings from cis-google-android-1-6-0-1-14, cis-google-android-1-6-0-3-1.",
@@ -35311,10 +35932,15 @@
             "cis-google-android-family"
           ],
           "mappings": [],
+          "generatedIdentity": {
+            "baseRuleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-trust-agents)"
+          },
           "source": "cis",
           "conflict": {
             "source": "cis",
-            "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+            "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate--policy-948562bc28e8",
+            "sourceRecommendationId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
             "target": "ANDROID_ENTERPRISE_RESTRICTION",
             "conflictingPaths": [
               "microphoneAccessPermission"
@@ -35323,7 +35949,7 @@
           }
         },
         {
-          "id": "suppressed-cis-cis-android-enterprise-android-enterprise-restriction-aggregate",
+          "id": "suppressed-cis-cis-android-enterprise-android-enterprise-restriction-aggregate-policy-b41919c3152a",
           "title": "Suppressed conflict: Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
           "informational": true,
           "reason": "Aggregates exact Relution mappings from cis-google-android-1-6-0-1-14, cis-google-android-1-6-0-3-1.",
@@ -35332,10 +35958,15 @@
             "cis-google-android-family"
           ],
           "mappings": [],
+          "generatedIdentity": {
+            "baseRuleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+            "policyName": "Android CIS Benchmarks (keyguarddisabledfeatures-notifications)"
+          },
           "source": "cis",
           "conflict": {
             "source": "cis",
-            "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+            "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate--policy-b41919c3152a",
+            "sourceRecommendationId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
             "target": "ANDROID_ENTERPRISE_RESTRICTION",
             "conflictingPaths": [
               "microphoneAccessPermission"
@@ -35358,6 +35989,7 @@
           "conflict": {
             "source": "vendor",
             "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+            "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
             "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
             "conflictingPaths": [
               "systemUpdateType"
@@ -35380,6 +36012,7 @@
           "conflict": {
             "source": "vendor",
             "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+            "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
             "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
             "conflictingPaths": [
               "systemUpdateType"

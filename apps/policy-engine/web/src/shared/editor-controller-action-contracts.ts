@@ -24,6 +24,7 @@ export type EditorControllerActions = Pick<
   | "setRecommendationSource"
   | "toggleComplianceSource"
   | "saveWorkspace"
+  | "applyAssuranceSelection"
   | "addConfiguration"
   | "addPolicy"
   | "removeConfiguration"

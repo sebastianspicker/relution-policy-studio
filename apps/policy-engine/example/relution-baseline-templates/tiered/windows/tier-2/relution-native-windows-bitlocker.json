@@ -21,7 +21,7 @@
       "slug": "relution-native-windows-bitlocker",
       "label": "Windows Bitlocker"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -74,11 +74,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-bitlocker-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-bitlocker-aggregate",
               "title": "Relution aggregate: WINDOWS_BITLOCKER"
             },
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-bitlocker-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-bitlocker-aggregate",
               "title": "Relution aggregate: WINDOWS_BITLOCKER"
             }
           ],

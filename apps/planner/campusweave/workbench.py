@@ -7,7 +7,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping
 
-from . import profiles
+from . import profiles, profiles_v2
 from .json_snapshot import decode_strict_json
 from .planning import build_execution_plan, instantiate_profile, validate_execution_plan
 from .private_artifacts import canonical_json_bytes, canonical_sha256, load_json_with_sha256
@@ -246,3 +246,23 @@ def compile_endpoint_request(path: str, request: Any) -> dict[str, Any]:
     if path == "/api/v1/import-profile":
         return compile_profile(request)
     return _instantiate_profile_request(request)
+
+
+def validate_profile_v2(profile: Any) -> dict[str, Any]:
+    """Expose pure profile-v2 validation to planner consumers."""
+    return profiles_v2.validate_profile(profile)
+
+
+def compile_profile_v2(profile: Any) -> dict[str, Any]:
+    """Expose pure profile-v2 compilation to planner consumers."""
+    return profiles_v2.compile_profile(profile)
+
+
+def convert_v1_profile_v2(profile: Any) -> dict[str, Any]:
+    """Expose conservative v1 conversion to planner consumers."""
+    return profiles_v2.convert_v1_profile(profile)
+
+
+def reference_profile_v2() -> dict[str, Any]:
+    """Expose the genuine reference profile converted to v2."""
+    return profiles_v2.reference_profile()

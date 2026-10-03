@@ -1,25 +1,15 @@
 # Dependencies and language environments
-node_modules/
 .pnpm-store/
-.venv/
 
 # Build output and compiler caches
-/dist/
-/dist-web/
-/dist-demo/
 .cache/
 .vite/
 vite.config.*.timestamp-*
-*.tsbuildinfo
-__pycache__/
 *.py[cod]
-.pytest_cache/
-.ruff_cache/
 
 # Generated analysis and test output
 /.codacy/generated/
 /.codacy/codacy.config.json
-/.repowise/
 /.codegraph/
 /coverage/
 /htmlcov/
@@ -56,7 +46,6 @@ junit*.xml
 /reports/
 
 # Editor and operating-system state
-.DS_Store
 Thumbs.db
 .idea/
 .vscode/

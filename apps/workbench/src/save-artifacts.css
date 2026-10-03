@@ -1,0 +1,397 @@
+/* Sheets 03 and 04: save and map, then validate, build and review. Layout comes from the worksheet. */
+.save-artifacts-main {
+  min-width: 0;
+}
+
+/* Policy save strip: one ruled line stating whether the concrete policy is saved. */
+.policy-save-strip {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  margin: 0 0 var(--s-5);
+  padding: var(--s-3) 0;
+  border-top: var(--rule-line);
+  border-bottom: var(--hairline);
+}
+.policy-save-strip strong,
+.policy-save-strip small,
+.download-row strong,
+.download-row small {
+  display: block;
+}
+.policy-save-strip small,
+.download-row small {
+  margin-top: 2px;
+  color: var(--ink-2);
+  font-size: var(--text-sm);
+}
+
+/* Mapping. */
+.mapping-selection,
+.intent-mapping {
+  padding: 0 0 var(--s-5);
+}
+.mapping-selection {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(320px, 1.3fr);
+  gap: var(--s-5);
+  align-items: start;
+  border-bottom: var(--hairline);
+  margin-bottom: var(--s-5);
+}
+.mapping-selection h2,
+.intent-mapping h2,
+.artifact-downloads h2,
+.open-review-items h2 {
+  margin: 0 0 var(--s-1);
+}
+.mapping-selection p,
+.intent-mapping p {
+  color: var(--ink-2);
+}
+.mapping-selectors,
+.mapping-meta-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3) var(--s-4);
+}
+.mapping-selectors label:first-child,
+.mapping-selectors label:last-child,
+.mapping-meta-fields label:last-child {
+  grid-column: 1 / -1;
+}
+.mapping-selectors label,
+.mapping-meta-fields label {
+  display: grid;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.mapping-selectors select,
+.mapping-meta-fields select,
+.mapping-meta-fields textarea {
+  width: 100%;
+  font-weight: 400;
+}
+.mapping-meta-fields {
+  margin: var(--s-4) 0 var(--s-5);
+}
+.mapping-heading-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  align-items: baseline;
+}
+.mapping-policy-details {
+  margin: 0 0 var(--s-4);
+  padding-top: 0;
+  border-top: 0;
+}
+.mapping-policy-details .mapping-selection {
+  margin: var(--s-3) 0 0;
+}
+/* The disclosure summary already names this section. */
+.mapping-policy-details .mapping-selection h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.mapping-policy-details summary,
+.mapping-setup summary {
+  color: var(--ink-2);
+}
+.mapping-setup {
+  margin: var(--s-4) 0;
+}
+.mapping-setup > .mapping-meta-fields {
+  margin-top: var(--s-3);
+}
+.mapping-setup > button {
+  margin-bottom: var(--s-3);
+}
+.mapping-table-wrap {
+  overflow-x: auto;
+}
+.mapping-table,
+.included-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.mapping-table td,
+.included-table td {
+  padding: var(--s-2) var(--s-3);
+  vertical-align: middle;
+}
+.mapping-table th,
+.included-table th {
+  padding: var(--s-3) var(--s-3) var(--s-2);
+}
+.mapping-table td:first-child strong,
+.mapping-table td:first-child code {
+  display: block;
+}
+.mapping-table td:first-child code {
+  margin-top: 2px;
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+}
+.mapping-table td:nth-child(2) code,
+.mapping-context code {
+  overflow-wrap: anywhere;
+  font-size: var(--text-sm);
+}
+.mapping-review-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  white-space: nowrap;
+}
+.mapping-review-check input {
+  margin: 0;
+}
+.mapping-save-status {
+  margin: var(--s-4) 0 0;
+}
+
+/* Notices inside a sheet: a margin rule, not a box. */
+.inline-notice,
+.save-artifacts-main .inline-error {
+  margin: var(--s-4) 0 0;
+  padding: var(--s-3) var(--s-4);
+  border-left: 3px solid var(--caution-rule);
+  background: var(--caution-wash);
+  color: var(--ink);
+  font-size: var(--text-md);
+}
+.save-artifacts-main .inline-error {
+  border-left-color: var(--danger);
+  background: var(--danger-wash);
+}
+.context-panel .facts small {
+  display: block;
+  margin-top: 2px;
+  color: var(--ink-2);
+}
+
+/* Preparation steps: numbered rows of the sheet, each with one action. */
+.artifact-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--rule-line);
+}
+.artifact-steps > li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: var(--s-5);
+  align-items: start;
+  padding: var(--s-5) 0;
+  border-bottom: var(--hairline);
+}
+.artifact-steps .step-number {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-2);
+  font-family: var(--font-data);
+  font-size: var(--text-sm);
+}
+.artifact-steps li.is-complete .step-number {
+  border-color: var(--ok);
+  color: var(--ok);
+  box-shadow: inset 0 0 0 1px var(--ok);
+}
+.step-copy h2 {
+  margin: 0 0 var(--s-1);
+}
+.step-copy p {
+  margin: 2px 0;
+  color: var(--ink-2);
+}
+.step-copy .step-status {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--ink);
+  font-weight: 500;
+}
+.step-status i {
+  width: 7px;
+  height: 7px;
+  background: var(--ok);
+}
+.artifact-steps > li > button {
+  min-width: 168px;
+  margin-top: 2px;
+}
+.step-copy .text-action {
+  margin-top: var(--s-2);
+}
+
+/* Prepared files. */
+.artifact-downloads {
+  margin-top: var(--s-2);
+  border-top: var(--rule-line);
+  padding-top: var(--s-5);
+}
+.download-row {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  min-height: 72px;
+  border-bottom: var(--hairline);
+}
+.download-row strong {
+  font-family: var(--font-data);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.artifact-downloads h3 {
+  margin: var(--s-6) 0 var(--s-2);
+}
+.open-review-items,
+.preparation-details {
+  margin-top: var(--s-6);
+  padding-top: var(--s-3);
+}
+.open-review-items > summary,
+.preparation-details > summary {
+  font-weight: 600;
+}
+.open-review-items ul {
+  margin: var(--s-3) 0 var(--s-4);
+  padding-left: 0;
+  list-style: none;
+  color: var(--ink-2);
+}
+.open-review-items li {
+  display: grid;
+  grid-template-columns: minmax(140px, auto) 1fr;
+  gap: var(--s-3);
+  padding: var(--s-2) 0;
+  border-bottom: var(--hairline);
+}
+.open-review-items code {
+  color: var(--ink);
+  font-size: var(--text-xs);
+}
+.preparation-details .artifact-steps {
+  margin-top: var(--s-3);
+}
+
+/* Margin column. */
+.source-freshness {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  margin: var(--s-3) 0 var(--s-5);
+  padding: var(--s-3) var(--s-4);
+  border-left: 3px solid var(--caution-rule);
+  background: var(--caution-wash);
+}
+.source-freshness span {
+  display: none;
+}
+.source-freshness strong,
+.source-freshness small {
+  display: block;
+}
+.source-freshness strong {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.source-freshness small {
+  margin-top: 2px;
+  color: var(--ink-2);
+}
+.artifact-context h3 {
+  margin-top: var(--s-5);
+  font-family: var(--font-title);
+  font-size: var(--text-lg);
+}
+.artifact-context > p,
+.mapping-context > p {
+  margin-top: var(--s-5);
+}
+.artifact-context .text-action {
+  display: inline-flex;
+  margin: var(--s-2) var(--s-4) 0 0;
+}
+.operational-facts {
+  margin-bottom: var(--s-3);
+}
+
+/* Completion: the sheet is prepared and says exactly how far that goes. */
+.completion-footer {
+  border-top: 3px double var(--ok);
+}
+.completion-message {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+  font-size: var(--text-md);
+}
+
+@media (max-width: 850px) {
+  .mapping-selection,
+  .mapping-selectors,
+  .mapping-meta-fields {
+    grid-template-columns: 1fr;
+  }
+  .mapping-selectors label,
+  .mapping-meta-fields label {
+    grid-column: 1;
+  }
+  .artifact-steps > li {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: var(--s-3);
+  }
+  .artifact-steps > li > button {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0;
+  }
+  .artifact-steps .step-number {
+    width: 34px;
+    height: 34px;
+  }
+  .download-row {
+    grid-template-columns: 28px minmax(0, 1fr);
+    padding: var(--s-3) 0;
+  }
+  .download-row button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .policy-save-strip {
+    grid-template-columns: auto 1fr;
+  }
+  .policy-save-strip button {
+    grid-column: 1 / -1;
+  }
+  .mapping-heading-row {
+    display: block;
+  }
+  .mapping-table th,
+  .mapping-table td {
+    min-width: 0;
+    padding-inline: 6px;
+  }
+  .mapping-review-check {
+    white-space: normal;
+  }
+  .open-review-items li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

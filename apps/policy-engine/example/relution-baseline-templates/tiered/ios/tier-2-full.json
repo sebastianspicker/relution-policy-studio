@@ -15,7 +15,7 @@
     "securityLevel": "standard-hardening",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "IOS",
@@ -60,6 +60,7 @@
       {
         "source": "cis",
         "ruleId": "cis-ios-ios-passcode-aggregate",
+        "sourceRecommendationId": "cis-ios-ios-passcode-aggregate",
         "target": "IOS_PASSCODE",
         "conflictingPaths": [
           "minLength"
@@ -87,6 +88,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-passcode-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-passcode-aggregate",
               "title": "Relution aggregate: IOS_PASSCODE"
             }
           ],
@@ -128,11 +130,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             },
             {
               "source": "cis",
               "ruleId": "cis-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "cis-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             }
           ],
@@ -179,6 +183,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-update-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-update-aggregate",
               "title": "Relution aggregate: IOS_UPDATE"
             }
           ],
@@ -207,6 +212,7 @@
           "conflict": {
             "source": "cis",
             "ruleId": "cis-ios-ios-passcode-aggregate",
+            "sourceRecommendationId": "cis-ios-ios-passcode-aggregate",
             "target": "IOS_PASSCODE",
             "conflictingPaths": [
               "minLength"

@@ -1,0 +1,42 @@
+# Group weekly GitHub Actions, npm and uv dependency updates into reviewable pull requests.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  # The root pnpm workspace covers apps/planner, apps/policy-engine and apps/workbench.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      npm-dev-dependencies:
+        dependency-type: "development"
+      npm-production-dependencies:
+        dependency-type: "production"
+
+  - package-ecosystem: "uv"
+    directory: "/apps/planner"
+    schedule:
+      interval: "weekly"
+    groups:
+      uv-dev-dependencies:
+        dependency-type: "development"
+      uv-production-dependencies:
+        dependency-type: "production"
+
+  - package-ecosystem: "uv"
+    directory: "/apps/policy-engine"
+    schedule:
+      interval: "weekly"
+    groups:
+      uv-dev-dependencies:
+        dependency-type: "development"
+      uv-production-dependencies:
+        dependency-type: "production"

@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "WINDOWS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "WINDOWS_UPDATE",
       "slug": "relution-native-windows-update",
       "label": "Windows Update"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -67,6 +67,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-update-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-update-aggregate",
               "title": "Relution aggregate: WINDOWS_UPDATE"
             }
           ],

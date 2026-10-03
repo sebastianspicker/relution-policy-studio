@@ -21,7 +21,7 @@
       "slug": "relution-native-android-enterprise-location-sharing-management",
       "label": "Android Enterprise Location Sharing Management"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -71,12 +71,14 @@
           "sourceRules": [
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT"
             }
           ],

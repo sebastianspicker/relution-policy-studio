@@ -18,12 +18,14 @@ import { applyOrCreateConfiguration } from "./compliance-configuration-applicati
 import { deepMergePreservingExistingUuids, deepSubsetMatch } from "./compliance-deep-values.js";
 import type { JsonRecord } from "./compliance-types.js";
 import { asRecord } from "../platform/serialization/json-guards.js";
+import type { AppleProfileCreateOptions } from "../apple/apple-profile.js";
 
 export function applyAppleSchemaValues(
   configurations: JsonRecord[],
   schemaId: string,
   values: JsonRecord,
   appleSchema: AppleSchemaCatalog,
+  createOptions: AppleProfileCreateOptions = {},
 ): void {
   const entry = findAppleSchemaEntry(appleSchema, schemaId);
   if (entry === undefined || entry.kind !== "profile") throw new Error(`Apple schema profile not found: ${schemaId}`);
@@ -41,13 +43,13 @@ export function applyAppleSchemaValues(
     updateCandidate: (candidateRecord) => {
       const details = asRecord(candidateRecord.details) ?? {};
       const merged = deepMergePreservingExistingUuids(extractAppleSchemaValues(details, entry), values);
-      candidateRecord.details = updateAppleSchemaProfileDetails(details, entry, merged);
+      candidateRecord.details = updateAppleSchemaProfileDetails(details, entry, merged, createOptions);
     },
-    createCandidate: () => createAppleSchemaProfileConfiguration(entry, values),
+    createCandidate: () => createAppleSchemaProfileConfiguration(entry, values, createOptions),
   });
 }
 
-export function applyAppleCompatValues(configurations: JsonRecord[], payloadType: string, values: JsonRecord): void {
+export function applyAppleCompatValues(configurations: JsonRecord[], payloadType: string, values: JsonRecord, createOptions: AppleProfileCreateOptions = {}): void {
   const setting = APPLE_COMPAT_SETTINGS.find((candidate) => candidate.payloadType === payloadType);
   if (setting === undefined) throw new Error(`Apple mobileconfig payload type not found: ${payloadType}`);
   const candidates = configurationCandidates(
@@ -64,8 +66,8 @@ export function applyAppleCompatValues(configurations: JsonRecord[], payloadType
     updateCandidate: (candidateRecord) => {
       const details = asRecord(candidateRecord.details) ?? {};
       const merged = deepMergePreservingExistingUuids(extractAppleCompatValues(details, setting), values);
-      candidateRecord.details = updateAppleCompatDetails(details, setting.id, merged);
+      candidateRecord.details = updateAppleCompatDetails(details, setting.id, merged, createOptions);
     },
-    createCandidate: () => createAppleCompatConfiguration(setting.id, values),
+    createCandidate: () => createAppleCompatConfiguration(setting.id, values, createOptions),
   });
 }

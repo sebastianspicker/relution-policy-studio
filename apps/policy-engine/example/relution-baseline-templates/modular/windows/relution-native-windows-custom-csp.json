@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "WINDOWS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "WINDOWS_CUSTOM_CSP",
       "slug": "relution-native-windows-custom-csp",
       "label": "Windows Custom Csp"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -67,6 +67,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-allowmicrosoftaccountstobeoptional-46c4b966c61b-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-allowmicrosoftaccountstobeoptional-46c4b966c61b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -97,6 +98,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-allowstandbystateswhensleepingonbattery-7213ba74cc28-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-allowstandbystateswhensleepingonbattery-7213ba74cc28-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -127,6 +129,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-disallowautoplayfornonvolumedevices-aa110b8e7f48-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-disallowautoplayfornonvolumedevices-aa110b8e7f48-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -157,6 +160,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-disallowdigestauthentication-48e894f9a13a-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-disallowdigestauthentication-48e894f9a13a-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -187,6 +191,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-donotallowdriveredirection-12a95a1709bb-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-donotallowdriveredirection-12a95a1709bb-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -217,6 +222,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-preventenablinglockscreencamera-a38531be265c-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-preventenablinglockscreencamera-a38531be265c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -247,6 +253,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-remotehostallowsdelegationofnonexportablecredentials-1d9f5a0d5fc2-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-remotehostallowsdelegationofnonexportablecredentials-1d9f5a0d5fc2-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -277,6 +284,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-requirepasswordwhencomputerwakesonbattery-694342c313f9-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-requirepasswordwhencomputerwakesonbattery-694342c313f9-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -307,6 +315,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-requirepasswordwhencomputerwakespluggedin-96ba9b43949c-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-requirepasswordwhencomputerwakespluggedin-96ba9b43949c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -337,6 +346,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-requiresecurerpccommunication-678b65ae4c86-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-requiresecurerpccommunication-678b65ae4c86-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -367,6 +377,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-turnoffdataexecutionpreventionforexplorer-679d2f17d15c-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-turnoffdataexecutionpreventionforexplorer-679d2f17d15c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -397,6 +408,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-turnoffheapterminationoncorruption-bcc8749d26fe-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-turnoffheapterminationoncorruption-bcc8749d26fe-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -427,6 +439,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-turnonpowershellscriptblocklogging-124d0deadc77-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-turnonpowershellscriptblocklogging-124d0deadc77-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -457,6 +470,7 @@
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-custom-csp-wdigestauthentication-68f85626f126-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-custom-csp-wdigestauthentication-68f85626f126-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -486,6 +500,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-accessfromnetwork-6829546f6341-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-accessfromnetwork-6829546f6341-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -515,6 +530,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-accountlogon-auditcredentialvalidation-db29bf07b239-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-accountlogon-auditcredentialvalidation-db29bf07b239-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -544,6 +560,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-accountlogonlogoff-auditaccountlockout-7234f1760e8b-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-accountlogonlogoff-auditaccountlockout-7234f1760e8b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -573,6 +590,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-accountlogonlogoff-auditgroupmembership-078829b24a14-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-accountlogonlogoff-auditgroupmembership-078829b24a14-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -602,6 +620,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-accountlogonlogoff-auditlogon-dd9b70667795-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-accountlogonlogoff-auditlogon-dd9b70667795-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -631,6 +650,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-accountmanagement-audituseraccountmanagement-d29275912a42-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-accountmanagement-audituseraccountmanagement-d29275912a42-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -660,6 +680,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowautoconnecttowifisensehotspots-d069477355f8-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowautoconnecttowifisensehotspots-d069477355f8-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -689,6 +710,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowdirectmemoryaccess-ce59d505ca58-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowdirectmemoryaccess-ce59d505ca58-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -718,6 +740,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowfullscanremovabledrivescanning-4fabe2b1dd4d-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowfullscanremovabledrivescanning-4fabe2b1dd4d-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -747,6 +770,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowindexingencryptedstoresoritems-e09f0e0ee80e-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowindexingencryptedstoresoritems-e09f0e0ee80e-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -776,6 +800,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowinternetsharing-e615cbbeba04-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowinternetsharing-e615cbbeba04-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -805,6 +830,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowlocalipsecpolicymerge-9388cd50d882-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowlocalipsecpolicymerge-9388cd50d882-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -834,6 +860,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowlocallogon-327a1f2dcb22-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowlocallogon-327a1f2dcb22-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -863,6 +890,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowlocalpolicymerge-0f6be8f6394d-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowlocalpolicymerge-0f6be8f6394d-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -893,6 +921,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowmicrosoftaccountstobeoptional-46c4b966c61b-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowmicrosoftaccountstobeoptional-46c4b966c61b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -922,6 +951,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowonaccessprotection-133a6eae9914-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowonaccessprotection-133a6eae9914-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -951,6 +981,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowpasswordmanager-5ca7224a098d-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowpasswordmanager-5ca7224a098d-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -980,6 +1011,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowsmartscreen-925bdb08defa-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowsmartscreen-925bdb08defa-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1010,6 +1042,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowstandbystateswhensleepingonbattery-7213ba74cc28-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowstandbystateswhensleepingonbattery-7213ba74cc28-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1039,6 +1072,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowwindowsconsumerfeatures-disabled-windows-enterprise-policy-f102b539c7a6-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowwindowsconsumerfeatures-disabled-windows-enterprise-policy-f102b539c7a6-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1069,6 +1103,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-allowwindowsinkworkspace-2a541b18a76a-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-allowwindowsinkworkspace-2a541b18a76a-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1099,6 +1134,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-applyuacrestrictionstolocalaccountsonnetworklogon-9ef01a59f713-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-applyuacrestrictionstolocalaccountsonnetworklogon-9ef01a59f713-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1128,6 +1164,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-auditclientdoesnotsupportencryption-disabled-min-os-version-6a6176e26191-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-auditclientdoesnotsupportencryption-disabled-min-os-version-6a6176e26191-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1157,6 +1194,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-auditclientdoesnotsupportsigning-disabled-min-os-version-1119fa4dd017-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-auditclientdoesnotsupportsigning-disabled-min-os-version-1119fa4dd017-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1186,6 +1224,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-auditserverdoesnotsupportencryption-disabled-min-os-version-8a85225fb240-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-auditserverdoesnotsupportencryption-disabled-min-os-version-8a85225fb240-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1215,6 +1254,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-auditserverdoesnotsupportsigning-disabled-min-os-version-5575c682ef9c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-auditserverdoesnotsupportsigning-disabled-min-os-version-5575c682ef9c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1244,6 +1284,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-authratelimiterdelayinms-disabled-min-os-version-0c8b44e7e514-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-authratelimiterdelayinms-disabled-min-os-version-0c8b44e7e514-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1273,6 +1314,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-backupdirectory-disabled-error-66e43e585acc-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-backupdirectory-disabled-error-66e43e585acc-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1302,6 +1344,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-backupfilesanddirectories-6e1c686c6304-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-backupfilesanddirectories-6e1c686c6304-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1332,6 +1375,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-checkservercertificaterevocation-596795166cb8-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-checkservercertificaterevocation-596795166cb8-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1362,6 +1406,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-checksignaturesondownloadedprograms-b95f5bb376a9-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-checksignaturesondownloadedprograms-b95f5bb376a9-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1391,6 +1436,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-cloudextendedtimeout-8c411d43f3e7-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-cloudextendedtimeout-8c411d43f3e7-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1420,6 +1466,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurelsaprotectedprocess-15d998a0453a-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurelsaprotectedprocess-15d998a0453a-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1450,6 +1497,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configureredirectionguardpolicy-089f393b9f83-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configureredirectionguardpolicy-089f393b9f83-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1480,6 +1528,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurerpcconnectionpolicy-f0e17c2d8c39-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurerpcconnectionpolicy-f0e17c2d8c39-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1510,6 +1559,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurerpclistenerpolicy-967683cfcf19-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurerpclistenerpolicy-967683cfcf19-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1539,6 +1589,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configuresystemguardlaunch-aab9d2d224cc-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configuresystemguardlaunch-aab9d2d224cc-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1568,6 +1619,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurexboxaccessorymanagementservicestartupmode-5147b0531271-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurexboxaccessorymanagementservicestartupmode-5147b0531271-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1597,6 +1649,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurexboxliveauthmanagerservicestartupmode-ceb2d8154848-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurexboxliveauthmanagerservicestartupmode-ceb2d8154848-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1626,6 +1679,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurexboxlivegamesaveservicestartupmode-e4820bc64469-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurexboxlivegamesaveservicestartupmode-e4820bc64469-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1655,6 +1709,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-configurexboxlivenetworkingservicestartupmode-435b3b71467b-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-configurexboxlivenetworkingservicestartupmode-435b3b71467b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1684,6 +1739,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-createglobalobjects-6072d491d885-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-createglobalobjects-6072d491d885-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1713,6 +1769,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-createpagefile-1167f1197b07-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-createpagefile-1167f1197b07-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1742,6 +1799,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-debugprograms-83c13a466c7f-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-debugprograms-83c13a466c7f-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1771,6 +1829,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-denyaccessfromnetwork-6155efbb4dd6-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-denyaccessfromnetwork-6155efbb4dd6-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1800,6 +1859,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-denyremotedesktopserviceslogon-3ada200dac8f-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-denyremotedesktopserviceslogon-3ada200dac8f-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1829,6 +1889,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-detailedtracking-auditpnpactivity-b44d6b13db1d-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-detailedtracking-auditpnpactivity-b44d6b13db1d-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1858,6 +1919,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-detailedtracking-auditprocesscreation-033ee175aaaf-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-detailedtracking-auditprocesscreation-033ee175aaaf-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1887,6 +1949,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-deviceenumerationpolicy-a1a32ae15382-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-deviceenumerationpolicy-a1a32ae15382-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1916,6 +1979,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-devicepasswordenabled-10865a664863-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-devicepasswordenabled-10865a664863-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1945,6 +2009,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-devicepasswordhistory-2cbcb456e716-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-devicepasswordhistory-2cbcb456e716-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -1974,6 +2039,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-disablelocaladminmerge-73d55e71d4cc-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-disablelocaladminmerge-73d55e71d4cc-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2004,6 +2070,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-disallowautoplayfornonvolumedevices-aa110b8e7f48-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-disallowautoplayfornonvolumedevices-aa110b8e7f48-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2034,6 +2101,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-disallowdigestauthentication-48e894f9a13a-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-disallowdigestauthentication-48e894f9a13a-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2064,6 +2132,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-donotallowdriveredirection-12a95a1709bb-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-donotallowdriveredirection-12a95a1709bb-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2093,6 +2162,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enableauthratelimiter-disabled-min-os-version-518d1530581d-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enableauthratelimiter-disabled-min-os-version-518d1530581d-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2122,6 +2192,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enableconvertwarntoblock-13dc60ffa59a-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enableconvertwarntoblock-13dc60ffa59a-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2151,6 +2222,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enablefilehashcomputation-33162aea72ca-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enablefilehashcomputation-33162aea72ca-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2180,6 +2252,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enableinsecureguestlogons-51daa2e38e02-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enableinsecureguestlogons-51daa2e38e02-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2209,6 +2282,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enablesmartscreeninshell-dff8a85194c9-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enablesmartscreeninshell-dff8a85194c9-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2238,6 +2312,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enablesudo-disabled-min-os-version-1eb20ccfb9df-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enablesudo-disabled-min-os-version-1eb20ccfb9df-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2267,6 +2342,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enablevirtualizationbasedsecurity-f8b8e41ca328-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enablevirtualizationbasedsecurity-f8b8e41ca328-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2296,6 +2372,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-enablexboxgamesavetask-f8ae587ff4af-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-enablexboxgamesavetask-f8ae587ff4af-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2325,6 +2402,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-facialfeaturesuseenhancedantispoofing-88208ad4e4d2-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-facialfeaturesuseenhancedantispoofing-88208ad4e4d2-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2355,6 +2433,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-hardeneduncpaths-78cd35d8b030-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-hardeneduncpaths-78cd35d8b030-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2384,6 +2463,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-hideexclusionsfromlocaladmins-b30949f1fd94-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-hideexclusionsfromlocaladmins-b30949f1fd94-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2413,6 +2493,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-hypervisorenforcedcodeintegrity-eeb4435d048f-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-hypervisorenforcedcodeintegrity-eeb4435d048f-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2442,6 +2523,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-impersonateclient-a185cafdcafd-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-impersonateclient-a185cafdcafd-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2471,6 +2553,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-interactivelogon-machineinactivitylimit-02673bd76909-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-interactivelogon-machineinactivitylimit-02673bd76909-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2500,6 +2583,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-letappsactivatewithvoiceabovelock-a7d8578ad5d8-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-letappsactivatewithvoiceabovelock-a7d8578ad5d8-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2529,6 +2613,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-loadunloaddevicedrivers-3666fd9a168d-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-loadunloaddevicedrivers-3666fd9a168d-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2558,6 +2643,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-machineidentityisolation-disabled-windows-enterprise-policy-5ebacaed8b42-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-machineidentityisolation-disabled-windows-enterprise-policy-5ebacaed8b42-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2587,6 +2673,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-manageauditingandsecuritylog-d5f7daf98183-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-manageauditingandsecuritylog-d5f7daf98183-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2616,6 +2703,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-managevolume-307aa4e3b01f-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-managevolume-307aa4e3b01f-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2645,6 +2733,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-microsoftnetworkclient-digitallysigncommunicationsalways-8c5fcd47a892-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-microsoftnetworkclient-digitallysigncommunicationsalways-8c5fcd47a892-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2674,6 +2763,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-microsoftnetworkclient-sendunencryptedpasswordtothirdpartysmbservers-6352064583f5-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-microsoftnetworkclient-sendunencryptedpasswordtothirdpartysmbservers-6352064583f5-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2703,6 +2793,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-microsoftnetworkserver-digitallysigncommunicationsalways-a42c00d6efbd-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-microsoftnetworkserver-digitallysigncommunicationsalways-a42c00d6efbd-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2732,6 +2823,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-mindevicepasswordlength-435f3b748418-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-mindevicepasswordlength-435f3b748418-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2761,6 +2853,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-modifyfirmwareenvironment-f2e2f6430490-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-modifyfirmwareenvironment-f2e2f6430490-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2790,6 +2883,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-msiallowusercontroloverinstall-a6b813f391b4-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-msiallowusercontroloverinstall-a6b813f391b4-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2819,6 +2913,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-msialwaysinstallwithelevatedprivileges-0bd12f868142-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-msialwaysinstallwithelevatedprivileges-0bd12f868142-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2848,6 +2943,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networkaccess-donotallowanonymousenumerationofsamaccounts-af8d441fa42f-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networkaccess-donotallowanonymousenumerationofsamaccounts-af8d441fa42f-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2877,6 +2973,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networkaccess-donotallowanonymousenumerationofsamaccountsandshares-8f15853937e7-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networkaccess-donotallowanonymousenumerationofsamaccountsandshares-8f15853937e7-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2906,6 +3003,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networkaccess-restrictanonymousaccesstonamedpipesandshares-def0b74478f4-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networkaccess-restrictanonymousaccesstonamedpipesandshares-def0b74478f4-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2935,6 +3033,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networkaccess-restrictclientsallowedtomakeremotecallstosam-25cbc9424630-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networkaccess-restrictclientsallowedtomakeremotecallstosam-25cbc9424630-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2964,6 +3063,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networksecurity-donotstorelanmanagerhashvalueonnextpasswordchange-97b1f0b4c8f1-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networksecurity-donotstorelanmanagerhashvalueonnextpasswordchange-97b1f0b4c8f1-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -2993,6 +3093,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networksecurity-lanmanagerauthenticationlevel-9cbba4ebc20e-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networksecurity-lanmanagerauthenticationlevel-9cbba4ebc20e-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3022,6 +3123,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networksecurity-minimumsessionsecurityforntlmsspbasedclients-b47a3ec0c041-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networksecurity-minimumsessionsecurityforntlmsspbasedclients-b47a3ec0c041-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3051,6 +3153,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-networksecurity-minimumsessionsecurityforntlmsspbasedservers-568180c1de2a-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-networksecurity-minimumsessionsecurityforntlmsspbasedservers-568180c1de2a-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3081,6 +3184,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-notifymalicious-38815dbb2d92-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-notifymalicious-38815dbb2d92-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3111,6 +3215,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-notifypasswordreuse-bbd5fd250f53-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-notifypasswordreuse-bbd5fd250f53-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3141,6 +3246,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-notifyunsafeapp-b4de07e5c5a2-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-notifyunsafeapp-b4de07e5c5a2-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3170,6 +3276,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-objectaccess-auditdetailedfileshare-b114c37d49f0-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-objectaccess-auditdetailedfileshare-b114c37d49f0-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3199,6 +3306,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-objectaccess-auditotherobjectaccessevents-6419bf2f5dc4-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-objectaccess-auditotherobjectaccessevents-6419bf2f5dc4-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3228,6 +3336,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-objectaccess-auditremovablestorage-f22d1ab2d10b-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-objectaccess-auditremovablestorage-f22d1ab2d10b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3257,6 +3366,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-oobeenablertpandsigupdate-c43bc9625580-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-oobeenablertpandsigupdate-c43bc9625580-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3286,6 +3396,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-passiveremediation-39aa53953780-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-passiveremediation-39aa53953780-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3315,6 +3426,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-pkinithashalgorithmconfiguration-da3fcf2ea44b-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-pkinithashalgorithmconfiguration-da3fcf2ea44b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3344,6 +3456,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha1-09c011580fa5-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha1-09c011580fa5-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3373,6 +3486,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha256-2933aa1977b6-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha256-2933aa1977b6-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3402,6 +3516,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha384-4d8490e927a7-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha384-4d8490e927a7-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3431,6 +3546,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha512-b5217e4e6fa4-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-pkinithashalgorithmsha512-b5217e4e6fa4-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3460,6 +3576,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-policychange-auditauthenticationpolicychange-d59aaa75df9b-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-policychange-auditauthenticationpolicychange-d59aaa75df9b-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3489,6 +3606,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-policychange-auditmpssvcrulelevelpolicychange-6ee9a0326450-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-policychange-auditmpssvcrulelevelpolicychange-6ee9a0326450-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3518,6 +3636,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-policychange-auditotherpolicychangeevents-dda2a85291eb-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-policychange-auditotherpolicychangeevents-dda2a85291eb-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3547,6 +3666,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-policychange-auditpolicychange-b96c74443a71-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-policychange-auditpolicychange-b96c74443a71-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3576,6 +3696,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-preventcerterroroverrides-0241f88f8fd4-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-preventcerterroroverrides-0241f88f8fd4-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3606,6 +3727,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-preventenablinglockscreencamera-a38531be265c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-preventenablinglockscreencamera-a38531be265c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3636,6 +3758,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-preventmanagingsmartscreenfilter-f5d31204d823-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-preventmanagingsmartscreenfilter-f5d31204d823-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3665,6 +3788,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-preventoverrideforfilesinshell-145b0606e5fe-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-preventoverrideforfilesinshell-145b0606e5fe-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3695,6 +3819,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-preventperuserinstallationofactivexcontrols-8b128e66f917-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-preventperuserinstallationofactivexcontrols-8b128e66f917-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3724,6 +3849,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-privilegeuse-auditsensitiveprivilegeuse-4f603b6f3b16-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-privilegeuse-auditsensitiveprivilegeuse-4f603b6f3b16-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3753,6 +3879,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-profilesingleprocess-df7ab2278dbf-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-profilesingleprocess-df7ab2278dbf-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3782,6 +3909,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-quickscanincludeexclusions-3a633b8e79c7-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-quickscanincludeexclusions-3a633b8e79c7-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3812,6 +3940,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-remotehostallowsdelegationofnonexportablecredentials-1d9f5a0d5fc2-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-remotehostallowsdelegationofnonexportablecredentials-1d9f5a0d5fc2-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3841,6 +3970,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-remoteshutdown-deed3f31f3ce-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-remoteshutdown-deed3f31f3ce-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3871,6 +4001,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-requireencryption-disabled-min-os-version-ed458abc170c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-requireencryption-disabled-min-os-version-ed458abc170c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3901,6 +4032,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-requirepasswordwhencomputerwakesonbattery-694342c313f9-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-requirepasswordwhencomputerwakesonbattery-694342c313f9-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3931,6 +4063,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-requirepasswordwhencomputerwakespluggedin-96ba9b43949c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-requirepasswordwhencomputerwakespluggedin-96ba9b43949c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3960,6 +4093,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-requireplatformsecurityfeatures-da90e9e7b453-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-requireplatformsecurityfeatures-da90e9e7b453-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -3990,6 +4124,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-requiresecurerpccommunication-678b65ae4c86-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-requiresecurerpccommunication-678b65ae4c86-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4019,6 +4154,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-restorefilesanddirectories-216240231a57-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-restorefilesanddirectories-216240231a57-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4049,6 +4185,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-restrictunauthenticatedrpcclients-4e15e16204fb-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-restrictunauthenticatedrpcclients-4e15e16204fb-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4078,6 +4215,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-securityzonesuseonlymachinesettings-39507007ea15-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-securityzonesuseonlymachinesettings-39507007ea15-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4108,6 +4246,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-serviceenabled-6e9accad1f3f-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-serviceenabled-6e9accad1f3f-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4138,6 +4277,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-setdefaultautorunbehavior-5f11e057c35c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-setdefaultautorunbehavior-5f11e057c35c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4167,6 +4307,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-system-auditothersystemevents-7f2ea18b9591-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-system-auditothersystemevents-7f2ea18b9591-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4196,6 +4337,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-system-auditsecuritystatechange-e92440c1e88e-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-system-auditsecuritystatechange-e92440c1e88e-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4225,6 +4367,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-system-auditsecuritysystemextension-5e0919cfe052-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-system-auditsecuritysystemextension-5e0919cfe052-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4254,6 +4397,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-system-auditsystemintegrity-2d1e3934634e-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-system-auditsystemintegrity-2d1e3934634e-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4283,6 +4427,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-takeownership-d6bfe1e6f2c6-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-takeownership-d6bfe1e6f2c6-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4313,6 +4458,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-turnoffdataexecutionpreventionforexplorer-679d2f17d15c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-turnoffdataexecutionpreventionforexplorer-679d2f17d15c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4343,6 +4489,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-turnoffheapterminationoncorruption-bcc8749d26fe-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-turnoffheapterminationoncorruption-bcc8749d26fe-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4373,6 +4520,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-turnonpowershellscriptblocklogging-124d0deadc77-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-turnonpowershellscriptblocklogging-124d0deadc77-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4402,6 +4550,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-useraccountcontrol-behavioroftheelevationpromptforstandardusers-7c1fc746701c-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-useraccountcontrol-behavioroftheelevationpromptforstandardusers-7c1fc746701c-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4431,6 +4580,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-useraccountcontrol-detectapplicationinstallationsandpromptforelevation-e6a9fd99c6b6-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-useraccountcontrol-detectapplicationinstallationsandpromptforelevation-e6a9fd99c6b6-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],
@@ -4460,6 +4610,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-custom-csp-useraccountcontrol-onlyelevateuiaccessapplicationsthatareinstalledinsecurelocations-229c38726cef-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-custom-csp-useraccountcontrol-onlyelevateuiaccessapplicationsthatareinstalledinsecurelocations-229c38726cef-aggregate",
               "title": "Relution aggregate: WINDOWS_CUSTOM_CSP"
             }
           ],

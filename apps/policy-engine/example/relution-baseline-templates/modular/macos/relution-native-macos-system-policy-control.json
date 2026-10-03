@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "MACOS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "MACOS_SYSTEM_POLICY_CONTROL",
       "slug": "relution-native-macos-system-policy-control",
       "label": "macOS System Policy Control"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "MACOS",
@@ -68,11 +68,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-system-policy-control-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-system-policy-control-aggregate",
               "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-macos-macos-system-policy-control-aggregate",
+              "sourceRecommendationId": "vendor-macos-macos-system-policy-control-aggregate",
               "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
             }
           ],

@@ -46,8 +46,11 @@ def add_common_semantic_group_entry(
     groups: dict[tuple[str, str], dict[str, Any]],
 ) -> None:
     """Add one semantic-index recommendation entry to common-group state."""
-    from .unified_analysis_helpers import append_group_target_links, append_unique
-    from .unified_group_projection import semantic_group_for_entry
+    from .unified_analysis_helpers import (
+        append_group_target_links,
+        append_unique,
+        semantic_group_for_entry,
+    )
 
     if (
         not isinstance(entry, dict)
@@ -88,4 +91,3 @@ def add_common_semantic_group_entry(
                 "keys": ("candidateTargetIds", "candidateTargetIdsBySource"),
             },
         )
-

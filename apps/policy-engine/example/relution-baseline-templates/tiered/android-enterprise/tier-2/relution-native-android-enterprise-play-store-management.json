@@ -21,7 +21,7 @@
       "slug": "relution-native-android-enterprise-play-store-management",
       "label": "Android Enterprise Play Store Management"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -75,31 +75,37 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             }
           ],

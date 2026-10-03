@@ -10,7 +10,7 @@ import { readJsonBodyOutcome, withParsedJsonBody } from "./editor-json-body.js";
 
 export const MAX_EDITOR_MUTATIONS_PER_DOMAIN = 32;
 export const MAX_EDITOR_RESERVED_BODY_BYTES_PER_DOMAIN = 65 * 1024 * 1024;
-export const MAX_EDITOR_BODY_READERS_PER_DOMAIN = 2;
+const MAX_EDITOR_BODY_READERS_PER_DOMAIN = 2;
 
 export class EditorMutationBodyCapacityError extends Error {
   constructor(maxReservedBytes: number) {

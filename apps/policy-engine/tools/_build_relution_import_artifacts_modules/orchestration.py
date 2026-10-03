@@ -25,6 +25,7 @@ from .mapping_source_snapshots import previous_source_change_rows
 from .relution_update_artifacts import previous_relution_mapping_change_rows
 from .ruleset_rules_core import build_ruleset
 from .ruleset_catalog import build_setting_catalog
+from .assurance_artifacts import build_assurance_artifacts
 
 
 def main() -> None:
@@ -46,6 +47,7 @@ def main() -> None:
     selected_sources = args.sources or sorted(SOURCE_CONFIGS)
     build_artifacts_for_sources(selected_sources)
     write_baseline_templates()
+    build_assurance_artifacts()
 
 
 def build_artifacts_for_sources(sources: list[str]) -> None:
@@ -122,3 +124,5 @@ def build_source_artifacts(source: str) -> None:
     """Compatibility entry point for a complete one-source artifact rebuild."""
 
     build_artifacts_for_sources([source])
+    write_baseline_templates()
+    build_assurance_artifacts()

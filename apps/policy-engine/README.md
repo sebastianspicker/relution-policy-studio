@@ -98,7 +98,9 @@ POSIX package scripts is not covered by CI.
 
 ## Installation
 
-Install the JavaScript and Python environments from their lock files:
+Install the JavaScript and Python environments from their lock files. This
+package is a member of the monorepo's pnpm workspace, so `pnpm install` resolves
+the single lockfile at the repository root:
 
 ```sh
 pnpm install --frozen-lockfile
@@ -346,7 +348,6 @@ They do not contact Relution or Zammad.
 | `example/` | Reviewed samples, recommendation data, and baseline templates |
 | `mdm/` | Versioned LAB source, schema, evidence, runbook, and output package |
 | `docs/` | Focused technical documentation and screenshots |
-| `.github/workflows/` | CI, CodeQL, Pages, and Scorecard workflows |
 
 ## Development workflow
 
@@ -354,7 +355,6 @@ Run the narrow check for a changed area first. The main package commands are:
 
 ```sh
 pnpm typecheck
-pnpm knip
 pnpm build
 pnpm check:architecture
 pnpm check:bundle:web
@@ -363,9 +363,13 @@ pnpm python:lint
 pnpm python:test
 ```
 
-`pnpm verify:ci` runs the architecture and hygiene checks, Knip, both builds,
-web bundle budgets, the Node.js behavioral suites, Ruff, and the offline Python
-pipeline contracts. The strict Node.js build checks the complete TypeScript
+Unused-code analysis (`pnpm knip`) and the cross-app boundary check run from
+the repository root, because they cover the workbench as well.
+
+`pnpm verify:ci` runs the architecture and hygiene checks, both builds, web
+bundle budgets, the Node.js behavioral suites, Ruff, and the offline Python
+pipeline contracts. Knip is not part of it; it runs from the repository root
+(`pnpm knip`, included in the root `pnpm verify`). The strict Node.js build checks the complete TypeScript
 project and emits no output on type errors; `pnpm typecheck` remains available
 for a check without building.
 

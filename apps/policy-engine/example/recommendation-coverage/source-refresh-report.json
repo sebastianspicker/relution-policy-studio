@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-07",
+  "freshnessPolicy": "retrieval-or-check-time-alone-never-means-current",
+  "refreshAttempt": {
+    "bsi": {
+      "schemaVersion": 1,
+      "checkedAt": "2026-09-07",
+      "outcome": "failed-retained-previous-snapshot",
+      "retainedPreviousSnapshot": true,
+      "checks": [
+        {
+          "sourceId": "it-grundschutz-current",
+          "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz.html",
+          "finalUrl": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz.html",
+          "outcome": "downloaded",
+          "sha256": "5ac9370eb9427ffb721cb60db0af8ce3ad4634b03556601e5c1ce744eac8a829",
+          "sizeBytes": 68299
+        },
+        {
+          "sourceId": "it-grundschutz-2025-outlook",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Veranstaltungen/Grundschutz/1GS_Tag_2025/Aktuelle_Entwicklungen_Ausblick_IT-GS.pdf?__blob=publicationFile&v=2",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Veranstaltungen/Grundschutz/1GS_Tag_2025/Aktuelle_Entwicklungen_Ausblick_IT-GS.pdf?__blob=publicationFile&v=2",
+          "outcome": "downloaded",
+          "sha256": "ef718b66a8a910d9c5ce11e2bd45a2356a92ca0709c0b0569773980487168b48",
+          "sizeBytes": 1735913
+        },
+        {
+          "sourceId": "it-grundschutz-errata-2023",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/errata_2023.pdf?__blob=publicationFile&v=8",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/errata_2023.pdf?__blob=publicationFile&v=8",
+          "outcome": "downloaded",
+          "sha256": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+          "sizeBytes": 120688
+        },
+        {
+          "sourceId": "it-grundschutz-checklists-2023",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/checklisten_2023.html",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/checklisten_2023.html",
+          "outcome": "downloaded",
+          "sha256": "051098894c07e361d99c1760b7ac077fd95c002383cb149f394d9f3fca4c4617",
+          "sizeBytes": 56904
+        },
+        {
+          "sourceId": "it-grundschutz-bausteine-edition-2023",
+          "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html",
+          "finalUrl": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html",
+          "outcome": "downloaded",
+          "sha256": "e160ead1e055d53b659cac85e1d9b54e64c6804e570f92516462a8a85becf617",
+          "sizeBytes": 110850
+        },
+        {
+          "sourceId": "sys-2-1-general-client",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_1_Allgemeiner_Client_Edition_2023.pdf",
+          "outcome": "failed",
+          "errorType": "ValueError",
+          "error": "Official PDF URL returned non-PDF content (text/html;charset=utf-8)"
+        },
+        {
+          "sourceId": "sys-2-2-3-windows",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_2_3_Clients_unter_Windows_Edition_2023.html",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_2_3_Clients_unter_Windows_Edition_2023.html",
+          "outcome": "downloaded",
+          "sha256": "cc5a021395a9c1c84b329bc1704bddeef874a4cf360c6ee456a1c613327167d4",
+          "sizeBytes": 56082
+        },
+        {
+          "sourceId": "fd-aenderungen-2023",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/FD_Aenderungen2023.pdf?__blob=publicationFile&v=3",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/FD_Aenderungen2023.pdf?__blob=publicationFile&v=3",
+          "outcome": "downloaded",
+          "sha256": "0aee3d36b4d493b64c7de9f66e0a07a2d04bfe1248ccc73b3a0eb54f88e3bf50",
+          "sizeBytes": 363322
+        },
+        {
+          "sourceId": "sys-2-4-macos",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_4_Clients_unter_macOS_Edition_2023.html",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_4_Clients_unter_macOS_Edition_2023.html",
+          "outcome": "downloaded",
+          "sha256": "5140d73c0c8ebf9cea48bedbc1f79b006d55ab79dd86cb19acad05fae1667ed8",
+          "sizeBytes": 56997
+        },
+        {
+          "sourceId": "umsetzungshinweis-sys-2-4-macos",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2022/Umsetzungshinweis_zum_Baustein_SYS_2_4_Clients_unter_macOS.pdf?__blob=publicationFile&v=2",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2022/Umsetzungshinweis_zum_Baustein_SYS_2_4_Clients_unter_macOS.pdf?__blob=publicationFile&v=2",
+          "outcome": "downloaded",
+          "sha256": "48d8c3255cb79e621802121325d3a0668227ffb3d8d3d4b3037e509fa353a235",
+          "sizeBytes": 404445
+        },
+        {
+          "sourceId": "umsetzungshinweise-index",
+          "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/Umsetzungshinweise/umsetzungshinweise_node.html",
+          "finalUrl": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/Umsetzungshinweise/umsetzungshinweise_node.html",
+          "outcome": "downloaded",
+          "sha256": "6ea8e7637073bfcccff520c4619c8c9bb51755a6cf1dea6acf0a9aaec279aee3",
+          "sizeBytes": 98718
+        },
+        {
+          "sourceId": "sys-3-2-1-smartphones-tablets",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_1_Allgemeine_Smartphones_und_Tablets_Edition_2023.pdf",
+          "outcome": "failed",
+          "errorType": "ValueError",
+          "error": "Official PDF URL returned non-PDF content (text/html;charset=utf-8)"
+        },
+        {
+          "sourceId": "sys-3-2-2-mdm",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_2_Mobile_Device_Management_Edition_2023.pdf",
+          "outcome": "failed",
+          "errorType": "ValueError",
+          "error": "Official PDF URL returned non-PDF content (text/html;charset=utf-8)"
+        },
+        {
+          "sourceId": "mdm-minimum-standard-v2",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.html",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.html",
+          "outcome": "downloaded",
+          "sha256": "97996ded7355a5bbefb3065e650f5b6ba0408a8bdacfb5948445bc21e819cf9c",
+          "sizeBytes": 57721
+        },
+        {
+          "sourceId": "sys-3-2-3-ios",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_3_iOS_for_Enterprise_2023.pdf?__blob=publicationFile&v=4",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_3_iOS_for_Enterprise_2023.pdf?__blob=publicationFile&v=4",
+          "outcome": "downloaded",
+          "sha256": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+          "sizeBytes": 141067
+        },
+        {
+          "sourceId": "sys-3-2-4-android",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_4_Android_Edition_2023.pdf?__blob=publicationFile&v=3",
+          "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_4_Android_Edition_2023.pdf?__blob=publicationFile&v=3",
+          "outcome": "downloaded",
+          "sha256": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+          "sizeBytes": 113563
+        }
+      ],
+      "retainedPreviousSnapshotOnFailure": true
+    },
+    "vendor": {
+      "schemaVersion": 1,
+      "checkedAt": "2026-09-07",
+      "outcome": "refreshed-transactionally",
+      "retainedPreviousSnapshot": false,
+      "retainedPreviousSnapshotOnFailure": true,
+      "scope": "official-source-bodies-and-regenerated-vendor-catalog"
+    },
+    "cis": {
+      "outcome": "metadata-check-only-no-import",
+      "retainedPreviousSnapshot": true,
+      "termsUrl": "https://www.cisecurity.org/terms-of-use-for-non-member-cis-products"
+    }
+  },
+  "checks": [
+    {
+      "sourceId": "cis:cis-apple-ios-family",
+      "checkedAt": "2026-09-07",
+      "outcome": "no-newer-edition-observed-but-currentness-not-claimed",
+      "freshnessState": "unknown",
+      "trackedEdition": "Apple iOS 26 (1.0.0); Apple iOS 18 (2.0.0); Apple iOS 17 (1.1.0)",
+      "observedEditions": [
+        "Apple iOS 26 (1.0.0)",
+        "Apple iPadOS 26 (1.0.0)"
+      ],
+      "evidenceUrl": "https://www.cisecurity.org/benchmark/apple_ios",
+      "imported": false
+    },
+    {
+      "sourceId": "cis:cis-apple-macos-family",
+      "checkedAt": "2026-09-07",
+      "outcome": "newer-editions-observed-not-imported",
+      "freshnessState": "outdated",
+      "trackedEdition": "Apple macOS 26 Tahoe (1.0.0); Apple macOS 15.0 Sequoia (2.0.0); Apple macOS 14.0 Sonoma (3.0.0); Apple macOS 13.0 Ventura (4.0.0)",
+      "observedEditions": [
+        "Apple macOS 26 Tahoe (1.1.0)",
+        "Apple macOS 15.0 Sequoia (2.1.0)",
+        "Apple macOS 14.0 Sonoma (3.1.0)"
+      ],
+      "evidenceUrl": "https://www.cisecurity.org/benchmark/apple_os",
+      "imported": false
+    },
+    {
+      "sourceId": "cis:cis-google-android-family",
+      "checkedAt": "2026-09-07",
+      "outcome": "no-newer-edition-observed-but-currentness-not-claimed",
+      "freshnessState": "unknown",
+      "trackedEdition": "Google Android (1.6.0)",
+      "observedEditions": [
+        "Google Android (1.6.0)"
+      ],
+      "evidenceUrl": "https://www.cisecurity.org/benchmark/google_android",
+      "imported": false
+    },
+    {
+      "sourceId": "cis:cis-windows-desktop-family",
+      "checkedAt": "2026-09-07",
+      "outcome": "newer-edition-observed-not-imported",
+      "freshnessState": "outdated",
+      "trackedEdition": "Microsoft Windows 11 Enterprise (5.0.1); Microsoft Windows 11 Stand-alone (5.0.0); Microsoft Windows 10 Enterprise (4.0.0); Microsoft Windows 10 Stand-alone (4.0.0)",
+      "observedEditions": [
+        "Microsoft Windows 11 Enterprise (5.1.0)"
+      ],
+      "evidenceUrl": "https://www.cisecurity.org/benchmark/microsoft_windows_desktop",
+      "imported": false
+    },
+    {
+      "sourceId": "vendor:microsoft-intune-windows-mdm-baseline-settings",
+      "checkedAt": "2026-09-07",
+      "outcome": "version-25H2-observed-but-currentness-not-claimed",
+      "freshnessState": "unknown",
+      "trackedEdition": "2026-04-16",
+      "observedEditions": [
+        "Security Baseline for Windows, version 25H2"
+      ],
+      "evidenceUrl": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings",
+      "imported": false
+    }
+  ],
+  "retainedSnapshots": [
+    {
+      "sourceId": "bsi:fd-aenderungen-2023",
+      "digest": "0aee3d36b4d493b64c7de9f66e0a07a2d04bfe1248ccc73b3a0eb54f88e3bf50",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/fd-aenderungen-2023.pdf",
+      "retrievedAt": "2026-04-23T19:44:43.499Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:it-grundschutz-2025-outlook",
+      "digest": "ef718b66a8a910d9c5ce11e2bd45a2356a92ca0709c0b0569773980487168b48",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/it-grundschutz-2025-outlook.pdf",
+      "retrievedAt": "2026-04-23T19:44:42.505Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:it-grundschutz-bausteine-edition-2023",
+      "digest": "bde0e8f6778129e7352f5615fdfc1eb1fd60f69e69156363bca52c1970e295c5",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/it-grundschutz-bausteine-edition-2023.html",
+      "retrievedAt": "2026-04-23T19:44:42.890Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:it-grundschutz-checklists-2023",
+      "digest": "5f33c25a901212a52f2e1acd13dcb8dbfb708a9c8ee8e35078889bfbe99efca1",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/it-grundschutz-checklists-2023.html",
+      "retrievedAt": "2026-04-23T19:44:42.858Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:it-grundschutz-current",
+      "digest": "576dd937bb0e988bee04c81317649f7e3617efbb362967fef2dd3061b61710e3",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/it-grundschutz-current.html",
+      "retrievedAt": "2026-04-23T19:44:41.940Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:it-grundschutz-errata-2023",
+      "digest": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/it-grundschutz-errata-2023.pdf",
+      "retrievedAt": "2026-04-23T19:44:42.839Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:mdm-minimum-standard-v2",
+      "digest": "f60ed90c6630cb3805c4f1454a11f9a6a66e4deefc78e6205b56ecf7ae3fd65c",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/mdm-minimum-standard-v2.html",
+      "retrievedAt": "2026-04-23T19:44:44.897Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-2-1-general-client",
+      "digest": "7352ed79d1fd11e4278b041043a20908800ab704762fc626bb7f00f39e398d4e",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-2-1-general-client.html",
+      "retrievedAt": "2026-04-23T19:44:43.112Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-2-2-3-windows",
+      "digest": "9a0f0748bde4b82cd06f8cc216467692c1e03279db9e0630413d8cb7a817507c",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-2-2-3-windows.html",
+      "retrievedAt": "2026-04-23T19:44:43.385Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-2-4-macos",
+      "digest": "e08ce55617b09515d71cabed598160587627f43f3d5bf143acdc198bfa6c7261",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-2-4-macos.html",
+      "retrievedAt": "2026-04-23T19:44:43.722Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-3-2-1-smartphones-tablets",
+      "digest": "89edc2ec2ce7fb70a4a3928a381ecee642be1c4293163469b4b3dbf4a8b4c537",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-3-2-1-smartphones-tablets.html",
+      "retrievedAt": "2026-04-23T19:44:44.397Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-3-2-2-mdm",
+      "digest": "712cbb61bd69b2bc00a28e320fc50a782ad25aa9bbf3da2bd7164497aebb2454",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-3-2-2-mdm.html",
+      "retrievedAt": "2026-04-23T19:44:44.639Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-3-2-3-ios",
+      "digest": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-3-2-3-ios.pdf",
+      "retrievedAt": "2026-04-23T19:44:44.981Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:sys-3-2-4-android",
+      "digest": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/sys-3-2-4-android.pdf",
+      "retrievedAt": "2026-04-23T19:44:45.426Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:umsetzungshinweis-sys-2-4-macos",
+      "digest": "48d8c3255cb79e621802121325d3a0668227ffb3d8d3d4b3037e509fa353a235",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/umsetzungshinweis-sys-2-4-macos.pdf",
+      "retrievedAt": "2026-04-23T19:44:43.818Z",
+      "retained": true
+    },
+    {
+      "sourceId": "bsi:umsetzungshinweise-index",
+      "digest": "47fb534f6acbecbd985c7cdf10cde258e9aa9560ae6e5e2a51ed6a890b7ad71b",
+      "digestKind": "sha256-body",
+      "localPath": "example/bsi-references/downloads/raw/umsetzungshinweise-index.html",
+      "retrievedAt": "2026-04-23T19:44:44.180Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-apple-ios-family",
+      "digest": "2b7436936f0a53db03cf22cd3afe1ce5192a3e838415d4630eaf6ffc3839cafc",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-apple-ios-family.html",
+      "retrievedAt": "2026-04-23T20:36:28.112Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-apple-ios-january-2026-update",
+      "digest": "efbfcf2c877f8dce525236c39699cdda0f565b70560311b6802c5ca56ced08f5",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-apple-ios-january-2026-update.html",
+      "retrievedAt": "2026-04-23T20:36:29.145Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-apple-ios-july-2025-update",
+      "digest": "46ad9ec490e465e243dc5f1bc77b0e37166c5bf79c84ce602fa2f8c6ad29f6ac",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-apple-ios-july-2025-update.html",
+      "retrievedAt": "2026-04-23T20:36:29.108Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-apple-macos-family",
+      "digest": "bd0803dae7d7df3bbc98cf03d99adb02a9fb5b07b7c4da759bf29362712e1c2a",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-apple-macos-family.html",
+      "retrievedAt": "2026-04-23T20:36:29.769Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-apple-macos-july-2025-update",
+      "digest": "a22b0fb8217fe3ad14461679ec5fbe71b6b6e6ef559317b3a01befa014103804",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-apple-macos-july-2025-update.html",
+      "retrievedAt": "2026-04-23T20:36:30.891Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-apple-platform-march-2026-update",
+      "digest": "55b25c6c5b64fefcbda5e51c3d00262302a9b277e4133c58ef4fd9e3997688b7",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-apple-platform-march-2026-update.html",
+      "retrievedAt": "2026-04-23T20:36:30.921Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-benchmarks-overview",
+      "digest": "7fcbabbd62c2019f3fd77e16b5b0800cccd5b2797e70be17c214a3a8e1eb20a7",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-benchmarks-overview.html",
+      "retrievedAt": "2026-04-23T20:36:23.748Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-google-android-family",
+      "digest": "ea696e4f1fb91dd663996fa3d315e349b188b010b517554bf16ecdead1925f93",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-google-android-family.html",
+      "retrievedAt": "2026-04-23T20:36:26.025Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-google-android-october-2025-update",
+      "digest": "03f8a98043c8754336f280d3789c9958a7c5ec8c601e7372a73aa81378c3f75f",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-google-android-october-2025-update.html",
+      "retrievedAt": "2026-04-23T20:36:27.466Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-windows-desktop-family",
+      "digest": "a236ad1d3b8c83bc0c89d580349aeae5d7076609a92c4dc06ede345a1f366db5",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-windows-desktop-family.html",
+      "retrievedAt": "2026-04-23T20:36:24.353Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-windows-june-2025-update",
+      "digest": "5ab841a549382663dc3928d357584bdb83d6a78335b640c9f2eb31cd701ce32f",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-windows-june-2025-update.html",
+      "retrievedAt": "2026-04-23T20:36:25.939Z",
+      "retained": true
+    },
+    {
+      "sourceId": "cis:cis-windows-march-2026-update",
+      "digest": "fa1e93348011463df6a0d24f5a80744ab7b404a44697dc598d96d70aed1c3d32",
+      "digestKind": "sha256-body",
+      "localPath": "example/cis-references/downloads/raw/cis-windows-march-2026-update.html",
+      "retrievedAt": "2026-04-23T20:36:25.983Z",
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-activation-lock",
+      "digest": "3715cf93553121b7aa27ff9307664c88f0a22224ba8a010657b554dc9708973d",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-activation-lock.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-device-management-deploy-software-updates",
+      "digest": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-device-management-deploy-software-updates.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-enforce-password-policies",
+      "digest": "b16daeeb4cb097a70b74ac4fe90abba7a6e08e1c4276bfa4e42e319b73e09760",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-enforce-password-policies.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-gatekeeper-runtime-protection-macos",
+      "digest": "cbd5f324c806377f332d0a367fa7e745d37cdadf310c5c93c653020e6cba71ab",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-gatekeeper-runtime-protection-macos.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-install-enforce-software-updates",
+      "digest": "d09721e1f0e4dd9b0e79ffa924d7a139248e47aee56111881dd1ff989f0116e2",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-install-enforce-software-updates.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-manage-filevault-device-management",
+      "digest": "0c529429c34b72a4a8b829766c7c132a3ae55b6bb55daf511e75d48468dc4e6b",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-manage-filevault-device-management.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-managed-device-attestation",
+      "digest": "8c56ce71ae49fd59aabda499ec3945128b0cb204217afa4e7cf853d8ca2d5b06",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-managed-device-attestation.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-managing-filevault-macos",
+      "digest": "81620f63557fe96ea83eb5af1f71717c565fabf930da3d45fb363999eea506d1",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-managing-filevault-macos.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-platform-deployment",
+      "digest": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-platform-deployment.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-platform-deployment-whats-new",
+      "digest": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-platform-deployment-whats-new.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-platform-security",
+      "digest": "43d1113b3b4a83cb6148a19a1f03b1fee8e169bea8abac5e979414d7c24a314c",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-platform-security.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:apple-startup-security-macos",
+      "digest": "f2700e456e812dcb7b449d9d66ee987839864da110f9030902f1a6a206da8285",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-startup-security-macos.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:google-android-enterprise-feature-drop-2025",
+      "digest": "8134269173da8c3762155d9887cd92a761b5209b7ac8477209d6d5e681358682",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-enterprise-feature-drop-2025.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:google-android-enterprise-feature-list",
+      "digest": "7ad38135a28720d0c5653b8d9757c7fe7426018b504e02bfafb5a13350dd9656",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-enterprise-feature-list.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:google-android-enterprise-system-updates",
+      "digest": "865fa4806474ef2f845d2a23dee9ec0b0c7f2259e221d40d328ba9f5b0a1bfec",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-enterprise-system-updates.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:google-android-management-security-posture",
+      "digest": "dfcf47e0d72f10631b575ff8e7dc7606f03480ad31fb78ce43734f21de55fe5b",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-management-security-posture.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:google-android-security-best-practices",
+      "digest": "c3781bd7bee6ec12ebaa327e4d86559fa7fe7d06eb6c99e32cea5833a37fcd4a",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-security-best-practices.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:google-play-protect-managed-devices",
+      "digest": "006d4e5b3e7e24f5cc7937b66a7d2434553cca94b6ecb5039e2be06fa1671c8d",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-play-protect-managed-devices.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-intune-windows-mdm-baseline-settings",
+      "digest": "616bbdded4954149c2e517ff670d368907cd56c8d400fbd3b8bd7b30d79a5022",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-intune-windows-mdm-baseline-settings.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-security-baselines-support-matrix",
+      "digest": "c78b803d48c47681b9e2d5715db9504a0a25ce927c92823dd2625f99e3636450",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-security-baselines-support-matrix.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-security-compliance-toolkit-guide",
+      "digest": "f087e8c40671ce66c9a5d6bc2b4c62a2741e8f32fe5aed68e3c77c6075737390",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-security-compliance-toolkit-guide.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-windows-11-24h2-security-baseline-zip",
+      "digest": "b75439a231c64edaccaad16a16268d199f56ce78273104e117d893f82cf174a5",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-11-24h2-security-baseline-zip.zip",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-windows-11-25h2-security-baseline",
+      "digest": "7b19d3be96a14751f4cae24e0700773ba37736ee9129d7247ce2491ec4ba6b5e",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-11-25h2-security-baseline.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-windows-11-release-information",
+      "digest": "64a2da50a232e87ab36c8f4e14f861c794d1085d435b5cb242bf60fbebafec86",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-11-release-information.html",
+      "retrievedAt": null,
+      "retained": true
+    },
+    {
+      "sourceId": "vendor:microsoft-windows-security-baselines-guide",
+      "digest": "cfb2454dfdb9c70941e74b1bc76f05508287dea93b9ba4828ff12518eff25826",
+      "digestKind": "sha256-body",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-security-baselines-guide.html",
+      "retrievedAt": null,
+      "retained": true
+    }
+  ]
+}

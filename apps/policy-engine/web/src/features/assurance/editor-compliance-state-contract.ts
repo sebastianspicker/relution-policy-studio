@@ -13,6 +13,8 @@ export interface ComplianceReportState {
 export type { ComplianceStateSetters } from "../../shared/editor-compliance-state-contract.js";
 
 export interface ComplianceRefreshProps {
+  readonly isDirty: boolean;
+  readonly requestGuard: { canEditWorkspace(): boolean };
   readonly complianceSources: RecommendationSource[];
   readonly selection: Selection | undefined;
   readonly setComplianceError: Dispatch<SetStateAction<string | undefined>>;

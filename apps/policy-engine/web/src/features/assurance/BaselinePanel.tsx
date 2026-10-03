@@ -5,9 +5,11 @@ import { SectionHeader } from "../../ui/SectionHeader.js";
 import { StatusChip } from "../../ui/StatusChip.js";
 import type { EditorController } from "../../shared/editor-contracts.js";
 
-const CompliancePanel = deferredComponent(() => import("./CompliancePanel.js").then((module) => ({ default: module.CompliancePanel })));
-const PolicyWizardPanel = deferredComponent(() => import("./PolicyWizardPanel.js").then((module) => ({ default: module.PolicyWizardPanel })));
-const RecommendationsPanel = deferredComponent(() => import("./RecommendationsPanel.js").then((module) => ({ default: module.RecommendationsPanel })));
+type ControllerPanelProps = { readonly controller: EditorController };
+
+const CompliancePanel = deferredComponent<ControllerPanelProps>(() => import("./CompliancePanel.js").then((module) => ({ default: module.CompliancePanel })));
+const PolicyWizardPanel = deferredComponent<ControllerPanelProps>(() => import("./PolicyWizardPanel.js").then((module) => ({ default: module.PolicyWizardPanel })));
+const RecommendationsPanel = deferredComponent<ControllerPanelProps>(() => import("./RecommendationsPanel.js").then((module) => ({ default: module.RecommendationsPanel })));
 
 export type BaselineTab = "wizard" | "recommendations" | "compliance";
 

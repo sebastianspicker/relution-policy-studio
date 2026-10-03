@@ -1,6 +1,7 @@
 /** Ensures compact browsing preserves selection/filter behavior without transferring evidence. */
 import assert from "node:assert/strict";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import { browseRecommendationCatalog } from "../../src/assurance/recommendation-browse.js";
 import { loadRecommendationCatalog } from "../../src/assurance/recommendation-catalog-loader.js";
 import { implementationOf } from "../../src/assurance/recommendation-implementation.js";
@@ -9,7 +10,7 @@ import { canImportRuleset } from "../../web/src/features/assurance/recommendatio
 
 for (const source of ["bsi", "vendor", "cis"] as const) {
   test(`${source} browse retains identity, filters and imports while excluding evidence`, () => {
-    const catalog = loadRecommendationCatalog(source, { rootDir: process.cwd() });
+    const catalog = loadRecommendationCatalog(source, { rootDir: fileURLToPath(new URL("../../..", import.meta.url)) });
     assert.equal(catalog.available, true);
     const before = JSON.stringify(catalog);
     const browse = browseRecommendationCatalog(catalog);

@@ -21,7 +21,7 @@
       "slug": "relution-native-macos-file-vault",
       "label": "macOS File Vault"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "MACOS",
@@ -72,6 +72,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             }
           ],

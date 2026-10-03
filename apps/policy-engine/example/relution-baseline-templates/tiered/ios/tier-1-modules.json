@@ -15,7 +15,7 @@
     "securityLevel": "grundschutz",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "IOS",
@@ -59,7 +59,8 @@
     "suppressedConflictRules": [
       {
         "source": "cis",
-        "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+        "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate--policy-056bd636935f",
+        "sourceRecommendationId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
         "target": "profile:com.apple.applicationaccess",
         "preferredTarget": "IOS_RESTRICTION",
         "reason": "Relution treats the iOS application access payload and native restrictions as conflicting server singletons; the BSI native restriction mapping has precedence."
@@ -67,6 +68,7 @@
       {
         "source": "cis",
         "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+        "sourceRecommendationId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
         "target": "profile:com.apple.mobiledevice.passwordpolicy",
         "preferredTarget": "IOS_PASSCODE",
         "reason": "Relution treats the iOS password policy profile and native passcode setting as conflicting server singletons; the BSI native passcode mapping has precedence."
@@ -74,6 +76,7 @@
       {
         "source": "cis",
         "ruleId": "cis-ios-ios-passcode-aggregate",
+        "sourceRecommendationId": "cis-ios-ios-passcode-aggregate",
         "target": "IOS_PASSCODE",
         "conflictingPaths": [
           "minLength"
@@ -83,6 +86,7 @@
       {
         "source": "cis",
         "ruleId": "cis-ios-ios-wifi-aggregate",
+        "sourceRecommendationId": "cis-ios-ios-wifi-aggregate",
         "target": "IOS_WIFI",
         "reason": "IOS_WIFI requires organization-specific ssid, encryptionType, and proxyType values; disableAssociationMACRandomization is retained as informational guidance instead of an importable singleton."
       }
@@ -107,6 +111,7 @@
             {
               "source": "cis",
               "ruleId": "cis-ios-apple-device-settings-aggregate",
+              "sourceRecommendationId": "cis-ios-apple-device-settings-aggregate",
               "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
             }
           ],
@@ -140,6 +145,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-passcode-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-passcode-aggregate",
               "title": "Relution aggregate: IOS_PASSCODE"
             }
           ],
@@ -188,11 +194,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             },
             {
               "source": "cis",
               "ruleId": "cis-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "cis-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             }
           ],
@@ -246,6 +254,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-update-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-update-aggregate",
               "title": "Relution aggregate: IOS_UPDATE"
             }
           ],

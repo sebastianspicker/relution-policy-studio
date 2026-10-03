@@ -9993,7 +9993,7 @@
       "description": "Generated from the harvested vendor recommendation catalog with exact Relution aggregates and preserved informational metadata. Variant selection: systemupdatetype-automatic.",
       "rules": [
         {
-          "id": "android-001-enforcegoogleplayprotectonmanageddevices",
+          "id": "android-001-enforcegoogleplayprotectonmanageddevices--policy-f0b1d2722ae0",
           "title": "Enforce Google Play Protect on managed devices",
           "informational": true,
           "reason": "Google documents managed enforcement of Google Play Protect and harmful-app detection.",
@@ -10003,10 +10003,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Malware protection"
+          "section": "Malware protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-001-enforcegoogleplayprotectonmanageddevices",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-002-blockinstallationfromunknownsourcesbydefault",
+          "id": "android-002-blockinstallationfromunknownsourcesbydefault--policy-f0b1d2722ae0",
           "title": "Block installation from unknown sources by default",
           "informational": true,
           "reason": "Google lists blocking installation from unknown sources as a default Android Enterprise security policy.",
@@ -10016,10 +10020,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-002-blockinstallationfromunknownsourcesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-003-blockdebuggingfeaturesbydefault",
+          "id": "android-003-blockdebuggingfeaturesbydefault--policy-f0b1d2722ae0",
           "title": "Block debugging features by default",
           "informational": true,
           "reason": "Google lists blocked debugging features as a default Android Enterprise security policy.",
@@ -10029,10 +10037,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-003-blockdebuggingfeaturesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-004-disablesafebootbydefault",
+          "id": "android-004-disablesafebootbydefault--policy-f0b1d2722ae0",
           "title": "Disable safe boot by default",
           "informational": true,
           "reason": "Google lists safe-boot blocking as a default managed-device policy.",
@@ -10042,10 +10054,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-004-disablesafebootbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-005-turnonverifyappsbydefault",
+          "id": "android-005-turnonverifyappsbydefault--policy-f0b1d2722ae0",
           "title": "Turn on Verify Apps by default",
           "informational": true,
           "reason": "Google lists Verify Apps enforcement as a default managed-device policy.",
@@ -10055,10 +10071,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Verify Apps enforcement"
+          "section": "Verify Apps enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-005-turnonverifyappsbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+          "id": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli--policy-f0b1d2722ae0",
           "title": "Use compliance enforcement when devices fall out of policy",
           "informational": true,
           "reason": "Google describes compliance rules that restrict work-resource access when managed devices fall out of policy.",
@@ -10068,10 +10088,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Compliance enforcement"
+          "section": "Compliance enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-007-usecompliancepoliciestokeepdevicescurrent",
+          "id": "android-007-usecompliancepoliciestokeepdevicescurrent--policy-f0b1d2722ae0",
           "title": "Use compliance policies to keep devices current",
           "informational": true,
           "reason": "Google recommends compliance policies for keeping managed devices current in common knowledge-worker deployments.",
@@ -10081,10 +10105,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "System updates"
+          "section": "System updates",
+          "generatedIdentity": {
+            "baseRuleId": "android-007-usecompliancepoliciestokeepdevicescurrent",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-008-offerautomaticotasystemupdates",
+          "id": "android-008-offerautomaticotasystemupdates--policy-f0b1d2722ae0",
           "title": "Offer automatic OTA system updates",
           "informational": true,
           "reason": "Google documents AUTOMATIC as installing system updates as soon as they are available.",
@@ -10095,10 +10123,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-008-offerautomaticotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-009-useamaintenancewindowforotasystemupdates",
+          "id": "android-009-useamaintenancewindowforotasystemupdates--policy-f0b1d2722ae0",
           "title": "Use a maintenance window for OTA system updates",
           "informational": true,
           "reason": "Google documents WINDOWED as installing system updates during a daily maintenance window.",
@@ -10109,10 +10141,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-009-useamaintenancewindowforotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-010-postponeotasystemupdatesforupto30days",
+          "id": "android-010-postponeotasystemupdatesforupto30days--policy-f0b1d2722ae0",
           "title": "Postpone OTA system updates for up to 30 days",
           "informational": true,
           "reason": "Google documents POSTPONE as delaying system updates for up to 30 days.",
@@ -10123,10 +10159,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-010-postponeotasystemupdatesforupto30days",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+          "id": "android-011-configureannualfreezeperiodsforupdateblackoutwin--policy-f0b1d2722ae0",
           "title": "Configure annual freeze periods for update blackout windows",
           "informational": true,
           "reason": "Google documents annual system-update freeze periods for planned blackout windows.",
@@ -10137,10 +10177,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Advanced system update policy"
+          "section": "Advanced system update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-012-enforceautomaticdateandtimesettings",
+          "id": "android-012-enforceautomaticdateandtimesettings--policy-f0b1d2722ae0",
           "title": "Enforce automatic date and time settings",
           "informational": true,
           "reason": "Google documents policy enforcement for automatic date, time, and time-zone settings.",
@@ -10150,10 +10194,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System clock management"
+          "section": "System clock management",
+          "generatedIdentity": {
+            "baseRuleId": "android-012-enforceautomaticdateandtimesettings",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-013-requireaseparateworkprofilesecuritychallenge",
+          "id": "android-013-requireaseparateworkprofilesecuritychallenge--policy-f0b1d2722ae0",
           "title": "Require a separate work profile security challenge",
           "informational": true,
           "reason": "Google documents a separate work-profile security challenge for work data isolation.",
@@ -10163,10 +10211,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Work security challenge"
+          "section": "Work security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-013-requireaseparateworkprofilesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-014-useamanageddevicesecuritychallenge",
+          "id": "android-014-useamanageddevicesecuritychallenge--policy-f0b1d2722ae0",
           "title": "Use a managed device security challenge",
           "informational": true,
           "reason": "Google documents managed password-complexity policy for device security challenges.",
@@ -10176,10 +10228,14 @@
           ],
           "mappingStatus": "partial",
           "mappings": [],
-          "section": "Device security challenge"
+          "section": "Device security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-014-useamanageddevicesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+          "id": "android-015-waitforhbkareissuancewhenpostureisunspecified--policy-f0b1d2722ae0",
           "title": "Wait for HBKA reissuance when posture is unspecified",
           "informational": true,
           "reason": "Google's posture guidance treats unspecified hardware-backed key attestation as a retryable state.",
@@ -10189,10 +10245,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Security posture"
+          "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-016-lockthebootloaderwhenunknownosisreported",
+          "id": "android-016-lockthebootloaderwhenunknownosisreported--policy-f0b1d2722ae0",
           "title": "Lock the bootloader when unknown OS is reported",
           "informational": true,
           "reason": "Google's posture guidance calls out locked bootloader state as a security signal.",
@@ -10202,10 +10262,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Security posture"
+          "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-016-lockthebootloaderwhenunknownosisreported",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+          "id": "android-017-enableadvancedprotectionforhighriskuserswhenavai--policy-f0b1d2722ae0",
           "title": "Enable Advanced Protection for high-risk users when available",
           "informational": true,
           "reason": "Google documents Android Enterprise Advanced Protection controls for high-risk users.",
@@ -10215,10 +10279,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Advanced protection"
+          "section": "Advanced protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+          "id": "android-018-useapnoverridestorestricttraffictoapprovednetwor--policy-f0b1d2722ae0",
           "title": "Use APN overrides to restrict traffic to approved networks",
           "informational": true,
           "reason": "Google documents APN override management for approved cellular connectivity.",
@@ -10228,10 +10296,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Cellular connectivity"
+          "section": "Cellular connectivity",
+          "generatedIdentity": {
+            "baseRuleId": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "android-019-installappupdatesimmediatelywhenapproved",
+          "id": "android-019-installappupdatesimmediatelywhenapproved--policy-f0b1d2722ae0",
           "title": "Install app updates immediately when approved",
           "informational": true,
           "reason": "Google documents immediate app auto-update behavior through managed Play policy.",
@@ -10241,10 +10313,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "App update management"
+          "section": "App update management",
+          "generatedIdentity": {
+            "baseRuleId": "android-019-installappupdatesimmediatelywhenapproved",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-f0b1d2722ae0",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-001-enforcegoogleplayprotectonmanageddevices, android-002-blockinstallationfromunknownsourcesbydefault, android-003-blockdebuggingfeaturesbydefault, android-005-turnonverifyappsbydefault.",
@@ -10262,10 +10338,14 @@
                 "untrustedAppsPolicy": "DISALLOW_INSTALL"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-f0b1d2722ae0",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-019-installappupdatesimmediatelywhenapproved.",
@@ -10280,10 +10360,14 @@
                 "appAutoUpdatePolicy": "ALWAYS"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-f0b1d2722ae0",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-004-disablesafebootbydefault, android-012-enforceautomaticdateandtimesettings.",
@@ -10299,10 +10383,14 @@
                 "safeBootDisabled": true
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-f0b1d2722ae0",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-013-requireaseparateworkprofilesecuritychallenge.",
@@ -10317,7 +10405,11 @@
                 "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-automatic)"
+          }
         },
         {
           "id": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-automatic-aggregate",
@@ -10347,7 +10439,7 @@
       "description": "Generated from the harvested vendor recommendation catalog with exact Relution aggregates and preserved informational metadata. Variant selection: systemupdatetype-postpone.",
       "rules": [
         {
-          "id": "android-001-enforcegoogleplayprotectonmanageddevices",
+          "id": "android-001-enforcegoogleplayprotectonmanageddevices--policy-7ec9f2d4c7aa",
           "title": "Enforce Google Play Protect on managed devices",
           "informational": true,
           "reason": "Google documents managed enforcement of Google Play Protect and harmful-app detection.",
@@ -10357,10 +10449,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Malware protection"
+          "section": "Malware protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-001-enforcegoogleplayprotectonmanageddevices",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-002-blockinstallationfromunknownsourcesbydefault",
+          "id": "android-002-blockinstallationfromunknownsourcesbydefault--policy-7ec9f2d4c7aa",
           "title": "Block installation from unknown sources by default",
           "informational": true,
           "reason": "Google lists blocking installation from unknown sources as a default Android Enterprise security policy.",
@@ -10370,10 +10466,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-002-blockinstallationfromunknownsourcesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-003-blockdebuggingfeaturesbydefault",
+          "id": "android-003-blockdebuggingfeaturesbydefault--policy-7ec9f2d4c7aa",
           "title": "Block debugging features by default",
           "informational": true,
           "reason": "Google lists blocked debugging features as a default Android Enterprise security policy.",
@@ -10383,10 +10483,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-003-blockdebuggingfeaturesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-004-disablesafebootbydefault",
+          "id": "android-004-disablesafebootbydefault--policy-7ec9f2d4c7aa",
           "title": "Disable safe boot by default",
           "informational": true,
           "reason": "Google lists safe-boot blocking as a default managed-device policy.",
@@ -10396,10 +10500,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-004-disablesafebootbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-005-turnonverifyappsbydefault",
+          "id": "android-005-turnonverifyappsbydefault--policy-7ec9f2d4c7aa",
           "title": "Turn on Verify Apps by default",
           "informational": true,
           "reason": "Google lists Verify Apps enforcement as a default managed-device policy.",
@@ -10409,10 +10517,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Verify Apps enforcement"
+          "section": "Verify Apps enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-005-turnonverifyappsbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+          "id": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli--policy-7ec9f2d4c7aa",
           "title": "Use compliance enforcement when devices fall out of policy",
           "informational": true,
           "reason": "Google describes compliance rules that restrict work-resource access when managed devices fall out of policy.",
@@ -10422,10 +10534,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Compliance enforcement"
+          "section": "Compliance enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-007-usecompliancepoliciestokeepdevicescurrent",
+          "id": "android-007-usecompliancepoliciestokeepdevicescurrent--policy-7ec9f2d4c7aa",
           "title": "Use compliance policies to keep devices current",
           "informational": true,
           "reason": "Google recommends compliance policies for keeping managed devices current in common knowledge-worker deployments.",
@@ -10435,10 +10551,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "System updates"
+          "section": "System updates",
+          "generatedIdentity": {
+            "baseRuleId": "android-007-usecompliancepoliciestokeepdevicescurrent",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-008-offerautomaticotasystemupdates",
+          "id": "android-008-offerautomaticotasystemupdates--policy-7ec9f2d4c7aa",
           "title": "Offer automatic OTA system updates",
           "informational": true,
           "reason": "Google documents AUTOMATIC as installing system updates as soon as they are available.",
@@ -10449,10 +10569,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-008-offerautomaticotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-009-useamaintenancewindowforotasystemupdates",
+          "id": "android-009-useamaintenancewindowforotasystemupdates--policy-7ec9f2d4c7aa",
           "title": "Use a maintenance window for OTA system updates",
           "informational": true,
           "reason": "Google documents WINDOWED as installing system updates during a daily maintenance window.",
@@ -10463,10 +10587,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-009-useamaintenancewindowforotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-010-postponeotasystemupdatesforupto30days",
+          "id": "android-010-postponeotasystemupdatesforupto30days--policy-7ec9f2d4c7aa",
           "title": "Postpone OTA system updates for up to 30 days",
           "informational": true,
           "reason": "Google documents POSTPONE as delaying system updates for up to 30 days.",
@@ -10477,10 +10605,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-010-postponeotasystemupdatesforupto30days",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+          "id": "android-011-configureannualfreezeperiodsforupdateblackoutwin--policy-7ec9f2d4c7aa",
           "title": "Configure annual freeze periods for update blackout windows",
           "informational": true,
           "reason": "Google documents annual system-update freeze periods for planned blackout windows.",
@@ -10491,10 +10623,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Advanced system update policy"
+          "section": "Advanced system update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-012-enforceautomaticdateandtimesettings",
+          "id": "android-012-enforceautomaticdateandtimesettings--policy-7ec9f2d4c7aa",
           "title": "Enforce automatic date and time settings",
           "informational": true,
           "reason": "Google documents policy enforcement for automatic date, time, and time-zone settings.",
@@ -10504,10 +10640,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System clock management"
+          "section": "System clock management",
+          "generatedIdentity": {
+            "baseRuleId": "android-012-enforceautomaticdateandtimesettings",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-013-requireaseparateworkprofilesecuritychallenge",
+          "id": "android-013-requireaseparateworkprofilesecuritychallenge--policy-7ec9f2d4c7aa",
           "title": "Require a separate work profile security challenge",
           "informational": true,
           "reason": "Google documents a separate work-profile security challenge for work data isolation.",
@@ -10517,10 +10657,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Work security challenge"
+          "section": "Work security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-013-requireaseparateworkprofilesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-014-useamanageddevicesecuritychallenge",
+          "id": "android-014-useamanageddevicesecuritychallenge--policy-7ec9f2d4c7aa",
           "title": "Use a managed device security challenge",
           "informational": true,
           "reason": "Google documents managed password-complexity policy for device security challenges.",
@@ -10530,10 +10674,14 @@
           ],
           "mappingStatus": "partial",
           "mappings": [],
-          "section": "Device security challenge"
+          "section": "Device security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-014-useamanageddevicesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+          "id": "android-015-waitforhbkareissuancewhenpostureisunspecified--policy-7ec9f2d4c7aa",
           "title": "Wait for HBKA reissuance when posture is unspecified",
           "informational": true,
           "reason": "Google's posture guidance treats unspecified hardware-backed key attestation as a retryable state.",
@@ -10543,10 +10691,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Security posture"
+          "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-016-lockthebootloaderwhenunknownosisreported",
+          "id": "android-016-lockthebootloaderwhenunknownosisreported--policy-7ec9f2d4c7aa",
           "title": "Lock the bootloader when unknown OS is reported",
           "informational": true,
           "reason": "Google's posture guidance calls out locked bootloader state as a security signal.",
@@ -10556,10 +10708,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Security posture"
+          "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-016-lockthebootloaderwhenunknownosisreported",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+          "id": "android-017-enableadvancedprotectionforhighriskuserswhenavai--policy-7ec9f2d4c7aa",
           "title": "Enable Advanced Protection for high-risk users when available",
           "informational": true,
           "reason": "Google documents Android Enterprise Advanced Protection controls for high-risk users.",
@@ -10569,10 +10725,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Advanced protection"
+          "section": "Advanced protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+          "id": "android-018-useapnoverridestorestricttraffictoapprovednetwor--policy-7ec9f2d4c7aa",
           "title": "Use APN overrides to restrict traffic to approved networks",
           "informational": true,
           "reason": "Google documents APN override management for approved cellular connectivity.",
@@ -10582,10 +10742,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Cellular connectivity"
+          "section": "Cellular connectivity",
+          "generatedIdentity": {
+            "baseRuleId": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "android-019-installappupdatesimmediatelywhenapproved",
+          "id": "android-019-installappupdatesimmediatelywhenapproved--policy-7ec9f2d4c7aa",
           "title": "Install app updates immediately when approved",
           "informational": true,
           "reason": "Google documents immediate app auto-update behavior through managed Play policy.",
@@ -10595,10 +10759,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "App update management"
+          "section": "App update management",
+          "generatedIdentity": {
+            "baseRuleId": "android-019-installappupdatesimmediatelywhenapproved",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-7ec9f2d4c7aa",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-001-enforcegoogleplayprotectonmanageddevices, android-002-blockinstallationfromunknownsourcesbydefault, android-003-blockdebuggingfeaturesbydefault, android-005-turnonverifyappsbydefault.",
@@ -10616,10 +10784,14 @@
                 "untrustedAppsPolicy": "DISALLOW_INSTALL"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-7ec9f2d4c7aa",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-019-installappupdatesimmediatelywhenapproved.",
@@ -10634,10 +10806,14 @@
                 "appAutoUpdatePolicy": "ALWAYS"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-7ec9f2d4c7aa",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-004-disablesafebootbydefault, android-012-enforceautomaticdateandtimesettings.",
@@ -10653,10 +10829,14 @@
                 "safeBootDisabled": true
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-7ec9f2d4c7aa",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-013-requireaseparateworkprofilesecuritychallenge.",
@@ -10671,7 +10851,11 @@
                 "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-postpone)"
+          }
         },
         {
           "id": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
@@ -10701,7 +10885,7 @@
       "description": "Generated from the harvested vendor recommendation catalog with exact Relution aggregates and preserved informational metadata. Variant selection: systemupdatetype-windowed.",
       "rules": [
         {
-          "id": "android-001-enforcegoogleplayprotectonmanageddevices",
+          "id": "android-001-enforcegoogleplayprotectonmanageddevices--policy-5017e54d49e4",
           "title": "Enforce Google Play Protect on managed devices",
           "informational": true,
           "reason": "Google documents managed enforcement of Google Play Protect and harmful-app detection.",
@@ -10711,10 +10895,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Malware protection"
+          "section": "Malware protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-001-enforcegoogleplayprotectonmanageddevices",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-002-blockinstallationfromunknownsourcesbydefault",
+          "id": "android-002-blockinstallationfromunknownsourcesbydefault--policy-5017e54d49e4",
           "title": "Block installation from unknown sources by default",
           "informational": true,
           "reason": "Google lists blocking installation from unknown sources as a default Android Enterprise security policy.",
@@ -10724,10 +10912,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-002-blockinstallationfromunknownsourcesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-003-blockdebuggingfeaturesbydefault",
+          "id": "android-003-blockdebuggingfeaturesbydefault--policy-5017e54d49e4",
           "title": "Block debugging features by default",
           "informational": true,
           "reason": "Google lists blocked debugging features as a default Android Enterprise security policy.",
@@ -10737,10 +10929,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-003-blockdebuggingfeaturesbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-004-disablesafebootbydefault",
+          "id": "android-004-disablesafebootbydefault--policy-5017e54d49e4",
           "title": "Disable safe boot by default",
           "informational": true,
           "reason": "Google lists safe-boot blocking as a default managed-device policy.",
@@ -10750,10 +10946,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Default security policies"
+          "section": "Default security policies",
+          "generatedIdentity": {
+            "baseRuleId": "android-004-disablesafebootbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-005-turnonverifyappsbydefault",
+          "id": "android-005-turnonverifyappsbydefault--policy-5017e54d49e4",
           "title": "Turn on Verify Apps by default",
           "informational": true,
           "reason": "Google lists Verify Apps enforcement as a default managed-device policy.",
@@ -10763,10 +10963,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Verify Apps enforcement"
+          "section": "Verify Apps enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-005-turnonverifyappsbydefault",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+          "id": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli--policy-5017e54d49e4",
           "title": "Use compliance enforcement when devices fall out of policy",
           "informational": true,
           "reason": "Google describes compliance rules that restrict work-resource access when managed devices fall out of policy.",
@@ -10776,10 +10980,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Compliance enforcement"
+          "section": "Compliance enforcement",
+          "generatedIdentity": {
+            "baseRuleId": "android-006-usecomplianceenforcementwhendevicesfalloutofpoli",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-007-usecompliancepoliciestokeepdevicescurrent",
+          "id": "android-007-usecompliancepoliciestokeepdevicescurrent--policy-5017e54d49e4",
           "title": "Use compliance policies to keep devices current",
           "informational": true,
           "reason": "Google recommends compliance policies for keeping managed devices current in common knowledge-worker deployments.",
@@ -10789,10 +10997,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "System updates"
+          "section": "System updates",
+          "generatedIdentity": {
+            "baseRuleId": "android-007-usecompliancepoliciestokeepdevicescurrent",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-008-offerautomaticotasystemupdates",
+          "id": "android-008-offerautomaticotasystemupdates--policy-5017e54d49e4",
           "title": "Offer automatic OTA system updates",
           "informational": true,
           "reason": "Google documents AUTOMATIC as installing system updates as soon as they are available.",
@@ -10803,10 +11015,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-008-offerautomaticotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-009-useamaintenancewindowforotasystemupdates",
+          "id": "android-009-useamaintenancewindowforotasystemupdates--policy-5017e54d49e4",
           "title": "Use a maintenance window for OTA system updates",
           "informational": true,
           "reason": "Google documents WINDOWED as installing system updates during a daily maintenance window.",
@@ -10817,10 +11033,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-009-useamaintenancewindowforotasystemupdates",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-010-postponeotasystemupdatesforupto30days",
+          "id": "android-010-postponeotasystemupdatesforupto30days--policy-5017e54d49e4",
           "title": "Postpone OTA system updates for up to 30 days",
           "informational": true,
           "reason": "Google documents POSTPONE as delaying system updates for up to 30 days.",
@@ -10831,10 +11051,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System update policy"
+          "section": "System update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-010-postponeotasystemupdatesforupto30days",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+          "id": "android-011-configureannualfreezeperiodsforupdateblackoutwin--policy-5017e54d49e4",
           "title": "Configure annual freeze periods for update blackout windows",
           "informational": true,
           "reason": "Google documents annual system-update freeze periods for planned blackout windows.",
@@ -10845,10 +11069,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Advanced system update policy"
+          "section": "Advanced system update policy",
+          "generatedIdentity": {
+            "baseRuleId": "android-011-configureannualfreezeperiodsforupdateblackoutwin",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-012-enforceautomaticdateandtimesettings",
+          "id": "android-012-enforceautomaticdateandtimesettings--policy-5017e54d49e4",
           "title": "Enforce automatic date and time settings",
           "informational": true,
           "reason": "Google documents policy enforcement for automatic date, time, and time-zone settings.",
@@ -10858,10 +11086,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "System clock management"
+          "section": "System clock management",
+          "generatedIdentity": {
+            "baseRuleId": "android-012-enforceautomaticdateandtimesettings",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-013-requireaseparateworkprofilesecuritychallenge",
+          "id": "android-013-requireaseparateworkprofilesecuritychallenge--policy-5017e54d49e4",
           "title": "Require a separate work profile security challenge",
           "informational": true,
           "reason": "Google documents a separate work-profile security challenge for work data isolation.",
@@ -10871,10 +11103,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "Work security challenge"
+          "section": "Work security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-013-requireaseparateworkprofilesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-014-useamanageddevicesecuritychallenge",
+          "id": "android-014-useamanageddevicesecuritychallenge--policy-5017e54d49e4",
           "title": "Use a managed device security challenge",
           "informational": true,
           "reason": "Google documents managed password-complexity policy for device security challenges.",
@@ -10884,10 +11120,14 @@
           ],
           "mappingStatus": "partial",
           "mappings": [],
-          "section": "Device security challenge"
+          "section": "Device security challenge",
+          "generatedIdentity": {
+            "baseRuleId": "android-014-useamanageddevicesecuritychallenge",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+          "id": "android-015-waitforhbkareissuancewhenpostureisunspecified--policy-5017e54d49e4",
           "title": "Wait for HBKA reissuance when posture is unspecified",
           "informational": true,
           "reason": "Google's posture guidance treats unspecified hardware-backed key attestation as a retryable state.",
@@ -10897,10 +11137,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Security posture"
+          "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-015-waitforhbkareissuancewhenpostureisunspecified",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-016-lockthebootloaderwhenunknownosisreported",
+          "id": "android-016-lockthebootloaderwhenunknownosisreported--policy-5017e54d49e4",
           "title": "Lock the bootloader when unknown OS is reported",
           "informational": true,
           "reason": "Google's posture guidance calls out locked bootloader state as a security signal.",
@@ -10910,10 +11154,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Security posture"
+          "section": "Security posture",
+          "generatedIdentity": {
+            "baseRuleId": "android-016-lockthebootloaderwhenunknownosisreported",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+          "id": "android-017-enableadvancedprotectionforhighriskuserswhenavai--policy-5017e54d49e4",
           "title": "Enable Advanced Protection for high-risk users when available",
           "informational": true,
           "reason": "Google documents Android Enterprise Advanced Protection controls for high-risk users.",
@@ -10923,10 +11171,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Advanced protection"
+          "section": "Advanced protection",
+          "generatedIdentity": {
+            "baseRuleId": "android-017-enableadvancedprotectionforhighriskuserswhenavai",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+          "id": "android-018-useapnoverridestorestricttraffictoapprovednetwor--policy-5017e54d49e4",
           "title": "Use APN overrides to restrict traffic to approved networks",
           "informational": true,
           "reason": "Google documents APN override management for approved cellular connectivity.",
@@ -10936,10 +11188,14 @@
           ],
           "mappingStatus": "suggested",
           "mappings": [],
-          "section": "Cellular connectivity"
+          "section": "Cellular connectivity",
+          "generatedIdentity": {
+            "baseRuleId": "android-018-useapnoverridestorestricttraffictoapprovednetwor",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "android-019-installappupdatesimmediatelywhenapproved",
+          "id": "android-019-installappupdatesimmediatelywhenapproved--policy-5017e54d49e4",
           "title": "Install app updates immediately when approved",
           "informational": true,
           "reason": "Google documents immediate app auto-update behavior through managed Play policy.",
@@ -10949,10 +11205,14 @@
           ],
           "mappingStatus": "exact",
           "mappings": [],
-          "section": "App update management"
+          "section": "App update management",
+          "generatedIdentity": {
+            "baseRuleId": "android-019-installappupdatesimmediatelywhenapproved",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-5017e54d49e4",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-001-enforcegoogleplayprotectonmanageddevices, android-002-blockinstallationfromunknownsourcesbydefault, android-003-blockdebuggingfeaturesbydefault, android-005-turnonverifyappsbydefault.",
@@ -10970,10 +11230,14 @@
                 "untrustedAppsPolicy": "DISALLOW_INSTALL"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-5017e54d49e4",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-019-installappupdatesimmediatelywhenapproved.",
@@ -10988,10 +11252,14 @@
                 "appAutoUpdatePolicy": "ALWAYS"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-5017e54d49e4",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-004-disablesafebootbydefault, android-012-enforceautomaticdateandtimesettings.",
@@ -11007,10 +11275,14 @@
                 "safeBootDisabled": true
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
-          "id": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+          "id": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-5017e54d49e4",
           "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE",
           "informational": false,
           "reason": "Aggregates exact Relution mappings from android-013-requireaseparateworkprofilesecuritychallenge.",
@@ -11025,7 +11297,11 @@
                 "unifiedLockSettings": "REQUIRE_SEPARATE_WORK_LOCK"
               }
             }
-          ]
+          ],
+          "generatedIdentity": {
+            "baseRuleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+            "policyName": "Android Vendor Guidance (systemupdatetype-windowed)"
+          }
         },
         {
           "id": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",

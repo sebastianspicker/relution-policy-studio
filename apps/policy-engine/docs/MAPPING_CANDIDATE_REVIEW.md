@@ -1,45 +1,33 @@
-# Mapping candidate review
+# Offline Bilingual Mapping Candidate Review
+
+Generated: `2026-09-07T10:51:32Z`
 
 ## Scope
 
-The checked-in review data compares non-exact BSI, CIS, and vendor
-recommendations with validated exact mappings. Similarity is advisory and does
-not promote a mapping.
+This deterministic artifact uses existing exact BSI, CIS, and vendor mappings as bilingual reference examples. It does not promote mappings automatically.
 
-## Current data
+## Summary
 
-- Exact reference mappings: 654
-- Non-exact recommendations reviewed: 1,484
-- Exact references by source: 31 BSI, 431 CIS, and 192 vendor
-- Exact references by language: 31 German, 484 English, and 139 unknown
-- Near-exact review queue: 855
-- Partial-candidate review queue: 602
-- Local-parameter queue: 27
+- Exact reference mappings: `654`
+- Reviewed non-exact recommendations: `1484`
+- Exact references by source: `{"bsi": 31, "cis": 431, "vendor": 192}`
+- Exact references by language: `{"de": 31, "en": 484, "unknown": 139}`
+- Review actions: `{"review-near-exact-reference": 855, "review-partial-candidates": 602, "supply-local-parameters": 27}`
 
-The machine-readable records are under
-`example/recommendation-coverage/`.
+## Promotion Rule
 
-## Promotion rule
+Candidate similarity is advisory. Exact mappings require a validated entry in `example/recommendation-coverage/manual-mapping-promotions.json` with explicit evidence and exact-reference links.
 
-An exact mapping requires a validated entry in
-`example/recommendation-coverage/manual-mapping-promotions.json`, explicit
-evidence, and links to exact references. Candidate scores alone are
-insufficient.
+## Guideline Drift Artifacts
 
-## Drift review
+- `example/recommendation-coverage/source-change-report.json` tracks BSI/CIS/vendor source hash drift against the previous generated report.
+- `example/recommendation-coverage/ruleset-update-plan.json` turns changed sources into review-gated update rows. Safe rows may be retained mechanically; exact mapping promotions still require the manual ledger.
+- `example/recommendation-coverage/relution-mapping-change-report.json` tracks recommendation-to-Relution mapping drift against the previous generated report.
+- `example/recommendation-coverage/relution-mapping-update-plan.json` records safe mapping updates separately from manual-ledger review rows.
+- `tools/update_guideline_mappings.py --offline --source all` rebuilds these artifacts from checked-in source material. Online refresh currently fails closed for BSI/CIS because no safe downloader is implemented there.
 
-- `source-change-report.json` records source hash changes.
-- `ruleset-update-plan.json` identifies source rows that require review.
-- `relution-mapping-change-report.json` records recommendation-to-Relution
-  mapping changes.
-- `relution-mapping-update-plan.json` separates mechanically safe updates from
-  manual review.
+## Top Review Queues
 
-Rebuild the checked-in records from local source material:
-
-```sh
-uv run --locked python tools/update_guideline_mappings.py --offline --source all
-```
-
-Online refresh fails closed for BSI and CIS because the tool has no approved
-downloader for those sources.
+- `review-near-exact-reference`: `855`
+- `review-partial-candidates`: `602`
+- `supply-local-parameters`: `27`

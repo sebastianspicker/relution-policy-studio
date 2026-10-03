@@ -1,0 +1,407 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "campusweave-profile-v2",
+  "title": "CampusWeave editable intent profile v2",
+  "description": "An offline-only intent document. It contains no target, tenant, credential, authority, or execution grant. Nullable fields and intent layer may be omitted; the planner treats an omitted nullable field as null.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "organizations",
+    "locations",
+    "cohorts",
+    "intents",
+    "scope_blueprints",
+    "assignments",
+    "rollout_stages",
+    "unresolved"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "id": {
+      "$ref": "#/$defs/trimmed"
+    },
+    "name": {
+      "$ref": "#/$defs/nonblank"
+    },
+    "organizations": {
+      "description": "Organizational context only; organization records never imply targeting.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/organization"
+      }
+    },
+    "locations": {
+      "description": "Named physical or logical locations used to describe scopes.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/location"
+      }
+    },
+    "cohorts": {
+      "description": "Functional populations with explicit organization, locations, role, and ownership context.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cohort"
+      }
+    },
+    "intents": {
+      "description": "Desired outcomes and setting requirements; intents never contain target payloads.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/intent"
+      }
+    },
+    "scope_blueprints": {
+      "description": "Abstract intersections of cohort, organization, location, platform, ownership, and functional role.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scope"
+      }
+    },
+    "assignments": {
+      "description": "Offline links between one intent, one abstract scope, and an optional rollout stage.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assignment"
+      }
+    },
+    "rollout_stages": {
+      "description": "Ordered review stages and their abstract dependencies.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rollout"
+      }
+    },
+    "unresolved": {
+      "description": "Decisions or evidence that remain unresolved and may refer to other profile records.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/unresolved"
+      }
+    }
+  },
+  "$defs": {
+    "nonblank": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "nullableString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "strings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/trimmed"
+      }
+    },
+    "organization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "parent_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "description": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "organization_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "description": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "cohort": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "location_ids",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "organization_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "location_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "role": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "ownership": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "outcome",
+        "platform",
+        "cohort_ids",
+        "scope_ids",
+        "depends_on",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "outcome": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "platform": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "ownership": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "role": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "cohort_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "layer": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 7
+        },
+        "scope_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "depends_on": {
+          "$ref": "#/$defs/strings"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "cohort_ids",
+        "organization_ids",
+        "location_ids",
+        "platforms",
+        "ownerships",
+        "roles",
+        "depends_on",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "cohort_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "organization_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "location_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "platforms": {
+          "$ref": "#/$defs/strings"
+        },
+        "ownerships": {
+          "$ref": "#/$defs/strings"
+        },
+        "roles": {
+          "$ref": "#/$defs/strings"
+        },
+        "depends_on": {
+          "$ref": "#/$defs/strings"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "intent_id",
+        "scope_id",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "intent_id": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "scope_id": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "rollout_stage_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "rollout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "order",
+        "depends_on",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "depends_on": {
+          "$ref": "#/$defs/strings"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "unresolved": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "related_ids",
+        "requirements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/trimmed"
+        },
+        "name": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "description": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "related_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "requirements": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "trimmed": {
+      "description": "Non-blank string without leading or trailing whitespace, as the planner requires of ids and list members.",
+      "type": "string",
+      "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+    },
+    "reservedKey": {
+      "description": "Keys the planner and the engine project store reject, compared case-insensitively, anywhere in a profile. Records are closed, so this list is informative here; both implementations are tested to agree with it.",
+      "enum": [
+        "api_key",
+        "authority",
+        "authority_id",
+        "credential",
+        "credentials",
+        "host",
+        "hostname",
+        "password",
+        "secret",
+        "target",
+        "target_id",
+        "target_url",
+        "tenant",
+        "token",
+        "url"
+      ]
+    }
+  }
+}

@@ -21,7 +21,7 @@
       "slug": "relution-native-android-enterprise-advanced-security-overrides",
       "label": "Android Enterprise Advanced Security Overrides"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -73,6 +73,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             }
           ],

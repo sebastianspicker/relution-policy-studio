@@ -25,6 +25,24 @@ export type {
   BaselineTemplateTier,
 } from "../assurance/baseline-template-model.js";
 export type { ComplianceRecommendationResult, ComplianceReport, ComplianceStatus } from "../assurance/compliance-types.js";
+export type {
+  AssuranceApplicabilityContext,
+  AssuranceCatalogBundle,
+  AssuranceCatalogLoadResult,
+  AssuranceConflictDecision,
+  AssuranceParameter,
+  AssurancePreset,
+  AssuranceRecommendation,
+  AssuranceReviewReceipt,
+  AssuranceSelection,
+  AssuranceSelectionApplyRequest,
+  AssuranceSelectionApplyResponse,
+  AssuranceSelectionExclusion,
+  AssuranceSelectionPreview,
+  AssuranceSelectionRequest,
+  AssuranceSnapshotIndex,
+  AssuranceSource,
+} from "../assurance/assurance-contracts.js";
 export { RECOMMENDATION_SOURCES } from "../assurance/recommendation-sources.js";
 
 export { implementationOf } from "../assurance/recommendation-implementation.js";

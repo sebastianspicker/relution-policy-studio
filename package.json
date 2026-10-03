@@ -1,6 +1,26 @@
 {
-  "name": "campusweave-monorepo",
+  "name": "relution-policy-studio",
   "private": true,
   "type": "module",
-  "scripts": {}
+  "scripts": {
+    "setup": "node tools/runtime/tasks.mjs setup",
+    "campusweave": "node tools/runtime/launch.mjs",
+    "planner": "node tools/runtime/tasks.mjs planner",
+    "rexp": "node tools/runtime/tasks.mjs rexp",
+    "build": "node tools/runtime/tasks.mjs build",
+    "verify": "node tools/runtime/tasks.mjs verify",
+    "test:integration": "node --test tests/integration/*.test.mjs",
+    "bootstrap": "node tools/runtime/tasks.mjs setup",
+    "studio": "node tools/runtime/launch.mjs",
+    "knip": "knip",
+    "check:boundaries": "node tools/check-boundaries.mjs",
+    "format": "prettier --write 'apps/workbench/src/**/*.{ts,tsx,css}' 'apps/workbench/tests/**/*.mjs' 'apps/workbench/*.ts' 'tools/*.mjs' 'tools/runtime/*.mjs' 'tests/integration/*.mjs'",
+    "format:check": "prettier --check 'apps/workbench/src/**/*.{ts,tsx,css}' 'apps/workbench/tests/**/*.mjs' 'apps/workbench/*.ts' 'tools/*.mjs' 'tools/runtime/*.mjs' 'tests/integration/*.mjs'"
+  },
+  "packageManager": "pnpm@10.34.5",
+  "devDependencies": {
+    "knip": "6.27.0",
+    "prettier": "3.9.9",
+    "rexp-studio": "workspace:*"
+  }
 }

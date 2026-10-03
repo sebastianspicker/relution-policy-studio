@@ -16,7 +16,12 @@ import { optionalString, requireString } from "./editor-api-request-input.js";
 import { parseComplianceTargetBody, parseExpectedRevisionBody, parseRecommendationSourceBody, parseRecommendationSourcesBody, type ComplianceTargetBody } from "./editor-domain-request-input.js";
 import { badRequest, HttpError, type JsonRecord } from "./editor-http-error.js";
 import { readJsonBody } from "./editor-json-body.js";
-import { editorWorkspaceStateInput, type EditorRequestContext } from "./editor-server-contract.js";
+import { editorWorkspacePath, editorWorkspaceStateInput, type EditorRequestContext } from "./editor-server-contract.js";
+import { createHash } from "node:crypto";
+import { readOutputFileNoFollow } from "./editor-static-assets.js";
+import { campusWeaveAssuranceDigest } from "./campusweave/assurance-state.js";
+import { loadAssuranceCatalog } from "../assurance/assurance-catalog-loader.js";
+import { parseAssuranceApplicabilityContext } from "../assurance/assurance-selection-request.js";
 
 const IMPORT_JSON_BODY_LIMIT_BYTES = 64 * 1024 * 1024;
 
@@ -30,7 +35,8 @@ export async function handleComplianceApiRequest(
     const expectedRevision = parseExpectedRevisionBody(body);
     const current = loadEditorWorkspaceState(editorWorkspaceStateInput(context), expectedRevision);
     sendJson(response, 200, {
-      report: checkCompliance({ workspace: current.workspace, selection: resolveComplianceSelection(current.workspace, target), sources }, loadedComplianceDependencies(context, sources)),
+      report: { ...checkCompliance({ workspace: current.workspace, selection: resolveComplianceSelection(current.workspace, target), sources }, loadedComplianceDependencies(context, sources, body)),
+        assuranceDigest: campusWeaveAssuranceDigest(context) ?? null },
       revision: current.revision,
     });
     return true;
@@ -40,7 +46,7 @@ export async function handleComplianceApiRequest(
   let input: ReturnType<typeof parseComplianceApplicationInput>;
   try { input = parseComplianceApplicationInput(body); }
   catch (error) { throw clientInputError(error); }
-  const dependencies = loadedComplianceDependencies(context, input.sources);
+  const dependencies = loadedComplianceDependencies(context, input.sources, body);
   let result: ReturnType<typeof applyCompliance> | undefined;
   const persisted = mutateEditorWorkspaceState(
     editorWorkspaceStateInput(context),
@@ -50,7 +56,8 @@ export async function handleComplianceApiRequest(
     },
     input.expectedRevision,
   );
-  sendJson(response, 200, { ...persisted, validation: validateWorkspaceState(persisted.workspace, context.bundle), report: result!.report });
+  sendJson(response, 200, { ...persisted, validation: validateWorkspaceState(persisted.workspace, context.bundle),
+    report: { ...result!.report, assuranceDigest: campusWeaveAssuranceDigest(context) ?? null } });
   return true;
 }
 
@@ -79,7 +86,7 @@ async function handleArchiveImportRequest(
   const result = importEditorArchive({
     archive: Buffer.from(requireString(body, "dataBase64"), "base64"),
     key: importKey,
-    workspaceDir: context.options.workspace,
+    workspaceDir: editorWorkspacePath(context),
     bundle: context.bundle,
     appleSchemaRevision: context.appleSchema.source.revision,
     expectedRevision,
@@ -116,11 +123,26 @@ function handleArchiveBuildRequest(response: ServerResponse, context: EditorRequ
     return;
   }
   runtimeState.keyValidation = { keySet: true, validated: true };
+  const artifactDigest = createHash("sha256").update(readOutputFileNoFollow(context.options.out)).digest("hex");
+  const currentRevision = loadEditorWorkspaceState(editorWorkspaceStateInput(context)).revision;
+  const assuranceDigest = campusWeaveAssuranceDigest(context);
+  if (runtimeState.campusweave?.activeWorkspaceId !== undefined) {
+    runtimeState.campusweave.store.recordArtifact({
+      workspaceId: runtimeState.campusweave.activeWorkspaceId,
+      policyRevision: currentRevision,
+      artifactDigest,
+      catalogDigest: runtimeState.campusweave.catalogDigest,
+      ...(assuranceDigest === undefined ? {} : { assuranceDigest }),
+      builtAt: new Date().toISOString(),
+    });
+  }
   sendJson(response, 200, {
     validation: result.validation,
     verification: result.verification,
     outputFile: context.options.out,
     sidecar: result.sidecar,
+    artifact_digest: artifactDigest,
+    assurance_digest: assuranceDigest ?? null,
     ...(result.constraintsRemoved.length === 0 ? {} : { constraintsRemoved: result.constraintsRemoved }),
   });
 }
@@ -151,9 +173,14 @@ function complianceDependencies(context: EditorRequestContext) {
   };
 }
 
-function loadedComplianceDependencies(context: EditorRequestContext, sources: readonly Parameters<typeof loadComplianceArtifacts>[0][number][]) {
+function loadedComplianceDependencies(context: EditorRequestContext, sources: readonly Parameters<typeof loadComplianceArtifacts>[0][number][], body: JsonRecord) {
   const catalogs = loadComplianceArtifacts([...sources]);
-  return { ...complianceDependencies(context), catalogs: { load: () => catalogs } };
+  const catalog = loadAssuranceCatalog(context.options.assuranceRootDir === undefined ? {} : { rootDir: context.options.assuranceRootDir });
+  let applicability;
+  try { applicability = parseAssuranceApplicabilityContext(body.applicability ?? {}); }
+  catch (error) { throw clientInputError(error); }
+  return { ...complianceDependencies(context), catalogs: { load: () => catalogs },
+    ...(catalog.status !== "available" ? {} : { assurance: { catalog, applicability } }) };
 }
 
 function resolveComplianceSelection(workspace: { readonly policies: readonly { readonly path: string }[] }, target: ComplianceTargetBody) {

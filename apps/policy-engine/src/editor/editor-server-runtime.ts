@@ -11,6 +11,8 @@ import type { EditorRequestContext, EditorRuntimeState, EditorServerHandle, Edit
 import { handleEditorServerError } from "./editor-server-errors.js";
 import { handleEditorHttpRequest } from "./editor-server-request.js";
 import { loadTemplateBundle } from "../assurance/template-bundle.js";
+import { openCampusWeaveProjectStore } from "../workspace-state/campusweave-project-store.js";
+import { canonicalJsonSha256 } from "../platform/serialization/canonical-json.js";
 
 export async function startEditorServerRuntime(options: EditorServerOptions): Promise<EditorServerHandle> {
   const host = normalizeHttpHostname(options.host ?? "127.0.0.1");
@@ -23,13 +25,26 @@ export async function startEditorServerRuntime(options: EditorServerOptions): Pr
     zammad: {},
     mutationQueues: createEditorMutationQueues(32),
     networkApiToken: configuredNetworkApiToken(options.apiToken),
+    ...(options.campusweave === undefined ? {} : {
+      campusweave: {
+        store: openCampusWeaveProjectStore(options.campusweave.projectRoot),
+        planner: options.campusweave.planner,
+        activeWorkspaceDir: options.workspace,
+        catalogDigest: canonicalJsonSha256(bundle),
+      },
+    }),
   };
   const context: EditorRequestContext = { options, bundle, appleSchema: loadAppleSchemaCatalog(), runtimeState };
   const server = createServer((request, response) => {
     void handleEditorHttpRequest(request, response, context).catch((error: unknown) => handleEditorServerError(response, error));
   });
   configureEditorHttpServer(server);
-  await listenEditorServer(server, options.port ?? 8787, host);
+  try {
+    await listenEditorServer(server, options.port ?? 8787, host);
+  } catch (error) {
+    runtimeState.campusweave?.store.close();
+    throw error;
+  }
   return createEditorServerHandle(server, host, runtimeState);
 }
 
@@ -77,4 +92,5 @@ async function closeEditorServer(server: ReturnType<typeof createServer>, runtim
   await closeEditorMutationQueues(runtimeState.mutationQueues);
   server.closeAllConnections();
   await closed;
+  runtimeState.campusweave?.store.close();
 }

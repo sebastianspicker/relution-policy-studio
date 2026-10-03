@@ -21,7 +21,7 @@
       "slug": "relution-native-windows-local-device-security",
       "label": "Windows Local Device Security"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -73,11 +73,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-local-device-security-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-local-device-security-aggregate",
               "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-local-device-security-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-local-device-security-aggregate",
               "title": "Relution aggregate: WINDOWS_LOCAL_DEVICE_SECURITY"
             }
           ],

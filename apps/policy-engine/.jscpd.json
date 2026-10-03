@@ -17,7 +17,6 @@
     "css"
   ],
   "ignore": [
-    "**/.repowise/**",
     "**/build/**",
     "**/coverage/**",
     "**/dist/**",

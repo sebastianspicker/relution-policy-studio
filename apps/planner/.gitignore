@@ -3,7 +3,6 @@
 /.env.*
 !/.env.example
 /token
-/.local/
 /docs/relution/openapi/*.json
 /docs/relution/observations/
 /secrets.local.*
@@ -18,19 +17,13 @@
 /.npmrc.local
 
 # Python environments, caches, and packages
-/.venv/
 /venv/
-__pycache__/
 *.py[cod]
-*.egg-info/
-/.ruff_cache/
 /.mypy_cache/
 /.pyright/
 /build/
-/dist/
 
 # JavaScript dependencies
-/node_modules/
 npm-debug.log*
 
 # Test and analysis output
@@ -51,7 +44,6 @@ npm-debug.log*
 /.codegraph/
 /.kilo/
 /.mcp.json
-/.repowise/
 /.serena/
 
 # Editors and operating systems
@@ -59,7 +51,6 @@ npm-debug.log*
 /.vscode/
 *.swp
 *.swo
-.DS_Store
 Thumbs.db
 
 # Temporary files and logs
@@ -80,7 +71,6 @@ Thumbs.db
 /GEMINI.md
 /GEMINI.local.md
 /.agent/
-/.agents/
 /.ai/
 /.claude/
 /.codex/

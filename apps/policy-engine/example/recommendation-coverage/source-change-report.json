@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "Guideline Source Change Report",
-  "generatedAt": "2026-04-26T17:20:43Z",
+  "generatedAt": "2026-09-07T10:51:32Z",
   "comparisonMode": "current-manifest-baseline",
   "description": "Compares current checked-in BSI/CIS/vendor source manifests and maps source ids to affected recommendations.",
   "rows": [
@@ -49,7 +49,8 @@
         "windows-sys-2-2-3-a8",
         "windows-sys-2-2-3-a9"
       ],
-      "affectedRecommendationCount": 26
+      "affectedRecommendationCount": 26,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -68,7 +69,8 @@
       "previousSha256": "ef718b66a8a910d9c5ce11e2bd45a2356a92ca0709c0b0569773980487168b48",
       "previousTextSha256": "5285d0c751db17ba34dd08143da8aa2382bd77f388db7a0f4c1f484068991472",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -87,7 +89,8 @@
       "previousSha256": "bde0e8f6778129e7352f5615fdfc1eb1fd60f69e69156363bca52c1970e295c5",
       "previousTextSha256": "49f8240c8a6e2d94e27aa24c78f8e25c4a7106a3d71b8263211a910d549e8c17",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -385,7 +388,8 @@
         "windows-sys-2-2-3-a8",
         "windows-sys-2-2-3-a9"
       ],
-      "affectedRecommendationCount": 278
+      "affectedRecommendationCount": 278,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -404,7 +408,8 @@
       "previousSha256": "576dd937bb0e988bee04c81317649f7e3617efbb362967fef2dd3061b61710e3",
       "previousTextSha256": "980206f869a78f8e59d848845ea9cf9e31243a0110ae0c90902b5c0251c1018c",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -425,7 +430,8 @@
       "affectedRecommendationIds": [
         "windows-sys-2-2-3-a6"
       ],
-      "affectedRecommendationCount": 1
+      "affectedRecommendationCount": 1,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -491,7 +497,8 @@
         "ios-sys-3-2-2-a8",
         "ios-sys-3-2-2-a9"
       ],
-      "affectedRecommendationCount": 46
+      "affectedRecommendationCount": 46,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -601,7 +608,8 @@
         "windows-sys-2-1-a8",
         "windows-sys-2-1-a9"
       ],
-      "affectedRecommendationCount": 90
+      "affectedRecommendationCount": 90,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -647,7 +655,8 @@
         "windows-sys-2-2-3-a8",
         "windows-sys-2-2-3-a9"
       ],
-      "affectedRecommendationCount": 26
+      "affectedRecommendationCount": 26,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -679,7 +688,8 @@
         "macos-sys-2-4-a8",
         "macos-sys-2-4-a9"
       ],
-      "affectedRecommendationCount": 12
+      "affectedRecommendationCount": 12,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -769,7 +779,8 @@
         "ios-sys-3-2-1-a8",
         "ios-sys-3-2-1-a9"
       ],
-      "affectedRecommendationCount": 70
+      "affectedRecommendationCount": 70,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -835,7 +846,8 @@
         "ios-sys-3-2-2-a8",
         "ios-sys-3-2-2-a9"
       ],
-      "affectedRecommendationCount": 46
+      "affectedRecommendationCount": 46,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -882,7 +894,8 @@
         "ios-sys-3-2-3-a8",
         "ios-sys-3-2-3-a9"
       ],
-      "affectedRecommendationCount": 27
+      "affectedRecommendationCount": 27,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -909,7 +922,8 @@
         "android-enterprise-sys-3-2-4-a6",
         "android-enterprise-sys-3-2-4-a7"
       ],
-      "affectedRecommendationCount": 7
+      "affectedRecommendationCount": 7,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -941,7 +955,8 @@
         "macos-sys-2-4-a8",
         "macos-sys-2-4-a9"
       ],
-      "affectedRecommendationCount": 12
+      "affectedRecommendationCount": 12,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "bsi",
@@ -960,7 +975,8 @@
       "previousSha256": "47fb534f6acbecbd985c7cdf10cde258e9aa9560ae6e5e2a51ed6a890b7ad71b",
       "previousTextSha256": "41bc2e346e297986b66fc4c2e4172cbcaa9685f74b1cad17793bcf24a64acce6",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1476,7 +1492,8 @@
         "cis-apple-ipados-26-1-0-0-4-8",
         "cis-apple-ipados-26-1-0-0-4-9"
       ],
-      "affectedRecommendationCount": 496
+      "affectedRecommendationCount": 496,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1495,7 +1512,8 @@
       "previousSha256": "efbfcf2c877f8dce525236c39699cdda0f565b70560311b6802c5ca56ced08f5",
       "previousTextSha256": "0db94fdab054710ec2d89b9202a28cd085ac42930e84ec8fd3a76db6b012c39d",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1514,7 +1532,8 @@
       "previousSha256": "46ad9ec490e465e243dc5f1bc77b0e37166c5bf79c84ce602fa2f8c6ad29f6ac",
       "previousTextSha256": "27f2e9009d167825d0a3ccd69c2ac10d9633f6c6fab7e38a5ba8f76e92114562",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1782,7 +1801,8 @@
         "cis-apple-macos-26-tahoe-1-0-0-6-4-1",
         "cis-apple-macos-26-tahoe-1-0-0-6-5-1"
       ],
-      "affectedRecommendationCount": 248
+      "affectedRecommendationCount": 248,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1801,7 +1821,8 @@
       "previousSha256": "a22b0fb8217fe3ad14461679ec5fbe71b6b6e6ef559317b3a01befa014103804",
       "previousTextSha256": "27f2e9009d167825d0a3ccd69c2ac10d9633f6c6fab7e38a5ba8f76e92114562",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1820,7 +1841,8 @@
       "previousSha256": "55b25c6c5b64fefcbda5e51c3d00262302a9b277e4133c58ef4fd9e3997688b7",
       "previousTextSha256": "c84e7680f97abd807e3ff5cb546993fa0cf2a865dc48bc51209365f1ad3157c1",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1839,7 +1861,8 @@
       "previousSha256": "7fcbabbd62c2019f3fd77e16b5b0800cccd5b2797e70be17c214a3a8e1eb20a7",
       "previousTextSha256": "2e5f23093b958ddec7d038ecf3c0b93e7b98c5bc6877b31c9afc315c0089ac17",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1904,7 +1927,8 @@
         "cis-google-android-1-6-0-3-5",
         "cis-google-android-1-6-0-3-6"
       ],
-      "affectedRecommendationCount": 45
+      "affectedRecommendationCount": 45,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -1923,7 +1947,8 @@
       "previousSha256": "03f8a98043c8754336f280d3789c9958a7c5ec8c601e7372a73aa81378c3f75f",
       "previousTextSha256": "b36127c43ea91ea9d95a7d29eb2f23ed50e01f61345c8aca975054f064862968",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -2490,7 +2515,8 @@
         "cis-microsoft-windows-11-standalone-5-0-0-9-3-6",
         "cis-microsoft-windows-11-standalone-5-0-0-9-3-7"
       ],
-      "affectedRecommendationCount": 547
+      "affectedRecommendationCount": 547,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -2509,7 +2535,8 @@
       "previousSha256": "5ab841a549382663dc3928d357584bdb83d6a78335b640c9f2eb31cd701ce32f",
       "previousTextSha256": "e8682e3c8977ace1da4696f987b5ea9d7ebdbe21701bbdd6f65c7dbaaee03078",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "cis",
@@ -2528,7 +2555,8 @@
       "previousSha256": "fa1e93348011463df6a0d24f5a80744ab7b404a44697dc598d96d70aed1c3d32",
       "previousTextSha256": "c84e7680f97abd807e3ff5cb546993fa0cf2a865dc48bc51209365f1ad3157c1",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2538,39 +2566,41 @@
       "finalUrl": "https://support.apple.com/guide/deployment/activation-lock-depf4ab94ef1/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-activation-lock.html",
-      "textPath": "example/vendor-references/downloads/text/apple-activation-lock.txt",
-      "sha256": "091947e93fe7a485a98e679bf50a043014c26ee3eda74d9ed6f0509ef0f34657",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-activation-lock.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-activation-lock.txt",
+      "sha256": "3715cf93553121b7aa27ff9307664c88f0a22224ba8a010657b554dc9708973d",
       "textSha256": "4d1016bc102f713769061ed6398194d05cae0014175181512d8cc6b3552e41b6",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "091947e93fe7a485a98e679bf50a043014c26ee3eda74d9ed6f0509ef0f34657",
+      "previousSha256": "3715cf93553121b7aa27ff9307664c88f0a22224ba8a010657b554dc9708973d",
       "previousTextSha256": "4d1016bc102f713769061ed6398194d05cae0014175181512d8cc6b3552e41b6",
       "affectedRecommendationIds": [
         "macos-017-enableactivationlockfororganizationownedmacs"
       ],
-      "affectedRecommendationCount": 1
+      "affectedRecommendationCount": 1,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
       "sourceId": "apple-device-management-deploy-software-updates",
       "title": "",
       "url": "https://support.apple.com/guide/deployment/device-management-deploy-software-updates-depafd2fad80/web",
-      "finalUrl": "https://support.apple.com/guide/deployment/device-management-deploy-software-updates-depafd2fad80/web",
+      "finalUrl": "https://support.apple.com/guide/deployment/welcome/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-device-management-deploy-software-updates.html",
-      "textPath": "example/vendor-references/downloads/text/apple-device-management-deploy-software-updates.txt",
-      "sha256": "8c821de9327e282c6276e8a1fd3d5dca4718356b2dd176a2b63870e69e24d10d",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-device-management-deploy-software-updates.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-device-management-deploy-software-updates.txt",
+      "sha256": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
       "textSha256": "ba55284f5bd56b020d82620d47e9873f4d8451b4209f9ceab49bba84d3929111",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "8c821de9327e282c6276e8a1fd3d5dca4718356b2dd176a2b63870e69e24d10d",
+      "previousSha256": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
       "previousTextSha256": "ba55284f5bd56b020d82620d47e9873f4d8451b4209f9ceab49bba84d3929111",
       "affectedRecommendationIds": [
         "macos-011-usesoftwareupdatedeclarationswheneverpossible"
       ],
-      "affectedRecommendationCount": 1
+      "affectedRecommendationCount": 1,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2580,18 +2610,19 @@
       "finalUrl": "https://support.apple.com/guide/deployment/enforce-password-policies-depeadc2af0b/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-enforce-password-policies.html",
-      "textPath": "example/vendor-references/downloads/text/apple-enforce-password-policies.txt",
-      "sha256": "42e7b444c573ef1cdd249d7e079d2f6364ca7dc8612d3a5a53c6a8963912e114",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-enforce-password-policies.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-enforce-password-policies.txt",
+      "sha256": "b16daeeb4cb097a70b74ac4fe90abba7a6e08e1c4276bfa4e42e319b73e09760",
       "textSha256": "754fec1b2785a8eb8d88e5a39bebe81f441134a145ff9bca4c1aec1f7dc746bb",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "42e7b444c573ef1cdd249d7e079d2f6364ca7dc8612d3a5a53c6a8963912e114",
+      "previousSha256": "b16daeeb4cb097a70b74ac4fe90abba7a6e08e1c4276bfa4e42e319b73e09760",
       "previousTextSha256": "754fec1b2785a8eb8d88e5a39bebe81f441134a145ff9bca4c1aec1f7dc746bb",
       "affectedRecommendationIds": [
         "macos-018-enforcepasswordpoliciesthroughdevicemanagement"
       ],
-      "affectedRecommendationCount": 1
+      "affectedRecommendationCount": 1,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2601,19 +2632,20 @@
       "finalUrl": "https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-gatekeeper-runtime-protection-macos.html",
-      "textPath": "example/vendor-references/downloads/text/apple-gatekeeper-runtime-protection-macos.txt",
-      "sha256": "1b6151815679ace22e99d7714ff03503418e60e8b72d4289f1f7ad764567fdf0",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-gatekeeper-runtime-protection-macos.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-gatekeeper-runtime-protection-macos.txt",
+      "sha256": "cbd5f324c806377f332d0a367fa7e745d37cdadf310c5c93c653020e6cba71ab",
       "textSha256": "dca9262293fa5d4f43d278e5cc528d094f56674a17cd3c1349b8446bfdedbd08",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "1b6151815679ace22e99d7714ff03503418e60e8b72d4289f1f7ad764567fdf0",
+      "previousSha256": "cbd5f324c806377f332d0a367fa7e745d37cdadf310c5c93c653020e6cba71ab",
       "previousTextSha256": "dca9262293fa5d4f43d278e5cc528d094f56674a17cd3c1349b8446bfdedbd08",
       "affectedRecommendationIds": [
         "macos-006-keepgatekeeperassessmentenabled",
         "macos-007-allowonlyidentifieddevelopersandnotarizedapps"
       ],
-      "affectedRecommendationCount": 2
+      "affectedRecommendationCount": 2,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2623,13 +2655,13 @@
       "finalUrl": "https://support.apple.com/guide/deployment/install-and-enforce-software-updates-depd30715cbb/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-install-enforce-software-updates.html",
-      "textPath": "example/vendor-references/downloads/text/apple-install-enforce-software-updates.txt",
-      "sha256": "f8529ec809b756614429065fc69c92748abb3d5d8d94503515ef3b22f89a1bf6",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-install-enforce-software-updates.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-install-enforce-software-updates.txt",
+      "sha256": "d09721e1f0e4dd9b0e79ffa924d7a139248e47aee56111881dd1ff989f0116e2",
       "textSha256": "f7ce591234ab24ec22b86a4a5d4c2f0591571d477a15a51d6ab864c4133d3a92",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "f8529ec809b756614429065fc69c92748abb3d5d8d94503515ef3b22f89a1bf6",
+      "previousSha256": "d09721e1f0e4dd9b0e79ffa924d7a139248e47aee56111881dd1ff989f0116e2",
       "previousTextSha256": "f7ce591234ab24ec22b86a4a5d4c2f0591571d477a15a51d6ab864c4133d3a92",
       "affectedRecommendationIds": [
         "macos-012-requireaminimummacosversionduringautomateddevice",
@@ -2638,7 +2670,8 @@
         "macos-015-turnonautomaticmacosupdateinstallation",
         "macos-016-turnonautomaticsecurityupdateinstallation"
       ],
-      "affectedRecommendationCount": 5
+      "affectedRecommendationCount": 5,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2648,13 +2681,13 @@
       "finalUrl": "https://support.apple.com/guide/deployment/manage-filevault-with-device-management-dep0a2cb7686/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-manage-filevault-device-management.html",
-      "textPath": "example/vendor-references/downloads/text/apple-manage-filevault-device-management.txt",
-      "sha256": "03e41f515d5b9f221f5d8454f3d90e2f230f8aed57313779e0774674e8cf16c3",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-manage-filevault-device-management.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-manage-filevault-device-management.txt",
+      "sha256": "0c529429c34b72a4a8b829766c7c132a3ae55b6bb55daf511e75d48468dc4e6b",
       "textSha256": "c9451dcfb35ebbe6195e7c7e8717bf2dc419b9d7257d578346c1912a8b071f6d",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "03e41f515d5b9f221f5d8454f3d90e2f230f8aed57313779e0774674e8cf16c3",
+      "previousSha256": "0c529429c34b72a4a8b829766c7c132a3ae55b6bb55daf511e75d48468dc4e6b",
       "previousTextSha256": "c9451dcfb35ebbe6195e7c7e8717bf2dc419b9d7257d578346c1912a8b071f6d",
       "affectedRecommendationIds": [
         "macos-001-enablefilevaultonmanagedmacs",
@@ -2662,7 +2695,8 @@
         "macos-004-usebootstraptokensformanagedfilevaultworkflows",
         "macos-005-requirefilevaultduringsetupassistant"
       ],
-      "affectedRecommendationCount": 4
+      "affectedRecommendationCount": 4,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2672,18 +2706,19 @@
       "finalUrl": "https://support.apple.com/guide/deployment/managed-device-attestation-dep28afbde6a/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-managed-device-attestation.html",
-      "textPath": "example/vendor-references/downloads/text/apple-managed-device-attestation.txt",
-      "sha256": "705ccf672bf4bffc42138ffa0cfb37b384d8a7d6785dd32b51103ff84140b18a",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-managed-device-attestation.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-managed-device-attestation.txt",
+      "sha256": "8c56ce71ae49fd59aabda499ec3945128b0cb204217afa4e7cf853d8ca2d5b06",
       "textSha256": "65a0252faa18ac70079728529f5134a0aa2dce16a7dcdf5f6a7579cb068ab23b",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "705ccf672bf4bffc42138ffa0cfb37b384d8a7d6785dd32b51103ff84140b18a",
+      "previousSha256": "8c56ce71ae49fd59aabda499ec3945128b0cb204217afa4e7cf853d8ca2d5b06",
       "previousTextSha256": "65a0252faa18ac70079728529f5134a0aa2dce16a7dcdf5f6a7579cb068ab23b",
       "affectedRecommendationIds": [
         "macos-019-usemanageddeviceattestationfortrustevaluation"
       ],
-      "affectedRecommendationCount": 1
+      "affectedRecommendationCount": 1,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2693,13 +2728,13 @@
       "finalUrl": "https://support.apple.com/guide/security/managing-filevault-sec8447f5049/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-managing-filevault-macos.html",
-      "textPath": "example/vendor-references/downloads/text/apple-managing-filevault-macos.txt",
-      "sha256": "f9539d49ae08fb4d2c1ca58075bb495e1797d8e158dbcfdb102777560a31e3ae",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-managing-filevault-macos.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-managing-filevault-macos.txt",
+      "sha256": "81620f63557fe96ea83eb5af1f71717c565fabf930da3d45fb363999eea506d1",
       "textSha256": "dafa9f439f457f0ee48732e78d46b4c0a252848f07cefe33bbf4f6123ac29e90",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "f9539d49ae08fb4d2c1ca58075bb495e1797d8e158dbcfdb102777560a31e3ae",
+      "previousSha256": "81620f63557fe96ea83eb5af1f71717c565fabf930da3d45fb363999eea506d1",
       "previousTextSha256": "dafa9f439f457f0ee48732e78d46b4c0a252848f07cefe33bbf4f6123ac29e90",
       "affectedRecommendationIds": [
         "macos-001-enablefilevaultonmanagedmacs",
@@ -2707,7 +2742,8 @@
         "macos-003-preferapersonalrecoverykeyoveraninstitutionalrec",
         "macos-004-usebootstraptokensformanagedfilevaultworkflows"
       ],
-      "affectedRecommendationCount": 4
+      "affectedRecommendationCount": 4,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2717,35 +2753,37 @@
       "finalUrl": "https://support.apple.com/guide/deployment/welcome/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-platform-deployment.html",
-      "textPath": "example/vendor-references/downloads/text/apple-platform-deployment.txt",
-      "sha256": "72553a3269f7ac8e64b77c21f726c9bc1f65f0adf0e31fd4e0545301f37fada1",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-platform-deployment.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-platform-deployment.txt",
+      "sha256": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
       "textSha256": "0fcc668993ef0ec995396cb2975034535f497cd0d1864be39e0c6daf06a9b53c",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "72553a3269f7ac8e64b77c21f726c9bc1f65f0adf0e31fd4e0545301f37fada1",
+      "previousSha256": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
       "previousTextSha256": "0fcc668993ef0ec995396cb2975034535f497cd0d1864be39e0c6daf06a9b53c",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
       "sourceId": "apple-platform-deployment-whats-new",
       "title": "",
       "url": "https://support.apple.com/guide/deployment/whats-new-dep950aed53e/web",
-      "finalUrl": "https://support.apple.com/guide/deployment/whats-new-dep950aed53e/web",
+      "finalUrl": "https://support.apple.com/guide/deployment/welcome/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-platform-deployment-whats-new.html",
-      "textPath": "example/vendor-references/downloads/text/apple-platform-deployment-whats-new.txt",
-      "sha256": "02ec3284661cdab857b77628d118b11bb8412e76ed576c9cf1e1540a1cfce2ea",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-platform-deployment-whats-new.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-platform-deployment-whats-new.txt",
+      "sha256": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
       "textSha256": "d68b44d82536b69c6a46117a6a6d33465e664729fba9a8f10e0c8bd9ee72e237",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "02ec3284661cdab857b77628d118b11bb8412e76ed576c9cf1e1540a1cfce2ea",
+      "previousSha256": "73aa431beef27545e62591ec9b4789afced476fb4cc8c22ede43cd335dc1d88b",
       "previousTextSha256": "d68b44d82536b69c6a46117a6a6d33465e664729fba9a8f10e0c8bd9ee72e237",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2755,16 +2793,17 @@
       "finalUrl": "https://support.apple.com/guide/security/welcome/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-platform-security.html",
-      "textPath": "example/vendor-references/downloads/text/apple-platform-security.txt",
-      "sha256": "82220a7c5bbb2d7f679ced972843f089cec9c82b2834778e6e8f51e90d2476fd",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-platform-security.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-platform-security.txt",
+      "sha256": "43d1113b3b4a83cb6148a19a1f03b1fee8e169bea8abac5e979414d7c24a314c",
       "textSha256": "e9df237f7c04c4868383cb6149086a80f6beb02fca4d31219ee21c014e917d03",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "82220a7c5bbb2d7f679ced972843f089cec9c82b2834778e6e8f51e90d2476fd",
+      "previousSha256": "43d1113b3b4a83cb6148a19a1f03b1fee8e169bea8abac5e979414d7c24a314c",
       "previousTextSha256": "e9df237f7c04c4868383cb6149086a80f6beb02fca4d31219ee21c014e917d03",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2774,20 +2813,21 @@
       "finalUrl": "https://support.apple.com/guide/deployment/startup-security-dep5810e849c/web",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/apple-startup-security-macos.html",
-      "textPath": "example/vendor-references/downloads/text/apple-startup-security-macos.txt",
-      "sha256": "f77e23977461e2aaf1d6352abe057509b3e6ddbaa3d859b05904dd0a898d7fbd",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/apple-startup-security-macos.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/apple-startup-security-macos.txt",
+      "sha256": "f2700e456e812dcb7b449d9d66ee987839864da110f9030902f1a6a206da8285",
       "textSha256": "4311aba11237a9c0bcafeb913a7f4b5a1a402c52d57a66c7642d4eea542fd801",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "f77e23977461e2aaf1d6352abe057509b3e6ddbaa3d859b05904dd0a898d7fbd",
+      "previousSha256": "f2700e456e812dcb7b449d9d66ee987839864da110f9030902f1a6a206da8285",
       "previousTextSha256": "4311aba11237a9c0bcafeb913a7f4b5a1a402c52d57a66c7642d4eea542fd801",
       "affectedRecommendationIds": [
         "macos-008-preferfullsecurityonapplesiliconmacs",
         "macos-009-setarecoveryospasswordtorestrictrecoveryaccess",
         "macos-010-useafirmwarepasswordonintelmacswithoutapplesilic"
       ],
-      "affectedRecommendationCount": 3
+      "affectedRecommendationCount": 3,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2797,19 +2837,20 @@
       "finalUrl": "https://support.google.com/work/android/answer/16319376?hl=en",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/google-android-enterprise-feature-drop-2025.html",
-      "textPath": "example/vendor-references/downloads/text/google-android-enterprise-feature-drop-2025.txt",
-      "sha256": "d2c80c0900460138cdd30e0ec8af0673bad48fc28e2efa868913313aaa4bfa57",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-enterprise-feature-drop-2025.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/google-android-enterprise-feature-drop-2025.txt",
+      "sha256": "8134269173da8c3762155d9887cd92a761b5209b7ac8477209d6d5e681358682",
       "textSha256": "21e6bb1d4bd9a17edf93e83d2b2c143a25526bdbbc37d54a5e6d6f90ed4058ab",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "d2c80c0900460138cdd30e0ec8af0673bad48fc28e2efa868913313aaa4bfa57",
+      "previousSha256": "8134269173da8c3762155d9887cd92a761b5209b7ac8477209d6d5e681358682",
       "previousTextSha256": "21e6bb1d4bd9a17edf93e83d2b2c143a25526bdbbc37d54a5e6d6f90ed4058ab",
       "affectedRecommendationIds": [
         "android-017-enableadvancedprotectionforhighriskuserswhenavai",
         "android-018-useapnoverridestorestricttraffictoapprovednetwor"
       ],
-      "affectedRecommendationCount": 2
+      "affectedRecommendationCount": 2,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2819,13 +2860,13 @@
       "finalUrl": "https://developers.google.com/android/work/requirements",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/google-android-enterprise-feature-list.html",
-      "textPath": "example/vendor-references/downloads/text/google-android-enterprise-feature-list.txt",
-      "sha256": "3e5b5a07f06d923ea8b91448e2a99331fd60a609cf29e989d31e177508a2c158",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-enterprise-feature-list.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/google-android-enterprise-feature-list.txt",
+      "sha256": "7ad38135a28720d0c5653b8d9757c7fe7426018b504e02bfafb5a13350dd9656",
       "textSha256": "b42f700edf256383a9cd5c7cdfacbf273453a5caca24870bc760aeda4a2af0a0",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "3e5b5a07f06d923ea8b91448e2a99331fd60a609cf29e989d31e177508a2c158",
+      "previousSha256": "7ad38135a28720d0c5653b8d9757c7fe7426018b504e02bfafb5a13350dd9656",
       "previousTextSha256": "b42f700edf256383a9cd5c7cdfacbf273453a5caca24870bc760aeda4a2af0a0",
       "affectedRecommendationIds": [
         "android-002-blockinstallationfromunknownsourcesbydefault",
@@ -2842,7 +2883,8 @@
         "android-014-useamanageddevicesecuritychallenge",
         "android-019-installappupdatesimmediatelywhenapproved"
       ],
-      "affectedRecommendationCount": 13
+      "affectedRecommendationCount": 13,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2852,13 +2894,13 @@
       "finalUrl": "https://support.google.com/work/android/answer/13791272?hl=en",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/google-android-enterprise-system-updates.html",
-      "textPath": "example/vendor-references/downloads/text/google-android-enterprise-system-updates.txt",
-      "sha256": "4860906e113d2072670df6a0c91b6c750ae8dcec1fe54d7750f9854a361375a7",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-enterprise-system-updates.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/google-android-enterprise-system-updates.txt",
+      "sha256": "865fa4806474ef2f845d2a23dee9ec0b0c7f2259e221d40d328ba9f5b0a1bfec",
       "textSha256": "bef9825a47826e73f9a9f1a142f59242a20f6302c2ba6b723adf71bcf3167406",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "4860906e113d2072670df6a0c91b6c750ae8dcec1fe54d7750f9854a361375a7",
+      "previousSha256": "865fa4806474ef2f845d2a23dee9ec0b0c7f2259e221d40d328ba9f5b0a1bfec",
       "previousTextSha256": "bef9825a47826e73f9a9f1a142f59242a20f6302c2ba6b723adf71bcf3167406",
       "affectedRecommendationIds": [
         "android-007-usecompliancepoliciestokeepdevicescurrent",
@@ -2867,7 +2909,8 @@
         "android-010-postponeotasystemupdatesforupto30days",
         "android-011-configureannualfreezeperiodsforupdateblackoutwin"
       ],
-      "affectedRecommendationCount": 5
+      "affectedRecommendationCount": 5,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2877,19 +2920,20 @@
       "finalUrl": "https://developers.google.com/android/management/understanding-security-posture",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/google-android-management-security-posture.html",
-      "textPath": "example/vendor-references/downloads/text/google-android-management-security-posture.txt",
-      "sha256": "7496a23d633dadffc204079ea2330de42bded67ed5d1d58d45a9545d976a5a08",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-management-security-posture.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/google-android-management-security-posture.txt",
+      "sha256": "dfcf47e0d72f10631b575ff8e7dc7606f03480ad31fb78ce43734f21de55fe5b",
       "textSha256": "bea3afbf8917dc5b09d6b7d50cca286a2c3e687ece0ea1d440a20296562b1764",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "7496a23d633dadffc204079ea2330de42bded67ed5d1d58d45a9545d976a5a08",
+      "previousSha256": "dfcf47e0d72f10631b575ff8e7dc7606f03480ad31fb78ce43734f21de55fe5b",
       "previousTextSha256": "bea3afbf8917dc5b09d6b7d50cca286a2c3e687ece0ea1d440a20296562b1764",
       "affectedRecommendationIds": [
         "android-015-waitforhbkareissuancewhenpostureisunspecified",
         "android-016-lockthebootloaderwhenunknownosisreported"
       ],
-      "affectedRecommendationCount": 2
+      "affectedRecommendationCount": 2,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2899,16 +2943,17 @@
       "finalUrl": "https://source.android.com/docs/security/best-practices",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/google-android-security-best-practices.html",
-      "textPath": "example/vendor-references/downloads/text/google-android-security-best-practices.txt",
-      "sha256": "7c30a4c7731e728b55fc7769ed7c370d71111c94fa7c85bb2d76a2132688d27b",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-android-security-best-practices.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/google-android-security-best-practices.txt",
+      "sha256": "c3781bd7bee6ec12ebaa327e4d86559fa7fe7d06eb6c99e32cea5833a37fcd4a",
       "textSha256": "a79edd72f3da3403b69b82eb346a3d0562fdc07354efd0c376324964868c6d63",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "7c30a4c7731e728b55fc7769ed7c370d71111c94fa7c85bb2d76a2132688d27b",
+      "previousSha256": "c3781bd7bee6ec12ebaa327e4d86559fa7fe7d06eb6c99e32cea5833a37fcd4a",
       "previousTextSha256": "a79edd72f3da3403b69b82eb346a3d0562fdc07354efd0c376324964868c6d63",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2918,18 +2963,19 @@
       "finalUrl": "https://support.google.com/work/android/answer/15162069?hl=en",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/google-play-protect-managed-devices.html",
-      "textPath": "example/vendor-references/downloads/text/google-play-protect-managed-devices.txt",
-      "sha256": "dfb1f9a47bde0a9b4f9f60ed3f236330f703e0d88ed8683436abfdd45f6cc55b",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/google-play-protect-managed-devices.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/google-play-protect-managed-devices.txt",
+      "sha256": "006d4e5b3e7e24f5cc7937b66a7d2434553cca94b6ecb5039e2be06fa1671c8d",
       "textSha256": "f59df6f69ad2824abe61083fa826a838bcea5d5cf5ea8c8f3071ca736b83f49c",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "dfb1f9a47bde0a9b4f9f60ed3f236330f703e0d88ed8683436abfdd45f6cc55b",
+      "previousSha256": "006d4e5b3e7e24f5cc7937b66a7d2434553cca94b6ecb5039e2be06fa1671c8d",
       "previousTextSha256": "f59df6f69ad2824abe61083fa826a838bcea5d5cf5ea8c8f3071ca736b83f49c",
       "affectedRecommendationIds": [
         "android-001-enforcegoogleplayprotectonmanageddevices"
       ],
-      "affectedRecommendationCount": 1
+      "affectedRecommendationCount": 1,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -2939,13 +2985,13 @@
       "finalUrl": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-intune-windows-mdm-baseline-settings.html",
-      "textPath": "example/vendor-references/downloads/text/microsoft-intune-windows-mdm-baseline-settings.txt",
-      "sha256": "bf579716c420430136ed8b8f91115fbde8317456756119f8c290846e82a18e87",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-intune-windows-mdm-baseline-settings.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-intune-windows-mdm-baseline-settings.txt",
+      "sha256": "616bbdded4954149c2e517ff670d368907cd56c8d400fbd3b8bd7b30d79a5022",
       "textSha256": "bc25f87dc187b5893a96d9a19ea6c4bbef8276cf3ba632c98da0661bd9513141",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "bf579716c420430136ed8b8f91115fbde8317456756119f8c290846e82a18e87",
+      "previousSha256": "616bbdded4954149c2e517ff670d368907cd56c8d400fbd3b8bd7b30d79a5022",
       "previousTextSha256": "bc25f87dc187b5893a96d9a19ea6c4bbef8276cf3ba632c98da0661bd9513141",
       "affectedRecommendationIds": [
         "windows-0001-preventenablinglockscreencamera",
@@ -3429,7 +3475,8 @@
         "windows-0479-facialfeaturesuseenhancedantispoofing",
         "windows-0480-allowwindowsinkworkspace"
       ],
-      "affectedRecommendationCount": 480
+      "affectedRecommendationCount": 480,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -3439,16 +3486,17 @@
       "finalUrl": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/get-support-for-security-baselines",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-security-baselines-support-matrix.html",
-      "textPath": "example/vendor-references/downloads/text/microsoft-security-baselines-support-matrix.txt",
-      "sha256": "8a86dcb1159af8cba37151238e7008538e81cbfa6b80bf475b64fe0aacaaf97f",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-security-baselines-support-matrix.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-security-baselines-support-matrix.txt",
+      "sha256": "c78b803d48c47681b9e2d5715db9504a0a25ce927c92823dd2625f99e3636450",
       "textSha256": "a528ca95a4c56f2f07b367f47899c7c462c1305a20ff47a0d09bb3971c1e96f9",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "8a86dcb1159af8cba37151238e7008538e81cbfa6b80bf475b64fe0aacaaf97f",
+      "previousSha256": "c78b803d48c47681b9e2d5715db9504a0a25ce927c92823dd2625f99e3636450",
       "previousTextSha256": "a528ca95a4c56f2f07b367f47899c7c462c1305a20ff47a0d09bb3971c1e96f9",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -3458,16 +3506,17 @@
       "finalUrl": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-security-compliance-toolkit-guide.html",
-      "textPath": "example/vendor-references/downloads/text/microsoft-security-compliance-toolkit-guide.txt",
-      "sha256": "5378136330e3c4a459601cd27de194f36d2fb384e5c1a9308f31c65113338b69",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-security-compliance-toolkit-guide.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-security-compliance-toolkit-guide.txt",
+      "sha256": "f087e8c40671ce66c9a5d6bc2b4c62a2741e8f32fe5aed68e3c77c6075737390",
       "textSha256": "c5d185a81648865d5dd4464cacea624e230101ad1f481bc683bbcac236e975da",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "5378136330e3c4a459601cd27de194f36d2fb384e5c1a9308f31c65113338b69",
+      "previousSha256": "f087e8c40671ce66c9a5d6bc2b4c62a2741e8f32fe5aed68e3c77c6075737390",
       "previousTextSha256": "c5d185a81648865d5dd4464cacea624e230101ad1f481bc683bbcac236e975da",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -3477,8 +3526,8 @@
       "finalUrl": "https://download.microsoft.com/download/8/5/C/85C25433-A1B0-4FFA-9429-7E023E7DA8D8/Windows%2011%20v24H2%20Security%20Baseline.zip",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-windows-11-24h2-security-baseline-zip.zip",
-      "textPath": "example/vendor-references/downloads/text/microsoft-windows-11-24h2-security-baseline-zip.txt",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-11-24h2-security-baseline-zip.zip",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-windows-11-24h2-security-baseline-zip.txt",
       "sha256": "b75439a231c64edaccaad16a16268d199f56ce78273104e117d893f82cf174a5",
       "textSha256": "8dbf9ec33c1ead28b642fc360818975314ff92b5d0bb880e4e4c247d38e1bfd6",
       "changeClassification": "unchanged",
@@ -3726,7 +3775,8 @@
         "windows-0452-serviceenabled",
         "windows-0480-allowwindowsinkworkspace"
       ],
-      "affectedRecommendationCount": 239
+      "affectedRecommendationCount": 239,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -3736,16 +3786,17 @@
       "finalUrl": "https://techcommunity.microsoft.com/blog/microsoft-security-baselines/windows-11-version-25h2-security-baseline/4456231",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-windows-11-25h2-security-baseline.html",
-      "textPath": "example/vendor-references/downloads/text/microsoft-windows-11-25h2-security-baseline.txt",
-      "sha256": "99514bcfa146779cc7c94be0ef6c30f5b1238568654dc973fc8761c7c77d8a02",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-11-25h2-security-baseline.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-windows-11-25h2-security-baseline.txt",
+      "sha256": "7b19d3be96a14751f4cae24e0700773ba37736ee9129d7247ce2491ec4ba6b5e",
       "textSha256": "baca0f53738bd11e62f5413c16bba4fe68fee8fe6ccbc29d38f1852e00335c1e",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "99514bcfa146779cc7c94be0ef6c30f5b1238568654dc973fc8761c7c77d8a02",
+      "previousSha256": "7b19d3be96a14751f4cae24e0700773ba37736ee9129d7247ce2491ec4ba6b5e",
       "previousTextSha256": "baca0f53738bd11e62f5413c16bba4fe68fee8fe6ccbc29d38f1852e00335c1e",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -3755,16 +3806,17 @@
       "finalUrl": "https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-windows-11-release-information.html",
-      "textPath": "example/vendor-references/downloads/text/microsoft-windows-11-release-information.txt",
-      "sha256": "db1ac37e515d22bb81faac45eb2889e7436eb7dcc8867226bba740e234df50df",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-11-release-information.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-windows-11-release-information.txt",
+      "sha256": "64a2da50a232e87ab36c8f4e14f861c794d1085d435b5cb242bf60fbebafec86",
       "textSha256": "d7f51442237f5360f9a72d03447072b9cc2100e62f5a5b523b85ef5a90186592",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "db1ac37e515d22bb81faac45eb2889e7436eb7dcc8867226bba740e234df50df",
+      "previousSha256": "64a2da50a232e87ab36c8f4e14f861c794d1085d435b5cb242bf60fbebafec86",
       "previousTextSha256": "d7f51442237f5360f9a72d03447072b9cc2100e62f5a5b523b85ef5a90186592",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     },
     {
       "source": "vendor",
@@ -3774,16 +3826,17 @@
       "finalUrl": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines",
       "documentDate": "",
       "verifiedAsOf": "",
-      "localPath": "example/vendor-references/downloads/raw/microsoft-windows-security-baselines-guide.html",
-      "textPath": "example/vendor-references/downloads/text/microsoft-windows-security-baselines-guide.txt",
-      "sha256": "ed1fbd821261ccaaf5f67250d1e5a53d27473df288e52a06f52312d13e01ed1f",
+      "localPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/raw/microsoft-windows-security-baselines-guide.html",
+      "textPath": "vendor-refresh-p6b0b41o/vendor-references/downloads/text/microsoft-windows-security-baselines-guide.txt",
+      "sha256": "cfb2454dfdb9c70941e74b1bc76f05508287dea93b9ba4828ff12518eff25826",
       "textSha256": "796094f99556bc8bd094430f0f1d37ce2f91cc6cf9d4eeba04948083ba02e982",
       "changeClassification": "unchanged",
       "classification": "unchanged",
-      "previousSha256": "ed1fbd821261ccaaf5f67250d1e5a53d27473df288e52a06f52312d13e01ed1f",
+      "previousSha256": "cfb2454dfdb9c70941e74b1bc76f05508287dea93b9ba4828ff12518eff25826",
       "previousTextSha256": "796094f99556bc8bd094430f0f1d37ce2f91cc6cf9d4eeba04948083ba02e982",
       "affectedRecommendationIds": [],
-      "affectedRecommendationCount": 0
+      "affectedRecommendationCount": 0,
+      "sourceBodyAvailability": "retained-hash-source-body-missing"
     }
   ],
   "summary": {

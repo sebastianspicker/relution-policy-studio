@@ -11,6 +11,8 @@ import { WorkspaceRequestGuard } from "../../web/src/shared/editor-workspace-req
 import type { AppState } from "../../web/src/shared/editor-contracts.js";
 import type { ComplianceReport } from "../../src/browser/assurance.js";
 import type { PolicyWorkspace } from "../../src/browser/workspace.js";
+import { createAssuranceSelectionAction } from "../../web/src/features/assurance/editor-assurance-selection-action.js";
+import type { AssuranceSelectionApplyRequest } from "../../src/browser/assurance.js";
 
 test("browser archive build persists dirty state before a verified build response becomes fresh", async () => {
   const calls: Array<{ readonly url: string; readonly body: unknown }> = [];
@@ -83,6 +85,40 @@ test("browser external-audit request helpers preserve JSON errors and reject inc
   assert.equal(connectionTestFailureMessage({ ok: false, reason: "Refused" }), "Refused");
   assert.throws(() => requiredZammadTicket({ ticket: { id: Number.NaN, raw: {} } }), /no ticket id or number/u);
   assert.deepEqual(requiredZammadTicket({ ticket: { id: 42, title: "Created", raw: {} } }), { id: 42, title: "Created", raw: {} });
+});
+
+test("reviewed assurance application adopts one unsaved draft and never sends a save request", async () => {
+  const calls: string[] = [];
+  const reviewed = workspace("Reviewed assurance selection");
+  const adopted: PolicyWorkspace[] = [];
+  const receipt = { selection: { kind: "recommendation", recommendationId: "one" } };
+  await withBrowser(async (url) => {
+    calls.push(String(url));
+    return jsonResponse({ workspace: reviewed, receipt });
+  }, async () => {
+    const apply = createAssuranceSelectionAction({ requestGuard: new WorkspaceRequestGuard(), workspace: reviewed, revision: revision(), adopt: (value) => { adopted.push(value); return true; } });
+    const result = await apply({ workspace: reviewed, expectedRevision: revision() } as AssuranceSelectionApplyRequest);
+    assert.deepEqual(result?.receipt, receipt);
+  });
+  assert.deepEqual(adopted, [reviewed]);
+  assert.deepEqual(calls, ["http://editor.test/api/assurance/apply"]);
+});
+
+test("assurance responses cannot overwrite newer edits or selection changes", async () => {
+  for (const change of [(guard: WorkspaceRequestGuard) => guard.recordEdit(), (guard: WorkspaceRequestGuard) => guard.synchronizeSelection("different-policy")]) {
+    const guard = new WorkspaceRequestGuard();
+    guard.synchronizeSelection("original-policy");
+    let adopted = false;
+    const current = workspace("Original draft");
+    await withBrowser(async () => {
+      change(guard);
+      return jsonResponse({ workspace: workspace("Stale selection") });
+    }, async () => {
+      const apply = createAssuranceSelectionAction({ requestGuard: guard, workspace: current, revision: revision(), adopt: () => { adopted = true; return true; } });
+      await assert.rejects(apply({ workspace: current, expectedRevision: revision() } as AssuranceSelectionApplyRequest), /Policy draft changed/u);
+    });
+    assert.equal(adopted, false);
+  }
 });
 
 function workspace(name: string): PolicyWorkspace {

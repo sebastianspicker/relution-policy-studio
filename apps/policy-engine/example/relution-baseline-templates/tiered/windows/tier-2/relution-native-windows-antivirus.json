@@ -21,7 +21,7 @@
       "slug": "relution-native-windows-antivirus",
       "label": "Windows Antivirus"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -77,16 +77,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             },
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-antivirus-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-antivirus-aggregate",
               "title": "Relution aggregate: WINDOWS_ANTIVIRUS"
             }
           ],

@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "id": "65cb1d3d-6276-48ec-9849-bfa17b17db21",
+  "name": "Golden current project",
+  "revision": 4,
+  "profile": {
+    "schema_version": 2,
+    "id": "profile.example",
+    "name": "Example offline profile",
+    "organizations": [
+      {
+        "id": "org.example",
+        "name": "Example organization",
+        "parent_id": null,
+        "description": null,
+        "requirements": []
+      }
+    ],
+    "locations": [
+      {
+        "id": "location.primary",
+        "name": "Primary location",
+        "organization_id": "org.example",
+        "description": null,
+        "requirements": []
+      }
+    ],
+    "cohorts": [
+      {
+        "id": "cohort.staff",
+        "name": "Staff",
+        "organization_id": "org.example",
+        "location_ids": [
+          "location.primary"
+        ],
+        "role": "staff",
+        "ownership": "institution",
+        "requirements": []
+      }
+    ],
+    "intents": [
+      {
+        "id": "intent.baseline",
+        "name": "Baseline",
+        "outcome": "Establish a reviewable platform baseline",
+        "platform": "ios_ipados",
+        "ownership": "institution",
+        "role": "staff",
+        "cohort_ids": [
+          "cohort.staff"
+        ],
+        "layer": 2,
+        "scope_ids": [
+          "scope.staff"
+        ],
+        "depends_on": [],
+        "requirements": [
+          "setting.baseline"
+        ]
+      }
+    ],
+    "scope_blueprints": [
+      {
+        "id": "scope.staff",
+        "name": "Staff scope",
+        "cohort_ids": [
+          "cohort.staff"
+        ],
+        "organization_ids": [
+          "org.example"
+        ],
+        "location_ids": [
+          "location.primary"
+        ],
+        "platforms": [
+          "ios_ipados"
+        ],
+        "ownerships": [
+          "institution"
+        ],
+        "roles": [
+          "staff"
+        ],
+        "depends_on": [],
+        "requirements": []
+      }
+    ],
+    "assignments": [
+      {
+        "id": "assignment.baseline",
+        "name": "Baseline staff assignment",
+        "intent_id": "intent.baseline",
+        "scope_id": "scope.staff",
+        "rollout_stage_id": "rollout.lab",
+        "requirements": [
+          "membership review"
+        ]
+      }
+    ],
+    "rollout_stages": [
+      {
+        "id": "rollout.lab",
+        "name": "Lab review",
+        "order": 0,
+        "depends_on": [],
+        "requirements": [
+          "offline review"
+        ]
+      }
+    ],
+    "unresolved": []
+  },
+  "compiled_plan": null,
+  "mappings": [
+    {
+      "id": "mapping-one",
+      "intent_id": "intent.baseline",
+      "workspace_id": "workspace-golden",
+      "policy_id": "policy-one",
+      "configuration_id": "configuration-one",
+      "field": "/passcode/minLength",
+      "value": {
+        "minimum": 8,
+        "enabled": true
+      },
+      "platform": "IOS",
+      "configuration_type": "passcode",
+      "applicability": "all",
+      "reviewed": true,
+      "profile_digest": "74b317643e29c6b1dff6748ff4914db92af6d9d0f10e458f16a10c9ecfe73c81",
+      "policy_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "workspace_refs": [
+    {
+      "id": "workspace-golden",
+      "name": "Golden workspace",
+      "platform": "IOS",
+      "created_at": "2026-01-02T03:04:05.000Z"
+    }
+  ],
+  "evidence": [
+    {
+      "intent_id": "intent.baseline",
+      "workspace_id": "workspace-golden",
+      "requirement_id": "setting.baseline",
+      "kind": "local",
+      "profile_digest": "74b317643e29c6b1dff6748ff4914db92af6d9d0f10e458f16a10c9ecfe73c81",
+      "policy_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "artifact_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "catalog_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    {
+      "intent_id": "intent.baseline",
+      "workspace_id": "workspace-golden",
+      "requirement_id": "setting.assured",
+      "kind": "local",
+      "profile_digest": "74b317643e29c6b1dff6748ff4914db92af6d9d0f10e458f16a10c9ecfe73c81",
+      "policy_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "artifact_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "catalog_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "assurance_digest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    }
+  ],
+  "operations": [
+    {
+      "id": "696c23c0-0daa-4d2f-a1bc-1c0950e0d745",
+      "kind": "workspace-create",
+      "status": "committed",
+      "workspace_id": "workspace-golden",
+      "name": "Golden workspace",
+      "platform": "IOS",
+      "created_at": "2026-01-02T03:04:05.000Z",
+      "committed_at": "2026-10-03T14:39:39.333Z"
+    }
+  ],
+  "assurance_reviews": [
+    {
+      "selection": {
+        "kind": "preset",
+        "presetId": "managed"
+      },
+      "conflicts": [],
+      "exclusions": [
+        {
+          "reason": "External evidence required"
+        }
+      ]
+    }
+  ]
+}

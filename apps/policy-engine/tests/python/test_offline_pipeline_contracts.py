@@ -18,6 +18,33 @@ if str(TOOLS_DIR) not in sys.path:
 
 
 class OfflinePipelineContractsTest(unittest.TestCase):
+    def test_vendor_refresh_failure_retains_previous_snapshot(self) -> None:
+        """A partial network failure must not replace the checked snapshot tree."""
+
+        from _harvest_vendor_guidance_modules import vendor_source_refresh
+
+        with tempfile.TemporaryDirectory() as workspace:
+            vendor_dir = Path(workspace) / "vendor-references"
+            downloads = vendor_dir / "downloads"
+            downloads.mkdir(parents=True)
+            retained = downloads / "retained.json"
+            retained.write_text('{"snapshot":"previous"}\n')
+            with (
+                patch.object(
+                    vendor_source_refresh,
+                    "read_json",
+                    return_value=[{"id": "one"}, {"id": "two"}],
+                ),
+                patch.object(
+                    vendor_source_refresh,
+                    "refresh_vendor_source",
+                    side_effect=[{"id": "one"}, RuntimeError("network failure")],
+                ),
+                self.assertRaisesRegex(RuntimeError, "network failure"),
+            ):
+                vendor_source_refresh.refresh_downloads(vendor_dir)
+            self.assertEqual(retained.read_text(), '{"snapshot":"previous"}\n')
+
     def test_selected_sources_normalize_before_one_global_generation(self) -> None:
         """Keep source work ordered while retaining one pre-run report baseline."""
 
@@ -107,7 +134,10 @@ class OfflinePipelineContractsTest(unittest.TestCase):
         from _harvest_vendor_guidance_modules import vendor_sources
 
         self.assertTrue(
-            all("--defer-artifacts" in command for command in OFFLINE_SOURCE_COMMANDS.values())
+            all(
+                "--defer-artifacts" in command
+                for command in OFFLINE_SOURCE_COMMANDS.values()
+            )
         )
         with patch.object(vendor_sources, "harvest_vendor_guidance") as harvest:
             with patch.object(sys, "argv", ["harvest_vendor_guidance.py", "--offline"]):
@@ -217,9 +247,7 @@ class OfflinePipelineContractsTest(unittest.TestCase):
             reference_concepts = set(reference.get("semanticConceptIds", []))
             shared_tokens = sorted(token_set & reference_tokens)
             shared_concepts = sorted(concept_set & reference_concepts)
-            score = min(40, len(shared_concepts) * 20) + min(
-                40, len(shared_tokens) * 4
-            )
+            score = min(40, len(shared_concepts) * 20) + min(40, len(shared_tokens) * 4)
             if platform == reference.get("platform"):
                 score += 20
             if score > 20:
@@ -259,7 +287,9 @@ class OfflinePipelineContractsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as workspace:
             workspace_path = Path(workspace)
             corpus_root = workspace_path / "corpus"
-            catalog_root = corpus_root / "docs" / "managed-devices" / "05-policies-catalog"
+            catalog_root = (
+                corpus_root / "docs" / "managed-devices" / "05-policies-catalog"
+            )
             catalog_root.mkdir(parents=True)
             for filename, content in corpus.items():
                 (catalog_root / filename).write_text(content, encoding="utf8")
@@ -293,6 +323,7 @@ class OfflinePipelineContractsTest(unittest.TestCase):
             ).hexdigest(),
             "28b78b5f001131345af3e2e18a2061e6186cd79420b903c4a1d06a0792ac95ab",
         )
+
     def test_checked_in_baseline_fixture_has_stable_offline_pipeline_hash(self) -> None:
         """Exercise the complete baseline projection from checked-in artifacts only."""
 
@@ -304,8 +335,11 @@ class OfflinePipelineContractsTest(unittest.TestCase):
         )
 
         index = harvest_relution_baseline_index(BASELINE_TEMPLATE_INDEX_PATH)
+        stable_index = {
+            key: value for key, value in index.items() if key != "generatedAt"
+        }
         encoded = json.dumps(
-            index, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+            stable_index, ensure_ascii=False, sort_keys=True, separators=(",", ":")
         ).encode("utf8")
 
         self.assertEqual(
@@ -315,7 +349,7 @@ class OfflinePipelineContractsTest(unittest.TestCase):
         self.assertEqual(len(index["actionableTargets"]), 183)
         self.assertEqual(
             hashlib.sha256(encoded).hexdigest(),
-            "fc67e201754a06986ede89bb5f6a63f4bc6bc123303d51a4af0cbfa2b8ebf17b",
+            "c4397e7ec3e4653c8fb0721cdd89ee87f34c343a04c4cf9c6219390727299a5c",
         )
 
     def test_mapping_parser_and_generator_primitives_are_deterministic(self) -> None:
@@ -333,10 +367,10 @@ class OfflinePipelineContractsTest(unittest.TestCase):
             split_identifier("DevicePasswordExpiration"),
             ["device", "password", "expiration"],
         )
+        self.assertEqual(unique_preserving_order(["a", "b", "a", "c"]), ["a", "b", "c"])
         self.assertEqual(
-            unique_preserving_order(["a", "b", "a", "c"]), ["a", "b", "c"]
+            SEMANTIC_CONCEPT_RULES[0].concept_id, "passcode_authentication"
         )
-        self.assertEqual(SEMANTIC_CONCEPT_RULES[0].concept_id, "passcode_authentication")
         self.assertEqual(SEMANTIC_CONCEPT_RULES[-1].concept_id, "secure_boot_hardware")
 
     def test_review_fixture_renders_stable_queue_output(self) -> None:
@@ -357,7 +391,9 @@ class OfflinePipelineContractsTest(unittest.TestCase):
         )
 
         self.assertIn("Generated: `2026-01-01T00:00:00Z`", report)
-        self.assertLess(report.index("- `manual-review`: `2`"), report.index("- `retain`: `1`"))
+        self.assertLess(
+            report.index("- `manual-review`: `2`"), report.index("- `retain`: `1`")
+        )
 
 
 if __name__ == "__main__":

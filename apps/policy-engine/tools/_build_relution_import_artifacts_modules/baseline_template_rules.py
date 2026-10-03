@@ -45,6 +45,9 @@ def consolidated_rule_from_entries(
             {
                 "source": entry["source"],
                 "ruleId": entry["rule"]["id"],
+                "sourceRecommendationId": entry["rule"].get(
+                    "generatedIdentity", {}
+                ).get("baseRuleId", entry["rule"]["id"]),
                 "title": entry["rule"].get("title", ""),
             }
             for entry in entries

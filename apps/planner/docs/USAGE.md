@@ -1,13 +1,45 @@
 # Using CampusWeave
 
-CampusWeave has two offline interfaces: a browser workbench for reviewing and
-exporting the reference-derived profile, and command adapters for validating
-profiles, plans, target evidence, and OpenAPI catalogs. Run all commands below
-from the repository root after an editable install.
+CampusWeave has offline interfaces for the browser workbench, the existing v1
+command adapters, and the versioned profile-v2 stdio bridge. Run all commands
+below from the planner application root after an editable install.
 
 ```sh
 python3 -m pip install --editable .
 ```
+
+## Profile-v2 stdio bridge
+
+Run one bounded request per process and close stdin to dispatch it:
+
+```sh
+printf '%s' '{"version":1,"id":"reference-1","command":"reference","payload":{}}' \
+  | python3 -m campusweave.commands.stdio
+```
+
+The bridge accepts `validate`, `compile`, `reference`, and `convert-v1`.
+Validation and compilation payloads contain exactly one `profile` object;
+`reference` uses an empty payload. Input is strict UTF-8 JSON, duplicate keys
+and non-finite numbers are rejected. Requests and responses are limited to
+1,048,576 bytes; oversized results return `response_too_large`.
+Each process writes exactly one JSON response line. A successful response is
+`{version,id,ok:true,result}`. A protocol failure is
+`{version,id,ok:false,error:{code,message,details}}` and exits with status 2.
+
+Profile v2 has schema version 2, an editable project identity, and eight record
+arrays: organizations, locations, cohorts, intents, scope blueprints,
+assignments, rollout stages, and unresolved decisions. The authoritative field
+definitions and descriptions are in
+[`profile-v2.schema.json`](../../../contracts/schemas/profile-v2.schema.json);
+the envelopes are in
+[`planner-bridge.schema.json`](../../../contracts/schemas/planner-bridge.schema.json).
+Incomplete drafts receive diagnostics instead of a transport error. Legacy
+conversion retains ambiguous writer ownership and unsupported group dimensions
+as explicit unresolved decisions; the result remains invalid for compilation
+until those decisions are resolved. Compilation
+always remains offline and emits `execution_authorized`, `network_capable`, and
+`mutation_capable` as false. Profiles cannot contain target, tenant, authority,
+or credential fields.
 
 ## Browser workbench
 

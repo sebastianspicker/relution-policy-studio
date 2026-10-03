@@ -21,7 +21,7 @@
       "slug": "relution-native-ios-restriction",
       "label": "iOS Restriction"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "IOS",
@@ -73,6 +73,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             }
           ],

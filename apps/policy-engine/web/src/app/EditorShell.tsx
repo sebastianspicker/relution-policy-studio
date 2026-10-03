@@ -13,9 +13,9 @@ import type { CorporateTheme } from "../features/settings/theme.js";
 import type { EditorController } from "../shared/editor-contracts.js";
 import { WorkspaceToolbar } from "./WorkspaceToolbar.js";
 
-const BaselinePanel = deferredComponent(() => import("../features/assurance/BaselinePanel.js").then((module) => ({ default: module.BaselinePanel })));
-const RelutionDashboardPanel = deferredComponent(() => import("../features/external-audit/RelutionDashboardPanel.js").then((module) => ({ default: module.RelutionDashboardPanel })));
-const SettingsPanel = deferredComponent(() => import("../features/settings/SettingsPanel.js").then((module) => ({ default: module.SettingsPanel })));
+const BaselinePanel = deferredComponent<Parameters<typeof import("../features/assurance/BaselinePanel.js").BaselinePanel>[0]>(() => import("../features/assurance/BaselinePanel.js").then((module) => ({ default: module.BaselinePanel })));
+const RelutionDashboardPanel = deferredComponent<Record<string, never>>(() => import("../features/external-audit/RelutionDashboardPanel.js").then((module) => ({ default: module.RelutionDashboardPanel })));
+const SettingsPanel = deferredComponent<Parameters<typeof import("../features/settings/SettingsPanel.js").SettingsPanel>[0]>(() => import("../features/settings/SettingsPanel.js").then((module) => ({ default: module.SettingsPanel })));
 
 type EditorShellProps = {
   readonly controller: EditorController;

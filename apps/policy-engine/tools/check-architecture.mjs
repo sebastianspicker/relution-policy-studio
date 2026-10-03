@@ -11,7 +11,7 @@ const REQUIRED_PYTHON_LAUNCHERS = new Map([
   ["tools/compare_institution_policy_baseline.py", "institution_policy_comparison.cli"],
 ]);
 
-const CAPABILITIES = new Set(["platform", "contracts", "workspace", "workspace-state", "archive", "apple", "assurance", "application", "integrations", "editor", "cli", "mdm"]);
+const CAPABILITIES = new Set(["platform", "contracts", "workspace", "workspace-state", "archive", "apple", "assurance", "application", "integrations", "editor", "cli", "mdm", "host"]);
 const EDITOR_RAW_PERSISTENCE_OWNERS = new Map([
   ["src/editor/editor-workspace-initialization.ts", new Set(["src/workspace-state/persistence.ts"])],
   // Archive publication is a staged saga that must snapshot and restore the
@@ -31,6 +31,8 @@ const CAPABILITY_IMPORTS = {
   editor: new Set(["editor", "application", "assurance", "apple", "archive", "workspace-state", "workspace", "platform", "contracts", "integrations"]),
   cli: new Set(["cli", "editor", "application", "assurance", "apple", "archive", "workspace", "platform", "integrations", "mdm"]),
   mdm: new Set(["mdm", "assurance", "archive", "workspace", "platform"]),
+  // The studio host is a composition root like the CLI; its testing entry re-exports what the root suite drives.
+  host: new Set(["host", "editor", "application", "assurance"]),
 };
 // Capability cycles require an explicit architectural decision. There are none today.
 const ALLOWED_CAPABILITY_CYCLES = new Set();

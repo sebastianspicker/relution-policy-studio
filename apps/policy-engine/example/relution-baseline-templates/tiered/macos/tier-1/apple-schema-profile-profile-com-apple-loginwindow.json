@@ -21,7 +21,7 @@
       "slug": "apple-schema-profile-profile-com-apple-loginwindow",
       "label": "Apple Loginwindow"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "MACOS",
@@ -73,6 +73,7 @@
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-loginwindow-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-loginwindow-aggregate",
               "title": "Relution aggregate: profile:com.apple.loginwindow"
             }
           ],

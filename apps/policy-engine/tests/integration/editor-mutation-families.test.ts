@@ -85,10 +85,11 @@ test("loopback compliance check and apply select an available remediation and pu
   try {
     const state = await editorRequest<EditorState>(handle.url, handle.apiToken, "/api/state");
     const sources = ["bsi", "vendor", "cis"];
+    const applicability = { enrollmentChannel: "IOS", osVersion: "26", deviceOwnership: "organization", supervision: "supervised" };
     const checked = await editorRequest<{ readonly report: ComplianceReport; readonly revision: string }>(handle.url, handle.apiToken, "/api/compliance/check", {
       expectedRevision: state.revision,
       target: { policyPath: state.workspace.policies[0]!.path, versionIndex: 0 },
-      sources,
+      sources, applicability,
     });
     const candidate = checked.report.results.flatMap((result) => result.remediationOptions
       .filter((option) => option.available !== false)
@@ -98,7 +99,7 @@ test("loopback compliance check and apply select an available remediation and pu
     const applied = await editorRequest<{ readonly workspace: EditorState["workspace"]; readonly validation: { readonly ok: boolean }; readonly report: ComplianceReport }>(handle.url, handle.apiToken, "/api/compliance/apply", {
       expectedRevision: checked.revision,
       target: { policyPath: state.workspace.policies[0]!.path, versionIndex: 0 },
-      sources,
+      sources, applicability,
       source: candidate!.result.source,
       recommendationId: candidate!.result.recommendationId,
       remediationId: candidate!.option.id,
@@ -124,15 +125,16 @@ test("interleaved compliance remediation applies the locked current workspace an
       editorRequest<EditorState>(second.url, second.apiToken, "/api/state"),
     ]);
     const sources = ["bsi", "vendor", "cis"];
+    const applicability = { enrollmentChannel: "IOS", osVersion: "26", deviceOwnership: "organization", supervision: "supervised" };
     const checked = await editorRequest<{ readonly report: ComplianceReport; readonly revision: string }>(first.url, first.apiToken, "/api/compliance/check", {
-      expectedRevision: left.revision, target: { policyPath: left.workspace.policies[0]!.path, versionIndex: 0 }, sources,
+      expectedRevision: left.revision, target: { policyPath: left.workspace.policies[0]!.path, versionIndex: 0 }, sources, applicability,
     });
     const candidate = checked.report.results.flatMap((result) => result.remediationOptions
       .filter((option) => option.available !== false)
       .map((option) => ({ result, option })))[0];
     assert.notEqual(candidate, undefined, "fixture recommendation catalogs must provide one applicable remediation");
     const request = {
-      target: { policyPath: left.workspace.policies[0]!.path, versionIndex: 0 }, sources,
+      target: { policyPath: left.workspace.policies[0]!.path, versionIndex: 0 }, sources, applicability,
       source: candidate!.result.source, recommendationId: candidate!.result.recommendationId, remediationId: candidate!.option.id,
     };
     const accepted = await editorRequest<{ readonly workspace: EditorState["workspace"]; readonly revision: string }>(first.url, first.apiToken, "/api/compliance/apply", {

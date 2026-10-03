@@ -211,6 +211,30 @@ RELUTION_MAPPING_UPDATE_PLAN_PATH = (
     / "recommendation-coverage"
     / "relution-mapping-update-plan.json"
 )
+ASSURANCE_CATALOG_PATH = (
+    REPO_ROOT / "example" / "recommendation-coverage" / "assurance-catalog.json"
+)
+ASSURANCE_PRESETS_PATH = (
+    REPO_ROOT / "example" / "recommendation-coverage" / "assurance-presets.json"
+)
+ASSURANCE_RECONCILIATION_PATH = (
+    REPO_ROOT
+    / "example"
+    / "recommendation-coverage"
+    / "assurance-reconciliation.json"
+)
+ASSURANCE_DETAILS_PATH = (
+    REPO_ROOT / "example" / "recommendation-coverage" / "assurance-details.json"
+)
+SOURCE_REFRESH_REPORT_PATH = (
+    REPO_ROOT / "example" / "recommendation-coverage" / "source-refresh-report.json"
+)
+ASSURANCE_SNAPSHOT_ROOT = (
+    REPO_ROOT / "example" / "recommendation-coverage" / "assurance-snapshots"
+)
+ASSURANCE_SNAPSHOT_INDEX_PATH = ASSURANCE_SNAPSHOT_ROOT / "index.json"
+RELUTION_SCHEMA_BUNDLE_PATH = REPO_ROOT / "data" / "relution-26.1.1" / "template-bundle.json"
+APPLE_SCHEMA_CATALOG_PATH = REPO_ROOT / "data" / "apple-device-management" / "catalog.json"
 ALLOWED_MAPPING_STATUSES = {"exact", "parameterized", "partial", "suggested", "none"}
 MULTI_INSTANCE_TARGET_TYPES = {"WINDOWS_CUSTOM_CSP"}
 AUTHORITATIVE_SOURCE = "bsi"

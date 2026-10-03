@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "MACOS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "MACOS_FILE_VAULT",
       "slug": "relution-native-macos-file-vault",
       "label": "macOS File Vault"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "MACOS",
@@ -72,16 +72,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             },
             {
               "source": "cis",
               "ruleId": "cis-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "cis-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "vendor-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             }
           ],

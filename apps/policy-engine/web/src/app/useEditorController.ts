@@ -4,6 +4,7 @@ import {
   createEditorControllerActionInput,
   projectReadyEditorController,
 } from "./editor-controller-assembly.js";
+import { workspaceRequestGuardFor } from "../shared/editor-workspace-request-orthogonal.js";
 import { useComplianceState } from "../features/assurance/useEditorComplianceState.js";
 import { createEditorControllerActions } from "./editor-controller-actions.js";
 import { useRecommendationState } from "../features/assurance/useEditorRecommendationState.js";
@@ -13,7 +14,7 @@ import { useWorkspaceState } from "../features/policy-workspace/useEditorWorkspa
 export function useEditorController(): EditorControllerResult {
   const workspace = useWorkspaceState();
   const recommendations = useRecommendationState({ policy: workspace.policy });
-  const compliance = useComplianceState({ selection: workspace.selection, state: workspace.state });
+  const compliance = useComplianceState({ selection: workspace.selection, state: workspace.state, isDirty: workspace.isDirty, requestGuard: workspaceRequestGuardFor(workspace.setState) });
 
   if (workspace.state === undefined) {
     return workspace.loadError === undefined ? { kind: "loading" } : { kind: "error", message: workspace.loadError };

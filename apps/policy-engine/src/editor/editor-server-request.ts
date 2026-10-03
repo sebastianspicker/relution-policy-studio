@@ -27,7 +27,7 @@ export async function handleEditorHttpRequest(
     await handleEditorApiHttpRequest(url, request, response, context);
     return;
   }
-  serveStaticAsset(STATIC_ROOT, url.pathname, response);
+  serveStaticAsset(context.options.staticRoot ?? STATIC_ROOT, url.pathname, response);
 }
 
 function parseEditorRequestUrl(requestTarget: string | undefined): URL {

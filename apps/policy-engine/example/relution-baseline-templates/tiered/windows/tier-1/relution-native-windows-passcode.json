@@ -21,7 +21,7 @@
       "slug": "relution-native-windows-passcode",
       "label": "Windows Passcode"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -72,6 +72,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-passcode-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-passcode-aggregate",
               "title": "Relution aggregate: WINDOWS_PASSCODE"
             }
           ],

@@ -78,6 +78,7 @@ def suppressed_import_conflict_rule(
     conflict = {
         "source": source,
         "ruleId": rule["id"],
+        "sourceRecommendationId": source_recommendation_id(rule),
         "target": suppressed_key[1],
         "preferredTarget": preferred_key[1],
         "reason": reason,
@@ -99,6 +100,7 @@ def suppressed_non_importable_rule(
     conflict = {
         "source": source,
         "ruleId": rule["id"],
+        "sourceRecommendationId": source_recommendation_id(rule),
         "target": key[1],
         "reason": reason,
     }
@@ -120,6 +122,7 @@ def suppressed_conflict_rule(
     conflict = {
         "source": source,
         "ruleId": rule["id"],
+        "sourceRecommendationId": source_recommendation_id(rule),
         "target": target,
         "conflictingPaths": [path_to_string(path) for path in sorted(conflicts)],
         "reason": (
@@ -133,3 +136,11 @@ def suppressed_conflict_rule(
         "title": f"Suppressed conflict: {rule.get('title', rule['id'])}",
         "conflict": conflict,
     }
+
+
+def source_recommendation_id(rule: dict[str, Any]) -> str:
+    """Return the stable source identity beneath an optional generated variant id."""
+
+    identity = rule.get("generatedIdentity", {})
+    base_rule_id = identity.get("baseRuleId") if isinstance(identity, dict) else None
+    return str(base_rule_id or rule["id"])

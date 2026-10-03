@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "IOS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "relution-native",
       "target": "IOS_RESTRICTION",
       "slug": "relution-native-ios-restriction",
       "label": "iOS Restriction"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "IOS",
@@ -74,11 +74,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "bsi-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             },
             {
               "source": "cis",
               "ruleId": "cis-ios-ios-restriction-aggregate",
+              "sourceRecommendationId": "cis-ios-ios-restriction-aggregate",
               "title": "Relution aggregate: IOS_RESTRICTION"
             }
           ],

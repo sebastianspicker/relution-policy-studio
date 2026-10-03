@@ -6,6 +6,7 @@ import { createKeyRequester } from "../features/policy-workspace/editor-workspac
 import { createWorkspacePersistence } from "../shared/editor-workspace-request-persistence.js";
 import { createSidecarRequester } from "../shared/editor-workspace-request-sidecar.js";
 import { createComplianceActions } from "../features/assurance/editor-compliance-actions.js";
+import { createAssuranceSelectionAction } from "../features/assurance/editor-assurance-selection-action.js";
 import { createPolicyEditingActions } from "../features/policy-workspace/editor-policy-actions.js";
 import { createWorkspaceHistoryActions } from "../features/artifacts/editor-workspace-history-actions.js";
 import { createWorkspaceMutationActions } from "../features/policy-workspace/editor-workspace-mutation-actions.js";
@@ -99,6 +100,9 @@ export function createEditorControllerActions(input: UseEditorControllerActionsI
   }
 
   return {
+    applyAssuranceSelection: createAssuranceSelectionAction({ requestGuard, workspace: currentState.workspace, revision: currentState.revision,
+      adopt: (workspace) => markWorkspaceDirty(workspace, selection, "Applied assurance selection to draft"),
+    }),
     setRawJson: policyActions.setRawJson, resetRawJson: policyActions.resetRawJson,
     setRecommendationSource: recommendationSelectionActions.setRecommendationSource,
     toggleComplianceSource: recommendationSelectionActions.toggleComplianceSource,

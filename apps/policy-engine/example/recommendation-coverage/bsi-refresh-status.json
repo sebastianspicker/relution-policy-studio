@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-07",
+  "outcome": "failed-retained-previous-snapshot",
+  "retainedPreviousSnapshot": true,
+  "checks": [
+    {
+      "sourceId": "it-grundschutz-current",
+      "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz.html",
+      "finalUrl": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz.html",
+      "outcome": "downloaded",
+      "sha256": "5ac9370eb9427ffb721cb60db0af8ce3ad4634b03556601e5c1ce744eac8a829",
+      "sizeBytes": 68299
+    },
+    {
+      "sourceId": "it-grundschutz-2025-outlook",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Veranstaltungen/Grundschutz/1GS_Tag_2025/Aktuelle_Entwicklungen_Ausblick_IT-GS.pdf?__blob=publicationFile&v=2",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Veranstaltungen/Grundschutz/1GS_Tag_2025/Aktuelle_Entwicklungen_Ausblick_IT-GS.pdf?__blob=publicationFile&v=2",
+      "outcome": "downloaded",
+      "sha256": "ef718b66a8a910d9c5ce11e2bd45a2356a92ca0709c0b0569773980487168b48",
+      "sizeBytes": 1735913
+    },
+    {
+      "sourceId": "it-grundschutz-errata-2023",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/errata_2023.pdf?__blob=publicationFile&v=8",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/errata_2023.pdf?__blob=publicationFile&v=8",
+      "outcome": "downloaded",
+      "sha256": "f5c12c5cda02225e88e11ebc103fea22626209e6f208467c597be9a53d24161d",
+      "sizeBytes": 120688
+    },
+    {
+      "sourceId": "it-grundschutz-checklists-2023",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/checklisten_2023.html",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/checklisten_2023.html",
+      "outcome": "downloaded",
+      "sha256": "051098894c07e361d99c1760b7ac077fd95c002383cb149f394d9f3fca4c4617",
+      "sizeBytes": 56904
+    },
+    {
+      "sourceId": "it-grundschutz-bausteine-edition-2023",
+      "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html",
+      "finalUrl": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html",
+      "outcome": "downloaded",
+      "sha256": "e160ead1e055d53b659cac85e1d9b54e64c6804e570f92516462a8a85becf617",
+      "sizeBytes": 110850
+    },
+    {
+      "sourceId": "sys-2-1-general-client",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_1_Allgemeiner_Client_Edition_2023.pdf",
+      "outcome": "failed",
+      "errorType": "ValueError",
+      "error": "Official PDF URL returned non-PDF content (text/html;charset=utf-8)"
+    },
+    {
+      "sourceId": "sys-2-2-3-windows",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_2_3_Clients_unter_Windows_Edition_2023.html",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_2_3_Clients_unter_Windows_Edition_2023.html",
+      "outcome": "downloaded",
+      "sha256": "cc5a021395a9c1c84b329bc1704bddeef874a4cf360c6ee456a1c613327167d4",
+      "sizeBytes": 56082
+    },
+    {
+      "sourceId": "fd-aenderungen-2023",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/FD_Aenderungen2023.pdf?__blob=publicationFile&v=3",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/FD_Aenderungen2023.pdf?__blob=publicationFile&v=3",
+      "outcome": "downloaded",
+      "sha256": "0aee3d36b4d493b64c7de9f66e0a07a2d04bfe1248ccc73b3a0eb54f88e3bf50",
+      "sizeBytes": 363322
+    },
+    {
+      "sourceId": "sys-2-4-macos",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_4_Clients_unter_macOS_Edition_2023.html",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_2_4_Clients_unter_macOS_Edition_2023.html",
+      "outcome": "downloaded",
+      "sha256": "5140d73c0c8ebf9cea48bedbc1f79b006d55ab79dd86cb19acad05fae1667ed8",
+      "sizeBytes": 56997
+    },
+    {
+      "sourceId": "umsetzungshinweis-sys-2-4-macos",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2022/Umsetzungshinweis_zum_Baustein_SYS_2_4_Clients_unter_macOS.pdf?__blob=publicationFile&v=2",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2022/Umsetzungshinweis_zum_Baustein_SYS_2_4_Clients_unter_macOS.pdf?__blob=publicationFile&v=2",
+      "outcome": "downloaded",
+      "sha256": "48d8c3255cb79e621802121325d3a0668227ffb3d8d3d4b3037e509fa353a235",
+      "sizeBytes": 404445
+    },
+    {
+      "sourceId": "umsetzungshinweise-index",
+      "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/Umsetzungshinweise/umsetzungshinweise_node.html",
+      "finalUrl": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/Umsetzungshinweise/umsetzungshinweise_node.html",
+      "outcome": "downloaded",
+      "sha256": "6ea8e7637073bfcccff520c4619c8c9bb51755a6cf1dea6acf0a9aaec279aee3",
+      "sizeBytes": 98718
+    },
+    {
+      "sourceId": "sys-3-2-1-smartphones-tablets",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_1_Allgemeine_Smartphones_und_Tablets_Edition_2023.pdf",
+      "outcome": "failed",
+      "errorType": "ValueError",
+      "error": "Official PDF URL returned non-PDF content (text/html;charset=utf-8)"
+    },
+    {
+      "sourceId": "sys-3-2-2-mdm",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_2_Mobile_Device_Management_Edition_2023.pdf",
+      "outcome": "failed",
+      "errorType": "ValueError",
+      "error": "Official PDF URL returned non-PDF content (text/html;charset=utf-8)"
+    },
+    {
+      "sourceId": "mdm-minimum-standard-v2",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.html",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.html",
+      "outcome": "downloaded",
+      "sha256": "97996ded7355a5bbefb3065e650f5b6ba0408a8bdacfb5948445bc21e819cf9c",
+      "sizeBytes": 57721
+    },
+    {
+      "sourceId": "sys-3-2-3-ios",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_3_iOS_for_Enterprise_2023.pdf?__blob=publicationFile&v=4",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_3_iOS_for_Enterprise_2023.pdf?__blob=publicationFile&v=4",
+      "outcome": "downloaded",
+      "sha256": "8f5408f4b81652ddebd7c642b0c924d54118115d12e184501c654d8239c9dccc",
+      "sizeBytes": 141067
+    },
+    {
+      "sourceId": "sys-3-2-4-android",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_4_Android_Edition_2023.pdf?__blob=publicationFile&v=3",
+      "finalUrl": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/07_SYS_IT_Systeme/SYS_3_2_4_Android_Edition_2023.pdf?__blob=publicationFile&v=3",
+      "outcome": "downloaded",
+      "sha256": "166a6db96e28ae9dfa987a6a1ab9b405dc530e37a82cbc8c3c2549e5bbffa62a",
+      "sizeBytes": 113563
+    }
+  ]
+}

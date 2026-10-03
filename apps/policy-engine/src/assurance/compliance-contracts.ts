@@ -10,6 +10,7 @@ import type {
 import type { RelutionTemplateBundle } from "../contracts/template.js";
 import type { PolicyWorkspace } from "../workspace/types.js";
 import type { JsonRecord as WorkspaceJsonRecord } from "../platform/serialization/json-guards.js";
+import type { AssuranceCatalogBundle, AssuranceApplicabilityContext } from "./assurance-contracts.js";
 
 export type JsonRecord = WorkspaceJsonRecord;
 
@@ -35,6 +36,7 @@ export interface BuildComplianceReportInput {
   catalogs: Partial<Record<RecommendationSource, ComplianceSourceCatalogs>>;
   bundle: RelutionTemplateBundle;
   appleSchema: AppleSchemaCatalog;
+  assurance?: { readonly catalog: AssuranceCatalogBundle; readonly applicability: AssuranceApplicabilityContext };
 }
 
 export interface ComplianceSelection {

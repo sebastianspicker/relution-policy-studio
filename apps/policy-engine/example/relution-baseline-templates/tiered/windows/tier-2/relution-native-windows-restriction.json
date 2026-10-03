@@ -21,7 +21,7 @@
       "slug": "relution-native-windows-restriction",
       "label": "Windows Restriction"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -78,16 +78,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "bsi-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             },
             {
               "source": "cis",
               "ruleId": "cis-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "cis-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-restriction-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-restriction-aggregate",
               "title": "Relution aggregate: WINDOWS_RESTRICTION"
             }
           ],

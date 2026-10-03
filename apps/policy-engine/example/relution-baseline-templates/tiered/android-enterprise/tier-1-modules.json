@@ -15,7 +15,7 @@
     "securityLevel": "grundschutz",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "ANDROID_ENTERPRISE",
@@ -60,6 +60,7 @@
       {
         "source": "cis",
         "ruleId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
+        "sourceRecommendationId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-trust-agents-aggregate",
         "target": "ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT",
         "conflictingPaths": [
           "keyguardDisabledFeatures"
@@ -68,7 +69,8 @@
       },
       {
         "source": "cis",
-        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate--policy-948562bc28e8",
+        "sourceRecommendationId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
         "target": "ANDROID_ENTERPRISE_RESTRICTION",
         "conflictingPaths": [
           "microphoneAccessPermission"
@@ -77,7 +79,8 @@
       },
       {
         "source": "cis",
-        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
+        "ruleId": "cis-android-enterprise-android-enterprise-restriction-aggregate--policy-b41919c3152a",
+        "sourceRecommendationId": "cis-android-enterprise-android-enterprise-restriction-aggregate",
         "target": "ANDROID_ENTERPRISE_RESTRICTION",
         "conflictingPaths": [
           "microphoneAccessPermission"
@@ -87,6 +90,7 @@
       {
         "source": "vendor",
         "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
+        "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-postpone-aggregate",
         "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
         "conflictingPaths": [
           "systemUpdateType"
@@ -96,6 +100,7 @@
       {
         "source": "vendor",
         "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
+        "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-windowed-aggregate",
         "target": "ANDROID_ENTERPRISE_SYSTEM_UPDATE",
         "conflictingPaths": [
           "systemUpdateType"
@@ -128,31 +133,37 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-advanced-security-overrides-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_ADVANCED_SECURITY_OVERRIDES"
             }
           ],
@@ -189,6 +200,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-device-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DEVICE_PASSCODE"
             }
           ],
@@ -226,6 +238,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-display-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-display-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_DISPLAY"
             }
           ],
@@ -261,6 +274,7 @@
             {
               "source": "cis",
               "ruleId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-notifications-aggregate",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-keyguard-feature-management-keyguarddisabledfeatures-notifications-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_KEYGUARD_FEATURE_MANAGEMENT (keyguarddisabledfeatures-notifications)"
             }
           ],
@@ -295,12 +309,14 @@
           "sourceRules": [
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-location-sharing-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_LOCATION_SHARING_MANAGEMENT"
             }
           ],
@@ -334,6 +350,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-permission-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PERMISSION_MANAGEMENT"
             }
           ],
@@ -371,31 +388,37 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate--policy-948562bc28e8",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "cis",
-              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate--policy-b41919c3152a",
+              "sourceRecommendationId": "cis-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-play-store-management-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_PLAY_STORE_MANAGEMENT"
             }
           ],
@@ -432,21 +455,25 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-restriction-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-restriction-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_RESTRICTION"
             }
           ],
@@ -488,11 +515,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
+              "sourceRecommendationId": "bsi-android-enterprise-android-enterprise-system-update-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-automatic-aggregate",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-system-update-systemupdatetype-automatic-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_SYSTEM_UPDATE (systemupdatetype-automatic)"
             }
           ],
@@ -525,17 +554,20 @@
           "sourceRules": [
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-5017e54d49e4",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-7ec9f2d4c7aa",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
             },
             {
               "source": "vendor",
-              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
+              "ruleId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate--policy-f0b1d2722ae0",
+              "sourceRecommendationId": "vendor-android-enterprise-android-enterprise-work-profile-passcode-aggregate",
               "title": "Relution aggregate: ANDROID_ENTERPRISE_WORK_PROFILE_PASSCODE"
             }
           ],

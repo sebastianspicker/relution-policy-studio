@@ -6,35 +6,33 @@ source-checkout interfaces.
 
 ## Development setup
 
-Use Python 3.11 or newer and Node.js 20.19 or newer. From the repository root:
-
-```sh
-python3 -m pip install --editable '.[dev]'
-npm ci
-```
-
-The editable install is required before running the Python adapters under
-`scripts/`. The project has a `uv.lock`, but the declared CI and contributor
-workflow uses pip.
+Use Python 3.11 or newer and Node.js 22.12 or newer. From the monorepo root,
+`pnpm bootstrap` installs the JavaScript workspace (this package's eslint and
+Node tests included) and syncs this package's locked uv environment
+(`uv sync --locked --extra dev`). The adapters under `scripts/` run through
+`uv run --locked`.
 
 ## Complete gate
 
-Run the same checks as `.github/workflows/ci.yml`:
+From this directory (the monorepo's `pnpm verify` runs the same planner steps):
 
 ```sh
-ruff check .
-ruff format --check campusweave scripts tests
-pyright
-python3 -m unittest discover -s tests -v
-npm test
-npm run lint
-find web -type f \( -name '*.js' -o -name '*.mjs' \) -exec node --check {} +
-find campusweave scripts -type f -name '*.py' -exec python3 -m py_compile {} +
-python3 scripts/validate_machine_docs.py
+uv run --locked ruff check .
+uv run --locked ruff format --check campusweave scripts tests
+uv run --locked pyright
+uv run --locked python -m unittest discover -s tests -v
+pnpm test
+pnpm lint
+uv run --locked python scripts/validate_machine_docs.py
 zsh -n scripts/relution_curl.zsh
 ```
 
-CI runs this gate on macOS with Python 3.11 and Node.js 20.19.0. Report checks
+The monorepo's `pnpm verify` also checks syntax: `node --check` on every
+`.js`/`.mjs` file under `web/`, and `py_compile` with `.venv/bin/python` on
+`campusweave/` and `scripts/`.
+
+The monorepo's `.github/workflows/unified.yml` runs this gate on macOS and
+Ubuntu with Python 3.11 and Node.js 22. Report checks
 that could not be run instead of implying that local success proves another
 platform, a live Relution target, or a release artifact.
 

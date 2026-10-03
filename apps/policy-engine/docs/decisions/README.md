@@ -11,6 +11,7 @@ behavior; a decision records the invariants that changes must preserve.
 | [0003](0003-archive-and-sidecar-persistence.md) | Archive and sidecar persistence |
 | [0004](0004-external-write-boundary.md) | Relution and Zammad write boundary |
 | [0005](0005-capability-modular-monolith.md) | Capability-oriented modular monolith |
+| [0006](0006-unified-node-python-host.md) | Unified Node host and bounded Python planner bridge |
 
 A replacement decision must name the record it supersedes. Do not silently
 weaken an invariant in source, configuration, or documentation.

@@ -24,6 +24,7 @@ ALLOWED_PACKAGE_EDGES = {
         "planning",
         "private_artifacts",
         "profiles",
+        "profiles_v2",
         "resources",
         "targets",
     },
@@ -33,10 +34,18 @@ ALLOWED_PACKAGE_EDGES = {
     "planning": {"private_artifacts"},
     "private_artifacts": {"json_snapshot"},
     "profiles": {"json_snapshot", "resources"},
+    "profiles_v2": {"json_snapshot", "private_artifacts", "resources"},
     "resources": set(),
     "server": {"json_snapshot", "private_artifacts", "resources", "workbench"},
     "targets": {"contracts", "openapi", "private_artifacts", "profiles"},
-    "workbench": {"json_snapshot", "planning", "private_artifacts", "profiles", "resources"},
+    "workbench": {
+        "json_snapshot",
+        "planning",
+        "private_artifacts",
+        "profiles",
+        "profiles_v2",
+        "resources",
+    },
 }
 
 

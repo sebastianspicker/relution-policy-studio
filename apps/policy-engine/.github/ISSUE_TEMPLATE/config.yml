@@ -1,2 +1,0 @@
-# Allow issue templates without publishing links that may change when the repository moves.
-blank_issues_enabled: true

@@ -4,12 +4,16 @@ from __future__ import annotations
 
 import hashlib
 import shutil
+import tempfile
 from pathlib import Path
 from typing import Any
 
 from _harvest_vendor_guidance_modules.common import VENDOR_DIR
 from _tooling_text_io import read_json
-from _harvest_vendor_guidance_modules.vendor_mapping_text import relative_output_path, write_json
+from _harvest_vendor_guidance_modules.vendor_mapping_text import (
+    relative_output_path,
+    write_json,
+)
 from _harvest_vendor_guidance_modules.vendor_source_content import (
     download_vendor_source,
     extract_text,
@@ -33,14 +37,35 @@ def copy_downloads(output_vendor_dir: Path) -> None:
 
 
 def refresh_downloads(output_vendor_dir: Path) -> None:
-    """Refresh all configured vendor source downloads and write a manifest."""
+    """Refresh all sources transactionally, retaining the prior set on failure."""
 
     sources = read_json(VENDOR_DIR / "sources.json")
     output_vendor_dir.mkdir(parents=True, exist_ok=True)
-    manifest = []
-    for source in sources:
-        manifest.append(refresh_vendor_source(source, output_vendor_dir))
-    write_json(output_vendor_dir / "downloads" / "manifest.json", manifest)
+    target = output_vendor_dir / "downloads"
+    with tempfile.TemporaryDirectory(
+        prefix="vendor-refresh-", dir=output_vendor_dir.parent
+    ) as temporary_directory:
+        staged_vendor_dir = Path(temporary_directory) / "vendor-references"
+        retained_derived = target / "derived"
+        if retained_derived.exists():
+            shutil.copytree(
+                retained_derived,
+                staged_vendor_dir / "downloads" / "derived",
+            )
+        manifest = [
+            refresh_vendor_source(source, staged_vendor_dir) for source in sources
+        ]
+        write_json(staged_vendor_dir / "downloads" / "manifest.json", manifest)
+        staged_downloads = staged_vendor_dir / "downloads"
+        backup = Path(temporary_directory) / "retained-downloads"
+        if target.exists():
+            target.replace(backup)
+        try:
+            staged_downloads.replace(target)
+        except Exception:
+            if backup.exists() and not target.exists():
+                backup.replace(target)
+            raise
 
 
 def refresh_vendor_source(

@@ -21,7 +21,7 @@
       "slug": "relution-native-apple-device-settings",
       "label": "Apple Device Settings"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "MACOS",
@@ -71,6 +71,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-macos-apple-device-settings-aggregate",
+              "sourceRecommendationId": "vendor-macos-apple-device-settings-aggregate",
               "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
             }
           ],

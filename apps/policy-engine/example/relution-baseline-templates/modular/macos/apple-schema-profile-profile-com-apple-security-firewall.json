@@ -10,13 +10,13 @@
     "version": 1,
     "kind": "modular-target",
     "platform": "MACOS",
+    "generatedAt": "2026-09-07T10:51:35Z",
     "module": {
       "kind": "apple-schema-profile",
       "target": "profile:com.apple.security.firewall",
       "slug": "apple-schema-profile-profile-com-apple-security-firewall",
       "label": "Apple Security Firewall"
-    },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    }
   },
   "consolidation": {
     "platform": "MACOS",
@@ -71,11 +71,13 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
               "title": "Relution aggregate: profile:com.apple.security.firewall"
             },
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
               "title": "Relution aggregate: profile:com.apple.security.firewall"
             }
           ],

@@ -13,6 +13,7 @@ import type { PolicyWorkspace, WorkspaceValidationResult } from "../workspace/ty
 import type { AppleSchemaCatalog } from "../apple/apple-schema-types.js";
 import type { RelutionTemplateBundle } from "../contracts/template.js";
 import type { RecommendationSource } from "../assurance/recommendation-types.js";
+import type { BuildComplianceReportInput } from "../assurance/compliance-contracts.js";
 
 export interface ComplianceCheckInput {
   readonly workspace: PolicyWorkspace;
@@ -69,6 +70,7 @@ export function checkCompliance(input: ComplianceCheckInput, dependencies: Compl
     catalogs: dependencies.catalogs.load([...input.sources]),
     bundle: dependencies.bundle,
     appleSchema: dependencies.appleSchema,
+    ...(dependencies.assurance === undefined ? {} : { assurance: dependencies.assurance }),
   });
 }
 
@@ -86,6 +88,7 @@ export function applyCompliance(input: ComplianceApplicationInput, dependencies:
     catalogs: dependencies.catalogs.load([...input.sources]),
     bundle: dependencies.bundle,
     appleSchema: dependencies.appleSchema,
+    ...(dependencies.assurance === undefined ? {} : { assurance: dependencies.assurance }),
   }).workspace;
   const validation = validateWorkspace(workspace, dependencies.bundle);
   if (!validation.ok) {
@@ -126,6 +129,7 @@ export function buildVerifiedArchive<TSidecar>(
 }
 
 export interface ComplianceDependencies {
+  readonly assurance?: BuildComplianceReportInput["assurance"];
   readonly bundle: RelutionTemplateBundle;
   readonly appleSchema: AppleSchemaCatalog;
   readonly catalogs: { load(sources: RecommendationSource[]): Partial<Record<RecommendationSource, ComplianceSourceCatalogs>> };

@@ -1,5 +1,6 @@
 /** Builds compliance reports for one selected policy version. */
 import { sourceStatus } from "./compliance-artifacts.js";
+import { bindComplianceApplicability } from "./compliance-assurance-binding.js";
 import {
   appliesToPolicy,
   evaluateRecommendation,
@@ -29,7 +30,7 @@ export function buildComplianceReport(input: BuildComplianceReportInput): Compli
       if (!appliesToPolicy(artifacts.recommendationCatalog, recommendation.platform, target.policyPlatform)) {
         continue;
       }
-      results.push(evaluateRecommendation(source, recommendation, target.configurations, artifacts, input.appleSchema));
+      results.push(bindComplianceApplicability(evaluateRecommendation(source, recommendation, target.configurations, artifacts, input.appleSchema), target.policyPlatform, input.assurance));
     }
   }
 
@@ -48,6 +49,7 @@ export function buildComplianceReport(input: BuildComplianceReportInput): Compli
   }
 
   return {
+    assuranceDigest: input.assurance?.catalog.assuranceDigest ?? null,
     policyPath: target.policy.path,
     policyName: target.policyName,
     policyPlatform: target.policyPlatform,

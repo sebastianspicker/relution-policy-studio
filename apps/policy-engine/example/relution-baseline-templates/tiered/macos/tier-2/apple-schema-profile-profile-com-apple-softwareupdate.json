@@ -21,7 +21,7 @@
       "slug": "apple-schema-profile-profile-com-apple-softwareupdate",
       "label": "Apple Softwareupdate"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "MACOS",
@@ -75,11 +75,13 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
               "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
             },
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
               "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
             }
           ],

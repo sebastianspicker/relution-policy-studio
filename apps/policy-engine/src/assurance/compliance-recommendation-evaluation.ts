@@ -8,7 +8,7 @@ import type {
   JsonRecord,
 } from "./compliance-types.js";
 import { uniqueConfigurationReferences } from "./compliance-value-lookups.js";
-import { evaluateMapping, supportedComplianceMapping } from "./compliance-mapping-evaluation.js";
+import { evaluateMapping } from "./compliance-mapping-evaluation.js";
 import { remediationOptionsForRecommendation } from "./compliance-remediation-options.js";
 import { blockingReasonsForResult, fallbackBlockingReasons } from "./compliance-blocking-reasons.js";
 
@@ -20,7 +20,7 @@ export function evaluateRecommendation(
   appleSchema: AppleSchemaCatalog,
 ): ComplianceRecommendationResult {
   const mappings = recommendation.relutionMapping.status === "exact"
-    ? recommendation.relutionMapping.rulesetMappings.filter(supportedComplianceMapping)
+    ? recommendation.relutionMapping.rulesetMappings
     : [];
   if (mappings.length === 0) return uncheckedRecommendation(source, recommendation);
   const mappingResults = mappings.map((mapping) => evaluateMapping(mapping, configurations, appleSchema));

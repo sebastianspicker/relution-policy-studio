@@ -1,0 +1,11 @@
+# Imported apps keep their own formatting; root Prettier covers the workbench, tools and integration tests.
+apps/policy-engine/
+apps/planner/
+contracts/
+docs/
+
+# Generated outputs and the lockfile.
+dist/
+dist-web/
+dist-demo/
+pnpm-lock.yaml

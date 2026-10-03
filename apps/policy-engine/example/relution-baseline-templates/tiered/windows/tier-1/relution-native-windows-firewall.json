@@ -21,7 +21,7 @@
       "slug": "relution-native-windows-firewall",
       "label": "Windows Firewall"
     },
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "WINDOWS",
@@ -71,6 +71,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-windows-windows-firewall-aggregate",
+              "sourceRecommendationId": "vendor-windows-windows-firewall-aggregate",
               "title": "Relution aggregate: WINDOWS_FIREWALL"
             }
           ],

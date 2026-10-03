@@ -4,10 +4,16 @@
   "description": "CLI and loopback browser editor for Relution .rexp archives, Apple payloads, baseline data, and read-only device audits.",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@10.34.5",
   "type": "module",
   "bin": {
     "rexp": "./dist/src/cli.js"
+  },
+  "exports": {
+    "./host": "./dist/src/host/index.js",
+    "./testing": "./dist/src/host/testing.js",
+    "./browser": "./src/browser/index.ts",
+    "./ui": "./web/src/studio-ui.ts",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build:node": "rm -rf dist && tsc -p tsconfig.json",
@@ -20,13 +26,12 @@
     "check:architecture": "node tools/check-architecture.mjs",
     "check:hygiene": "pnpm check:loc && pnpm check:duplicates && pnpm check:architecture",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "knip": "knip --config knip.json",
     "python:lint": "uv run --locked ruff check .",
     "python:test": "uv run --locked python -m unittest discover -s tests/python -v",
     "test:node:built": "cd dist && node --test",
     "test:node": "pnpm build:node && pnpm test:node:built",
     "test": "pnpm test:node",
-    "verify:ci": "pnpm check:hygiene && pnpm knip && pnpm build && pnpm check:bundle:web && pnpm test:node:built && pnpm python:lint && pnpm python:test",
+    "verify:ci": "pnpm check:hygiene && pnpm build && pnpm check:bundle:web && pnpm test:node:built && pnpm python:lint && pnpm python:test",
     "verify:pre-pr": "pnpm verify:ci && pnpm codacy:cloud:inspect && pnpm codacy:cloud",
     "codacy:cloud-config": "node tools/run_codacy_cloud.mjs config",
     "codacy:cloud:inspect": "node tools/run_codacy_cloud.mjs inspect",
@@ -45,13 +50,17 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "jscpd": "5.0.14",
-    "knip": "6.27.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "terser": "5.51.2",
     "typescript": "7.0.2",
     "vite": "^8.0.16"
   },
   "dependencies": {
     "ajv": "^8.18.0",
-    "js-yaml": "^4.3.1",
+    "js-yaml": "^4.3.2"
+  },
+  "peerDependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   }

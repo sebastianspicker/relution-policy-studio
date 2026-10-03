@@ -12,6 +12,9 @@ import { handleRelutionApiRequest } from "./integrations/relution/relution-edito
 import { sendJson } from "./editor-routes-utils.js";
 import { handleZammadApiRequest } from "./integrations/zammad/zammad-editor-dispatcher.js";
 import { validateEditorKeyForOutput } from "./editor-key-validation.js";
+import { handleCampusWeaveApiRequest } from "./campusweave/routes.js";
+import { editorWorkspacePath } from "./editor-server-contract.js";
+import { handleAssuranceApiRequest } from "./editor-server-assurance-routes.js";
 
 export async function routeEditorApiRequest(
   url: URL,
@@ -38,15 +41,17 @@ async function handleKeyApiRequest(
 }
 
 const EDITOR_API_HANDLERS: readonly EditorApiHandler[] = [
+  handleCampusWeaveApiRequest,
+  handleAssuranceApiRequest,
   handleReadOnlyApiRequest,
   handleComplianceApiRequest,
   async (url, request, response, context) => await handleRelutionApiRequest(
-    url, request, response, context.runtimeState.relution, context.options.workspace,
+    url, request, response, context.runtimeState.relution, editorWorkspacePath(context),
     context.options.allowLocalServiceHosts === true, context.options.serviceTransport,
   ),
   async (url, request, response, context) => await handleZammadApiRequest(
     url, request, response, context.runtimeState.zammad, context.options.allowLocalServiceHosts === true,
-    context.options.workspace, context.options.serviceTransport,
+    editorWorkspacePath(context), context.options.serviceTransport,
   ),
   handleArchiveApiRequest,
   handleWorkspaceApiRequest,

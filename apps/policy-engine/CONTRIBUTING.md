@@ -58,12 +58,14 @@ Common focused checks:
 
 ```sh
 pnpm typecheck
-pnpm knip
 pnpm check:architecture
 pnpm test:node
 pnpm python:lint
 pnpm python:test
 ```
+
+Run `pnpm knip` and `pnpm check:boundaries` from the repository root; they
+analyze this package together with the workbench that consumes its `exports`.
 
 For MDM source or output changes:
 

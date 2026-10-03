@@ -93,11 +93,11 @@ checks.
 
 ## Automated checks
 
-From the repository root after `npm ci`:
+From this package after `pnpm bootstrap` at the monorepo root:
 
 ```sh
-npm test
-npm run lint
+pnpm test
+pnpm lint
 find web -type f \( -name '*.js' -o -name '*.mjs' \) -exec node --check {} +
 ```
 

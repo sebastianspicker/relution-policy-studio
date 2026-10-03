@@ -8,6 +8,13 @@ import type { RelutionEditorRuntime } from "./integrations/relution/relution-edi
 import type { RelutionTemplateBundle } from "../contracts/template.js";
 import type { ZammadEditorRuntime } from "./integrations/zammad/zammad-editor-contract.js";
 import type { EditorWorkspaceStateInput } from "../workspace-state/editor-port.js";
+import type { CampusWeaveRuntime } from "./campusweave/runtime.js";
+import type { CampusWeavePlannerOptions } from "../integrations/campusweave/planner-worker.js";
+
+interface CampusWeaveServerOptions {
+  readonly projectRoot: string;
+  readonly planner: CampusWeavePlannerOptions;
+}
 
 export interface EditorServerOptions {
   workspace: string;
@@ -15,6 +22,12 @@ export interface EditorServerOptions {
   out: string;
   allowLocalServiceHosts?: boolean;
   bundlePath?: string;
+  /** Test and archival-review seam for an alternate assurance artifact root. */
+  assuranceRootDir?: string;
+  /** Optional alternate web build served by this same authenticated loopback host. */
+  staticRoot?: string;
+  /** Enables revisioned projects and the bounded offline Python planner bridge. */
+  campusweave?: CampusWeaveServerOptions;
   host?: string;
   port?: number;
   /** Test-only deterministic capability for browser harnesses; ordinary editor sessions generate one. */
@@ -41,6 +54,7 @@ export interface EditorRuntimeState {
   zammad: ZammadEditorRuntime;
   networkApiToken: string;
   mutationQueues: EditorMutationQueues;
+  campusweave?: CampusWeaveRuntime;
 }
 
 export interface EditorRequestContext {
@@ -51,7 +65,11 @@ export interface EditorRequestContext {
 }
 
 export function editorWorkspaceStateInput(context: EditorRequestContext): EditorWorkspaceStateInput {
-  return { workspaceDir: context.options.workspace, appleSchemaRevision: context.appleSchema.source.revision };
+  return { workspaceDir: editorWorkspacePath(context), appleSchemaRevision: context.appleSchema.source.revision };
+}
+
+export function editorWorkspacePath(context: EditorRequestContext): string {
+  return context.runtimeState.campusweave?.activeWorkspaceDir ?? context.options.workspace;
 }
 
 export type EditorApiHandler = (

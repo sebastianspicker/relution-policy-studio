@@ -17,6 +17,7 @@ export interface EditorMutationQueues {
   readonly workspace: EditorMutationIntake;
   readonly relution: EditorMutationIntake;
   readonly zammad: EditorMutationIntake;
+  readonly campusweave: EditorMutationIntake;
 }
 
 export function createEditorMutationQueues(maxPending = MAX_EDITOR_MUTATIONS_PER_DOMAIN): EditorMutationQueues {
@@ -24,6 +25,7 @@ export function createEditorMutationQueues(maxPending = MAX_EDITOR_MUTATIONS_PER
     workspace: new EditorMutationIntake(maxPending),
     relution: new EditorMutationIntake(maxPending),
     zammad: new EditorMutationIntake(maxPending),
+    campusweave: new EditorMutationIntake(maxPending),
   };
 }
 

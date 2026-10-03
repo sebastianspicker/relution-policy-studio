@@ -6,11 +6,13 @@ import { evaluateAppleCompatMapping, evaluateAppleSchemaMapping } from "./compli
 import { evaluateNativeMapping } from "./compliance-native-mapping.js";
 import { unsupportedMappingTarget } from "./compliance-mapping-result.js";
 import { asRecord } from "../platform/serialization/json-guards.js";
+import { validCompliancePredicate } from "./compliance-mapping-validation.js";
 
 export function supportedComplianceMapping(mapping: RecommendationRulesetMapping): boolean {
-  return (mapping.kind === "relution-native" && typeof mapping.type === "string")
-    || (mapping.kind === "apple-schema-profile" && typeof mapping.schemaId === "string")
-    || (mapping.kind === "apple-mobileconfig" && typeof mapping.payloadType === "string");
+  return validCompliancePredicate(mapping) && (
+    (mapping.kind === "relution-native" && typeof mapping.type === "string" && mapping.type.trim().length > 0)
+    || (mapping.kind === "apple-schema-profile" && typeof mapping.schemaId === "string" && mapping.schemaId.trim().length > 0)
+    || (mapping.kind === "apple-mobileconfig" && typeof mapping.payloadType === "string" && mapping.payloadType.trim().length > 0));
 }
 
 export function evaluateMapping(
@@ -19,6 +21,10 @@ export function evaluateMapping(
   appleSchema: AppleSchemaCatalog,
 ): ComplianceMappingResult {
   const expectedValues = asRecord(mapping.values) ?? {};
+  if (!supportedComplianceMapping(mapping)) return {
+    kind: mapping.kind, target: unsupportedMappingTarget(mapping), expectedValues, status: "unsupported",
+    matchingConfigurations: [], candidateConfigurations: [],
+  };
   if (mapping.kind === "relution-native" && typeof mapping.type === "string") {
     return evaluateNativeMapping(mapping.type, mapping, expectedValues, configurations);
   }

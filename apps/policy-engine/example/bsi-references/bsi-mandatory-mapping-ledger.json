@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "BSI Mandatory Basis Relution Mapping Ledger",
-  "generatedAt": "2026-05-28T08:02:39Z",
+  "generatedAt": "2026-09-07T10:51:23Z",
   "scope": {
     "source": "BSI IT-Grundschutz Kompendium Edition 2023",
     "requirements": "Active Basis requirements containing mandatory modal verbs.",
@@ -16,12 +16,12 @@
       "WINDOWS": 10
     },
     "bySolutionStatus": {
-      "exact": 22,
-      "parameterized": 27
+      "parameterized": 27,
+      "exact": 22
     },
     "byMappingStatus": {
-      "exact": 22,
-      "parameterized": 27
+      "parameterized": 27,
+      "exact": 22
     },
     "settingBundleCount": 20
   },

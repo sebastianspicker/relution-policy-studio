@@ -1,7 +1,7 @@
 /** Classifies authenticated POST routes before bounded body intake begins. */
 import { DEFAULT_JSON_BODY_LIMIT_BYTES, LARGE_JSON_BODY_LIMIT_BYTES } from "./editor-json-body.js";
 
-export type EditorMutationDomain = "workspace" | "relution" | "zammad";
+export type EditorMutationDomain = "workspace" | "relution" | "zammad" | "campusweave";
 
 export interface EditorPostRoute {
   readonly domain: EditorMutationDomain;
@@ -12,8 +12,16 @@ export interface EditorPostRoute {
 const BODYLESS_WORKSPACE_POST_ROUTES = new Set(["/api/build"]);
 const BODYLESS_RELUTION_POST_ROUTES = new Set(["/api/relution/test"]);
 const BODYLESS_ZAMMAD_POST_ROUTES = new Set(["/api/zammad/test"]);
+const CAMPUSWEAVE_POST_ROUTES = new Set([
+  "/api/campusweave/projects",
+  "/api/campusweave/project",
+  "/api/campusweave/planner",
+  "/api/campusweave/review",
+]);
 
 const LARGE_WORKSPACE_POST_ROUTES = new Set([
+  "/api/assurance/preview",
+  "/api/assurance/apply",
   "/api/import",
   "/api/workspace",
   "/api/workspace/validate",
@@ -38,6 +46,10 @@ const WORKSPACE_POST_ROUTES = new Set([
   "/api/mdm-command/artifact/update",
   "/api/mobileconfig/inspect",
   "/api/roundtrip/reconcile",
+  "/api/campusweave/workspaces/activate",
+  "/api/campusweave/workspaces/recover",
+  "/api/campusweave/workspaces",
+  "/api/campusweave/projection",
 ]);
 
 const RELUTION_POST_ROUTES = new Set([
@@ -75,6 +87,9 @@ export function classifyEditorPostRoute(pathname: string): EditorPostRoute | und
   }
   if (ZAMMAD_POST_ROUTES.has(pathname)) {
     return { domain: "zammad", bodyLimitBytes: DEFAULT_JSON_BODY_LIMIT_BYTES, readsBody: true };
+  }
+  if (CAMPUSWEAVE_POST_ROUTES.has(pathname)) {
+    return { domain: "campusweave", bodyLimitBytes: DEFAULT_JSON_BODY_LIMIT_BYTES, readsBody: true };
   }
   return undefined;
 }

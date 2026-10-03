@@ -15,7 +15,7 @@
     "securityLevel": "grundschutz",
     "tierSourcePolicy": "bsi-cis-vendor",
     "tierCoverage": "distinct",
-    "generatedAt": "2026-04-26T17:20:44Z"
+    "generatedAt": "2026-09-07T10:51:35Z"
   },
   "consolidation": {
     "platform": "MACOS",
@@ -59,7 +59,8 @@
     "suppressedConflictRules": [
       {
         "source": "cis",
-        "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
+        "ruleId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate--policy-fab62df8a4b9",
+        "sourceRecommendationId": "apple-schema-profile-profile-com-apple-applicationaccess-aggregate",
         "target": "profile:com.apple.applicationaccess",
         "preferredTarget": "MACOS_RESTRICTION",
         "reason": "Relution treats macOS restrictions and the application access payload as conflicting server singletons; the BSI native restriction mapping has precedence."
@@ -67,6 +68,7 @@
       {
         "source": "cis",
         "ruleId": "apple-schema-profile-profile-com-apple-screensaver-aggregate",
+        "sourceRecommendationId": "apple-schema-profile-profile-com-apple-screensaver-aggregate",
         "target": "profile:com.apple.screensaver",
         "preferredTarget": "MACOS_SCREENSAVER",
         "reason": "Relution imports the macOS screensaver profile as the server-side screensaver singleton; the BSI native screensaver mapping has precedence."
@@ -74,6 +76,7 @@
       {
         "source": "cis",
         "ruleId": "cis-macos-ios-passcode-aggregate",
+        "sourceRecommendationId": "cis-macos-ios-passcode-aggregate",
         "target": "IOS_PASSCODE",
         "preferredTarget": "profile:com.apple.mobiledevice.passwordpolicy",
         "reason": "Relution imports the macOS password policy profile as the server-side passcode singleton."
@@ -81,6 +84,7 @@
       {
         "source": "cis",
         "ruleId": "cis-macos-macos-firewall-aggregate",
+        "sourceRecommendationId": "cis-macos-macos-firewall-aggregate",
         "target": "MACOS_FIREWALL",
         "preferredTarget": "profile:com.apple.security.firewall",
         "reason": "Relution imports the macOS firewall profile as the server-side firewall singleton."
@@ -107,6 +111,7 @@
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-mcx-mdm-profiles-com-apple-mcx-accounts-aggregate",
               "title": "Relution aggregate: profile:com.apple.MCX:mdm-profiles-com-apple-mcx-accounts"
             }
           ],
@@ -143,11 +148,13 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
               "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
             },
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-softwareupdate-aggregate",
               "title": "Relution aggregate: profile:com.apple.SoftwareUpdate"
             }
           ],
@@ -187,6 +194,7 @@
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-loginwindow-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-loginwindow-aggregate",
               "title": "Relution aggregate: profile:com.apple.loginwindow"
             }
           ],
@@ -220,6 +228,7 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-mobiledevice-passwordpolicy-aggregate",
               "title": "Relution aggregate: profile:com.apple.mobiledevice.passwordpolicy"
             }
           ],
@@ -264,11 +273,13 @@
             {
               "source": "bsi",
               "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
               "title": "Relution aggregate: profile:com.apple.security.firewall"
             },
             {
               "source": "cis",
               "ruleId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
+              "sourceRecommendationId": "apple-schema-profile-profile-com-apple-security-firewall-aggregate",
               "title": "Relution aggregate: profile:com.apple.security.firewall"
             }
           ],
@@ -302,6 +313,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-macos-apple-device-settings-aggregate",
+              "sourceRecommendationId": "vendor-macos-apple-device-settings-aggregate",
               "title": "Relution aggregate: APPLE_DEVICE_SETTINGS"
             }
           ],
@@ -334,6 +346,7 @@
             {
               "source": "vendor",
               "ruleId": "vendor-macos-apple-software-update-settings-aggregate",
+              "sourceRecommendationId": "vendor-macos-apple-software-update-settings-aggregate",
               "title": "Relution aggregate: APPLE_SOFTWARE_UPDATE_SETTINGS"
             }
           ],
@@ -376,16 +389,19 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             },
             {
               "source": "cis",
               "ruleId": "cis-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "cis-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-macos-macos-file-vault-aggregate",
+              "sourceRecommendationId": "vendor-macos-macos-file-vault-aggregate",
               "title": "Relution aggregate: MACOS_FILE_VAULT"
             }
           ],
@@ -429,6 +445,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-restriction-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-restriction-aggregate",
               "title": "Relution aggregate: MACOS_RESTRICTION"
             }
           ],
@@ -469,6 +486,7 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-screensaver-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-screensaver-aggregate",
               "title": "Relution aggregate: MACOS_SCREENSAVER"
             }
           ],
@@ -506,11 +524,13 @@
             {
               "source": "bsi",
               "ruleId": "bsi-macos-macos-system-policy-control-aggregate",
+              "sourceRecommendationId": "bsi-macos-macos-system-policy-control-aggregate",
               "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
             },
             {
               "source": "vendor",
               "ruleId": "vendor-macos-macos-system-policy-control-aggregate",
+              "sourceRecommendationId": "vendor-macos-macos-system-policy-control-aggregate",
               "title": "Relution aggregate: MACOS_SYSTEM_POLICY_CONTROL"
             }
           ],

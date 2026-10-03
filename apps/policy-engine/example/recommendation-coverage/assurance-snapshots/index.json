@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "currentSnapshotDigest": "7ce00e549ed2a05b5422ba5d41e5569b10a5e3cb0e8b26251fffde50da49ff13",
+  "entries": [
+    {
+      "snapshotDigest": "55b70060bb2a4a906615effd36b943b43b0a1828632d661998359f72cd5dbad1",
+      "artifactVersion": "1.0.0",
+      "corpusDigest": "c2c9f34b4212512dc76e43f40640e1d0cebec4dca3597a63a28024170d98633f",
+      "catalogDigest": "c32c07585090fcc1f0ac940f40c2ad18c4d5b9425ddeb4015445f58aec70bedf",
+      "catalogPath": "example/recommendation-coverage/assurance-snapshots/55b70060bb2a4a906615effd36b943b43b0a1828632d661998359f72cd5dbad1/assurance-catalog.json",
+      "presetsPath": "example/recommendation-coverage/assurance-snapshots/55b70060bb2a4a906615effd36b943b43b0a1828632d661998359f72cd5dbad1/assurance-presets.json",
+      "detailsPath": "example/recommendation-coverage/assurance-snapshots/55b70060bb2a4a906615effd36b943b43b0a1828632d661998359f72cd5dbad1/assurance-details.json",
+      "detailsDigest": "3fc26150dcb411e51e842f2f6f59fc1660b01c26c869d63a10092cf9751be28c",
+      "sourceCheckedAt": "2026-09-07",
+      "status": "retained"
+    },
+    {
+      "snapshotDigest": "7ce00e549ed2a05b5422ba5d41e5569b10a5e3cb0e8b26251fffde50da49ff13",
+      "artifactVersion": "1.0.0",
+      "corpusDigest": "0e30bce7d90970de8f633be37f5463f37e8d6b5ea645f666c16bbf2f02215c56",
+      "catalogDigest": "c780f7375d703676f486f9fb6950b16a83835434f62eb1b964ce1c664ad7072b",
+      "catalogPath": "example/recommendation-coverage/assurance-snapshots/7ce00e549ed2a05b5422ba5d41e5569b10a5e3cb0e8b26251fffde50da49ff13/assurance-catalog.json",
+      "presetsPath": "example/recommendation-coverage/assurance-snapshots/7ce00e549ed2a05b5422ba5d41e5569b10a5e3cb0e8b26251fffde50da49ff13/assurance-presets.json",
+      "detailsPath": "example/recommendation-coverage/assurance-snapshots/7ce00e549ed2a05b5422ba5d41e5569b10a5e3cb0e8b26251fffde50da49ff13/assurance-details.json",
+      "detailsDigest": "421f6c28ad30193c479baeefd072f2f8e9e651190f9209f4caad6882a01f79ac",
+      "sourceCheckedAt": "2026-09-07",
+      "status": "retained"
+    }
+  ]
+}

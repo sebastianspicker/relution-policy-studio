@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "id": "profile.example",
+  "name": "Example offline profile",
+  "organizations": [
+    {
+      "id": "org.example",
+      "name": "Example organization",
+      "parent_id": null,
+      "description": null,
+      "requirements": []
+    }
+  ],
+  "locations": [
+    {
+      "id": "location.primary",
+      "name": "Primary location",
+      "organization_id": "org.example",
+      "description": null,
+      "requirements": []
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "cohort.staff",
+      "name": "Staff",
+      "organization_id": "org.example",
+      "location_ids": ["location.primary"],
+      "role": "staff",
+      "ownership": "institution",
+      "requirements": []
+    }
+  ],
+  "intents": [
+    {
+      "id": "intent.baseline",
+      "name": "Baseline",
+      "outcome": "Establish a reviewable platform baseline",
+      "platform": "ios_ipados",
+      "ownership": "institution",
+      "role": "staff",
+      "cohort_ids": ["cohort.staff"],
+      "layer": 2,
+      "scope_ids": ["scope.staff"],
+      "depends_on": [],
+      "requirements": ["setting.baseline"]
+    }
+  ],
+  "scope_blueprints": [
+    {
+      "id": "scope.staff",
+      "name": "Staff scope",
+      "cohort_ids": ["cohort.staff"],
+      "organization_ids": ["org.example"],
+      "location_ids": ["location.primary"],
+      "platforms": ["ios_ipados"],
+      "ownerships": ["institution"],
+      "roles": ["staff"],
+      "depends_on": [],
+      "requirements": []
+    }
+  ],
+  "assignments": [
+    {
+      "id": "assignment.baseline",
+      "name": "Baseline staff assignment",
+      "intent_id": "intent.baseline",
+      "scope_id": "scope.staff",
+      "rollout_stage_id": "rollout.lab",
+      "requirements": ["membership review"]
+    }
+  ],
+  "rollout_stages": [
+    {
+      "id": "rollout.lab",
+      "name": "Lab review",
+      "order": 0,
+      "depends_on": [],
+      "requirements": ["offline review"]
+    }
+  ],
+  "unresolved": []
+}

@@ -27,6 +27,8 @@ export interface ComplianceRecommendationResult {
   recommendationId: string;
   recommendation: RecommendationRecord;
   status: ComplianceStatus;
+  localConfigurationStatus?: ComplianceStatus;
+  applicabilityStatus?: "verified" | "unresolved";
   mappingResults: ComplianceMappingResult[];
   matchedConfigurations: ComplianceConfigurationReference[];
   blockingReasons: string[];
@@ -34,6 +36,7 @@ export interface ComplianceRecommendationResult {
 }
 
 export interface ComplianceReport {
+  assuranceDigest?: string | null;
   policyPath: string;
   policyName: string;
   policyPlatform: string;

@@ -10,6 +10,6 @@ export function decodeXmlEntities(value) {
     .replaceAll("&apos;", "'")
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">")
-    .replaceAll("&amp;", "&")
-    .replaceAll("&#xF000;", "\uF000");
+    .replaceAll("&#xF000;", "\uF000")
+    .replaceAll("&amp;", "&");
 }

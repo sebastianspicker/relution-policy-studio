@@ -37,7 +37,6 @@ export function availableRecommendationCatalog(
 export function unavailableRecommendationCatalog(
   source: RecommendationSource,
   files: RecommendationSourceFiles,
-  error: unknown,
 ): RecommendationCatalogResponse {
   return {
     source,
@@ -48,7 +47,7 @@ export function unavailableRecommendationCatalog(
     displayPlatforms: [],
     importPlatforms: [],
     displayToImportPlatform: {},
-    error: error instanceof Error ? error.message : String(error),
+    error: `${files.label} is unavailable`,
     recommendations: [],
   };
 }

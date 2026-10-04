@@ -21,11 +21,11 @@ export function cleanDescription(description: string | undefined): string | unde
   const text = description
     .replace(/<[^>]*>/gu, " ")
     .replace(/&nbsp;/gu, " ")
-    .replace(/&amp;/gu, "&")
     .replace(/&quot;/gu, "\"")
     .replace(/&#39;/gu, "'")
     .replace(/&lt;/gu, "<")
     .replace(/&gt;/gu, ">")
+    .replace(/&amp;/gu, "&")
     .replace(/\s+/gu, " ")
     .trim();
   return text.length > 0 ? text : undefined;

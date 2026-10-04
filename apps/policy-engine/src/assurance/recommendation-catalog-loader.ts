@@ -40,7 +40,8 @@ function loadSourceCatalog(source: RecommendationSource, rootDir: string): Recom
     const ruleset = readRuleset(resolve(rootDir, files.rulesetPath));
     return availableRecommendationCatalog(source, files, recommendations, ruleset);
   } catch (error) {
-    return unavailableRecommendationCatalog(source, files, error);
+    console.error(`[recommendation catalog] ${source} unavailable`, error);
+    return unavailableRecommendationCatalog(source, files);
   }
 }
 

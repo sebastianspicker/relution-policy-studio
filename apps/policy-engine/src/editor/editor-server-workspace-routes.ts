@@ -42,7 +42,7 @@ export async function handleWorkspaceApiRequest(
     try {
       sendJson(response, 200, { validation: validateWorkspaceState(parseWorkspaceBody(body), bundle) });
     } catch (error) {
-      sendJson(response, 400, { error: error instanceof Error ? error.message : String(error) });
+      throw clientInputError(error);
     }
     return true;
   }

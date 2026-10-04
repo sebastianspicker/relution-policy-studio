@@ -37,7 +37,6 @@ Repository layout:
 | `apps/policy-engine` | Policy domain, `rexp` CLI, the authenticated loopback host and project store, legacy editor UI and offline data tooling |
 | `apps/planner` | Offline Python planner: profile compilation, stdio bridge, v1 CLI and legacy planner browser |
 | `contracts` | Cross-language JSON schemas and golden fixtures |
-| `tests/integration` | End-to-end tests against the real host and planner |
 | `tools` | Launcher, task runner and boundary check |
 
 Applications depend on each other only through declared package entry points (`rexp-studio/host`, `rexp-studio/browser`, `rexp-studio/ui`, and `rexp-studio/testing` for integration tests) and the planner's stdio protocol; `pnpm verify` enforces these import rules.
@@ -49,7 +48,7 @@ pnpm verify
 python3 tools/migration/verify.py
 ```
 
-See [migration status](docs/migration/STATUS.md), [history and recovery](docs/migration/RECOVERY.md), [architecture](docs/architecture/0001-unified-product.md) and the [approved design manifest](docs/design/manifest.json). Local macOS results, prepared Ubuntu CI, browser checks and live-service/device verification are reported separately.
+See [history and recovery](docs/migration/RECOVERY.md), [architecture](docs/architecture/0001-unified-product.md) and the [approved design manifest](docs/design/manifest.json). Local macOS results, prepared Ubuntu CI, browser checks and live-service/device verification are reported separately.
 
 The original CampusWeave and REXP Studio repositories remain untouched in their original locations. Their licenses and attribution remain scoped to the imported application directories; the monorepo does not replace those boundaries.
 

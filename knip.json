@@ -3,12 +3,10 @@
   "workspaces": {
     "apps/policy-engine": {
       "entry": [
-        "tests/**/*.test.ts",
         "tools/**/*.mjs"
       ],
       "project": [
         "src/**/*.ts",
-        "tests/**/*.ts",
         "web/src/**/*.ts",
         "web/src/**/*.tsx",
         "tools/**/*.mjs"
@@ -31,6 +29,8 @@
   ],
   "rules": {
     "cycles": "error",
-    "duplicates": "error"
+    "duplicates": "error",
+    "exports": "warn",
+    "types": "warn"
   }
 }

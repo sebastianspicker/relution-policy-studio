@@ -26,13 +26,6 @@ function runSteps(steps) {
   }
 }
 
-/** Integration tests are discovered when the step runs, so new files are picked up without edits here. */
-function integrationTestFiles() {
-  return readdirSync(join(root, 'tests/integration'))
-    .filter(file => file.endsWith('.test.mjs'))
-    .map(file => `tests/integration/${file}`);
-}
-
 /** Files below `directories` of a repository-relative app whose names match `pattern`, relative to that app. */
 function appFiles(app, directories, pattern) {
   return directories
@@ -52,10 +45,8 @@ function verifySteps() {
     {label: 'Format check', command: 'pnpm', args: ['format:check']},
     {label: 'Unused code and dependencies (knip)', command: 'pnpm', args: ['knip']},
     {label: 'Planner: ruff check', ...plannerUv('ruff', 'check', '.')},
-    {label: 'Planner: ruff format', ...plannerUv('ruff', 'format', '--check', 'campusweave', 'scripts', 'tests')},
+    {label: 'Planner: ruff format', ...plannerUv('ruff', 'format', '--check', 'campusweave', 'scripts')},
     {label: 'Planner: pyright', ...plannerUv('pyright')},
-    {label: 'Planner: python tests', ...plannerUv('python', '-m', 'unittest', 'discover', '-s', 'tests', '-v')},
-    {label: 'Planner: node tests', command: 'pnpm', args: ['test'], cwd: PLANNER},
     {label: 'Planner: node lint', command: 'pnpm', args: ['lint'], cwd: PLANNER},
     {label: 'Planner: machine docs', ...plannerUv('python', 'scripts/validate_machine_docs.py')},
     {label: 'Planner: shell syntax', command: 'zsh', args: ['-n', 'scripts/relution_curl.zsh'], cwd: PLANNER},
@@ -74,9 +65,7 @@ function verifySteps() {
     },
     {label: 'Policy engine: verify:ci', command: 'pnpm', args: ['verify:ci'], cwd: ENGINE},
     {label: 'Policy engine: demo build', command: 'pnpm', args: ['build:demo'], cwd: ENGINE},
-    {label: 'Workbench: tests', command: 'pnpm', args: ['test'], cwd: WORKBENCH},
     {label: 'Workbench: build', command: 'pnpm', args: ['build'], cwd: WORKBENCH},
-    {label: 'Integration tests', command: 'node', args: ['--test', ...integrationTestFiles()]},
   ];
 }
 

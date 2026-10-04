@@ -13,6 +13,9 @@ export function inspectedUnsignedPlist(content: string): string | undefined {
 
 function removeIgnoredXmlMarkup(content: string): string {
   let text = content;
-  while (XML_COMMENT_PATTERN.test(text)) text = text.replace(XML_COMMENT_PATTERN, "");
+  for (let previous = ""; previous !== text; ) {
+    previous = text;
+    text = text.replace(XML_COMMENT_PATTERN, "");
+  }
   return text.replace(XML_CDATA_PATTERN, "").replace(standardPlistDoctype(), "");
 }

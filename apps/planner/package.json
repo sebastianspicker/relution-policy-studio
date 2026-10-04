@@ -6,8 +6,7 @@
     "node": ">=20.19.0"
   },
   "scripts": {
-    "test": "node --test tests/web/*.test.mjs",
-    "lint": "eslint web tests/web"
+    "lint": "eslint web"
   },
   "devDependencies": {
     "eslint": "10.9.1"

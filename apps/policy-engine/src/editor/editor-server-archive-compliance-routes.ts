@@ -113,7 +113,10 @@ function handleArchiveBuildRequest(response: ServerResponse, context: EditorRequ
         ),
       },
     });
-  } catch (error) { throw badRequest(error instanceof Error ? error.message : String(error)); }
+  } catch (error) {
+    console.error("[editor archive build error]", error);
+    throw badRequest("Archive build failed");
+  }
   if (result.kind === "validation-failed") {
     sendJson(response, 400, { validation: result.validation, ...(result.constraintsRemoved.length === 0 ? {} : { constraintsRemoved: result.constraintsRemoved }) });
     return;

@@ -13,3 +13,12 @@ dist-demo/
 .pytest_cache/
 *.egg-info/
 .agents/
+
+# Internal agent, design and test files kept out of the published tree.
+/AGENTS.md
+/docs/design/DESIGN_BRIEF.md
+/docs/migration/STATUS.md
+/tests/
+/apps/planner/tests/
+/apps/policy-engine/tests/
+/apps/workbench/tests/

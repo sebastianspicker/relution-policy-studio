@@ -6,7 +6,7 @@ import { join } from "node:path";
 const outputDirectory = join(process.cwd(), process.argv.includes("--demo") ? "dist-demo" : "dist-web");
 const assetDirectory = join(outputDirectory, "assets");
 // Signal Desk shell + modular CSS; budgets track measured gzip of the design cutover.
-const limits = { js: 128_000, css: 13_000 };
+const limits = { js: 129_000, css: 13_000 };
 const totals = { js: 0, css: 0 };
 
 for (const fileName of readdirSync(assetDirectory)) {

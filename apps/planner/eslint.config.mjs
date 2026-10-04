@@ -29,14 +29,4 @@ export default [
     languageOptions: { globals: browserGlobals },
     rules,
   },
-  {
-    files: ['tests/web/**/*.mjs'],
-    languageOptions: {
-      globals: {
-        URL: 'readonly',
-        structuredClone: 'readonly',
-      },
-    },
-    rules,
-  },
 ]

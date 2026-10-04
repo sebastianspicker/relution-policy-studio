@@ -14,18 +14,17 @@ const SPECIAL_LABEL_PAIRS: Record<string, string> = {
   "File Vault": "FileVault", "MAC OS": "macOS", "I OS": "iOS", "Wi Fi": "Wi-Fi", "Cal DAV": "CalDAV", "Card DAV": "CardDAV",
 };
 
+const HTML_ENTITIES: Record<string, string> = {
+  "&nbsp;": " ", "&quot;": "\"", "&#39;": "'", "&lt;": "<", "&gt;": ">", "&amp;": "&",
+};
+
 export function cleanDescription(description: string | undefined): string | undefined {
   if (description === undefined) {
     return undefined;
   }
   const text = description
     .replace(/<[^>]*>/gu, " ")
-    .replace(/&nbsp;/gu, " ")
-    .replace(/&quot;/gu, "\"")
-    .replace(/&#39;/gu, "'")
-    .replace(/&lt;/gu, "<")
-    .replace(/&gt;/gu, ">")
-    .replace(/&amp;/gu, "&")
+    .replace(/&(?:nbsp|quot|#39|lt|gt|amp);/gu, (entity) => HTML_ENTITIES[entity] ?? entity)
     .replace(/\s+/gu, " ")
     .trim();
   return text.length > 0 ? text : undefined;

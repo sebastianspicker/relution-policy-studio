@@ -20,7 +20,7 @@ The repository also contains:
 The package is private and distributed as source. It is not a hosted service or
 an npm package.
 
-Explore the [interactive REXP Studio demo](https://sebastianspicker.github.io/rexp-studio/).
+Explore the [interactive REXP Studio demo](https://sebastianspicker.github.io/relution-policy-studio/).
 It runs the real React workbench against deterministic, sanitized data held only
 in browser memory. Policy editing and assurance interactions are functional,
 while archive, tenant, credential, and ticket operations remain unavailable.

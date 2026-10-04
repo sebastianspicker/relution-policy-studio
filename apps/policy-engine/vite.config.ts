@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
   const demo = mode === "demo";
   return {
     root: "web",
-    base: demo ? "/rexp-studio/" : "/",
+    base: demo ? "/relution-policy-studio/" : "/",
     plugins: [react({ jsxRuntime: "classic" }), editorDependencyGraph(demo)],
     oxc: {
       jsx: { runtime: "classic", pragma: "__cwElement", pragmaFrag: "__cwFragment" },

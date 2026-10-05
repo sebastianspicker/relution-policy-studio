@@ -9,6 +9,6 @@
     "lint": "eslint web"
   },
   "devDependencies": {
-    "eslint": "10.9.1"
+    "eslint": "10.12.0"
   }
 }

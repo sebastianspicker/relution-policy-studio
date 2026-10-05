@@ -13,8 +13,8 @@ classifiers = ["Operating System :: POSIX"]
 
 [project.optional-dependencies]
 dev = [
-  "pyright==1.1.411",
-  "ruff==0.16.5",
+  "pyright==1.1.414",
+  "ruff==0.16.10",
 ]
 
 [project.scripts]

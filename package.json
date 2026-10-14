@@ -18,8 +18,8 @@
   },
   "packageManager": "pnpm@10.34.5",
   "devDependencies": {
-    "knip": "6.27.0",
-    "prettier": "3.9.9",
+    "knip": "6.41.0",
+    "prettier": "3.9.10",
     "rexp-studio": "workspace:*"
   }
 }

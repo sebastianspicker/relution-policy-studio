@@ -3,6 +3,11 @@ import type { AppState } from "./editor-contracts.js";
 import { readJsonResponse } from "./editor-record-utils.js";
 
 const NETWORK_EDITOR_TOKEN_STORAGE_NAME = "rexp-studio:editor-token";
+/**
+ * The CampusWeave workspace this page loaded with. The host rejects workspace requests (409) once another tab or
+ * project switched it, instead of silently acting on the new one. A page reload adopts the current workspace again.
+ */
+let adoptedWorkspace: string | undefined;
 
 export async function loadState(): Promise<AppState> {
   const response = await editorApiFetch("/api/state");
@@ -10,11 +15,15 @@ export async function loadState(): Promise<AppState> {
   if (!response.ok) {
     throw new Error(`Failed to load editor state: ${JSON.stringify(state)}`);
   }
+  if (adoptedWorkspace === undefined && typeof state.campusweave_catalog_digest === "string") {
+    adoptedWorkspace = state.active_workspace_id ?? "scratch";
+  }
   return state;
 }
 
 export async function editorApiFetch(url: string, init: RequestInit = {}): Promise<Response> {
   const headers = new Headers(networkEditorAuthHeaders());
+  if (adoptedWorkspace !== undefined) headers.set("x-rexp-studio-workspace", adoptedWorkspace);
   new Headers(init.headers).forEach((value, key) => {
     headers.set(key, value);
   });

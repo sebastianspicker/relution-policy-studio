@@ -132,6 +132,9 @@ function parseEvidence(value: unknown, index: number): CampusWeaveEvidence {
     profile_digest: digest(evidence.profile_digest, `${label}.profile_digest`),
     policy_revision: nonEmptyString(evidence.policy_revision, `${label}.policy_revision`, 256),
     artifact_digest: digest(evidence.artifact_digest, `${label}.artifact_digest`),
+    ...(evidence.evidence_digest === undefined ? {} : {
+      evidence_digest: digest(evidence.evidence_digest, `${label}.evidence_digest`),
+    }),
     catalog_digest: digest(evidence.catalog_digest, `${label}.catalog_digest`),
     ...(evidence.assurance_digest === undefined ? {} : {
       assurance_digest: digest(evidence.assurance_digest, `${label}.assurance_digest`),
@@ -140,7 +143,10 @@ function parseEvidence(value: unknown, index: number): CampusWeaveEvidence {
 }
 
 function parseWorkspaceRef(value: unknown, index: number): CampusWeaveWorkspaceRef {
-  const label = `project.workspace_refs[${String(index)}]`;
+  return parseCampusWeaveWorkspaceRef(value, `project.workspace_refs[${String(index)}]`);
+}
+
+export function parseCampusWeaveWorkspaceRef(value: unknown, label: string): CampusWeaveWorkspaceRef {
   const workspace = record(value, label);
   return {
     ...workspace,

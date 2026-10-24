@@ -1,9 +1,10 @@
 /** Composes the unified Relution Policy Studio loopback host from a private local data directory. */
-import { existsSync, lstatSync, mkdirSync } from "node:fs";
+import { existsSync, lstatSync, mkdirSync, realpathSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { loadTemplateBundle } from "../assurance/template-bundle.js";
 import { startEditorServer } from "../editor/editor-server.js";
 import { initializeEmptyEditorWorkspace } from "../editor/editor-workspace-initialization.js";
+import { removeEditorLaunchFile, writeEditorLaunchFile } from "../editor/editor-launch-file.js";
 
 interface StudioHostPlannerOptions {
   readonly pythonExecutable: string;
@@ -22,13 +23,18 @@ export interface StudioHostOptions {
 export interface StudioHostHandle {
   /** Browser launch URL carrying the editor token in its fragment. */
   readonly browserUrl: string;
+  /** Private (0600) HTML file that redirects to `browserUrl`, so the token stays out of argv and stdout; removed on close. */
+  readonly launchFile: string;
   readonly close: () => Promise<void>;
 }
 
 /** Refuses symlink traversal before creating application-private state. */
 function preparePrivateDataDirectory(dataDir: string): void {
   for (let path = dataDir; ; path = dirname(path)) {
-    if (existsSync(path) && lstatSync(path).isSymbolicLink()) throw new Error("Data path must not contain symlinks");
+    if (existsSync(path) && lstatSync(path).isSymbolicLink()) {
+      const suggestion = `${realpathSync(path)}${dataDir.slice(path.length)}`;
+      throw new Error(`Data path must not contain symlinks: ${path} is a symbolic link. Pass the resolved path instead, for example --data-dir ${suggestion}`);
+    }
     if (dirname(path) === path) break;
   }
   mkdirSync(dataDir, { recursive: true, mode: 0o700 });
@@ -54,5 +60,23 @@ export async function startStudioHost(options: StudioHostOptions): Promise<Studi
       planner: { pythonExecutable: options.planner.pythonExecutable, cwd: options.planner.cwd },
     },
   });
-  return { browserUrl: handle.browserUrl, close: handle.close };
+  const launchFile = join(dataDir, "open-studio.html");
+  try {
+    writeEditorLaunchFile(launchFile, handle.browserUrl);
+  } catch (error) {
+    await handle.close();
+    throw error;
+  }
+  return {
+    browserUrl: handle.browserUrl,
+    launchFile,
+    close: async () => {
+      try {
+        removeEditorLaunchFile(launchFile);
+      } finally {
+        await handle.close();
+      }
+    },
+  };
 }
+

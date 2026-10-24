@@ -59,10 +59,15 @@ export function describeEditorServerError(error: unknown): EditorServerErrorDesc
   return { status: 500, message: "Internal editor error" };
 }
 
+function logPlannerError(error: CampusWeavePlannerError): void {
+  console.error(`[campusweave planner ${error.kind}] ${error.message}${error.diagnostic === undefined ? "" : `\n${error.diagnostic}`}`);
+}
+
 export function handleEditorServerError(response: ServerResponse, error: unknown): void {
   if (isEditorMutationCancellation(error)) return;
   const descriptor = describeEditorServerError(error);
   if (descriptor.status >= 500) console.error(error);
+  else if (error instanceof CampusWeavePlannerError) logPlannerError(error);
   if (response.destroyed || response.writableEnded) return;
   if (response.headersSent) {
     response.destroy();

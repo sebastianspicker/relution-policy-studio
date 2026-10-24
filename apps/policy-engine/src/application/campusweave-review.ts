@@ -22,6 +22,8 @@ export interface CampusWeaveReviewCurrentState {
   readonly workspaces?: ReadonlyMap<string, CampusWeaveReviewWorkspaceState>;
   /** Result freshly compiled by the trusted Python worker, never supplied by the client. */
   readonly trustedCompilation?: JsonRecord;
+  /** Why the trusted compilation is missing, when the planner failed. */
+  readonly plannerFailure?: string;
 }
 
 const OPERATIONAL_REQUIREMENTS = [
@@ -51,7 +53,7 @@ export function reviewCampusWeaveProject(
   const intents = project.profile.intents.filter(isRecord);
   const unresolved: unknown[] = [
     ...project.profile.unresolved,
-    ...project.operations.filter((operation) => operation.status !== "committed").map((operation) => ({ code: "operation_incomplete", operation_id: operation.id, message: "A workspace operation needs recovery before review" })),
+    ...project.operations.filter((operation) => operation.status === "pending").map((operation) => ({ code: "operation_incomplete", operation_id: operation.id, message: "A workspace operation needs recovery before review" })),
     ...compilationReasons.map((message) => ({ code: "compilation_not_current", message })),
     ...(intents.length === 0 ? [{ code: "planning_empty", message: "No policy intent has been defined" }] : []),
     ...intents.filter((intent) => !project.mappings.some((mapping) => mapping.intent_id === intent.id))
@@ -85,11 +87,16 @@ function reviewCompilation(project: CampusWeaveProject, profileDigest: string, c
   const saved = project.compiled_plan;
   const trusted = current.trustedCompilation;
   if (saved === null) reasons.push("Compile the profile before review");
-  if (trusted === undefined) reasons.push("Current planner validation is unavailable");
-  if (trusted?.valid !== true) reasons.push("Current profile has unresolved compilation diagnostics");
-  if (trusted?.profile_digest !== profileDigest) reasons.push("Current compiler profile digest does not match the profile");
+  if (trusted === undefined) {
+    reasons.push(current.plannerFailure === undefined
+      ? "Current planner validation is unavailable"
+      : `Current planner validation is unavailable: ${current.plannerFailure}`);
+  } else {
+    if (trusted.valid !== true) reasons.push("Current profile has unresolved compilation diagnostics");
+    if (trusted.profile_digest !== profileDigest) reasons.push("Current compiler profile digest does not match the profile");
+  }
   if (saved !== null && (saved.profile_digest !== profileDigest || saved.valid !== true)) reasons.push("Saved compilation is stale or invalid");
-  if (saved !== null && (saved.plan_digest !== trusted?.plan_digest || !isRecord(saved.plan)
+  if (saved !== null && ((trusted !== undefined && saved.plan_digest !== trusted.plan_digest) || !isRecord(saved.plan)
     || canonicalJsonSha256(saved.plan) !== saved.plan_digest)) reasons.push("Saved plan differs from deterministic compilation");
   if (current.catalogDigest === undefined || saved?.catalog_digest !== current.catalogDigest) reasons.push("Saved reference catalog digest is stale or missing");
   return reasons;
@@ -108,7 +115,7 @@ function reviewMapping(
   if (!project.workspace_refs.some((workspace) => workspace.id === mapping.workspace_id)) reasons.push("Workspace reference is missing");
   const workspace = current.workspaces?.get(mapping.workspace_id);
   if (workspace?.available !== true || workspace.policyRevision === undefined) reasons.push("Authoritative workspace is unavailable");
-  else if (mapping.policy_revision !== workspace.policyRevision) reasons.push("Mapping policy revision is stale");
+  else if (mapping.policy_revision !== workspace.policyRevision) reasons.push("Mapping policy revision is stale: the policy changed after this mapping was reviewed; review and save this mapping again");
   if (conflictingKeys.has(mappingSettingKey(mapping))) reasons.push("Setting ownership conflicts with another intent");
   return { mapping_index: index, intent_id: mapping.intent_id, current: reasons.length === 0,
     reviewed: mapping.reviewed, projectable: reasons.length === 0, reasons };

@@ -30,6 +30,10 @@ export interface AppState {
   sidecar: EditorSidecarState;
   /** CampusWeave workspace the host has active; null when CampusWeave is off or none is active. */
   active_workspace_id?: string | null;
+  /** Project that attaches the active CampusWeave workspace; null when none is active. */
+  active_project_id?: string | null;
+  /** Workspace revision the output archive on disk was built from, when it is the active workspace's recorded build. */
+  output_built_revision?: string | null;
   /** Catalog digest of the CampusWeave planner; null when CampusWeave is off. */
   campusweave_catalog_digest?: string | null;
 }

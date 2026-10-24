@@ -10,12 +10,15 @@ import {
   runEditorMutation,
 } from "./editor-mutation-routing.js";
 import { classifyEditorPostRoute } from "./editor-request-dispatcher.js";
+import { assertExpectedActiveWorkspace } from "./campusweave/active-workspace-guard.js";
 import { sendJson } from "./editor-routes-utils.js";
 import type { EditorRequestContext } from "./editor-server-contract.js";
 import { routeEditorApiRequest } from "./editor-server-routes.js";
 import { serveStaticAsset } from "./editor-static-assets.js";
 
 const STATIC_ROOT = fileURLToPath(new URL("../../../dist-web", import.meta.url));
+/** Reads that return content of the active workspace. */
+const ACTIVE_WORKSPACE_READ_ROUTES = new Set(["/api/state", "/api/output"]);
 
 export async function handleEditorHttpRequest(
   request: IncomingMessage,
@@ -55,6 +58,7 @@ async function handleEditorApiHttpRequest(
     await sendUnknownApiRoute(url, request, response, context);
     return;
   }
+  if (ACTIVE_WORKSPACE_READ_ROUTES.has(url.pathname)) assertExpectedActiveWorkspace(url.pathname, request, context);
   await sendUnknownApiRoute(url, request, response, context);
 }
 
@@ -73,7 +77,11 @@ async function runQueuedEditorMutation(
       request,
       route.bodyLimitBytes,
       route.readsBody,
-      async () => await sendUnknownApiRoute(url, request, response, context),
+      async () => {
+        // Checked inside the workspace queue so it is ordered with activation.
+        if (route.domain === "workspace") assertExpectedActiveWorkspace(url.pathname, request, context);
+        await sendUnknownApiRoute(url, request, response, context);
+      },
       { signal: cancellation.signal },
     );
   } finally {

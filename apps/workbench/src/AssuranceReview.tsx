@@ -9,6 +9,7 @@ import type {
   AssuranceApplicabilityContext,
   AssuranceReviewReceipt,
 } from 'rexp-studio/browser';
+import {queueAssuranceReceipt} from './assurance-receipts';
 import type {EditorController, Project} from './types';
 import {Alert, Field, Icon, JsonView} from './ui';
 import {download, request} from './api';
@@ -29,16 +30,7 @@ export interface AssuranceReviewProps {
     onBack: () => void;
   };
 }
-export function AssuranceReview({
-  c,
-  project,
-  update,
-  bundle,
-  selection,
-  snapshot,
-  context,
-  worksheet,
-}: AssuranceReviewProps) {
+export function AssuranceReview({c, project, bundle, selection, snapshot, context, worksheet}: AssuranceReviewProps) {
   const [parameters, setParameters] = useState<Record<string, unknown>>({});
   const [decisions, setDecisions] = useState<AssuranceConflictDecision[]>([]);
   const [excluded, setExcluded] = useState<Record<string, string>>({});
@@ -165,11 +157,8 @@ export function AssuranceReview({
       }
       setReceipt(response.receipt);
       setAppliedPreview(p);
-      update(current =>
-        current.id === projectId
-          ? {...current, assurance_reviews: [...(current.assurance_reviews ?? []), response.receipt]}
-          : current,
-      );
+      // Recorded in the project only when this draft is saved; discarding the draft drops it.
+      queueAssuranceReceipt(projectId, response.receipt, c.state.revision, c.isDirty);
       setPreview(undefined);
     } catch (e) {
       setError(String(e));
@@ -350,8 +339,8 @@ export function AssuranceReview({
       {receipt && (
         <Alert>
           <div>
-            Reviewed selection applied to the unsaved policy draft. The receipt is included in project autosave; save
-            the policy separately.
+            Reviewed selection applied to the unsaved policy draft. The receipt is recorded in the project when you save
+            the policy changes; discarding the draft discards it.
             <div className="inline-actions">
               <button onClick={() => download(receipt, 'campusweave-assurance-review.json')}>
                 Export review receipt

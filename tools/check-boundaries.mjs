@@ -1,5 +1,5 @@
 /** Fail when source code reaches into another app instead of using its declared package entry points. */
-import {readdirSync, readFileSync, statSync} from 'node:fs';
+import {existsSync, readdirSync, readFileSync, statSync} from 'node:fs';
 import {dirname, join, relative, resolve, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -31,7 +31,10 @@ function sourceFiles(directory) {
   });
 }
 
-const apps = readdirSync(appsDir).filter(name => statSync(join(appsDir, name)).isDirectory());
+// Only directories with a package manifest are workspace packages; editor and tool directories are not.
+const apps = readdirSync(appsDir).filter(
+  name => statSync(join(appsDir, name)).isDirectory() && existsSync(join(appsDir, name, 'package.json')),
+);
 /** Workspace package names; third-party packages such as ajv/dist/2020.js are out of scope. */
 const workspacePackages = apps.map(app => JSON.parse(readFileSync(join(appsDir, app, 'package.json'), 'utf8')).name);
 

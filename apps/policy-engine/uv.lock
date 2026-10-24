@@ -33,22 +33,22 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "defusedxml" },
-    { name = "pymupdf" },
 ]
 
 [package.dev-dependencies]
 dev = [
     { name = "ruff" },
 ]
+pdf = [
+    { name = "pymupdf" },
+]
 
 [package.metadata]
-requires-dist = [
-    { name = "defusedxml", specifier = ">=0.7,<1" },
-    { name = "pymupdf", specifier = ">=1.27,<2" },
-]
+requires-dist = [{ name = "defusedxml", specifier = ">=0.7,<1" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = "==0.14.14" }]
+pdf = [{ name = "pymupdf", specifier = ">=1.27,<2" }]
 
 [[package]]
 name = "ruff"

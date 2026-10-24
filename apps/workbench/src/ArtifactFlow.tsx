@@ -90,7 +90,15 @@ function FileIcon() {
   );
 }
 
+/** A build is current when made in this page, or when the host reports the output on disk was built from this revision. */
+export const hasCurrentBuild = (c: EditorController) =>
+  c.hasFreshBuild ||
+  (!c.isDirty && !!c.state.output_built_revision && c.state.output_built_revision === c.state.revision);
+
 export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowProps) {
+  // A workspace another project has open must not be validated, built or reported as this project's.
+  const ownWorkspace = c.state.active_project_id === project.id;
+  const hasBuild = ownWorkspace && hasCurrentBuild(c);
   const [validatedRevision, setValidatedRevision] = useState('');
   const [validationBusy, setValidationBusy] = useState(false);
   const [validationError, setValidationError] = useState('');
@@ -102,9 +110,9 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
   const validationCurrent = validatedRevision === c.state.revision && !c.isDirty && c.state.validation.ok;
   const currentStamp = `${project.revision}:${c.state.revision}`;
   const reviewCurrent =
-    reviewResponse !== undefined && reviewStamp === currentStamp && c.hasFreshBuild && !c.isDirty && projectSaved;
+    reviewResponse !== undefined && reviewStamp === currentStamp && hasBuild && !c.isDirty && projectSaved;
   const review = reviewCurrent ? reviewResponse.review : undefined;
-  const packagePrepared = review !== undefined && c.hasFreshBuild;
+  const packagePrepared = review !== undefined && hasBuild;
 
   useEffect(() => {
     setValidatedRevision('');
@@ -115,7 +123,7 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
     setReviewResponse(undefined);
     setReviewStamp('');
     setError('');
-  }, [project.revision, c.state.revision, c.isDirty, c.hasFreshBuild]);
+  }, [project.revision, c.state.revision, c.isDirty, hasBuild]);
 
   async function validateSavedWorkspace() {
     if (c.isDirty) return setValidationError('Save policy changes before validating the workspace.');
@@ -144,7 +152,7 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
   }
 
   async function generateReview() {
-    if (!c.hasFreshBuild || c.isDirty)
+    if (!hasBuild || c.isDirty)
       return setError('Build a fresh archive from the saved workspace before generating the review.');
     if (!projectSaved) return setError('Wait for the project save to finish before generating the review.');
     const stamp = currentStamp;
@@ -175,7 +183,8 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
     }
   }
 
-  const buildDisabled = !validationCurrent || !projectSaved || !c.state.keySet || c.isDirty || c.isBuildLoading;
+  const buildDisabled =
+    !ownWorkspace || !validationCurrent || !projectSaved || !c.state.keySet || c.isDirty || c.isBuildLoading;
   const compilationCurrent = review?.trusted_compilation?.valid === true;
   const mappingsCurrent =
     !!review &&
@@ -221,11 +230,14 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
             </p>
           )}
         </div>
-        <button disabled={validationBusy || c.isDirty || !projectSaved} onClick={() => void validateSavedWorkspace()}>
+        <button
+          disabled={!ownWorkspace || validationBusy || c.isDirty || !projectSaved}
+          onClick={() => void validateSavedWorkspace()}
+        >
           {validationBusy ? 'Validating…' : validationCurrent ? 'Validate again' : 'Validate workspace'}
         </button>
       </li>
-      <li className={c.hasFreshBuild ? 'is-complete' : ''}>
+      <li className={hasBuild ? 'is-complete' : ''}>
         <span className="step-number">02</span>
         <div className="step-copy">
           <h2>Build encrypted archive</h2>
@@ -238,6 +250,7 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
               ? 'Uses this local session’s configured archive passphrase.'
               : 'An archive passphrase is required in Settings.'}
           </p>
+          {!ownWorkspace && <p role="alert">The open policy workspace is not one of this project's workspaces.</p>}
           {!c.state.keySet && (
             <button className="text-action" onClick={() => navigate('Settings')}>
               Open passphrase settings
@@ -245,7 +258,7 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
           )}
         </div>
         <button className="primary" disabled={buildDisabled} onClick={() => void c.buildArchive()}>
-          {c.isBuildLoading ? 'Building…' : c.hasFreshBuild ? 'Build again' : 'Build archive'}
+          {c.isBuildLoading ? 'Building…' : hasBuild ? 'Build again' : 'Build archive'}
           <Arrow />
         </button>
       </li>
@@ -255,7 +268,7 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
           <h2>Generate review</h2>
           <p>Profile, mappings, source acknowledgment, artifact references and unresolved evidence.</p>
           <p>
-            {!c.hasFreshBuild
+            {!hasBuild
               ? 'Build the archive first.'
               : reviewCurrent
                 ? review?.complete
@@ -264,10 +277,7 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
                 : 'Ready after the fresh build.'}
           </p>
         </div>
-        <button
-          disabled={!c.hasFreshBuild || c.isDirty || !projectSaved || reviewBusy}
-          onClick={() => void generateReview()}
-        >
+        <button disabled={!hasBuild || c.isDirty || !projectSaved || reviewBusy} onClick={() => void generateReview()}>
           {reviewBusy ? 'Generating…' : reviewCurrent ? 'Generate again' : 'Generate review'}
         </button>
       </li>
@@ -450,7 +460,10 @@ export function ArtifactFlow({c, project, projectSaved, navigate}: ArtifactFlowP
           <h3>External evidence</h3>
           <dl className="facts operational-facts">
             {operationalRequirements.map(([id, label]) => {
-              const current = review?.evidence.some(entry => entry.requirement_id === id && entry.current === true);
+              // The review package is authoritative: it also requires the evidence kind to match.
+              const current = !review?.unresolved.some(
+                item => item.code === 'operational_evidence_missing' && item.requirement_id === id,
+              );
               return (
                 <div key={id}>
                   <dt>{label}</dt>

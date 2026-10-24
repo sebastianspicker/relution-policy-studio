@@ -90,7 +90,7 @@ Current limitations:
 - Node.js 22.12 or newer
 - pnpm 10.34.5
 - Python 3.11 or newer for the Python evidence tools
-- uv 0.10.7 for the locked Python environment
+- uv 0.10.7 or newer for the locked Python environment
 - a POSIX-compatible shell for package scripts
 
 CI uses Node.js 22 and Python 3.11 on Ubuntu. Native Windows execution of the
@@ -106,6 +106,10 @@ the single lockfile at the repository root:
 pnpm install --frozen-lockfile
 uv sync --locked
 ```
+
+The maintainer-only PDF ingestion tools (`tools/build_mdm_source_manifest.py`
+and the CIS benchmark parser) additionally need PyMuPDF, which is not installed
+by default: run `uv sync --locked --group pdf` before using them.
 
 Build both the Node.js and browser applications:
 

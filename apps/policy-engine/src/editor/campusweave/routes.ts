@@ -8,13 +8,14 @@ import { sendJson } from "../editor-routes-utils.js";
 import type { EditorRequestContext } from "../editor-server-contract.js";
 import { loadEditorWorkspaceState } from "../../workspace-state/editor-port.js";
 import { initializeNewWorkspace } from "../../application/workspace-initialization.js";
+import { assertSupportedWorkspacePlatform } from "../../workspace/input-values.js";
 import { editorWorkspaceInitializationPort } from "../editor-workspace-initialization.js";
 import type { CampusWeavePlannerCommand, CampusWeaveProject, CampusWeaveWorkspaceRef } from "../../contracts/campusweave.js";
 import { runCampusWeavePlanner } from "../../integrations/campusweave/planner-worker.js";
 import { parseCampusWeaveProfile, parseCampusWeaveProject } from "../../contracts/campusweave-validation.js";
 import { reviewCampusWeaveProject, type CampusWeaveReviewCurrentState } from "../../application/campusweave-review.js";
 import { applyCampusWeaveMapping, projectCampusWeaveMapping } from "./projection.js";
-import { CampusWeaveRevisionConflictError } from "../../contracts/campusweave-errors.js";
+import { CampusWeavePlannerError, CampusWeaveRevisionConflictError } from "../../contracts/campusweave-errors.js";
 import { campusWeaveAssuranceDigest } from "./assurance-state.js";
 
 const PLANNER_COMMANDS = new Set<CampusWeavePlannerCommand>(["reference", "convert-v1", "validate", "compile"]);
@@ -65,6 +66,13 @@ export async function handleCampusWeaveApiRequest(
     });
     return true;
   }
+  if (url.pathname === "/api/campusweave/workspaces/abandon" && request.method === "POST") {
+    await withBody(request, (body) => {
+      const project = runtime.store.abandonWorkspace(requireString(body, "projectId"), requireString(body, "operationId"), requireNumber(body, "expectedRevision"));
+      sendJson(response, 200, { project, transactions: { workspace: "not attached", project: "committed" } });
+    });
+    return true;
+  }
   if (url.pathname === "/api/campusweave/workspaces/activate" && request.method === "POST") {
     await activateWorkspace(request, response, context);
     return true;
@@ -104,17 +112,21 @@ async function reviewProject(request: IncomingMessage, response: ServerResponse,
   const project = context.runtimeState.campusweave!.store.get(requireString(body, "projectId"));
   assertRevision(project, requireNumber(body, "expectedRevision"));
   let trustedCompilation: unknown;
+  let plannerFailure: string | undefined;
   try {
     trustedCompilation = await runCampusWeavePlanner(
       context.runtimeState.campusweave!.planner,
       "compile",
       { profile: project.profile },
     );
-  } catch {
+  } catch (error) {
     trustedCompilation = undefined;
+    plannerFailure = error instanceof CampusWeavePlannerError ? error.message : "the planner request failed; see the host log";
+    console.error("[campusweave review] trusted compilation failed:", error instanceof CampusWeavePlannerError && error.diagnostic !== undefined ? `${plannerFailure}\n${error.diagnostic}` : error);
   }
+  const current = currentReviewState(context, project, trustedCompilation);
   sendJson(response, 200, {
-    review: reviewCampusWeaveProject(project, currentReviewState(context, project, trustedCompilation)),
+    review: reviewCampusWeaveProject(project, plannerFailure === undefined ? current : { ...current, plannerFailure }),
   });
 }
 
@@ -135,11 +147,27 @@ async function projectMapping(request: IncomingMessage, response: ServerResponse
       requireString(body, "expectedWorkspaceRevision"),
       currentReviewState(context, project, trustedCompilation),
     );
+    // The projected value is now in the workspace, so this mapping stays current at the new revision.
+    // Re-read: an autosave may have landed while the planner compiled.
+    let restamped: CampusWeaveProject | undefined;
+    const latest = context.runtimeState.campusweave!.store.get(project.id);
+    const mappingId = requireString(body, "mappingId");
+    if (latest.mappings.some((mapping) => mapping.id === mappingId)) {
+      try {
+        restamped = context.runtimeState.campusweave!.store.save({
+          ...latest,
+          mappings: latest.mappings.map((mapping) => mapping.id === mappingId ? { ...mapping, policy_revision: result.revision } : mapping),
+        }, latest.revision);
+      } catch (error) {
+        if (!(error instanceof CampusWeaveRevisionConflictError)) throw error;
+      }
+    }
     sendJson(response, 200, {
       workspace: result.workspace,
       revision: result.revision,
       active_workspace_id: context.runtimeState.campusweave!.activeWorkspaceId,
-      project_revision: project.revision,
+      project_revision: restamped?.revision ?? project.revision,
+      mapping_restamped: restamped !== undefined,
     });
 }
 
@@ -230,17 +258,29 @@ function createWorkspace(request: IncomingMessage, response: ServerResponse, con
       platform: requireString(body, "platform"),
       created_at: new Date().toISOString(),
     };
+    assertSupportedWorkspacePlatform(workspaceRef.platform, { allowed: context.bundle.platforms });
     const workspacePath = runtime.store.workspacePath(workspaceRef.id);
     const pending = runtime.store.beginWorkspace(projectId, workspaceRef, expectedRevision);
     let project: CampusWeaveProject;
     try {
-    initializeNewWorkspace({
-      workspace: workspacePath,
-      name: workspaceRef.name,
-      platform: workspaceRef.platform,
-      serverVersion: context.bundle.serverVersion,
-    }, editorWorkspaceInitializationPort);
-    project = runtime.store.completeWorkspace(projectId, pending.operation.id, pending.project.revision);
+      initializeNewWorkspace({
+        workspace: workspacePath,
+        name: workspaceRef.name,
+        platform: workspaceRef.platform,
+        serverVersion: context.bundle.serverVersion,
+      }, editorWorkspaceInitializationPort);
+    } catch (error) {
+      // Nothing durable was attached; give the operation up so review is not blocked by it forever.
+      const abandoned = runtime.store.abandonWorkspace(projectId, pending.operation.id, pending.project.revision);
+      sendJson(response, 409, {
+        error: `Workspace could not be created: ${error instanceof Error ? error.message : "initialization failed"}`,
+        project: abandoned,
+        transactions: { workspace: "not created", project: "abandoned", recovery_operation_id: pending.operation.id },
+      });
+      return;
+    }
+    try {
+      project = runtime.store.completeWorkspace(projectId, pending.operation.id, pending.project.revision);
     } catch (error) {
       sendJson(response, 409, {
         error: error instanceof Error ? error.message : "Workspace creation interrupted",
@@ -249,6 +289,7 @@ function createWorkspace(request: IncomingMessage, response: ServerResponse, con
       });
       return;
     }
+    runtime.store.rememberActiveWorkspace(project.id, workspaceRef.id);
     runtime.activeWorkspaceId = workspaceRef.id;
     runtime.activeProjectId = project.id;
     runtime.activeWorkspaceDir = workspacePath;
@@ -273,6 +314,7 @@ function activateWorkspace(request: IncomingMessage, response: ServerResponse, c
     }
     const workspaceDir = runtime.store.workspacePath(workspaceId);
     const state = loadEditorWorkspaceState({ workspaceDir, appleSchemaRevision: context.appleSchema.source.revision });
+    runtime.store.rememberActiveWorkspace(project.id, workspaceId);
     runtime.activeWorkspaceDir = workspaceDir;
     runtime.activeWorkspaceId = workspaceId;
     runtime.activeProjectId = project.id;

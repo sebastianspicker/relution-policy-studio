@@ -62,12 +62,14 @@ const host = await startStudioHost({
   staticRoot: join(workbench, 'dist'),
   planner: {pythonExecutable: join(planner, '.venv/bin/python'), cwd: planner},
 });
-console.log(`Relution Policy Studio is running locally: ${host.browserUrl}`);
-
-if (!args.includes('--no-open')) {
+// The capability token stays out of argv and terminal output unless --no-open asks for the URL.
+if (args.includes('--no-open')) {
+  console.log(`Relution Policy Studio is running locally: ${host.browserUrl}`);
+} else {
+  console.log(`Relution Policy Studio is running locally. To reopen it, open ${host.launchFile}`);
   const command = process.platform === 'darwin' ? 'open' : 'xdg-open';
-  const browser = spawn(command, [host.browserUrl], {stdio: 'ignore'});
-  browser.on('error', () => console.log('Open the local URL above in your browser.'));
+  const browser = spawn(command, [host.launchFile], {stdio: 'ignore'});
+  browser.on('error', () => console.log(`Could not start a browser. Open ${host.launchFile} in your browser.`));
 }
 
 let closing = false;
@@ -76,5 +78,11 @@ async function close() {
   closing = true;
   await host.close();
 }
-process.on('SIGINT', () => void close());
-process.on('SIGTERM', () => void close());
+function shutdown() {
+  close().catch(error => {
+    console.error(`Relution Policy Studio did not shut down cleanly: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);

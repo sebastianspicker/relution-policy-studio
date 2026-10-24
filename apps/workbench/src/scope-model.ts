@@ -1,11 +1,13 @@
 import {blankIntent, type Intent, type Profile, type Project, type Row} from './types';
 
-export const platformOptions = [
+// [planner value, label, workspace platform]; an outcome that spans platforms has no single workspace platform.
+export const platformOptions: ReadonlyArray<readonly [string, string, string | undefined]> = [
   ['ios_ipados', 'iOS / iPadOS', 'IOS'],
   ['macos', 'macOS', 'MACOS'],
   ['windows', 'Windows', 'WINDOWS'],
   ['android_enterprise', 'Android Enterprise', 'ANDROID_ENTERPRISE'],
-] as const;
+  ['cross_platform_outcome', 'Cross-platform outcome', undefined],
+];
 
 export interface ScopeDraft {
   intentId: string;

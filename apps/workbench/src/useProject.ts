@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
-import {request, planner} from './api';
+import {request, planner, download, RequestError} from './api';
 import {blankProfile, type Profile, type Project, type ProjectSummary} from './types';
 
 /** Autosave and explicit workflow saves share one revision-checked queue. */
@@ -7,19 +7,31 @@ export function useProject() {
   const [project, setProject] = useState<Project>();
   const [projects, setProjects] = useState<ProjectSummary[]>([]);
   const [status, setStatus] = useState('Loading projects…');
-  const [error, setError] = useState('');
+  const [loadError, setLoadError] = useState('');
+  const [saveError, setSaveError] = useState('');
   const [loading, setLoading] = useState(true);
   const current = useRef<Project>(undefined);
   const persisted = useRef<Project>(undefined);
   const pending = useRef<Promise<void> | undefined>(undefined);
   const blocked = useRef(false);
+  const failing = useRef(false);
+  const conflict = useRef(false);
+  const [conflicted, setConflicted] = useState(false);
+
+  function markConflict(value: boolean) {
+    conflict.current = value;
+    setConflicted(value);
+  }
 
   function accept(next: Project) {
     persisted.current = next;
     current.current = next;
     blocked.current = false;
+    failing.current = false;
+    markConflict(false);
     setProject(next);
-    setError('');
+    setLoadError('');
+    setSaveError('');
     setStatus('Saved locally');
     sessionStorage.setItem('campusweave:project', next.id);
   }
@@ -67,10 +79,13 @@ export function useProject() {
           rows.map(row => (row.id === next.id ? {...row, name: next.name, revision: next.revision} : row)),
         );
         setStatus(latest === next ? 'Saved locally' : 'Unsaved changes');
-        setError('');
+        failing.current = false;
+        setSaveError('');
       } catch (cause) {
         blocked.current = true;
-        setError(String(cause));
+        failing.current = true;
+        if (cause instanceof RequestError && cause.status === 409) markConflict(true);
+        setSaveError(String(cause));
         setStatus('Save failed · changes kept in this tab');
         throw cause;
       } finally {
@@ -86,7 +101,63 @@ export function useProject() {
     const next = change(current.current);
     current.current = next;
     setProject(next);
-    if (next !== persisted.current) setStatus('Unsaved changes');
+    // A new edit after a non-conflict failure retries autosave; the status stays failed until a save succeeds.
+    blocked.current = conflict.current;
+    if (next !== persisted.current && !failing.current) setStatus('Unsaved changes');
+  }
+
+  async function latestSaved() {
+    const result = await request<{project: Project}>(
+      '/api/campusweave/project?id=' + encodeURIComponent(persisted.current!.id),
+    );
+    return result.project;
+  }
+
+  /** Adopts the saved project after a server-side change (such as a failed workspace creation) when nothing is unsaved. */
+  async function refreshSaved() {
+    if (!persisted.current || pending.current || current.current !== persisted.current) return;
+    accept(await latestSaved());
+  }
+
+  async function downloadLatest() {
+    download(await latestSaved(), 'latest-saved-project.json');
+  }
+
+  async function discardAndLoadLatest() {
+    if (!window.confirm('Discard the unsaved changes in this tab and load the latest saved project?')) return;
+    accept(await latestSaved());
+  }
+
+  async function keepOnTopOfLatest() {
+    if (
+      !window.confirm("Replace the latest saved version with this tab's project? Other saved changes are overwritten.")
+    )
+      return;
+    const latest = await latestSaved();
+    persisted.current = latest;
+    current.current = {...current.current!, revision: latest.revision};
+    blocked.current = false;
+    markConflict(false);
+    setProject(current.current);
+    setSaveError('');
+  }
+
+  async function restore(file: File) {
+    const saved = JSON.parse(await file.text()) as Project;
+    if (!persisted.current || saved?.id !== persisted.current.id)
+      throw new Error('This recovery copy belongs to a different project than the one open.');
+    const lists = ['mappings', 'evidence', 'workspace_refs', 'operations'] as const;
+    if (typeof saved.profile !== 'object' || saved.profile === null || !lists.every(key => Array.isArray(saved[key])))
+      throw new Error('This file is not a project recovery copy.');
+    if (!window.confirm('Replace the project in this tab with the recovery copy?')) return;
+    // Workspace attachments and operations belong to the host; keep its current ones.
+    const base = persisted.current!;
+    update(() => ({
+      ...saved,
+      revision: base.revision,
+      workspace_refs: base.workspace_refs,
+      operations: base.operations,
+    }));
   }
 
   useEffect(() => {
@@ -96,7 +167,7 @@ export function useProject() {
         if (id) await open(id);
         else setStatus('Choose a project');
       })
-      .catch(cause => setError(String(cause)))
+      .catch(cause => setLoadError(String(cause)))
       .finally(() => setLoading(false));
   }, []);
 
@@ -121,7 +192,14 @@ export function useProject() {
     project,
     projects,
     status,
-    error,
+    loadError,
+    saveError,
+    conflicted,
+    downloadLatest,
+    refreshSaved,
+    discardAndLoadLatest,
+    keepOnTopOfLatest,
+    restore,
     loading,
     create,
     open,
@@ -129,9 +207,10 @@ export function useProject() {
     flush,
     refresh,
     retry: () => {
+      if (conflict.current) return;
       blocked.current = false;
       void flush().catch(() => {});
     },
-    setError,
+    setLoadError,
   };
 }

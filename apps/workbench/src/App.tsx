@@ -13,6 +13,7 @@ import {ReviewChanges} from './ReviewChanges';
 import {SaveMap} from './SaveMap';
 import {ArtifactFlow} from './ArtifactFlow';
 import {download} from './api';
+import {usePendingAssuranceReceipt} from './assurance-receipts';
 const descriptions: Partial<Record<Section, string>> = {
   Institution:
     'Organizations, locations, cohorts and blueprints that scope can refer to. Identifiers stay stable when names change.',
@@ -36,6 +37,7 @@ export default function App() {
   const tools = useRef<HTMLDetailsElement>(null);
   const main = useRef<HTMLElement>(null);
   const c = editor.kind === 'ready' ? editor.controller : undefined;
+  usePendingAssuranceReceipt(c, p.update);
   const guided = steps.includes(section);
   function navigate(next: Section) {
     setSection(next);
@@ -112,7 +114,7 @@ export default function App() {
   const saveState =
     scopeDirty || c?.isDirty || p.status === 'Unsaved changes' || p.status === 'Saving…'
       ? 'pending'
-      : p.error
+      : p.saveError
         ? 'failed'
         : p.project && p.status === 'Saved locally'
           ? 'saved'
@@ -148,7 +150,7 @@ export default function App() {
                     void p
                       .open(event.target.value)
                       .then(() => navigate('Scope'))
-                      .catch(cause => p.setError(String(cause)));
+                      .catch(cause => p.setLoadError(String(cause)));
                 }}
               >
                 <option value="">Choose a project</option>
@@ -158,6 +160,19 @@ export default function App() {
                   </option>
                 ))}
               </select>
+            </label>
+            <label className="field">
+              <span>Restore recovery copy</span>
+              <input
+                type="file"
+                accept="application/json,.json"
+                disabled={!p.project}
+                onChange={event => {
+                  const file = event.target.files?.[0];
+                  event.target.value = '';
+                  if (file) void p.restore(file).catch(cause => p.setLoadError(String(cause)));
+                }}
+              />
             </label>
             <nav aria-label="Project tools">
               {sections.map(item => (
@@ -205,16 +220,35 @@ export default function App() {
         </div>
       </div>
       <main id="main" ref={main} tabIndex={-1}>
-        {p.error && (
+        {p.loadError && <Alert>{p.loadError}</Alert>}
+        {p.saveError && (
           <div className="recovery">
-            <Alert>{p.error}</Alert>
-            <button onClick={p.retry}>Retry save</button>
+            <Alert>{p.saveError}</Alert>
+            {p.conflicted ? (
+              <>
+                <button onClick={() => void p.downloadLatest().catch(cause => p.setLoadError(String(cause)))}>
+                  Download latest saved version
+                </button>
+                <button onClick={() => void p.discardAndLoadLatest().catch(cause => p.setLoadError(String(cause)))}>
+                  Discard my changes and load latest
+                </button>
+                <button onClick={() => void p.keepOnTopOfLatest().catch(cause => p.setLoadError(String(cause)))}>
+                  Keep my changes on top of latest
+                </button>
+              </>
+            ) : (
+              <button onClick={p.retry}>Retry save</button>
+            )}
             {p.project && (
               <button onClick={() => download(p.project, 'unsaved-project-recovery.json')}>
                 Export unsaved recovery copy
               </button>
             )}
-            <p>Changes remain in this tab. Reopen the project in a new tab to compare revisions before retrying.</p>
+            <p>
+              {p.conflicted
+                ? 'Another save changed this project. Your changes remain in this tab and will not save until you choose an option.'
+                : 'Changes remain in this tab.'}
+            </p>
           </div>
         )}
         {editor.kind === 'error' && <Alert>{editor.message}</Alert>}
@@ -250,6 +284,7 @@ export default function App() {
                 flush={p.flush}
                 navigate={navigate}
                 reloadWorkspace={reloadWorkspace}
+                refreshSaved={p.refreshSaved}
                 onDirtyChange={setScopeDirty}
               />
             </Activity>

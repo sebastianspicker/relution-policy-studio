@@ -1,6 +1,7 @@
 /** Validates an editor archive passphrase against the current built output. */
 import { statSync } from "node:fs";
 import { inspectRexp } from "../archive/rexp-inspection.js";
+import { newArchiveKeyProblem } from "../archive/rexp-key-policy.js";
 
 export interface EditorKeyValidationResponse {
   readonly keySet: boolean;
@@ -13,14 +14,17 @@ export function validateEditorKeyForOutput(outputPath: string, key: string): Edi
   if (!keySet) {
     return { keySet, validated: false, reason: "No archive passphrase was provided." };
   }
+  // A key that opens the current output is validated even if it is too weak to build new archives.
+  const problem = newArchiveKeyProblem(key);
+  const policyReason = problem === undefined ? undefined : `It can open existing archives but cannot build new ones. ${problem}`;
   if (!isExistingFile(outputPath)) {
-    return { keySet, validated: false, reason: "No built .rexp output is available to validate this passphrase." };
+    return { keySet, validated: false, reason: policyReason ?? "No built .rexp output is available to validate this passphrase." };
   }
   try {
     inspectRexp(outputPath, key);
     return { keySet, validated: true };
   } catch {
-    return { keySet, validated: false, reason: "Passphrase does not decrypt the current output archive." };
+    return { keySet, validated: false, reason: policyReason ?? "Passphrase does not decrypt the current output archive." };
   }
 }
 

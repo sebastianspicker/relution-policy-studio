@@ -74,6 +74,6 @@ remaining uncertainty. UI changes also require manual keyboard, responsive,
 zoom, and accessibility checks described in [docs/FRONTEND.md](docs/FRONTEND.md).
 
 There is no automated release or deployment process. Before any publication,
-an owner must select a license and applicable attribution, approve the exact
+an owner must confirm the applicable attribution, approve the exact
 commit/version/tag, run the complete gate, verify CI on that commit, and confirm
 that the public tree contains no private target material.

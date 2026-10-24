@@ -8,7 +8,7 @@ import { writePrivateFileAtomic } from "../platform/filesystem/atomic-private-fi
 import type { CampusWeaveProfile, CampusWeaveProject, CampusWeaveWorkspaceRef } from "../contracts/campusweave.js";
 import type { JsonRecord } from "../platform/serialization/json-guards.js";
 import { CampusWeaveCapacityError, CampusWeaveInputError, CampusWeaveNotFoundError, CampusWeaveRevisionConflictError, CampusWeaveStoreBusyError } from "../contracts/campusweave-errors.js";
-import { CAMPUSWEAVE_ID_PATTERN, emptyCampusWeaveProfile, parseCampusWeaveProfile, parseCampusWeaveProject } from "../contracts/campusweave-validation.js";
+import { CAMPUSWEAVE_ID_PATTERN, emptyCampusWeaveProfile, parseCampusWeaveProfile, parseCampusWeaveProject, parseCampusWeaveWorkspaceRef } from "../contracts/campusweave-validation.js";
 import { loadWorkspaceStateSnapshot } from "./persistence.js";
 
 const MAX_PROJECT_BYTES = 4 * 1024 * 1024;
@@ -33,12 +33,13 @@ interface CampusWeaveArtifactRecord {
 interface CampusWeaveWorkspaceOperation extends JsonRecord {
   readonly id: string;
   readonly kind: "workspace-create";
-  readonly status: "pending" | "committed";
+  readonly status: "pending" | "committed" | "abandoned";
   readonly workspace_id: string;
   readonly name: string;
   readonly platform: string;
   readonly created_at: string;
   readonly committed_at?: string;
+  readonly abandoned_at?: string;
 }
 
 export interface CampusWeaveProjectStore {
@@ -49,7 +50,13 @@ export interface CampusWeaveProjectStore {
   save(project: CampusWeaveProject, expectedRevision: number): CampusWeaveProject;
   beginWorkspace(projectId: string, workspace: CampusWeaveWorkspaceRef, expectedRevision: number): { project: CampusWeaveProject; operation: CampusWeaveWorkspaceOperation };
   completeWorkspace(projectId: string, operationId: string, expectedRevision: number): CampusWeaveProject;
+  /** Marks a pending workspace operation as given up; the unattached workspace directory, if any, is left untouched. */
+  abandonWorkspace(projectId: string, operationId: string, expectedRevision: number): CampusWeaveProject;
   workspacePath(workspaceId: string): string;
+  /** Persists which project workspace the editor targets, so a restart does not fall back to the scratch workspace. */
+  rememberActiveWorkspace(projectId: string, workspaceId: string): void;
+  /** The remembered workspace if its project still attaches it and its state loads; otherwise undefined. */
+  rememberedActiveWorkspace(): { readonly projectId: string; readonly workspaceId: string; readonly workspaceDir: string } | undefined;
   recordArtifact(record: CampusWeaveArtifactRecord): void;
   artifact(workspaceId: string): CampusWeaveArtifactRecord | undefined;
   close(): void;
@@ -71,7 +78,10 @@ export function openCampusWeaveProjectStore(projectRoot: string): CampusWeavePro
     save: (project, expectedRevision) => saveProject(projects, project, expectedRevision),
     beginWorkspace: (projectId, workspace, expectedRevision) => beginWorkspace(projects, projectId, workspace, expectedRevision),
     completeWorkspace: (projectId, operationId, expectedRevision) => completeWorkspace(projects, workspaces, projectId, operationId, expectedRevision),
+    abandonWorkspace: (projectId, operationId, expectedRevision) => abandonWorkspace(projects, projectId, operationId, expectedRevision),
     workspacePath: (workspaceId) => join(workspaces, assertIdentifier(workspaceId, "workspace id")),
+    rememberActiveWorkspace: (projectId, workspaceId) => rememberActiveWorkspace(root, projectId, workspaceId),
+    rememberedActiveWorkspace: () => rememberedActiveWorkspace(root, projects, workspaces),
     recordArtifact: (record) => publishArtifact(artifacts, record),
     artifact: (workspaceId) => readArtifact(artifacts, workspaceId),
     close: () => {
@@ -84,9 +94,16 @@ export function openCampusWeaveProjectStore(projectRoot: string): CampusWeavePro
 
 function listProjects(projects: string): CampusWeaveProjectSummary[] {
   const entries = projectFiles(projects);
-  return entries.map((file) => {
-    const project = readProjectFile(join(projects, file));
-    return { id: project.id, name: project.name, revision: project.revision, workspace_count: project.workspace_refs.length };
+  return entries.flatMap((file) => {
+    let project: CampusWeaveProject;
+    try {
+      project = readProjectFile(join(projects, file));
+    } catch (error) {
+      if (!(error instanceof Error && error.cause instanceof CampusWeaveInputError)) throw error;
+      console.error(`Skipping unreadable CampusWeave project ${file}: ${error.message}`);
+      return [];
+    }
+    return [{ id: project.id, name: project.name, revision: project.revision, workspace_count: project.workspace_refs.length }];
   });
 }
 
@@ -120,6 +137,7 @@ function saveProject(projects: string, submitted: CampusWeaveProject, expectedRe
   if (project.revision !== expectedRevision) {
     throw new CampusWeaveRevisionConflictError("Submitted project revision does not match expectedRevision");
   }
+  assertAttachedWorkspaceTargets(project, current);
   const next = {
     ...project,
     revision: expectedRevision + 1,
@@ -130,12 +148,26 @@ function saveProject(projects: string, submitted: CampusWeaveProject, expectedRe
   return next;
 }
 
+/** New mappings and evidence may only reference workspaces this project attaches; entries already stored stay readable. */
+function assertAttachedWorkspaceTargets(project: CampusWeaveProject, current: CampusWeaveProject): void {
+  const attached = new Set(current.workspace_refs.map((workspace) => workspace.id));
+  const stored = new Set([...current.mappings, ...current.evidence].map((entry) => JSON.stringify(entry)));
+  for (const [label, entries] of [["Mapping", project.mappings], ["Evidence", project.evidence]] as const) {
+    entries.forEach((entry, index) => {
+      if (!attached.has(entry.workspace_id) && !stored.has(JSON.stringify(entry))) {
+        throw new CampusWeaveInputError(`${label} ${String(index + 1)} targets workspace ${entry.workspace_id}, which is not attached to this project`);
+      }
+    });
+  }
+}
+
 function beginWorkspace(
   projects: string,
   projectId: string,
-  workspace: CampusWeaveWorkspaceRef,
+  submitted: CampusWeaveWorkspaceRef,
   expectedRevision: number,
 ): { project: CampusWeaveProject; operation: CampusWeaveWorkspaceOperation } {
+  const workspace = parseCampusWeaveWorkspaceRef(submitted, "workspace");
   const current = readProject(projects, projectId);
   assertExpectedRevision(current, expectedRevision);
   if (current.workspace_refs.some((candidate) => candidate.id === workspace.id)) {
@@ -159,19 +191,31 @@ function beginWorkspace(
   return { project: next, operation };
 }
 
+function pendingWorkspaceOperation(project: CampusWeaveProject, operationId: string): { index: number; operation: CampusWeaveWorkspaceOperation } {
+  const index = project.operations.findIndex((entry) => entry.id === operationId && entry.kind === "workspace-create");
+  const operation = project.operations[index] as CampusWeaveWorkspaceOperation | undefined;
+  if (operation === undefined || operation.status !== "pending") throw new CampusWeaveInputError("Pending workspace operation not found");
+  return { index, operation };
+}
+
 function completeWorkspace(projects: string, workspaces: string, projectId: string, operationId: string, expectedRevision: number): CampusWeaveProject {
   const current = readProject(projects, projectId);
   assertExpectedRevision(current, expectedRevision);
-  const operationIndex = current.operations.findIndex((entry) => entry.id === operationId && entry.kind === "workspace-create");
-  const operation = current.operations[operationIndex] as CampusWeaveWorkspaceOperation | undefined;
-  if (operation === undefined || operation.status !== "pending") throw new CampusWeaveInputError("Pending workspace operation not found");
+  const { index: operationIndex, operation } = pendingWorkspaceOperation(current, operationId);
   const workspace: CampusWeaveWorkspaceRef = {
     id: operation.workspace_id,
     name: operation.name,
     platform: operation.platform,
     created_at: operation.created_at,
   };
-  loadWorkspaceStateSnapshot(join(workspaces, workspace.id));
+  try {
+    loadWorkspaceStateSnapshot(join(workspaces, workspace.id));
+  } catch (error) {
+    throw new CampusWeaveInputError(
+      `The workspace for this operation was never created or cannot be read, so it cannot be attached; abandon the operation instead (${error instanceof Error ? error.message : "unreadable workspace"})`,
+      { cause: error },
+    );
+  }
   const operations = [...current.operations];
   operations[operationIndex] = { ...operation, status: "committed", committed_at: new Date().toISOString() };
   const next: CampusWeaveProject = {
@@ -182,6 +226,44 @@ function completeWorkspace(projects: string, workspaces: string, projectId: stri
   };
   publishProject(projects, next, true);
   return next;
+}
+
+function abandonWorkspace(projects: string, projectId: string, operationId: string, expectedRevision: number): CampusWeaveProject {
+  const current = readProject(projects, projectId);
+  assertExpectedRevision(current, expectedRevision);
+  const { index, operation } = pendingWorkspaceOperation(current, operationId);
+  const operations = [...current.operations];
+  operations[index] = { ...operation, status: "abandoned", abandoned_at: new Date().toISOString() };
+  const next: CampusWeaveProject = { ...current, revision: current.revision + 1, operations };
+  publishProject(projects, next, true);
+  return next;
+}
+
+function rememberActiveWorkspace(root: string, projectId: string, workspaceId: string): void {
+  const value = { projectId: assertIdentifier(projectId, "project id"), workspaceId: assertIdentifier(workspaceId, "workspace id") };
+  writePrivateFileAtomic(join(root, "active-workspace.json"), Buffer.from(`${JSON.stringify(value)}\n`, "utf8"), {
+    force: true,
+    label: "CampusWeave active workspace record",
+  });
+}
+
+function rememberedActiveWorkspace(root: string, projects: string, workspaces: string): { projectId: string; workspaceId: string; workspaceDir: string } | undefined {
+  try {
+    const bytes = readBoundedRegularFileNoFollow(join(root, "active-workspace.json"), { label: "CampusWeave active workspace record", maxBytes: 1024 });
+    const value = JSON.parse(bytes.toString("utf8")) as { projectId?: unknown; workspaceId?: unknown };
+    const projectId = assertIdentifier(typeof value.projectId === "string" ? value.projectId : "", "project id");
+    const workspaceId = assertIdentifier(typeof value.workspaceId === "string" ? value.workspaceId : "", "workspace id");
+    if (!readProject(projects, projectId).workspace_refs.some((workspace) => workspace.id === workspaceId)) return undefined;
+    const workspaceDir = join(workspaces, workspaceId);
+    loadWorkspaceStateSnapshot(workspaceDir);
+    return { projectId, workspaceId, workspaceDir };
+  } catch (error) {
+    // A missing, stale or unreadable record falls back to the scratch workspace, which the UI labels as such.
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      console.error(`Not restoring the last active CampusWeave workspace: ${error instanceof Error ? error.message : String(error)}`);
+    }
+    return undefined;
+  }
 }
 
 function readProject(projects: string, id: string): CampusWeaveProject {
@@ -205,6 +287,7 @@ function readProjectFile(path: string): CampusWeaveProject {
 }
 
 function publishProject(projects: string, project: CampusWeaveProject, force: boolean): void {
+  parseCampusWeaveProject(project);
   const serialized = Buffer.from(`${JSON.stringify(project, null, 2)}\n`, "utf8");
   if (serialized.length > MAX_PROJECT_BYTES) throw new CampusWeaveCapacityError("CampusWeave project exceeds its persisted size limit");
   writePrivateFileAtomic(join(projects, `${project.id}.json`), serialized, { force, label: "CampusWeave project" });
@@ -268,7 +351,7 @@ function acquireWriterLock(root: string): () => void {
     if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
     const current = parseLockOwner(lock);
     const owner = current === undefined ? "unknown" : `PID ${String(current.pid)}`;
-    throw new CampusWeaveStoreBusyError(`CampusWeave project store already has a writer (${owner}); remove a stale lock only after verifying that process is stopped`);
+    throw new CampusWeaveStoreBusyError(`CampusWeave project store already has a writer (${owner}); if that process is no longer running, delete ${lock} and start again`);
   }
   return () => {
     const current = parseLockOwner(lock);

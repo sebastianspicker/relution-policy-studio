@@ -125,20 +125,105 @@ def _intents(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
     return result
 
 
+_SCOPE_FIELDS = (
+    "cohort_ids",
+    "organization_ids",
+    "location_ids",
+    "platforms",
+    "ownerships",
+    "roles",
+)
+
+
+def _group_constraints(item: Mapping[str, Any]) -> dict[str, list[str]]:
+    dimension = item.get("primary_dimension")
+    values = string_list(item.get("values"))
+    return {
+        "cohort_ids": values if dimension in {"cohort", "persona"} else [],
+        "organization_ids": [],
+        "location_ids": values if dimension == "location" else [],
+        "platforms": values if dimension == "platform" else [],
+        "ownerships": values if dimension == "ownership" else [],
+        "roles": values if dimension in {"role", "function"} else [],
+    }
+
+
+_Resolved = tuple[dict[str, list[str]], list[str]]
+
+
+def _resolved_constraints(
+    groups: Mapping[str, Mapping[str, Any]],
+    identifier: str,
+    memo: dict[str, _Resolved] | None = None,
+) -> _Resolved:
+    """Resolve a group's constraints, intersecting those of its boolean_intersection references.
+
+    Returns the constraint lists and the fields whose intersection became empty.
+    """
+    return _resolve(groups, identifier, (), {} if memo is None else memo)[0]
+
+
+def _resolve(
+    groups: Mapping[str, Mapping[str, Any]],
+    identifier: str,
+    visiting: tuple[str, ...],
+    memo: dict[str, _Resolved],
+) -> tuple[_Resolved, bool]:
+    """Return the resolution and whether a cycle was cut below it; only cut-free results are memoized."""
+    if identifier in memo:
+        return memo[identifier], False
+    item = groups[identifier]
+    own = _group_constraints(item)
+    if item.get("membership_authority") != "boolean_intersection":
+        memo[identifier] = (own, [])
+        return memo[identifier], False
+    pending: dict[str, list[str] | None] = {
+        field: own[field] if own[field] else None for field in _SCOPE_FIELDS
+    }
+    cut = False
+    for reference in string_list(item.get("referenced_group_ids")):
+        if reference not in groups:
+            continue
+        if reference == identifier or reference in visiting:
+            cut = True
+            continue
+        (referenced, _), reference_cut = _resolve(groups, reference, (*visiting, identifier), memo)
+        cut = cut or reference_cut
+        for field in _SCOPE_FIELDS:
+            current, values = pending[field], referenced[field]
+            if values:
+                pending[field] = (
+                    list(values) if current is None else [v for v in current if v in values]
+                )
+    resolved = {field: pending[field] or [] for field in _SCOPE_FIELDS}
+    emptied = [field for field in _SCOPE_FIELDS if pending[field] == []]
+    if not cut:
+        memo[identifier] = (resolved, emptied)
+    return (resolved, emptied), cut
+
+
+def _group_index(profile: Mapping[str, Any]) -> dict[str, Mapping[str, Any]]:
+    index: dict[str, Mapping[str, Any]] = {}
+    for item in _objects(profile.get("group_blueprints")):
+        index.setdefault(_text(item.get("group_id")), item)
+    return index
+
+
 def _scope_blueprints(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
+    groups = _group_index(profile)
+    memo: dict[str, _Resolved] = {}
     result = []
     for item in _objects(profile.get("group_blueprints")):
-        dimension = item.get("primary_dimension")
-        values = string_list(item.get("values"))
+        identifier = _text(item.get("group_id"))
+        constraints = (
+            _resolved_constraints(groups, identifier, memo)[0]
+            if groups.get(identifier) is item
+            else _group_constraints(item)
+        )
         result.append(
             {
                 **_named(item, "group_id"),
-                "cohort_ids": values if dimension in {"cohort", "persona"} else [],
-                "organization_ids": [],
-                "location_ids": values if dimension == "location" else [],
-                "platforms": values if dimension == "platform" else [],
-                "ownerships": values if dimension == "ownership" else [],
-                "roles": values if dimension in {"role", "function"} else [],
+                **constraints,
                 "depends_on": string_list(item.get("referenced_group_ids")),
                 "requirements": [value for value in (_text(item.get("membership_mode")),) if value],
             }
@@ -215,6 +300,24 @@ def _unresolved(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
                     "id": f"conversion.scope.{identifier}",
                     "name": "Review unrepresented legacy scope",
                     "description": json.dumps(facts, ensure_ascii=False, sort_keys=True),
+                    "related_ids": [identifier] if identifier else [],
+                    "requirements": ["explicit scope interpretation"],
+                }
+            )
+    groups = _group_index(profile)
+    memo: dict[str, _Resolved] = {}
+    for identifier in groups:
+        emptied = _resolved_constraints(groups, identifier, memo)[1]
+        if emptied:
+            result.append(
+                {
+                    "id": f"conversion.scope.{identifier}.empty-intersection",
+                    "name": "Review empty legacy scope intersection",
+                    "description": (
+                        "The referenced groups constrain "
+                        + ", ".join(emptied)
+                        + " but share no common value, so the scope would look unconstrained."
+                    ),
                     "related_ids": [identifier] if identifier else [],
                     "requirements": ["explicit scope interpretation"],
                 }

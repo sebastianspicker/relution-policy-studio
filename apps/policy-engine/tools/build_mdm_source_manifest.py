@@ -4,12 +4,11 @@
 from __future__ import annotations
 
 import hashlib
+import importlib
 import json
 import re
 from pathlib import Path
 from typing import Any
-
-import fitz
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -70,11 +69,22 @@ def date_for(metadata: dict[str, Any]) -> str:
     return "-".join(match.groups()) if match else "not-stated"
 
 
-def extract_record(path: Path) -> dict[str, Any]:
+def load_pymupdf() -> Any:
+    """Import PyMuPDF on demand; it is an optional maintainer dependency."""
+
+    try:
+        return importlib.import_module("pymupdf")
+    except ModuleNotFoundError as error:
+        raise ModuleNotFoundError(
+            "PyMuPDF is required to build the MDM source manifest; run `uv sync --group pdf`"
+        ) from error
+
+
+def extract_record(path: Path, pymupdf: Any) -> dict[str, Any]:
     """Hash a PDF and record deterministic page-text extraction evidence."""
 
     raw = path.read_bytes()
-    with fitz.open(stream=raw, filetype="pdf") as document:
+    with pymupdf.open(stream=raw, filetype="pdf") as document:
         page_text = [page.get_text("text", sort=True).replace("\r\n", "\n") for page in document]
         metadata = document.metadata or {}
         title = str(metadata.get("title") or path.stem).strip()
@@ -99,7 +109,7 @@ def extract_record(path: Path) -> dict[str, Any]:
             "status": "extracted",
             "pages": pages,
             "text_sha256": sha256_bytes("\n\f\n".join(page_text).encode("utf8")),
-            "engine": f"PyMuPDF {fitz.VersionBind}",
+            "engine": f"PyMuPDF {pymupdf.VersionBind}",
         },
     }
 
@@ -107,8 +117,9 @@ def extract_record(path: Path) -> dict[str, Any]:
 def main() -> None:
     """Write a stable manifest and retain an explicit row for the missing PDF."""
 
+    pymupdf = load_pymupdf()
     paths = sorted(CACHE_ROOT.rglob("*.pdf"), key=lambda item: item.as_posix())
-    sources = [extract_record(path) for path in paths]
+    sources = [extract_record(path, pymupdf) for path in paths]
     if REQUIRED_MDM_PATH not in paths:
         sources.append(
             {
@@ -122,7 +133,7 @@ def main() -> None:
                 "licence": licence_for("BSI"),
                 "scope": "primary MDM control evidence",
                 "source_url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mobile-Device-ManagementV2_0.pdf?__blob=publicationFile&v=2",
-                "extraction": {"status": "missing_local", "pages": None, "text_sha256": None, "engine": f"PyMuPDF {fitz.VersionBind}"},
+                "extraction": {"status": "missing_local", "pages": None, "text_sha256": None, "engine": f"PyMuPDF {pymupdf.VersionBind}"},
             }
         )
     sources.sort(key=lambda item: str(item["local_path"]))

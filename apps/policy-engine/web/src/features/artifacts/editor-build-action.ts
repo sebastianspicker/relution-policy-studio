@@ -26,8 +26,18 @@ function applySuccessfulBuild(input: ImportBuildActionInput, result: JsonRecord)
   input.setActionSuccessStatus(`Built ${String(result.outputFile)}`);
 }
 
+function validationErrorSummary(validation: JsonRecord | undefined): string | undefined {
+  const errors = Array.isArray(validation?.errors) ? validation.errors.map((entry) => asRecord(entry)) : [];
+  if (errors.length === 0) return undefined;
+  const shown = errors.slice(0, 3).map((error) => `${String(error?.path ?? "workspace")}: ${String(error?.message ?? "invalid")}`);
+  const more = errors.length > shown.length ? `; and ${String(errors.length - shown.length)} more` : "";
+  return `${String(errors.length)} validation error${errors.length === 1 ? "" : "s"}: ${shown.join("; ")}${more}`;
+}
+
 function buildFailureStatus(verification: JsonRecord | undefined, result: JsonRecord): string {
-  return verification !== undefined && verification.ok !== true ? "Build verification failed" : `Build blocked: ${JSON.stringify(result)}`;
+  if (verification !== undefined && verification.ok !== true) return "Build verification failed";
+  const reason = typeof result.error === "string" ? result.error : validationErrorSummary(asRecord(result.validation));
+  return `Build blocked: ${reason ?? JSON.stringify(result)}`;
 }
 
 function applyCurrentBuildResponse(input: ImportBuildActionInput, request: WorkspaceRequest, response: Response, result: JsonRecord): void {

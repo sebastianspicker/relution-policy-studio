@@ -37,12 +37,26 @@ export function Mapping({
         profile_digest: await digest(project.profile),
         policy_revision: c.state.revision,
       };
-      if (!mapping.workspace_id) throw new Error('Create or link this policy workspace in Workspaces first.');
+      if (!mapping.workspace_id)
+        throw new Error('Create or link this policy workspace in the Workspaces tab under Policies first.');
+      if (c.state.active_project_id !== project.id)
+        throw new Error("The open policy workspace belongs to another project. Open one of this project's workspaces.");
       const compiled = await planner<Record<string, unknown>>('compile', {profile: project.profile});
-      update(p => ({...p, compiled_plan: compiled, mappings: [...p.mappings, mapping]}));
-      setError(
-        compiled.valid === false ? 'Mapping saved for review. Resolve planning diagnostics before projection.' : '',
-      );
+      if (compiled.valid !== true)
+        throw new Error('Resolve the planning diagnostics before saving a mapping. Nothing was saved.');
+      // One mapping per intent and setting: a new review replaces the earlier one instead of duplicating it.
+      const sameSetting = (m: CampusWeaveMapping) =>
+        m.intent_id === mapping.intent_id &&
+        m.workspace_id === mapping.workspace_id &&
+        m.policy_id === mapping.policy_id &&
+        m.configuration_id === mapping.configuration_id &&
+        m.field === mapping.field;
+      update(p => ({
+        ...p,
+        compiled_plan: compiled,
+        mappings: [...p.mappings.filter(m => !sameSetting(m)), mapping],
+      }));
+      setError('');
       setReviewed(false);
     } catch (e) {
       setError(String(e));
@@ -124,13 +138,19 @@ export function Mapping({
             <JsonView value={m} />
             <button
               onClick={() =>
-                void request('/api/campusweave/projection', {
+                void request<{mapping_restamped?: boolean}>('/api/campusweave/projection', {
                   projectId: project.id,
                   expectedRevision: project.revision,
                   mappingId: m.id,
                   expectedWorkspaceRevision: c.state.revision,
                 })
-                  .then(() => window.location.reload())
+                  .then(result => {
+                    if (result.mapping_restamped === false)
+                      window.alert(
+                        'The value was projected, but the project changed at the same time, so this mapping is marked stale. Review and save it again.',
+                      );
+                    window.location.reload();
+                  })
                   .catch(e => setError(String(e)))
               }
             >

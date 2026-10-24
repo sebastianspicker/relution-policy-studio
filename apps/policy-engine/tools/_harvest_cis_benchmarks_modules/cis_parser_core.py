@@ -64,7 +64,7 @@ def extract_pdf_text(path: Path) -> str:
         pymupdf = importlib.import_module("pymupdf")
     except ModuleNotFoundError as error:
         raise ModuleNotFoundError(
-            "PyMuPDF is required to parse CIS benchmark PDFs"
+            "PyMuPDF is required to parse CIS benchmark PDFs; run `uv sync --group pdf`"
         ) from error
 
     with pymupdf.open(path) as document:

@@ -35,17 +35,17 @@ export async function runCampusWeavePlanner(
   const id = randomUUID();
   const request = Buffer.from(`${JSON.stringify({ version: 1, id, command, payload })}\n`, "utf8");
   if (request.length > MAX_PROTOCOL_BYTES) throw new CampusWeavePlannerError("capacity", "CampusWeave planner request exceeds 1 MiB");
-  const response = await exchangeWithWorker(options, request);
+  const { response, stderr } = await exchangeWithWorker(options, request);
   if (response.version !== 1 || response.id !== id || typeof response.ok !== "boolean") {
     throw new CampusWeavePlannerError("unavailable", "CampusWeave planner returned an invalid response envelope");
   }
-  if (!response.ok) throw new CampusWeavePlannerError("rejected", workerErrorMessage(response.error));
+  if (!response.ok) throw new CampusWeavePlannerError("rejected", workerErrorMessage(response.error), stderr);
   if (!Object.hasOwn(response, "result")) throw new CampusWeavePlannerError("unavailable", "CampusWeave planner response is missing result");
   return response.result;
 }
 
-async function exchangeWithWorker(options: CampusWeavePlannerOptions, request: Buffer): Promise<WorkerResponse> {
-  return await new Promise<WorkerResponse>((resolve, reject) => {
+async function exchangeWithWorker(options: CampusWeavePlannerOptions, request: Buffer): Promise<{ response: WorkerResponse; stderr: string }> {
+  return await new Promise<{ response: WorkerResponse; stderr: string }>((resolve, reject) => {
     const child = spawn(options.pythonExecutable, ["-m", "campusweave.commands.stdio"], {
       cwd: options.cwd,
       stdio: ["pipe", "pipe", "pipe"],
@@ -67,7 +67,7 @@ async function exchangeWithWorker(options: CampusWeavePlannerOptions, request: B
       clearTimeout(timeout);
       reject(error);
     };
-    child.once("error", (error) => finishReject(new CampusWeavePlannerError("unavailable", `Failed to start CampusWeave planner: ${error.message}`)));
+    child.once("error", (error) => finishReject(new CampusWeavePlannerError("unavailable", "Failed to start CampusWeave planner; see the host log", error.message)));
     child.stdout.on("data", (chunk: Buffer) => {
       stdoutBytes += chunk.length;
       if (stdoutBytes > MAX_PROTOCOL_BYTES) {
@@ -85,16 +85,17 @@ async function exchangeWithWorker(options: CampusWeavePlannerOptions, request: B
       if (settled) return;
       settled = true;
       clearTimeout(timeout);
+      const diagnostic = Buffer.concat(stderr).toString("utf8").trim().slice(-4000);
       try {
         const response = parseWorkerResponse(Buffer.concat(stdout));
         if (code !== 0 && response.ok) {
-          reject(new CampusWeavePlannerError("unavailable", `CampusWeave planner exited with status ${String(code)}${signal === null ? "" : ` (${signal})`}`));
+          reject(new CampusWeavePlannerError("unavailable", `CampusWeave planner exited with status ${String(code)}${signal === null ? "" : ` (${signal})`}`, diagnostic));
           return;
         }
-        resolve(response);
-      } catch (error) {
-        const detail = Buffer.concat(stderr).toString("utf8").trim().slice(0, 500);
-        reject(new CampusWeavePlannerError("unavailable", detail.length === 0 ? "CampusWeave planner failed" : `CampusWeave planner failed: ${detail}`));
+        resolve({ response, stderr: diagnostic });
+      } catch {
+        // stderr may hold tracebacks with absolute paths: keep it in the host-only diagnostic.
+        reject(new CampusWeavePlannerError("unavailable", diagnostic.length === 0 ? "CampusWeave planner failed" : "CampusWeave planner failed; see the host log", diagnostic));
       }
     });
     child.stdin.once("error", (error) => finishReject(new CampusWeavePlannerError("unavailable", `Failed to write CampusWeave planner request: ${error.message}`)));
@@ -138,7 +139,17 @@ function validatePlannerOptions(options: CampusWeavePlannerOptions): void {
 function workerErrorMessage(error: unknown): string {
   if (typeof error === "string" && error.length > 0) return error.slice(0, 1000);
   if (typeof error === "object" && error !== null && "message" in error && typeof error.message === "string") {
-    return error.message.slice(0, 1000);
+    const details = "details" in error && Array.isArray(error.details) ? workerErrorDetails(error.details) : "";
+    return `${error.message}${details}`.slice(0, 1000);
   }
   return "CampusWeave planner rejected the request";
+}
+
+function workerErrorDetails(details: readonly unknown[]): string {
+  const lines = details.slice(0, 3).flatMap((detail) => {
+    if (typeof detail !== "object" || detail === null) return [];
+    const { path, message } = detail as { path?: unknown; message?: unknown };
+    return typeof path === "string" && typeof message === "string" ? [`${path}: ${message}`] : [];
+  });
+  return lines.length === 0 ? "" : ` (${lines.join("; ")})`;
 }

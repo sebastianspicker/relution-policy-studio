@@ -8,7 +8,7 @@ and the distinction between reference validation and device evidence.
 - Node.js 22.12 or newer
 - pnpm 10.34.5
 - Python 3.11 or newer
-- uv 0.10.7
+- uv 0.10.7 or newer
 
 The package scripts use POSIX shell utilities. CI runs on Ubuntu with Node.js 22
 and Python 3.11.

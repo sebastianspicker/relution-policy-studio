@@ -82,9 +82,9 @@ export function createEditorControllerActions(input: UseEditorControllerActionsI
   });
 
   async function setActiveKey(): Promise<void> {
-    const key = keyValue.trim();
-    if (key.length === 0) { setActionErrorStatus("Archive passphrase is required"); return; }
-    await updateKey(key);
+    if (keyValue.trim().length === 0) { setActionErrorStatus("Archive passphrase is required"); return; }
+    if (keyValue !== keyValue.trim()) { setActionErrorStatus("Archive passphrase must not start or end with spaces"); return; }
+    await updateKey(keyValue);
   }
   async function addDdmArtifact(): Promise<void> { await postSidecarAction("/api/ddm/artifact", { schemaId: ddmSchemaId }, "Added offline DDM artifact"); }
   async function addMdmCommandArtifact(): Promise<void> { await postSidecarAction("/api/mdm-command/artifact", { schemaId: mdmCommandSchemaId }, "Added offline MDM command draft"); }

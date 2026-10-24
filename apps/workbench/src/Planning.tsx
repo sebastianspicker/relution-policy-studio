@@ -10,6 +10,7 @@ import {
   type Section,
 } from './types';
 import {planner, download} from './api';
+import {platformOptions} from './scope-model';
 export function Overview({
   project,
   projects,
@@ -313,6 +314,8 @@ export function Institution({project, update}: {project: Project; update: (fn: (
           <div className="filterbar">
             <Field label="Institution name">
               <input
+                required
+                maxLength={160}
                 value={project.profile.name}
                 onChange={e =>
                   update(p => ({
@@ -613,17 +616,18 @@ export function IntentScreen({
               </Field>
               <div className="compact-fields">
                 <Field label="Platform">
-                  <input
-                    list="platforms"
-                    value={intent.platform ?? ''}
-                    onChange={e => edit({platform: e.target.value})}
-                  />
+                  <select value={intent.platform ?? ''} onChange={e => edit({platform: e.target.value})}>
+                    <option value="">Unresolved</option>
+                    {platformOptions.map(([value, label]) => (
+                      <option key={value} value={value}>
+                        {label}
+                      </option>
+                    ))}
+                    {intent.platform && !platformOptions.some(([value]) => value === intent.platform) && (
+                      <option value={intent.platform}>{intent.platform}</option>
+                    )}
+                  </select>
                 </Field>
-                <datalist id="platforms">
-                  {['macOS', 'iOS', 'iPadOS', 'Android', 'Windows'].map(s => (
-                    <option key={s}>{s}</option>
-                  ))}
-                </datalist>
                 <Field label="Ownership">
                   <input
                     value={intent.ownership ?? ''}
@@ -760,13 +764,35 @@ export function ProfileTools({project, update}: {project: Project; update: (fn: 
           type="file"
           accept="application/json,.json"
           onChange={e => {
-            const file = e.target.files?.[0];
-            if (file)
-              void file
-                .text()
-                .then(text => planner<{profile: Profile}>('convert-v1', {profile: JSON.parse(text)}))
-                .then(v => update(p => ({...p, profile: v.profile, compiled_plan: null})))
-                .catch(e => setError(String(e)));
+            const input = e.target;
+            const file = input.files?.[0];
+            input.value = '';
+            if (!file) return;
+            setError('');
+            void file
+              .text()
+              .then(text =>
+                planner<{profile: Profile; diagnostics: unknown[]; valid: boolean}>('convert-v1', {
+                  profile: JSON.parse(text),
+                }),
+              )
+              .then(v => {
+                if (!v.profile.id || !v.profile.name)
+                  throw new Error(
+                    'This file is not a usable v1 profile: the conversion produced no profile id or name. The open profile was not changed.',
+                  );
+                if (
+                  !window.confirm(
+                    `Replace the open project's profile with the converted v1 profile?\n\n` +
+                      `${project.mappings.length} existing mapping(s) and ${project.evidence.length} evidence entr${project.evidence.length === 1 ? 'y' : 'ies'} ` +
+                      'refer to the old intents and will no longer match the converted profile. They are not deleted.',
+                  )
+                )
+                  return;
+                setResult({valid: v.valid, diagnostics: v.diagnostics});
+                update(p => ({...p, profile: v.profile, compiled_plan: null}));
+              })
+              .catch(e => setError(String(e)));
           }}
         />
       </Field>

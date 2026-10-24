@@ -2,6 +2,7 @@ import {useState} from 'react';
 import type {EditorController} from './types';
 import {Alert, Field, JsonEditor, JsonView} from './ui';
 import {download, downloadArchive} from './api';
+import {hasCurrentBuild} from './ArtifactFlow';
 export function Archives({c}: {c: EditorController}) {
   const [error, setError] = useState('');
   return (
@@ -17,7 +18,7 @@ export function Archives({c}: {c: EditorController}) {
             Inspect and import archive
           </button>
           <h3>Local archive output</h3>
-          <button disabled={!c.hasFreshBuild} onClick={() => void downloadArchive().catch(e => setError(String(e)))}>
+          <button disabled={!hasCurrentBuild(c)} onClick={() => void downloadArchive().catch(e => setError(String(e)))}>
             Download archive
           </button>
           <p className="muted">

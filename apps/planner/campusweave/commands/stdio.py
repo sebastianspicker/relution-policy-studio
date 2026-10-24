@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+import traceback
 from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
@@ -177,6 +178,7 @@ def main() -> int:
         _write(_failure(exc))
         return 2
     except Exception:
+        traceback.print_exc(file=sys.stderr)
         error = RequestError(
             "internal_error",
             "the offline planner could not complete the request",

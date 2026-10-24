@@ -26,6 +26,13 @@ export function Settings({c, theme, setTheme}: {c: EditorController; theme: stri
         Set passphrase
       </button>
       <p>{c.state.keySet ? 'Passphrase is set for this session.' : 'No passphrase set.'}</p>
+      {c.state.keySet && !c.state.keyValidated && c.state.keyValidationReason && (
+        <p className="muted">{c.state.keyValidationReason}</p>
+      )}
+      <p className="muted">
+        New archives need at least 16 characters with at least 8 different characters, no leading or trailing spaces and
+        no obvious default. The passphrase is the archive&apos;s only protection.
+      </p>
       <p className="muted">Credentials stay outside planning profiles and review exports.</p>
       <ServiceConnection service="relution" />
       <ServiceConnection service="zammad" />

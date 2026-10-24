@@ -377,10 +377,19 @@ function WorkspaceManager({
         .catch(e => setError(String(e)));
   }, [project?.id]);
   if (!project) return <Empty title="Open a project first" />;
+  const activeId = (workspaces as {active_workspace_id?: string | null} | undefined)?.active_workspace_id ?? null;
+  const activeAttached = project.workspace_refs.some(w => w.id === activeId);
   return (
     <div className="page-body">
       <h2>Policy workspaces</h2>
       <p>Workspace creation and project attachment are separate operations. Partial results remain visible.</p>
+      {workspaces !== undefined && !activeAttached && (
+        <p role="status">
+          {activeId === null
+            ? 'No workspace of this project is open. Policy edits and builds go to the scratch workspace, which is not attached to any project; open or create a workspace below.'
+            : "The open policy workspace belongs to another project, so policy edits and builds change that project's workspace. Open or create one of this project's workspaces below."}
+        </p>
+      )}
       <Field label="Workspace name">
         <input value={name} onChange={e => setName(e.target.value)} />
       </Field>
@@ -421,7 +430,10 @@ function WorkspaceManager({
         <tbody>
           {project.workspace_refs.map(w => (
             <tr key={w.id}>
-              <td>{w.name ?? w.id}</td>
+              <td>
+                {w.name ?? w.id}
+                {w.id === activeId && <strong> · Open now</strong>}
+              </td>
               <td>{w.id}</td>
               <td>
                 <button
@@ -440,13 +452,13 @@ function WorkspaceManager({
         </tbody>
       </table>
       {project.operations
-        .filter(operation => operation.status !== 'committed')
+        .filter(operation => operation.status === 'pending')
         .map((operation, index) => (
           <section key={typeof operation.id === 'string' ? operation.id : index}>
             <h3>Workspace recovery: {String(operation.name ?? operation.id)}</h3>
             <p>
               The workspace and project attachment did not complete together. Recovery verifies the stored workspace
-              before attaching it.
+              before attaching it; if the workspace was never created, abandon the operation.
             </p>
             <button
               disabled={disabled}
@@ -461,6 +473,22 @@ function WorkspaceManager({
               }
             >
               Recover workspace attachment
+            </button>
+            <button
+              disabled={disabled}
+              onClick={() => {
+                if (!window.confirm('Abandon this workspace operation? The workspace stays unattached to the project.'))
+                  return;
+                void request('/api/campusweave/workspaces/abandon', {
+                  projectId: project.id,
+                  expectedRevision: project.revision,
+                  operationId: operation.id,
+                })
+                  .then(onWorkspaceChange)
+                  .catch(e => setError(String(e)));
+              }}
+            >
+              Abandon operation
             </button>
             <JsonView value={operation} />
           </section>

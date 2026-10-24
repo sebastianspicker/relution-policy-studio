@@ -48,6 +48,7 @@ const WORKSPACE_POST_ROUTES = new Set([
   "/api/roundtrip/reconcile",
   "/api/campusweave/workspaces/activate",
   "/api/campusweave/workspaces/recover",
+  "/api/campusweave/workspaces/abandon",
   "/api/campusweave/workspaces",
   "/api/campusweave/projection",
 ]);

@@ -12,8 +12,9 @@ transport helper. The helper is not used by CampusWeave's offline runtime.
 ## Status
 
 The package version is `0.1.0`. It is a source-checkout application rather than
-a deployed service, and no license has been selected. Redistribution and a
-public release require an approved license and any necessary attribution.
+a deployed service. Repository-authored source code is licensed under the
+[MIT License](LICENSE); third-party reference material keeps its own terms (see
+the repository [NOTICE](../../NOTICE)).
 
 ## Capabilities
 

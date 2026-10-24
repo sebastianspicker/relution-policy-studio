@@ -19,6 +19,7 @@ import { readJsonBody } from "./editor-json-body.js";
 import { editorWorkspacePath, editorWorkspaceStateInput, type EditorRequestContext } from "./editor-server-contract.js";
 import { createHash } from "node:crypto";
 import { readOutputFileNoFollow } from "./editor-static-assets.js";
+import { newArchiveKeyProblem } from "../archive/rexp-key-policy.js";
 import { campusWeaveAssuranceDigest } from "./campusweave/assurance-state.js";
 import { loadAssuranceCatalog } from "../assurance/assurance-catalog-loader.js";
 import { parseAssuranceApplicabilityContext } from "../assurance/assurance-selection-request.js";
@@ -100,6 +101,11 @@ function handleArchiveBuildRequest(response: ServerResponse, context: EditorRequ
   const { runtimeState } = context;
   if (runtimeState.key.length === 0) {
     sendJson(response, 400, { error: "Build requires an archive passphrase. Enter one in Settings and click Set passphrase." });
+    return;
+  }
+  const keyProblem = newArchiveKeyProblem(runtimeState.key);
+  if (keyProblem !== undefined) {
+    sendJson(response, 400, { error: `${keyProblem} Enter a different passphrase in Settings.` });
     return;
   }
   let result: ReturnType<typeof buildVerifiedArchive<EditorSidecarState>>;

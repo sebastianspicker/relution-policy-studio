@@ -18,6 +18,8 @@ export async function startEditorServerRuntime(options: EditorServerOptions): Pr
   const host = normalizeHttpHostname(options.host ?? "127.0.0.1");
   assertSafeEditorHost(host);
   const bundle = loadTemplateBundle(options.bundlePath);
+  const store = options.campusweave === undefined ? undefined : openCampusWeaveProjectStore(options.campusweave.projectRoot);
+  const remembered = store?.rememberedActiveWorkspace();
   const runtimeState: EditorRuntimeState = {
     key: options.key,
     keyValidation: validateEditorKeyForOutput(options.out, options.key),
@@ -25,11 +27,12 @@ export async function startEditorServerRuntime(options: EditorServerOptions): Pr
     zammad: {},
     mutationQueues: createEditorMutationQueues(32),
     networkApiToken: configuredNetworkApiToken(options.apiToken),
-    ...(options.campusweave === undefined ? {} : {
+    ...(options.campusweave === undefined || store === undefined ? {} : {
       campusweave: {
-        store: openCampusWeaveProjectStore(options.campusweave.projectRoot),
+        store,
         planner: options.campusweave.planner,
-        activeWorkspaceDir: options.workspace,
+        activeWorkspaceDir: remembered?.workspaceDir ?? options.workspace,
+        ...(remembered === undefined ? {} : { activeWorkspaceId: remembered.workspaceId, activeProjectId: remembered.projectId }),
         catalogDigest: canonicalJsonSha256(bundle),
       },
     }),

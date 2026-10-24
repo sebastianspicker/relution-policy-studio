@@ -13,10 +13,21 @@ interface Props {
   flush: () => Promise<Project | undefined>;
   navigate: (section: Section) => void;
   reloadWorkspace: () => void;
+  refreshSaved: () => Promise<void>;
   onDirtyChange: (dirty: boolean) => void;
 }
 
-export function Scope({project, c, status, update, flush, navigate, reloadWorkspace, onDirtyChange}: Props) {
+export function Scope({
+  project,
+  c,
+  status,
+  update,
+  flush,
+  navigate,
+  reloadWorkspace,
+  refreshSaved,
+  onDirtyChange,
+}: Props) {
   const [draft, setDraft] = useState(() =>
     scopeDraft(project, sessionStorage.getItem('campusweave:intent:' + project.id) ?? undefined),
   );
@@ -128,6 +139,10 @@ export function Scope({project, c, status, update, flush, navigate, reloadWorksp
       sessionStorage.setItem('campusweave:intent:' + project.id, draft.intentId);
       sessionStorage.setItem('campusweave:recommendation:' + project.id, recommendation);
       if (workspace === 'new') {
+        if (!platform && draft.platform === 'cross_platform_outcome')
+          throw new Error(
+            'A cross-platform outcome needs a workspace per platform. Choose an existing workspace, or create one in Project tools.',
+          );
         if (!platform) throw new Error('Choose a supported policy platform, or manage workspaces in Project tools.');
         setBusy('Creating policy workspace…');
         await request('/api/campusweave/workspaces', {
@@ -135,6 +150,10 @@ export function Scope({project, c, status, update, flush, navigate, reloadWorksp
           expectedRevision: compiled.revision,
           name: draft.name,
           platform,
+        }).catch(async cause => {
+          // A failed creation still changes the project revision on the host; adopt it so autosave does not conflict.
+          await refreshSaved().catch(() => undefined);
+          throw cause;
         });
         reloadWorkspace();
       } else {
@@ -186,7 +205,7 @@ export function Scope({project, c, status, update, flush, navigate, reloadWorksp
           <fieldset className="scope-fields" disabled={!!busy}>
             <legend className="sr-only">Policy intent and scope</legend>
             <Field label="Intent">
-              <input required value={draft.name} onChange={event => edit('name', event.target.value)} />
+              <input required maxLength={160} value={draft.name} onChange={event => edit('name', event.target.value)} />
             </Field>
             <Field label="Outcome">
               <input required value={draft.outcome} onChange={event => edit('outcome', event.target.value)} />

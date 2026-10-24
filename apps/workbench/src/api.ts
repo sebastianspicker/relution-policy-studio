@@ -1,9 +1,21 @@
 import {editorApiFetch, postJson} from 'rexp-studio/ui';
 import {canonicalJson} from 'rexp-studio/browser';
+export class RequestError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+  ) {
+    super(message);
+  }
+}
 export async function request<T>(url: string, body?: unknown): Promise<T> {
   const response = body === undefined ? await editorApiFetch(url) : await postJson(url, body);
   const value = await response.json();
-  if (!response.ok) throw new Error(value.error?.message ?? value.error ?? `Request failed (${response.status})`);
+  if (!response.ok)
+    throw new RequestError(
+      value.error?.message ?? value.error ?? `Request failed (${response.status})`,
+      response.status,
+    );
   return value as T;
 }
 export async function planner<T>(command: string, payload: unknown): Promise<T> {
@@ -26,7 +38,13 @@ export function download(value: unknown, name: string) {
 }
 export async function downloadArchive() {
   const response = await editorApiFetch('/api/output');
-  if (!response.ok) throw new Error('Archive is not available');
+  if (!response.ok) {
+    const reason = await response
+      .json()
+      .then(value => value?.error)
+      .catch(() => undefined);
+    throw new Error(typeof reason === 'string' ? reason : 'Archive is not available');
+  }
   download(await response.blob(), 'campusweave.rexp');
 }
 export async function digest(value: unknown) {

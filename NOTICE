@@ -1,0 +1,34 @@
+Relution Policy Studio
+Copyright (c) 2026 Sebastian Spicker
+
+Repository-authored source code is licensed under the MIT License; see LICENSE
+in this directory, apps/planner/LICENSE and apps/policy-engine/LICENSE.
+
+The MIT License does not cover third-party reference data or material derived
+from it. Such material may be subject to separate upstream terms, which still
+apply. It includes, without being limited to:
+
+- apps/policy-engine/example/cis-references/ (Center for Internet Security
+  benchmark references)
+- apps/policy-engine/example/bsi-references/ (BSI references)
+- apps/policy-engine/example/vendor-references/ (vendor documentation
+  references, including Microsoft)
+- apps/policy-engine/example/recommendation-coverage/ and
+  apps/policy-engine/mdm/evidence/ (evidence derived from the sources above)
+- apps/policy-engine/data/ (Apple device-management and Relution reference
+  data)
+
+The sources.json and downloads/manifest.json files in those directories record
+the provenance of each source.
+
+CIS Benchmarks: material in cis-references/, recommendation-coverage/ and the
+baseline templates is extracted from PDF versions of the CIS Benchmarks
+published by the Center for Internet Security, Inc. (https://www.cisecurity.org/).
+CIS licenses those PDFs under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License
+(https://creativecommons.org/licenses/by-nc-sa/4.0/). The extracted material
+has been restructured into JSON and mapped to Relution settings, and is
+distributed under the same licence. It may not be used commercially. No
+endorsement by CIS is implied.
+
+Dependencies installed by pnpm or uv are distributed under their own licenses.

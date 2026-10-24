@@ -1,4 +1,6 @@
 /** Serves the editor's read-only state, catalog, and recommendation routes. */
+import { createHash } from "node:crypto";
+import { statSync } from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createAppleCompatReport } from "../assurance/apple-compat-report.js";
 import {
@@ -15,6 +17,7 @@ import { handleRecommendationApiRequest } from "./editor-server-recommendation-r
 import { listTemplates } from "../assurance/template-bundle.js";
 import { validateWorkspace } from "../workspace/workspace-validation.js";
 import { loadEditorWorkspaceState } from "../workspace-state/editor-port.js";
+import { readOutputFileNoFollow } from "./editor-static-assets.js";
 
 export function handleReadOnlyApiRequest(
   url: URL,
@@ -48,9 +51,37 @@ function handleStateApiRequest(
     sidecar,
     revision,
     active_workspace_id: runtimeState.campusweave?.activeWorkspaceId ?? null,
+    active_project_id: runtimeState.campusweave?.activeProjectId ?? null,
+    output_built_revision: outputBuiltRevision(context),
     campusweave_catalog_digest: runtimeState.campusweave?.catalogDigest ?? null,
   });
   return true;
+}
+
+let outputDigestCache: { readonly path: string; readonly size: number; readonly mtimeMs: number; readonly digest: string } | undefined;
+
+/** Workspace revision the output archive was built from, if it is still the recorded build of the active workspace. */
+function outputBuiltRevision(context: EditorRequestContext): string | null {
+  const runtime = context.runtimeState.campusweave;
+  if (runtime?.activeWorkspaceId === undefined) return null;
+  try {
+    const record = runtime.store.artifact(runtime.activeWorkspaceId);
+    if (record === undefined) return null;
+    return outputDigest(context.options.out) === record.artifactDigest ? record.policyRevision : null;
+  } catch (error) {
+    // State must stay loadable; a missing output or unreadable record just means "no current build".
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") console.error("[editor state] build record unavailable:", error);
+    return null;
+  }
+}
+
+/** Hashes the output archive only when its size or modification time changed. */
+function outputDigest(path: string): string {
+  const { size, mtimeMs } = statSync(path);
+  if (outputDigestCache?.path === path && outputDigestCache.size === size && outputDigestCache.mtimeMs === mtimeMs) return outputDigestCache.digest;
+  const digest = createHash("sha256").update(readOutputFileNoFollow(path)).digest("hex");
+  outputDigestCache = { path, size, mtimeMs, digest };
+  return digest;
 }
 
 function handleCatalogApiRequest(

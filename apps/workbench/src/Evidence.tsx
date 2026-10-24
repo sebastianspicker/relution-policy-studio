@@ -4,6 +4,12 @@ import type {EditorController, Project, Section} from './types';
 import {Alert, Empty, Field, Icon, JsonView, Stamp} from './ui';
 import {digest, download, request} from './api';
 const evidenceKinds: readonly CampusWeaveEvidence['kind'][] = ['local', 'target', 'device', 'recovery'];
+type Currency = {current: boolean; assurance_currency?: string; reasons?: string[]};
+type BuildRecord = {workspace_id: string; artifact: {artifactDigest?: string} | null};
+const sha = async (f: File) =>
+  [...new Uint8Array(await crypto.subtle.digest('SHA-256', await f.arrayBuffer()))]
+    .map(x => x.toString(16).padStart(2, '0'))
+    .join('');
 export function Evidence({
   project,
   update,
@@ -20,22 +26,31 @@ export function Evidence({
   const [artifact, setArtifact] = useState<File>();
   const [note, setNote] = useState('');
   const [error, setError] = useState('');
-  const [currency, setCurrency] = useState<Map<string, {current: boolean; assurance_currency?: string}>>(new Map());
+  const [currency, setCurrency] = useState<Map<string, Currency>>(new Map());
+  const [builds, setBuilds] = useState<BuildRecord[]>([]);
+  const [checkError, setCheckError] = useState('');
+  const [artifactSha, setArtifactSha] = useState('');
   useEffect(() => {
     let active = true;
     setCurrency(new Map());
-    void request<{review: {evidence: Array<{id: string; current: boolean; assurance_currency?: string}>}}>(
+    setCheckError('');
+    void request<{review: {evidence: Array<Currency & {id: string}>; artifact_manifest?: BuildRecord[]}}>(
       '/api/campusweave/review',
       {projectId: project.id, expectedRevision: project.revision},
     )
       .then(result => {
-        if (active) setCurrency(new Map(result.review.evidence.map(e => [e.id, e])));
+        if (!active) return;
+        setCurrency(new Map(result.review.evidence.map(e => [e.id, e])));
+        setBuilds(result.review.artifact_manifest ?? []);
       })
-      .catch(() => {});
+      .catch(e => {
+        if (active) setCheckError(e instanceof Error ? e.message : String(e));
+      });
     return () => {
       active = false;
     };
   }, [project, c.state.revision]);
+  const buildDigest = builds.find(b => b.workspace_id === c.state.active_workspace_id)?.artifact?.artifactDigest;
   async function attach() {
     try {
       if (!file || !artifact || !intent || !requirement.trim())
@@ -48,11 +63,10 @@ export function Evidence({
       if (!currentReview.review.assurance_digest)
         throw new Error('Assurance sources are unavailable; evidence cannot be bound to the current recommendations.');
       const workspaceId = c.state.active_workspace_id;
-      if (!workspaceId) throw new Error('Create or link this policy workspace in Workspaces first.');
-      const sha = async (f: File) =>
-        [...new Uint8Array(await crypto.subtle.digest('SHA-256', await f.arrayBuffer()))]
-          .map(x => x.toString(16).padStart(2, '0'))
-          .join('');
+      if (!workspaceId)
+        throw new Error('Create or link this policy workspace in the Workspaces tab under Policies first.');
+      if (c.state.active_project_id !== project.id || !project.workspace_refs.some(w => w.id === workspaceId))
+        throw new Error("The open policy workspace belongs to another project. Open one of this project's workspaces.");
       const record: CampusWeaveEvidence = {
         id: crypto.randomUUID(),
         name: file.name,
@@ -89,6 +103,7 @@ export function Evidence({
             are distinct evidence classes.
           </p>
         </div>
+        {checkError && <Alert>Evidence freshness could not be checked: {checkError}</Alert>}
         <table>
           <thead>
             <tr>
@@ -110,17 +125,37 @@ export function Evidence({
                     {state?.assurance_currency === 'unknown' ? (
                       <Stamp tone="caution">Currency unknown</Stamp>
                     ) : state?.current === false ? (
-                      <Stamp tone="caution">Stale or unresolved</Stamp>
+                      <>
+                        <Stamp tone="caution">Stale or unresolved</Stamp>
+                        {!!state.reasons?.length && (
+                          <ul className="muted">
+                            {state.reasons.map(reason => (
+                              <li key={reason}>{reason}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
                     ) : state?.current === true ? (
                       <>
                         <Stamp tone="ok">Current reference</Stamp> <span className="muted">Review its claims</span>
                       </>
+                    ) : checkError ? (
+                      <Stamp>Not checked</Stamp>
                     ) : (
                       <Stamp>Checking saved reference</Stamp>
                     )}
                   </td>
                   <td>
-                    <button onClick={() => download(e, 'evidence-reference.json')}>Export reference</button>
+                    <button onClick={() => download(e, 'evidence-reference.json')}>Export reference</button>{' '}
+                    <button
+                      className="danger"
+                      onClick={() => {
+                        if (window.confirm(`Remove evidence "${String(e.name ?? id ?? 'entry')}" from this project?`))
+                          update(p => ({...p, evidence: p.evidence.filter(x => x !== e)}));
+                      }}
+                    >
+                      Remove
+                    </button>
                   </td>
                 </tr>
               );
@@ -177,8 +212,35 @@ export function Evidence({
           <input type="file" onChange={e => setFile(e.target.files?.[0])} />
         </Field>
         <Field label="Related artifact file">
-          <input type="file" onChange={e => setArtifact(e.target.files?.[0])} />
+          <input
+            type="file"
+            onChange={e => {
+              const f = e.target.files?.[0];
+              setArtifact(f);
+              setArtifactSha('');
+              if (f) void sha(f).then(setArtifactSha, () => {});
+            }}
+          />
         </Field>
+        <p className="muted">
+          Select the exact <code>campusweave.rexp</code> you downloaded after the current build. Its SHA-256 must match
+          the build recorded for this workspace.
+        </p>
+        <p className="muted">
+          {buildDigest ? (
+            <>
+              Current build SHA-256: <code>{buildDigest}</code>
+            </>
+          ) : (
+            'No recorded build for this workspace'
+          )}
+        </p>
+        {artifactSha && buildDigest && artifactSha !== buildDigest && (
+          <Alert>
+            The selected file (SHA-256 {artifactSha}) does not match the current build. Select the exact
+            campusweave.rexp downloaded after the current build.
+          </Alert>
+        )}
         <Field label="Source and applicability notes">
           <textarea value={note} onChange={e => setNote(e.target.value)} />
         </Field>

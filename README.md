@@ -1,8 +1,37 @@
 # Relution Policy Studio
 
-A local planning and policy workbench for Relution.
+Relution Policy Studio brings institutional planning, policy editing and
+evidence review into one local application. Use the browser workbench to build
+a plan, review policy changes and export artifacts for further review. The
+interface connects to an authenticated local service and an offline planner;
+Relution operations remain read-only.
 
-Relution Policy Studio is an independent project that brings institutional planning, policy engineering and evidence review into one local application. The new React workbench uses the policy engine's authenticated Node loopback host and an offline Python planner over bounded JSON stdio.
+<details>
+<summary>Status and limitations</summary>
+
+**Project status:** Relution Policy Studio is an independent experimental project for
+institutional planning, policy engineering and evidence review. Developed independently
+alongside my main professional work. The alpha is a starting point for evaluation and
+adaptation, not a ready-to-use administration product. Relution operations remain read-only,
+and generated MDM artifacts remain LAB-only.
+
+**Disclaimer.** Local validation, recommendations and review packages are not legal advice,
+a compliance determination or deployment approval. Review policies, evidence, permissions
+and device effects independently; any real deployment requires the responsible
+organization's own authorization and testing.
+
+</details>
+
+The browser, local service and offline planner work together without granting
+deployment authority:
+
+```mermaid
+flowchart LR
+    A[Browser workbench] --> B[Local Studio service]
+    B <--> C[Offline planner]
+    B --> D[Review package or policy archive]
+    D --> E[Organizational review and testing]
+```
 
 From this directory:
 
@@ -47,7 +76,7 @@ Verification:
 pnpm verify
 ```
 
-`pnpm verify` runs the boundary, formatting, lint, type, hygiene and build gates; it is also what public CI runs. The regression test suites are maintained privately and are not part of the public tree.
+`pnpm verify` runs the boundary, formatting, lint, type, hygiene and build gates; it is also what public CI runs. General CI starts automatically only for Dependabot-authored pull requests and can be dispatched manually. CodeQL and Scorecard retain their security-only push/scheduled triggers. No automatic deployment or release workflow is configured. The regression test suites are maintained privately and are not part of the public tree.
 
 See [architecture](docs/architecture/0001-unified-product.md) and the [approved design manifest](docs/design/manifest.json). Local macOS results, prepared Ubuntu CI, browser checks and live-service/device verification are reported separately.
 

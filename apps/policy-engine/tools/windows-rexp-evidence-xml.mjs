@@ -6,7 +6,8 @@ import {
 /** Extract the CSP target, state, and values from the limited SyncML sample shape. */
 export function parseSyncMl(syncMl) {
   const locUri = firstMatch(syncMl, /<LocURI>(.*?)<\/LocURI>/su);
-  const data = decodeXmlEntities(firstMatch(syncMl, /<Data><!\[CDATA\[(.*?)\]\]><\/Data>/su));
+  // XML entities are literal within CDATA; decode only extracted inner attributes.
+  const data = firstMatch(syncMl, /<Data><!\[CDATA\[(.*?)\]\]><\/Data>/su);
   return {
     locUri,
     data,

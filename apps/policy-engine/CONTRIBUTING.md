@@ -10,8 +10,9 @@ and the distinction between reference validation and device evidence.
 - Python 3.11 or newer
 - uv 0.10.7 or newer
 
-The package scripts use POSIX shell utilities. CI runs on Ubuntu with Node.js 22
-and Python 3.11.
+The package scripts use POSIX shell utilities. Unified CI uses macOS and Ubuntu
+with Node.js 22 and Python 3.11. It runs automatically for Dependabot-authored
+PRs and can be dispatched manually; security scans have separate triggers.
 
 ## Setup
 
@@ -24,7 +25,7 @@ pnpm build
 Start the local editor:
 
 ```sh
-pnpm rexp:built
+pnpm rexp:built serve
 ```
 
 ## Change guidelines
@@ -59,10 +60,12 @@ Common focused checks:
 ```sh
 pnpm typecheck
 pnpm check:architecture
-pnpm test:node
 pnpm python:lint
-pnpm python:test
 ```
+
+The local regression suites are maintained separately and are not included in
+the public package scripts. Use their documented local commands when those
+suites are available; do not assume `test:node` or `python:test` scripts exist.
 
 Run `pnpm knip` and `pnpm check:boundaries` from the repository root; they
 analyze this package together with the workbench that consumes its `exports`.

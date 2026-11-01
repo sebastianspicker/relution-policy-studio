@@ -22,3 +22,16 @@ dist-demo/
 /apps/planner/tests/
 /apps/policy-engine/tests/
 /apps/workbench/tests/
+
+# Local-only agent coordination and remediation records.
+/.claude/
+/.codex/
+/.private/
+/scratch/
+/CLAUDE.md
+/CODEX.md
+/GEMINI.md
+/*_LEDGER.md
+/*-LEDGER.md
+/ALPHA_*.md
+/REMEDIATION_LEDGER.md

@@ -2,7 +2,8 @@
 import { existsSync, lstatSync, readFileSync } from "node:fs";
 import { isAbsolute, relative, resolve, sep } from "node:path";
 import type { MdmPolicySource, MdmSourceManifestEntry, MdmValidationIssue } from "./mdm-types.js";
-import { SOURCE_MANIFEST, error, loadJson, loadYaml, sha256 } from "./mdm-validation-data.js";
+import { SOURCE_MANIFEST, error, loadJson, loadYaml } from "./mdm-validation-data.js";
+import { sha256 } from "./mdm-generation-files.js";
 import { listFilesRecursively } from "../platform/filesystem/file-inventory.js";
 
 const SOURCE_CACHE_DIRECTORY = "private/source-pdfs-cache";

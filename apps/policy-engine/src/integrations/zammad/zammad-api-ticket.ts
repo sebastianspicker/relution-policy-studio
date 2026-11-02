@@ -31,9 +31,7 @@ export async function createZammadTicket(
   transportOptions: HttpServiceTransportOptions = {},
   operationId?: string,
 ): Promise<ZammadTicketResult> {
-  if (zammadDraftContainsOperationMarker(draft)) {
-    throw new Error("Ticket draft title and body must not contain reserved Relution operation-marker lines");
-  }
+  // ZammadTicketOperations rejects drafts containing operation-marker lines before it claims the operation.
   const response = await zammadFetch(connection, "/api/v1/tickets", {
     method: "POST",
     body: JSON.stringify({

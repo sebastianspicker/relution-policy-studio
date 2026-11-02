@@ -1,6 +1,6 @@
 /** Executes atomic claim and completion transactions for Zammad operations. */
 import type { ZammadConnection, ZammadTicketResult } from "../../contracts/zammad.js";
-import { ensureOperationCapacity, ensureOperationCompletionHeadroom } from "./zammad-operation-capacity.js";
+import { ensureOperationCapacity, ensureOperationCompletionHeadroom, removeOperation } from "./zammad-operation-capacity.js";
 import { readOperation, writeOperation } from "./zammad-operation-file.js";
 import { hasErrorCode } from "../../platform/filesystem/error-code.js";
 import { withOperationStoreLock } from "./zammad-operation-lock.js";
@@ -25,6 +25,13 @@ export function claimOperation(workspace: string, operationId: string): { operat
       if (concurrent === undefined) throw new Error("Zammad operation claim disappeared; refusing ticket creation", { cause: error });
       return { operation: concurrent, created: false };
     }
+  });
+}
+
+/** Drops a claim whose ticket was certainly not created, so the same draft can be sent again; completed records stay. */
+export function releaseStartedOperation(workspace: string, operationId: string): void {
+  withOperationStoreLock(workspace, () => {
+    if (readOperation(workspace, operationId)?.state === "started") removeOperation(workspace, operationId);
   });
 }
 

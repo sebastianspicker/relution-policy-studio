@@ -33,6 +33,6 @@ export function ensureOperationCompletionHeadroom(workspace: string, completingO
   if (retainedEntries > MAX_OPERATION_DIRECTORY_ENTRIES - 1) throw zammadOperationStoreCapacityError("Zammad operation store lacks safe completion-write headroom; remove stale temporary files only after stopping all editors");
 }
 
-function removeOperation(workspace: string, operationId: string): void {
+export function removeOperation(workspace: string, operationId: string): void {
   try { unlinkSync(operationPath(workspace, operationId)); } catch (error) { if (!hasErrorCode(error, "ENOENT")) throw error; }
 }

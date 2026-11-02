@@ -2,9 +2,9 @@
 import { chmodSync, existsSync, mkdirSync, opendirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve, sep } from "node:path";
 import { assertNoSymlinkPath } from "../platform/filesystem/path-safety.js";
-import { readBoundedRegularFileNoFollow } from "../platform/filesystem/bounded-file-read.js";
 import { isPolicyPath, policyPathCollisionKey } from "../workspace/policy-path.js";
-import { MAX_REXP_POLICY_ENTRIES, MAX_REXP_TOTAL_UNCOMPRESSED_BYTES } from "./rexp-format.js";
+import { MAX_REXP_POLICY_ENTRIES } from "./rexp-format.js";
+import { readRegularFile } from "./rexp-archive-reader.js";
 import { assertManagedProjectPath } from "./rexp-paths.js";
 
 export function listPolicyFiles(inputDir: string): string[] {
@@ -56,6 +56,3 @@ function assertPolicyPaths(inputDir: string, files: string[]): void {
   }
 }
 
-function readRegularFile(path: string, label: string): Buffer {
-  return readBoundedRegularFileNoFollow(resolve(path), { label, maxBytes: MAX_REXP_TOTAL_UNCOMPRESSED_BYTES });
-}

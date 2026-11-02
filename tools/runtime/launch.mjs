@@ -84,5 +84,5 @@ function shutdown() {
     process.exitCode = 1;
   });
 }
-process.on('SIGINT', shutdown);
-process.on('SIGTERM', shutdown);
+// SIGHUP: closing the terminal window must release the project lock like Ctrl-C does.
+for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP']) process.on(signal, shutdown);

@@ -1,12 +1,13 @@
 /** Coordinates idempotent Zammad ticket creation, reconciliation, and persistence. */
-import { createZammadTicket } from "./zammad-api-ticket.js";
+import { createZammadTicket, zammadDraftContainsOperationMarker } from "./zammad-api-ticket.js";
+import { ServiceApiStatusError } from "../../platform/network/service-api-request.js";
 import { findZammadTicketByOperationId } from "./zammad-api-reconciliation.js";
 import type { ZammadConnection, ZammadTicketResult } from "../../contracts/zammad.js";
 import type { ZammadTicketDraft } from "../../contracts/zammad.js";
 import type { HttpServiceTransportOptions } from "../../platform/network/http-service-transport.js";
 import { resultFromRecord } from "./zammad-operation-identities.js";
 import { readOperation } from "./zammad-operation-file.js";
-import { claimOperation, persistCompleted } from "./zammad-operation-store.js";
+import { claimOperation, persistCompleted, releaseStartedOperation } from "./zammad-operation-store.js";
 import { uncertainZammadOperationOutcome } from "./zammad-operation-error.js";
 
 /** A workspace-local idempotency boundary for ticket creation. */
@@ -31,6 +32,10 @@ export class ZammadTicketOperations {
   }
 
   private async createOnce(connection: ZammadConnection, draft: ZammadTicketDraft, operationId: string): Promise<ZammadTicketResult> {
+    // Rejected before the claim, so an invalid draft never leaves a record behind.
+    if (zammadDraftContainsOperationMarker(draft)) {
+      throw new Error("Ticket draft title and body must not contain reserved Relution operation-marker lines");
+    }
     const claim = claimOperation(this.workspace, operationId);
     if (claim.operation.state === "completed") return resultFromRecord(claim.operation.result, connection);
     if (!claim.created) {
@@ -40,7 +45,19 @@ export class ZammadTicketOperations {
       if (reconciled === undefined) throw uncertainZammadOperationOutcome(operationId);
       return persistCompleted(this.workspace, operationId, reconciled, connection);
     }
-    const created = await createZammadTicket(connection, draft, this.transportOptions, operationId);
+    let created: ZammadTicketResult;
+    try {
+      created = await createZammadTicket(connection, draft, this.transportOptions, operationId);
+    } catch (error) {
+      // A 4xx answer means Zammad refused the ticket. Network errors, timeouts (including a proxy's 408 or 499
+      // after forwarding), 5xx answers and unreadable success bodies keep the claim, because the ticket may exist.
+      const refused = error instanceof ServiceApiStatusError && error.status >= 400 && error.status < 500
+        && error.status !== 408 && error.status !== 499;
+      if (refused) {
+        releaseStartedOperation(this.workspace, operationId);
+      }
+      throw error;
+    }
     return persistCompleted(this.workspace, operationId, created, connection);
   }
 }

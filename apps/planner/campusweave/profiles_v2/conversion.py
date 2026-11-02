@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import json
-from collections.abc import Mapping
+from collections.abc import Iterator, Mapping
+from dataclasses import dataclass
 from typing import Any
 
 from .model import string_list
@@ -160,46 +161,74 @@ def _resolved_constraints(
 
     Returns the constraint lists and the fields whose intersection became empty.
     """
-    return _resolve(groups, identifier, (), {} if memo is None else memo)[0]
+    return _resolve(groups, identifier, {} if memo is None else memo)
+
+
+@dataclass
+class _Frame:
+    identifier: str
+    references: Iterator[str]
+    pending: dict[str, list[str] | None]
+    cut: bool = False
 
 
 def _resolve(
     groups: Mapping[str, Mapping[str, Any]],
     identifier: str,
-    visiting: tuple[str, ...],
     memo: dict[str, _Resolved],
-) -> tuple[_Resolved, bool]:
-    """Return the resolution and whether a cycle was cut below it; only cut-free results are memoized."""
-    if identifier in memo:
-        return memo[identifier], False
-    item = groups[identifier]
-    own = _group_constraints(item)
-    if item.get("membership_authority") != "boolean_intersection":
-        memo[identifier] = (own, [])
-        return memo[identifier], False
-    pending: dict[str, list[str] | None] = {
-        field: own[field] if own[field] else None for field in _SCOPE_FIELDS
-    }
-    cut = False
-    for reference in string_list(item.get("referenced_group_ids")):
-        if reference not in groups:
+) -> _Resolved:
+    """Depth-first with an explicit stack, so long group chains cannot hit the recursion limit.
+
+    A reference back to a group on the stack is cut; only results without a cut below them are memoized.
+    """
+    stack: list[_Frame] = []
+    on_stack: set[str] = set()
+
+    def enter(group_id: str) -> tuple[_Resolved, bool] | None:
+        if group_id in memo:
+            return memo[group_id], False
+        item = groups[group_id]
+        own = _group_constraints(item)
+        if item.get("membership_authority") != "boolean_intersection":
+            memo[group_id] = (own, [])
+            return memo[group_id], False
+        pending: dict[str, list[str] | None] = {
+            field: own[field] if own[field] else None for field in _SCOPE_FIELDS
+        }
+        stack.append(_Frame(group_id, iter(string_list(item.get("referenced_group_ids"))), pending))
+        on_stack.add(group_id)
+        return None
+
+    finished = enter(identifier)
+    while stack:
+        frame = stack[-1]
+        if finished is not None:
+            (referenced, _), reference_cut = finished
+            finished = None
+            frame.cut = frame.cut or reference_cut
+            for field in _SCOPE_FIELDS:
+                current, values = frame.pending[field], referenced[field]
+                if values:
+                    frame.pending[field] = (
+                        list(values) if current is None else [v for v in current if v in values]
+                    )
+        reference = next(frame.references, None)
+        if reference is None:
+            stack.pop()
+            on_stack.discard(frame.identifier)
+            resolved = {field: frame.pending[field] or [] for field in _SCOPE_FIELDS}
+            emptied = [field for field in _SCOPE_FIELDS if frame.pending[field] == []]
+            if not frame.cut:
+                memo[frame.identifier] = (resolved, emptied)
+            finished = (resolved, emptied), frame.cut
+        elif reference not in groups:
             continue
-        if reference == identifier or reference in visiting:
-            cut = True
-            continue
-        (referenced, _), reference_cut = _resolve(groups, reference, (*visiting, identifier), memo)
-        cut = cut or reference_cut
-        for field in _SCOPE_FIELDS:
-            current, values = pending[field], referenced[field]
-            if values:
-                pending[field] = (
-                    list(values) if current is None else [v for v in current if v in values]
-                )
-    resolved = {field: pending[field] or [] for field in _SCOPE_FIELDS}
-    emptied = [field for field in _SCOPE_FIELDS if pending[field] == []]
-    if not cut:
-        memo[identifier] = (resolved, emptied)
-    return (resolved, emptied), cut
+        elif reference in on_stack:
+            frame.cut = True
+        else:
+            finished = enter(reference)
+    assert finished is not None
+    return finished[0]
 
 
 def _group_index(profile: Mapping[str, Any]) -> dict[str, Mapping[str, Any]]:

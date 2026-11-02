@@ -4,7 +4,7 @@ import { chmodSync, lstatSync, mkdirSync, renameSync, rmSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { packPlainWorkspaceToStageInternal } from "../archive/rexp-packing.js";
 import { verifyRexp } from "../archive/rexp-inspection.js";
-import type { PackOptions, VerificationResult } from "../archive/rexp-format.js";
+import type { VerificationResult } from "../archive/rexp-format.js";
 import type { PolicyWorkspace } from "../workspace/types.js";
 import { isMissingPathError } from "../platform/filesystem/filesystem.js";
 import { resolveSymlinkFreePath } from "../platform/filesystem/path-safety.js";
@@ -13,8 +13,6 @@ export interface VerifiedEditorArchiveOptions {
   readonly workspace: Readonly<PolicyWorkspace>;
   readonly output: string;
   readonly key: string;
-  readonly pack?: (workspace: Readonly<PolicyWorkspace>, outputFile: string, password: string, options: PackOptions) => void;
-  readonly verify?: (filePath: string, password: string) => VerificationResult;
 }
 
 /**
@@ -28,14 +26,12 @@ export function buildVerifiedEditorArchive(options: VerifiedEditorArchiveOptions
   const parent = dirname(output);
   mkdirSync(parent, { recursive: true, mode: 0o700 });
   const temporary = join(parent, `.${basename(output)}.${randomUUID()}.pending`);
-  const pack = options.pack ?? packPlainWorkspaceToStageInternal;
-  const verify = options.verify ?? verifyRexp;
 
   try {
-    pack(options.workspace, temporary, options.key, { force: false });
+    packPlainWorkspaceToStageInternal(options.workspace, temporary, options.key, { force: false });
     const stagedPath = resolveSymlinkFreePath(temporary, "Archive staging path");
     assertOutputIsRegularOrAbsent(stagedPath, "Archive staging path");
-    const verification = verify(stagedPath, options.key);
+    const verification = verifyRexp(stagedPath, options.key);
     if (!verification.ok) return verification;
 
     // Revalidate immediately before publication: the destination must not

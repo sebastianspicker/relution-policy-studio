@@ -1,5 +1,6 @@
 /** Canonical JSON helpers for assurance artifact linkage and JSON-pointer values. */
 import { createHash } from "node:crypto";
+import { canonicalJson } from "../platform/serialization/canonical-json-text.js";
 import { asRecord, type JsonRecord } from "../platform/serialization/json-guards.js";
 
 export function assuranceCanonicalDigest(value: unknown): string {
@@ -69,13 +70,3 @@ function isArrayIndex(segment: string): boolean {
   return /^(?:0|[1-9][0-9]*)$/u.test(segment) && Number.isSafeInteger(Number(segment));
 }
 
-function canonicalJson(value: unknown): string {
-  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
-  if (typeof value === "object" && value !== null) {
-    const object = value as JsonRecord;
-    return `{${Object.keys(object).sort().map((key) => `${JSON.stringify(key)}:${canonicalJson(object[key])}`).join(",")}}`;
-  }
-  const serialized = JSON.stringify(value);
-  if (serialized === undefined) throw new Error("Assurance values must be JSON serializable");
-  return serialized;
-}

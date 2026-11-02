@@ -7,6 +7,7 @@ import {
   linkSync,
   mkdirSync,
   openSync,
+  readdirSync,
   renameSync,
   rmdirSync,
   unlinkSync,
@@ -33,7 +34,7 @@ export function writePrivateFileAtomic(
 
   const parent = dirname(resolvedOutput);
   createDirectoriesDurably(parent);
-  const temporary = join(parent, `.${basename(resolvedOutput)}.${randomUUID()}.tmp`);
+  const temporary = join(parent, `${temporaryPrefix(basename(resolvedOutput))}${randomUUID()}.tmp`);
   let descriptor: number | undefined;
   let linkedOutput = false;
   try {
@@ -96,6 +97,20 @@ export function createPrivateDirectoryExclusive(path: string, label: string): st
   return resolved;
 }
 
+/** Removes temporary files that a crash inside `writePrivateFileAtomic` left for `finalName`; nothing else is touched. */
+export function removeAbandonedPrivateFileTemporaries(directory: string, finalName: string): void {
+  const prefix = temporaryPrefix(finalName);
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.startsWith(prefix) && /^[0-9a-f-]{36}\.tmp$/u.test(entry.name.slice(prefix.length))) {
+      unlinkSync(join(directory, entry.name));
+    }
+  }
+}
+
+function temporaryPrefix(finalName: string): string {
+  return `.${finalName}.`;
+}
+
 export function removeEmptyPrivateDirectoryDurably(path: string, label: string): void {
   const resolved = resolveSymlinkFreePath(path, label);
   const parent = dirname(resolved);
@@ -119,9 +134,9 @@ function createDirectoriesDurably(path: string): void {
   }
 }
 
-function fsyncDirectory(path: string): void {
+export function fsyncDirectory(path: string): void {
   if (process.platform === "win32") return;
-  const descriptor = openSync(path, constants.O_RDONLY | constants.O_DIRECTORY);
+  const descriptor = openSync(path, constants.O_RDONLY | constants.O_DIRECTORY | constants.O_NOFOLLOW);
   try {
     fsyncSync(descriptor);
   } finally {

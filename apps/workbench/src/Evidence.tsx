@@ -49,7 +49,8 @@ export function Evidence({
     return () => {
       active = false;
     };
-  }, [project, c.state.revision]);
+    // The server reviews the saved project, so only a new saved revision (not each local edit) needs a new review.
+  }, [project.id, project.revision, c.state.revision]);
   const buildDigest = builds.find(b => b.workspace_id === c.state.active_workspace_id)?.artifact?.artifactDigest;
   async function attach() {
     try {

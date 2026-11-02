@@ -7,13 +7,6 @@ export const STALE_INCOMPLETE_REPORT_MS = 5 * 60 * 1_000;
 export const MAX_REPORT_HISTORY_JSON_BYTES = 16 * 1024 * 1024;
 const RELUTION_REPORT_FILE_NAME = /^relution-compliance-report-(?:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.(json|md)$/u;
 
-export interface RelutionReportPaths {
-  /** Path relative to the workspace root. */
-  jsonPath: string;
-  /** Path relative to the workspace root. */
-  markdownPath: string;
-}
-
 export interface RelutionReportHistoryEntry {
   jsonPath: string;
   markdownPath?: string;

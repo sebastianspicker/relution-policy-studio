@@ -1,5 +1,9 @@
 /** Classifies authenticated POST routes before bounded body intake begins. */
 import { DEFAULT_JSON_BODY_LIMIT_BYTES, LARGE_JSON_BODY_LIMIT_BYTES } from "./editor-json-body.js";
+import { MAX_PROJECT_BYTES } from "../workspace-state/campusweave-project-store.js";
+
+/** A saved project holds the profile and its compiled plan; allow the store's limit plus the request envelope. */
+const PROJECT_BODY_LIMIT_BYTES = MAX_PROJECT_BYTES + 1024 * 1024;
 
 export type EditorMutationDomain = "workspace" | "relution" | "zammad" | "campusweave";
 
@@ -12,12 +16,8 @@ export interface EditorPostRoute {
 const BODYLESS_WORKSPACE_POST_ROUTES = new Set(["/api/build"]);
 const BODYLESS_RELUTION_POST_ROUTES = new Set(["/api/relution/test"]);
 const BODYLESS_ZAMMAD_POST_ROUTES = new Set(["/api/zammad/test"]);
-const CAMPUSWEAVE_POST_ROUTES = new Set([
-  "/api/campusweave/projects",
-  "/api/campusweave/project",
-  "/api/campusweave/planner",
-  "/api/campusweave/review",
-]);
+const CAMPUSWEAVE_PROJECT_POST_ROUTES = new Set(["/api/campusweave/projects", "/api/campusweave/project"]);
+const CAMPUSWEAVE_POST_ROUTES = new Set(["/api/campusweave/planner", "/api/campusweave/review"]);
 
 const LARGE_WORKSPACE_POST_ROUTES = new Set([
   "/api/assurance/preview",
@@ -88,6 +88,9 @@ export function classifyEditorPostRoute(pathname: string): EditorPostRoute | und
   }
   if (ZAMMAD_POST_ROUTES.has(pathname)) {
     return { domain: "zammad", bodyLimitBytes: DEFAULT_JSON_BODY_LIMIT_BYTES, readsBody: true };
+  }
+  if (CAMPUSWEAVE_PROJECT_POST_ROUTES.has(pathname)) {
+    return { domain: "campusweave", bodyLimitBytes: PROJECT_BODY_LIMIT_BYTES, readsBody: true };
   }
   if (CAMPUSWEAVE_POST_ROUTES.has(pathname)) {
     return { domain: "campusweave", bodyLimitBytes: DEFAULT_JSON_BODY_LIMIT_BYTES, readsBody: true };

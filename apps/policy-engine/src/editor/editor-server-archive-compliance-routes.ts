@@ -20,6 +20,7 @@ import { editorWorkspacePath, editorWorkspaceStateInput, type EditorRequestConte
 import { createHash } from "node:crypto";
 import { readOutputFileNoFollow } from "./editor-static-assets.js";
 import { newArchiveKeyProblem } from "../archive/rexp-key-policy.js";
+import { RexpArchiveTooLargeError } from "../archive/rexp-packing.js";
 import { campusWeaveAssuranceDigest } from "./campusweave/assurance-state.js";
 import { loadAssuranceCatalog } from "../assurance/assurance-catalog-loader.js";
 import { parseAssuranceApplicabilityContext } from "../assurance/assurance-selection-request.js";
@@ -120,6 +121,7 @@ function handleArchiveBuildRequest(response: ServerResponse, context: EditorRequ
       },
     });
   } catch (error) {
+    if (error instanceof RexpArchiveTooLargeError) throw badRequest(error.message);
     console.error("[editor archive build error]", error);
     throw badRequest("Archive build failed");
   }

@@ -136,17 +136,24 @@ def decode_strict_json(raw: bytes, path: Path) -> Any:
     except UnicodeDecodeError as exc:
         raise ValueError(f"{path}: is not UTF-8 JSON: {exc}") from exc
     try:
-        return json.loads(
+        value = json.loads(
             decoded,
             object_pairs_hook=_unique_object,
             parse_constant=_invalid_constant,
         )
+        # An escaped lone surrogate ("\ud800") parses but is not text; reject it here, not in a later encode.
+        json.dumps(value, ensure_ascii=False).encode("utf-8")
     except json.JSONDecodeError as exc:
         raise ValueError(
             f"{path}: invalid JSON at line {exc.lineno}, column {exc.colno}: {exc.msg}"
         ) from exc
+    except UnicodeEncodeError as exc:
+        raise ValueError(
+            f"{path}: contains a lone UTF-16 surrogate, which is not valid text"
+        ) from exc
     except (DuplicateKey, RecursionError, ValueError) as exc:
         raise ValueError(f"{path}: invalid strict JSON: {exc}") from exc
+    return value
 
 
 def load_strict_json(

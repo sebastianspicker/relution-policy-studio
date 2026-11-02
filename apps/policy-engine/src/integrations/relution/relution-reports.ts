@@ -9,13 +9,16 @@ import { workspaceRelativeReportPath } from "./relution-report-storage.js";
 import { renderRelutionMarkdownReport } from "./relution-report-rendering.js";
 import { pruneRelutionReportHistory, removeIncompleteReportPairs } from "./relution-report-retention.js";
 import { persistedRelutionReport } from "./relution-report-rendering.js";
-import type { RelutionReportHistoryEntry, RelutionReportPaths } from "./relution-report-storage.js";
+import type { RelutionReportHistoryEntry } from "./relution-report-storage.js";
+import type { RelutionReportPaths } from "../../contracts/relution-assessment.js";
 export type { RelutionReportPaths } from "../../contracts/relution-assessment.js";
 
 export type { RelutionReportHistoryEntry } from "./relution-report-storage.js";
 export function writeRelutionReport(workspace: string, report: RelutionAssessmentReport): RelutionReportPaths {
   const { workspaceRoot, reportDir } = secureRelutionReportDir(workspace);
   if (reportDir === undefined) throw new Error("Relution report directory is unavailable");
+  // Leftovers of interrupted writes are removed when a report is written, never by a read of the history.
+  removeIncompleteReportPairs(reportDir);
   const reportId = randomUUID();
   const jsonName = `relution-compliance-report-${reportId}.json`;
   const markdownName = `relution-compliance-report-${reportId}.md`;
@@ -47,6 +50,5 @@ export function writeRelutionReport(workspace: string, report: RelutionAssessmen
 export function listRelutionReports(workspace: string): RelutionReportHistoryEntry[] {
   const { workspaceRoot, reportDir } = secureRelutionReportDir(workspace, false);
   if (reportDir === undefined) return [];
-  removeIncompleteReportPairs(reportDir);
   return readRelutionReportHistory(workspaceRoot, reportDir);
 }

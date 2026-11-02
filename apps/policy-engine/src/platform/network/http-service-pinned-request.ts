@@ -5,7 +5,8 @@ import { isIP, type TcpNetConnectOpts } from "node:net";
 import type { ResolvedServiceAddress } from "./outbound-host-policy.js";
 import { preparePinnedHttpServiceRequest } from "./http-service-node-adapter.js";
 import { incomingMessageToResponse } from "./http-service-incoming-response.js";
-import { approvedAddressLookup, normalizedUrlHostname } from "./http-service-pinned-lookup.js";
+import { normalizeHttpHostname } from "./connection-host-input.js";
+import { approvedAddressLookup } from "./http-service-pinned-lookup.js";
 
 export async function requestPinnedHttpServiceUrl(
   url: URL,
@@ -16,7 +17,7 @@ export async function requestPinnedHttpServiceUrl(
   const { body, headers } = preparePinnedHttpServiceRequest(url, init);
   const requestOptions: RequestOptions & Pick<TcpNetConnectOpts, "autoSelectFamily" | "autoSelectFamilyAttemptTimeout"> = {
     method: init.method ?? "GET",
-    hostname: normalizedUrlHostname(url.hostname),
+    hostname: normalizeHttpHostname(url.hostname),
     path: `${url.pathname}${url.search}`,
     headers: Object.fromEntries(headers.entries()),
     lookup: approvedAddressLookup(url.hostname, addresses),
@@ -39,6 +40,6 @@ export async function requestPinnedHttpServiceUrl(
 }
 
 function tlsServerName(hostname: string): string | undefined {
-  const normalized = normalizedUrlHostname(hostname);
+  const normalized = normalizeHttpHostname(hostname);
   return isIP(normalized) === 0 ? normalized : undefined;
 }

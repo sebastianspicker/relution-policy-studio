@@ -2,7 +2,7 @@
 import { isIP } from "node:net";
 import { formatHttpUrlAuthority } from "../platform/network/connection-normalization.js";
 
-export function assertSafeEditorHost(host: string, _legacyAllowNetworkHost = false): void {
+export function assertSafeEditorHost(host: string): void {
   if (isLoopbackHostname(normalizeHostname(host))) return;
   throw new Error(`Non-loopback editor host "${host}" is not supported because the editor transport is local HTTP`);
 }

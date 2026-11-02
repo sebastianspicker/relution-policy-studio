@@ -14,7 +14,8 @@ from ..profiles_v2 import compile_profile, convert_v1_profile, reference_profile
 
 PROTOCOL_VERSION = 1
 MAX_REQUEST_BYTES = 1024 * 1024
-MAX_RESPONSE_BYTES = 1024 * 1024
+# A compiled plan is about as large as its profile, so answers get room beyond the request limit.
+MAX_RESPONSE_BYTES = 4 * 1024 * 1024
 MAX_REQUEST_ID_CHARS = 128
 PROFILE_COMMANDS = {"validate", "compile", "convert-v1"}
 COMMANDS = {*PROFILE_COMMANDS, "reference"}

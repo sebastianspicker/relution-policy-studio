@@ -10,12 +10,14 @@ export class RequestError extends Error {
 }
 export async function request<T>(url: string, body?: unknown): Promise<T> {
   const response = body === undefined ? await editorApiFetch(url) : await postJson(url, body);
-  const value = await response.json();
-  if (!response.ok)
-    throw new RequestError(
-      value.error?.message ?? value.error ?? `Request failed (${response.status})`,
-      response.status,
-    );
+  // Parse failures must not hide the status: a 409 has to reach the conflict handling even without a JSON body.
+  const value = await response.json().catch(() => undefined);
+  if (!response.ok) {
+    const error = value?.error;
+    const message = typeof error?.message === 'string' ? error.message : typeof error === 'string' ? error : '';
+    throw new RequestError(message || `Request failed (${response.status})`, response.status);
+  }
+  if (value === undefined) throw new RequestError('The local service returned an unreadable response', response.status);
   return value as T;
 }
 export async function planner<T>(command: string, payload: unknown): Promise<T> {

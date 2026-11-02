@@ -371,10 +371,18 @@ function WorkspaceManager({
   const [error, setError] = useState('');
   const [workspaces, setWorkspaces] = useState<unknown>();
   useEffect(() => {
-    if (project)
-      void request('/api/campusweave/workspaces?projectId=' + encodeURIComponent(project.id))
-        .then(setWorkspaces)
-        .catch(e => setError(String(e)));
+    if (!project) return;
+    let active = true;
+    void request('/api/campusweave/workspaces?projectId=' + encodeURIComponent(project.id))
+      .then(result => {
+        if (active) setWorkspaces(result);
+      })
+      .catch(e => {
+        if (active) setError(String(e));
+      });
+    return () => {
+      active = false;
+    };
   }, [project?.id]);
   if (!project) return <Empty title="Open a project first" />;
   const activeId = (workspaces as {active_workspace_id?: string | null} | undefined)?.active_workspace_id ?? null;

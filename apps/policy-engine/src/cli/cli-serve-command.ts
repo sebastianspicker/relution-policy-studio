@@ -6,7 +6,8 @@ import { optionalString } from "./cli-arg-values.js";
 import { serveEditor } from "./cli-editor-commands.js";
 import { optionalEnvRexpKey } from "./cli-runtime.js";
 import { loadTemplateBundle } from "../assurance/template-bundle.js";
-import { createNewWorkspace } from "../workspace/workspace-creation.js";
+import { initializeNewWorkspace } from "../application/workspace-initialization.js";
+import { editorWorkspaceInitializationPort } from "../editor/editor-workspace-initialization.js";
 
 export const DEFAULT_SERVE_WORKSPACE = ".rexp-editor/workspace";
 const DEFAULT_SERVE_OUTPUT = ".rexp-editor/output.rexp";
@@ -34,6 +35,6 @@ function createDefaultWorkspace(args: ParsedArgs, workspace: string): void {
   const platform = optionalString(args, "platform") ?? DEFAULT_SERVE_PLATFORM;
   const name = optionalString(args, "name") ?? DEFAULT_SERVE_POLICY_NAME;
   if (platform === "UNKNOWN" || !bundle.platforms.includes(platform)) throw new Error(`Unsupported default policy platform: ${platform}`);
-  createNewWorkspace({ workspace, platform, name, serverVersion: bundle.serverVersion });
+  initializeNewWorkspace({ workspace, platform, name, serverVersion: bundle.serverVersion }, editorWorkspaceInitializationPort);
   console.log(`Created workspace ${resolve(workspace)}`);
 }

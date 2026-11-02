@@ -26,15 +26,3 @@ export async function outboundHostPolicyError(
     return { kind: "dns-failure", error: error instanceof Error ? error.message : String(error) };
   }
 }
-
-/** Converts a policy result into the error contract used by CLI callers. */
-export async function assertOutboundHostAllowed(
-  serviceName: string,
-  host: string,
-  allowLocalServiceHosts: boolean,
-): Promise<void> {
-  const policyError = await outboundHostPolicyError(serviceName, host, allowLocalServiceHosts);
-  if (policyError !== undefined) {
-    throw new Error(policyError.kind === "blocked" ? policyError.reason : policyError.error);
-  }
-}

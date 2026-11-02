@@ -123,8 +123,14 @@ export function useProject() {
     download(await latestSaved(), 'latest-saved-project.json');
   }
 
+  /** A save still in flight would overwrite the state the conflict actions set, so let it finish first. */
+  async function saveSettled() {
+    while (pending.current) await pending.current.catch(() => {});
+  }
+
   async function discardAndLoadLatest() {
     if (!window.confirm('Discard the unsaved changes in this tab and load the latest saved project?')) return;
+    await saveSettled();
     accept(await latestSaved());
   }
 
@@ -133,6 +139,7 @@ export function useProject() {
       !window.confirm("Replace the latest saved version with this tab's project? Other saved changes are overwritten.")
     )
       return;
+    await saveSettled();
     const latest = await latestSaved();
     persisted.current = latest;
     current.current = {...current.current!, revision: latest.revision};

@@ -1,6 +1,5 @@
 /** Shared MDM validation data loading and issue helpers. */
 import { readFileSync } from "node:fs";
-import { createHash } from "node:crypto";
 import type { ErrorObject } from "ajv/dist/2020.js";
 import yaml from "js-yaml";
 import type { MdmValidationIssue } from "./mdm-types.js";
@@ -22,10 +21,6 @@ export function loadYaml<T>(path: string): T {
     throw new Error(`Expected exactly one YAML document in ${path}`);
   }
   return documents[0] as T;
-}
-
-export function sha256(value: Buffer | string): string {
-  return createHash("sha256").update(value).digest("hex");
 }
 
 export function error(path: string, message: string): MdmValidationIssue {

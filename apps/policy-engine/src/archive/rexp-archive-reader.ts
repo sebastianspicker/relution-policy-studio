@@ -35,6 +35,6 @@ function assertRexpEntryNames(entries: ZipEntry[]): void {
   }
 }
 
-function readRegularFile(path: string, label: string): Buffer {
+export function readRegularFile(path: string, label: string): Buffer {
   return readBoundedRegularFileNoFollow(resolve(path), { label, maxBytes: MAX_REXP_TOTAL_UNCOMPRESSED_BYTES });
 }

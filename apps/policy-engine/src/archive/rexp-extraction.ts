@@ -13,12 +13,12 @@ import {
   rmSync,
 } from "node:fs";
 import { basename, dirname, join } from "node:path";
-import { createPrivateDirectoryExclusive, writePrivateFileAtomic } from "../platform/filesystem/atomic-private-file.js";
+import { createPrivateDirectoryExclusive, fsyncDirectory, writePrivateFileAtomic } from "../platform/filesystem/atomic-private-file.js";
 import { readBoundedRegularFileNoFollow } from "../platform/filesystem/bounded-file-read.js";
 import { lstatIfPresent } from "../platform/filesystem/filesystem.js";
 import { assertNoSymlinkPath, resolveSymlinkFreePath } from "../platform/filesystem/path-safety.js";
 import { decryptRelutionPayload, formatJsonBuffer, parseJson } from "./rexp-crypto.js";
-import { decryptHashMap, getRequiredEntry, policyEntries, validateArchiveJson } from "./rexp-archive-validation.js";
+import { decryptHashMap, getRequiredEntry, policyEntries } from "./rexp-archive-validation.js";
 import { assertArchiveEntryHashes } from "./rexp-archive-hashes.js";
 import { readRexpEntries } from "./rexp-archive-reader.js";
 import { type ExtractOptions, HASHES_JSON, MANAGED_PROJECT_PATHS, METADATA_JSON, REPORT_JSON } from "./rexp-format.js";
@@ -35,21 +35,19 @@ type Phase = "initializing" | "prepared" | "previous-published" | "replacement-p
   | "rolling-back" | "rollback-replacement-unpublished" | "rollback-restoring-previous"
   | "rollback-previous-restored" | "rolled-back" | "complete";
 interface Journal { readonly version: 1; phase: Phase; }
-type InterruptionPoint = Exclude<Phase, "complete"> | "transaction-created"
-  | "before-rollback-replacement-rename" | "after-rollback-replacement-rename"
-  | "before-rollback-previous-restore-rename" | "after-rollback-previous-restore-rename"
-  | "before-rollback-cleanup" | "after-rollback-cleanup";
-type InterruptionHook = (phase: InterruptionPoint) => void;
 
 /** Extracts an authenticated REXP archive, recovering an interrupted prior extraction first. */
 export function extractRexp(filePath: string, outputDir: string, password: string, options: ExtractOptions = {}): void {
   const output = resolveSymlinkFreePath(outputDir, "Output path");
   recoverInterruptedExtraction(output);
-  const entries = readRexpEntries(filePath);
+  replaceManagedProjectSurface(output, decryptRexpProject(readRexpEntries(filePath), password, options.pretty), options.force === true);
+}
+
+/** Authenticates every entry and decrypts the project in memory; materializing parses each JSON file once. */
+export function decryptRexpProject(entries: ZipEntry[], password: string, pretty?: boolean): Map<string, Buffer> {
   const hashes = decryptHashMap(entries, password);
   assertArchiveEntryHashes(entries, hashes);
-  validateArchiveJson(entries, password);
-  replaceManagedProjectSurface(output, materializeProject(entries, hashes, password, options.pretty), options.force === true, interruptionHook(options));
+  return materializeProject(entries, hashes, password, pretty);
 }
 
 function materializeProject(entries: ZipEntry[], hashes: Record<string, string>, password: string, pretty: boolean | undefined): Map<string, Buffer> {
@@ -66,34 +64,32 @@ function formattedOrOriginal(data: Buffer, label: string, pretty: boolean | unde
   return pretty === true ? formatJsonBuffer(data, label) : data;
 }
 
-function replaceManagedProjectSurface(output: string, files: Map<string, Buffer>, force: boolean, afterPhase: InterruptionHook | undefined): void {
+function replaceManagedProjectSurface(output: string, files: Map<string, Buffer>, force: boolean): void {
   assertSafeExtractionDestination(output, force);
   mkdirSync(dirname(output), { recursive: true, mode: 0o700 });
   const transaction = transactionPath(output);
   assertNoSymlinkPath(dirname(output), basename(transaction), "Extraction transaction path");
   createPrivateDirectoryExclusive(transaction, "Extraction transaction path");
-  afterPhase?.("transaction-created");
   let journaled = false;
   try {
-    installStagedProject(transaction, output, files, afterPhase);
+    installStagedProject(transaction, output, files);
     journaled = true;
   } finally {
     if (!journaled && lstatIfPresent(transaction) !== undefined && lstatIfPresent(join(transaction, JOURNAL_FILE)) === undefined) removeTransactionDirectory(transaction);
   }
 }
 
-function installStagedProject(transaction: string, output: string, files: Map<string, Buffer>, afterPhase: InterruptionHook | undefined): void {
+function installStagedProject(transaction: string, output: string, files: Map<string, Buffer>): void {
   const staging = join(transaction, STAGING_DIRECTORY);
   const backup = join(transaction, BACKUP_DIRECTORY);
   const hadOutput = lstatIfPresent(output) !== undefined;
   let previousPublished = false;
+  let committed = false;
   try {
     writeJournal(transaction, { version: 1, phase: "initializing" });
-    afterPhase?.("initializing");
     stageProject(staging, output, files, hadOutput);
     const journal: Journal = { version: 1, phase: "prepared" };
     writeJournal(transaction, journal);
-    afterPhase?.("prepared");
     if (hadOutput) {
       assertOutputPath(output);
       renameSync(output, backup);
@@ -101,7 +97,6 @@ function installStagedProject(transaction: string, output: string, files: Map<st
       previousPublished = true;
       journal.phase = "previous-published";
       writeJournal(transaction, journal);
-      afterPhase?.("previous-published");
     }
     assertNoSymlinkPath(transaction, STAGING_DIRECTORY, "Extraction staging path");
     renameSync(staging, output);
@@ -109,12 +104,17 @@ function installStagedProject(transaction: string, output: string, files: Map<st
     fsyncDirectory(dirname(output));
     journal.phase = "replacement-published";
     writeJournal(transaction, journal);
-    afterPhase?.("replacement-published");
+    committed = true;
     journal.phase = "complete";
     writeJournal(transaction, journal);
     removeTransactionDirectory(transaction);
   } catch (error) {
-    rollbackFailedInstallation(transaction, output, hadOutput, previousPublished, error, afterPhase);
+    // Once the replacement is published the extraction has succeeded; the next extraction finishes a failed cleanup.
+    if (committed) {
+      console.warn(`Extraction succeeded, but cleanup is left for the next extraction: ${error instanceof Error ? error.message : String(error)}`);
+      return;
+    }
+    rollbackFailedInstallation(transaction, output, hadOutput, previousPublished, error);
   }
 }
 
@@ -131,17 +131,15 @@ function stageProject(staging: string, output: string, files: Map<string, Buffer
 
 function rollbackFailedInstallation(
   transaction: string, output: string, hadOutput: boolean, previousPublished: boolean, originalError: unknown,
-  afterPhase: InterruptionHook | undefined,
 ): never {
   const failures: unknown[] = [originalError];
   const restoringPrevious = hadOutput && (previousPublished || lstatIfPresent(join(transaction, BACKUP_DIRECTORY)) !== undefined);
   const journal: Journal = { version: 1, phase: restoringPrevious ? "rolling-back" : "complete" };
   try {
     writeJournal(transaction, journal);
-    if (restoringPrevious) afterPhase?.("rolling-back");
   } catch (error) { failures.push(error); }
   if (restoringPrevious) {
-    try { restorePreviousWorkspace(transaction, output, journal, afterPhase); }
+    try { restorePreviousWorkspace(transaction, output, journal); }
     catch (error) { failures.push(error); }
   }
   if (failures.length === 1) {
@@ -150,11 +148,8 @@ function rollbackFailedInstallation(
         verifyRestoredWorkspace(output);
         journal.phase = "rolled-back";
         writeJournal(transaction, journal);
-        afterPhase?.("rolled-back");
-        afterPhase?.("before-rollback-cleanup");
       }
       removeTransactionDirectory(transaction);
-      if (restoringPrevious) afterPhase?.("after-rollback-cleanup");
     } catch (error) { failures.push(error); }
   }
   if (failures.length === 1) throw originalError;
@@ -196,9 +191,7 @@ function recoverInterruptedExtraction(output: string): void {
   removeTransactionDirectory(transaction);
 }
 
-function restorePreviousWorkspace(
-  transaction: string, output: string, journal: Journal, afterPhase: InterruptionHook | undefined,
-): void {
+function restorePreviousWorkspace(transaction: string, output: string, journal: Journal): void {
   const replacement = join(transaction, REPLACEMENT_DIRECTORY);
   const outputExists = lstatIfPresent(output) !== undefined;
   const backupExists = lstatIfPresent(join(transaction, BACKUP_DIRECTORY)) !== undefined;
@@ -208,30 +201,23 @@ function restorePreviousWorkspace(
     if (replacementExists) throw new Error("Extraction rollback state is ambiguous: both live and replacement workspaces are present");
     assertOutputPath(output);
     assertNoSymlinkPath(transaction, REPLACEMENT_DIRECTORY, "Extraction replacement path");
-    afterPhase?.("before-rollback-replacement-rename");
     renameSync(output, replacement);
     fsyncDirectory(dirname(output));
     fsyncDirectory(transaction);
-    afterPhase?.("after-rollback-replacement-rename");
   } else if (replacementExists) {
     assertPrivateTransactionChildDirectory(transaction, REPLACEMENT_DIRECTORY, "Extraction replacement path");
   }
   journal.phase = "rollback-replacement-unpublished";
   writeJournal(transaction, journal);
-  afterPhase?.("rollback-replacement-unpublished");
   journal.phase = "rollback-restoring-previous";
   writeJournal(transaction, journal);
-  afterPhase?.("rollback-restoring-previous");
   if (lstatIfPresent(output) !== undefined) throw new Error("Extraction rollback state is ambiguous: a live workspace remains before restoration");
   assertPrivateTransactionChildDirectory(transaction, BACKUP_DIRECTORY, "Extraction backup path");
-  afterPhase?.("before-rollback-previous-restore-rename");
   renameSync(join(transaction, BACKUP_DIRECTORY), output);
   fsyncDirectory(dirname(output));
   fsyncDirectory(transaction);
-  afterPhase?.("after-rollback-previous-restore-rename");
   journal.phase = "rollback-previous-restored";
   writeJournal(transaction, journal);
-  afterPhase?.("rollback-previous-restored");
 }
 
 function recoverRollback(transaction: string, output: string, journal: Journal): void {
@@ -243,13 +229,13 @@ function recoverRollback(transaction: string, output: string, journal: Journal):
   if (journal.phase === "rolling-back") {
     if (!backupExists) throw new Error(`Extraction rollback backup is missing: ${backup}`);
     if (outputExists && replacementExists) throw new Error("Extraction rollback state is ambiguous: both live and replacement workspaces are present");
-    restorePreviousWorkspace(transaction, output, journal, undefined);
+    restorePreviousWorkspace(transaction, output, journal);
   } else if (journal.phase === "rollback-replacement-unpublished") {
     if (outputExists || !backupExists) throw new Error("Extraction rollback state is inconsistent after replacement removal");
-    restorePreviousWorkspace(transaction, output, journal, undefined);
+    restorePreviousWorkspace(transaction, output, journal);
   } else if (journal.phase === "rollback-restoring-previous") {
     if (backupExists === outputExists) throw new Error("Extraction rollback state is ambiguous while restoring the previous workspace");
-    if (backupExists) restorePreviousWorkspace(transaction, output, journal, undefined);
+    if (backupExists) restorePreviousWorkspace(transaction, output, journal);
   } else if (journal.phase === "rollback-previous-restored" || journal.phase === "rolled-back") {
     if (!outputExists || backupExists) throw new Error("Extraction rollback state is inconsistent after previous-workspace restoration");
   }
@@ -362,14 +348,4 @@ function fsyncFile(path: string): void {
   if (process.platform === "win32") return;
   const descriptor = openSync(path, constants.O_RDONLY | constants.O_NOFOLLOW);
   try { fsyncSync(descriptor); } finally { closeSync(descriptor); }
-}
-
-function fsyncDirectory(path: string): void {
-  if (process.platform === "win32") return;
-  const descriptor = openSync(path, constants.O_RDONLY | constants.O_DIRECTORY | constants.O_NOFOLLOW);
-  try { fsyncSync(descriptor); } finally { closeSync(descriptor); }
-}
-
-function interruptionHook(options: ExtractOptions): InterruptionHook | undefined {
-  return (options as ExtractOptions & { readonly testOnlyAfterPublication?: InterruptionHook }).testOnlyAfterPublication;
 }

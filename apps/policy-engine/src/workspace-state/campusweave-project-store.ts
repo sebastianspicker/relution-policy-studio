@@ -4,6 +4,7 @@ import { lstatSync, mkdirSync, readdirSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import { readBoundedRegularFileNoFollow } from "../platform/filesystem/bounded-file-read.js";
 import { resolveSymlinkFreePath } from "../platform/filesystem/path-safety.js";
+import { isProcessAlive } from "../platform/filesystem/filesystem.js";
 import { writePrivateFileAtomic } from "../platform/filesystem/atomic-private-file.js";
 import type { CampusWeaveProfile, CampusWeaveProject, CampusWeaveWorkspaceRef } from "../contracts/campusweave.js";
 import type { JsonRecord } from "../platform/serialization/json-guards.js";
@@ -11,7 +12,7 @@ import { CampusWeaveCapacityError, CampusWeaveInputError, CampusWeaveNotFoundErr
 import { CAMPUSWEAVE_ID_PATTERN, emptyCampusWeaveProfile, parseCampusWeaveProfile, parseCampusWeaveProject, parseCampusWeaveWorkspaceRef } from "../contracts/campusweave-validation.js";
 import { loadWorkspaceStateSnapshot } from "./persistence.js";
 
-const MAX_PROJECT_BYTES = 4 * 1024 * 1024;
+export const MAX_PROJECT_BYTES = 4 * 1024 * 1024;
 const MAX_PROJECTS = 256;
 
 interface CampusWeaveProjectSummary {
@@ -345,13 +346,22 @@ function acquireWriterLock(root: string): () => void {
   const lock = join(root, ".writer.lock");
   const token = randomUUID();
   const contents = `${JSON.stringify({ pid: process.pid, token })}\n`;
-  try {
-    publishWriterLock(lock, contents);
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
-    const current = parseLockOwner(lock);
-    const owner = current === undefined ? "unknown" : `PID ${String(current.pid)}`;
-    throw new CampusWeaveStoreBusyError(`CampusWeave project store already has a writer (${owner}); if that process is no longer running, delete ${lock} and start again`);
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      publishWriterLock(lock, contents);
+      break;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+      const current = parseLockOwner(lock);
+      // A lock whose recorded process is gone was left by a crash or a closed terminal; take it over once.
+      if (attempt === 0 && current !== undefined && !isProcessAlive(current.pid)) {
+        // Re-read right before the delete, so a lock that another starting studio just took over is left alone.
+        if (parseLockOwner(lock)?.token === current.token) unlinkIfPresent(lock);
+        continue;
+      }
+      const owner = current === undefined ? "unknown" : `PID ${String(current.pid)}`;
+      throw new CampusWeaveStoreBusyError(`CampusWeave project store already has a writer (${owner}); if that process is no longer running, delete ${lock} and start again`);
+    }
   }
   return () => {
     const current = parseLockOwner(lock);
@@ -369,6 +379,14 @@ function parseLockOwner(path: string): { readonly pid: number; readonly token: s
       : undefined;
   } catch {
     return undefined;
+  }
+}
+
+function unlinkIfPresent(path: string): void {
+  try {
+    unlinkSync(path);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
   }
 }
 

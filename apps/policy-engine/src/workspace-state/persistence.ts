@@ -1,7 +1,8 @@
 /** Atomically recovers or publishes the workspace surface and editor sidecar as one durable unit. */
 import { createHash, randomUUID } from "node:crypto";
-import { chmodSync, closeSync, constants, fsyncSync, lstatSync, mkdirSync, openSync, rmdirSync, rmSync, unlinkSync } from "node:fs";
+import { chmodSync, lstatSync, mkdirSync, rmdirSync, rmSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
+import { canonicalJson } from "../platform/serialization/canonical-json-text.js";
 import { decodeStrictUtf8 } from "../platform/serialization/strict-utf8.js";
 import { assertWorkspaceIntegrity } from "../workspace/workspace-integrity.js";
 import { MAX_WORKSPACE_TOTAL_JSON_BYTES, assertPersistableWorkspaceShape, loadPersistedWorkspace, savePersistedWorkspace } from "../workspace/storage.js";
@@ -9,13 +10,12 @@ import type { PolicyWorkspace } from "../workspace/types.js";
 import { MAX_EDITOR_SIDECAR_JSON_BYTES } from "./sidecar-types.js";
 import { deleteEditorSidecarFile, readEditorSidecarBytes, writeEditorSidecarBytes } from "./sidecar-path.js";
 import { parseEditorSidecar, validateSidecarInput } from "./sidecar-validation.js";
-import { writePrivateFileAtomic, createPrivateDirectoryExclusive, removeEmptyPrivateDirectoryDurably } from "../platform/filesystem/atomic-private-file.js";
+import { writePrivateFileAtomic, createPrivateDirectoryExclusive, fsyncDirectory, removeAbandonedPrivateFileTemporaries, removeEmptyPrivateDirectoryDurably } from "../platform/filesystem/atomic-private-file.js";
 import { readBoundedRegularFileNoFollow } from "../platform/filesystem/bounded-file-read.js";
 import { hasErrorCode } from "../platform/filesystem/error-code.js";
-import { lstatIfPresent } from "../platform/filesystem/filesystem.js";
+import { isProcessAlive, lstatIfPresent } from "../platform/filesystem/filesystem.js";
 import { assertNoSymlinkPath, resolveSymlinkFreePath } from "../platform/filesystem/path-safety.js";
 import { prepareNewWorkspaceDirectory } from "../workspace/workspace-creation.js";
-import { recoverWorkspaceTransaction } from "../workspace/workspace-storage-transaction.js";
 
 const STATE_DIRECTORY = ".rexp-studio-workspace-state";
 const JOURNAL_FILE = "journal.json";
@@ -57,7 +57,7 @@ export interface WorkspaceStateSnapshot {
 }
 
 /** Options for a lock-held mutation that must reject a stale client state. */
-export interface MutateWorkspaceStateOptions extends SaveWorkspaceStateOptions {
+export interface MutateWorkspaceStateOptions {
   readonly expectedRevision?: string;
 }
 
@@ -88,21 +88,9 @@ export interface WorkspaceStateArchiveSnapshot {
   dispose(): void;
 }
 
-/** Test-only interruption seam; production callers should omit this option. */
-export interface SaveWorkspaceStateOptions {
-  readonly afterStageCreated?: () => void;
-  readonly afterWorkspacePublished?: () => void;
-  readonly afterSidecarPublished?: () => void;
-}
-
 /** Options for creating a missing workspace or replacing an existing workspace-and-sidecar pair. */
-export interface InitializeWorkspaceStateOptions extends SaveWorkspaceStateOptions {
+export interface InitializeWorkspaceStateOptions {
   readonly force?: boolean;
-}
-
-/** Loads a consistent workspace/sidecar pair, first completing any interrupted composite operation. */
-export function loadWorkspaceState(workspaceDir: string): WorkspaceState {
-  return loadWorkspaceStateSnapshot(workspaceDir).state;
 }
 
 /** Reads one durable state pair and calculates its revision under the same lock. */
@@ -137,20 +125,6 @@ export function captureWorkspaceStateArchiveSnapshot(workspaceDir: string): Work
 }
 
 /**
- * Publishes a workspace and its sidecar as one recoverable unit of work.
- * A process failure leaves a private journal that the next load/save recovers.
- */
-export function saveWorkspaceState(workspaceDir: string, next: WorkspaceState, options: SaveWorkspaceStateOptions = {}): void {
-  assertWorkspaceState(next, true);
-  const root = resolveWorkspaceRoot(workspaceDir);
-  withWorkspaceStateLock(root, () => {
-    recoverWorkspaceStateLocked(root);
-    const previous = readWorkspaceStateLocked(root);
-    publishWorkspaceState(root, next, previous, options);
-  });
-}
-
-/**
  * Reads, transforms, validates, and publishes the complete workspace-and-sidecar
  * pair under one inter-process lock. The transform must not perform I/O or call
  * another workspace-state operation, because it runs while the lock is held.
@@ -167,7 +141,7 @@ export function mutateWorkspaceState(
     assertExpectedWorkspaceRevision(previous, options.expectedRevision);
     const next = mutate(cloneWorkspaceState(previous));
     assertWorkspaceState(next, true);
-    publishWorkspaceState(root, next, previous, options);
+    publishWorkspaceState(root, next, previous);
     return readWorkspaceStateLocked(root);
   });
 }
@@ -192,25 +166,17 @@ export function initializeWorkspaceState(workspaceDir: string, next: WorkspaceSt
   const root = resolveWorkspaceRootForInitialization(workspaceDir);
   return withWorkspaceStateLock(root, () => {
     recoverWorkspaceStateLocked(root);
-    recoverWorkspaceTransaction(root);
     prepareNewWorkspaceDirectory(root, options.force === true, { allowWorkspaceState: true });
     const previous = hasPersistedWorkspace(root)
       ? { workspace: loadPersistedWorkspace(root), sidecar: captureSidecar(root) }
       : undefined;
-    publishWorkspaceState(root, next, previous, options);
+    publishWorkspaceState(root, next, previous);
     return readWorkspaceStateLocked(root);
   });
 }
 
-/** Completes or rolls back the interrupted composite operation, if one exists. */
-export function recoverWorkspaceState(workspaceDir: string): void {
-  const root = resolveWorkspaceRoot(workspaceDir);
-  withWorkspaceStateLock(root, () => recoverWorkspaceStateLocked(root));
-}
-
-function publishWorkspaceState(root: string, next: WorkspaceState, previous: WorkspaceState | undefined, options: SaveWorkspaceStateOptions): void {
+function publishWorkspaceState(root: string, next: WorkspaceState, previous: WorkspaceState | undefined): void {
   createSnapshotDirectory(root, STAGE_DIRECTORY, next);
-  options.afterStageCreated?.();
   try {
     if (previous !== undefined) createSnapshotDirectory(root, BACKUP_DIRECTORY, previous);
     const journal: Journal = previous === undefined ? { version: 1, phase: "prepared", hasPrevious: false } : { version: 1, phase: "prepared" };
@@ -219,11 +185,9 @@ function publishWorkspaceState(root: string, next: WorkspaceState, previous: Wor
       savePersistedWorkspace(root, next.workspace);
       journal.phase = "workspace-published";
       writeJournal(root, journal);
-      options.afterWorkspacePublished?.();
       applySidecar(root, next.sidecar);
       journal.phase = "sidecar-published";
       writeJournal(root, journal);
-      options.afterSidecarPublished?.();
     } catch (error) {
       rollbackAfterFailedSave(root, journal, previous, error);
     }
@@ -274,8 +238,9 @@ function recoverWorkspaceStateLocked(root: string): void {
   markCompleteAndRemoveTransactionArtifacts(root, journal);
 }
 
+/** Recovery and rollback path: rewrite every file, since a crashed writer may have left unsynced matching contents. */
 function applyWorkspaceState(root: string, state: WorkspaceState): void {
-  savePersistedWorkspace(root, state.workspace);
+  savePersistedWorkspace(root, state.workspace, { rewriteAll: true });
   applySidecar(root, state.sidecar);
 }
 
@@ -287,16 +252,6 @@ function assertExpectedWorkspaceRevision(state: WorkspaceState, expectedRevision
   if (expectedRevision === undefined) return;
   const actualRevision = workspaceStateRevision(state);
   if (actualRevision !== expectedRevision) throw new WorkspaceStateRevisionConflictError(expectedRevision, actualRevision);
-}
-
-function canonicalJson(value: unknown): string {
-  if (value === null || typeof value === "boolean" || typeof value === "number" || typeof value === "string") return JSON.stringify(value);
-  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
-  if (typeof value === "object") {
-    const record = value as Record<string, unknown>;
-    return `{${Object.keys(record).sort().map((key) => `${JSON.stringify(key)}:${canonicalJson(record[key])}`).join(",")}}`;
-  }
-  throw new Error("Workspace state revision cannot serialize a non-JSON value");
 }
 
 function freezeSnapshotProjection<T>(value: T): T {
@@ -413,6 +368,7 @@ function removeTransactionArtifacts(root: string): void {
   removeSnapshotDirectory(root, STAGE_DIRECTORY);
   removeSnapshotDirectory(root, BACKUP_DIRECTORY);
   removePrivateFile(root, JOURNAL_FILE);
+  removeAbandonedPrivateFileTemporaries(statePath(root, ""), JOURNAL_FILE);
 }
 
 function markCompleteAndRemoveTransactionArtifacts(root: string, journal: Journal): void {
@@ -425,6 +381,7 @@ function removeUnjournaledResidue(root: string): void {
   if (lstatIfPresent(statePath(root, JOURNAL_FILE)) !== undefined) return;
   removeSnapshotDirectory(root, STAGE_DIRECTORY);
   removeSnapshotDirectory(root, BACKUP_DIRECTORY);
+  removeAbandonedPrivateFileTemporaries(statePath(root, ""), JOURNAL_FILE);
 }
 
 function removeSnapshotDirectory(root: string, name: typeof STAGE_DIRECTORY | typeof BACKUP_DIRECTORY): void {
@@ -434,6 +391,7 @@ function removeSnapshotDirectory(root: string, name: typeof STAGE_DIRECTORY | ty
   assertNoSymlinkPath(root, `${STATE_DIRECTORY}/${relative}`, "Workspace state path");
   if (!lstatSync(directory).isDirectory()) throw new Error(`Workspace state path must be a directory: ${directory}`);
   removePrivateFile(root, `${relative}/${SNAPSHOT_FILE}`);
+  removeAbandonedPrivateFileTemporaries(directory, SNAPSHOT_FILE);
   rmdirSync(directory);
   fsyncDirectory(statePath(root, ""));
 }
@@ -512,6 +470,7 @@ function reclaimStaleWorkspaceStateLock(root: string, lock: string): boolean {
   const ownerStats = lstatIfPresent(ownerPath);
   if (ownerStats === undefined) {
     if (Date.now() - lockStats.mtimeMs < STALE_UNOWNED_LOCK_MILLISECONDS) return false;
+    removeAbandonedPrivateFileTemporaries(lock, LOCK_OWNER_FILE);
     removeEmptyPrivateDirectoryDurably(lock, "Workspace state lock");
     return true;
   }
@@ -519,6 +478,7 @@ function reclaimStaleWorkspaceStateLock(root: string, lock: string): boolean {
   const owner = parseLockOwner(readBoundedRegularFileNoFollow(ownerPath, { label: "Workspace state lock owner", maxBytes: 4 * 1024 }));
   if (isProcessAlive(owner.pid)) return false;
   unlinkSync(ownerPath);
+  removeAbandonedPrivateFileTemporaries(lock, LOCK_OWNER_FILE);
   fsyncDirectory(lock);
   removeEmptyPrivateDirectoryDurably(lock, "Workspace state lock");
   return true;
@@ -543,13 +503,6 @@ function parseLockOwner(data: Buffer): LockOwner {
   return owner as LockOwner;
 }
 
-function isProcessAlive(pid: number): boolean {
-  try { process.kill(pid, 0); return true; }
-  catch (error) {
-    if (hasErrorCode(error, "ESRCH")) return false;
-    return true;
-  }
-}
 
 function ensureStateDirectory(root: string): void {
   assertNoSymlinkPath(root, STATE_DIRECTORY, "Workspace state path");
@@ -563,8 +516,3 @@ function ensureStateDirectory(root: string): void {
 
 function statePath(root: string, suffix: string): string { return join(root, STATE_DIRECTORY, suffix); }
 function message(error: unknown): string { return error instanceof Error ? error.message : String(error); }
-function fsyncDirectory(path: string): void {
-  if (process.platform === "win32") return;
-  const descriptor = openSync(path, constants.O_RDONLY | constants.O_DIRECTORY);
-  try { fsyncSync(descriptor); } finally { closeSync(descriptor); }
-}

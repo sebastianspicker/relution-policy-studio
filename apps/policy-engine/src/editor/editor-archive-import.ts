@@ -1,10 +1,15 @@
 /** Adapts authenticated archive bytes into the editor's durable workspace-and-sidecar boundary. */
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
 import { importArchive, type ArchiveImportInput } from "../application/editor-archive-compliance.js";
-import { extractRexp } from "../archive/rexp-extraction.js";
+import { readRexpArchive } from "../archive/rexp-archive-reader.js";
+import { parseJson } from "../archive/rexp-crypto.js";
+import { decryptRexpProject } from "../archive/rexp-extraction.js";
+import { MAX_REXP_POLICY_ENTRIES, METADATA_JSON, REPORT_JSON } from "../archive/rexp-format.js";
 import type { RelutionTemplateBundle } from "../contracts/template.js";
+import { requireRecord } from "../platform/serialization/json-guards.js";
+import { isPolicyPath } from "../workspace/policy-path.js";
+import { assertWorkspaceIntegrity } from "../workspace/workspace-integrity.js";
+import { assertPersistableWorkspaceShape } from "../workspace/workspace-storage-shape.js";
+import type { PolicyWorkspace } from "../workspace/types.js";
 import { loadEditorWorkspaceState, replaceEditorWorkspaceFromArchive } from "../workspace-state/editor-port.js";
 import type { EditorSidecarState } from "../workspace-state/sidecar-types.js";
 
@@ -37,15 +42,18 @@ export function importEditorArchive(options: EditorArchiveImportOptions): {
   });
 }
 
-function extractArchiveWorkspace(input: ArchiveImportInput): ReturnType<typeof loadEditorWorkspaceState>["workspace"] {
-  const importDir = mkdtempSync(join(tmpdir(), "rexp-studio-import-"));
-  try {
-    const archive = join(importDir, "import.rexp");
-    writeFileSync(archive, input.archive, { mode: 0o600 });
-    const extractedWorkspace = join(importDir, "workspace");
-    extractRexp(archive, extractedWorkspace, input.key, { force: true, pretty: true });
-    return loadEditorWorkspaceState({ workspaceDir: extractedWorkspace, appleSchemaRevision: "" }).workspace;
-  } finally {
-    rmSync(importDir, { recursive: true, force: true });
-  }
+/** Decrypts in memory, so plaintext policies never reach the disk before validation and publication. */
+function extractArchiveWorkspace(input: ArchiveImportInput): PolicyWorkspace {
+  const archive = Buffer.from(input.archive.buffer, input.archive.byteOffset, input.archive.byteLength);
+  const files = decryptRexpProject(readRexpArchive(archive), input.key);
+  const document = (name: string) => requireRecord(parseJson(files.get(name)!, name), name);
+  const workspace: PolicyWorkspace = {
+    metadata: document(METADATA_JSON),
+    report: document(REPORT_JSON),
+    policies: [...files.keys()].filter(isPolicyPath).sort().map((path) => ({ path, document: document(path) })),
+  };
+  // Same shape and integrity checks a workspace read from disk gets, before validation runs on it.
+  assertPersistableWorkspaceShape(workspace, MAX_REXP_POLICY_ENTRIES);
+  assertWorkspaceIntegrity(workspace);
+  return workspace;
 }

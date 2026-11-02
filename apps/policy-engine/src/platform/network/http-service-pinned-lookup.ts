@@ -1,11 +1,12 @@
 /** Supplies Node with only the already approved addresses for a service hostname. */
 import { type LookupFunction } from "node:net";
+import { normalizeHttpHostname } from "./connection-host-input.js";
 import type { ResolvedServiceAddress } from "./outbound-host-policy.js";
 
 export function approvedAddressLookup(expectedHostname: string, addresses: readonly ResolvedServiceAddress[]): LookupFunction {
-  const normalizedExpectedHostname = normalizedUrlHostname(expectedHostname).toLowerCase();
+  const normalizedExpectedHostname = normalizeHttpHostname(expectedHostname).toLowerCase();
   return (hostname, options, callback): void => {
-    if (normalizedUrlHostname(hostname).toLowerCase() !== normalizedExpectedHostname) {
+    if (normalizeHttpHostname(hostname).toLowerCase() !== normalizedExpectedHostname) {
       callback(Object.assign(new Error("Pinned HTTP lookup received an unexpected hostname"), { code: "EHOSTUNREACH" }), "");
       return;
     }
@@ -20,8 +21,4 @@ export function approvedAddressLookup(expectedHostname: string, addresses: reado
     }
     callback(null, first.address, first.family);
   };
-}
-
-export function normalizedUrlHostname(hostname: string): string {
-  return hostname.replace(/^\[(.*)\]$/u, "$1");
 }

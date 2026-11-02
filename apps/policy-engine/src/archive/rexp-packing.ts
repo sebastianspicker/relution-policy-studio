@@ -3,7 +3,7 @@ import { randomBytes } from "node:crypto";
 import { writePrivateFileAtomic } from "../platform/filesystem/atomic-private-file.js";
 import { encryptedRelutionPayloadLength, encryptRelutionPayload, parseJson, sha256Hex } from "./rexp-crypto.js";
 import { assertRexpZipEntryDataLengths, assertRexpZipEntryLengths, readRexpArchive } from "./rexp-archive-reader.js";
-import { METADATA_BIN, METADATA_JSON, type PackOptions, REPORT_JSON } from "./rexp-format.js";
+import { MAX_REXP_TOTAL_COMPRESSED_BYTES, METADATA_BIN, METADATA_JSON, type PackOptions, REPORT_JSON } from "./rexp-format.js";
 import { listPolicyFiles, readProjectFile } from "./rexp-project.js";
 import { verifyRexpEntries } from "./rexp-inspection.js";
 import { writeZip, type ZipEntryInput } from "./zip.js";
@@ -14,11 +14,6 @@ import type { PolicyWorkspace } from "../workspace/types.js";
 export function packPlainDirectory(inputDir: string, outputFile: string, password: string, options: PackOptions = {}): void {
   const source = readPackSource(inputDir);
   packSource(source, outputFile, password, options, true);
-}
-
-/** Packs an already loaded workspace while retaining the public snapshot API. */
-export function packPlainWorkspace(workspace: Readonly<PolicyWorkspace>, outputFile: string, password: string, options: PackOptions = {}): void {
-  packSource(workspacePackSource(workspace), outputFile, password, options, true);
 }
 
 /**
@@ -75,16 +70,23 @@ function readValidatedPolicy(inputDir: string, name: string): { name: string; da
   const data = readProjectFile(inputDir, name); parseJson(data, name); return { name, data };
 }
 
+/** The build route reports this message to the user; other pack errors stay generic. */
+export class RexpArchiveTooLargeError extends Error {}
+
 function assertPackSourceLengths(source: PackSource): void {
   const hashNames = [METADATA_JSON, REPORT_JSON, ...source.policies.map((policy) => policy.name)];
   const projectedHashes = Object.fromEntries(hashNames.map((name) => [name, "0".repeat(64)]));
   const projectedMetadataBytes = Buffer.byteLength(JSON.stringify(projectedHashes), "utf8");
-  assertRexpZipEntryLengths([
+  const encrypted = [
     ...source.policies.map(({ name, data }) => ({ name, length: encryptedRelutionPayloadLength(data.length) })),
-    { name: METADATA_JSON, length: source.metadata.length },
-    { name: REPORT_JSON, length: source.report.length },
     { name: METADATA_BIN, length: encryptedRelutionPayloadLength(projectedMetadataBytes) },
-  ]);
+  ];
+  assertRexpZipEntryLengths([...encrypted, { name: METADATA_JSON, length: source.metadata.length }, { name: REPORT_JSON, length: source.report.length }]);
+  // Encrypted entries do not compress, so their sum is a floor for the size every reader checks.
+  const incompressible = encrypted.reduce((sum, entry) => sum + entry.length, 0);
+  if (incompressible > MAX_REXP_TOTAL_COMPRESSED_BYTES) {
+    throw new RexpArchiveTooLargeError(`The archive would be larger than the ${String(MAX_REXP_TOTAL_COMPRESSED_BYTES / 1024 / 1024)} MiB that .rexp readers accept; split the policies across workspaces.`);
+  }
 }
 
 function createArchiveEntries(source: PackSource, password: string, randomSource: (size: number) => Buffer): ZipEntryInput[] {

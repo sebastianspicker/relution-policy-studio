@@ -17,6 +17,14 @@ export interface ServiceApiRequestOptions {
   query?: URLSearchParams;
 }
 
+/** The service answered with a non-2xx HTTP status; `status` tells callers whether the request was processed. */
+export class ServiceApiStatusError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+    this.name = "ServiceApiStatusError";
+  }
+}
+
 /** Creates service-specific named network errors for API clients. */
 export function createServiceNetworkError(name: string): (message: string, cause: unknown) => Error {
   return (message, cause) => {
@@ -45,7 +53,7 @@ export async function fetchServiceApi(options: ServiceApiRequestOptions): Promis
     throw createNetworkError(`${serviceName} API request failed before an HTTP response: ${detail}`, error);
   }
   if (!response.ok) {
-    throw new Error(`${serviceName} API request failed: ${String(response.status)} ${response.statusText}`);
+    throw new ServiceApiStatusError(`${serviceName} API request failed: ${String(response.status)} ${response.statusText}`, response.status);
   }
   return response;
 }

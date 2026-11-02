@@ -4,16 +4,12 @@ import { normalizeHttpHostname, type NormalizedConnectionBase } from "./connecti
 export function isConfiguredHttpServiceUrl(connection: NormalizedConnectionBase, url: URL): boolean {
   return (
     url.protocol === `${connection.protocol}:`
-    && normalizedUrlHostname(url.hostname) === normalizeHttpHostname(connection.host)
+    && normalizeHttpHostname(url.hostname) === normalizeHttpHostname(connection.host)
     && url.port === expectedUrlPort(connection.protocol, connection.port)
     && url.username.length === 0
     && url.password.length === 0
     && isWithinBasePath(url.pathname, connection.basePath)
   );
-}
-
-function normalizedUrlHostname(hostname: string): string {
-  return hostname.replace(/^\[(.*)\]$/u, "$1");
 }
 
 function isWithinBasePath(pathname: string, basePath: string): boolean {

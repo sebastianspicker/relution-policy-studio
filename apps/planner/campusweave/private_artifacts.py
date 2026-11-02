@@ -22,7 +22,6 @@ __all__ = [
     "load_json_beneath",
     "load_json_with_sha256",
     "read_artifact",
-    "sha256_file",
     "strict_load_json",
 ]
 
@@ -102,12 +101,6 @@ def strict_load_json(path: Path, *, private: bool = False) -> Any:
     """Load bounded UTF-8 JSON without symlinks or duplicate keys."""
 
     return load_json_with_sha256(path, private=private)[0]
-
-
-def sha256_file(path: Path, *, private: bool = False) -> str:
-    """Hash a bounded regular file after applying the local-artifact policy."""
-
-    return hashlib.sha256(read_artifact(path, private=private)).hexdigest()
 
 
 def _relative_parts(relative: str) -> tuple[str, ...]:

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "campusweave-planner-bridge-v1",
   "title": "CampusWeave bounded planner stdio protocol",
-  "description": "One request is read through stdin EOF and one response is written to stdout. Requests are limited to 1048576 UTF-8 bytes. Requests and responses are each bounded to 1048576 UTF-8 bytes; response_too_large is a protocol error.",
+  "description": "One request is read through stdin EOF and one response is written to stdout. Requests are limited to 1048576 UTF-8 bytes and responses to 4194304 UTF-8 bytes, because a compiled plan is about as large as its profile; response_too_large is a protocol error.",
   "oneOf": [
     {
       "$ref": "#/$defs/request"

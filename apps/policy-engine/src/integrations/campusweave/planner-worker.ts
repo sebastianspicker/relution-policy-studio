@@ -6,7 +6,9 @@ import type { JsonRecord } from "../../platform/serialization/json-guards.js";
 import type { CampusWeavePlannerCommand } from "../../contracts/campusweave.js";
 import { CampusWeaveInputError, CampusWeavePlannerError } from "../../contracts/campusweave-errors.js";
 
-const MAX_PROTOCOL_BYTES = 1024 * 1024;
+const MAX_REQUEST_BYTES = 1024 * 1024;
+/** Matches the planner's MAX_RESPONSE_BYTES: a compiled plan is about as large as its profile. */
+const MAX_RESPONSE_BYTES = 4 * 1024 * 1024;
 const DEFAULT_TIMEOUT_MS = 30_000;
 const COMMANDS = new Set<CampusWeavePlannerCommand>(["reference", "convert-v1", "validate", "compile"]);
 
@@ -34,7 +36,7 @@ export async function runCampusWeavePlanner(
   validatePayload(command, payload);
   const id = randomUUID();
   const request = Buffer.from(`${JSON.stringify({ version: 1, id, command, payload })}\n`, "utf8");
-  if (request.length > MAX_PROTOCOL_BYTES) throw new CampusWeavePlannerError("capacity", "CampusWeave planner request exceeds 1 MiB");
+  if (request.length > MAX_REQUEST_BYTES) throw new CampusWeavePlannerError("capacity", "CampusWeave planner request exceeds 1 MiB; the profile is too large");
   const { response, stderr } = await exchangeWithWorker(options, request);
   if (response.version !== 1 || response.id !== id || typeof response.ok !== "boolean") {
     throw new CampusWeavePlannerError("unavailable", "CampusWeave planner returned an invalid response envelope");
@@ -70,16 +72,16 @@ async function exchangeWithWorker(options: CampusWeavePlannerOptions, request: B
     child.once("error", (error) => finishReject(new CampusWeavePlannerError("unavailable", "Failed to start CampusWeave planner; see the host log", error.message)));
     child.stdout.on("data", (chunk: Buffer) => {
       stdoutBytes += chunk.length;
-      if (stdoutBytes > MAX_PROTOCOL_BYTES) {
+      if (stdoutBytes > MAX_RESPONSE_BYTES) {
         child.kill("SIGKILL");
-        finishReject(new CampusWeavePlannerError("unavailable", "CampusWeave planner response exceeds 1 MiB"));
+        finishReject(new CampusWeavePlannerError("unavailable", "CampusWeave planner response exceeds 4 MiB"));
         return;
       }
       stdout.push(chunk);
     });
     child.stderr.on("data", (chunk: Buffer) => {
       stderrBytes += chunk.length;
-      if (stderrBytes <= MAX_PROTOCOL_BYTES) stderr.push(chunk);
+      if (stderrBytes <= MAX_REQUEST_BYTES) stderr.push(chunk);
     });
     child.once("close", (code, signal) => {
       if (settled) return;

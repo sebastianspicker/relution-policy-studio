@@ -36,6 +36,15 @@ RESERVED_PROFILE_KEYS = {
     "token",
     "url",
 }
+# ECMAScript `\s`, which the JSON schemas (`\S`) and the Node host use. Python's own str.strip() set differs:
+# it treats U+001C-U+001F and U+0085 as whitespace but not U+FEFF.
+_JS_WHITESPACE = "\t\n\v\f\r " + "".join(
+    map(chr, (0xA0, 0x1680, *range(0x2000, 0x200B), 0x2028, 0x2029, 0x202F, 0x205F, 0x3000, 0xFEFF))
+)
+
+
+def _js_strip(value: str) -> str:
+    return value.strip(_JS_WHITESPACE)
 
 
 def _diagnostic(code: str, path: str, message: str, *, severity: str = "error") -> Diagnostic:
@@ -120,11 +129,11 @@ def _validate_record(collection: str, item: Any, path: str, diagnostics: list[Di
 
 
 def _require_string(value: Any, path: str, diagnostics: list[Diagnostic]) -> None:
-    if not isinstance(value, str) or not value.strip():
+    if not isinstance(value, str) or not _js_strip(value):
         diagnostics.append(
             _diagnostic("record.required_string", path, "must be a non-empty string")
         )
-    elif path.endswith(".id") and value != value.strip():
+    elif path.endswith(".id") and value != _js_strip(value):
         diagnostics.append(
             _diagnostic("record.id_whitespace", path, "id must not start or end with whitespace")
         )
@@ -135,11 +144,11 @@ def _require_string_array(value: Any, path: str, diagnostics: list[Diagnostic]) 
         diagnostics.append(_diagnostic("record.string_array", path, "must be an array of strings"))
         return
     for index, item in enumerate(value):
-        if not isinstance(item, str) or not item.strip():
+        if not isinstance(item, str) or not _js_strip(item):
             diagnostics.append(
                 _diagnostic("record.string_array", f"{path}[{index}]", "must be a non-empty string")
             )
-        elif item != item.strip():
+        elif item != _js_strip(item):
             diagnostics.append(
                 _diagnostic(
                     "record.value_whitespace",
@@ -168,7 +177,7 @@ def _reject_reserved_keys(value: Any, path: str, diagnostics: list[Diagnostic]) 
     if isinstance(value, Mapping):
         for key, child in value.items():
             key_path = f"{path}.{key}"
-            if isinstance(key, str) and key.casefold() in RESERVED_PROFILE_KEYS:
+            if isinstance(key, str) and key.lower() in RESERVED_PROFILE_KEYS:
                 diagnostics.append(
                     _diagnostic(
                         "profile.reserved_data",
@@ -312,34 +321,40 @@ def _find_cycles(
     graph: Mapping[str, list[str]],
     diagnostics: list[Diagnostic],
 ) -> None:
-    visiting: list[str] = []
     complete: set[str] = set()
     reported: set[tuple[str, ...]] = set()
-
-    def visit(node: str) -> None:
-        if node in complete or node not in graph:
-            return
-        if node in visiting:
-            cycle = tuple(visiting[visiting.index(node) :] + [node])
-            canonical = tuple(sorted(set(cycle)))
-            if canonical not in reported:
-                reported.add(canonical)
-                diagnostics.append(
-                    _diagnostic(
-                        "reference.cycle",
-                        f"$.{collection}",
-                        f"{dependency_field} cycle: {' -> '.join(cycle)}",
+    for start in sorted(graph):
+        if start in complete:
+            continue
+        # Depth-first with an explicit stack: a long dependency chain must not hit Python's recursion limit.
+        path = [start]
+        on_path = {start}
+        pending = [iter(sorted(graph[start]))]
+        while pending:
+            dependency = next(pending[-1], None)
+            if dependency is None:
+                pending.pop()
+                node = path.pop()
+                on_path.discard(node)
+                complete.add(node)
+            elif dependency in complete or dependency not in graph:
+                continue
+            elif dependency in on_path:
+                cycle = tuple(path[path.index(dependency) :] + [dependency])
+                canonical = tuple(sorted(set(cycle)))
+                if canonical not in reported:
+                    reported.add(canonical)
+                    diagnostics.append(
+                        _diagnostic(
+                            "reference.cycle",
+                            f"$.{collection}",
+                            f"{dependency_field} cycle: {' -> '.join(cycle)}",
+                        )
                     )
-                )
-            return
-        visiting.append(node)
-        for dependency in sorted(graph[node]):
-            visit(dependency)
-        visiting.pop()
-        complete.add(node)
-
-    for identifier in sorted(graph):
-        visit(identifier)
+            else:
+                path.append(dependency)
+                on_path.add(dependency)
+                pending.append(iter(sorted(graph[dependency])))
 
 
 def _compatibility_diagnostics(

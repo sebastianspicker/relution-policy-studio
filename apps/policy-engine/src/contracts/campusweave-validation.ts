@@ -59,7 +59,12 @@ export function parseCampusWeaveProfile(value: unknown): CampusWeaveProfile {
   };
 }
 
+/** Also rejects lone UTF-16 surrogates (`\p{Cs}` matches only unpaired halves), which the planner cannot encode. */
 function rejectReservedProfileData(value: unknown, path: string): void {
+  if (typeof value === "string") {
+    if (/\p{Cs}/u.test(value)) throw inputError(`${path} contains a lone UTF-16 surrogate, which is not valid text`);
+    return;
+  }
   if (Array.isArray(value)) {
     value.forEach((child, index) => rejectReservedProfileData(child, `${path}[${String(index)}]`));
     return;
@@ -69,6 +74,7 @@ function rejectReservedProfileData(value: unknown, path: string): void {
     if (RESERVED_PROFILE_KEYS.has(key.toLowerCase())) {
       throw inputError(`${path}.${key} contains target, authority, or credential data`);
     }
+    if (/\p{Cs}/u.test(key)) throw inputError(`${path} has a key with a lone UTF-16 surrogate`);
     rejectReservedProfileData(child, `${path}.${key}`);
   }
 }

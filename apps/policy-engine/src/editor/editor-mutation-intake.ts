@@ -51,11 +51,6 @@ export class EditorMutationIntake {
     return this.#reservedBytes;
   }
 
-  /** Programmatic diagnostics for bounded-concurrency tests; never exposed over HTTP. */
-  get activeBodyReaderCount(): number {
-    return this.#activeReaders.size;
-  }
-
   async run<T>(
     request: IncomingMessage,
     bodyLimitBytes: number,

@@ -6,6 +6,8 @@ a plan, review policy changes and export artifacts for further review. The
 interface connects to an authenticated local service and an offline planner;
 Relution operations remain read-only.
 
+> _Claude was used to polish and proof-read the code and documentation of this repository._
+
 <details>
 <summary>Status and limitations</summary>
 
@@ -78,7 +80,7 @@ pnpm verify
 
 `pnpm verify` runs the boundary, formatting, lint, type, hygiene and build gates; it is also what public CI runs. General CI starts automatically only for Dependabot-authored pull requests and can be dispatched manually. CodeQL and Scorecard retain their security-only push/scheduled triggers. No automatic deployment or release workflow is configured. The regression test suites are maintained privately and are not part of the public tree.
 
-See [architecture](docs/architecture/0001-unified-product.md) and the [approved design manifest](docs/design/manifest.json). Local macOS results, prepared Ubuntu CI, browser checks and live-service/device verification are reported separately.
+New to the code? Start with [How Relution Policy Studio works](docs/ARCHITECTURE.md): runtime, user journeys, data directory and code map. See the [architecture decision](docs/architecture/0001-unified-product.md) and the [approved design manifest](docs/design/manifest.json). Local macOS results, prepared Ubuntu CI, browser checks and live-service/device verification are reported separately.
 
 The original CampusWeave and REXP Studio repositories remain untouched in their original locations. Repository-authored source code is licensed under the [MIT License](LICENSE). Third-party reference data and material derived from it keep their own upstream terms; see [NOTICE](NOTICE).
 

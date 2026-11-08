@@ -21,6 +21,7 @@ interface EditorServerErrorDescriptor {
   readonly message: string;
 }
 
+/** @public Exported for the route-error regression tests. */
 export function describeEditorServerError(error: unknown): EditorServerErrorDescriptor {
   if (isZammadOperationError(error)) {
     switch (error.context.kind) {

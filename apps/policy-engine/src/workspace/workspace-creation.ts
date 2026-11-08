@@ -46,6 +46,10 @@ function assertWorkspaceDirectory(root: string, displayedPath: string, force: bo
   const privateState = allowWorkspaceState ? [".rexp-studio-workspace-state", ".rexp-studio-workspace-transaction"] : [];
   const visibleEntries = entries.filter((entry) => !privateState.includes(entry));
   if (visibleEntries.length > 0 && !force) throw new Error(`Workspace directory is not empty: ${displayedPath}`);
-  const unexpected = entries.some((entry) => ![...managed, "editor-sidecar.json", ...privateState].includes(entry));
-  if (visibleEntries.length > 0 && force && (unexpected || !managed.every((entry) => entries.includes(entry)))) throw new Error(`Refusing to force-create over a non-workspace directory: ${displayedPath}`);
+  const unexpected = entries.filter((entry) => ![...managed, "editor-sidecar.json", ...privateState].includes(entry));
+  if (visibleEntries.length > 0 && force && (unexpected.length > 0 || !managed.every((entry) => entries.includes(entry)))) {
+    // Name what would be lost (for example reports/ or .rexp-studio-private/), so the user can move it first.
+    const extra = unexpected.length > 0 ? `; move these entries out first: ${unexpected.sort().join(", ")}` : "";
+    throw new Error(`Refusing to force-create over a non-workspace directory: ${displayedPath}${extra}`);
+  }
 }

@@ -16,3 +16,8 @@ exclude_paths:
   - "apps/policy-engine/web/src/features/policy-workspace/types.ts"
   - "apps/policy-engine/private/**"
   - "apps/policy-engine/tests/**/*.test.ts"
+engines:
+  # Size and complexity metrics are not defects in maintainer-only harvest and build scripts.
+  lizard:
+    exclude_paths:
+      - "apps/policy-engine/tools/**"

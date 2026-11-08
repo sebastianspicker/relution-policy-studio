@@ -11,6 +11,7 @@ from typing import Any
 from ..json_snapshot import decode_strict_json
 from ..private_artifacts import canonical_json_bytes
 from ..profiles_v2 import compile_profile, convert_v1_profile, reference_profile, validate_profile
+from ..profiles_v2.validation import _js_strip
 
 PROTOCOL_VERSION = 1
 MAX_REQUEST_BYTES = 1024 * 1024
@@ -43,7 +44,7 @@ def _detail(path: str, message: str) -> list[dict[str, str]]:
 
 
 def _safe_request_id(value: Any) -> str | None:
-    if isinstance(value, str) and value.strip() and len(value) <= MAX_REQUEST_ID_CHARS:
+    if isinstance(value, str) and _js_strip(value) and len(value) <= MAX_REQUEST_ID_CHARS:
         return value
     return None
 
@@ -80,7 +81,7 @@ def _validate_envelope(request: Any) -> tuple[str, str, Mapping[str, Any]]:
             request_id=request_id,
         )
     raw_id = request.get("id")
-    if request_id is None or not isinstance(raw_id, str) or raw_id != raw_id.strip():
+    if request_id is None or not isinstance(raw_id, str) or raw_id != _js_strip(raw_id):
         raise RequestError(
             "invalid_request",
             "request id is not valid",

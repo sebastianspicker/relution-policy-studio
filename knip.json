@@ -31,5 +31,13 @@
     "duplicates": "error",
     "exports": "warn",
     "types": "warn"
+  },
+  "ignoreIssues": {
+    "apps/policy-engine/src/host/testing.ts": [
+      "exports"
+    ],
+    "apps/policy-engine/src/browser/campusweave.ts": [
+      "types"
+    ]
   }
 }

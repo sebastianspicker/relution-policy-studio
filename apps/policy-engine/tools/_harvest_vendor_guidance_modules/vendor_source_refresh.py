@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any
 
 from _harvest_vendor_guidance_modules.common import VENDOR_DIR
-from _tooling_text_io import read_json
 from _harvest_vendor_guidance_modules.vendor_mapping_text import (
     relative_output_path,
     write_json,
@@ -24,6 +23,7 @@ from _harvest_vendor_guidance_modules.vendor_source_safety import (
     validate_vendor_source_url,
     vendor_download_path,
 )
+from _tooling_text_io import read_json
 
 
 def copy_downloads(output_vendor_dir: Path) -> None:

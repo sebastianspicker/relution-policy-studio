@@ -3,7 +3,9 @@
 from datetime import datetime, timezone
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_index import build_setting_index
+from _recommendation_mapping_modules.candidate_inference_index import (
+    build_setting_index,
+)
 
 from .artifact_io_json import write_json
 from .artifact_paths import PLATFORM_ORDER, SEMANTIC_INDEX_PATH, SOURCE_CONFIGS

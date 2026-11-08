@@ -1,21 +1,27 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
-from _recommendation_mapping_modules.candidate_inference_semantic_candidates import semantic_candidates_for
-from _recommendation_mapping_modules.candidate_inference_semantic_concepts import semantic_concepts_for
-from _recommendation_mapping_modules.candidate_inference_semantic_output import semantic_metadata_for
-
-from .bsi_platform_baselines import PLATFORM_TARGETS
-from .bsi_source_text import slugify
-
 from typing import Any
 
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_candidates import (
+    semantic_candidates_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_concepts import (
+    semantic_concepts_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_output import (
+    semantic_metadata_for,
+)
 
 from .bsi_checklist_context import checklist_context_for
+from .bsi_mapping_selection import mapping_for
+from .bsi_platform_baselines import PLATFORM_TARGETS
 from .bsi_plusplus_context import plusplus_context_for
 from .bsi_semantic_evidence import semantic_evidence_sources_for
-from .bsi_mapping_selection import mapping_for
+from .bsi_source_text import slugify
 
 
 def build_recommendations(source_data: dict[str, Any]) -> list[dict[str, Any]]:

@@ -12,7 +12,6 @@ from urllib.parse import urlparse
 from .artifact_io_json import read_json, write_json
 from .artifact_paths import SOURCE_CONFIGS, SOURCE_REFRESH_REPORT_PATH
 
-
 CHECKED_AT = "2026-09-07"
 REFRESH_REPORT_RELATIVE_PATH = (
     "example/recommendation-coverage/source-refresh-report.json"

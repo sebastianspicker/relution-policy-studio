@@ -1,7 +1,8 @@
 """Recommendation setting-state extraction for field matching."""
 
-from typing import Any
 import re
+from typing import Any
+
 from .field_matching_windows_state import normalize_setting_name, normalized_state
 
 

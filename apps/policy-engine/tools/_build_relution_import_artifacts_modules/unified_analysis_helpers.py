@@ -1,7 +1,9 @@
 """Cohesive implementation stage 3 for unified_analysis."""
 
-from .artifact_paths import ALL_SOURCES
 from typing import Any
+
+from .artifact_paths import ALL_SOURCES
+
 
 def append_unique(values: list[Any], value: Any) -> None:
     """Append a value only when it is not already present."""

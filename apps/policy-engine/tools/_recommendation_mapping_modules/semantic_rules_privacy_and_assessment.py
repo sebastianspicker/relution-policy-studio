@@ -1,10 +1,8 @@
 """Semantic concept rules for privacy, connectivity, and diagnostics controls."""
 
-from ._semantic_matching_metadata import ANDROID_LOCATION
 from ._apple_analog_constants import APPLE_APPLICATION_ACCESS
-from ._mapping_models import SemanticConceptRule
-from ._mapping_models import semantic_target
-
+from ._mapping_models import SemanticConceptRule, semantic_target
+from ._semantic_matching_metadata import ANDROID_LOCATION
 
 SEMANTIC_CONCEPT_RULES_PRIVACY_AND_ASSESSMENT: tuple[SemanticConceptRule, ...] = (
     SemanticConceptRule(

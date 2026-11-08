@@ -3,10 +3,20 @@ from __future__ import annotations
 
 from typing import Any
 
-from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space, unique_profile_keys
+from _harvest_cis_benchmarks_modules.cis_parser_constants import (
+    MACOS_PROFILE_KEY_RE,
+    MACOS_PROFILE_PAYLOAD_TYPE_RE,
+)
+from _harvest_cis_benchmarks_modules.cis_parser_macos_blocks import (
+    extract_terminal_commands,
+    split_macos_method_blocks,
+)
+from _harvest_cis_benchmarks_modules.cis_text_collections import (
+    normalize_space,
+    unique_profile_keys,
+)
 from _harvest_cis_benchmarks_modules.cis_text_commands import build_helper_fallback
-from _harvest_cis_benchmarks_modules.cis_parser_constants import MACOS_PROFILE_KEY_RE, MACOS_PROFILE_PAYLOAD_TYPE_RE
-from _harvest_cis_benchmarks_modules.cis_parser_macos_blocks import split_macos_method_blocks, extract_terminal_commands
+
 
 def extract_macos_helper_fallbacks(
     recommendation_id: str, remediation_lines: list[str]

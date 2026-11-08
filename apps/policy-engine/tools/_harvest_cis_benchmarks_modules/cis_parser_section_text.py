@@ -3,8 +3,12 @@ from __future__ import annotations
 
 import re
 
+from _harvest_cis_benchmarks_modules.cis_parser_constants import (
+    LIST_ITEM_RE,
+    RECOMMENDED_STATE_RE,
+)
 from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space
-from _harvest_cis_benchmarks_modules.cis_parser_constants import LIST_ITEM_RE, RECOMMENDED_STATE_RE
+
 
 def parse_profile_lines(lines: list[str]) -> list[str]:
     """Normalize profile-applicability bullets from a recommendation block."""

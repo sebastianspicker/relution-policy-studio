@@ -1,17 +1,25 @@
 """Cohesive implementation stage 2 for manual_mapping_promotions."""
 
-from typing import Any
-from .artifact_paths import MANUAL_MAPPING_PROMOTIONS_PATH
 from pathlib import Path
-from _recommendation_mapping_modules.candidate_inference_index import build_setting_index
-from .recommendation_catalog import load_recommendations_by_global_id
+from typing import Any
+
+from _recommendation_mapping_modules.candidate_inference_index import (
+    build_setting_index,
+)
+
 from .artifact_io_json import read_json
+from .artifact_paths import MANUAL_MAPPING_PROMOTIONS_PATH
+from .recommendation_catalog import load_recommendations_by_global_id
+
 
 def validate_manual_mapping_promotions(
     exact_references: list[dict[str, Any]], path: Path = MANUAL_MAPPING_PROMOTIONS_PATH
 ) -> list[dict[str, Any]]:
     """Validate that manual promotions reference known recommendations and fields."""
-    from .manual_mapping_promotion_entries import manual_mapping_promotions_path_label, validate_manual_mapping_promotion_entry
+    from .manual_mapping_promotion_entries import (
+        manual_mapping_promotions_path_label,
+        validate_manual_mapping_promotion_entry,
+    )
 
     payload = read_json(path)
     path_label = manual_mapping_promotions_path_label(path)

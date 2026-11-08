@@ -5,8 +5,8 @@ from typing import Any
 
 from .artifact_io_paths import relative_path
 from .artifact_paths import SourceConfig
-from .baseline_template_constants import SOURCE_PRECEDENCE
 from .baseline_template_consolidation import consolidate_actionable_entries
+from .baseline_template_constants import SOURCE_PRECEDENCE
 from .baseline_template_labels import platform_label
 from .baseline_template_modules import (
     grouped_actionable_rules,

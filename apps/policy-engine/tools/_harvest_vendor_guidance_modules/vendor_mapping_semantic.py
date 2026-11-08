@@ -4,11 +4,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_semantic_output import semantic_evidence_source_records
-from _tooling_text_io import read_json
-
 from _harvest_vendor_guidance_modules.common import WINDOWS_WORKBOOK_PATH
 from _harvest_vendor_guidance_modules.vendor_mapping_text import normalize_text
+from _recommendation_mapping_modules.candidate_inference_semantic_output import (
+    semantic_evidence_source_records,
+)
+from _tooling_text_io import read_json
 
 
 def vendor_semantic_evidence_sources_for(

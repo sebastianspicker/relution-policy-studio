@@ -3,10 +3,11 @@
 from datetime import datetime, timezone
 from typing import Any
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 
-from .artifact_io_json import read_json
-from .artifact_io_json import write_json
+from .artifact_io_json import read_json, write_json
 from .artifact_paths import COVERAGE_MATRIX_PATH, PLATFORM_ORDER, SOURCE_CONFIGS
 from .artifact_pipeline_inputs import required_recommendation_catalog_paths
 from .mapping_candidate_targets import iter_candidate_mapping_targets

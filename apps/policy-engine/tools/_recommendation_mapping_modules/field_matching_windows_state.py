@@ -1,11 +1,15 @@
 """Windows State helpers for recommendation mapping."""
 
-from typing import Any
-from ._mapping_lexical_constants import BLOCK_STATES
-from ._mapping_lexical_constants import CONFIGURED_STATES
-from ._mapping_lexical_constants import NEGATIVE_STATES
-from ._mapping_lexical_constants import POSITIVE_STATES
 import re
+from typing import Any
+
+from ._mapping_lexical_constants import (
+    BLOCK_STATES,
+    CONFIGURED_STATES,
+    NEGATIVE_STATES,
+    POSITIVE_STATES,
+)
+
 
 def is_simple_windows_state(recommended_value: Any, state: str | None) -> bool:
     """Check whether a recommendation state is simple enough for exact CSP matching."""

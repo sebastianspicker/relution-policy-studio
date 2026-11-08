@@ -2,19 +2,28 @@
 
 from typing import Any
 
-from .baseline_template_constants import SOURCE_PRECEDENCE
-from .baseline_template_builders import consolidation_metadata
+from .baseline_template_builders import (
+    consolidation_metadata,
+    modular_bundle,
+    module_target_templates,
+)
 from .baseline_template_consolidation import consolidate_actionable_entries
-from .baseline_template_modules import grouped_actionable_rules
-from .baseline_template_modules import module_metadata
-from .baseline_template_modules import module_policy
-from .baseline_template_builders import modular_bundle
-from .baseline_template_builders import module_target_templates
+from .baseline_template_constants import SOURCE_PRECEDENCE
 from .baseline_template_labels import platform_label
+from .baseline_template_modules import (
+    grouped_actionable_rules,
+    module_metadata,
+    module_policy,
+    tier_label,
+)
 from .baseline_template_sources import source_actionable_entries
-from .baseline_template_modules import tier_label
 from .baseline_template_support import verified_as_of_by_source
-from .tiered_baseline_metadata import actionable_entry_key, baseline_template_metadata, module_tier_coverage, tier_coverage
+from .tiered_baseline_metadata import (
+    actionable_entry_key,
+    baseline_template_metadata,
+    module_tier_coverage,
+    tier_coverage,
+)
 
 
 def tiered_consolidated_platform_template(platform: str, source_templates: dict[str, dict[str, Any]], tier: int) -> dict[str, Any]:

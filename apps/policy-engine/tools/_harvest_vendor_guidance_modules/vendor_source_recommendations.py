@@ -4,19 +4,31 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_android import android_relution_analog_mappings_for, android_relution_candidates_for
-from _recommendation_mapping_modules.candidate_inference_index import mapping_candidates as shared_mapping_candidates
-from _recommendation_mapping_modules.candidate_inference_semantic_candidates import semantic_candidates_for
-from _recommendation_mapping_modules.candidate_inference_semantic_concepts import semantic_concepts_for
-from _recommendation_mapping_modules.candidate_inference_semantic_output import semantic_metadata_for
-from _recommendation_mapping_modules.field_matching_candidates import candidate_from_mapping
-
 from _harvest_vendor_guidance_modules.common import merge_candidate_lists
 from _harvest_vendor_guidance_modules.vendor_mapping_semantic import (
     vendor_relution_mapping,
     vendor_semantic_evidence_sources_for,
 )
 from _harvest_vendor_guidance_modules.vendor_mapping_text import compact_slug
+from _recommendation_mapping_modules.candidate_inference_android import (
+    android_relution_analog_mappings_for,
+    android_relution_candidates_for,
+)
+from _recommendation_mapping_modules.candidate_inference_index import (
+    mapping_candidates as shared_mapping_candidates,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_candidates import (
+    semantic_candidates_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_concepts import (
+    semantic_concepts_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_output import (
+    semantic_metadata_for,
+)
+from _recommendation_mapping_modules.field_matching_candidates import (
+    candidate_from_mapping,
+)
 
 
 def build_recommendations(

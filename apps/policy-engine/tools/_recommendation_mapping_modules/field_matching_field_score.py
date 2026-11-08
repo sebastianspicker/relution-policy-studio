@@ -1,7 +1,8 @@
 """Field Score helpers for recommendation mapping."""
 
-from ._mapping_models import FieldEntry
 from ._mapping_lexical_constants import LOW_SIGNAL_TOKENS
+from ._mapping_models import FieldEntry
+
 
 def field_match_score(
     field: FieldEntry, query_tokens: set[str], matched: set[str], compatibility: str

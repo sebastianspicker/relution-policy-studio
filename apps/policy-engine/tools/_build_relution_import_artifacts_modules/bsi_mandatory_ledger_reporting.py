@@ -1,14 +1,20 @@
 """Cohesive implementation stage 1 for bsi_mandatory_ledger."""
 
+from datetime import datetime, timezone
 from typing import Any
-from .bsi_mandatory_ledger_constants import BSI_MANDATORY_LEDGER_PATH, MANDATORY_MODAL_RE
-from .ruleset_reporting import count_by
-from datetime import datetime
-from .mapping_exact_targets import exact_mappings
-from .mapping_exact_targets import mapping_target
-from datetime import timezone
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
+
 from .artifact_io_json import write_json
+from .bsi_mandatory_ledger_constants import (
+    BSI_MANDATORY_LEDGER_PATH,
+    MANDATORY_MODAL_RE,
+)
+from .mapping_exact_targets import exact_mappings, mapping_target
+from .ruleset_reporting import count_by
+
 
 def write_bsi_mandatory_mapping_ledger(
     recommendations: list[dict[str, Any]], settings_catalog: dict[str, Any]
@@ -61,7 +67,10 @@ def is_bsi_mandatory_basis(recommendation: dict[str, Any]) -> bool:
 
 def bsi_mandatory_ledger_row(recommendation: dict[str, Any]) -> dict[str, Any]:
     """Build one mandatory-requirement row for the BSI mapping ledger."""
-    from .bsi_mandatory_ledger_classification import bsi_solution_status, mandatory_clauses
+    from .bsi_mandatory_ledger_classification import (
+        bsi_solution_status,
+        mandatory_clauses,
+    )
 
     mapping = recommendation.get("relutionMapping", {})
     implementation = recommendation.get("implementation", {})

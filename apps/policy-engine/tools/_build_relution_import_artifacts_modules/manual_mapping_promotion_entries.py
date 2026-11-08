@@ -1,10 +1,12 @@
 """Cohesive implementation stage 3 for manual_mapping_promotions."""
 
-from .artifact_paths import ALL_SOURCES
-from typing import Any
 from pathlib import Path
-from .artifact_io_values import normalize_policy_platform
+from typing import Any
+
 from .artifact_io_paths import relative_path
+from .artifact_io_values import normalize_policy_platform
+from .artifact_paths import ALL_SOURCES
+
 
 def validate_manual_mapping_promotion_entry(
     index: int,

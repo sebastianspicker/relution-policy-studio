@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import sys
+import zipfile
+from pathlib import Path
 
 from .bsi_source_core import (
     CELL_REF_RE,
@@ -12,8 +14,6 @@ from .bsi_source_core import (
 )
 from .bsi_source_text import normalize_space
 
-import zipfile
-from pathlib import Path
 
 def _read_xlsx_rows(path: Path) -> dict[str, list[dict[int, str]]]:
     """Read workbook sheets as sparse 1-based column-indexed row dictionaries."""

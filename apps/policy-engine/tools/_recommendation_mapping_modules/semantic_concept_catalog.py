@@ -13,14 +13,15 @@ from .semantic_rules_endpoint_hardening import SEMANTIC_CONCEPT_RULES_ENDPOINT_H
 from .semantic_rules_identity_and_encryption import (
     SEMANTIC_CONCEPT_RULES_IDENTITY_AND_ENCRYPTION,
 )
-from .semantic_rules_management_strategy import SEMANTIC_CONCEPT_RULES_MANAGEMENT_STRATEGY
+from .semantic_rules_management_strategy import (
+    SEMANTIC_CONCEPT_RULES_MANAGEMENT_STRATEGY,
+)
 from .semantic_rules_network_and_endpoint_protection import (
     SEMANTIC_CONCEPT_RULES_NETWORK_AND_ENDPOINT_PROTECTION,
 )
 from .semantic_rules_privacy_and_assessment import (
     SEMANTIC_CONCEPT_RULES_PRIVACY_AND_ASSESSMENT,
 )
-
 
 SEMANTIC_CONCEPT_RULES: tuple[SemanticConceptRule, ...] = (
     *SEMANTIC_CONCEPT_RULES_IDENTITY_AND_ENCRYPTION,

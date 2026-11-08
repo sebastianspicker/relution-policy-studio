@@ -6,8 +6,9 @@ import re
 from pathlib import Path
 from typing import Any
 
-from _recommendation_mapping_modules.field_matching_candidates import merge_candidate_lists as shared_merge_candidate_lists
-
+from _recommendation_mapping_modules.field_matching_candidates import (
+    merge_candidate_lists as shared_merge_candidate_lists,
+)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VENDOR_DIR = REPO_ROOT / "example" / "vendor-references"

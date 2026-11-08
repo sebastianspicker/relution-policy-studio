@@ -3,9 +3,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.field_matching_windows_csp import windows_custom_csp_mapping_for
 from _harvest_cis_benchmarks_modules.cis_benchmarks import BenchmarkSpec
 from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_mapping
+from _recommendation_mapping_modules.field_matching_windows_csp import (
+    windows_custom_csp_mapping_for,
+)
+
 
 def add_windows_rexp_mapping(
     acc: dict[str, list[dict[str, Any]] | list[str]],

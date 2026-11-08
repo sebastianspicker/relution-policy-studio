@@ -1,18 +1,21 @@
 """Boolean helpers for recommendation mapping."""
 
-from ._mapping_lexical_constants import ALLOW_TERMS
-from typing import Any
-from ._mapping_lexical_constants import CONFIGURED_STATES
-from ._mapping_models import FieldEntry
-from ._mapping_lexical_constants import NEGATIVE_STATES
-from ._mapping_lexical_constants import NEGATIVE_TERMS
-from ._mapping_lexical_constants import POSITIVE_STATES
 import re
+from typing import Any
 
+from ._mapping_lexical_constants import (
+    ALLOW_TERMS,
+    CONFIGURED_STATES,
+    NEGATIVE_STATES,
+    NEGATIVE_TERMS,
+    POSITIVE_STATES,
+)
+from ._mapping_models import FieldEntry
 from .field_matching_tokens import (
     token_string,
     tokenize,
 )
+
 
 def boolean_value_for_field(
     setting_name: str, state: str, field: FieldEntry

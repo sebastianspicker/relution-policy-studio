@@ -429,29 +429,30 @@ def _scope_mismatches(
 
 
 def _ownership_diagnostics(profile: Mapping[str, Any]) -> list[Diagnostic]:
+    # One diagnostic per intent, not per pair: pairs grow quadratically past the stdio response cap.
     diagnostics: list[Diagnostic] = []
     intents = records(profile, "intents")
-    for left_index, left in enumerate(intents):
-        left_owner = left.get("ownership")
-        if not isinstance(left_owner, str) or not left_owner:
+    for right_index, right in enumerate(intents):
+        right_owner = right.get("ownership")
+        if not isinstance(right_owner, str) or not right_owner:
             continue
-        for right_index in range(left_index + 1, len(intents)):
-            right = intents[right_index]
-            right_owner = right.get("ownership")
-            if not isinstance(right_owner, str) or not right_owner or left_owner == right_owner:
+        right_requirements = set(string_list(right.get("requirements")))
+        shared: set[str] = set()
+        for left in intents[:right_index]:
+            left_owner = left.get("ownership")
+            if not isinstance(left_owner, str) or not left_owner or left_owner == right_owner:
                 continue
-            shared = sorted(
-                set(string_list(left.get("requirements")))
-                & set(string_list(right.get("requirements")))
-            )
-            if shared and _intents_may_overlap(left, right):
-                diagnostics.append(
-                    _diagnostic(
-                        "ownership.conflict",
-                        f"$.intents[{right_index}].ownership",
-                        f"conflicting owners for requirements: {', '.join(shared)}",
-                    )
+            overlap = right_requirements & set(string_list(left.get("requirements")))
+            if overlap and _intents_may_overlap(left, right):
+                shared |= overlap
+        if shared:
+            diagnostics.append(
+                _diagnostic(
+                    "ownership.conflict",
+                    f"$.intents[{right_index}].ownership",
+                    f"conflicting owners for requirements: {', '.join(sorted(shared))}",
                 )
+            )
     return diagnostics
 
 

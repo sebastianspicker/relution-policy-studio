@@ -1,12 +1,13 @@
 """Semantic Output helpers for recommendation mapping."""
 
-from typing import Any
 from collections.abc import Callable
-from ._mapping_models import FieldEntry
+from typing import Any
 
+from ._mapping_models import FieldEntry
 from .candidate_inference_semantic_sources import (
     is_process_only_evidence,
 )
+
 
 def semantic_concepts_for_field(
     platform: str, field: FieldEntry

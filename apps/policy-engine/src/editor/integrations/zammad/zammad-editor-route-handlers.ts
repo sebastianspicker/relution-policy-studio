@@ -46,9 +46,14 @@ export async function handleZammadTickets(
 ): Promise<void> {
   const draft = parseTicketDraft(await readJsonBody(request));
   if (workspace === undefined) throw new Error("Zammad ticket creation requires an editor workspace");
-  runtime.ticketOperations ??= new ZammadTicketOperations(workspace, transportOptions);
+  runtime.ticketOperations ??= new Map();
+  let operations = runtime.ticketOperations.get(workspace);
+  if (operations === undefined) {
+    operations = new ZammadTicketOperations(workspace, transportOptions);
+    runtime.ticketOperations.set(workspace, operations);
+  }
   const connection = await requireOutboundConnection(runtime, allowLocalServiceHosts);
-  sendJson(response, 200, await createZammadTicket({ connection, draft }, runtime.ticketOperations));
+  sendJson(response, 200, await createZammadTicket({ connection, draft }, operations));
 }
 
 async function requireOutboundConnection(runtime: ZammadEditorRuntime, allowLocalServiceHosts: boolean): Promise<ZammadConnection> {

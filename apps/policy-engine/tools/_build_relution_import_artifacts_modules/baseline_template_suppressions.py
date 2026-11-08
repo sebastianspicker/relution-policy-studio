@@ -2,13 +2,14 @@
 
 from typing import Any
 
-from .artifact_io_values import path_to_string
 from _tooling_text_io import slugify
+
+from .artifact_io_values import path_to_string
 from .baseline_template_constants import (
-    GroupedEntries,
     IOS_IMPORT_CONFLICT_PREFERENCES,
     MACOS_IMPORT_CONFLICT_PREFERENCES,
     NON_IMPORTABLE_CONSOLIDATED_TARGETS,
+    GroupedEntries,
     SuppressionResult,
 )
 from .baseline_template_support import source_informational_rule

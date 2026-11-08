@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import errno
 import json
+import math
 import os
 import stat
 from pathlib import Path
@@ -35,6 +36,14 @@ def _unique_object(pairs: Sequence[tuple[str, Any]]) -> dict[str, Any]:
 
 def _invalid_constant(value: str) -> None:
     raise ValueError(f"non-standard JSON constant {value!r} is forbidden")
+
+
+def _finite_float(value: str) -> float:
+    # "1e999" is valid JSON text but overflows to inf, which json.dumps would write back as Infinity.
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError(f"JSON number {value!r} is outside the finite range")
+    return number
 
 
 def _safe_posix_open_flags(*, directory: bool = False) -> int:
@@ -140,6 +149,7 @@ def decode_strict_json(raw: bytes, path: Path) -> Any:
             decoded,
             object_pairs_hook=_unique_object,
             parse_constant=_invalid_constant,
+            parse_float=_finite_float,
         )
         # An escaped lone surrogate ("\ud800") parses but is not text; reject it here, not in a later encode.
         json.dumps(value, ensure_ascii=False).encode("utf-8")

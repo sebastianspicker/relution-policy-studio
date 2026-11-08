@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def build_common_semantic_groups(
     semantic_index: dict[str, Any],
     recommendations: dict[str, dict[str, Any]],

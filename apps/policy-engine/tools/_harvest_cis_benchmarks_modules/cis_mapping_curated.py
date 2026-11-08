@@ -4,10 +4,18 @@ from __future__ import annotations
 from typing import Any
 
 from _harvest_cis_benchmarks_modules.cis_benchmarks import BenchmarkSpec
-from _harvest_cis_benchmarks_modules.cis_mapping_android import add_android_curated_mapping
-from _harvest_cis_benchmarks_modules.cis_mapping_ios_primary import add_ios_curated_mapping
+from _harvest_cis_benchmarks_modules.cis_mapping_android import (
+    add_android_curated_mapping,
+)
+from _harvest_cis_benchmarks_modules.cis_mapping_ios_primary import (
+    add_ios_curated_mapping,
+)
 from _harvest_cis_benchmarks_modules.cis_mapping_macos import add_macos_curated_mapping
-from _harvest_cis_benchmarks_modules.cis_mapping_windows import add_windows_defender_mapping, add_windows_standalone_mapping
+from _harvest_cis_benchmarks_modules.cis_mapping_windows import (
+    add_windows_defender_mapping,
+    add_windows_standalone_mapping,
+)
+
 
 def add_curated_exact_mappings(
     acc: dict[str, list[dict[str, Any]] | list[str]],

@@ -1,11 +1,12 @@
 """Cohesive implementation stage 1 for manual_mapping_promotions."""
 
-from typing import Any
-from .artifact_paths import MANUAL_MAPPING_PROMOTIONS_PATH
 from pathlib import Path
-from .artifact_io_json import read_json
+from typing import Any
+
+from .artifact_io_json import read_json, write_json
 from .artifact_io_paths import relative_path
-from .artifact_io_json import write_json
+from .artifact_paths import MANUAL_MAPPING_PROMOTIONS_PATH
+
 
 def manual_promotions_by_recommendation(source: str) -> dict[str, list[dict[str, Any]]]:
     """Load valid manual promotions grouped by recommendation id for one source."""

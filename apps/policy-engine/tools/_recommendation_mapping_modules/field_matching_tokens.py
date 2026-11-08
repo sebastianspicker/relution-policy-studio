@@ -1,8 +1,9 @@
 """Tokens helpers for recommendation mapping."""
 
-from ._mapping_lexical_constants import STOP_WORDS
-from ._mapping_lexical_constants import SYNONYMS
 import re
+
+from ._mapping_lexical_constants import STOP_WORDS, SYNONYMS
+
 
 def tokenize(*values: str) -> set[str]:
     """Tokenize bilingual labels with synonym and stop-word normalization."""

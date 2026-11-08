@@ -1,5 +1,5 @@
 /** Pure helpers and download actions extracted from the workspace toolbar. */
-import { networkEditorAuthHeaders } from "../../shared/editor-api-client.js";
+import { editorApiFetch } from "../../shared/editor-api-client.js";
 import type { AppSection } from "../../shared/application-sections.js";
 import type { EditorController } from "../../shared/editor-contracts.js";
 
@@ -22,7 +22,8 @@ export function reportDownloadError(error: unknown, setStatus: (status: string) 
 }
 
 export async function downloadOutputArchive(): Promise<void> {
-  const response = await fetch("/api/output", { headers: networkEditorAuthHeaders() });
+  // editorApiFetch sends the workspace header, so a tab opened on another workspace gets 409 instead of its archive.
+  const response = await editorApiFetch("/api/output");
   if (!response.ok) {
     throw new Error(`Failed to download output archive (${response.status}${response.statusText.length > 0 ? ` ${response.statusText}` : ""})`);
   }
@@ -33,7 +34,7 @@ export async function downloadOutputArchive(): Promise<void> {
   document.body.append(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(blobUrl);
+  setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
 }
 
 function outputArchiveFileName(contentDisposition: string | null): string {

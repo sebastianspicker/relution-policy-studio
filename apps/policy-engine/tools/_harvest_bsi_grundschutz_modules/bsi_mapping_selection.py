@@ -3,10 +3,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.field_matching_candidates import candidate_from_mapping
+from _recommendation_mapping_modules.field_matching_candidates import (
+    candidate_from_mapping,
+)
 
-from .bsi_mapping_inference import bsi_inferred_mapping_parts
 from .bsi_mapping_candidates import merge_candidates
+from .bsi_mapping_inference import bsi_inferred_mapping_parts
 from .curated_mapping_rules import MAPPING_RULES, extra_relution_mapping_metadata
 
 

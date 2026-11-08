@@ -3,8 +3,10 @@
 import json
 from typing import Any
 
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 from _tooling_text_io import slugify
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
 
 
 def variant_id_from_signature(signature: tuple[tuple[str, str], ...]) -> str:
@@ -55,7 +57,9 @@ def flatten_values(
 def split_camel_text(value: str) -> str:
     """Split identifier text into human-readable words."""
 
-    from _recommendation_mapping_modules.field_matching_windows_text import split_identifier
+    from _recommendation_mapping_modules.field_matching_windows_text import (
+        split_identifier,
+    )
 
     return " ".join(split_identifier(value))
 

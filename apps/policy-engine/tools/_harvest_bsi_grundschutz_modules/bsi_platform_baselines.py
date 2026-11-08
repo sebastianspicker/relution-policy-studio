@@ -2,7 +2,6 @@
 
 from .bsi_platform_models import ModuleTarget, PlatformTarget
 
-
 MOBILE_BASELINE_MODULES: tuple[ModuleTarget, ...] = (
     ModuleTarget(
         "SYS.3.2.1",

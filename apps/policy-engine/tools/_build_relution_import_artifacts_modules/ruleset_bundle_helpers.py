@@ -4,8 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from .artifact_io_values import path_to_string
-from .artifact_io_values import stable_json
+from .artifact_io_values import path_to_string, stable_json
 
 
 def find_conflicting_paths(entries: list[dict[str, Any]]) -> set[tuple[str, ...]]:

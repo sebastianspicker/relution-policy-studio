@@ -1,10 +1,13 @@
 """Pure ordering rules for inferred semantic concepts."""
 
 from typing import Any
-from ._semantic_matching_metadata import DIRECT_SEMANTIC_SOURCES
-from ._semantic_matching_metadata import GS_PLUSPLUS_SEMANTIC_SOURCES
-from ._semantic_matching_metadata import MANAGEMENT_SUPPORT_CONCEPT_IDS
-from ._semantic_matching_metadata import RELATED_SEMANTIC_SOURCES
+
+from ._semantic_matching_metadata import (
+    DIRECT_SEMANTIC_SOURCES,
+    GS_PLUSPLUS_SEMANTIC_SOURCES,
+    MANAGEMENT_SUPPORT_CONCEPT_IDS,
+    RELATED_SEMANTIC_SOURCES,
+)
 
 
 def semantic_concept_sort_key(concept: dict[str, Any]) -> tuple[int, int, float, str]:

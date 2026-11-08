@@ -227,7 +227,8 @@ def _resolve(
             frame.cut = True
         else:
             finished = enter(reference)
-    assert finished is not None
+    if finished is None:  # the loop always ends with the root frame finished
+        raise RuntimeError(f"group {identifier!r} did not resolve")
     return finished[0]
 
 

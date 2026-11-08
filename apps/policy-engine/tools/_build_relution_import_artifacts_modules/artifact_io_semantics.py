@@ -2,7 +2,9 @@
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_semantic_concepts import semantic_concepts_for
+from _recommendation_mapping_modules.candidate_inference_semantic_concepts import (
+    semantic_concepts_for,
+)
 
 from .artifact_io_values import flatten_values, split_camel_text, stringify_value
 

@@ -1,14 +1,16 @@
 """Exact helpers for recommendation mapping."""
 
 from typing import Any
+
 from ._mapping_models import FieldEntry
 from .field_matching_boolean import boolean_value_for_field
-from .field_matching_setting_state import extract_setting_state
-from .field_matching_labels import is_exact_label_match
 from .field_matching_candidates import kind_priority
+from .field_matching_labels import is_exact_label_match
 from .field_matching_scoring import score_fields
+from .field_matching_setting_state import extract_setting_state
 from .field_matching_tokens import tokenize
 from .field_matching_values import value_at_path
+
 
 def infer_exact_boolean_mapping(
     platform: str,

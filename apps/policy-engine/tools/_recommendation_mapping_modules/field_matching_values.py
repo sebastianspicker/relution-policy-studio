@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def value_at_path(path: str, value: Any) -> dict[str, Any]:
     """Wrap a value into a nested dictionary described by a dotted path."""
 

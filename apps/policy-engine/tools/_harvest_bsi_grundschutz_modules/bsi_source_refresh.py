@@ -3,21 +3,20 @@
 from __future__ import annotations
 
 import hashlib
-from html.parser import HTMLParser
 import shutil
 import subprocess
 import tempfile
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
-from urllib.request import Request, build_opener
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from _tooling_text_io import read_json
 
 from .bsi_ruleset_artifacts import write_json
 from .bsi_source_core import BSI_DIR, REPO_ROOT
-
 
 MAX_BSI_DOWNLOAD_BYTES = 50 * 1024 * 1024
 STATUS_PATH = (
@@ -114,7 +113,7 @@ def download_source(
     url = str(source["url"])
     validate_url(url)
     request = Request(url, headers={"User-Agent": "CampusWeave-source-refresh/1.0"})
-    with build_opener().open(request, timeout=60) as response:
+    with build_opener(_ValidatedRedirects).open(request, timeout=60) as response:
         validate_url(response.url)
         body = response.read(MAX_BSI_DOWNLOAD_BYTES + 1)
         if len(body) > MAX_BSI_DOWNLOAD_BYTES:
@@ -181,6 +180,14 @@ def validate_url(url: str) -> None:
         "bsi.bund.de",
     }:
         raise ValueError("BSI refresh URL must use the official bsi.bund.de HTTPS host")
+
+
+class _ValidatedRedirects(HTTPRedirectHandler):
+    """Validate every redirect hop before following it, not only the final URL."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        validate_url(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 def relative_path(path: Path) -> str:

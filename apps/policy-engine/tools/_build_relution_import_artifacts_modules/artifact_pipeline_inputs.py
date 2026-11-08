@@ -1,7 +1,8 @@
 """Required recommendation-catalog input validation."""
 
+from collections.abc import Mapping
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 
 from .artifact_paths import SOURCE_CONFIGS
 

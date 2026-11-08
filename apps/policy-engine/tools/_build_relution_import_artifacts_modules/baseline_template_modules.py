@@ -3,6 +3,7 @@
 from typing import Any
 
 from _tooling_text_io import slugify
+
 from .baseline_template_labels import platform_label, target_label
 from .baseline_template_support import is_actionable_rule
 from .mapping_exact_targets import mapping_target

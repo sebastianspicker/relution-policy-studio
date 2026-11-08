@@ -1,9 +1,10 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
+import re
+
 from .bsi_source_text import normalize_space
 
-import re
 
 def build_errata_map(
     errata_text: str, requirement_ids: set[str]

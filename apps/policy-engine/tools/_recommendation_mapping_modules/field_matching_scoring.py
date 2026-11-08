@@ -1,29 +1,25 @@
 """Scoring helpers for recommendation mapping."""
 
 from typing import Any
-from ._mapping_models import FieldEntry
-from ._mapping_lexical_constants import LOW_SIGNAL_TOKENS
-from ._mapping_models import ScoredField
 
+from ._mapping_lexical_constants import LOW_SIGNAL_TOKENS
+from ._mapping_models import FieldEntry, ScoredField
 from .field_matching_boolean import (
     value_compatibility,
 )
-
 from .field_matching_candidates import (
     kind_priority,
 )
-
 from .field_matching_field_score import (
     field_match_score,
 )
-
 from .field_matching_tokens import (
     tokenize,
 )
-
 from .field_matching_windows_state import (
     normalized_state,
 )
+
 
 def score_fields(
     platform: str,

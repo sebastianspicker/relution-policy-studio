@@ -1,7 +1,11 @@
 """Cohesive implementation stage 2 for semantic_review_candidates."""
 
 from typing import Any
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
+
 
 def candidate_reference_ids(
     spec: dict[str, Any], references: list[dict[str, Any]]

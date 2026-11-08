@@ -1,16 +1,10 @@
 #!/usr/bin/env node
 // Extract deterministic Windows CSP evidence from reviewed example Relution archives.
-import {
-  mkdtempSync,
-  writeFileSync,
-} from "node:fs";
-import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
-import { extractRexp } from "../dist/src/archive/rexp-extraction.js";
-import {
-  listDirectoryNames,
-  readUtf8File,
-} from "./windows-rexp-evidence-files.mjs";
+import { readFileSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { readRexpArchive } from "../dist/src/archive/rexp-archive-reader.js";
+import { decryptRexpProject } from "../dist/src/archive/rexp-extraction.js";
+import { isPolicyPath } from "../dist/src/workspace/policy-path.js";
 import { parseSyncMl } from "./windows-rexp-evidence-xml.mjs";
 
 const PASSWORD = process.env.RELUTION_REXP_KEY ?? "Relution";
@@ -26,11 +20,10 @@ const sourceFiles = [];
 const customCspSettings = [];
 
 for (const sourceFile of INPUTS) {
-  const extractDir = mkdtempSync(join(tmpdir(), "relution-windows-rexp-"));
-  extractRexp(resolve(sourceFile), extractDir, PASSWORD, { force: true, pretty: true });
-  const policyDir = join(extractDir, "policies");
-  for (const policyFile of listDirectoryNames(policyDir).filter((entry) => entry.endsWith(".json")).sort()) {
-    const policy = JSON.parse(readUtf8File(join(policyDir, policyFile)));
+  // Decrypt in memory, so decrypted policies never land in the temp folder.
+  const files = decryptRexpProject(readRexpArchive(readFileSync(resolve(sourceFile))), PASSWORD, true);
+  for (const policyFile of [...files.keys()].filter(isPolicyPath).sort()) {
+    const policy = JSON.parse(files.get(policyFile).toString("utf8"));
     const configurations = policy.versions?.flatMap((version) => version.configurations ?? []) ?? [];
     sourceFiles.push({
       path: sourceFile,
@@ -67,6 +60,7 @@ for (const sourceFile of INPUTS) {
 customCspSettings.sort((left, right) =>
   `${left.sourceFile}\u0000${left.policyName}\u0000${left.name}\u0000${left.locUri}`.localeCompare(
     `${right.sourceFile}\u0000${right.policyName}\u0000${right.name}\u0000${right.locUri}`,
+    "en", // a fixed locale, so the committed output does not depend on the machine's ICU default
   ),
 );
 

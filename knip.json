@@ -24,7 +24,6 @@
   ],
   "includeEntryExports": true,
   "ignoreBinaries": [
-    "mkfifo",
     "uv"
   ],
   "rules": {

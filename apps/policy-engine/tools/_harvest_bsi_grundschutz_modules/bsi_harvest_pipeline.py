@@ -22,8 +22,8 @@ from .bsi_checklist_workbooks import (
 )
 from .bsi_docbook_catalog import parse_docbook_modules, parse_generic_threat_catalog
 from .bsi_errata import build_errata_map
-from .bsi_plusplus_catalog import parse_grundschutz_plusplus_catalog
 from .bsi_platform_baselines import PLATFORM_TARGETS
+from .bsi_plusplus_catalog import parse_grundschutz_plusplus_catalog
 from .bsi_recommendation_builder import build_recommendations
 from .bsi_ruleset_artifacts import update_baseline_summary, write_json
 from .bsi_source_core import (
@@ -75,7 +75,7 @@ def main() -> None:
                     "BSI refresh failed; retained the previous source snapshot"
                 )
         build_bsi_artifacts(args.defer_artifacts)
-    except Exception as error:
+    except BaseException as error:  # Ctrl-C must restore too: finally deletes the backup
         if backup_root is not None:
             restore_downloads(backup_root)
             if (

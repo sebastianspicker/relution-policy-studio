@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from _build_relution_import_artifacts_modules.artifact_io_values import flatten_values
+
 from .constants import CSP_GENERIC_TERMS
 from .utils import identifier_tokens, stable_json
 

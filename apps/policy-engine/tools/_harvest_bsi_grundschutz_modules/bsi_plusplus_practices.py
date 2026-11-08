@@ -1,9 +1,10 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
+from typing import Any
+
 from .bsi_oscal_properties import prop_remark
 
-from typing import Any
 
 def parse_plusplus_practice_groups(
     groups: list[Any], controls: list[dict[str, Any]]

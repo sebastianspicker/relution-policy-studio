@@ -1,9 +1,19 @@
 """macOS terminal-method parsing for CIS helper fallbacks."""
 from __future__ import annotations
 
-from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space, unique_preserving_order
-from _harvest_cis_benchmarks_modules.cis_text_commands import is_terminal_stop_line, trim_at_markers
-from _harvest_cis_benchmarks_modules.cis_parser_constants import MACOS_METHOD_LABEL_RE, TERMINAL_COMMAND_STOP_MARKERS
+from _harvest_cis_benchmarks_modules.cis_parser_constants import (
+    MACOS_METHOD_LABEL_RE,
+    TERMINAL_COMMAND_STOP_MARKERS,
+)
+from _harvest_cis_benchmarks_modules.cis_text_collections import (
+    normalize_space,
+    unique_preserving_order,
+)
+from _harvest_cis_benchmarks_modules.cis_text_commands import (
+    is_terminal_stop_line,
+    trim_at_markers,
+)
+
 
 def split_macos_method_blocks(remediation_lines: list[str]) -> list[dict[str, str]]:
     """Split macOS remediation text into graphical, terminal, and profile blocks."""

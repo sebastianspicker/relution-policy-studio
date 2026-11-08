@@ -1,12 +1,13 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
+from typing import Any
+
 from .bsi_oscal_properties import first_part, prop_value, prop_values
 from .bsi_plusplus_platform_context import GS_PLUSPLUS_RELATED_CONTROL_RULES
 from .bsi_source_collections import split_values
 from .bsi_source_text import normalize_space
 
-from typing import Any
 
 def parse_plusplus_control(
     control: dict[str, Any], group_path: tuple[dict[str, str], ...]

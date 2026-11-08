@@ -4,5 +4,6 @@ import type { ZammadTicketOperations } from "../../../integrations/zammad/zammad
 
 export interface ZammadEditorRuntime {
   connection?: ZammadConnection;
-  ticketOperations?: ZammadTicketOperations;
+  /** One store per workspace: idempotency records live in the workspace that created the ticket. */
+  ticketOperations?: Map<string, ZammadTicketOperations>;
 }

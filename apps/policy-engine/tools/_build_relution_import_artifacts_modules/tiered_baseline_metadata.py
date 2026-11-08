@@ -2,9 +2,9 @@
 
 from typing import Any
 
+from .baseline_template_modules import tier_label
 from .baseline_template_support import generated_timestamp
 from .mapping_exact_targets import mapping_target
-from .baseline_template_modules import tier_label
 
 
 def baseline_template_metadata(kind: str, platform: str, tier: int, coverage: str, extra: dict[str, Any] | None = None) -> dict[str, Any]:

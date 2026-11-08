@@ -1,10 +1,14 @@
 """Semantic Candidates helpers for recommendation mapping."""
 
 from typing import Any
-from ._semantic_matching_metadata import BSI_CONCEPT_MATCH_REASON
-from ._semantic_matching_metadata import MANAGEMENT_SUPPORT_CONCEPT_IDS
+
 from ._mapping_models import SemanticConceptRule
+from ._semantic_matching_metadata import (
+    BSI_CONCEPT_MATCH_REASON,
+    MANAGEMENT_SUPPORT_CONCEPT_IDS,
+)
 from .field_matching_candidates import candidate_key
+
 
 def semantic_candidates_for(
     platform: str, concepts: list[dict[str, Any]], *, limit: int = 12

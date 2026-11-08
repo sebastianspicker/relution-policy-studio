@@ -282,7 +282,9 @@ function readProjectFile(path: string): CampusWeaveProject {
   try {
     return parseCampusWeaveProject(JSON.parse(buffer.toString("utf8")) as unknown);
   } catch (error) {
-    if (error instanceof CampusWeaveInputError) throw new Error(`Invalid persisted CampusWeave project: ${error.message}`, { cause: error });
+    // A hand-edited or truncated file is invalid input too, so the list skips it instead of failing.
+    const input = error instanceof SyntaxError ? new CampusWeaveInputError(`not valid JSON: ${error.message}`) : error;
+    if (input instanceof CampusWeaveInputError) throw new Error(`Invalid persisted CampusWeave project: ${input.message}`, { cause: input });
     throw error;
   }
 }

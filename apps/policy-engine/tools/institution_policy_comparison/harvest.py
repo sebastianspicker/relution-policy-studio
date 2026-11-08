@@ -14,6 +14,7 @@ from .settings import (
     find_control_ids,
     infer_setting_values,
 )
+from .summary import summarize_by_platform
 from .text import (
     extract_signal_text,
     find_policy_id,
@@ -27,7 +28,6 @@ from .utils import (
     offset_to_line,
     one_line,
 )
-from .summary import summarize_by_platform
 
 
 def harvest_institution_policy_index(institution_root: Path) -> dict[str, Any]:

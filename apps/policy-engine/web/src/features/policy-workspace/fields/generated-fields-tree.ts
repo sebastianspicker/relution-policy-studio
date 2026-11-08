@@ -1,6 +1,4 @@
 import type { TemplateField } from "../../../../../src/browser/workspace.js";
-import { deletePath, getPath } from "../../../shared/editor-object-path.js";
-import type { JsonRecord } from "../../../shared/editor-contracts.js";
 
 export type FieldTreeNode = {
   readonly field: TemplateField;
@@ -47,20 +45,4 @@ export function fieldContainerClass(nested: boolean, wide = false): string {
     return wide ? "nested-field nested-field-wide" : "nested-field";
   }
   return wide ? "field field-wide" : "field";
-}
-
-export function deletePathAndPrune(record: JsonRecord, path: string): void {
-  deletePath(record, path);
-  const segments = path.split(".");
-  for (let depth = segments.length - 1; depth > 0; depth -= 1) {
-    const parent = getPath(record, segments.slice(0, depth).join("."));
-    if (!isRecord(parent) || Object.keys(parent).length > 0) {
-      break;
-    }
-    deletePath(record, segments.slice(0, depth).join("."));
-  }
-}
-
-function isRecord(value: unknown): value is JsonRecord {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
 }

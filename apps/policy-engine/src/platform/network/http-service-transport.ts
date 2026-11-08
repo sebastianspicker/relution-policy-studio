@@ -15,7 +15,7 @@ const DEFAULT_REQUEST_TIMEOUT_MS = 30_000;
 const DEFAULT_REQUEST_LIMIT_BYTES = 16 * 1024 * 1024;
 const DEFAULT_RESPONSE_LIMIT_BYTES = 16 * 1024 * 1024;
 
-export interface HttpServiceTransportAdapter {
+interface HttpServiceTransportAdapter {
   resolveAddresses: (
     serviceName: string,
     hostname: string,

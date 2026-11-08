@@ -6,6 +6,7 @@ import hashlib
 from typing import Any
 
 from _tooling_text_io import slugify
+
 from .artifact_paths import MULTI_INSTANCE_TARGET_TYPES
 
 

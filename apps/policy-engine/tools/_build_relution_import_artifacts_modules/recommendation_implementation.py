@@ -2,7 +2,9 @@
 
 from typing import Any
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 
 from .mapping_exact_targets import exact_mappings
 from .recommendation_implementation_category import implementation_category

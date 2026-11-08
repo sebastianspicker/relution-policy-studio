@@ -1,11 +1,12 @@
 """Candidates helpers for recommendation mapping."""
 
 from typing import Any
-from ._mapping_models import ScoredField
 
+from ._mapping_models import ScoredField
 from .field_matching_values import (
     flatten_value_paths,
 )
+
 
 def candidate_from_score(entry: ScoredField) -> dict[str, Any]:
     """Convert a scored field into the candidate mapping payload shape."""

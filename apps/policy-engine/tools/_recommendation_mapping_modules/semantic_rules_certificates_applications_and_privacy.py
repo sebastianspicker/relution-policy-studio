@@ -1,10 +1,8 @@
 """Semantic concept rules for certificates, apps, and account controls."""
 
-from ._semantic_matching_metadata import ANDROID_PLAY_STORE
 from ._apple_analog_constants import APPLE_APPLICATION_ACCESS
-from ._mapping_models import SemanticConceptRule
-from ._mapping_models import semantic_target
-
+from ._mapping_models import SemanticConceptRule, semantic_target
+from ._semantic_matching_metadata import ANDROID_PLAY_STORE
 
 SEMANTIC_CONCEPT_RULES_CERTIFICATES_APPLICATIONS_AND_PRIVACY: tuple[SemanticConceptRule, ...] = (
     SemanticConceptRule(

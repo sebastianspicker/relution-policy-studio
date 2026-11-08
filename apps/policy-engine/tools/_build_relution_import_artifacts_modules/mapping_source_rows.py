@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def current_source_change_row(
     source: str,
     source_id: str,
@@ -11,7 +12,10 @@ def current_source_change_row(
 ) -> dict[str, Any]:
     """Build the source-change row for a source still present in the manifest."""
     from .mapping_source_classification import classify_source_change, source_text_hash
-    from .mapping_source_snapshots import source_change_row_payload, source_change_snapshot
+    from .mapping_source_snapshots import (
+        source_change_row_payload,
+        source_change_snapshot,
+    )
 
     source_body_availability = "available"
     try:
@@ -40,7 +44,11 @@ def removed_source_change_row(
     recommendation_ids_by_source_id: dict[tuple[str, str], list[str]],
 ) -> dict[str, Any]:
     """Build the source-change row for a source removed from the manifest."""
-    from .mapping_source_snapshots import previous_affected_recommendation_ids, source_change_row_payload, source_change_snapshot
+    from .mapping_source_snapshots import (
+        previous_affected_recommendation_ids,
+        source_change_row_payload,
+        source_change_snapshot,
+    )
 
     source, source_id = key
     affected_recommendation_ids = previous_affected_recommendation_ids(

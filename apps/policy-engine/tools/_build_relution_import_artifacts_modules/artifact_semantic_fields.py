@@ -2,13 +2,17 @@
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_semantic_output import semantic_concepts_for_field
+from _recommendation_mapping_modules.candidate_inference_semantic_output import (
+    semantic_concepts_for_field,
+)
 
 from .artifact_io_values import normalize_policy_platform
-from .ruleset_semantic_core import append_unique
-from .ruleset_semantic_core import ensure_semantic_concept
-from .ruleset_semantic_core import ensure_semantic_target
-from .ruleset_semantic_core import semantic_target_id
+from .ruleset_semantic_core import (
+    append_unique,
+    ensure_semantic_concept,
+    ensure_semantic_target,
+    semantic_target_id,
+)
 
 
 def add_field_semantic_links(platform: str, fields: list[Any], concepts: dict[str, dict[str, Any]], targets: dict[str, dict[str, Any]]) -> None:

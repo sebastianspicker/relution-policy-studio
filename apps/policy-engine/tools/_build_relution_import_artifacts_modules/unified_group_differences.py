@@ -1,9 +1,12 @@
 """Cohesive implementation stage 7 for unified_analysis."""
 
-from .artifact_paths import AUTHORITATIVE_SOURCE
 from typing import Any
-from .ruleset_reporting import semantic_support_level
+
 from _tooling_text_io import slugify
+
+from .artifact_paths import AUTHORITATIVE_SOURCE
+from .ruleset_reporting import semantic_support_level
+
 
 def semantic_group_differences(
     common_groups: list[dict[str, Any]],

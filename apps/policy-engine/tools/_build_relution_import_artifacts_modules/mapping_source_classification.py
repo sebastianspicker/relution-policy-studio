@@ -1,8 +1,10 @@
 """Cohesive implementation stage 5 for mapping_review_artifacts."""
 
-from typing import Any
-from .artifact_paths import REPO_ROOT
 import hashlib
+from typing import Any
+
+from .artifact_paths import REPO_ROOT
+
 
 def classify_source_change(
     previous: dict[str, Any] | None, current: dict[str, Any] | None

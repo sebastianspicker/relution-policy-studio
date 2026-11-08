@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import argparse
 
-from _build_relution_import_artifacts_modules.relution_update_application import apply_safe_relution_mapping_updates
+from _build_relution_import_artifacts_modules.relution_update_application import (
+    apply_safe_relution_mapping_updates,
+)
 
 from .contracts import (
     EXPECTED_UPDATE_ARTIFACT_PATHS,

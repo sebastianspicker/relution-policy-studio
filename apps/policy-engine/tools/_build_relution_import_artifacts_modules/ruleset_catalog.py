@@ -5,9 +5,12 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from .artifact_io_values import normalize_policy_platform
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
+
 from .artifact_io_paths import relative_path
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from .artifact_io_values import normalize_policy_platform
 from .artifact_paths import PLATFORM_ORDER, SourceConfig
 from .mapping_exact_targets import exact_mappings
 from .ruleset_bundle_groups import build_bundle_group

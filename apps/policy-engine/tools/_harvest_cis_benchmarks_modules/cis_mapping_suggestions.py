@@ -3,10 +3,17 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_android import android_relution_candidates_for
-from _recommendation_mapping_modules.candidate_inference_apple_mobileconfig import apple_mobileconfig_candidates_for
+from _recommendation_mapping_modules.candidate_inference_android import (
+    android_relution_candidates_for,
+)
+from _recommendation_mapping_modules.candidate_inference_apple_mobileconfig import (
+    apple_mobileconfig_candidates_for,
+)
 from _recommendation_mapping_modules.candidate_inference_index import mapping_candidates
-from _recommendation_mapping_modules.field_matching_candidates import merge_candidate_lists
+from _recommendation_mapping_modules.field_matching_candidates import (
+    merge_candidate_lists,
+)
+
 
 def suggested_mapping_response(context: dict[str, Any]) -> dict[str, Any]:
     """Build suggested or partial mapping output from inferred candidates."""

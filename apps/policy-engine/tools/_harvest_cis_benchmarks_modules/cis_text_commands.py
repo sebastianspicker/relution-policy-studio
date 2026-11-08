@@ -4,7 +4,10 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space, unique_preserving_order
+from _harvest_cis_benchmarks_modules.cis_text_collections import (
+    normalize_space,
+    unique_preserving_order,
+)
 from _tooling_text_io import slugify
 
 POWERSHELL_COMMAND_START_RE = re.compile(r"(?:^|\n)(?:PS [^>]+>\s*)?(?:Set-|New-|Remove-|Add-|Enable-|Disable-|Get-)[^\n]+")

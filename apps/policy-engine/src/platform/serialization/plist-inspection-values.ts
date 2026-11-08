@@ -5,7 +5,8 @@ export function firstPlistStringForKey(content: string, key: string): string | u
 
 export function allPlistStringsForKey(content: string, key: string): string[] {
   const values: string[] = [];
-  const expression = /<key>\s*([\s\S]*?)\s*<\/key>\s*<string>([\s\S]*?)<\/string>/gu;
+  // The key text cannot contain "<", so a key followed by a non-string value fails at once instead of scanning ahead (quadratic).
+  const expression = /<key>\s*([^<]*?)\s*<\/key>\s*<string>([\s\S]*?)<\/string>/gu;
   for (const match of content.matchAll(expression)) {
     if (unescapeXml(match[1] ?? "") === key) values.push(unescapeXml(match[2] ?? ""));
   }

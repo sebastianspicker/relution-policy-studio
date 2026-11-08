@@ -1,16 +1,15 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
+from typing import Any
+
+from .bsi_plusplus_lexical import lexical_plusplus_controls, slim_plusplus_control
 from .bsi_plusplus_platform_context import (
     GS_PLUSPLUS_METHOD_CONTEXT,
     GS_PLUSPLUS_RELATED_CONTROL_RULES,
     PLATFORM_GS_PLUSPLUS_TARGET_CATEGORIES,
 )
 from .bsi_source_text import normalize_for_match
-from typing import Any
-
-from .bsi_plusplus_lexical import lexical_plusplus_controls, slim_plusplus_control
-
 
 
 def plusplus_context_for(

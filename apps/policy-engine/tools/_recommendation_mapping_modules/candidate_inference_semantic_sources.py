@@ -1,10 +1,12 @@
 """Semantic Sources helpers for recommendation mapping."""
 
+import re
 from typing import Any
+
+from ._mapping_lexical_constants import unique_preserving_order
 from ._semantic_matching_metadata import PROCESS_ONLY_TITLE_TERMS
 from .field_matching_text import normalize_search_text
-import re
-from ._mapping_lexical_constants import unique_preserving_order
+
 
 def normalized_semantic_sources(
     evidence_sources: list[dict[str, Any]],

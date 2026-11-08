@@ -1,22 +1,20 @@
 """Relution Catalog helpers for recommendation mapping."""
 
-from typing import Any
-from ._mapping_models import FieldEntry
-from ._mapping_models import FieldTokens
 from pathlib import Path
+from typing import Any
 
+from ._mapping_models import FieldEntry, FieldTokens
 from .field_matching_io import (
     read_json,
 )
-
 from .field_matching_relution_platforms import (
     android_relution_platforms,
     apple_relution_platforms,
 )
-
 from .field_matching_tokens import (
     tokenize,
 )
+
 
 def relution_fields(template_bundle_path: Path) -> list[FieldEntry]:
     """Extract searchable field metadata from the Relution template bundle."""

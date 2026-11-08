@@ -1,14 +1,17 @@
 """Cohesive implementation stage 2 for relution_mapping_updates."""
 
-from typing import Any
-from .semantic_evidence_extraction import bilingual_tokens
-from .semantic_evidence_extraction import detect_mapping_language
 import hashlib
+from typing import Any
+
+from .artifact_io_values import normalize_policy_platform, stable_json
 from .mapping_exact_targets import mapping_target
-from .artifact_io_values import normalize_policy_platform
-from .semantic_evidence_extraction import recommendation_semantic_concepts
-from .semantic_evidence_extraction import recommendation_source_text
-from .artifact_io_values import stable_json
+from .semantic_evidence_extraction import (
+    bilingual_tokens,
+    detect_mapping_language,
+    recommendation_semantic_concepts,
+    recommendation_source_text,
+)
+
 
 def relution_mapping_change_row_payload(
     current_snapshot: dict[str, Any],

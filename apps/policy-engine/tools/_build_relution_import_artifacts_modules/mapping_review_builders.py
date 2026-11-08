@@ -1,25 +1,27 @@
 """Cohesive implementation stage 1 for mapping_review_artifacts."""
 
+from datetime import datetime, timezone
 from typing import Any
-from .artifact_paths import COVERAGE_MATRIX_PATH
-from .artifact_paths import EXACT_MAPPING_REFERENCE_PATH
-from .artifact_paths import MANUAL_MAPPING_PROMOTIONS_PATH
-from .artifact_paths import MAPPING_CANDIDATE_REVIEW_PATH
-from .artifact_paths import RULESET_UPDATE_PLAN_PATH
-from .artifact_paths import SEMANTIC_INDEX_PATH
-from .artifact_paths import SOURCE_CHANGE_REPORT_PATH
+
+from .artifact_io_json import write_json
+from .artifact_io_paths import relative_path
+from .artifact_io_plans import update_plan_inputs, update_plan_payload
+from .artifact_paths import (
+    COVERAGE_MATRIX_PATH,
+    EXACT_MAPPING_REFERENCE_PATH,
+    MANUAL_MAPPING_PROMOTIONS_PATH,
+    MAPPING_CANDIDATE_REVIEW_PATH,
+    RULESET_UPDATE_PLAN_PATH,
+    SEMANTIC_INDEX_PATH,
+    SOURCE_CHANGE_REPORT_PATH,
+)
+from .manual_mapping_promotion_storage import ensure_manual_mapping_promotions_file
+from .manual_mapping_promotion_validation import validate_manual_mapping_promotions
+from .mapping_candidate_review_output import write_mapping_candidate_review_report
+from .recommendation_catalog import load_recommendations_by_global_id
 from .ruleset_reporting import count_by
 from .semantic_review_formatting import count_by_nested_mapping
-from datetime import datetime
-from .manual_mapping_promotion_storage import ensure_manual_mapping_promotions_file
-from .recommendation_catalog import load_recommendations_by_global_id
-from .artifact_io_paths import relative_path
-from datetime import timezone
-from .artifact_io_plans import update_plan_inputs
-from .artifact_io_plans import update_plan_payload
-from .manual_mapping_promotion_validation import validate_manual_mapping_promotions
-from .artifact_io_json import write_json
-from .mapping_candidate_review_output import write_mapping_candidate_review_report
+
 
 def build_mapping_candidate_review_artifacts(
     previous_source_rows: list[dict[str, Any]] | None = None,
@@ -27,7 +29,10 @@ def build_mapping_candidate_review_artifacts(
     dict[str, dict[str, Any]], dict[str, Any], dict[str, Any], str
 ]:
     """Build exact-reference, candidate-review, and update-plan artifacts."""
-    from .mapping_review_rows import build_exact_mapping_reference_rows, build_mapping_candidate_review_rows
+    from .mapping_review_rows import (
+        build_exact_mapping_reference_rows,
+        build_mapping_candidate_review_rows,
+    )
 
     recommendations = load_recommendations_by_global_id()
     exact_references = build_exact_mapping_reference_rows(recommendations)

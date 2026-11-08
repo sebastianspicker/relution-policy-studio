@@ -1,12 +1,15 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
-
-from .bsi_source_text import normalize_space, shorten
-from .bsi_plusplus_context import matching_plusplus_rules
-
 from typing import Any
+
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
+
+from .bsi_plusplus_context import matching_plusplus_rules
+from .bsi_source_text import normalize_space, shorten
+
 
 def checklist_comparison_entry(
     module_id: str,

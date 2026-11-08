@@ -1,11 +1,11 @@
 """Cohesive implementation stage 6 for relution_mapping_updates."""
 
-from .artifact_paths import ALL_SOURCES
 from typing import Any
-from .artifact_paths import RELUTION_MAPPING_UPDATE_PLAN_PATH
-from .artifact_io_json import read_json
+
+from .artifact_io_json import read_json, write_json
 from .artifact_io_paths import relative_path
-from .artifact_io_json import write_json
+from .artifact_paths import ALL_SOURCES, RELUTION_MAPPING_UPDATE_PLAN_PATH
+
 
 def apply_safe_relution_mapping_updates(
     selected_sources: list[str] | None = None,

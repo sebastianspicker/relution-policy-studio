@@ -1,22 +1,21 @@
 """Windows Csp helpers for recommendation mapping."""
 
-from typing import Any
 from pathlib import Path
+from typing import Any
 
 from .field_matching_io import (
     read_json,
 )
-
 from .field_matching_setting_state import extract_setting_state
 from .field_matching_windows_state import (
     is_simple_windows_state,
     windows_csp_state_matches,
 )
-
 from .field_matching_windows_text import (
     loc_uri_leaf,
     windows_policy_signature,
 )
+
 
 def load_windows_custom_csp_evidence(
     evidence_path: Path,

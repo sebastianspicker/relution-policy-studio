@@ -4,11 +4,16 @@ from __future__ import annotations
 
 from typing import Any
 
-from .artifact_io_values import flatten_values
-from .artifact_io_values import normalize_policy_platform
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 from _tooling_text_io import slugify
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
-from .artifact_io_values import variant_id_from_signature
+
+from .artifact_io_values import (
+    flatten_values,
+    normalize_policy_platform,
+    variant_id_from_signature,
+)
 from .artifact_paths import SourceConfig
 from .mapping_exact_targets import exact_mappings, mapping_target, mapping_with_target
 from .ruleset_bundle_helpers import (

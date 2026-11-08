@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SUPPORTED_SOURCES = ("bsi", "cis", "vendor")
 OFFLINE_SOURCE_COMMANDS = {

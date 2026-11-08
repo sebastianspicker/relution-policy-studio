@@ -3,7 +3,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.field_matching_candidates import candidate_from_mapping
+from _recommendation_mapping_modules.field_matching_candidates import (
+    candidate_from_mapping,
+)
+
 
 def add_exact(
     acc: dict[str, list[dict[str, Any]] | list[str]], spec: tuple[Any, ...]

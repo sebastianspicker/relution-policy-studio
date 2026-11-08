@@ -1,8 +1,11 @@
 """Cohesive implementation stage 8 for mapping_review_artifacts."""
 
 from typing import Any
+
 from _recommendation_mapping_modules.field_matching_values import flatten_value_paths
+
 from .mapping_exact_targets import mapping_target
+
 
 def classify_mapping_update(
     previous_mapping: dict[str, Any], current_mapping: dict[str, Any]

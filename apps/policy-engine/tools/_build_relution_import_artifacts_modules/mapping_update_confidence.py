@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def update_confidence_tier(
     change_classification: str,
     recommendation: dict[str, Any],

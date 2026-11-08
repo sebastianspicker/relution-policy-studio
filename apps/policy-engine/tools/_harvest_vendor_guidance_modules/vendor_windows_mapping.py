@@ -4,13 +4,6 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_exact import infer_exact_boolean_mapping
-from _recommendation_mapping_modules.candidate_inference_index import mapping_candidates as shared_mapping_candidates
-from _recommendation_mapping_modules.candidate_inference_semantic_candidates import semantic_candidates_for
-from _recommendation_mapping_modules.candidate_inference_semantic_concepts import semantic_concepts_for
-from _recommendation_mapping_modules.candidate_inference_semantic_output import semantic_metadata_for
-from _recommendation_mapping_modules.field_matching_windows_csp import windows_custom_csp_mapping_for
-
 from _harvest_vendor_guidance_modules.common import (
     WINDOWS_BASELINE_NAME,
     WINDOWS_EXACT_BY_ID,
@@ -23,6 +16,24 @@ from _harvest_vendor_guidance_modules.vendor_mapping_semantic import (
 from _harvest_vendor_guidance_modules.vendor_mapping_text import (
     compact_slug,
     normalize_text,
+)
+from _recommendation_mapping_modules.candidate_inference_exact import (
+    infer_exact_boolean_mapping,
+)
+from _recommendation_mapping_modules.candidate_inference_index import (
+    mapping_candidates as shared_mapping_candidates,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_candidates import (
+    semantic_candidates_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_concepts import (
+    semantic_concepts_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_output import (
+    semantic_metadata_for,
+)
+from _recommendation_mapping_modules.field_matching_windows_csp import (
+    windows_custom_csp_mapping_for,
 )
 
 

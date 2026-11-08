@@ -2,7 +2,11 @@
 
 from typing import Any
 
-from .artifact_io_rule_text import informational_reason, informational_title, informational_value
+from .artifact_io_rule_text import (
+    informational_reason,
+    informational_title,
+    informational_value,
+)
 
 
 def build_informational_rule(source: str, recommendation: dict[str, Any]) -> dict[str, Any]:

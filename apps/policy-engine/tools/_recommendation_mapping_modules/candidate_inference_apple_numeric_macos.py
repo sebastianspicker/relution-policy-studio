@@ -1,9 +1,11 @@
 """Apple Numeric Macos helpers for recommendation mapping."""
 
-from ._apple_analog_constants import APPLE_SCREEN_SAVER
 from typing import Any
+
+from ._apple_analog_constants import APPLE_SCREEN_SAVER
 from .field_matching_apple_mapping import apple_schema_mapping
 from .field_matching_text import first_int
+
 
 def macos_numeric_analog_mappings(haystack: str) -> list[dict[str, Any]]:
     """Infer macOS screen-saver numeric analog mappings from normalized text."""

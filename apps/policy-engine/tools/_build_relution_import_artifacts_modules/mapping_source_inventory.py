@@ -1,18 +1,22 @@
 """Cohesive implementation stage 2 for mapping_review_artifacts."""
 
-from typing import Any
 from pathlib import Path
-from .artifact_pipeline_inputs import missing_required_inputs_message
+from typing import Any
+
 from .artifact_io_json import read_json
-from .mapping_source_snapshots import previous_source_change_rows
-from .mapping_source_snapshots import source_manifest_paths
+from .artifact_pipeline_inputs import missing_required_inputs_message
+from .mapping_source_snapshots import previous_source_change_rows, source_manifest_paths
+
 
 def build_source_change_rows(
     recommendations: dict[str, dict[str, Any]],
     previous_rows: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     """Compare current source manifests with previous source-change snapshots."""
-    from .mapping_source_rows import current_source_change_row, removed_source_change_row
+    from .mapping_source_rows import (
+        current_source_change_row,
+        removed_source_change_row,
+    )
     from .mapping_source_snapshots import recommendation_ids_by_source_id_for
 
     recommendation_ids_by_source_id = recommendation_ids_by_source_id_for(

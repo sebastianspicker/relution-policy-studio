@@ -1,7 +1,9 @@
 """Cohesive implementation stage 1 for semantic_review_candidates."""
 
 from typing import Any
+
 from .ruleset_semantic_targets import candidate_target_specs
+
 
 def ranked_review_candidates(
     recommendation: dict[str, Any],
@@ -79,10 +81,18 @@ def review_candidate_from_spec(
     provenance: str,
 ) -> dict[str, Any]:
     """Build the review row that explains a candidate target and its evidence."""
-    from .semantic_candidate_similarity import candidate_reference_ids, candidate_score_breakdown, candidate_shared_concepts, candidate_shared_tokens
+    from .semantic_candidate_similarity import (
+        candidate_reference_ids,
+        candidate_score_breakdown,
+        candidate_shared_concepts,
+        candidate_shared_tokens,
+    )
     from .semantic_reference_matching import reference_candidate_overlap
     from .semantic_review_analysis import candidate_setting_meaning
-    from .semantic_review_decisions import candidate_review_decision, candidate_semantic_concept_id
+    from .semantic_review_decisions import (
+        candidate_review_decision,
+        candidate_semantic_concept_id,
+    )
     reference_ids = candidate_reference_ids(spec, references)
     shared_concepts = candidate_shared_concepts(references, semantic_ids)
     own_concept = candidate_semantic_concept_id(spec, semantic_ids)

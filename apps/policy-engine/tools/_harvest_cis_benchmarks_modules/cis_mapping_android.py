@@ -3,8 +3,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_android import android_relution_analog_mappings_for
-from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_exact, add_mapping
+from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import (
+    add_exact,
+    add_mapping,
+)
+from _recommendation_mapping_modules.candidate_inference_android import (
+    android_relution_analog_mappings_for,
+)
+
 
 def add_android_curated_mapping(
     acc: dict[str, list[dict[str, Any]] | list[str]],

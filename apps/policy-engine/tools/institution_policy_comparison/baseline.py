@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 from _build_relution_import_artifacts_modules.artifact_io_values import flatten_values
+
 from .constants import REPO_ROOT
 from .summary import summarize_by_platform
 from .utils import path_to_string, read_json

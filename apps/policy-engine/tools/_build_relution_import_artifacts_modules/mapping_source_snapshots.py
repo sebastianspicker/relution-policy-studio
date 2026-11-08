@@ -1,10 +1,11 @@
 """Cohesive implementation stage 3 for mapping_review_artifacts."""
 
-from typing import Any
 from pathlib import Path
-from .artifact_paths import REPO_ROOT
-from .artifact_paths import SOURCE_CHANGE_REPORT_PATH
+from typing import Any
+
 from .artifact_io_json import read_json
+from .artifact_paths import REPO_ROOT, SOURCE_CHANGE_REPORT_PATH
+
 
 def previous_source_change_rows() -> list[dict[str, Any]]:
     """Load prior source-change rows when the report already exists."""

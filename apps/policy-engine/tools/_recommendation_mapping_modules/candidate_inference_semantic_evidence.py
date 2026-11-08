@@ -1,7 +1,11 @@
 """Semantic evidence rendering for recommendation mapping."""
 
 from typing import Any
-from .candidate_inference_semantic_sources import semantic_source_confidence, shorten_text
+
+from .candidate_inference_semantic_sources import (
+    semantic_source_confidence,
+    shorten_text,
+)
 
 
 def semantic_source_evidence(

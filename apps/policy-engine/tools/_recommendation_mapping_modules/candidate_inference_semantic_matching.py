@@ -1,12 +1,13 @@
 """Semantic Matching helpers for recommendation mapping."""
 
 from typing import Any
-from ._mapping_models import SemanticConceptRule
 
+from ._mapping_models import SemanticConceptRule
+from .candidate_inference_semantic_evidence import semantic_source_evidence
 from .candidate_inference_semantic_sources import (
     matched_semantic_terms,
 )
-from .candidate_inference_semantic_evidence import semantic_source_evidence
+
 
 def semantic_rule_matches(
     normalized_sources: list[dict[str, Any]], rule: SemanticConceptRule

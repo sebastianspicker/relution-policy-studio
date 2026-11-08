@@ -1,10 +1,14 @@
 """Cohesive implementation stage 3 for relution_mapping_updates."""
 
 from typing import Any
-from .ruleset_semantic_targets import candidate_target_specs
-from .recommendation_mapping_entries import optional_dict_entries
-from .recommendation_mapping_entries import optional_string_entries
+
 from .artifact_io_values import stable_json
+from .recommendation_mapping_entries import (
+    optional_dict_entries,
+    optional_string_entries,
+)
+from .ruleset_semantic_targets import candidate_target_specs
+
 
 def candidate_mapping_snapshots(
     recommendation: dict[str, Any],

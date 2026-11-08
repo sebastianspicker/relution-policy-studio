@@ -2,28 +2,21 @@
 
 from __future__ import annotations
 
-from datetime import date
-from pathlib import Path
 import shutil
 import tempfile
+from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 
-from _build_relution_import_artifacts_modules.orchestration import (
-    build_source_artifacts,
-)
 from _build_relution_import_artifacts_modules.manual_mapping_promotion_storage import (
     manual_promotions_by_recommendation,
+)
+from _build_relution_import_artifacts_modules.orchestration import (
+    build_source_artifacts,
 )
 from _build_relution_import_artifacts_modules.recommendation_normalizer import (
     normalize_recommendations,
 )
-from _recommendation_mapping_modules.candidate_inference_index import (
-    build_setting_index,
-)
-from _recommendation_mapping_modules.field_matching_windows_csp import (
-    load_windows_custom_csp_evidence,
-)
-
 from _harvest_vendor_guidance_modules.common import (
     REPO_ROOT,
     VENDOR_DIR,
@@ -36,11 +29,7 @@ from _harvest_vendor_guidance_modules.vendor_mapping_artifacts import (
 from _harvest_vendor_guidance_modules.vendor_mapping_semantic import (
     workbook_help_by_title,
 )
-from _tooling_text_io import read_json
 from _harvest_vendor_guidance_modules.vendor_mapping_text import write_json
-from _harvest_vendor_guidance_modules.vendor_windows_mapping import (
-    build_windows_recommendation,
-)
 from _harvest_vendor_guidance_modules.vendor_source_catalog import (
     CURATED_PLATFORM_GUIDANCE,
     WINDOWS_BASELINE_PATH,
@@ -54,6 +43,16 @@ from _harvest_vendor_guidance_modules.vendor_source_refresh import (
     copy_downloads,
     refresh_downloads,
 )
+from _harvest_vendor_guidance_modules.vendor_windows_mapping import (
+    build_windows_recommendation,
+)
+from _recommendation_mapping_modules.candidate_inference_index import (
+    build_setting_index,
+)
+from _recommendation_mapping_modules.field_matching_windows_csp import (
+    load_windows_custom_csp_evidence,
+)
+from _tooling_text_io import read_json
 
 
 def build_recommendations(
@@ -172,7 +171,7 @@ def harvest_vendor_guidance(
                 refresh_status_path,
                 {
                     "schemaVersion": 1,
-                    "checkedAt": date.today().isoformat(),
+                    "checkedAt": datetime.now(UTC).date().isoformat(),
                     "outcome": "refreshed-transactionally",
                     "retainedPreviousSnapshot": False,
                 },
@@ -200,7 +199,7 @@ def write_refresh_failure(path: Path, error: Exception) -> None:
         path,
         {
             "schemaVersion": 1,
-            "checkedAt": date.today().isoformat(),
+            "checkedAt": datetime.now(UTC).date().isoformat(),
             "outcome": "failed-retained-previous-snapshot",
             "retainedPreviousSnapshot": True,
             "errorType": type(error).__name__,

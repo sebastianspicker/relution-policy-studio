@@ -1,20 +1,24 @@
 """Cohesive implementation stage 1 for relution_mapping_updates."""
 
 from typing import Any
-from .artifact_paths import PLATFORM_ORDER
-from .artifact_paths import EXACT_MAPPING_REFERENCE_PATH
-from .artifact_paths import MANUAL_MAPPING_PROMOTIONS_PATH
-from .artifact_paths import MAPPING_CANDIDATE_REVIEW_PATH
-from .artifact_paths import RELUTION_MAPPING_CHANGE_REPORT_PATH
-from .artifact_paths import RELUTION_MAPPING_UPDATE_PLAN_PATH
-from .mapping_update_planning import candidate_review_by_recommendation
-from .ruleset_reporting import count_by
-from .mapping_update_planning import exact_references_by_recommendation
-from .artifact_io_json import read_json
+
+from .artifact_io_json import read_json, write_json
 from .artifact_io_paths import relative_path
-from .artifact_io_plans import update_plan_inputs
-from .artifact_io_plans import update_plan_payload
-from .artifact_io_json import write_json
+from .artifact_io_plans import update_plan_inputs, update_plan_payload
+from .artifact_paths import (
+    EXACT_MAPPING_REFERENCE_PATH,
+    MANUAL_MAPPING_PROMOTIONS_PATH,
+    MAPPING_CANDIDATE_REVIEW_PATH,
+    PLATFORM_ORDER,
+    RELUTION_MAPPING_CHANGE_REPORT_PATH,
+    RELUTION_MAPPING_UPDATE_PLAN_PATH,
+)
+from .mapping_update_planning import (
+    candidate_review_by_recommendation,
+    exact_references_by_recommendation,
+)
+from .ruleset_reporting import count_by
+
 
 def build_relution_mapping_update_artifacts(
     recommendations: dict[str, dict[str, Any]],
@@ -165,7 +169,10 @@ def relution_mapping_change_row(
 ) -> dict[str, Any]:
     """Build one current-vs-previous mapping drift row."""
     from .relution_update_classification import classify_recommendation_mapping_change
-    from .relution_update_snapshots import relution_mapping_change_row_payload, relution_mapping_snapshot
+    from .relution_update_snapshots import (
+        relution_mapping_change_row_payload,
+        relution_mapping_snapshot,
+    )
     current_snapshot = relution_mapping_snapshot(recommendation, exact_refs, review_row)
     previous_or_current = previous_snapshot or current_snapshot
     classification = classify_recommendation_mapping_change(
@@ -179,7 +186,10 @@ def relution_mapping_removed_change_row(
     previous_snapshot: dict[str, Any],
 ) -> dict[str, Any]:
     """Build a drift row for a recommendation that disappeared from current inputs."""
-    from .relution_update_snapshots import relution_mapping_change_row_payload, relution_mapping_removed_snapshot
+    from .relution_update_snapshots import (
+        relution_mapping_change_row_payload,
+        relution_mapping_removed_snapshot,
+    )
     return relution_mapping_change_row_payload(
         relution_mapping_removed_snapshot(previous_snapshot),
         previous_snapshot,

@@ -7,6 +7,7 @@ from .field_matching_apple_merge import (
     merge_without_conflict,
 )
 
+
 def apple_schema_mapping(
     schema_id: str,
     values: dict[str, Any],

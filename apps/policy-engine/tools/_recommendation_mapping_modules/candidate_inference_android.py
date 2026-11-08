@@ -1,18 +1,20 @@
 """Android helpers for recommendation mapping."""
 
-from ._android_analog_rules import ANDROID_ANALOG_RULES
-from ._android_analog_rules import ANDROID_CANDIDATE_RULES
-from ._mapping_models import AndroidAnalogRule
 from typing import Any
-from .field_matching_text import matched_rule_terms
-from .field_matching_text import normalize_search_text
-from .field_matching_text import phrase_groups_match
-from .field_matching_text import stable_match_value
-from .field_matching_text import values_from_pairs
 
+from ._android_analog_rules import ANDROID_ANALOG_RULES, ANDROID_CANDIDATE_RULES
+from ._mapping_models import AndroidAnalogRule
 from .candidate_inference_apple_analog import (
     curated_analog_context,
 )
+from .field_matching_text import (
+    matched_rule_terms,
+    normalize_search_text,
+    phrase_groups_match,
+    stable_match_value,
+    values_from_pairs,
+)
+
 
 def android_relution_analog_mappings_for(
     platform: str,

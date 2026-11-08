@@ -9,7 +9,6 @@ from typing import Any
 
 from _build_mdm_reconciliation_cis import cis_rows
 
-
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "mdm" / "evidence" / "source-manifest.json"
 OUTPUT = ROOT / "mdm" / "evidence" / "recommendation-reconciliation.json"

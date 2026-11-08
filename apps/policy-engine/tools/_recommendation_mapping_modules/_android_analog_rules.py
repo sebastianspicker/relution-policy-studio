@@ -1,12 +1,13 @@
 """Curated Android Enterprise analog rules for recommendation matching."""
 
-from ._semantic_matching_metadata import ANDROID_ADVANCED_SECURITY
-from ._semantic_matching_metadata import ANDROID_KEYGUARD
-from ._semantic_matching_metadata import ANDROID_LOCATION
-from ._semantic_matching_metadata import ANDROID_PLAY_STORE
-from ._semantic_matching_metadata import ANDROID_RESTRICTION
 from ._mapping_models import AndroidAnalogRule
-
+from ._semantic_matching_metadata import (
+    ANDROID_ADVANCED_SECURITY,
+    ANDROID_KEYGUARD,
+    ANDROID_LOCATION,
+    ANDROID_PLAY_STORE,
+    ANDROID_RESTRICTION,
+)
 
 ANDROID_ANALOG_RULES: tuple[AndroidAnalogRule, ...] = (
     AndroidAnalogRule(

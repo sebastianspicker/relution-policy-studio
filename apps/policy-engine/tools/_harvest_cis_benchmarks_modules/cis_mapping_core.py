@@ -3,12 +3,20 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_exact import infer_exact_boolean_mapping
-from _harvest_cis_benchmarks_modules.cis_mapping_analog import add_analog_mappings
 from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_mapping
-from _harvest_cis_benchmarks_modules.cis_mapping_curated import add_curated_exact_mappings
-from _harvest_cis_benchmarks_modules.cis_mapping_suggestions import merge_candidates, suggested_mapping_response
+from _harvest_cis_benchmarks_modules.cis_mapping_analog import add_analog_mappings
+from _harvest_cis_benchmarks_modules.cis_mapping_curated import (
+    add_curated_exact_mappings,
+)
+from _harvest_cis_benchmarks_modules.cis_mapping_suggestions import (
+    merge_candidates,
+    suggested_mapping_response,
+)
 from _harvest_cis_benchmarks_modules.cis_mapping_support import add_windows_rexp_mapping
+from _recommendation_mapping_modules.candidate_inference_exact import (
+    infer_exact_boolean_mapping,
+)
+
 
 def mapping_for(context: dict[str, Any]) -> dict[str, Any]:
     """Build the Relution mapping response for one harvested CIS recommendation."""

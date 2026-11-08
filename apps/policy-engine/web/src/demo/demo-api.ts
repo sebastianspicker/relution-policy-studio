@@ -4,7 +4,7 @@ import type { PolicyWorkspace } from "../../../src/browser/workspace.js";
 import type { AppState } from "../shared/editor-contracts.js";
 import { createDemoAppState, demoBaselineExpertOptions, demoBaselineOptions, demoBaselineRuleset, demoComplianceReport, demoRecommendationCatalog, demoRecommendationIndex } from "./demo-data.js";
 
-export class DemoApi {
+class DemoApi {
   #state: AppState = createDemoAppState();
   #revision = 1;
 

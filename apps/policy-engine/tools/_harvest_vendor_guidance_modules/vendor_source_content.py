@@ -2,16 +2,15 @@
 
 from __future__ import annotations
 
-from html.parser import HTMLParser
 import re
+from html.parser import HTMLParser
 from pathlib import Path
-from urllib.request import build_opener
+from urllib.request import HTTPRedirectHandler, build_opener
 
 from _harvest_vendor_guidance_modules.vendor_source_safety import (
     trusted_vendor_source_request,
     validate_vendor_source_url,
 )
-
 
 PUBLIC_TOKEN_REDACTIONS: tuple[tuple[bytes, bytes], ...] = (
     (rb"AIza[0-9A-Za-z_-]{30,45}", b"[REDACTED_GOOGLE_API_KEY]"),
@@ -42,13 +41,21 @@ class TextExtractor(HTMLParser):
         return "\n".join(self.parts)
 
 
+class _ValidatedRedirects(HTTPRedirectHandler):
+    """Validate every redirect hop before following it, not only the final URL."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        validate_vendor_source_url(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def download_vendor_source(
     source_id: str, url: str
 ) -> tuple[bytes, dict[str, str], str]:
     """Download a trusted vendor URL with size and final-URL validation."""
 
     request = trusted_vendor_source_request(url)
-    with build_opener().open(request, timeout=60) as response:
+    with build_opener(_ValidatedRedirects).open(request, timeout=60) as response:
         validate_vendor_source_url(response.url)
         body = response.read(MAX_VENDOR_DOWNLOAD_BYTES + 1)
         if len(body) > MAX_VENDOR_DOWNLOAD_BYTES:

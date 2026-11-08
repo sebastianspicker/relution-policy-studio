@@ -1,16 +1,18 @@
 """Cohesive implementation stage 5 for unified_analysis."""
 
-from .artifact_paths import ALL_SOURCES
-from .artifact_paths import AUTHORITATIVE_SOURCE
 from typing import Any
-from .artifact_paths import PLATFORM_ORDER
-from .mapping_exact_targets import exact_mappings
-from .artifact_io_values import flatten_values
-from .mapping_exact_targets import mapping_target
-from .artifact_io_values import normalize_policy_platform
-from .artifact_io_values import path_to_string
+
 from _tooling_text_io import slugify
-from .artifact_io_values import stable_json
+
+from .artifact_io_values import (
+    flatten_values,
+    normalize_policy_platform,
+    path_to_string,
+    stable_json,
+)
+from .artifact_paths import ALL_SOURCES, AUTHORITATIVE_SOURCE, PLATFORM_ORDER
+from .mapping_exact_targets import exact_mappings, mapping_target
+
 
 def common_group_sort_key(group: dict[str, Any]) -> tuple[int, int, int, str, str]:
     """Sort common groups by BSI coverage, breadth, platform, and concept."""
@@ -28,7 +30,10 @@ def analyze_exact_mapping_differences(
     recommendations: dict[str, dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Find exact-value conflicts and compatible differences against BSI."""
-    from .unified_value_differences import exact_leaf_difference_is_hard, exact_value_difference_entry
+    from .unified_value_differences import (
+        exact_leaf_difference_is_hard,
+        exact_value_difference_entry,
+    )
 
     leaves_by_key = exact_mapping_leaves_by_key(recommendations)
     contradictions: list[dict[str, Any]] = []

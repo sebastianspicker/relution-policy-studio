@@ -3,7 +3,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_candidate, add_exact
+from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import (
+    add_candidate,
+    add_exact,
+)
+
 
 def add_macos_curated_mapping(
     acc: dict[str, list[dict[str, Any]] | list[str]], normalized_title: str, title: str

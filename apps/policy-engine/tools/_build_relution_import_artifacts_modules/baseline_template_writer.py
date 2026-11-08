@@ -4,29 +4,34 @@ from __future__ import annotations
 
 import shutil
 
+from .artifact_io_json import read_json, write_json
 from .artifact_paths import (
     SOURCE_CONFIGS,
 )
-from .artifact_io_json import read_json
-from .artifact_io_json import write_json
-from .baseline_template_constants import BASELINE_TEMPLATE_CONSOLIDATED_ROOT
-from .baseline_template_constants import BASELINE_TEMPLATE_INDEX_PATH
-from .baseline_template_constants import BASELINE_TEMPLATE_MODULAR_ROOT
-from .baseline_template_constants import BASELINE_TEMPLATE_PLATFORMS
-from .baseline_template_constants import BASELINE_TEMPLATE_ROOT
-from .baseline_template_constants import BASELINE_TEMPLATE_TIERED_ROOT
-from .baseline_template_constants import BASELINE_TIERS
-from .baseline_template_constants import SOURCE_PRECEDENCE
-from .baseline_template_builders import consolidated_platform_template
-from .baseline_template_support import generated_timestamp
+from .baseline_template_builders import (
+    consolidated_platform_template,
+    modular_bundle_template,
+    modular_target_templates,
+    source_platform_template,
+)
+from .baseline_template_constants import (
+    BASELINE_TEMPLATE_CONSOLIDATED_ROOT,
+    BASELINE_TEMPLATE_INDEX_PATH,
+    BASELINE_TEMPLATE_MODULAR_ROOT,
+    BASELINE_TEMPLATE_PLATFORMS,
+    BASELINE_TEMPLATE_ROOT,
+    BASELINE_TEMPLATE_TIERED_ROOT,
+    BASELINE_TIERS,
+    SOURCE_PRECEDENCE,
+)
 from .baseline_template_index import index_entry
-from .baseline_template_builders import modular_bundle_template
-from .baseline_template_builders import modular_target_templates
 from .baseline_template_labels import platform_slug
-from .baseline_template_builders import source_platform_template
-from .tiered_baseline_builders import tiered_consolidated_platform_template
-from .tiered_baseline_builders import tiered_modular_bundle_template
-from .tiered_baseline_builders import tiered_modular_target_templates
+from .baseline_template_support import generated_timestamp
+from .tiered_baseline_builders import (
+    tiered_consolidated_platform_template,
+    tiered_modular_bundle_template,
+    tiered_modular_target_templates,
+)
 
 
 def write_baseline_templates() -> None:

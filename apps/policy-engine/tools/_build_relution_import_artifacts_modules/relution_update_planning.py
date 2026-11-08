@@ -1,15 +1,20 @@
 """Cohesive implementation stage 4 for relution_mapping_updates."""
 
 from typing import Any
+
 from .artifact_paths import PLATFORM_ORDER
 from .mapping_update_compatibility import classify_mapping_update
 from .mapping_update_confidence import required_action_for_confidence_tier
+
 
 def build_relution_mapping_update_plan_rows(
     change_rows: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     """Convert changed mapping rows into manual or safe-update plan rows."""
-    from .relution_update_identity import candidate_reference_ids_from_snapshot, relution_mapping_update_reason
+    from .relution_update_identity import (
+        candidate_reference_ids_from_snapshot,
+        relution_mapping_update_reason,
+    )
     rows: list[dict[str, Any]] = []
     for change_row in change_rows:
         classification = str(change_row.get("changeClassification", "unchanged"))

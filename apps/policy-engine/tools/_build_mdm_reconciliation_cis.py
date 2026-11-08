@@ -3,14 +3,15 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
+from _harvest_cis_benchmarks_modules.cis_benchmarks import BENCHMARKS
 from _harvest_cis_benchmarks_modules.cis_parser_core import (
     extract_pdf_text,
     parsed_benchmark_text,
 )
-from _harvest_cis_benchmarks_modules.cis_benchmarks import BENCHMARKS
 
 
 def cis_rows(

@@ -4,7 +4,10 @@ from __future__ import annotations
 from typing import Any
 
 from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_exact
-from _harvest_cis_benchmarks_modules.cis_mapping_ios_special import add_ios_special_mapping
+from _harvest_cis_benchmarks_modules.cis_mapping_ios_special import (
+    add_ios_special_mapping,
+)
+
 
 def add_ios_curated_mapping(
     acc: dict[str, list[dict[str, Any]] | list[str]],

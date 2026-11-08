@@ -1,26 +1,24 @@
 """Semantic Concepts helpers for recommendation mapping."""
 
 from typing import Any
-from .semantic_concept_catalog import SEMANTIC_CONCEPT_RULES
-from .field_matching_text import normalize_search_text
-from ._mapping_lexical_constants import unique_preserving_order
 
+from ._mapping_lexical_constants import unique_preserving_order
 from .candidate_inference_semantic_candidates import (
     semantic_candidate_targets_for,
 )
-
 from .candidate_inference_semantic_matching import (
     semantic_rule_matches,
 )
-
 from .candidate_inference_semantic_ranking import (
     semantic_concept_sort_key,
 )
-
 from .candidate_inference_semantic_sources import (
     is_process_only_evidence,
     normalized_semantic_sources,
 )
+from .field_matching_text import normalize_search_text
+from .semantic_concept_catalog import SEMANTIC_CONCEPT_RULES
+
 
 def semantic_concepts_for(
     platform: str, evidence_sources: list[dict[str, Any]]

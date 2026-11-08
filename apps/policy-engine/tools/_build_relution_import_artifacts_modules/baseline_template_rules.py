@@ -2,11 +2,14 @@
 
 from typing import Any
 
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 from _tooling_text_io import slugify
-from .mapping_exact_targets import mapping_with_target
+
 from .artifact_io_values import flatten_values
+from .mapping_exact_targets import mapping_with_target
 from .ruleset_bundle_helpers import inflate_values
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
 
 
 def consolidated_rule_from_entries(

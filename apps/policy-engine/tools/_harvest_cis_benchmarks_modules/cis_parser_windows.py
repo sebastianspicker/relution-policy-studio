@@ -3,9 +3,17 @@ from __future__ import annotations
 
 from typing import Any
 
+from _harvest_cis_benchmarks_modules.cis_parser_constants import (
+    WINDOWS_AUDITPOL_COMMAND_RE,
+    WINDOWS_GROUP_POLICY_PATH_RE,
+)
 from _harvest_cis_benchmarks_modules.cis_text_collections import unique_preserving_order
-from _harvest_cis_benchmarks_modules.cis_text_commands import build_helper_fallback, extract_excerpt, extract_powershell_commands
-from _harvest_cis_benchmarks_modules.cis_parser_constants import WINDOWS_AUDITPOL_COMMAND_RE, WINDOWS_GROUP_POLICY_PATH_RE
+from _harvest_cis_benchmarks_modules.cis_text_commands import (
+    build_helper_fallback,
+    extract_excerpt,
+    extract_powershell_commands,
+)
+
 
 def extract_windows_helper_fallbacks(
     recommendation_id: str, audit_text: str, remediation_text: str

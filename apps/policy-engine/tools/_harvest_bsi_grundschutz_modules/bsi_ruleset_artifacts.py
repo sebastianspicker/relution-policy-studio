@@ -1,6 +1,10 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
+import json
+from pathlib import Path
+from typing import Any
+
 from .bsi_platform_baselines import PLATFORM_TARGETS
 from .bsi_source_core import (
     BASELINE_PATH,
@@ -10,10 +14,6 @@ from .bsi_source_core import (
     README_PATH,
 )
 from .bsi_source_text import relative_repo_path
-
-import json
-from pathlib import Path
-from typing import Any
 
 
 def build_ruleset(recommendations: list[dict[str, Any]]) -> dict[str, Any]:

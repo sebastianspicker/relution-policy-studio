@@ -1,21 +1,28 @@
 """Cohesive implementation stage 9 for mapping_review_artifacts."""
 
 from typing import Any
-from .artifact_paths import PLATFORM_ORDER
-from .semantic_evidence_extraction import bilingual_tokens
-from .semantic_evidence_extraction import detect_mapping_language
-from .semantic_review_formatting import exact_mapping_match_evidence
-from .mapping_exact_targets import exact_mappings
+
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 from _recommendation_mapping_modules.field_matching_values import flatten_value_paths
-from .mapping_candidate_review_rows import mapping_candidate_review_row
-from .mapping_exact_targets import mapping_target
-from .artifact_io_values import normalize_policy_platform
-from .semantic_evidence_extraction import recommendation_semantic_concepts
-from .semantic_evidence_extraction import recommendation_source_text
-from .semantic_review_formatting import shorten_review_text
 from _tooling_text_io import slugify
-from .artifact_io_values import stable_json
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+
+from .artifact_io_values import normalize_policy_platform, stable_json
+from .artifact_paths import PLATFORM_ORDER
+from .mapping_candidate_review_rows import mapping_candidate_review_row
+from .mapping_exact_targets import exact_mappings, mapping_target
+from .semantic_evidence_extraction import (
+    bilingual_tokens,
+    detect_mapping_language,
+    recommendation_semantic_concepts,
+    recommendation_source_text,
+)
+from .semantic_review_formatting import (
+    exact_mapping_match_evidence,
+    shorten_review_text,
+)
+
 
 def build_exact_mapping_reference_rows(
     recommendations: dict[str, dict[str, Any]],

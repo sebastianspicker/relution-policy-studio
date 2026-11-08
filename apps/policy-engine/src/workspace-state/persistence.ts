@@ -62,6 +62,14 @@ export interface MutateWorkspaceStateOptions {
 }
 
 /** Thrown only after the live state is read while the workspace lock is held. */
+/** Another live process holds the workspace state lock; the request can be retried. */
+export class WorkspaceStateBusyError extends Error {
+  constructor(options?: ErrorOptions) {
+    super("Workspace state is busy; retry after the other editor finishes.", options);
+    this.name = "WorkspaceStateBusyError";
+  }
+}
+
 export class WorkspaceStateRevisionConflictError extends Error {
   readonly expectedRevision: string;
   readonly actualRevision: string;
@@ -83,6 +91,8 @@ export interface WorkspaceStateArchiveSnapshot {
   readonly validationWorkspace: Readonly<PolicyWorkspace>;
   /** The captured sidecar is retained for editor response metadata. */
   readonly sidecar: SidecarState;
+  /** Revision of the captured state, so a build records what it packed rather than a later state. */
+  readonly revision: string;
   /** Packs the exact frozen workspace representation used for validation. */
   pack<T>(build: (workspace: Readonly<PolicyWorkspace>) => T): T;
   dispose(): void;
@@ -118,6 +128,7 @@ export function captureWorkspaceStateArchiveSnapshot(workspaceDir: string): Work
     return {
       sidecar: state.sidecar.kind === "missing" ? state.sidecar : { kind: "file", contents: Buffer.from(state.sidecar.contents) },
       validationWorkspace: workspace,
+      revision: workspaceStateRevision(state),
       pack: (build) => build(workspace),
       dispose: () => undefined,
     };
@@ -455,10 +466,10 @@ function acquireWorkspaceStateLock(root: string, lock: string): LockOwner {
       writePrivateFileAtomic(join(lock, LOCK_OWNER_FILE), Buffer.from(`${JSON.stringify(owner)}\n`, "utf8"), { force: false, label: "Workspace state lock owner" });
       return owner;
     } catch (error) {
-      if (!hasErrorCode(error, "EEXIST") || !reclaimStaleWorkspaceStateLock(root, lock)) throw new Error("Workspace state is busy; retry after the other editor finishes.", { cause: error });
+      if (!hasErrorCode(error, "EEXIST") || !reclaimStaleWorkspaceStateLock(root, lock)) throw new WorkspaceStateBusyError({ cause: error });
     }
   }
-  throw new Error("Workspace state is busy; retry after the other editor finishes.");
+  throw new WorkspaceStateBusyError();
 }
 
 function reclaimStaleWorkspaceStateLock(root: string, lock: string): boolean {

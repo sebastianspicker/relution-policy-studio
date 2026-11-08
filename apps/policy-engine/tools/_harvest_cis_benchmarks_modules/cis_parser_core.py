@@ -5,21 +5,47 @@ import argparse
 import importlib
 import json
 import sys
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
-from _build_relution_import_artifacts_modules.orchestration import build_source_artifacts
-from _recommendation_mapping_modules.candidate_inference_apple_mobileconfig import load_apple_mobileconfig_evidence
-from _recommendation_mapping_modules.candidate_inference_index import build_setting_index
-from _recommendation_mapping_modules.field_matching_windows_csp import load_windows_custom_csp_evidence
+from _build_relution_import_artifacts_modules.orchestration import (
+    build_source_artifacts,
+)
 from _harvest_cis_benchmarks_modules.cis_benchmarks import BENCHMARKS
-from _harvest_cis_benchmarks_modules.cis_parser_constants import BASELINE_PATH, CATALOG_PATH, SOURCES_PATH, WINDOWS_REXP_EVIDENCE_PATH
-from _harvest_cis_benchmarks_modules.cis_parser_headings import detect_recommendation_starts
-from _harvest_cis_benchmarks_modules.cis_parser_pages import clean_page_lines, flatten_pages
-from _harvest_cis_benchmarks_modules.cis_parser_recommendations import benchmark_recommendation_entry, is_windows_helper_only_cis_recommendation
+from _harvest_cis_benchmarks_modules.cis_parser_constants import (
+    BASELINE_PATH,
+    CATALOG_PATH,
+    SOURCES_PATH,
+    WINDOWS_REXP_EVIDENCE_PATH,
+)
+from _harvest_cis_benchmarks_modules.cis_parser_headings import (
+    detect_recommendation_starts,
+)
+from _harvest_cis_benchmarks_modules.cis_parser_pages import (
+    clean_page_lines,
+    flatten_pages,
+)
+from _harvest_cis_benchmarks_modules.cis_parser_recommendations import (
+    benchmark_recommendation_entry,
+    is_windows_helper_only_cis_recommendation,
+)
 from _harvest_cis_benchmarks_modules.cis_parser_sections import parse_sections
-from _harvest_cis_benchmarks_modules.mapping_outputs import build_baseline_summary, update_readme
+from _harvest_cis_benchmarks_modules.mapping_outputs import (
+    build_baseline_summary,
+    update_readme,
+)
+from _recommendation_mapping_modules.candidate_inference_apple_mobileconfig import (
+    load_apple_mobileconfig_evidence,
+)
+from _recommendation_mapping_modules.candidate_inference_index import (
+    build_setting_index,
+)
+from _recommendation_mapping_modules.field_matching_windows_csp import (
+    load_windows_custom_csp_evidence,
+)
 from _tooling_text_io import write_json
+
 
 def main() -> None:
     """Generate CIS catalog, baseline summary, source artifacts, and README state."""

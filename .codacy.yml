@@ -1,0 +1,18 @@
+---
+# Codacy reads only this root file; apps/policy-engine/.codacy.yaml is ignored in the monorepo.
+exclude_paths:
+  - "pnpm-lock.yaml"
+  - "**/pnpm-lock.yaml"
+  - "**/node_modules/**"
+  - "**/dist/**"
+  - "**/dist-web/**"
+  - "**/coverage/**"
+  - "**/test-results/**"
+  - "**/.pytest_cache/**"
+  - "**/.ruff_cache/**"
+  - "apps/policy-engine/.codacy/generated/**"
+  - "apps/policy-engine/data/**/*.json"
+  - "apps/policy-engine/example/**/*.json"
+  - "apps/policy-engine/web/src/features/policy-workspace/types.ts"
+  - "apps/policy-engine/private/**"
+  - "apps/policy-engine/tests/**/*.test.ts"

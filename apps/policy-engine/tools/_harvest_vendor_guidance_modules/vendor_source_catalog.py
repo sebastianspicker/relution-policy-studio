@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Curated vendor guidance catalog and Windows-derived source paths."""
 
 from __future__ import annotations

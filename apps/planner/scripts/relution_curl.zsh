@@ -33,7 +33,7 @@ __campusweave_relution_curl_argument_has_token() {
 }
 
 __campusweave_relution_curl_has_positive_timeout() {
-  [[ "${1}" =~ '^[0-9]+([.][0-9]+)?$' && "${1}" != 0 && "${1}" != 0.0 ]]
+  [[ "${1}" =~ '^[0-9]+([.][0-9]+)?$' && "${1}" == *[1-9]* ]]
 }
 
 __campusweave_relution_curl_is_documented_method() {

@@ -41,21 +41,27 @@ export function Mapping({
         throw new Error('Create or link this policy workspace in the Workspaces tab under Policies first.');
       if (c.state.active_project_id !== project.id)
         throw new Error("The open policy workspace belongs to another project. Open one of this project's workspaces.");
+      const profileKey = JSON.stringify(project.profile);
       const compiled = await planner<Record<string, unknown>>('compile', {profile: project.profile});
       if (compiled.valid !== true)
         throw new Error('Resolve the planning diagnostics before saving a mapping. Nothing was saved.');
-      // One mapping per intent and setting: a new review replaces the earlier one instead of duplicating it.
+      // One mapping per setting: a new review by the same intent replaces the earlier one; another intent's is a conflict (as in SaveMap).
       const sameSetting = (m: CampusWeaveMapping) =>
-        m.intent_id === mapping.intent_id &&
         m.workspace_id === mapping.workspace_id &&
         m.policy_id === mapping.policy_id &&
         m.configuration_id === mapping.configuration_id &&
         m.field === mapping.field;
-      update(p => ({
-        ...p,
-        compiled_plan: compiled,
-        mappings: [...p.mappings.filter(m => !sameSetting(m)), mapping],
-      }));
+      let refused = '';
+      // update() runs the change synchronously on the live project, so `refused` is set before it is read.
+      update(p => {
+        if (JSON.stringify(p.profile) !== profileKey)
+          refused = 'The profile changed during compilation. Nothing was saved; save the mapping again.';
+        else if (p.mappings.some(m => sameSetting(m) && m.intent_id !== mapping.intent_id))
+          refused = `${field} is already owned by another intent. Remove or resolve that mapping before saving.`;
+        if (refused) return p;
+        return {...p, compiled_plan: compiled, mappings: [...p.mappings.filter(m => !sameSetting(m)), mapping]};
+      });
+      if (refused) throw new Error(refused);
       setError('');
       setReviewed(false);
     } catch (e) {

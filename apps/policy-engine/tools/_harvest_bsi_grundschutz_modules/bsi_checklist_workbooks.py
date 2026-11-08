@@ -1,17 +1,17 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
-from .bsi_platform_baselines import PLATFORM_TARGETS
-from .bsi_source_core import INDIVIDUAL_CHECKLISTS_DIR, XLSX_PATH
-from .bsi_source_text import normalize_space, relative_repo_path
-
 from pathlib import Path
 from typing import Any
 
-from .bsi_checklist_comparison import checklist_comparison_entry, build_policy_relevant_checklist_items
+from .bsi_checklist_comparison import (
+    build_policy_relevant_checklist_items,
+    checklist_comparison_entry,
+)
+from .bsi_platform_baselines import PLATFORM_TARGETS
+from .bsi_source_core import INDIVIDUAL_CHECKLISTS_DIR, XLSX_PATH
+from .bsi_source_text import normalize_space, relative_repo_path
 from .bsi_xlsx_rows import read_xlsx_rows
-
-
 
 
 def _checklist_metadata_and_header(

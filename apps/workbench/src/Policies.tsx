@@ -32,6 +32,7 @@ export function Policies({
   const configs = (Array.isArray(version?.configurations) ? version.configurations : []) as Record<string, unknown>[];
   const fresh = validated === c.state.revision && !c.isDirty && c.state.validation.ok;
   async function validate() {
+    setError('');
     try {
       const r = await request<{validation: {ok: boolean}}>('/api/workspace/validate', {workspace: c.state.workspace});
       if (r.validation.ok && !c.isDirty) setValidated(c.state.revision);

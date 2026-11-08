@@ -18,12 +18,6 @@ from .artifact_paths import (
     REPO_ROOT,
     SOURCE_CONFIGS,
 )
-from .assurance_schema_validation import (
-    MappingSchema,
-    audit_mapping,
-    json_pointer,
-    load_mapping_schemas,
-)
 from .assurance_recommendation_projection import (
     applicability_for,
     constraints_for,
@@ -42,13 +36,18 @@ from .assurance_recommendation_projection import (
     selectable_mapping_for,
     source_ids_for,
 )
+from .assurance_schema_validation import (
+    MappingSchema,
+    audit_mapping,
+    json_pointer,
+    load_mapping_schemas,
+)
 from .assurance_sources import (
     CHECKED_AT,
     build_source_provenance,
     canonical_digest,
     write_source_refresh_report,
 )
-
 
 ARTIFACT_VERSION = "1.0.0"
 DISPOSITIONS = ("supported", "parameter", "candidate", "organizational", "unsupported")

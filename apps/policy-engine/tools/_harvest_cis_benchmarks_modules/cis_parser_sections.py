@@ -4,7 +4,12 @@ from __future__ import annotations
 from typing import Any
 
 from _harvest_cis_benchmarks_modules.cis_parser_constants import SECTION_ALIASES
-from _harvest_cis_benchmarks_modules.cis_parser_section_text import join_section_text, parse_profile_lines, parse_references
+from _harvest_cis_benchmarks_modules.cis_parser_section_text import (
+    join_section_text,
+    parse_profile_lines,
+    parse_references,
+)
+
 
 def parse_sections(block_lines: list[str]) -> dict[str, Any]:
     """Split a recommendation block into normalized CIS section fields."""

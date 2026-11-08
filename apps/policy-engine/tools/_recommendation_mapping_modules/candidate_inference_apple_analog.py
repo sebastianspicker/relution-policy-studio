@@ -1,19 +1,22 @@
 """Apple Analog helpers for recommendation mapping."""
 
-from ._apple_analog_constants import APPLE_ANALOG_RULES
 from typing import Any
-from ._mapping_models import AppleAnalogRule
-from .field_matching_text import flatten_leaf_items
-from .field_matching_text import matched_rule_terms
-from .field_matching_apple_mapping import merge_apple_schema_mappings
-from .field_matching_text import normalize_search_text
-from .field_matching_text import phrase_groups_match
-from .field_matching_text import stable_match_value
-from .field_matching_text import values_from_pairs
 
+from ._apple_analog_constants import APPLE_ANALOG_RULES
+from ._mapping_models import AppleAnalogRule
 from .candidate_inference_apple_numeric import (
     apple_numeric_analog_mappings_for,
 )
+from .field_matching_apple_mapping import merge_apple_schema_mappings
+from .field_matching_text import (
+    flatten_leaf_items,
+    matched_rule_terms,
+    normalize_search_text,
+    phrase_groups_match,
+    stable_match_value,
+    values_from_pairs,
+)
+
 
 def apple_schema_analog_mappings_for(
     platform: str,

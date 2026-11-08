@@ -1,17 +1,18 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
-from .bsi_plusplus_platform_context import GS_PLUSPLUS_METHOD_CONTEXT
-from .bsi_source_collections import count_values, natural_control_sort_key
-from .bsi_source_text import relative_repo_path
-
 import json
 from pathlib import Path
 from typing import Any
 
-from .bsi_plusplus_controls import parse_plusplus_control, policy_relevant_plusplus_control_ids
+from .bsi_plusplus_controls import (
+    parse_plusplus_control,
+    policy_relevant_plusplus_control_ids,
+)
+from .bsi_plusplus_platform_context import GS_PLUSPLUS_METHOD_CONTEXT
 from .bsi_plusplus_practices import parse_plusplus_practice_groups
-
+from .bsi_source_collections import count_values, natural_control_sort_key
+from .bsi_source_text import relative_repo_path
 
 
 def parse_grundschutz_plusplus_catalog(path: Path) -> dict[str, Any]:

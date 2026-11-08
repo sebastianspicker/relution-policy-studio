@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def semantic_review_analysis(
     current_status: str,
     extracted_intent: dict[str, Any],

@@ -170,6 +170,13 @@ def _write(response: Mapping[str, Any]) -> None:
 
 def main() -> int:
     """Read one request through EOF, dispatch it, and emit one response."""
+    try:
+        return _respond()
+    except BrokenPipeError:
+        return 1  # the host closed stdout; nobody is left to answer
+
+
+def _respond() -> int:
     request_id: str | None = None
     try:
         request_id, command, payload = _validate_envelope(_read_request())
@@ -177,6 +184,15 @@ def main() -> int:
         return 0
     except RequestError as exc:
         _write(_failure(exc))
+        return 2
+    except RecursionError:
+        error = RequestError(
+            "invalid_request",
+            "request is nested too deeply",
+            _detail("$.payload", "reduce the nesting depth of the profile"),
+            request_id=request_id,
+        )
+        _write(_failure(error))
         return 2
     except Exception:
         traceback.print_exc(file=sys.stderr)

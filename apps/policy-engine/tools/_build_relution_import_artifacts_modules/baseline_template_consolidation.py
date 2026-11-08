@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from .artifact_io_values import stable_json
+from .artifact_io_values import flatten_values, stable_json
 from .baseline_template_constants import (
     MULTI_INSTANCE_CONSOLIDATED_TARGETS,
     SOURCE_PRECEDENCE,
@@ -12,10 +12,9 @@ from .baseline_template_support import actionable_entry_sort_key
 from .baseline_template_suppressions import (
     suppress_import_conflicting_entries,
     suppress_non_importable_entries,
+    suppressed_conflict_rule,
 )
 from .mapping_exact_targets import mapping_target
-from .artifact_io_values import flatten_values
-from .baseline_template_suppressions import suppressed_conflict_rule
 
 
 def consolidate_actionable_entries(

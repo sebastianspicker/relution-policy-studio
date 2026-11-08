@@ -1,13 +1,17 @@
 """Apple Mobileconfig helpers for recommendation mapping."""
 
+from pathlib import Path
+from typing import Any
+
 from ._apple_analog_constants import APPLE_MOBILECONFIG_CANDIDATE_RULES
 from ._mapping_paths import APPLE_MOBILECONFIG_EVIDENCE_PATH
-from typing import Any
-from pathlib import Path
-from .field_matching_text import matched_rule_terms
-from .field_matching_text import normalize_search_text
-from .field_matching_text import phrase_groups_match
 from .field_matching_io import read_json
+from .field_matching_text import (
+    matched_rule_terms,
+    normalize_search_text,
+    phrase_groups_match,
+)
+
 
 def apple_mobileconfig_candidates_for(
     platform: str,

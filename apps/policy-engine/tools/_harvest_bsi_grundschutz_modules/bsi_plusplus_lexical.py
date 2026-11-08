@@ -1,10 +1,11 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
+from typing import Any
+
 from .bsi_source_collections import natural_control_sort_key
 from .bsi_source_text import token_set
 
-from typing import Any
 
 def lexical_plusplus_controls(
     text: str, controls_by_id: dict[str, dict[str, Any]]

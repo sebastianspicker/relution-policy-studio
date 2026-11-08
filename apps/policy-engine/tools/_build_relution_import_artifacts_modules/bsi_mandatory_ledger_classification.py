@@ -1,8 +1,10 @@
 """Cohesive implementation stage 2 for bsi_mandatory_ledger."""
 
-from typing import Any
-from .bsi_mandatory_ledger_constants import MANDATORY_MODAL_RE
 import re
+from typing import Any
+
+from .bsi_mandatory_ledger_constants import MANDATORY_MODAL_RE
+
 
 def bsi_solution_status(mapping: dict[str, Any], implementation: dict[str, Any]) -> str:
     """Classify the strongest available Relution solution for a BSI mapping."""

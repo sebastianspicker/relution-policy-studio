@@ -1,12 +1,13 @@
 """Text helpers for recommendation mapping."""
 
-from typing import Any
 import json
 import re
+from typing import Any
 
 from .field_matching_values import (
     value_at_path,
 )
+
 
 def normalize_search_text(value: str) -> str:
     """Normalize bilingual free text for phrase containment checks."""

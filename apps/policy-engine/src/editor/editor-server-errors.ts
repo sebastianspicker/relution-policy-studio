@@ -6,7 +6,7 @@ import { HttpError } from "./editor-http-error.js";
 import { isEditorMutationCancellation } from "./editor-mutation-routing.js";
 import { sendJson } from "./editor-routes-utils.js";
 import { WorkspaceInputError } from "../workspace/input-values.js";
-import { WorkspaceStateRevisionConflictError } from "../workspace-state/editor-port.js";
+import { WorkspaceStateBusyError, WorkspaceStateRevisionConflictError } from "../workspace-state/editor-port.js";
 import {
   CampusWeaveCapacityError,
   CampusWeaveInputError,
@@ -39,6 +39,9 @@ export function describeEditorServerError(error: unknown): EditorServerErrorDesc
   }
   if (error instanceof WorkspaceStateRevisionConflictError) {
     return { status: 409, message: error.message };
+  }
+  if (error instanceof WorkspaceStateBusyError) {
+    return { status: 503, message: error.message };
   }
   if (error instanceof CampusWeaveRevisionConflictError) {
     return { status: 409, message: error.message };

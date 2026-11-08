@@ -1,8 +1,6 @@
 """Semantic concept rules for governance, data flow, and platform hardening."""
 
-from ._mapping_models import SemanticConceptRule
-from ._mapping_models import semantic_target
-
+from ._mapping_models import SemanticConceptRule, semantic_target
 
 SEMANTIC_CONCEPT_RULES_DEVICE_LIFECYCLE: tuple[SemanticConceptRule, ...] = (
     SemanticConceptRule(

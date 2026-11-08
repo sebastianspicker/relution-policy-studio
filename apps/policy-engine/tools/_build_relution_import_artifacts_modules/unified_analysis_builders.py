@@ -1,21 +1,25 @@
 """Cohesive implementation stage 1 for unified_analysis."""
 
-from .artifact_paths import AUTHORITATIVE_SOURCE
-from typing import Any
-from .artifact_paths import SEMANTIC_INDEX_PATH
-from .artifact_paths import UNIFIED_ANALYSIS_PATH
-from .artifact_paths import UNIFIED_ANALYSIS_REPORT_PATH
-from .ruleset_reporting import count_by
-from datetime import datetime
-from .ruleset_reporting import difference_severity_rank
-from .recommendation_catalog import load_recommendations_by_global_id
-from .artifact_io_json import read_json
-from .ruleset_reporting import source_coverage_counts
-from .ruleset_reporting import source_recommendation_counts
-from .artifact_io_values import stable_json
 import sys
-from datetime import timezone
-from .artifact_io_json import write_json
+from datetime import datetime, timezone
+from typing import Any
+
+from .artifact_io_json import read_json, write_json
+from .artifact_io_values import stable_json
+from .artifact_paths import (
+    AUTHORITATIVE_SOURCE,
+    SEMANTIC_INDEX_PATH,
+    UNIFIED_ANALYSIS_PATH,
+    UNIFIED_ANALYSIS_REPORT_PATH,
+)
+from .recommendation_catalog import load_recommendations_by_global_id
+from .ruleset_reporting import (
+    count_by,
+    difference_severity_rank,
+    source_coverage_counts,
+    source_recommendation_counts,
+)
+
 
 def build_unified_recommendation_analysis() -> None:
     """Build the BSI-authoritative cross-source semantic analysis artifacts."""

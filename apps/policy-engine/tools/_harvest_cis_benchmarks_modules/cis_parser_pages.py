@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space
 
+
 def clean_page_lines(page: str) -> list[str]:
     """Remove PDF boilerplate lines while preserving section paragraph gaps."""
     cleaned: list[str] = []

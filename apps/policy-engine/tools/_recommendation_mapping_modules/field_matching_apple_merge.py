@@ -1,7 +1,9 @@
 """Apple Merge helpers for recommendation mapping."""
 
 from typing import Any
+
 from ._mapping_lexical_constants import unique_preserving_order
+
 
 def merge_without_conflict(left: Any, right: Any) -> dict[str, Any] | None:
     """Merge nested dictionaries, returning None when a leaf value conflicts."""

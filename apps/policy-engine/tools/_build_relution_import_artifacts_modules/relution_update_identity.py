@@ -1,7 +1,11 @@
 """Cohesive implementation stage 5 for relution_mapping_updates."""
 
 from typing import Any
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
+
 
 def exact_mapping_identity(mapping: dict[str, Any]) -> tuple[str, str, tuple[str, ...]]:
     """Return the target identity used to compare exact mapping value drift."""

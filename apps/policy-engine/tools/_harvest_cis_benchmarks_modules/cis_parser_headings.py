@@ -3,8 +3,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space
 from _harvest_cis_benchmarks_modules.cis_parser_constants import HEADING_ID_RE
+from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space
+
 
 def detect_recommendation_starts(
     pages: list[list[str]], page_starts: list[int]

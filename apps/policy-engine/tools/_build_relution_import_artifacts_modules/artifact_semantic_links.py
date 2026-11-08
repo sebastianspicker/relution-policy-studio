@@ -3,15 +3,19 @@
 from pathlib import Path
 from typing import Any
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 
-from .artifact_io_values import normalize_policy_platform
 from .artifact_io_json import read_json
-from .ruleset_semantic_links import add_recommendation_target_link
-from .ruleset_semantic_targets import candidate_target_specs
+from .artifact_io_values import normalize_policy_platform
 from .ruleset_semantic_core import ensure_semantic_concept
-from .ruleset_semantic_links import exact_target_specs
-from .ruleset_semantic_links import target_link_concept_ids
+from .ruleset_semantic_links import (
+    add_recommendation_target_link,
+    exact_target_specs,
+    target_link_concept_ids,
+)
+from .ruleset_semantic_targets import candidate_target_specs
 
 
 def add_catalog_semantic_links(source: str, catalog_path: Path, state: dict[str, Any]) -> None:

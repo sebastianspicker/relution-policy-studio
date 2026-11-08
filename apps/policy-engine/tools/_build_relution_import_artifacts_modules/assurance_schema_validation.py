@@ -10,7 +10,6 @@ from .artifact_io_values import flatten_values
 from .artifact_paths import APPLE_SCHEMA_CATALOG_PATH, RELUTION_SCHEMA_BUNDLE_PATH
 from .mapping_exact_targets import mapping_target
 
-
 SUPPORTED_MAPPING_FAMILIES = {
     "relution-native",
     "apple-schema-profile",

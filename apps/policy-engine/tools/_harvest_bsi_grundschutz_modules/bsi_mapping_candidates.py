@@ -3,7 +3,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules._semantic_matching_metadata import MANAGEMENT_SUPPORT_CONCEPT_IDS
+from _recommendation_mapping_modules._semantic_matching_metadata import (
+    MANAGEMENT_SUPPORT_CONCEPT_IDS,
+)
+
 
 def merge_candidates(
     existing: list[dict[str, Any]], inferred: list[dict[str, Any]]

@@ -1,7 +1,8 @@
 """Cohesive implementation stage 8 for semantic_review_candidates."""
 
-from typing import Any
 import re
+from typing import Any
+
 
 def exact_mapping_match_evidence(mapping: dict[str, Any]) -> dict[str, Any]:
     """Normalize exact mapping evidence for generated review artifacts."""

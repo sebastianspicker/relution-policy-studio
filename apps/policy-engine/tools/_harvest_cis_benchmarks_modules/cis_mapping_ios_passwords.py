@@ -6,6 +6,7 @@ from typing import Any
 
 from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_exact
 
+
 def phrase_value_matches(
     normalized_title: str, recommended_value: str | None, phrase_value: tuple[str, str]
 ) -> bool:

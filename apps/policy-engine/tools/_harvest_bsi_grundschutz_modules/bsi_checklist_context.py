@@ -1,10 +1,11 @@
 """Supports BSI Grundschutz harvesting and recommendation-mapping workflows."""
 from __future__ import annotations
 
-from .bsi_source_text import normalize_space, shorten
-from .bsi_plusplus_context import matching_plusplus_rules
-
 from typing import Any
+
+from .bsi_plusplus_context import matching_plusplus_rules
+from .bsi_source_text import normalize_space, shorten
+
 
 def checklist_context_for(
     module_id: str,

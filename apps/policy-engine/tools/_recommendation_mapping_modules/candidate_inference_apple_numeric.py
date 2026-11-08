@@ -1,13 +1,13 @@
 """Apple Numeric helpers for recommendation mapping."""
 
-from ._apple_analog_constants import APPLE_PASSCODE
 from typing import Any
-from .field_matching_apple_mapping import apple_schema_mapping
-from .field_matching_text import first_int
 
+from ._apple_analog_constants import APPLE_PASSCODE
 from .candidate_inference_apple_numeric_macos import (
     macos_numeric_analog_mappings,
 )
+from .field_matching_apple_mapping import apple_schema_mapping
+from .field_matching_text import first_int
 
 
 def apple_numeric_analog_mappings_for(

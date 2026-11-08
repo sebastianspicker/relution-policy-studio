@@ -4,14 +4,26 @@ from __future__ import annotations
 import sys
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_semantic_candidates import semantic_candidates_for
-from _recommendation_mapping_modules.candidate_inference_semantic_concepts import semantic_concepts_for
-from _recommendation_mapping_modules.candidate_inference_semantic_output import semantic_evidence_source_records, semantic_metadata_for
-from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space
-from _tooling_text_io import slugify
-from _harvest_cis_benchmarks_modules.cis_parser_fallbacks import extract_helper_fallbacks
-from _harvest_cis_benchmarks_modules.cis_parser_section_text import infer_recommended_value
 from _harvest_cis_benchmarks_modules.cis_mapping_core import mapping_for
+from _harvest_cis_benchmarks_modules.cis_parser_fallbacks import (
+    extract_helper_fallbacks,
+)
+from _harvest_cis_benchmarks_modules.cis_parser_section_text import (
+    infer_recommended_value,
+)
+from _harvest_cis_benchmarks_modules.cis_text_collections import normalize_space
+from _recommendation_mapping_modules.candidate_inference_semantic_candidates import (
+    semantic_candidates_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_concepts import (
+    semantic_concepts_for,
+)
+from _recommendation_mapping_modules.candidate_inference_semantic_output import (
+    semantic_evidence_source_records,
+    semantic_metadata_for,
+)
+from _tooling_text_io import slugify
+
 
 def benchmark_recommendation_entry(context: dict[str, Any]) -> dict[str, Any]:
     """Build one CIS recommendation with fallback translations and mappings."""

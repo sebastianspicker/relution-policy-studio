@@ -4,7 +4,7 @@ import { HttpError } from "../editor-http-error.js";
 import type { EditorRequestContext } from "../editor-server-contract.js";
 
 /** Sent by the browser client: the active workspace id the tab adopted, or "scratch". Absent for legacy clients. */
-export const EXPECTED_WORKSPACE_HEADER = "x-rexp-studio-workspace";
+const EXPECTED_WORKSPACE_HEADER = "x-rexp-studio-workspace";
 const SCRATCH_WORKSPACE = "scratch";
 
 /** Routes that select or repair the active workspace, or do not touch it. */

@@ -1,9 +1,13 @@
 """Windows Text helpers for recommendation mapping."""
 
-from typing import Any
-from ._mapping_lexical_constants import WINDOWS_POLICY_SIGNATURE_STOP_WORDS
-from ._mapping_lexical_constants import WINDOWS_POLICY_SIGNATURE_SYNONYMS
 import re
+from typing import Any
+
+from ._mapping_lexical_constants import (
+    WINDOWS_POLICY_SIGNATURE_STOP_WORDS,
+    WINDOWS_POLICY_SIGNATURE_SYNONYMS,
+)
+
 
 def windows_policy_signature(value: str) -> frozenset[str]:
     """Build a stable token signature for Windows policy name matching."""

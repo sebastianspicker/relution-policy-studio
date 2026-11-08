@@ -4,8 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 from _tooling_text_io import slugify
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
 
 
 def semantic_target_id(

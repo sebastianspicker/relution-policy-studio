@@ -1,7 +1,9 @@
 """Cohesive implementation stage 4 for manual_mapping_promotions."""
 
 from typing import Any
+
 from .mapping_exact_targets import mapping_with_target
+
 
 def manual_promotion_ruleset_mapping(entry: dict[str, Any]) -> dict[str, Any] | None:
     """Convert one validated manual promotion entry to a ruleset mapping."""

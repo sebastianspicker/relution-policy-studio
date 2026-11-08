@@ -1,8 +1,10 @@
 """Cohesive implementation stage 6 for mapping_review_artifacts."""
 
 from typing import Any
-from .artifact_paths import PLATFORM_ORDER
+
 from .artifact_io_values import normalize_policy_platform
+from .artifact_paths import PLATFORM_ORDER
+
 
 def build_ruleset_update_plan_rows(
     source_rows: list[dict[str, Any]],
@@ -52,7 +54,11 @@ def build_ruleset_update_plan_rows(
 
 def ruleset_update_plan_row(context: dict[str, Any]) -> dict[str, Any]:
     """Render one machine-readable ruleset update-plan row."""
-    from .mapping_update_confidence import required_action_for_confidence_tier, update_confidence_tier, update_plan_reason
+    from .mapping_update_confidence import (
+        required_action_for_confidence_tier,
+        update_confidence_tier,
+        update_plan_reason,
+    )
 
     source_row = context["source_row"]
     recommendation = context["recommendation"]

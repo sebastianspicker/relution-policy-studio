@@ -4,7 +4,9 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 
 from .bsi_source_text import normalize_space
 

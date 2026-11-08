@@ -4,10 +4,12 @@ from __future__ import annotations
 
 from typing import Any
 
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 from _recommendation_mapping_modules.field_matching_values import flatten_value_paths
 
 from .artifact_io_semantics import semantic_concept_ids_for_target_spec
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
 from .mapping_exact_targets import exact_mappings, mapping_target
 from .ruleset_semantic_core import (
     append_unique,

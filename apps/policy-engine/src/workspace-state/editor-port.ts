@@ -14,7 +14,7 @@ import {
   workspaceStateRevision,
   type WorkspaceState,
 } from "./persistence.js";
-export { WorkspaceStateRevisionConflictError } from "./persistence.js";
+export { WorkspaceStateBusyError, WorkspaceStateRevisionConflictError } from "./persistence.js";
 
 /** The editor supplies only state ownership inputs; this module never depends on HTTP context. */
 export interface EditorWorkspaceStateInput {
@@ -60,6 +60,7 @@ export function captureEditorArchiveSnapshot<T>(
 ): {
   readonly validationWorkspace: Readonly<WorkspaceState["workspace"]>;
   readonly sidecar: Readonly<EditorSidecarState>;
+  readonly revision: string;
   buildVerifiedArchive(key: string): T;
   dispose(): void;
 } {
@@ -68,6 +69,7 @@ export function captureEditorArchiveSnapshot<T>(
   return {
     validationWorkspace: snapshot.validationWorkspace,
     sidecar,
+    revision: snapshot.revision,
     buildVerifiedArchive: (key) => snapshot.pack((workspace) => buildArchive(key, workspace)),
     dispose: snapshot.dispose,
   };

@@ -1,7 +1,7 @@
 """Labels helpers for recommendation mapping."""
 
-from ._mapping_lexical_constants import EXACT_IGNORABLE_TOKENS
-from ._mapping_lexical_constants import LOW_SIGNAL_TOKENS
+from ._mapping_lexical_constants import EXACT_IGNORABLE_TOKENS, LOW_SIGNAL_TOKENS
+
 
 def is_exact_label_match(
     setting_tokens: set[str], label_tokens: frozenset[str]

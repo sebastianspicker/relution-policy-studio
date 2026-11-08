@@ -1,16 +1,16 @@
 """Index helpers for recommendation mapping."""
 
-from ._mapping_paths import APPLE_SCHEMA_CATALOG_PATH
-from typing import Any
-from ._mapping_models import FieldEntry
 from pathlib import Path
-from ._mapping_paths import TEMPLATE_BUNDLE_PATH
+from typing import Any
+
+from ._mapping_models import FieldEntry
+from ._mapping_paths import APPLE_SCHEMA_CATALOG_PATH, TEMPLATE_BUNDLE_PATH
 from .field_matching_apple_catalog import apple_schema_fields
-from .field_matching_candidates import candidate_from_score
-from .field_matching_candidates import candidate_key
-from .field_matching_values import flatten_value_paths
+from .field_matching_candidates import candidate_from_score, candidate_key
 from .field_matching_relution_catalog import relution_fields
 from .field_matching_scoring import score_fields
+from .field_matching_values import flatten_value_paths
+
 
 def build_setting_index(
     template_bundle_path: Path = TEMPLATE_BUNDLE_PATH,

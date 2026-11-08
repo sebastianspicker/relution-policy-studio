@@ -1,7 +1,9 @@
 """Cohesive implementation stage 6 for semantic_review_candidates."""
 
 from typing import Any
+
 from _recommendation_mapping_modules.field_matching_tokens import tokenize
+
 
 def recommendation_source_text(source: str, recommendation: dict[str, Any]) -> str:
     """Extract source-specific text fields used for semantic tokenization."""

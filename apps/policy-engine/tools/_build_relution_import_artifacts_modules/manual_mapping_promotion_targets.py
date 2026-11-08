@@ -1,10 +1,13 @@
 """Cohesive implementation stage 5 for manual_mapping_promotions."""
 
 from typing import Any
-from .artifact_paths import REPO_ROOT
+
 from _recommendation_mapping_modules.field_matching_values import flatten_value_paths
-from .mapping_exact_targets import mapping_target
+
 from .artifact_io_json import read_json
+from .artifact_paths import REPO_ROOT
+from .mapping_exact_targets import mapping_target
+
 
 def manual_promotion_target_is_valid(
     platform: str, mapping: dict[str, Any], field_index: dict[str, list[Any]]

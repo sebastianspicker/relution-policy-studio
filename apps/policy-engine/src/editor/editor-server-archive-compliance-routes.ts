@@ -7,7 +7,7 @@ import {
 } from "../application/editor-archive-compliance.js";
 import { loadComplianceArtifacts } from "../assurance/compliance-artifacts.js";
 import { sendJson } from "./editor-routes-utils.js";
-import { captureEditorArchiveSnapshot, loadEditorWorkspaceState, mutateEditorWorkspaceState } from "../workspace-state/editor-port.js";
+import { captureEditorArchiveSnapshot, loadEditorWorkspaceState, mutateEditorWorkspaceState, WorkspaceStateBusyError, WorkspaceStateRevisionConflictError } from "../workspace-state/editor-port.js";
 import type { EditorSidecarState } from "../workspace-state/sidecar-types.js";
 import { buildVerifiedEditorArchive } from "./editor-build-publish.js";
 import { validateWorkspaceState } from "../application/editor-workspace-state.js";
@@ -85,14 +85,23 @@ async function handleArchiveImportRequest(
   const expectedRevision = parseExpectedRevisionBody(body);
   const importKey = optionalString(body, "key") ?? runtimeState.key;
   if (importKey.length === 0) throw badRequest("Import requires an archive passphrase");
-  const result = importEditorArchive({
-    archive: Buffer.from(requireString(body, "dataBase64"), "base64"),
-    key: importKey,
-    workspaceDir: editorWorkspacePath(context),
-    bundle: context.bundle,
-    appleSchemaRevision: context.appleSchema.source.revision,
-    expectedRevision,
-  });
+  const archive = Buffer.from(requireString(body, "dataBase64"), "base64");
+  let result: ReturnType<typeof importEditorArchive>;
+  try {
+    result = importEditorArchive({
+      archive,
+      key: importKey,
+      workspaceDir: editorWorkspacePath(context),
+      bundle: context.bundle,
+      appleSchemaRevision: context.appleSchema.source.revision,
+      expectedRevision,
+    });
+  } catch (error) {
+    // Conflicts, a busy lock and file-system failures keep their own status; anything else is the archive's fault.
+    if (error instanceof HttpError || error instanceof WorkspaceStateRevisionConflictError
+      || error instanceof WorkspaceStateBusyError || (error instanceof Error && "syscall" in error)) throw error;
+    throw badRequest("The archive could not be imported. Check the passphrase and that the file is an unmodified .rexp export.");
+  }
   runtimeState.key = result.key;
   runtimeState.keyValidation = { keySet: true, validated: true };
   sendJson(response, 200, { ...result, keySet: true });
@@ -110,14 +119,19 @@ function handleArchiveBuildRequest(response: ServerResponse, context: EditorRequ
     return;
   }
   let result: ReturnType<typeof buildVerifiedArchive<EditorSidecarState>>;
+  let packedRevision: string | undefined;
   try {
     result = buildVerifiedArchive(runtimeState.key, {
       bundle: context.bundle,
       archive: {
-        captureSnapshot: () => captureEditorArchiveSnapshot(
-          editorWorkspaceStateInput(context),
-          (key, workspace) => buildVerifiedEditorArchive({ workspace, output: context.options.out, key }),
-        ),
+        captureSnapshot: () => {
+          const snapshot = captureEditorArchiveSnapshot(
+            editorWorkspaceStateInput(context),
+            (key, workspace) => buildVerifiedEditorArchive({ workspace, output: context.options.out, key }),
+          );
+          packedRevision = snapshot.revision;
+          return snapshot;
+        },
       },
     });
   } catch (error) {
@@ -135,7 +149,7 @@ function handleArchiveBuildRequest(response: ServerResponse, context: EditorRequ
   }
   runtimeState.keyValidation = { keySet: true, validated: true };
   const artifactDigest = createHash("sha256").update(readOutputFileNoFollow(context.options.out)).digest("hex");
-  const currentRevision = loadEditorWorkspaceState(editorWorkspaceStateInput(context)).revision;
+  const currentRevision = packedRevision ?? loadEditorWorkspaceState(editorWorkspaceStateInput(context)).revision;
   const assuranceDigest = campusWeaveAssuranceDigest(context);
   if (runtimeState.campusweave?.activeWorkspaceId !== undefined) {
     runtimeState.campusweave.store.recordArtifact({

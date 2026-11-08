@@ -1,7 +1,9 @@
 """Cohesive implementation stage 6 for unified_analysis."""
 
-from .artifact_paths import AUTHORITATIVE_SOURCE
 from typing import Any
+
+from .artifact_paths import AUTHORITATIVE_SOURCE
+
 
 def exact_value_difference_entry(
     platform: str,

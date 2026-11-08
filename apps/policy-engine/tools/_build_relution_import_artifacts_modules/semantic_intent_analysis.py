@@ -1,7 +1,9 @@
 """Cohesive implementation stage 7 for semantic_review_candidates."""
 
 from typing import Any
+
 from .mapping_exact_targets import exact_mappings
+
 
 def extracted_mapping_intent(
     source: str, recommendation: dict[str, Any], source_text: str

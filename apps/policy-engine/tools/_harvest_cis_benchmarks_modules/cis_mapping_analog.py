@@ -3,9 +3,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from _recommendation_mapping_modules.candidate_inference_apple_analog import apple_schema_analog_mappings_for
 from _harvest_cis_benchmarks_modules.cis_benchmarks import BenchmarkSpec
 from _harvest_cis_benchmarks_modules.cis_mapping_accumulator import add_mapping
+from _recommendation_mapping_modules.candidate_inference_apple_analog import (
+    apple_schema_analog_mappings_for,
+)
+
 
 def add_analog_mappings(
     acc: dict[str, list[dict[str, Any]] | list[str]],

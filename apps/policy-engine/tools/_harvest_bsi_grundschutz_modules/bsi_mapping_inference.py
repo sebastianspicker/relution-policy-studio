@@ -15,6 +15,7 @@ from _recommendation_mapping_modules.candidate_inference_apple_mobileconfig impo
 )
 from _recommendation_mapping_modules.candidate_inference_index import mapping_candidates
 
+
 def bsi_inferred_mapping_parts(
     platform: str,
     requirement: dict[str, Any],

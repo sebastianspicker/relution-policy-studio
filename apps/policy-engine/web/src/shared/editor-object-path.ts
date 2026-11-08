@@ -33,18 +33,6 @@ export function setPath(record: JsonRecord, path: string, value: unknown): void 
   cursor[last] = value;
 }
 
-export function deletePath(record: JsonRecord, path: string): void {
-  const segments = safePathSegments(path);
-  if (segments === undefined) {
-    return;
-  }
-  const last = segments.pop();
-  if (last === undefined) {
-    return;
-  }
-  delete parentRecord(record, segments, false)?.[last];
-}
-
 function parentRecord(record: JsonRecord, segments: string[], create: boolean): JsonRecord | undefined {
   let cursor = record;
   for (const segment of segments) {

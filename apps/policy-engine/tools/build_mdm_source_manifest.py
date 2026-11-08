@@ -10,7 +10,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CACHE_ROOT = REPO_ROOT / "private" / "source-pdfs-cache"
 OUTPUT = REPO_ROOT / "mdm" / "evidence" / "source-manifest.json"

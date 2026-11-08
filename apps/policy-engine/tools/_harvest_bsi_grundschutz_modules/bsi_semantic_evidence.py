@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from typing import Any
 
+
 def semantic_evidence_sources_for(
     requirement: dict[str, Any],
     checklist_context: dict[str, Any],

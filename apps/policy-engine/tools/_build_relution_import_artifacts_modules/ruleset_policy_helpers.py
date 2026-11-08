@@ -4,10 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from .artifact_io_rules import build_aggregate_rule
-from .artifact_io_rules import build_informational_rule
-from .artifact_io_rule_text import policy_description
-from .artifact_io_rule_text import policy_name
+from .artifact_io_rule_text import policy_description, policy_name
+from .artifact_io_rules import build_aggregate_rule, build_informational_rule
 from .artifact_paths import SourceConfig
 
 

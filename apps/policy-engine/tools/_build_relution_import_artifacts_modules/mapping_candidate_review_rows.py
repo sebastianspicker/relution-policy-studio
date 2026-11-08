@@ -2,19 +2,24 @@
 
 from typing import Any
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 
 from .artifact_io_values import normalize_policy_platform
-from .semantic_evidence_extraction import bilingual_tokens
-from .semantic_evidence_extraction import detect_mapping_language
-from .semantic_intent_analysis import extracted_mapping_intent
-from .semantic_reference_matching import nearest_exact_references
-from .semantic_reference_matching import PreparedExactReference
 from .semantic_candidate_ranking import ranked_review_candidates
-from .semantic_evidence_extraction import recommendation_semantic_concepts
-from .semantic_evidence_extraction import recommendation_source_text
+from .semantic_evidence_extraction import (
+    bilingual_tokens,
+    detect_mapping_language,
+    recommendation_semantic_concepts,
+    recommendation_source_text,
+)
+from .semantic_intent_analysis import extracted_mapping_intent, suggested_review_action
+from .semantic_reference_matching import (
+    PreparedExactReference,
+    nearest_exact_references,
+)
 from .semantic_review_analysis import semantic_review_analysis
-from .semantic_intent_analysis import suggested_review_action
 
 
 def mapping_candidate_review_row(

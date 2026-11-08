@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def candidate_semantic_concept_id(spec: dict[str, Any], semantic_ids: list[str]) -> str:
     """Resolve an explicit or marker-derived semantic concept id for a candidate."""
     explicit = str(spec.get("semanticConceptId", ""))

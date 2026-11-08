@@ -4,28 +4,31 @@ from __future__ import annotations
 
 import argparse
 
-from .artifact_io_json import read_json
-from .artifact_io_settings import update_baseline_summary
-from .artifact_io_settings import update_readme
-from .artifact_io_json import write_json
-from .artifact_io_settings import write_settings_files
+from .artifact_coverage import build_coverage_matrix
+from .artifact_io_json import read_json, write_json
+from .artifact_io_settings import (
+    update_baseline_summary,
+    update_readme,
+    write_settings_files,
+)
 from .artifact_paths import (
     SOURCE_CONFIGS,
 )
-from .artifact_coverage import build_coverage_matrix
 from .artifact_semantic_index import build_semantic_index
-from .unified_analysis_builders import build_unified_recommendation_analysis
-from .recommendation_normalizer import normalize_recommendations
+from .assurance_artifacts import build_assurance_artifacts
 from .baseline_template_writer import write_baseline_templates
 from .bsi_mandatory_ledger_reporting import write_bsi_mandatory_mapping_ledger
 from .manual_mapping_promotion_storage import manual_promotions_by_recommendation
 from .mapping_review_builders import build_mapping_candidate_review_artifacts
-from .relution_update_artifacts import build_relution_mapping_update_artifacts
 from .mapping_source_snapshots import previous_source_change_rows
-from .relution_update_artifacts import previous_relution_mapping_change_rows
-from .ruleset_rules_core import build_ruleset
+from .recommendation_normalizer import normalize_recommendations
+from .relution_update_artifacts import (
+    build_relution_mapping_update_artifacts,
+    previous_relution_mapping_change_rows,
+)
 from .ruleset_catalog import build_setting_catalog
-from .assurance_artifacts import build_assurance_artifacts
+from .ruleset_rules_core import build_ruleset
+from .unified_analysis_builders import build_unified_recommendation_analysis
 
 
 def main() -> None:

@@ -30,6 +30,7 @@ export function Evidence({
   const [builds, setBuilds] = useState<BuildRecord[]>([]);
   const [checkError, setCheckError] = useState('');
   const [artifactSha, setArtifactSha] = useState('');
+  const [attaching, setAttaching] = useState(false);
   useEffect(() => {
     let active = true;
     setCurrency(new Map());
@@ -53,6 +54,7 @@ export function Evidence({
   }, [project.id, project.revision, c.state.revision]);
   const buildDigest = builds.find(b => b.workspace_id === c.state.active_workspace_id)?.artifact?.artifactDigest;
   async function attach() {
+    setAttaching(true);
     try {
       if (!file || !artifact || !intent || !requirement.trim())
         throw new Error('Select intent, requirement, evidence and related artifact files.');
@@ -88,10 +90,16 @@ export function Evidence({
         note,
         recorded_at: new Date().toISOString(),
       };
+      if (buildDigest && record.artifact_digest !== buildDigest)
+        throw new Error(
+          'The related artifact does not match the current build. Select the campusweave.rexp from that build.',
+        );
       update(p => ({...p, evidence: [...p.evidence, record]}));
       setError('');
     } catch (e) {
       setError(String(e));
+    } finally {
+      setAttaching(false);
     }
   }
   return (
@@ -251,7 +259,15 @@ export function Evidence({
         </p>
         <button
           className="primary"
-          disabled={c.isDirty || !file || !artifact || !intent || !requirement.trim()}
+          disabled={
+            attaching ||
+            c.isDirty ||
+            !file ||
+            !artifact ||
+            !intent ||
+            !requirement.trim() ||
+            Boolean(artifactSha && buildDigest && artifactSha !== buildDigest)
+          }
           onClick={() => void attach()}
         >
           Attach evidence
@@ -348,7 +364,8 @@ export function Review({project, navigate, saved}: {project: Project; saved: boo
                     <td>
                       {!project.mappings.some(m => m.intent_id === i.id) ? (
                         <Stamp>Needs mapping</Stamp>
-                      ) : reviewed?.mappings?.filter(m => m.intent_id === i.id).every(m => m.projectable) ? (
+                      ) : reviewed?.mappings?.some(m => m.intent_id === i.id) &&
+                        reviewed.mappings.filter(m => m.intent_id === i.id).every(m => m.projectable) ? (
                         <Stamp tone="ok">Mapping current</Stamp>
                       ) : (
                         <Stamp tone="caution">Needs review</Stamp>

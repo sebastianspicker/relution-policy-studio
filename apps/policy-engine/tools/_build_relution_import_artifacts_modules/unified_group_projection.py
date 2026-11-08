@@ -1,9 +1,10 @@
 """Cohesive implementation stage 4 for unified_analysis."""
 
-from .artifact_paths import ALL_SOURCES
-from .artifact_paths import AUTHORITATIVE_SOURCE
 from typing import Any
+
 from _tooling_text_io import slugify
+
+from .artifact_paths import ALL_SOURCES, AUTHORITATIVE_SOURCE
 
 
 def common_semantic_group(

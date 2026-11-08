@@ -2,6 +2,7 @@
 
 from typing import Any
 
+
 def exact_mappings(recommendation: dict[str, Any]) -> list[dict[str, Any]]:
     """Return validated exact ruleset mappings for a recommendation."""
 

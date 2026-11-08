@@ -1,17 +1,16 @@
 """Apple Catalog helpers for recommendation mapping."""
 
-from typing import Any
-from ._mapping_models import FieldEntry
-from ._mapping_models import FieldTokens
 from pathlib import Path
+from typing import Any
 
+from ._mapping_models import FieldEntry, FieldTokens
 from .field_matching_io import (
     read_json,
 )
-
 from .field_matching_tokens import (
     tokenize,
 )
+
 
 def apple_schema_fields(apple_schema_catalog_path: Path) -> list[FieldEntry]:
     """Extract searchable field metadata from Apple schema profile entries."""

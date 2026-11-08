@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Vendor guidance harvest command implementation."""
 
 from __future__ import annotations
@@ -8,19 +7,34 @@ import sys
 from pathlib import Path
 from typing import Any as Any
 
-from _build_relution_import_artifacts_modules.orchestration import build_source_artifacts as build_source_artifacts
-
+from _build_relution_import_artifacts_modules.orchestration import (
+    build_source_artifacts as build_source_artifacts,
+)
 from _harvest_vendor_guidance_modules.common import (
     REPO_ROOT,
+)
+from _harvest_vendor_guidance_modules.common import (
     SAFE_SOURCE_ID_RE as SAFE_SOURCE_ID_RE,
+)
+from _harvest_vendor_guidance_modules.common import (
     VENDOR_DIR as VENDOR_DIR,
+)
+from _harvest_vendor_guidance_modules.common import (
     WINDOWS_WORKBOOK_PATH as WINDOWS_WORKBOOK_PATH,
+)
+from _harvest_vendor_guidance_modules.common import (
     merge_candidate_lists as merge_candidate_lists,
 )
 from _harvest_vendor_guidance_modules.vendor_source_catalog import (
     CURATED_PLATFORM_GUIDANCE as CURATED_PLATFORM_GUIDANCE,
+)
+from _harvest_vendor_guidance_modules.vendor_source_catalog import (
     WINDOWS_BASELINE_PATH as WINDOWS_BASELINE_PATH,
+)
+from _harvest_vendor_guidance_modules.vendor_source_catalog import (
     WINDOWS_POLICY_RULES_PATH as WINDOWS_POLICY_RULES_PATH,
+)
+from _harvest_vendor_guidance_modules.vendor_source_catalog import (
     WINDOWS_REXP_EVIDENCE_PATH as WINDOWS_REXP_EVIDENCE_PATH,
 )
 from _harvest_vendor_guidance_modules.vendor_source_pipeline import (
@@ -28,7 +42,7 @@ from _harvest_vendor_guidance_modules.vendor_source_pipeline import (
 )
 from _harvest_vendor_guidance_modules.vendor_source_recommendations import (
     build_recommendations as _build_recommendations,  # noqa: F401
-    )
+)
 
 sys.dont_write_bytecode = True
 

@@ -1,6 +1,7 @@
 """Collection and whitespace helpers shared by CIS harvesters."""
 from __future__ import annotations
 
+
 def unique_profile_keys(keys: list[dict[str, str]]) -> list[dict[str, str]]:
     """Deduplicate profile key/value entries while preserving source order."""
 

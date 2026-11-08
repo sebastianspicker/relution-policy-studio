@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+import hashlib
 from collections import Counter
 from copy import deepcopy
-import hashlib
 from typing import Any
 
 from .artifact_io_paths import relative_path

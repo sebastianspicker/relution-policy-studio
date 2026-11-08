@@ -8,6 +8,7 @@ from typing import Any
 
 from _tooling_text_io import write_json as _write_json
 
+
 def tokenize(value: str) -> set[str]:
     """Tokenize vendor and Relution field text for simple matching."""
 

@@ -1,11 +1,8 @@
 """Semantic concept rules for certificates, apps, and account controls."""
 
-from ._semantic_matching_metadata import ANDROID_ADVANCED_SECURITY
-from ._semantic_matching_metadata import ANDROID_RESTRICTION
 from ._apple_analog_constants import APPLE_APPLICATION_ACCESS
-from ._mapping_models import SemanticConceptRule
-from ._mapping_models import semantic_target
-
+from ._mapping_models import SemanticConceptRule, semantic_target
+from ._semantic_matching_metadata import ANDROID_ADVANCED_SECURITY, ANDROID_RESTRICTION
 
 SEMANTIC_CONCEPT_RULES_ENDPOINT_HARDENING: tuple[SemanticConceptRule, ...] = (
     SemanticConceptRule(

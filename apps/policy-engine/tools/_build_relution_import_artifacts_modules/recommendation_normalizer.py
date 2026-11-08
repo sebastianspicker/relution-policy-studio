@@ -3,11 +3,17 @@
 from collections.abc import Callable
 from typing import Any
 
-from _recommendation_mapping_modules._mapping_lexical_constants import unique_preserving_order
+from _recommendation_mapping_modules._mapping_lexical_constants import (
+    unique_preserving_order,
+)
 
 from .artifact_paths import ALLOWED_MAPPING_STATUSES
 from .recommendation_implementation import implementation_for
-from .recommendation_mapping_entries import optional_dict_entries, record_mapping_diagnostic, valid_exact_mappings
+from .recommendation_mapping_entries import (
+    optional_dict_entries,
+    record_mapping_diagnostic,
+    valid_exact_mappings,
+)
 
 
 def normalize_recommendations(source: str, recommendations: list[dict[str, Any]], *, get_promotions: Callable[[str], dict[str, list[dict[str, Any]]]] | None = None) -> list[dict[str, Any]]:

@@ -1,5 +1,6 @@
 import {
   MAX_IMPORT_BYTES,
+  CampusWeaveApiError,
   clearStoredProfile,
   downloadJson,
   loadStoredProfile,
@@ -190,6 +191,11 @@ export function createActions({ state, runtime, app }) {
         return
       } catch (error) {
         if (!isCurrentRequest(request) || error?.name === 'AbortError') return
+        // Only a rejected profile (400) means the draft is bad; keep it through restarts and network errors.
+        if (!(error instanceof CampusWeaveApiError && error.status === 400)) {
+          handleRequestError(request, error)
+          return
+        }
         clearStoredProfile()
       }
     }

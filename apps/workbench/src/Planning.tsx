@@ -743,9 +743,13 @@ export function ProfileTools({project, update}: {project: Project; update: (fn: 
     setBusy(true);
     setError('');
     try {
+      const profileKey = JSON.stringify(project.profile);
       const output = await planner<Record<string, unknown>>('compile', {profile: project.profile});
+      let changed = false;
+      // update() runs the change synchronously, so `changed` is set before it is read.
+      update(p => ((changed = JSON.stringify(p.profile) !== profileKey) ? p : {...p, compiled_plan: output}));
+      if (changed) throw new Error('The profile changed during compilation. Compile the current profile again.');
       setResult(output);
-      update(p => ({...p, compiled_plan: output}));
       setError('');
     } catch (e) {
       setError(String(e));
